@@ -4,3 +4,9 @@ D:\UAI\Campo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
 D:\UAI\Campo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
 D:\UAI\Campo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.dll
 D:\UAI\Campo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\bin\Debug\DAO.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\bin\Debug\DAO.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.csproj.AssemblyReference.cache
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.csproj.CoreCompileInputs.cache
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.pdb

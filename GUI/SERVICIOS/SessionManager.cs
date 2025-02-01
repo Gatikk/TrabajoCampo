@@ -10,7 +10,7 @@ namespace SERVICIOS
     public class SessionManager
     {
         private static BE_Usuario instancia;
-        public static BE_Usuario IniciarSesion(string Nombre)
+        public static BE_Usuario CrearSesion(string Nombre)
         {
             if (instancia == null)
             {
@@ -20,11 +20,14 @@ namespace SERVICIOS
         }
         public static void CerrarSesion()
         {
-            instancia = null;
+            if(instancia != null)
+            {
+                instancia = null;
+            }
         }
         public static string DevolverNombre()
         {
-            return instancia.Nombre;
+            return instancia.NombreUsuario;
         }
     }
 }

@@ -44,5 +44,10 @@ namespace GUI
         {
             Environment.Exit(0);
         }
+
+        private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

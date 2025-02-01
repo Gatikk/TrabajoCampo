@@ -105,6 +105,7 @@
             this.Controls.Add(this.buttonIniciarSesion);
             this.Name = "FormLogin";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

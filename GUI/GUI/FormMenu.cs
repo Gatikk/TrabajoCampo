@@ -39,5 +39,12 @@ namespace GUI
         {
             Environment.Exit(0);
         }
+
+        private void buttonABM_Click(object sender, EventArgs e)
+        {
+            FormABM abmForm = new FormABM();
+            this.Hide();
+            abmForm.Show(); 
+        }
     }
 }
