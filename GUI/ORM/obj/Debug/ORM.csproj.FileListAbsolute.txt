@@ -1,0 +1,11 @@
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\bin\Debug\ORM.dll
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\bin\Debug\ORM.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\bin\Debug\BE.dll
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\bin\Debug\DAO.dll
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\bin\Debug\BE.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\bin\Debug\DAO.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\obj\Debug\ORM.csproj.AssemblyReference.cache
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\obj\Debug\ORM.csproj.CoreCompileInputs.cache
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\obj\Debug\ORM.csproj.Up2Date
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\obj\Debug\ORM.dll
+D:\UAI\Campo\TrabajoCampo\GUI\ORM\obj\Debug\ORM.pdb

@@ -1,0 +1,90 @@
+﻿namespace GUI
+{
+    partial class FormMenu
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.buttonCerrarSesion = new System.Windows.Forms.Button();
+            this.buttonCerrarAplicacion = new System.Windows.Forms.Button();
+            this.labelBienvenida = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // buttonCerrarSesion
+            // 
+            this.buttonCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCerrarSesion.Location = new System.Drawing.Point(640, 349);
+            this.buttonCerrarSesion.Name = "buttonCerrarSesion";
+            this.buttonCerrarSesion.Size = new System.Drawing.Size(132, 47);
+            this.buttonCerrarSesion.TabIndex = 1;
+            this.buttonCerrarSesion.Text = "Cerrar Sesión";
+            this.buttonCerrarSesion.UseVisualStyleBackColor = true;
+            this.buttonCerrarSesion.Click += new System.EventHandler(this.buttonCerrarSesion_Click);
+            // 
+            // buttonCerrarAplicacion
+            // 
+            this.buttonCerrarAplicacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCerrarAplicacion.Location = new System.Drawing.Point(640, 402);
+            this.buttonCerrarAplicacion.Name = "buttonCerrarAplicacion";
+            this.buttonCerrarAplicacion.Size = new System.Drawing.Size(132, 47);
+            this.buttonCerrarAplicacion.TabIndex = 2;
+            this.buttonCerrarAplicacion.Text = "Cerrar Aplicación";
+            this.buttonCerrarAplicacion.UseVisualStyleBackColor = true;
+            this.buttonCerrarAplicacion.Click += new System.EventHandler(this.buttonCerrarAplicacion_Click);
+            // 
+            // labelBienvenida
+            // 
+            this.labelBienvenida.AutoSize = true;
+            this.labelBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.labelBienvenida.Location = new System.Drawing.Point(12, 9);
+            this.labelBienvenida.Name = "labelBienvenida";
+            this.labelBienvenida.Size = new System.Drawing.Size(129, 24);
+            this.labelBienvenida.TabIndex = 3;
+            this.labelBienvenida.Text = "Bienvenido @";
+            // 
+            // FormMenu
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.labelBienvenida);
+            this.Controls.Add(this.buttonCerrarAplicacion);
+            this.Controls.Add(this.buttonCerrarSesion);
+            this.Name = "FormMenu";
+            this.Text = "FormMenu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenu_FormClosed);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button buttonCerrarSesion;
+        private System.Windows.Forms.Button buttonCerrarAplicacion;
+        private System.Windows.Forms.Label labelBienvenida;
+    }
+}

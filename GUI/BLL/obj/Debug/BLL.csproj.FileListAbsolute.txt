@@ -1,0 +1,15 @@
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\BLL.dll
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\BLL.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\BE.dll
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\ORM.dll
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\DAO.dll
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\BE.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\ORM.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\DAO.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\obj\Debug\BLL.csproj.Up2Date
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\obj\Debug\BLL.dll
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\obj\Debug\BLL.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\SERVICIOS.dll
+D:\UAI\Campo\TrabajoCampo\GUI\BLL\bin\Debug\SERVICIOS.pdb

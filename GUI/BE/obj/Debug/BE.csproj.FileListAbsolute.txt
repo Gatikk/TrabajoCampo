@@ -1,0 +1,6 @@
+D:\UAI\Campo\TrabajoCampo\GUI\BE\bin\Debug\BE.dll
+D:\UAI\Campo\TrabajoCampo\GUI\BE\bin\Debug\BE.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+D:\UAI\Campo\TrabajoCampo\GUI\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+D:\UAI\Campo\TrabajoCampo\GUI\BE\obj\Debug\BE.dll
+D:\UAI\Campo\TrabajoCampo\GUI\BE\obj\Debug\BE.pdb

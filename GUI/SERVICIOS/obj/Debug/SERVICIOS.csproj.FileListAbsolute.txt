@@ -1,0 +1,9 @@
+D:\UAI\Campo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SERVICIOS.dll
+D:\UAI\Campo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SERVICIOS.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.csproj.AssemblyReference.cache
+D:\UAI\Campo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.csproj.CoreCompileInputs.cache
+D:\UAI\Campo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.dll
+D:\UAI\Campo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\BE.dll
+D:\UAI\Campo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\BE.pdb
+D:\UAI\Campo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.csproj.Up2Date
