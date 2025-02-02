@@ -22,5 +22,18 @@ namespace BLL
         {
             return ormUsuario.DevolverListaUsuarios();
         }
+
+        public void Alta(BE_Usuario entidad)
+        {
+            ormUsuario.Alta(entidad);
+        }
+        public void Baja(BE_Usuario entidad)
+        {
+            ormUsuario.Baja(entidad);
+        }
+        public void Modificar()
+        {
+
+        }
     }
 }

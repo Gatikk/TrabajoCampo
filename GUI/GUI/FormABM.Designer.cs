@@ -95,6 +95,7 @@
             this.buttonBajaUsuario.TabIndex = 5;
             this.buttonBajaUsuario.Text = "Baja Usuario";
             this.buttonBajaUsuario.UseVisualStyleBackColor = true;
+            this.buttonBajaUsuario.Click += new System.EventHandler(this.buttonBajaUsuario_Click);
             // 
             // buttonModificarUsuario
             // 

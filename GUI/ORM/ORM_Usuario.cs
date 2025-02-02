@@ -41,13 +41,15 @@ namespace ORM
         }
 
 
-        public void Alta()
+        public void Alta(BE_Usuario entidad)
         {
+            DAO_Usuario.DevolverDTUsuario().Rows.Add(entidad.NombreUsuario, entidad.Contraseña, entidad.Rol, entidad.Nombre, entidad.Apellido, entidad.DNI, entidad.Email, entidad.isBloqueado, entidad.Intentos);
 
         }
-        public void Baja()
+        public void Baja(BE_Usuario entidad)
         {
-
+            DataRow drBaja = DAO_Usuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
+            drBaja.Delete();
         }
         public void Modificar()
         {
