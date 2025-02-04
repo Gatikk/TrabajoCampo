@@ -12,12 +12,13 @@ namespace ORM
 {
     public class ORM_Usuario
     {
+        DAO_Usuario daoUsuario = new DAO_Usuario();
 
-        public static bool ValidarUsuario(string nombre, string contraseña)
+        public bool ValidarUsuario(string nombre, string contraseña)
         {
             bool esValido = false;
 
-            DataRow dr = DAO_Usuario.DevolverDTUsuario().Rows.Find(nombre);
+            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(nombre);
 
             if (dr != null) 
             {
@@ -32,10 +33,13 @@ namespace ORM
         public List<BE_Usuario> DevolverListaUsuarios()
         {
             List<BE_Usuario> listaUsuarios = new List<BE_Usuario>();
-            foreach(DataRow dr in DAO_Usuario.DevolverDTUsuario().Rows)
+            foreach(DataRow dr in daoUsuario.DevolverDTUsuario().Rows)
             {
-                BE_Usuario usuario = new BE_Usuario(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToBoolean(dr[7].ToString()), int.Parse(dr[8].ToString()));
-                listaUsuarios.Add(usuario);
+                if(dr.RowState != DataRowState.Deleted)
+                {
+                    BE_Usuario usuario = new BE_Usuario(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToBoolean(dr[7].ToString()), int.Parse(dr[8].ToString()));
+                    listaUsuarios.Add(usuario);
+                }
             }
             return listaUsuarios;
         }
@@ -43,13 +47,14 @@ namespace ORM
 
         public void Alta(BE_Usuario entidad)
         {
-            DAO_Usuario.DevolverDTUsuario().Rows.Add(entidad.NombreUsuario, entidad.Contraseña, entidad.Rol, entidad.Nombre, entidad.Apellido, entidad.DNI, entidad.Email, entidad.isBloqueado, entidad.Intentos);
-
+            daoUsuario.DevolverDTUsuario().Rows.Add(entidad.NombreUsuario, entidad.Contraseña, entidad.Rol, entidad.Nombre, entidad.Apellido, entidad.DNI, entidad.Email, entidad.isBloqueado, entidad.Intentos);
+            daoUsuario.Actualizar();
         }
         public void Baja(BE_Usuario entidad)
         {
-            DataRow drBaja = DAO_Usuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
+            DataRow drBaja = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
             drBaja.Delete();
+            daoUsuario.Actualizar();
         }
         public void Modificar()
         {

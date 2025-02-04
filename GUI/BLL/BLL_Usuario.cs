@@ -12,10 +12,25 @@ namespace BLL
     public class BLL_Usuario
     {
         ORM_Usuario ormUsuario = new ORM_Usuario();
-        public static bool IniciarSesion(string nombre, string contraseña)
+        public bool IniciarSesion(string nombre, string contraseña)
         {
-            if(ORM_Usuario.ValidarUsuario(nombre, contraseña)) SERVICIOS.SessionManager.CrearSesion(nombre);
-            return ORM_Usuario.ValidarUsuario(nombre, contraseña);
+            //if(ORM_Usuario.ValidarUsuario(nombre, contraseña)) SERVICIOS.SessionManager.GestorSessionManager().IniciarSesion(nombre);
+            //return ORM_Usuario.ValidarUsuario(nombre, contraseña);
+
+            bool esValido = false;
+
+            BE_Usuario usuarioALogear = ormUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == nombre);
+            
+            if(usuarioALogear != null)
+            {
+                if(usuarioALogear.Contraseña == contraseña)
+                {
+                    esValido = true;
+                    SERVICIOS.SessionManager.GestorSessionManager().IniciarSesion(usuarioALogear);
+                }
+
+            }
+            return esValido;
         }
 
         public List<BE_Usuario> DevolverListaUsuarios()

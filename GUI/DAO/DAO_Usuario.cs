@@ -10,29 +10,31 @@ namespace DAO
 {
     public class DAO_Usuario
     {
-        public static DataTable DevolverDTUsuario()
+        SqlDataAdapter ad;
+        DataTable dtUsuario;
+
+        public DAO_Usuario()
         {
-            /*
-            bool esValido = false;
             DAO_Conexion conexion = DAO_Conexion.DevolverInstancia();
             SqlConnection cx = conexion.DevolverCX();
-
-            SqlDataAdapter ad = new SqlDataAdapter("SELECT * FROM Usuario", cx);
-
-            DataTable dt = new DataTable();
-            ad.Fill(dt);
-            dt.PrimaryKey = new DataColumn[] { dt.Columns[0] };
-
-            return esValido;*/
-
-            DAO_Conexion conexion = DAO_Conexion.DevolverInstancia();
-            SqlConnection cx = conexion.DevolverCX();
-            SqlDataAdapter ad = new SqlDataAdapter("SELECT * FROM Usuario", cx);
-            DataTable dtUsuario = new DataTable();  
+            ad = new SqlDataAdapter("SELECT * FROM Usuario", cx);
+            SqlCommandBuilder cmb = new SqlCommandBuilder(ad);
+            ad.InsertCommand = cmb.GetInsertCommand();
+            ad.DeleteCommand = cmb.GetDeleteCommand();
+            ad.UpdateCommand = cmb.GetUpdateCommand();
+            dtUsuario = new DataTable();
             ad.Fill(dtUsuario);
             dtUsuario.PrimaryKey = new DataColumn[] { dtUsuario.Columns[0] };
+        }
+
+        public DataTable DevolverDTUsuario()
+        {
             return dtUsuario;
 
+        }
+        public void Actualizar()
+        {
+            ad.Update(dtUsuario);
         }
     }
 }

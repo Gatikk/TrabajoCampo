@@ -19,13 +19,13 @@ namespace GUI
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500,200);
-            labelBienvenida.Text = $"Bienvenido @{SERVICIOS.SessionManager.DevolverNombre()}";
+            labelBienvenida.Text = $"Bienvenido @{SERVICIOS.SessionManager.GestorSessionManager().DevolverNombre()}";
         }
 
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
         {
             FormLogin loginForm = new FormLogin();
-            SERVICIOS.SessionManager.CerrarSesion();
+            SERVICIOS.SessionManager.GestorSessionManager().CerrarSesion();
             this.Hide();
             loginForm.Show();
         }

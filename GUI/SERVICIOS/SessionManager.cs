@@ -9,25 +9,35 @@ namespace SERVICIOS
 {
     public class SessionManager
     {
-        private static BE_Usuario instancia;
-        public static BE_Usuario CrearSesion(string Nombre)
+        private static SessionManager instanciaSessionManager;
+        private BE_Usuario sesion;
+        public static SessionManager GestorSessionManager()
         {
-            if (instancia == null)
+            if (instanciaSessionManager == null)
             {
-                instancia = new BE_Usuario(Nombre);
+                instanciaSessionManager = new SessionManager();
             }
-            return instancia;
+            return instanciaSessionManager;
         }
-        public static void CerrarSesion()
+        public BE_Usuario IniciarSesion(BE_Usuario usuario)
         {
-            if(instancia != null)
+            if(sesion == null)
             {
-                instancia = null;
+                sesion = usuario;
+            }
+            return sesion;
+        }
+
+        public void CerrarSesion()
+        {
+            if(sesion != null)
+            {
+                sesion = null;
             }
         }
-        public static string DevolverNombre()
+        public string DevolverNombre()
         {
-            return instancia.NombreUsuario;
+            return sesion.NombreUsuario;
         }
     }
 }

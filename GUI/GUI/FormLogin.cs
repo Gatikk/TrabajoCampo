@@ -14,11 +14,13 @@ namespace GUI
 {
     public partial class FormLogin : Form
     {
+        BLL_Usuario bllUsuario;
         public FormLogin()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
+            bllUsuario = new BLL_Usuario();
         }
 
         private void buttonIniciarSesion_Click(object sender, EventArgs e)
@@ -26,7 +28,7 @@ namespace GUI
             string nombre = textBoxNombreUsuario.Text;
             string contraseña = textBoxContraseña.Text;
 
-            if (BLL_Usuario.IniciarSesion(nombre, contraseña))
+            if (bllUsuario.IniciarSesion(nombre, contraseña))
             {
                 MessageBox.Show("Inicio de sesión exitoso", "Éxito");
 
