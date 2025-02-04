@@ -22,6 +22,16 @@ namespace GUI
             Location = new Point(500, 200);
             cBRol.SelectedIndex = 0;
             Mostrar(dgvUsuarios);
+            labelNombreUsuario.Text = "Usuario";
+            labelRol.Text = "Rol";
+            labelNombre.Text = "Nombre";
+            labelApellido.Text = "Apellido";
+            labelDNI.Text = "DNI";
+            labelEmail.Text = "Email";
+            buttonBloquear.Enabled = false;
+            buttonDesbloquear.Enabled = false;
+            buttonAltaUsuario.Enabled = false;
+
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
@@ -80,15 +90,84 @@ namespace GUI
             {
                 if (dgvUsuarios.Rows.Count <= 0) throw new Exception("No hay nada que eliminar");
                 BE_Usuario usuarioSeleccionado = dgvUsuarios.SelectedRows[0].DataBoundItem as BE_Usuario;
-
-                DialogResult dr = MessageBox.Show($"Dar de baja a @{usuarioSeleccionado.NombreUsuario}", "Confirmar Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dr == DialogResult.Yes)
-                {
-                    bllUsuario.Baja(usuarioSeleccionado);
-                }
+                DialogResult dResult = MessageBox.Show($"Dar de baja a @{usuarioSeleccionado.NombreUsuario}", "Confirmar Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dResult == DialogResult.Yes) bllUsuario.Baja(usuarioSeleccionado);
                 Mostrar(dgvUsuarios);
             }
             catch (Exception ex) { MessageBox.Show($"Error {ex.Message}"); }
+        }
+
+        private void buttonBloquear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        private void buttonDesbloquear_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        public void VerificarButtonAlta()
+        {
+            buttonAltaUsuario.Enabled = !string.IsNullOrWhiteSpace(tBNombreUsuario.Text) &&
+                                        !string.IsNullOrWhiteSpace(cBRol.Text) &&
+                                        !string.IsNullOrWhiteSpace(tBNombre.Text) &&
+                                        !string.IsNullOrWhiteSpace(tBApellido.Text)&&
+                                        !string.IsNullOrWhiteSpace(tBDNI.Text)&&
+                                        !string.IsNullOrWhiteSpace(tBEmail.Text);
+        }
+
+        private void VerificarButtonBloquear()
+        {
+            buttonBloquear.Enabled = !Convert.ToBoolean(dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString());
+        }
+        private void VerificarButtonDesbloquear()
+        {
+            buttonDesbloquear.Enabled = Convert.ToBoolean(dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString());
+        }
+
+        private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
+        {
+            VerificarButtonBloquear();
+            VerificarButtonDesbloquear();
+        }
+
+        private void tBNombreUsuario_TextChanged(object sender, EventArgs e)
+        {
+            VerificarButtonAlta();
+        }
+
+        private void cBRol_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            VerificarButtonAlta();
+        }
+
+        private void tBNombre_TextChanged(object sender, EventArgs e)
+        {
+            VerificarButtonAlta();
+        }
+
+        private void tBApellido_TextChanged(object sender, EventArgs e)
+        {
+            VerificarButtonAlta();
+        }
+
+        private void tBDNI_TextChanged(object sender, EventArgs e)
+        {
+            VerificarButtonAlta();
+        }
+
+        private void tBEmail_TextChanged(object sender, EventArgs e)
+        {
+            VerificarButtonAlta();
         }
     }
 }

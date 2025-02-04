@@ -30,10 +30,6 @@ namespace DAO
         
         public SqlConnection DevolverCX()
         {
-            if(cx == null)
-            {
-                throw new Exception("La conexión es nula");
-            }
             return cx;
         }
 

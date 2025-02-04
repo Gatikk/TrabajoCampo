@@ -14,20 +14,12 @@ namespace ORM
     {
         DAO_Usuario daoUsuario = new DAO_Usuario();
 
-        public bool ValidarUsuario(string nombre, string contraseña)
+        public void IntentosIniciarSesion(BE_Usuario entidad)
         {
-            bool esValido = false;
-
-            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(nombre);
-
-            if (dr != null) 
-            {
-                if (dr[1].ToString() == contraseña)
-                {
-                    esValido = true;
-                }
-            }
-            return esValido;   
+            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
+            dr[7] = entidad.isBloqueado;
+            dr[8] = entidad.Intentos;
+            daoUsuario.Actualizar();
         }
 
         public List<BE_Usuario> DevolverListaUsuarios()
