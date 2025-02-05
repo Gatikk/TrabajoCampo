@@ -14,7 +14,7 @@ namespace ORM
     {
         DAO_Usuario daoUsuario = new DAO_Usuario();
 
-        public void IntentosIniciarSesion(BE_Usuario entidad)
+        public void ActualizarBloqueo(BE_Usuario entidad)
         {
             DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
             dr[7] = entidad.isBloqueado;
