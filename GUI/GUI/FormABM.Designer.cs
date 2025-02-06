@@ -183,6 +183,7 @@
             this.buttonModificarUsuario.TabIndex = 6;
             this.buttonModificarUsuario.Text = "Modificar Usuario";
             this.buttonModificarUsuario.UseVisualStyleBackColor = true;
+            this.buttonModificarUsuario.Click += new System.EventHandler(this.buttonModificarUsuario_Click);
             // 
             // tBNombreUsuario
             // 

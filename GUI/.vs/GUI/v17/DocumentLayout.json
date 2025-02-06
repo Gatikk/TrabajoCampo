@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formabm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formabm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formabm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,24 +15,28 @@
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{63D528C8-8D98-4E0D-A60C-E3C00BFC576D}|BLL\\BLL.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\bll\\bll_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63D528C8-8D98-4E0D-A60C-E3C00BFC576D}|BLL\\BLL.csproj|solutionrelative:bll\\bll_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E259BCDD-D48B-4D99-8243-602C1170D5D2}|ORM\\ORM.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\orm\\orm_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E259BCDD-D48B-4D99-8243-602C1170D5D2}|ORM\\ORM.csproj|solutionrelative:orm\\orm_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{63D528C8-8D98-4E0D-A60C-E3C00BFC576D}|BLL\\BLL.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\bll\\bll_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{63D528C8-8D98-4E0D-A60C-E3C00BFC576D}|BLL\\BLL.csproj|solutionrelative:bll\\bll_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2E495DE8-96DA-431D-9B69-7B8BA9363ECD}|DAO\\DAO.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\dao\\dao_conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E495DE8-96DA-431D-9B69-7B8BA9363ECD}|DAO\\DAO.csproj|solutionrelative:dao\\dao_conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,37 +46,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 303,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
+              "Title": "DAO_Conexion.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAO\\DAO_Conexion.cs",
+              "RelativeDocumentMoniker": "DAO\\DAO_Conexion.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAO\\DAO_Conexion.cs",
+              "RelativeToolTip": "DAO\\DAO_Conexion.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-06T18:17:37.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "BLL_Usuario.cs",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\BLL\\BLL_Usuario.cs",
               "RelativeDocumentMoniker": "BLL\\BLL_Usuario.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\BLL\\BLL_Usuario.cs",
               "RelativeToolTip": "BLL\\BLL_Usuario.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAwwA0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-04T15:40:35.31Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ORM_Usuario.cs",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\ORM\\ORM_Usuario.cs",
               "RelativeDocumentMoniker": "ORM\\ORM_Usuario.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\ORM\\ORM_Usuario.cs",
               "RelativeToolTip": "ORM\\ORM_Usuario.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAgwBYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-01T17:15:14.692Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "FormLogin.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormLogin.cs",
               "RelativeDocumentMoniker": "GUI\\FormLogin.cs",
@@ -84,13 +101,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FormLogin.cs",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormLogin.cs",
               "RelativeDocumentMoniker": "GUI\\FormLogin.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormLogin.cs",
               "RelativeToolTip": "GUI\\FormLogin.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAxwCIAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC0AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-01T16:00:15.042Z",
               "EditorCaption": ""
@@ -127,20 +144,20 @@
               "RelativeDocumentMoniker": "GUI\\FormABM.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormABM.cs",
               "RelativeToolTip": "GUI\\FormABM.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAASwFQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAQwGoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-01T23:04:20.318Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "FormMenu.cs",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu.cs",
               "RelativeDocumentMoniker": "GUI\\FormMenu.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu.cs",
               "RelativeToolTip": "GUI\\FormMenu.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAwwCwAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-01T18:26:58.091Z",
               "EditorCaption": ""

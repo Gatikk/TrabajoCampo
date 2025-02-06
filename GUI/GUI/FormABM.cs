@@ -95,12 +95,23 @@ namespace GUI
             }
             catch (Exception ex) { MessageBox.Show($"Error {ex.Message}"); }
         }
+        private void buttonModificarUsuario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvUsuarios.Rows.Count <= 0) throw new Exception("No hay nada que eliminar");
+                BE_Usuario usuarioSeleccionado = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
+
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}");}
+        }
 
         private void buttonBloquear_Click(object sender, EventArgs e)
         {
             try
             {
                 if (dgvUsuarios.Rows.Count <= 0) throw new Exception();
+                var assad = dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString();
                 BE_Usuario usuarioABloquear = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
                 bllUsuario.Bloquear(usuarioABloquear);
                 Mostrar(dgvUsuarios);
@@ -113,6 +124,7 @@ namespace GUI
             try
             {
                 if (dgvUsuarios.Rows.Count <= 0) throw new Exception();
+
                 BE_Usuario usuarioADesbloquear = bllUsuario.DevolverListaUsuarios().Find(x=>x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
                 bllUsuario.Desbloquear(usuarioADesbloquear);
                 Mostrar(dgvUsuarios);
@@ -132,10 +144,13 @@ namespace GUI
 
         private void VerificarButtonBloquear()
         {
+            if (dgvUsuarios.Rows.Count == 0) { throw new Exception(); }
+            var asas = dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString();
             buttonBloquear.Enabled = !Convert.ToBoolean(dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString());
         }
         private void VerificarButtonDesbloquear()
         {
+            if(dgvUsuarios.Rows.Count == 0) { throw new Exception(); }
             buttonDesbloquear.Enabled = Convert.ToBoolean(dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString());
         }
 
@@ -143,7 +158,7 @@ namespace GUI
         #region Eventos TextChanged y SelectionChanged
         private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgvUsuarios.CurrentRow != null && dgvUsuarios.Rows.Count > 0)
+            if(dgvUsuarios.SelectedRows.Count > 0 && dgvUsuarios.Rows.Count > 0)
             {
                 VerificarButtonBloquear();
                 VerificarButtonDesbloquear();
@@ -180,5 +195,6 @@ namespace GUI
             VerificarButtonAlta();
         }
         #endregion
+
     }
 }
