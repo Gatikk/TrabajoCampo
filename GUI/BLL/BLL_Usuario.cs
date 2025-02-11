@@ -12,9 +12,11 @@ namespace BLL
     public class BLL_Usuario
     {
         ORM_Usuario ormUsuario = new ORM_Usuario();
+        Cifrador cifrador = new Cifrador();
         public bool IniciarSesion(string nombre, string contraseña)
         {
             bool esValido = false;
+            //contraseña = cifrador.CifradorIrreversible(contraseña);
 
             BE_Usuario usuarioALogear = ormUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == nombre);       
             {
@@ -22,7 +24,7 @@ namespace BLL
                 {
                     if(usuarioALogear != null)
                     {
-                        if(usuarioALogear.Contraseña == contraseña)
+                        if(usuarioALogear.Contraseña == contraseña || usuarioALogear.Contraseña == cifrador.CifradorIrreversible(contraseña))
                         {
                             esValido = true;
                             usuarioALogear.Intentos = 0;
@@ -80,6 +82,7 @@ namespace BLL
 
         public void Alta(BE_Usuario entidad)
         {
+            entidad.Contraseña = cifrador.CifradorIrreversible(entidad.DNI+entidad.Apellido.ToLower().Trim());
             ormUsuario.Alta(entidad);
         }
         public void Baja(BE_Usuario entidad)
