@@ -9,14 +9,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+using System.Deployment.Internal;
+using Microsoft.VisualBasic;
 
 namespace GUI
 {
     public partial class FormMenu : Form
     {
+        BLL_Usuario bllUsuario;
         public FormMenu()
         {
             InitializeComponent();
+            bllUsuario = new BLL_Usuario();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500,200);
             labelBienvenida.Text = $"Bienvenido @{SERVICIOS.SessionManager.GestorSessionManager().DevolverNombre()}";
@@ -45,6 +50,13 @@ namespace GUI
             FormABM abmForm = new FormABM();
             this.Hide();
             abmForm.Show(); 
+        }
+
+        private void buttonCambiarContraseña_Click(object sender, EventArgs e)
+        {
+            FormCambiarContraseña cambiarContraseñaForm = new FormCambiarContraseña();
+            this.Hide();
+            cambiarContraseñaForm.Show();
         }
     }
 }

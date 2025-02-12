@@ -14,14 +14,6 @@ namespace ORM
     {
         DAO_Usuario daoUsuario = new DAO_Usuario();
 
-        public void ActualizarBloqueo(BE_Usuario entidad)
-        {
-            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
-            dr[7] = entidad.isBloqueado;
-            dr[8] = entidad.Intentos;
-            daoUsuario.Actualizar();
-        }
-
         public List<BE_Usuario> DevolverListaUsuarios()
         {
             List<BE_Usuario> listaUsuarios = new List<BE_Usuario>();
@@ -35,8 +27,19 @@ namespace ORM
             }
             return listaUsuarios;
         }
-
-
+        public void ActualizarBloqueo(BE_Usuario entidad)
+        {
+            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
+            dr[7] = entidad.isBloqueado;
+            dr[8] = entidad.Intentos;
+            daoUsuario.Actualizar();
+        }
+        public void ActualizarContraseña(BE_Usuario entidad)
+        {
+            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
+            dr[1] = entidad.Contraseña;
+            daoUsuario.Actualizar();
+        }
         public void Alta(BE_Usuario entidad)
         {
             daoUsuario.DevolverDTUsuario().Rows.Add(entidad.NombreUsuario, entidad.Contraseña, entidad.Rol, entidad.Nombre, entidad.Apellido, entidad.DNI, entidad.Email, entidad.isBloqueado, entidad.Intentos);

@@ -25,21 +25,42 @@ namespace GUI
 
         private void buttonIniciarSesion_Click(object sender, EventArgs e)
         {
-            string nombre = textBoxNombreUsuario.Text;
-            string contraseña = textBoxContraseña.Text;
-
-            if (bllUsuario.IniciarSesion(nombre, contraseña))
+            try
             {
-                MessageBox.Show("Inicio de sesión exitoso", "Éxito");
+                string nombre = textBoxNombreUsuario.Text;
+                string contraseña = textBoxContraseña.Text;
 
-                FormMenu menuForm = new FormMenu();
-                this.Hide();
-                menuForm.Show();
+                BE_Usuario usuarioALogear = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == nombre);
+                if(usuarioALogear != null)
+                {
+                    if(usuarioALogear.isBloqueado != true)
+                    {
+                        if(bllUsuario.VerificarContraseña(usuarioALogear, contraseña))
+                        {
+
+                            bllUsuario.IniciarSesion(usuarioALogear);
+                            MessageBox.Show("Inicio de sesión exitoso", "Éxito");
+                            FormMenu menuForm = new FormMenu();
+                            this.Hide();
+                            menuForm.Show();
+                        }
+                        else
+                        {
+                            bllUsuario.SesionFallida(usuarioALogear);
+                            MessageBox.Show("Usuario o contraseña incorrectos", "Error");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuario bloqueado", "Error");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos", "Error");
+                }
             }
-            else
-            {
-                MessageBox.Show("Usuario o contraseña incorrectos", "Error");
-            }  
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
 
         private void buttonCerrarAplicacion_Click(object sender, EventArgs e)

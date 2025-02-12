@@ -13,18 +13,18 @@ namespace BLL
     {
         ORM_Usuario ormUsuario = new ORM_Usuario();
         Cifrador cifrador = new Cifrador();
-        public bool IniciarSesion(string nombre, string contraseña)
+        /*
+        public bool IniciarSsesion(string nombre, string contraseña)
         {
             bool esValido = false;
-            //contraseña = cifrador.CifradorIrreversible(contraseña);
-
+           
             BE_Usuario usuarioALogear = ormUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == nombre);       
             {
                 if(usuarioALogear.isBloqueado != true)
                 {
                     if(usuarioALogear != null)
                     {
-                        if(usuarioALogear.Contraseña == contraseña || usuarioALogear.Contraseña == cifrador.CifradorIrreversible(contraseña))
+                        if(usuarioALogear.Contraseña == cifrador.CifradorIrreversible(contraseña))
                         {
                             esValido = true;
                             usuarioALogear.Intentos = 0;
@@ -50,6 +50,35 @@ namespace BLL
             }
             ormUsuario.ActualizarBloqueo(usuarioALogear);
             return esValido;
+        }*/
+        public void IniciarSesion(BE_Usuario entidad)
+        {
+            entidad.Intentos = 0;
+            SERVICIOS.SessionManager.GestorSessionManager().IniciarSesion(entidad);
+            ormUsuario.ActualizarBloqueo(entidad);
+        }
+        public void SesionFallida(BE_Usuario entidad)
+        {
+            if(entidad.Rol != "admini")
+            {
+                entidad.Intentos++;
+                if(entidad.Intentos == 3)
+                {
+                    entidad.isBloqueado = true;
+                }
+            }
+            ormUsuario.ActualizarBloqueo(entidad);
+        }
+        public bool VerificarContraseña(BE_Usuario entidad, string contraseña)
+        {
+            if(entidad.Contraseña == cifrador.CifradorIrreversible(contraseña))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public List<BE_Usuario> DevolverListaUsuarios()
@@ -80,6 +109,11 @@ namespace BLL
             }
         }
 
+        public void CambiarContraseña(string nuevaContraseña, BE_Usuario entidad)
+        {
+            entidad.Contraseña = cifrador.CifradorIrreversible(nuevaContraseña);
+            ormUsuario.ActualizarContraseña(entidad);
+        }
         public void Alta(BE_Usuario entidad)
         {
             entidad.Contraseña = cifrador.CifradorIrreversible(entidad.DNI+entidad.Apellido.ToLower().Trim());
