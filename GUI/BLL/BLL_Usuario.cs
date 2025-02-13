@@ -13,44 +13,7 @@ namespace BLL
     {
         ORM_Usuario ormUsuario = new ORM_Usuario();
         Cifrador cifrador = new Cifrador();
-        /*
-        public bool IniciarSsesion(string nombre, string contraseña)
-        {
-            bool esValido = false;
-           
-            BE_Usuario usuarioALogear = ormUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == nombre);       
-            {
-                if(usuarioALogear.isBloqueado != true)
-                {
-                    if(usuarioALogear != null)
-                    {
-                        if(usuarioALogear.Contraseña == cifrador.CifradorIrreversible(contraseña))
-                        {
-                            esValido = true;
-                            usuarioALogear.Intentos = 0;
-                            SERVICIOS.SessionManager.GestorSessionManager().IniciarSesion(usuarioALogear);
-                        }
-                        else
-                        {
-                            if (usuarioALogear.Rol != "admin")
-                            {
-                                usuarioALogear.Intentos++;
-                                if (usuarioALogear.Intentos == 3)
-                                {
-                                    usuarioALogear.isBloqueado = true;
-                                }                              
-                            }
-                        }
-                    }
-                }
-                else
-                {
-                    //agregar evento usuario bloqueado
-                }
-            }
-            ormUsuario.ActualizarBloqueo(usuarioALogear);
-            return esValido;
-        }*/
+        
         public void IniciarSesion(BE_Usuario entidad)
         {
             entidad.Intentos = 0;
@@ -59,7 +22,7 @@ namespace BLL
         }
         public void SesionFallida(BE_Usuario entidad)
         {
-            if(entidad.Rol != "admini")
+            if(entidad.Rol != "admin")
             {
                 entidad.Intentos++;
                 if(entidad.Intentos == 3)
@@ -116,7 +79,9 @@ namespace BLL
         }
         public void Alta(BE_Usuario entidad)
         {
-            entidad.Contraseña = cifrador.CifradorIrreversible(entidad.DNI+entidad.Apellido.ToLower().Trim());
+            string[] primerApellido = entidad.Apellido.Split(' ');
+            primerApellido[0] = primerApellido[0].ToLower().Trim();
+            entidad.Contraseña = cifrador.CifradorIrreversible(entidad.DNI + primerApellido[0]);
             ormUsuario.Alta(entidad);
         }
         public void Baja(BE_Usuario entidad)

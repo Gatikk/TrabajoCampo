@@ -1,5 +1,6 @@
 ﻿using BE;
 using BLL;
+using SERVICIOS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace GUI
     public partial class FormABM : Form
     {
         BLL_Usuario bllUsuario = new BLL_Usuario();
+        ExpresionesRegulares re = new ExpresionesRegulares();   
         public FormABM()
         {
             InitializeComponent();
@@ -74,9 +76,16 @@ namespace GUI
                 string apellido = tBApellido.Text;
                 string dni = tBDNI.Text;
                 string email = tBEmail.Text;
-                string contraseña = dni+apellido;
 
-                BE_Usuario usuarioAlta = new BE_Usuario(nombreUsuario, contraseña, rol, nombre, apellido, dni, email, false, 0);
+
+                if (!re.reUsuario.IsMatch(nombreUsuario)) throw new Exception("Nombre de usuario no válido");
+                if (!re.reNombreApellido.IsMatch(nombre)) throw new Exception("Nombre no válido");
+                if (!re.reNombreApellido.IsMatch(apellido)) throw new Exception("Apellido no válido");
+                if (!re.reDNI.IsMatch(dni)) throw new Exception("DNI no válido");
+                if (!re.reEmail.IsMatch(email)) throw new Exception("Email no válido");
+
+
+                BE_Usuario usuarioAlta = new BE_Usuario(nombreUsuario, "", rol, nombre, apellido, dni, email, false, 0);
                 bllUsuario.Alta(usuarioAlta);
                 Mostrar(dgvUsuarios);
 

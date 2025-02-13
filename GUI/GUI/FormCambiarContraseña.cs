@@ -25,6 +25,8 @@ namespace GUI
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
             buttonCambiarContraseña.Enabled = false;
+            labelContraseña.Text = "Contraseña";
+            labelConfirmarContraseña.Text = "Confirmar Contraseña";
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)

@@ -44,3 +44,4 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\G
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.pdb
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormABM.resources
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormCambiarContraseña.resources
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormBitacora.resources
