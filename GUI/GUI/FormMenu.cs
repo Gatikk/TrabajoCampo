@@ -58,5 +58,12 @@ namespace GUI
             this.Hide();
             cambiarContraseñaForm.Show();
         }
+        private void buttonBitacora_Click(object sender, EventArgs e)
+        {
+            FormBitacora bitacoraForm = new FormBitacora();
+            this.Hide();
+            bitacoraForm.Show();
+        }
+
     }
 }

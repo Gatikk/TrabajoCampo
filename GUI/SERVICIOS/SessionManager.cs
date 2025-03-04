@@ -10,7 +10,7 @@ namespace SERVICIOS
     public class SessionManager
     {
         private static SessionManager instanciaSessionManager;
-        private BE_Usuario sesion;
+        public BE_Usuario sesion;
         public static SessionManager GestorSessionManager()
         {
             if (instanciaSessionManager == null)

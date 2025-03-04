@@ -39,6 +39,8 @@ namespace GUI
                         {
 
                             bllUsuario.IniciarSesion(usuarioALogear);
+                            BLL_Bitacora bllBitacora = new BLL_Bitacora();
+                            bllBitacora.AltaBitacora("FormLogin", "Inicio de sesión", 1);
                             MessageBox.Show("Inicio de sesión exitoso", "Éxito");
                             FormMenu menuForm = new FormMenu();
                             this.Hide();

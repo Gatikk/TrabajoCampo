@@ -1,4 +1,6 @@
-﻿namespace GUI
+﻿using System;
+
+namespace GUI
 {
     partial class FormMenu
     {
@@ -33,6 +35,7 @@
             this.labelBienvenida = new System.Windows.Forms.Label();
             this.buttonABM = new System.Windows.Forms.Button();
             this.buttonCambiarContraseña = new System.Windows.Forms.Button();
+            this.buttonBitacora = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCerrarSesion
@@ -89,11 +92,23 @@
             this.buttonCambiarContraseña.UseVisualStyleBackColor = true;
             this.buttonCambiarContraseña.Click += new System.EventHandler(this.buttonCambiarContraseña_Click);
             // 
+            // buttonBitacora
+            // 
+            this.buttonBitacora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonBitacora.Location = new System.Drawing.Point(316, 234);
+            this.buttonBitacora.Name = "buttonBitacora";
+            this.buttonBitacora.Size = new System.Drawing.Size(132, 47);
+            this.buttonBitacora.TabIndex = 6;
+            this.buttonBitacora.Text = "Bitácora";
+            this.buttonBitacora.UseVisualStyleBackColor = true;
+            this.buttonBitacora.Click += new System.EventHandler(this.buttonBitacora_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonBitacora);
             this.Controls.Add(this.buttonCambiarContraseña);
             this.Controls.Add(this.buttonABM);
             this.Controls.Add(this.labelBienvenida);
@@ -107,6 +122,8 @@
 
         }
 
+
+
         #endregion
 
         private System.Windows.Forms.Button buttonCerrarSesion;
@@ -114,5 +131,6 @@
         private System.Windows.Forms.Label labelBienvenida;
         private System.Windows.Forms.Button buttonABM;
         private System.Windows.Forms.Button buttonCambiarContraseña;
+        private System.Windows.Forms.Button buttonBitacora;
     }
 }

@@ -33,6 +33,7 @@ namespace GUI
             buttonBloquear.Enabled = false;
             buttonDesbloquear.Enabled = false;
             buttonAltaUsuario.Enabled = false;
+            buttonBajaUsuario.Enabled = false;
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
@@ -87,6 +88,8 @@ namespace GUI
 
                 BE_Usuario usuarioAlta = new BE_Usuario(nombreUsuario, "", rol, nombre, apellido, dni, email, false, 0);
                 bllUsuario.Alta(usuarioAlta);
+                BLL_Bitacora bllBitacora = new BLL_Bitacora();
+                bllBitacora.AltaBitacora("FormABM", "Alta Usuario", 4);
                 Mostrar(dgvUsuarios);
 
             }
@@ -100,6 +103,8 @@ namespace GUI
                 BE_Usuario usuarioSeleccionado = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
                 DialogResult dResult = MessageBox.Show($"Dar de baja a @{usuarioSeleccionado.NombreUsuario}", "Confirmar Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dResult == DialogResult.Yes) bllUsuario.Baja(usuarioSeleccionado);
+                BLL_Bitacora bllBitacora = new BLL_Bitacora();
+                bllBitacora.AltaBitacora("FormABM", "Baja Usuario", 4);
                 Mostrar(dgvUsuarios);
             }
             catch (Exception ex) { MessageBox.Show($"Error {ex.Message}"); }
@@ -141,6 +146,16 @@ namespace GUI
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
 
+        private void VerificarButtonBloquear()
+        {
+            if (dgvUsuarios.Rows.Count == 0) throw new Exception();
+            buttonBloquear.Enabled = !Convert.ToBoolean(dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString());
+        }
+        private void VerificarButtonDesbloquear()
+        {
+            if(dgvUsuarios.Rows.Count == 0) { throw new Exception(); }
+            buttonDesbloquear.Enabled = Convert.ToBoolean(dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString());
+        }
         public void VerificarButtonAlta()
         {
             buttonAltaUsuario.Enabled = !string.IsNullOrWhiteSpace(tBNombreUsuario.Text) &&
@@ -150,19 +165,18 @@ namespace GUI
                                         !string.IsNullOrWhiteSpace(tBDNI.Text)&&
                                         !string.IsNullOrWhiteSpace(tBEmail.Text);
         }
-
-        private void VerificarButtonBloquear()
+        private void VerificarButtonBaja()
         {
-            if (dgvUsuarios.Rows.Count == 0) { throw new Exception(); }
-            var asas = dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString();
-            buttonBloquear.Enabled = !Convert.ToBoolean(dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString());
+            if(dgvUsuarios.Rows.Count == 0) throw new Exception();
+            if (SERVICIOS.SessionManager.GestorSessionManager().DevolverNombre() == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString())
+            {
+                buttonBajaUsuario.Enabled = false;
+            }
+            else
+            {
+                buttonBajaUsuario.Enabled = true;
+            }
         }
-        private void VerificarButtonDesbloquear()
-        {
-            if(dgvUsuarios.Rows.Count == 0) { throw new Exception(); }
-            buttonDesbloquear.Enabled = Convert.ToBoolean(dgvUsuarios.SelectedRows[0].Cells[7].Value.ToString());
-        }
-
 
         #region Eventos TextChanged y SelectionChanged
         private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
@@ -171,6 +185,7 @@ namespace GUI
             {
                 VerificarButtonBloquear();
                 VerificarButtonDesbloquear();
+                VerificarButtonBaja();
             }
         }
 
