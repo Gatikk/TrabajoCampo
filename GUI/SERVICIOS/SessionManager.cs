@@ -21,13 +21,12 @@ namespace SERVICIOS
         }
         public BE_Usuario IniciarSesion(BE_Usuario usuario)
         {
-            if(sesion == null)
+            if (sesion == null)
             {
                 sesion = usuario;
             }
             return sesion;
         }
-
         public void CerrarSesion()
         {
             if(sesion != null)

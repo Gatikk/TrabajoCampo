@@ -51,9 +51,11 @@ namespace ORM
             drBaja.Delete();
             daoUsuario.Actualizar();
         }
-        public void Modificar()
+        public void Modificar(BE_Usuario entidad)
         {
-
+            DataRow drModificar = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
+            drModificar.ItemArray = new object[] {entidad.NombreUsuario, entidad.Contraseña, entidad.Rol, entidad.Nombre, entidad.Apellido, entidad.DNI, entidad.Email, entidad.isBloqueado, entidad.Intentos };
+            daoUsuario.Actualizar();
         }
     }
 }

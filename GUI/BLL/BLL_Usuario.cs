@@ -43,7 +43,6 @@ namespace BLL
                 return false;
             }
         }
-
         public List<BE_Usuario> DevolverListaUsuarios()
         {
             return ormUsuario.DevolverListaUsuarios();
@@ -61,7 +60,6 @@ namespace BLL
                 }
             }
         }
-
         public void Desbloquear(BE_Usuario entidad)
         {
             if(entidad.isBloqueado != false)
@@ -71,7 +69,6 @@ namespace BLL
                 ormUsuario.ActualizarBloqueo(entidad);
             }
         }
-
         public void CambiarContraseña(string nuevaContraseña, BE_Usuario entidad)
         {
             entidad.Contraseña = cifrador.CifradorIrreversible(nuevaContraseña);
@@ -88,9 +85,9 @@ namespace BLL
         {
             ormUsuario.Baja(entidad);
         }
-        public void Modificar()
+        public void Modificar(BE_Usuario entidad)
         {
-
+            ormUsuario.Modificar(entidad);
         }
     }
 }

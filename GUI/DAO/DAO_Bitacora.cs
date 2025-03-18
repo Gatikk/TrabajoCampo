@@ -24,7 +24,7 @@ namespace DAO
             ad.UpdateCommand = cmb.GetUpdateCommand();
             dtBitacora = new DataTable();
             ad.Fill(dtBitacora);
-            dtBitacora.PrimaryKey = new DataColumn[] { dtBitacora.Columns[0] };
+            dtBitacora.PrimaryKey = new DataColumn[] { dtBitacora.Columns["ID_Bitacora"] };
             dtBitacora.Columns["ID_Bitacora"].AutoIncrement = true;
             dtBitacora.Columns["ID_Bitacora"].AutoIncrementSeed = dtBitacora.Rows.Count + 1;
             dtBitacora.Columns["ID_Bitacora"].AutoIncrementStep = 1;

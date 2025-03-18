@@ -7,23 +7,28 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
     public partial class FormABM : Form
     {
         BLL_Usuario bllUsuario = new BLL_Usuario();
-        ExpresionesRegulares re = new ExpresionesRegulares();   
-        public FormABM()
+        ExpresionesRegulares re = new ExpresionesRegulares();
+        FormMenu menu;
+        public FormABM(FormMenu menuOriginal)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
-            cBRol.SelectedIndex = 0;
             Mostrar(dgvUsuarios);
+            cBRol.SelectedIndex = 0;
+            cBRol.DropDownStyle = ComboBoxStyle.DropDownList;
             labelNombreUsuario.Text = "Usuario";
             labelRol.Text = "Rol";
             labelNombre.Text = "Nombre";
@@ -34,17 +39,21 @@ namespace GUI
             buttonDesbloquear.Enabled = false;
             buttonAltaUsuario.Enabled = false;
             buttonBajaUsuario.Enabled = false;
+            TextosPorFilaSeleccionada();
+            menu = menuOriginal;
+            
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
-            FormMenu menuForm = new FormMenu();
-            this.Hide();
-            menuForm.Show();
+            this.Dispose();
+            menu.Show();
         }
 
         private void FormABM_FormClosed(object sender, FormClosedEventArgs e)
         {
+            BLL_Bitacora bllBitacora = new BLL_Bitacora();
+            bllBitacora.AltaBitacora("FormABM", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 
@@ -67,26 +76,18 @@ namespace GUI
             }
         }
 
+
+        #region ABM
         private void buttonAltaUsuario_Click(object sender, EventArgs e)
         {
             try
             {
-                string nombreUsuario = tBNombreUsuario.Text;
-                string rol = cBRol.Text;
-                string nombre = tBNombre.Text;
-                string apellido = tBApellido.Text;
-                string dni = tBDNI.Text;
-                string email = tBEmail.Text;
-
-
-                if (!re.reUsuario.IsMatch(nombreUsuario)) throw new Exception("Nombre de usuario no válido");
-                if (!re.reNombreApellido.IsMatch(nombre)) throw new Exception("Nombre no válido");
-                if (!re.reNombreApellido.IsMatch(apellido)) throw new Exception("Apellido no válido");
-                if (!re.reDNI.IsMatch(dni)) throw new Exception("DNI no válido");
-                if (!re.reEmail.IsMatch(email)) throw new Exception("Email no válido");
-
-
-                BE_Usuario usuarioAlta = new BE_Usuario(nombreUsuario, "", rol, nombre, apellido, dni, email, false, 0);
+                if (!re.reUsuario.IsMatch(tBNombreUsuario.Text)) throw new Exception("Nombre de usuario no válido");
+                if (!re.reNombreApellido.IsMatch(tBNombre.Text)) throw new Exception("Nombre no válido");
+                if (!re.reNombreApellido.IsMatch(tBApellido.Text)) throw new Exception("Apellido no válido");
+                if (!re.reDNI.IsMatch(tBDNI.Text)) throw new Exception("DNI no válido");
+                if (!re.reEmail.IsMatch(tBEmail.Text)) throw new Exception("Email no válido");
+                BE_Usuario usuarioAlta = new BE_Usuario(tBNombreUsuario.Text, "", cBRol.Text, tBNombre.Text, tBApellido.Text, tBDNI.Text, tBEmail.Text, false, 0);
                 bllUsuario.Alta(usuarioAlta);
                 BLL_Bitacora bllBitacora = new BLL_Bitacora();
                 bllBitacora.AltaBitacora("FormABM", "Alta Usuario", 4);
@@ -101,7 +102,7 @@ namespace GUI
             {
                 if (dgvUsuarios.Rows.Count <= 0) throw new Exception("No hay nada que eliminar");
                 BE_Usuario usuarioSeleccionado = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
-                DialogResult dResult = MessageBox.Show($"Dar de baja a @{usuarioSeleccionado.NombreUsuario}", "Confirmar Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dResult = MessageBox.Show($"¿Dar de baja a @{usuarioSeleccionado.NombreUsuario}?", "Confirmar Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dResult == DialogResult.Yes) bllUsuario.Baja(usuarioSeleccionado);
                 BLL_Bitacora bllBitacora = new BLL_Bitacora();
                 bllBitacora.AltaBitacora("FormABM", "Baja Usuario", 4);
@@ -113,21 +114,36 @@ namespace GUI
         {
             try
             {
-                if (dgvUsuarios.Rows.Count <= 0) throw new Exception("No hay nada que eliminar");
+                if (dgvUsuarios.Rows.Count <= 0) throw new Exception("No hay nada que modificar");
                 BE_Usuario usuarioSeleccionado = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
-
+                DialogResult dResult = MessageBox.Show($"¿Modificar a @{usuarioSeleccionado.NombreUsuario}?", "Confirmar Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (!re.reNombreApellido.IsMatch(tBNombre.Text)) throw new Exception("Nombre no válido");
+                if (!re.reNombreApellido.IsMatch(tBApellido.Text)) throw new Exception("Apellido no válido");
+                if (!re.reDNI.IsMatch(tBDNI.Text)) throw new Exception("DNI no válido");
+                if (!re.reEmail.IsMatch(tBEmail.Text)) throw new Exception("Email no válido");
+                usuarioSeleccionado.Rol = cBRol.Text;
+                usuarioSeleccionado.Nombre = tBNombre.Text;
+                usuarioSeleccionado.Apellido = tBApellido.Text;
+                usuarioSeleccionado.DNI = tBDNI.Text;   
+                usuarioSeleccionado.Email = tBEmail.Text;
+                if (dResult == DialogResult.Yes) bllUsuario.Modificar(usuarioSeleccionado);
+                BLL_Bitacora bllBitacora = new BLL_Bitacora();
+                bllBitacora.AltaBitacora("FormABM", "Modificación Usuario", 4);
+                Mostrar(dgvUsuarios);
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}");}
         }
+        #endregion
 
         private void buttonBloquear_Click(object sender, EventArgs e)
         {
             try
             {
-                if (dgvUsuarios.Rows.Count <= 0) throw new Exception();
-                var assad = dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString();
+                if (dgvUsuarios.Rows.Count <= 0) throw new Exception();        
                 BE_Usuario usuarioABloquear = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
                 bllUsuario.Bloquear(usuarioABloquear);
+                BLL_Bitacora bllBitacora = new BLL_Bitacora();
+                bllBitacora.AltaBitacora("FormABM", "Bloqueo de usuario", 4);
                 Mostrar(dgvUsuarios);
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
@@ -138,9 +154,10 @@ namespace GUI
             try
             {
                 if (dgvUsuarios.Rows.Count <= 0) throw new Exception();
-
                 BE_Usuario usuarioADesbloquear = bllUsuario.DevolverListaUsuarios().Find(x=>x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
                 bllUsuario.Desbloquear(usuarioADesbloquear);
+                BLL_Bitacora bllBitacora = new BLL_Bitacora();
+                bllBitacora.AltaBitacora("FormABM", "Desbloqueo de usuario", 4);
                 Mostrar(dgvUsuarios);
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
@@ -178,6 +195,18 @@ namespace GUI
             }
         }
 
+        private void TextosPorFilaSeleccionada()
+        {
+            if (dgvUsuarios.SelectedRows.Count > 0 && dgvUsuarios.Rows.Count > 0)
+            {
+                cBRol.Text = dgvUsuarios.SelectedRows[0].Cells[2].Value.ToString();
+                tBNombre.Text = dgvUsuarios.SelectedRows[0].Cells[3].Value.ToString();
+                tBApellido.Text = dgvUsuarios.SelectedRows[0].Cells[4].Value.ToString();
+                tBDNI.Text = dgvUsuarios.SelectedRows[0].Cells[5].Value.ToString();
+                tBEmail.Text = dgvUsuarios.SelectedRows[0].Cells[6].Value.ToString();
+            }
+        }
+
         #region Eventos TextChanged y SelectionChanged
         private void dgvUsuarios_SelectionChanged(object sender, EventArgs e)
         {
@@ -187,6 +216,7 @@ namespace GUI
                 VerificarButtonDesbloquear();
                 VerificarButtonBaja();
             }
+            TextosPorFilaSeleccionada();    
         }
 
         private void tBNombreUsuario_TextChanged(object sender, EventArgs e)

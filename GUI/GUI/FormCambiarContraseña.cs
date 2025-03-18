@@ -17,7 +17,8 @@ namespace GUI
     {
         BLL_Usuario bllUsuario;
         Cifrador cifrador;
-        public FormCambiarContraseña()
+        FormMenu menu;
+        public FormCambiarContraseña(FormMenu menuOriginal)
         {
             InitializeComponent();
             bllUsuario = new BLL_Usuario();
@@ -27,17 +28,19 @@ namespace GUI
             buttonCambiarContraseña.Enabled = false;
             labelContraseña.Text = "Contraseña";
             labelConfirmarContraseña.Text = "Confirmar Contraseña";
+            menu = menuOriginal;
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
-            FormMenu menuForm = new FormMenu();
-            this.Hide();
-            menuForm.Show();
+            this.Dispose();
+            menu.Show();
         }
 
         private void FormCambiarContraseña_FormClosed(object sender, FormClosedEventArgs e)
         {
+            BLL_Bitacora bllBitacora = new BLL_Bitacora();
+            bllBitacora.AltaBitacora("FormCambiarContraseña", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 
@@ -58,6 +61,8 @@ namespace GUI
                     {
                         bllUsuario.CambiarContraseña(textBoxContraseña.Text, entidad);
                         MessageBox.Show("Contraseña cambiada exitosamente");
+                        BLL_Bitacora bllBitacora = new BLL_Bitacora();
+                        bllBitacora.AltaBitacora("FormCambiarContraseña", "Cambio de contraseña", 3);
                         textBoxContraseña.Clear();
                         textBoxContraseñaConfirmar.Clear();
                     }

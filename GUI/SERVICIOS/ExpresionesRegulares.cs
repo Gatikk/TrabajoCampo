@@ -13,6 +13,6 @@ namespace SERVICIOS
         public Regex reDNI = new Regex(@"^\d{8}$");
         public Regex reUsuario = new Regex(@"^[a-zA-Z0-9]{3,20}$");
         public Regex reEmail = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
-        public Regex reNombreApellido = new Regex(@"^[A-Za-zÁÉÍÓÚáéíóúÑñ ]{3,40}$");
+        public Regex reNombreApellido = new Regex(@"^[A-Z][a-zÁÉÍÓÚáéíóúÑñ]{3,40}$");
     }
 }

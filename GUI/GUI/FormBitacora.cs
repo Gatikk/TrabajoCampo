@@ -15,15 +15,21 @@ namespace GUI
     public partial class FormBitacora : Form
     {
         BLL_Bitacora bllBitacora;
-        public FormBitacora()
+        FormMenu menu;
+        public FormBitacora(FormMenu menuOriginal)
         {
             InitializeComponent();
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(500, 200);
             bllBitacora = new BLL_Bitacora();
             Mostrar(dgvBitacora);
+            menu = menuOriginal;
         }
 
         private void FormBitacora_FormClosed(object sender, FormClosedEventArgs e)
         {
+            BLL_Bitacora bllBitacora = new BLL_Bitacora();
+            bllBitacora.AltaBitacora("FormBitacora", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 
@@ -40,8 +46,14 @@ namespace GUI
 
             foreach (BE_Bitacora bitacora in bllBitacora.DevolverListaBitacora())
             {
-                dgv.Rows.Add(bitacora.ID_Bitacora, bitacora.NombreUsuario, bitacora.Fecha, bitacora.Hora, bitacora.Modulo, bitacora.Descripcion, bitacora.Criticidad);
+                dgv.Rows.Add(bitacora.ID_Bitacora, bitacora.NombreUsuario, bitacora.Fecha.ToShortDateString(), bitacora.Hora, bitacora.Modulo, bitacora.Descripcion, bitacora.Criticidad);
             }
+        }
+
+        private void buttonVolverAlMenu_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            menu.Show();
         }
     }
 }

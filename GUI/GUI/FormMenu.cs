@@ -30,6 +30,8 @@ namespace GUI
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
         {
             FormLogin loginForm = new FormLogin();
+            BLL_Bitacora bllBitacora = new BLL_Bitacora();
+            bllBitacora.AltaBitacora("FormMenu", "Cierre de sesión", 1);
             SERVICIOS.SessionManager.GestorSessionManager().CerrarSesion();
             this.Hide();
             loginForm.Show();
@@ -37,30 +39,34 @@ namespace GUI
 
         private void buttonCerrarAplicacion_Click(object sender, EventArgs e)
         {
+            BLL_Bitacora bllBitacora = new BLL_Bitacora();
+            bllBitacora.AltaBitacora("FormMenu", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
+            BLL_Bitacora bllBitacora = new BLL_Bitacora();
+            bllBitacora.AltaBitacora("FormMenu", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 
         private void buttonABM_Click(object sender, EventArgs e)
         {
-            FormABM abmForm = new FormABM();
+            FormABM abmForm = new FormABM(this);
             this.Hide();
             abmForm.Show(); 
         }
 
         private void buttonCambiarContraseña_Click(object sender, EventArgs e)
         {
-            FormCambiarContraseña cambiarContraseñaForm = new FormCambiarContraseña();
+            FormCambiarContraseña cambiarContraseñaForm = new FormCambiarContraseña(this);
             this.Hide();
             cambiarContraseñaForm.Show();
         }
         private void buttonBitacora_Click(object sender, EventArgs e)
         {
-            FormBitacora bitacoraForm = new FormBitacora();
+            FormBitacora bitacoraForm = new FormBitacora(this);
             this.Hide();
             bitacoraForm.Show();
         }

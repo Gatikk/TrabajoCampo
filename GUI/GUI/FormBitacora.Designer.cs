@@ -36,6 +36,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonVolverAlMenu = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacora)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +104,23 @@
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
             // 
+            // buttonVolverAlMenu
+            // 
+            this.buttonVolverAlMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVolverAlMenu.Location = new System.Drawing.Point(640, 402);
+            this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
+            this.buttonVolverAlMenu.Size = new System.Drawing.Size(132, 47);
+            this.buttonVolverAlMenu.TabIndex = 5;
+            this.buttonVolverAlMenu.Text = "Volver al Menú";
+            this.buttonVolverAlMenu.UseVisualStyleBackColor = true;
+            this.buttonVolverAlMenu.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
+            // 
             // FormBitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonVolverAlMenu);
             this.Controls.Add(this.dgvBitacora);
             this.Name = "FormBitacora";
             this.Text = "FormBitacora";
@@ -127,5 +140,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.Button buttonVolverAlMenu;
     }
 }
