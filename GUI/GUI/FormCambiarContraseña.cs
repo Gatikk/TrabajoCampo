@@ -56,7 +56,7 @@ namespace GUI
             {
                 if(textBoxContraseña.Text == textBoxContraseñaConfirmar.Text)
                 {
-                    BE_Usuario entidad = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == SERVICIOS.SessionManager.GestorSessionManager().DevolverNombre());
+                    BE_Usuario entidad = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == SessionManager.GestorSessionManager.DevolverNombre());
                     if(entidad.Contraseña != cifrador.CifradorIrreversible(textBoxContraseña.Text))
                     {
                         bllUsuario.CambiarContraseña(textBoxContraseña.Text, entidad);

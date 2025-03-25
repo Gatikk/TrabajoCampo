@@ -13,7 +13,6 @@ namespace ORM
     public class ORM_Usuario
     {
         DAO_Usuario daoUsuario = new DAO_Usuario();
-
         public List<BE_Usuario> DevolverListaUsuarios()
         {
             List<BE_Usuario> listaUsuarios = new List<BE_Usuario>();

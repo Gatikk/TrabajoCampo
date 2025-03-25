@@ -15,9 +15,9 @@ namespace BLL
 
         public void AltaBitacora(string modulo, string descripcion, int criticidad)
         {
-            if(SessionManager.GestorSessionManager().sesion != null)
+            if(SessionManager.GestorSessionManager.sesion != null)
             {
-                BE_Bitacora bitacora = new BE_Bitacora(SessionManager.GestorSessionManager().sesion.NombreUsuario, DateTime.Now.Date, DateTime.Now.TimeOfDay, modulo, descripcion, criticidad);
+                BE_Bitacora bitacora = new BE_Bitacora(SessionManager.GestorSessionManager.sesion.NombreUsuario, DateTime.Now.Date, DateTime.Now.TimeOfDay, modulo, descripcion, criticidad);
                 ormBitacora.Alta(bitacora);
             }
         }

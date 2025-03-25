@@ -11,18 +11,17 @@ namespace BLL
 {
     public class BLL_Usuario
     {
-        ORM_Usuario ormUsuario = new ORM_Usuario();
-        Cifrador cifrador = new Cifrador();
-        
         public void IniciarSesion(BE_Usuario entidad)
         {
+            ORM_Usuario ormUsuario = new ORM_Usuario();
             entidad.Intentos = 0;
-            SERVICIOS.SessionManager.GestorSessionManager().IniciarSesion(entidad);
+            SessionManager.GestorSessionManager.IniciarSesion(entidad);
             ormUsuario.ActualizarBloqueo(entidad);
         }
         public void SesionFallida(BE_Usuario entidad)
         {
-            if(entidad.Rol != "admin")
+            ORM_Usuario ormUsuario = new ORM_Usuario();
+            if (entidad.Rol != "admin")
             {
                 entidad.Intentos++;
                 if(entidad.Intentos == 3)
@@ -34,7 +33,8 @@ namespace BLL
         }
         public bool VerificarContraseña(BE_Usuario entidad, string contraseña)
         {
-            if(entidad.Contraseña == cifrador.CifradorIrreversible(contraseña))
+            Cifrador cifrador = new Cifrador();
+            if (entidad.Contraseña == cifrador.CifradorIrreversible(contraseña))
             {
                 return true;
             }
@@ -45,12 +45,14 @@ namespace BLL
         }
         public List<BE_Usuario> DevolverListaUsuarios()
         {
+            ORM_Usuario ormUsuario = new ORM_Usuario();
             return ormUsuario.DevolverListaUsuarios();
         }
 
         public void Bloquear(BE_Usuario entidad)
         {
-            if(entidad.Rol != "admin")
+            ORM_Usuario ormUsuario = new ORM_Usuario();
+            if (entidad.Rol != "admin")
             {
                 if(entidad.isBloqueado != true)
                 {
@@ -62,7 +64,8 @@ namespace BLL
         }
         public void Desbloquear(BE_Usuario entidad)
         {
-            if(entidad.isBloqueado != false)
+            ORM_Usuario ormUsuario = new ORM_Usuario();
+            if (entidad.isBloqueado != false)
             {
                 entidad.isBloqueado = false;
                 entidad.Intentos = 0;
@@ -71,11 +74,15 @@ namespace BLL
         }
         public void CambiarContraseña(string nuevaContraseña, BE_Usuario entidad)
         {
+            ORM_Usuario ormUsuario = new ORM_Usuario();
+            Cifrador cifrador = new Cifrador();
             entidad.Contraseña = cifrador.CifradorIrreversible(nuevaContraseña);
             ormUsuario.ActualizarContraseña(entidad);
         }
         public void Alta(BE_Usuario entidad)
         {
+            ORM_Usuario ormUsuario = new ORM_Usuario();
+            Cifrador cifrador = new Cifrador();
             string[] primerApellido = entidad.Apellido.Split(' ');
             primerApellido[0] = primerApellido[0].ToLower().Trim();
             entidad.Contraseña = cifrador.CifradorIrreversible(entidad.DNI + primerApellido[0]);
@@ -83,10 +90,12 @@ namespace BLL
         }
         public void Baja(BE_Usuario entidad)
         {
+            ORM_Usuario ormUsuario = new ORM_Usuario();
             ormUsuario.Baja(entidad);
         }
         public void Modificar(BE_Usuario entidad)
         {
+            ORM_Usuario ormUsuario = new ORM_Usuario();
             ormUsuario.Modificar(entidad);
         }
     }

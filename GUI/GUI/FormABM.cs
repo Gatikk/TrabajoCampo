@@ -12,7 +12,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
@@ -185,7 +185,7 @@ namespace GUI
         private void VerificarButtonBaja()
         {
             if(dgvUsuarios.Rows.Count == 0) throw new Exception();
-            if (SERVICIOS.SessionManager.GestorSessionManager().DevolverNombre() == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString())
+            if (SessionManager.GestorSessionManager.DevolverNombre() == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString())
             {
                 buttonBajaUsuario.Enabled = false;
             }

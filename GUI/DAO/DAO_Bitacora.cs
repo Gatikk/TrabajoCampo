@@ -38,8 +38,6 @@ namespace DAO
         public void Actualizar()
         {
             ad.Update(dtBitacora);
-            //dtBitacora.Clear();
-            //ad.Fill(dtBitacora);
         }
     }
 }

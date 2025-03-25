@@ -24,7 +24,7 @@ namespace GUI
             bllUsuario = new BLL_Usuario();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500,200);
-            labelBienvenida.Text = $"Bienvenido @{SERVICIOS.SessionManager.GestorSessionManager().DevolverNombre()}";
+            labelBienvenida.Text = $"Bienvenido @{SessionManager.GestorSessionManager.DevolverNombre()}";
         }
 
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
@@ -32,7 +32,7 @@ namespace GUI
             FormLogin loginForm = new FormLogin();
             BLL_Bitacora bllBitacora = new BLL_Bitacora();
             bllBitacora.AltaBitacora("FormMenu", "Cierre de sesión", 1);
-            SERVICIOS.SessionManager.GestorSessionManager().CerrarSesion();
+            SessionManager.GestorSessionManager.CerrarSesion();
             this.Hide();
             loginForm.Show();
         }

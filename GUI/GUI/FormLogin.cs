@@ -14,19 +14,19 @@ namespace GUI
 {
     public partial class FormLogin : Form
     {
-        BLL_Usuario bllUsuario;
         public FormLogin()
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
-            bllUsuario = new BLL_Usuario();
+
         }
 
         private void buttonIniciarSesion_Click(object sender, EventArgs e)
         {
             try
             {
+                BLL_Usuario bllUsuario = new BLL_Usuario();
                 string nombre = textBoxNombreUsuario.Text;
                 string contraseña = textBoxContraseña.Text;
 

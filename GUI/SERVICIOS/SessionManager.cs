@@ -11,13 +11,15 @@ namespace SERVICIOS
     {
         private static SessionManager instanciaSessionManager;
         public BE_Usuario sesion;
-        public static SessionManager GestorSessionManager()
+        public static SessionManager GestorSessionManager
         {
-            if (instanciaSessionManager == null)
-            {
-                instanciaSessionManager = new SessionManager();
+            get { 
+                if (instanciaSessionManager == null)
+                {
+                    instanciaSessionManager = new SessionManager();
+                }
+                return instanciaSessionManager;
             }
-            return instanciaSessionManager;
         }
         public BE_Usuario IniciarSesion(BE_Usuario usuario)
         {

@@ -9,7 +9,6 @@ namespace SERVICIOS
 {
     public class Cifrador
     {
-
         public string CifradorIrreversible(string s)
         {
             using (var sha256 = SHA256.Create())
