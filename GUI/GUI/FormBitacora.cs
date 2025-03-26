@@ -14,14 +14,12 @@ namespace GUI
 {
     public partial class FormBitacora : Form
     {
-        BLL_Bitacora bllBitacora;
         FormMenu menu;
         public FormBitacora(FormMenu menuOriginal)
         {
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
-            bllBitacora = new BLL_Bitacora();
             Mostrar(dgvBitacora);
             menu = menuOriginal;
         }
@@ -35,6 +33,7 @@ namespace GUI
 
         public void Mostrar(DataGridView dgv)
         {
+            BLL_Bitacora bllBitacora = new BLL_Bitacora();
             dgv.Rows.Clear();
             dgv.Columns[0].HeaderText = "ID";
             dgv.Columns[1].HeaderText = "NombreUsuario";
@@ -52,7 +51,7 @@ namespace GUI
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Hide();
             menu.Show();
         }
     }

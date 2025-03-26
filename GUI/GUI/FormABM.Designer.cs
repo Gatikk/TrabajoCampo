@@ -30,15 +30,6 @@
         {
             this.buttonVolverAlMenu = new System.Windows.Forms.Button();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonAltaUsuario = new System.Windows.Forms.Button();
             this.buttonBajaUsuario = new System.Windows.Forms.Button();
             this.buttonModificarUsuario = new System.Windows.Forms.Button();
@@ -56,6 +47,15 @@
             this.buttonBloquear = new System.Windows.Forms.Button();
             this.buttonDesbloquear = new System.Windows.Forms.Button();
             this.cBRol = new System.Windows.Forms.ComboBox();
+            this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaContraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaBloqueado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnaIntentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,15 +77,15 @@
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9});
+            this.ColumnaUsuario,
+            this.ColumnaContraseña,
+            this.ColumnaRol,
+            this.ColumnaNombre,
+            this.ColumnaApellido,
+            this.ColumnaDNI,
+            this.ColumnaEmail,
+            this.ColumnaBloqueado,
+            this.ColumnaIntentos});
             this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
             this.dgvUsuarios.MultiSelect = false;
             this.dgvUsuarios.Name = "dgvUsuarios";
@@ -94,63 +94,6 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(760, 251);
             this.dgvUsuarios.TabIndex = 3;
             this.dgvUsuarios.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Usuario";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Contraseña";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Rol";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Nombre";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Apellido";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "DNI";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Email";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "isBloqueado";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Intentos";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
             // 
             // buttonAltaUsuario
             // 
@@ -236,9 +179,9 @@
             this.labelNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelNombreUsuario.Location = new System.Drawing.Point(277, 285);
             this.labelNombreUsuario.Name = "labelNombreUsuario";
-            this.labelNombreUsuario.Size = new System.Drawing.Size(57, 17);
+            this.labelNombreUsuario.Size = new System.Drawing.Size(74, 17);
             this.labelNombreUsuario.TabIndex = 16;
-            this.labelNombreUsuario.Text = "Usuario";
+            this.labelNombreUsuario.Text = "Usuario_T";
             // 
             // labelRol
             // 
@@ -246,9 +189,9 @@
             this.labelRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelRol.Location = new System.Drawing.Point(278, 314);
             this.labelRol.Name = "labelRol";
-            this.labelRol.Size = new System.Drawing.Size(29, 17);
+            this.labelRol.Size = new System.Drawing.Size(46, 17);
             this.labelRol.TabIndex = 17;
-            this.labelRol.Text = "Rol";
+            this.labelRol.Text = "Rol_T";
             // 
             // labelNombre
             // 
@@ -256,9 +199,9 @@
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelNombre.Location = new System.Drawing.Point(278, 343);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(58, 17);
+            this.labelNombre.Size = new System.Drawing.Size(75, 17);
             this.labelNombre.TabIndex = 18;
-            this.labelNombre.Text = "Nombre";
+            this.labelNombre.Text = "Nombre_T";
             // 
             // labelApellido
             // 
@@ -266,9 +209,9 @@
             this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelApellido.Location = new System.Drawing.Point(278, 372);
             this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(58, 17);
+            this.labelApellido.Size = new System.Drawing.Size(75, 17);
             this.labelApellido.TabIndex = 19;
-            this.labelApellido.Text = "Apellido";
+            this.labelApellido.Text = "Apellido_T";
             // 
             // labelDNI
             // 
@@ -276,9 +219,9 @@
             this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelDNI.Location = new System.Drawing.Point(278, 403);
             this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(31, 17);
+            this.labelDNI.Size = new System.Drawing.Size(48, 17);
             this.labelDNI.TabIndex = 20;
-            this.labelDNI.Text = "DNI";
+            this.labelDNI.Text = "DNI_T";
             // 
             // labelEmail
             // 
@@ -286,9 +229,9 @@
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelEmail.Location = new System.Drawing.Point(278, 432);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(42, 17);
+            this.labelEmail.Size = new System.Drawing.Size(59, 17);
             this.labelEmail.TabIndex = 21;
-            this.labelEmail.Text = "Email";
+            this.labelEmail.Text = "Email_T";
             // 
             // buttonBloquear
             // 
@@ -324,6 +267,63 @@
             this.cBRol.Size = new System.Drawing.Size(175, 24);
             this.cBRol.TabIndex = 25;
             this.cBRol.SelectedIndexChanged += new System.EventHandler(this.cBRol_SelectedIndexChanged);
+            // 
+            // ColumnaUsuario
+            // 
+            this.ColumnaUsuario.HeaderText = "Usuario_T";
+            this.ColumnaUsuario.Name = "ColumnaUsuario";
+            this.ColumnaUsuario.ReadOnly = true;
+            // 
+            // ColumnaContraseña
+            // 
+            this.ColumnaContraseña.HeaderText = "Contraseña_T";
+            this.ColumnaContraseña.Name = "ColumnaContraseña";
+            this.ColumnaContraseña.ReadOnly = true;
+            // 
+            // ColumnaRol
+            // 
+            this.ColumnaRol.HeaderText = "Rol_T";
+            this.ColumnaRol.Name = "ColumnaRol";
+            this.ColumnaRol.ReadOnly = true;
+            // 
+            // ColumnaNombre
+            // 
+            this.ColumnaNombre.HeaderText = "Nombre_T";
+            this.ColumnaNombre.Name = "ColumnaNombre";
+            this.ColumnaNombre.ReadOnly = true;
+            // 
+            // ColumnaApellido
+            // 
+            this.ColumnaApellido.HeaderText = "Apellido_T";
+            this.ColumnaApellido.Name = "ColumnaApellido";
+            this.ColumnaApellido.ReadOnly = true;
+            // 
+            // ColumnaDNI
+            // 
+            this.ColumnaDNI.HeaderText = "DNI_T";
+            this.ColumnaDNI.Name = "ColumnaDNI";
+            this.ColumnaDNI.ReadOnly = true;
+            // 
+            // ColumnaEmail
+            // 
+            this.ColumnaEmail.HeaderText = "Email_T";
+            this.ColumnaEmail.Name = "ColumnaEmail";
+            this.ColumnaEmail.ReadOnly = true;
+            this.ColumnaEmail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColumnaBloqueado
+            // 
+            this.ColumnaBloqueado.HeaderText = "isBloqueado_T";
+            this.ColumnaBloqueado.Name = "ColumnaBloqueado";
+            this.ColumnaBloqueado.ReadOnly = true;
+            this.ColumnaBloqueado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnaBloqueado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnaIntentos
+            // 
+            this.ColumnaIntentos.HeaderText = "Intentos_T";
+            this.ColumnaIntentos.Name = "ColumnaIntentos";
+            this.ColumnaIntentos.ReadOnly = true;
             // 
             // FormABM
             // 
@@ -379,14 +379,14 @@
         private System.Windows.Forms.Button buttonBloquear;
         private System.Windows.Forms.Button buttonDesbloquear;
         private System.Windows.Forms.ComboBox cBRol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaUsuario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaContraseña;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEmail;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaBloqueado;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaIntentos;
     }
 }

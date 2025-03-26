@@ -16,3 +16,5 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\D
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.csproj.Up2Date
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\Newtonsoft.Json.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\Newtonsoft.Json.xml

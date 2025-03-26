@@ -15,18 +15,48 @@ using Microsoft.VisualBasic;
 
 namespace GUI
 {
-    public partial class FormMenu : Form
+    public partial class FormMenu : Form, IObserver
     {
-        BLL_Usuario bllUsuario;
+        FormABM abmForm;
+        FormCambiarContraseña cambiarContraseñaForm;
+        FormTraductor traductorForm;
         public FormMenu()
         {
             InitializeComponent();
-            bllUsuario = new BLL_Usuario();
+            SuscribirFormularios(Traductor.GestorTraductor);
+            Traductor.GestorTraductor.CargarIdioma();
+            Actualizar(Traductor.GestorTraductor);
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500,200);
-            labelBienvenida.Text = $"Bienvenido @{SessionManager.GestorSessionManager.DevolverNombre()}";
         }
 
+        //IOBSERVER
+        public void Actualizar(Traductor traductor)
+        {
+            RecorrerControles(this, traductor);
+        }
+
+        public void RecorrerControles(Control control, Traductor traductor)
+        {
+            foreach (Control c in control.Controls) 
+            {
+                c.Text = traductor.Traducir(c.Name);
+                if (c.HasChildren)
+                {
+                    RecorrerControles(c, traductor);
+                }
+            }
+        }
+        public void SuscribirFormularios(Traductor traductor)
+        {
+            abmForm = new FormABM(this);
+            cambiarContraseñaForm = new FormCambiarContraseña(this);
+            traductorForm = new FormTraductor(this);
+            traductor.Suscribir(this);
+            traductor.Suscribir(abmForm);
+            traductor.Suscribir(cambiarContraseñaForm);
+            traductor.Suscribir(traductorForm);
+        }
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
         {
             FormLogin loginForm = new FormLogin();
@@ -53,14 +83,12 @@ namespace GUI
 
         private void buttonABM_Click(object sender, EventArgs e)
         {
-            FormABM abmForm = new FormABM(this);
             this.Hide();
             abmForm.Show(); 
         }
 
         private void buttonCambiarContraseña_Click(object sender, EventArgs e)
         {
-            FormCambiarContraseña cambiarContraseñaForm = new FormCambiarContraseña(this);
             this.Hide();
             cambiarContraseñaForm.Show();
         }
@@ -69,6 +97,12 @@ namespace GUI
             FormBitacora bitacoraForm = new FormBitacora(this);
             this.Hide();
             bitacoraForm.Show();
+        }
+
+        private void buttonCambiarIdioma_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            traductorForm.Show();
         }
 
     }

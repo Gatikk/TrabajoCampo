@@ -28,3 +28,5 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL\obj\Debug\B
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL\obj\Debug\BLL.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL\obj\Debug\BLL.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL\bin\Debug\Newtonsoft.Json.xml

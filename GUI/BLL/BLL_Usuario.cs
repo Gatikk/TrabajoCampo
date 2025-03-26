@@ -79,6 +79,13 @@ namespace BLL
             entidad.Contraseña = cifrador.CifradorIrreversible(nuevaContraseña);
             ormUsuario.ActualizarContraseña(entidad);
         }
+        public void CambiarIdioma(string nuevoIdioma)
+        {
+            SessionManager.GestorSessionManager.sesion.Idioma = nuevoIdioma;
+            ORM_Usuario ormUsuario = new ORM_Usuario();
+            ormUsuario.ActualizarIdioma(SessionManager.GestorSessionManager.sesion);
+            SessionManager.GestorSessionManager.CambiarIdioma();
+        }
         public void Alta(BE_Usuario entidad)
         {
             ORM_Usuario ormUsuario = new ORM_Usuario();
@@ -86,6 +93,7 @@ namespace BLL
             string[] primerApellido = entidad.Apellido.Split(' ');
             primerApellido[0] = primerApellido[0].ToLower().Trim();
             entidad.Contraseña = cifrador.CifradorIrreversible(entidad.DNI + primerApellido[0]);
+            entidad.Idioma = "es";
             ormUsuario.Alta(entidad);
         }
         public void Baja(BE_Usuario entidad)

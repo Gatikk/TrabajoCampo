@@ -40,5 +40,9 @@ namespace SERVICIOS
         {
             return sesion.NombreUsuario;
         }
+        public void CambiarIdioma()
+        {
+            Traductor.GestorTraductor.CambiarIdioma();
+        }
     }
 }

@@ -36,6 +36,7 @@ namespace GUI
             this.buttonABM = new System.Windows.Forms.Button();
             this.buttonCambiarContraseña = new System.Windows.Forms.Button();
             this.buttonBitacora = new System.Windows.Forms.Button();
+            this.buttonCambiarIdioma = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonCerrarSesion
@@ -103,11 +104,23 @@ namespace GUI
             this.buttonBitacora.UseVisualStyleBackColor = true;
             this.buttonBitacora.Click += new System.EventHandler(this.buttonBitacora_Click);
             // 
+            // buttonCambiarIdioma
+            // 
+            this.buttonCambiarIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCambiarIdioma.Location = new System.Drawing.Point(316, 287);
+            this.buttonCambiarIdioma.Name = "buttonCambiarIdioma";
+            this.buttonCambiarIdioma.Size = new System.Drawing.Size(132, 47);
+            this.buttonCambiarIdioma.TabIndex = 7;
+            this.buttonCambiarIdioma.Text = "Cambiar Idioma";
+            this.buttonCambiarIdioma.UseVisualStyleBackColor = true;
+            this.buttonCambiarIdioma.Click += new System.EventHandler(this.buttonCambiarIdioma_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonCambiarIdioma);
             this.Controls.Add(this.buttonBitacora);
             this.Controls.Add(this.buttonCambiarContraseña);
             this.Controls.Add(this.buttonABM);
@@ -132,5 +145,6 @@ namespace GUI
         private System.Windows.Forms.Button buttonABM;
         private System.Windows.Forms.Button buttonCambiarContraseña;
         private System.Windows.Forms.Button buttonBitacora;
+        private System.Windows.Forms.Button buttonCambiarIdioma;
     }
 }

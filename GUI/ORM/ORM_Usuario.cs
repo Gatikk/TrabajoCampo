@@ -20,7 +20,7 @@ namespace ORM
             {
                 if(dr.RowState != DataRowState.Deleted)
                 {
-                    BE_Usuario usuario = new BE_Usuario(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToBoolean(dr[7].ToString()), int.Parse(dr[8].ToString()));
+                    BE_Usuario usuario = new BE_Usuario(dr[0].ToString(), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), dr[6].ToString(), Convert.ToBoolean(dr[7].ToString()), int.Parse(dr[8].ToString()), dr[9].ToString());
                     listaUsuarios.Add(usuario);
                 }
             }
@@ -39,9 +39,15 @@ namespace ORM
             dr[1] = entidad.Contraseña;
             daoUsuario.Actualizar();
         }
+        public void ActualizarIdioma(BE_Usuario entidad)
+        {
+            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
+            dr[9] = entidad.Idioma;
+            daoUsuario.Actualizar();
+        }
         public void Alta(BE_Usuario entidad)
         {
-            daoUsuario.DevolverDTUsuario().Rows.Add(entidad.NombreUsuario, entidad.Contraseña, entidad.Rol, entidad.Nombre, entidad.Apellido, entidad.DNI, entidad.Email, entidad.isBloqueado, entidad.Intentos);
+            daoUsuario.DevolverDTUsuario().Rows.Add(entidad.NombreUsuario, entidad.Contraseña, entidad.Rol, entidad.Nombre, entidad.Apellido, entidad.DNI, entidad.Email, entidad.isBloqueado, entidad.Intentos, entidad.Idioma);
             daoUsuario.Actualizar();
         }
         public void Baja(BE_Usuario entidad)

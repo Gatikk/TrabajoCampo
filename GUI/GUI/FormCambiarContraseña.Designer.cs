@@ -41,18 +41,18 @@
             this.labelConfirmarContraseña.AutoSize = true;
             this.labelConfirmarContraseña.Location = new System.Drawing.Point(273, 179);
             this.labelConfirmarContraseña.Name = "labelConfirmarContraseña";
-            this.labelConfirmarContraseña.Size = new System.Drawing.Size(108, 13);
+            this.labelConfirmarContraseña.Size = new System.Drawing.Size(121, 13);
             this.labelConfirmarContraseña.TabIndex = 8;
-            this.labelConfirmarContraseña.Text = "Confirmar Contraseña";
+            this.labelConfirmarContraseña.Text = "Confirmar Contraseña_T";
             // 
             // labelContraseña
             // 
             this.labelContraseña.AutoSize = true;
             this.labelContraseña.Location = new System.Drawing.Point(273, 119);
             this.labelContraseña.Name = "labelContraseña";
-            this.labelContraseña.Size = new System.Drawing.Size(61, 13);
+            this.labelContraseña.Size = new System.Drawing.Size(74, 13);
             this.labelContraseña.TabIndex = 7;
-            this.labelContraseña.Text = "Contraseña";
+            this.labelContraseña.Text = "Contraseña_T";
             // 
             // textBoxContraseñaConfirmar
             // 

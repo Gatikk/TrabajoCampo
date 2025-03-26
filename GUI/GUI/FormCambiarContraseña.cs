@@ -13,27 +13,43 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormCambiarContraseña : Form
+    public partial class FormCambiarContraseña : Form, IObserver
     {
         BLL_Usuario bllUsuario;
         Cifrador cifrador;
         FormMenu menu;
         public FormCambiarContraseña(FormMenu menuOriginal)
         {
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(500, 200);
             InitializeComponent();
             bllUsuario = new BLL_Usuario();
             cifrador = new Cifrador();
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
             buttonCambiarContraseña.Enabled = false;
-            labelContraseña.Text = "Contraseña";
-            labelConfirmarContraseña.Text = "Confirmar Contraseña";
             menu = menuOriginal;
+            Actualizar(Traductor.GestorTraductor);
+        }
+        public void Actualizar(Traductor traductor)
+        {
+            RecorrerControles(this, traductor);
+        }
+
+        public void RecorrerControles(Control control, Traductor traductor)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if(!(c is TextBox))
+                c.Text = traductor.Traducir(c.Name);
+                if (c.HasChildren)
+                {
+                    RecorrerControles(c, traductor);
+                }
+            }
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Hide();
             menu.Show();
         }
 

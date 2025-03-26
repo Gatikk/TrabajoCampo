@@ -12,41 +12,54 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GUI
 {
-    public partial class FormABM : Form
+    public partial class FormABM : Form, IObserver
     {
         BLL_Usuario bllUsuario = new BLL_Usuario();
         ExpresionesRegulares re = new ExpresionesRegulares();
         FormMenu menu;
         public FormABM(FormMenu menuOriginal)
         {
-            InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
+            InitializeComponent();
             Mostrar(dgvUsuarios);
             cBRol.SelectedIndex = 0;
             cBRol.DropDownStyle = ComboBoxStyle.DropDownList;
-            labelNombreUsuario.Text = "Usuario";
-            labelRol.Text = "Rol";
-            labelNombre.Text = "Nombre";
-            labelApellido.Text = "Apellido";
-            labelDNI.Text = "DNI";
-            labelEmail.Text = "Email";
             buttonBloquear.Enabled = false;
             buttonDesbloquear.Enabled = false;
             buttonAltaUsuario.Enabled = false;
             buttonBajaUsuario.Enabled = false;
             TextosPorFilaSeleccionada();
             menu = menuOriginal;
+            Actualizar(Traductor.GestorTraductor);
             
+        }
+        public void Actualizar(Traductor traductor)
+        {
+            RecorrerControles(this, traductor);
+        }
+
+        public void RecorrerControles(Control control, Traductor traductor)
+        {
+            foreach (Control c in control.Controls)
+            {
+                if(!(c is ComboBox) && !(c is TextBox))
+                {
+                    c.Text = traductor.Traducir(c.Name);
+                }
+                if (c.HasChildren)
+                {
+                    RecorrerControles(c, traductor);
+                }
+            }
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Hide();
             menu.Show();
         }
 
@@ -60,16 +73,6 @@ namespace GUI
         public void Mostrar(DataGridView dgv)
         {
             dgv.Rows.Clear();
-            dgv.Columns[0].HeaderText = "Usuario";
-            dgv.Columns[1].HeaderText = "Contraseña";
-            dgv.Columns[2].HeaderText = "Rol";
-            dgv.Columns[3].HeaderText = "Nombre";
-            dgv.Columns[4].HeaderText = "Apellido";
-            dgv.Columns[5].HeaderText = "DNI";
-            dgv.Columns[6].HeaderText = "Email";
-            dgv.Columns[7].HeaderText = "Bloqueado";
-            dgv.Columns[8].HeaderText = "Intentos";
-
             foreach (BE_Usuario usuario in bllUsuario.DevolverListaUsuarios())
             {
                 dgv.Rows.Add(usuario.NombreUsuario, usuario.Contraseña, usuario.Rol, usuario.Nombre, usuario.Apellido, usuario.DNI, usuario.Email, usuario.isBloqueado, usuario.Intentos);
@@ -87,7 +90,7 @@ namespace GUI
                 if (!re.reNombreApellido.IsMatch(tBApellido.Text)) throw new Exception("Apellido no válido");
                 if (!re.reDNI.IsMatch(tBDNI.Text)) throw new Exception("DNI no válido");
                 if (!re.reEmail.IsMatch(tBEmail.Text)) throw new Exception("Email no válido");
-                BE_Usuario usuarioAlta = new BE_Usuario(tBNombreUsuario.Text, "", cBRol.Text, tBNombre.Text, tBApellido.Text, tBDNI.Text, tBEmail.Text, false, 0);
+                BE_Usuario usuarioAlta = new BE_Usuario(tBNombreUsuario.Text, "", cBRol.Text, tBNombre.Text, tBApellido.Text, tBDNI.Text, tBEmail.Text, false, 0,"");
                 bllUsuario.Alta(usuarioAlta);
                 BLL_Bitacora bllBitacora = new BLL_Bitacora();
                 bllBitacora.AltaBitacora("FormABM", "Alta Usuario", 4);
