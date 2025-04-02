@@ -26,6 +26,24 @@ namespace SERVICIOS
                 return instanciaTraductor;
             }
         }
+        public void Suscribir(IObserver observer)
+        {
+            if (!listaObserver.Contains(observer))
+            {
+                listaObserver.Add(observer);
+            }
+        }
+        public void Desuscribir(IObserver observer)
+        {
+            listaObserver.Remove(observer);
+        }
+        public void Notificar()
+        {
+            foreach (var observer in listaObserver)
+            {
+                observer.Actualizar(GestorTraductor);
+            }
+        }
 
         public void CargarIdioma()
         {
@@ -61,25 +79,5 @@ namespace SERVICIOS
             traducciones.Clear();
         }
 
-        public void Suscribir(IObserver observer)
-        {
-            if (!listaObserver.Contains(observer))
-            {
-                listaObserver.Add(observer);
-            }
-        }
-
-        public void Desuscribir(IObserver observer)
-        {
-            listaObserver.Remove(observer);
-        }
-
-        public void Notificar()
-        {
-            foreach (var observer in listaObserver)
-            {
-                observer.Actualizar(this);
-            }
-        }
     }
 }

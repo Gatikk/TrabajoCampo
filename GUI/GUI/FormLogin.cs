@@ -21,7 +21,6 @@ namespace GUI
             Location = new Point(500, 200);
 
         }
-
         private void buttonIniciarSesion_Click(object sender, EventArgs e)
         {
             try
@@ -71,7 +70,6 @@ namespace GUI
             bllBitacora.AltaBitacora("FormLogin", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
-
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             BLL_Bitacora bllBitacora = new BLL_Bitacora();

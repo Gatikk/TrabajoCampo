@@ -17,7 +17,6 @@ namespace GUI
 {
     public partial class FormABM : Form, IObserver
     {
-        BLL_Usuario bllUsuario = new BLL_Usuario();
         ExpresionesRegulares re = new ExpresionesRegulares();
         FormMenu menu;
         public FormABM(FormMenu menuOriginal)
@@ -50,6 +49,14 @@ namespace GUI
                 {
                     c.Text = traductor.Traducir(c.Name);
                 }
+                if(c is DataGridView)
+                {
+                    DataGridView cDGV = c as DataGridView;
+                    foreach (DataGridViewColumn columna in cDGV.Columns) 
+                    {
+                        columna.HeaderText = traductor.Traducir(columna.Name);
+                    }
+                }
                 if (c.HasChildren)
                 {
                     RecorrerControles(c, traductor);
@@ -72,6 +79,7 @@ namespace GUI
 
         public void Mostrar(DataGridView dgv)
         {
+            BLL_Usuario bllUsuario = new BLL_Usuario();
             dgv.Rows.Clear();
             foreach (BE_Usuario usuario in bllUsuario.DevolverListaUsuarios())
             {
@@ -85,6 +93,7 @@ namespace GUI
         {
             try
             {
+                BLL_Usuario bllUsuario = new BLL_Usuario();
                 if (!re.reUsuario.IsMatch(tBNombreUsuario.Text)) throw new Exception("Nombre de usuario no válido");
                 if (!re.reNombreApellido.IsMatch(tBNombre.Text)) throw new Exception("Nombre no válido");
                 if (!re.reNombreApellido.IsMatch(tBApellido.Text)) throw new Exception("Apellido no válido");
@@ -103,6 +112,7 @@ namespace GUI
         {
             try
             {
+                BLL_Usuario bllUsuario = new BLL_Usuario();
                 if (dgvUsuarios.Rows.Count <= 0) throw new Exception("No hay nada que eliminar");
                 BE_Usuario usuarioSeleccionado = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
                 DialogResult dResult = MessageBox.Show($"¿Dar de baja a @{usuarioSeleccionado.NombreUsuario}?", "Confirmar Baja", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -117,6 +127,7 @@ namespace GUI
         {
             try
             {
+                BLL_Usuario bllUsuario = new BLL_Usuario();
                 if (dgvUsuarios.Rows.Count <= 0) throw new Exception("No hay nada que modificar");
                 BE_Usuario usuarioSeleccionado = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
                 DialogResult dResult = MessageBox.Show($"¿Modificar a @{usuarioSeleccionado.NombreUsuario}?", "Confirmar Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -142,6 +153,7 @@ namespace GUI
         {
             try
             {
+                BLL_Usuario bllUsuario = new BLL_Usuario();
                 if (dgvUsuarios.Rows.Count <= 0) throw new Exception();        
                 BE_Usuario usuarioABloquear = bllUsuario.DevolverListaUsuarios().Find(x => x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
                 bllUsuario.Bloquear(usuarioABloquear);
@@ -151,11 +163,11 @@ namespace GUI
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
-
         private void buttonDesbloquear_Click(object sender, EventArgs e)
         {
             try
             {
+                BLL_Usuario bllUsuario = new BLL_Usuario();
                 if (dgvUsuarios.Rows.Count <= 0) throw new Exception();
                 BE_Usuario usuarioADesbloquear = bllUsuario.DevolverListaUsuarios().Find(x=>x.NombreUsuario == dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString());
                 bllUsuario.Desbloquear(usuarioADesbloquear);

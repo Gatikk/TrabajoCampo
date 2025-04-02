@@ -30,7 +30,6 @@ namespace GUI
             Location = new Point(500,200);
         }
 
-        //IOBSERVER
         public void Actualizar(Traductor traductor)
         {
             RecorrerControles(this, traductor);
@@ -41,6 +40,12 @@ namespace GUI
             foreach (Control c in control.Controls) 
             {
                 c.Text = traductor.Traducir(c.Name);
+
+                if(c.Name == labelBienvenida.Name)
+                {
+                    c.Text = c.Text.Replace("{SessionManager.GestorSessionManager.DevolverNombre()}", $"{SessionManager.GestorSessionManager.DevolverNombre()}");
+                }
+
                 if (c.HasChildren)
                 {
                     RecorrerControles(c, traductor);

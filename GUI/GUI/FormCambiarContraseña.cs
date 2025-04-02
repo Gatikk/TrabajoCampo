@@ -46,7 +46,6 @@ namespace GUI
                 }
             }
         }
-
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -58,12 +57,6 @@ namespace GUI
             BLL_Bitacora bllBitacora = new BLL_Bitacora();
             bllBitacora.AltaBitacora("FormCambiarContraseña", "Cierre de sesión", 1);
             Environment.Exit(0);
-        }
-
-        public void VerificarCambiarContraseña()
-        {
-            buttonCambiarContraseña.Enabled = !string.IsNullOrWhiteSpace(textBoxContraseña.Text) &&
-                                              !string.IsNullOrWhiteSpace(textBoxContraseñaConfirmar.Text);
         }
 
         private void buttonCambiarContraseña_Click(object sender, EventArgs e)
@@ -97,6 +90,11 @@ namespace GUI
                 }
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+        public void VerificarCambiarContraseña()
+        {
+            buttonCambiarContraseña.Enabled = !string.IsNullOrWhiteSpace(textBoxContraseña.Text) &&
+                                              !string.IsNullOrWhiteSpace(textBoxContraseñaConfirmar.Text);
         }
 
         private void textBoxContraseña_TextChanged(object sender, EventArgs e)

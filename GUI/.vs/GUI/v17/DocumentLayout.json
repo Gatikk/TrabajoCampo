@@ -3,20 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\servicios\\traductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|solutionrelative:servicios\\traductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formabm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formabm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formabm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formabm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E495DE8-96DA-431D-9B69-7B8BA9363ECD}|DAO\\DAO.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\dao\\dao_conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E495DE8-96DA-431D-9B69-7B8BA9363ECD}|DAO\\DAO.csproj|solutionrelative:dao\\dao_conexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2E495DE8-96DA-431D-9B69-7B8BA9363ECD}|DAO\\DAO.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\dao\\dao_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2E495DE8-96DA-431D-9B69-7B8BA9363ECD}|DAO\\DAO.csproj|solutionrelative:dao\\dao_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E259BCDD-D48B-4D99-8243-602C1170D5D2}|ORM\\ORM.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\orm\\orm_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E259BCDD-D48B-4D99-8243-602C1170D5D2}|ORM\\ORM.csproj|solutionrelative:orm\\orm_usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E259BCDD-D48B-4D99-8243-602C1170D5D2}|ORM\\ORM.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\orm\\orm_bitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E259BCDD-D48B-4D99-8243-602C1170D5D2}|ORM\\ORM.csproj|solutionrelative:orm\\orm_bitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\servicios\\sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|solutionrelative:servicios\\sessionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\servicios\\traductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|solutionrelative:servicios\\traductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\servicios\\isubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|solutionrelative:servicios\\isubject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\servicios\\iobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS.csproj|solutionrelative:servicios\\iobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formtraductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formtraductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formcambiarcontrase\u00F1a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -25,6 +61,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formcambiarcontrase\u00F1a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formcambiarcontrase\u00F1a.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formtraductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formtraductor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI.csproj|solutionrelative:gui\\formbitacora.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,82 +78,219 @@
       "DocumentGroups": [
         {
           "DockedWidth": 303,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 15,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SessionManager.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\SessionManager.cs",
-              "RelativeDocumentMoniker": "SERVICIOS\\SessionManager.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\SessionManager.cs",
-              "RelativeToolTip": "SERVICIOS\\SessionManager.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAAARAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "DAO_Conexion.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAO\\DAO_Conexion.cs",
+              "RelativeDocumentMoniker": "DAO\\DAO_Conexion.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAO\\DAO_Conexion.cs",
+              "RelativeToolTip": "DAO\\DAO_Conexion.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T08:47:50.298Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Traductor.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\Traductor.cs",
-              "RelativeDocumentMoniker": "SERVICIOS\\Traductor.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\Traductor.cs",
-              "RelativeToolTip": "SERVICIOS\\Traductor.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAACoAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T08:18:46.196Z",
+              "WhenOpened": "2025-04-01T12:56:31.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "FormCambiarContrase\u00F1a.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCambiarContrase\u00F1a.cs",
-              "RelativeDocumentMoniker": "GUI\\FormCambiarContrase\u00F1a.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCambiarContrase\u00F1a.cs",
-              "RelativeToolTip": "GUI\\FormCambiarContrase\u00F1a.cs",
-              "ViewState": "AgIAADoAAAAAAAAAAAAcwBsAAAA0AAAAAAAAAA==",
+              "Title": "ORM_Bitacora.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\ORM\\ORM_Bitacora.cs",
+              "RelativeDocumentMoniker": "ORM\\ORM_Bitacora.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\ORM\\ORM_Bitacora.cs",
+              "RelativeToolTip": "ORM\\ORM_Bitacora.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T04:33:56.644Z",
+              "WhenOpened": "2025-04-01T12:49:36.865Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormCambiarContrase\u00F1a.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCambiarContrase\u00F1a.cs",
-              "RelativeDocumentMoniker": "GUI\\FormCambiarContrase\u00F1a.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCambiarContrase\u00F1a.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\FormCambiarContrase\u00F1a.cs [Dise\u00F1o]",
+              "DocumentIndex": 6,
+              "Title": "SessionManager.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\SessionManager.cs",
+              "RelativeDocumentMoniker": "SERVICIOS\\SessionManager.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\SessionManager.cs",
+              "RelativeToolTip": "SERVICIOS\\SessionManager.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T04:33:54.623Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-04-01T12:48:34.951Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
+              "Title": "ISubject.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\ISubject.cs",
+              "RelativeDocumentMoniker": "SERVICIOS\\ISubject.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\ISubject.cs",
+              "RelativeToolTip": "SERVICIOS\\ISubject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-01T12:16:07.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "FormMenu.cs",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu.cs",
               "RelativeDocumentMoniker": "GUI\\FormMenu.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu.cs",
               "RelativeToolTip": "GUI\\FormMenu.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAowDUAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACAAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T04:30:01.894Z",
+              "WhenOpened": "2025-04-01T12:15:12.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "FormMenu.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu.cs",
               "RelativeDocumentMoniker": "GUI\\FormMenu.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu.cs [Dise\u00F1o]",
               "RelativeToolTip": "GUI\\FormMenu.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T04:30:00.954Z",
+              "WhenOpened": "2025-04-01T12:15:10.81Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "DAO_Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAO\\DAO_Usuario.cs",
+              "RelativeDocumentMoniker": "DAO\\DAO_Usuario.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAO\\DAO_Usuario.cs",
+              "RelativeToolTip": "DAO\\DAO_Usuario.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABMAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T20:41:30.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ORM_Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\ORM\\ORM_Usuario.cs",
+              "RelativeDocumentMoniker": "ORM\\ORM_Usuario.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\ORM\\ORM_Usuario.cs",
+              "RelativeToolTip": "ORM\\ORM_Usuario.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T20:24:26.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "FormBitacora.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormBitacora.cs",
+              "RelativeDocumentMoniker": "GUI\\FormBitacora.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormBitacora.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\FormBitacora.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:30:33.834Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "FormTraductor.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormTraductor.cs",
+              "RelativeDocumentMoniker": "GUI\\FormTraductor.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormTraductor.cs",
+              "RelativeToolTip": "GUI\\FormTraductor.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAAEEAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:29:55.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "FormTraductor.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormTraductor.cs",
+              "RelativeDocumentMoniker": "GUI\\FormTraductor.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormTraductor.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\FormTraductor.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:29:54.204Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IObserver.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\IObserver.cs",
+              "RelativeDocumentMoniker": "SERVICIOS\\IObserver.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\IObserver.cs",
+              "RelativeToolTip": "SERVICIOS\\IObserver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:25:20.366Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Traductor.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\Traductor.cs",
+              "RelativeDocumentMoniker": "SERVICIOS\\Traductor.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\Traductor.cs",
+              "RelativeToolTip": "SERVICIOS\\Traductor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:25:18.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "FormCambiarContrase\u00F1a.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCambiarContrase\u00F1a.cs",
+              "RelativeDocumentMoniker": "GUI\\FormCambiarContrase\u00F1a.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCambiarContrase\u00F1a.cs",
+              "RelativeToolTip": "GUI\\FormCambiarContrase\u00F1a.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAADwvxsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:24:40.076Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "FormCambiarContrase\u00F1a.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCambiarContrase\u00F1a.cs",
+              "RelativeDocumentMoniker": "GUI\\FormCambiarContrase\u00F1a.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCambiarContrase\u00F1a.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\FormCambiarContrase\u00F1a.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:24:38.994Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FormABM.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormABM.cs",
+              "RelativeDocumentMoniker": "GUI\\FormABM.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormABM.cs",
+              "RelativeToolTip": "GUI\\FormABM.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAmwKQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:14:59.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormABM.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormABM.cs",
+              "RelativeDocumentMoniker": "GUI\\FormABM.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormABM.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\FormABM.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-26T18:14:57.078Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
 using SERVICIOS;
 using System;
 using System.Collections.Generic;
@@ -61,6 +62,8 @@ namespace GUI
             VerificarComboBox();
             Actualizar(Traductor.GestorTraductor);
             Traductor.GestorTraductor.CambiarIdioma();
+            BLL_Bitacora bllBitacora = new BLL_Bitacora();
+            bllBitacora.AltaBitacora("FormTraductor", "Cambio Idioma", 1);
         }
 
         public void LlenarComboBoxIdiomas()
