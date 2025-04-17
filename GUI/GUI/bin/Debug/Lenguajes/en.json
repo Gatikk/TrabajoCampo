@@ -24,7 +24,7 @@
   "labelConfirmarContraseña": "Confirm Password",
   "buttonCambiarContraseña": "Change Password",
   "buttonCerrarSesion": "Log Out",
-  "labelBienvenida": "Welcome @{SessionManager.GestorSessionManager.DevolverNombre()}",
+  "labelBienvenida": "Welcome @{SessionManager.GestorSessionManager.sesion.NombreUsuario}",
   "buttonABM": "CRUD",
   "buttonBitacora": "Log",
   "buttonAceptarCambioIdioma": "Accept",

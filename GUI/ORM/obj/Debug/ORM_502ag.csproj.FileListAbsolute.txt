@@ -1,0 +1,11 @@
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\bin\Debug\ORM.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\bin\Debug\ORM.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\bin\Debug\BE.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\bin\Debug\DAO.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\bin\Debug\BE.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\bin\Debug\DAO.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\obj\Debug\ORM_502ag.csproj.AssemblyReference.cache
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\obj\Debug\ORM_502ag.csproj.CoreCompileInputs.cache
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\obj\Debug\ORM_502ag.csproj.Up2Date
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\obj\Debug\ORM.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\ORM\obj\Debug\ORM.pdb

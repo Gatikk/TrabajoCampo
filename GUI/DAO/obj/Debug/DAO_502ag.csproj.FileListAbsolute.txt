@@ -1,0 +1,6 @@
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\bin\Debug\DAO.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\bin\Debug\DAO.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\obj\Debug\DAO_502ag.csproj.AssemblyReference.cache
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\obj\Debug\DAO_502ag.csproj.CoreCompileInputs.cache
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\DAO\obj\Debug\DAO.pdb

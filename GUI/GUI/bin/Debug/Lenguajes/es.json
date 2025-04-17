@@ -24,7 +24,7 @@
 "labelConfirmarContraseña":"Confirmar Contraseña",
 "buttonCambiarContraseña":"Cambiar Contaraseña",
 "buttonCerrarSesion":"Cerrar Sesión",
-"labelBienvenida":"Bienvenido @{SessionManager.GestorSessionManager.DevolverNombre()}",
+"labelBienvenida":"Bienvenido @{SessionManager.GestorSessionManager.sesion.NombreUsuario}",
 "buttonABM":"ABM",
 "buttonBitacora": "Bitácora",
 "buttonAceptarCambioIdioma": "Aceptar",
