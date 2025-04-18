@@ -28,7 +28,7 @@ namespace GUI
             menu = menuOriginal;
         }
 
-        public void Actualizar(Traductor_502ag traductor)
+        public void Actualizar_502ag(Traductor_502ag traductor)
         {
             RecorrerControles(this, traductor);
         }
@@ -56,21 +56,21 @@ namespace GUI
         private void buttonAceptarCambioIdioma_Click(object sender, EventArgs e)
         {
             BLL_Usuario_502ag usuarioBLL = new BLL_Usuario_502ag();
-            usuarioBLL.CambiarIdioma(cBLenguajes.SelectedItem.ToString());
+            usuarioBLL.CambiarIdioma_502ag(cBLenguajes.SelectedItem.ToString());
             cBLenguajes.Items.Clear();
             LlenarComboBoxIdiomas();
             VerificarComboBox();
-            Actualizar(Traductor_502ag.GestorTraductor);
+            Actualizar_502ag(Traductor_502ag.GestorTraductor);
             Traductor_502ag.GestorTraductor.CambiarIdioma();
             BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
-            bllBitacora.AltaBitacora("FormTraductor", "Cambio Idioma", 1);
+            bllBitacora.AltaBitacora_502ag("FormTraductor", "Cambio Idioma", 1);
         }
 
         public void LlenarComboBoxIdiomas()
         {
             foreach(string idioma in Traductor_502ag.GestorTraductor.DevolverListaIdiomas())
             {
-                if(!(cBLenguajes.Items.Contains(idioma)) && SessionManager_502ag.GestorSessionManager.sesion.Idioma != idioma)
+                if(!(cBLenguajes.Items.Contains(idioma)) && SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.Idioma_502ag != idioma)
                 {
                     cBLenguajes.Items.Add(idioma);
                 }
@@ -93,7 +93,7 @@ namespace GUI
         private void FormTraductor_FormClosed(object sender, FormClosedEventArgs e)
         {
             BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
-            bllBitacora.AltaBitacora("FormABM", "Cierre de sesión", 1);
+            bllBitacora.AltaBitacora_502ag("FormABM", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 

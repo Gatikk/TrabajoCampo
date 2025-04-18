@@ -8,6 +8,6 @@ namespace SERVICIOS
 {
     public interface IObserver_502ag
     {
-        void Actualizar(Traductor_502ag traductor);
+        void Actualizar_502ag(Traductor_502ag traductor);
     }
 }

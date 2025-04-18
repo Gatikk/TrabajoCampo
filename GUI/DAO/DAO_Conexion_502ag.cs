@@ -11,24 +11,24 @@ namespace DAO
 {
     public class DAO_Conexion_502ag
     {
-        private static DAO_Conexion_502ag instancia = null;
-        private SqlConnection cx;
+        private static DAO_Conexion_502ag instancia_502ag = null;
+        private SqlConnection cx_502ag;
 
         private DAO_Conexion_502ag()
         {
-            cx = new SqlConnection("Data Source=.;Initial Catalog=BD_502ag;Integrated Security=True");
+            cx_502ag = new SqlConnection("Data Source=.;Initial Catalog=BD_502ag;Integrated Security=True");
         }
-        public static DAO_Conexion_502ag DevolverInstancia()
+        public static DAO_Conexion_502ag DevolverInstancia_502ag()
         {
-            if (instancia == null)
+            if (instancia_502ag == null)
             {
-                instancia = new DAO_Conexion_502ag();  
+                instancia_502ag = new DAO_Conexion_502ag();  
             }
-            return instancia;
+            return instancia_502ag;
         }      
-        public SqlConnection DevolverCX()
+        public SqlConnection DevolverCX_502ag()
         {
-            return cx;
+            return cx_502ag;
         }
 
     }

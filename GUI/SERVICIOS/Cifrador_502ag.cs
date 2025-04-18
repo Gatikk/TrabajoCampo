@@ -9,7 +9,7 @@ namespace SERVICIOS
 {
     public class Cifrador_502ag
     {
-        public string CifradorIrreversible(string s)
+        public string CifradorIrreversible_502ag(string s)
         {
             using (var sha256 = SHA256.Create())
             {

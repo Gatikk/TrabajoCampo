@@ -10,31 +10,31 @@ namespace DAO
 {
     public class DAO_Usuario_502ag
     {
-        SqlDataAdapter ad;
-        DataTable dtUsuario;
+        SqlDataAdapter sqlDataAdapter_502ag;
+        DataTable dtUsuario_502ag;
 
         public DAO_Usuario_502ag()
         {
-            DAO_Conexion_502ag conexion = DAO_Conexion_502ag.DevolverInstancia();
-            SqlConnection cx = conexion.DevolverCX();
-            ad = new SqlDataAdapter("SELECT * FROM Usuario_502ag", cx);
-            SqlCommandBuilder cmb = new SqlCommandBuilder(ad);
-            ad.InsertCommand = cmb.GetInsertCommand();
-            ad.DeleteCommand = cmb.GetDeleteCommand();
-            ad.UpdateCommand = cmb.GetUpdateCommand();
-            dtUsuario = new DataTable();
-            ad.Fill(dtUsuario);
-            dtUsuario.PrimaryKey = new DataColumn[] { dtUsuario.Columns[0] };
+            DAO_Conexion_502ag conexion_502ag = DAO_Conexion_502ag.DevolverInstancia_502ag();
+            SqlConnection cx_502ag = conexion_502ag.DevolverCX_502ag();
+            sqlDataAdapter_502ag = new SqlDataAdapter("SELECT * FROM Usuario_502ag", cx_502ag);
+            SqlCommandBuilder cmb_502ag = new SqlCommandBuilder(sqlDataAdapter_502ag);
+            sqlDataAdapter_502ag.InsertCommand = cmb_502ag.GetInsertCommand();
+            sqlDataAdapter_502ag.DeleteCommand = cmb_502ag.GetDeleteCommand();
+            sqlDataAdapter_502ag.UpdateCommand = cmb_502ag.GetUpdateCommand();
+            dtUsuario_502ag = new DataTable();
+            sqlDataAdapter_502ag.Fill(dtUsuario_502ag);
+            dtUsuario_502ag.PrimaryKey = new DataColumn[] { dtUsuario_502ag.Columns["DNI_502ag"] };
         }
 
-        public DataTable DevolverDTUsuario()
+        public DataTable DevolverDTUsuario_502ag()
         {
-            return dtUsuario;
+            return dtUsuario_502ag;
 
         }
-        public void Actualizar()
+        public void Actualizar_502ag()
         {
-            ad.Update(dtUsuario);
+            sqlDataAdapter_502ag.Update(dtUsuario_502ag);
         }
     }
 }

@@ -8,39 +8,41 @@ namespace BE
 {
     public class BE_Usuario_502ag
     {
-        public string NombreUsuario { get; set; }    
-        public string Contraseña { get; set; }
-        public string Rol { get; set; }
-        public string Nombre {  get; set; }
-        public string Apellido { get; set; }
-        public string DNI {  get; set; }    
-        public string Email {  get; set; }  
-        public bool isBloqueado {  get; set; }  
-        public int Intentos { get; set; }
-        public string Idioma { get; set; }
+        public string DNI_502ag {  get; set; }    
+        public string NombreUsuario_502ag { get; set; }    
+        public string Contraseña_502ag { get; set; }
+        public string Rol_502ag { get; set; }
+        public string Nombre_502ag {  get; set; }
+        public string Apellido_502ag { get; set; }
+        public string Email_502ag {  get; set; }  
+        public bool isBloqueado_502ag {  get; set; }  
+        public int Intentos_502ag { get; set; }
+        public string Idioma_502ag { get; set; }
+        public bool isActivo_502ag { get; set; }
 
-        public BE_Usuario_502ag(string pNombreUsuario, string pContraseña, string pRol, string pNombre,string pApellido, string pDNI, string pEmail, bool pIsBloqueado, int pIntentos, string pIdioma) 
+        public BE_Usuario_502ag(string pDNI_502ag, string pNombreUsuario_502ag, string pContraseña_502ag, string pRol_502ag, string pNombre_502ag,string pApellido_502ag,  string pEmail_502ag, bool pIsBloqueado_502ag, int pIntentos_502ag, string pIdioma_502ag, bool pIsActivo_502ag) 
         {
-            NombreUsuario = pNombreUsuario;
-            Contraseña = pContraseña;
-            Rol = pRol;
-            Nombre = pNombre;
-            Apellido = pApellido;
-            DNI = pDNI;
-            Email = pEmail;
-            isBloqueado = pIsBloqueado;
-            Intentos = pIntentos;
-            Idioma = pIdioma;
+            DNI_502ag = pDNI_502ag;
+            NombreUsuario_502ag = pNombreUsuario_502ag;
+            Contraseña_502ag = pContraseña_502ag;
+            Rol_502ag = pRol_502ag;
+            Nombre_502ag = pNombre_502ag;
+            Apellido_502ag = pApellido_502ag;
+            Email_502ag = pEmail_502ag;
+            isBloqueado_502ag = pIsBloqueado_502ag;
+            Intentos_502ag = pIntentos_502ag;
+            Idioma_502ag = pIdioma_502ag;
+            isActivo_502ag = pIsActivo_502ag;
         }       
         
-        public BE_Usuario_502ag(string pNombreUsuario, string pRol, string pNombre, string pApellido, string pDNI, string pEmail) 
+        public BE_Usuario_502ag(string pDNI_502ag, string pNombreUsuario_502ag, string pRol_502ag, string pNombre_502ag, string pApellido_502ag, string pEmail_502ag) 
         { 
-            NombreUsuario= pNombreUsuario;
-            Rol= pRol;
-            Nombre= pNombre;
-            Apellido= pApellido;
-            DNI= pDNI;
-            Email = pEmail;
+            DNI_502ag= pDNI_502ag;
+            NombreUsuario_502ag= pNombreUsuario_502ag;
+            Rol_502ag= pRol_502ag;
+            Nombre_502ag= pNombre_502ag;
+            Apellido_502ag= pApellido_502ag;
+            Email_502ag = pEmail_502ag;
         }
     }
 }

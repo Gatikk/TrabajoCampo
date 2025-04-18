@@ -25,12 +25,12 @@ namespace GUI
             InitializeComponent();
             SuscribirFormularios(Traductor_502ag.GestorTraductor);
             Traductor_502ag.GestorTraductor.CargarIdioma();
-            Actualizar(Traductor_502ag.GestorTraductor);
+            Actualizar_502ag(Traductor_502ag.GestorTraductor);
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500,200);
         }
 
-        public void Actualizar(Traductor_502ag traductor)
+        public void Actualizar_502ag(Traductor_502ag traductor)
         {
             RecorrerControles(this, traductor);
         }
@@ -43,7 +43,7 @@ namespace GUI
 
                 if(c.Name == labelBienvenida.Name)
                 {
-                    c.Text = c.Text.Replace("{SessionManager.GestorSessionManager.sesion.NombreUsuario}", $"{SessionManager_502ag.GestorSessionManager.sesion.NombreUsuario}");
+                    c.Text = c.Text.Replace("{SessionManager.GestorSessionManager.sesion.NombreUsuario}", $"{SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.NombreUsuario_502ag}");
                 }
 
                 if (c.HasChildren)
@@ -66,8 +66,8 @@ namespace GUI
         {
             FormLogin_502ag loginForm = new FormLogin_502ag();
             BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
-            bllBitacora.AltaBitacora("FormMenu", "Cierre de sesión", 1);
-            SessionManager_502ag.GestorSessionManager.CerrarSesion();
+            bllBitacora.AltaBitacora_502ag("FormMenu", "Cierre de sesión", 1);
+            SessionManager_502ag.GestorSessionManager_502ag.CerrarSesion();
             this.Hide();
             loginForm.Show();
         }
@@ -75,14 +75,14 @@ namespace GUI
         private void buttonCerrarAplicacion_Click(object sender, EventArgs e)
         {
             BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
-            bllBitacora.AltaBitacora("FormMenu", "Cierre de sesión", 1);
+            bllBitacora.AltaBitacora_502ag("FormMenu", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
-            bllBitacora.AltaBitacora("FormMenu", "Cierre de sesión", 1);
+            bllBitacora.AltaBitacora_502ag("FormMenu", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 

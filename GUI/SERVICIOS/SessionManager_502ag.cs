@@ -10,8 +10,8 @@ namespace SERVICIOS
     public class SessionManager_502ag
     {
         private static SessionManager_502ag instanciaSessionManager;
-        public BE_Usuario_502ag sesion;
-        public static SessionManager_502ag GestorSessionManager
+        public BE_Usuario_502ag sesion_502ag;
+        public static SessionManager_502ag GestorSessionManager_502ag
         {
             get { 
                 if (instanciaSessionManager == null)
@@ -21,19 +21,19 @@ namespace SERVICIOS
                 return instanciaSessionManager;
             }
         }
-        public BE_Usuario_502ag IniciarSesion(BE_Usuario_502ag usuario)
+        public BE_Usuario_502ag IniciarSesion_502ag(BE_Usuario_502ag usuario)
         {
-            if (sesion == null)
+            if (sesion_502ag == null)
             {
-                sesion = usuario;
+                sesion_502ag = usuario;
             }
-            return sesion;
+            return sesion_502ag;
         }
         public void CerrarSesion()
         {
-            if(sesion != null)
+            if(sesion_502ag != null)
             {
-                sesion = null;
+                sesion_502ag = null;
             }
         }
         public void CambiarIdioma()

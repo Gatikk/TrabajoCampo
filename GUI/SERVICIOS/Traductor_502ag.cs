@@ -41,12 +41,12 @@ namespace SERVICIOS
         {
             foreach (var observer in listaObserver)
             {
-                observer.Actualizar(GestorTraductor);
+                observer.Actualizar_502ag(GestorTraductor);
             }
         }
         public void CargarIdioma()
         {
-            string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{SessionManager_502ag.GestorSessionManager.sesion.Idioma}.json");
+            string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.Idioma_502ag}.json");
             if (File.Exists(rutaArchivo))
             {
                 string json = File.ReadAllText(rutaArchivo);

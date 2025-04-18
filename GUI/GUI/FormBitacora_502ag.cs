@@ -27,7 +27,7 @@ namespace GUI
         private void FormBitacora_FormClosed(object sender, FormClosedEventArgs e)
         {
             BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
-            bllBitacora.AltaBitacora("FormBitacora", "Cierre de sesión", 1);
+            bllBitacora.AltaBitacora_502ag("FormBitacora", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 

@@ -12,71 +12,83 @@ namespace ORM
 {
     public class ORM_Usuario_502ag
     {
-        DAO_Usuario_502ag daoUsuario = new DAO_Usuario_502ag();
-        public List<BE_Usuario_502ag> DevolverListaUsuarios()
+        DAO_Usuario_502ag daoUsuario_502ag = new DAO_Usuario_502ag();
+        public List<BE_Usuario_502ag> DevolverListaUsuarios_502ag()
         {
-            List<BE_Usuario_502ag> listaUsuarios = new List<BE_Usuario_502ag>();
-            foreach(DataRow dr in daoUsuario.DevolverDTUsuario().Rows)
+            List<BE_Usuario_502ag> listaUsuarios_502ag = new List<BE_Usuario_502ag>();
+            foreach(DataRow dr_502ag in daoUsuario_502ag.DevolverDTUsuario_502ag().Rows)
             {
-                if(dr.RowState != DataRowState.Deleted)
+                if(dr_502ag.RowState != DataRowState.Deleted)
                 {
-                    BE_Usuario_502ag usuario = new BE_Usuario_502ag(
-                        dr["NombreUsuario_502ag"].ToString(), 
-                        dr["Contraseña_502ag"].ToString(), 
-                        dr["Rol_502ag"].ToString(), 
-                        dr["Nombre_502ag"].ToString(), 
-                        dr["Apellido_502ag"].ToString(), 
-                        dr["DNI_502ag"].ToString(), 
-                        dr["Email_502ag"].ToString(), 
-                        Convert.ToBoolean(dr["IsBloqueado_502ag"].ToString()), 
-                        int.Parse(dr["Intentos_502ag"].ToString()), 
-                        dr["Idioma_502ag"].ToString());
-                    listaUsuarios.Add(usuario);
+                    BE_Usuario_502ag usuario_502ag = new BE_Usuario_502ag(
+                        dr_502ag["DNI_502ag"].ToString(), 
+                        dr_502ag["NombreUsuario_502ag"].ToString(), 
+                        dr_502ag["Contraseña_502ag"].ToString(), 
+                        dr_502ag["Rol_502ag"].ToString(), 
+                        dr_502ag["Nombre_502ag"].ToString(), 
+                        dr_502ag["Apellido_502ag"].ToString(), 
+                        dr_502ag["Email_502ag"].ToString(), 
+                        Convert.ToBoolean(dr_502ag["IsBloqueado_502ag"].ToString()), 
+                        int.Parse(dr_502ag["Intentos_502ag"].ToString()), 
+                        dr_502ag["Idioma_502ag"].ToString(),
+                        Convert.ToBoolean(dr_502ag["IsActivo_502ag"])        
+                        );
+                    listaUsuarios_502ag.Add(usuario_502ag);
                 }
             }
-            return listaUsuarios;
+            return listaUsuarios_502ag;
         }
-        public void ActualizarBloqueo(BE_Usuario_502ag entidad)
+        public void ActualizarBloqueo_502ag(BE_Usuario_502ag usuario_502ag)
         {
-            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
-            dr["IsBloqueado_502ag"] = entidad.isBloqueado;
-            dr["Intentos_502ag"] = entidad.Intentos;
-            dr["Contraseña_502ag"] = entidad.Contraseña;
-            daoUsuario.Actualizar();
+            DataRow dr_502ag = daoUsuario_502ag.DevolverDTUsuario_502ag().Rows.Find(usuario_502ag.DNI_502ag);
+            dr_502ag["IsBloqueado_502ag"] = usuario_502ag.isBloqueado_502ag;
+            dr_502ag["Intentos_502ag"] = usuario_502ag.Intentos_502ag;
+            dr_502ag["Contraseña_502ag"] = usuario_502ag.Contraseña_502ag;
+            daoUsuario_502ag.Actualizar_502ag();
         }
 
-        public void ActualizarContraseña(BE_Usuario_502ag entidad)
+        public void ActualizarContraseña_502ag(BE_Usuario_502ag usuario_502ag)
         {
-            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
-            dr["Contraseña_502ag"] = entidad.Contraseña;
-            daoUsuario.Actualizar();
+            DataRow dr_502ag = daoUsuario_502ag.DevolverDTUsuario_502ag().Rows.Find(usuario_502ag.DNI_502ag);
+            dr_502ag["Contraseña_502ag"] = usuario_502ag.Contraseña_502ag;
+            daoUsuario_502ag.Actualizar_502ag();
         }
-        public void ActualizarIdioma(BE_Usuario_502ag entidad)
+        public void ActualizarIdioma_502ag(BE_Usuario_502ag usuario_502ag)
         {
-            DataRow dr = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
-            dr["Idioma_502ag"] = entidad.Idioma;
-            daoUsuario.Actualizar();
+            DataRow dr_502ag = daoUsuario_502ag.DevolverDTUsuario_502ag().Rows.Find(usuario_502ag.DNI_502ag);
+            dr_502ag["Idioma_502ag"] = usuario_502ag.Idioma_502ag;
+            daoUsuario_502ag.Actualizar_502ag();
         }
+        #region ActivarDesactivar
+        public void ActualizarActivo_502ag(BE_Usuario_502ag usuario_502ag)
+        {
+            DataRow dr_502ag = daoUsuario_502ag.DevolverDTUsuario_502ag().Rows.Find(usuario_502ag.DNI_502ag);
+            dr_502ag["IsActivo_502ag"] = usuario_502ag.isActivo_502ag;
+            daoUsuario_502ag.Actualizar_502ag();
+        }
+
+        #endregion
+
 
         #region ABM
         #region Alta
-        public void AltaUsuario_502ag(BE_Usuario_502ag entidad)
+        public void AltaUsuario_502ag(BE_Usuario_502ag usuario_502ag)
         {
-            daoUsuario.DevolverDTUsuario().Rows.Add(entidad.NombreUsuario, entidad.Contraseña, entidad.Rol, entidad.Nombre, entidad.Apellido, entidad.DNI, entidad.Email, entidad.isBloqueado, entidad.Intentos, entidad.Idioma);
-            daoUsuario.Actualizar();
+            daoUsuario_502ag.DevolverDTUsuario_502ag().Rows.Add(usuario_502ag.DNI_502ag, usuario_502ag.NombreUsuario_502ag, usuario_502ag.Contraseña_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.Intentos_502ag, usuario_502ag.Idioma_502ag, usuario_502ag.isActivo_502ag);
+            daoUsuario_502ag.Actualizar_502ag();
         }
         #endregion
-        public void Baja(BE_Usuario_502ag entidad)
+        public void Baja(BE_Usuario_502ag usuario_502ag)
         {
-            DataRow drBaja = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
+            DataRow drBaja = daoUsuario_502ag.DevolverDTUsuario_502ag().Rows.Find(usuario_502ag.NombreUsuario_502ag);
             drBaja.Delete();
-            daoUsuario.Actualizar();
+            daoUsuario_502ag.Actualizar_502ag();
         }
-        public void Modificar(BE_Usuario_502ag entidad)
+        public void Modificar_502ag(BE_Usuario_502ag usuario_502ag)
         {
-            DataRow drModificar = daoUsuario.DevolverDTUsuario().Rows.Find(entidad.NombreUsuario);
-            drModificar.ItemArray = new object[] {entidad.NombreUsuario, entidad.Contraseña, entidad.Rol, entidad.Nombre, entidad.Apellido, entidad.DNI, entidad.Email, entidad.isBloqueado, entidad.Intentos };
-            daoUsuario.Actualizar();
+            DataRow drModificar_502ag = daoUsuario_502ag.DevolverDTUsuario_502ag().Rows.Find(usuario_502ag.DNI_502ag);
+            drModificar_502ag.ItemArray = new object[] {usuario_502ag.DNI_502ag, usuario_502ag.NombreUsuario_502ag, usuario_502ag.Contraseña_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag,  usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.Intentos_502ag, usuario_502ag.isActivo_502ag };
+            daoUsuario_502ag.Actualizar_502ag();
         }
         #endregion
     }

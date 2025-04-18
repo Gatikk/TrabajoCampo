@@ -15,8 +15,8 @@ namespace DAO
 
         public DAO_Bitacora_502ag()
         {
-            DAO_Conexion_502ag conexion = DAO_Conexion_502ag.DevolverInstancia();
-            SqlConnection cx = conexion.DevolverCX();
+            DAO_Conexion_502ag conexion = DAO_Conexion_502ag.DevolverInstancia_502ag();
+            SqlConnection cx = conexion.DevolverCX_502ag();
             ad = new SqlDataAdapter("SELECT * FROM Bitacora_502ag", cx);
             SqlCommandBuilder cmb = new SqlCommandBuilder(ad);
             ad.InsertCommand = cmb.GetInsertCommand();

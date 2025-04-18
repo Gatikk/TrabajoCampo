@@ -28,251 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonVolverAlMenu = new System.Windows.Forms.Button();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-            this.buttonAltaUsuario = new System.Windows.Forms.Button();
-            this.buttonBajaUsuario = new System.Windows.Forms.Button();
-            this.buttonModificarUsuario = new System.Windows.Forms.Button();
-            this.tBNombreUsuario = new System.Windows.Forms.TextBox();
-            this.tBNombre = new System.Windows.Forms.TextBox();
-            this.tBApellido = new System.Windows.Forms.TextBox();
-            this.tBDNI = new System.Windows.Forms.TextBox();
-            this.tBEmail = new System.Windows.Forms.TextBox();
+            this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
+            this.dgvUsuarios_502ag = new System.Windows.Forms.DataGridView();
+            this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaBloqueado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.buttonAltaUsuario_502ag = new System.Windows.Forms.Button();
+            this.buttonModificarUsuario_502ag = new System.Windows.Forms.Button();
+            this.tBNombreUsuario_502ag = new System.Windows.Forms.TextBox();
+            this.tBNombre_502ag = new System.Windows.Forms.TextBox();
+            this.tBApellido_502ag = new System.Windows.Forms.TextBox();
+            this.tBDNI_502ag = new System.Windows.Forms.TextBox();
+            this.tBEmail_502ag = new System.Windows.Forms.TextBox();
             this.labelNombreUsuario = new System.Windows.Forms.Label();
             this.labelRol = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
             this.labelDNI = new System.Windows.Forms.Label();
             this.labelEmail = new System.Windows.Forms.Label();
-            this.buttonBloquear = new System.Windows.Forms.Button();
-            this.buttonDesbloquear = new System.Windows.Forms.Button();
-            this.cBRol = new System.Windows.Forms.ComboBox();
-            this.ColumnaIntentos = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaBloqueado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaContraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            this.buttonBloquear_502ag = new System.Windows.Forms.Button();
+            this.buttonDesbloquear_502ag = new System.Windows.Forms.Button();
+            this.cBRol_502ag = new System.Windows.Forms.ComboBox();
+            this.buttonAplicar_502ag = new System.Windows.Forms.Button();
+            this.buttonCancelar_502ag = new System.Windows.Forms.Button();
+            this.buttonActivarDesactivar_502ag = new System.Windows.Forms.Button();
+            this.rBActivos_502ag = new System.Windows.Forms.RadioButton();
+            this.rBTodos_502ag = new System.Windows.Forms.RadioButton();
+            this.tBModoActual_502ag = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios_502ag)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonVolverAlMenu
+            // buttonVolverAlMenu_502ag
             // 
-            this.buttonVolverAlMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVolverAlMenu.Location = new System.Drawing.Point(640, 402);
-            this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
-            this.buttonVolverAlMenu.Size = new System.Drawing.Size(132, 47);
-            this.buttonVolverAlMenu.TabIndex = 2;
-            this.buttonVolverAlMenu.Text = "Volver al Menú";
-            this.buttonVolverAlMenu.UseVisualStyleBackColor = true;
-            this.buttonVolverAlMenu.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
+            this.buttonVolverAlMenu_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVolverAlMenu_502ag.Location = new System.Drawing.Point(640, 405);
+            this.buttonVolverAlMenu_502ag.Name = "buttonVolverAlMenu_502ag";
+            this.buttonVolverAlMenu_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonVolverAlMenu_502ag.TabIndex = 2;
+            this.buttonVolverAlMenu_502ag.Text = "Volver al Menú";
+            this.buttonVolverAlMenu_502ag.UseVisualStyleBackColor = true;
+            this.buttonVolverAlMenu_502ag.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
             // 
-            // dgvUsuarios
+            // dgvUsuarios_502ag
             // 
-            this.dgvUsuarios.AllowUserToAddRows = false;
-            this.dgvUsuarios.AllowUserToDeleteRows = false;
-            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsuarios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvUsuarios_502ag.AllowUserToAddRows = false;
+            this.dgvUsuarios_502ag.AllowUserToDeleteRows = false;
+            this.dgvUsuarios_502ag.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUsuarios_502ag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUsuarios_502ag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaUsuario,
-            this.ColumnaContraseña,
             this.ColumnaRol,
             this.ColumnaNombre,
             this.ColumnaApellido,
             this.ColumnaDNI,
             this.ColumnaEmail,
             this.ColumnaBloqueado,
-            this.ColumnaIntentos});
-            this.dgvUsuarios.Location = new System.Drawing.Point(12, 12);
-            this.dgvUsuarios.MultiSelect = false;
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(760, 251);
-            this.dgvUsuarios.TabIndex = 3;
-            this.dgvUsuarios.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
+            this.ColumnaActivo});
+            this.dgvUsuarios_502ag.Location = new System.Drawing.Point(12, 53);
+            this.dgvUsuarios_502ag.MultiSelect = false;
+            this.dgvUsuarios_502ag.Name = "dgvUsuarios_502ag";
+            this.dgvUsuarios_502ag.ReadOnly = true;
+            this.dgvUsuarios_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvUsuarios_502ag.Size = new System.Drawing.Size(760, 210);
+            this.dgvUsuarios_502ag.TabIndex = 3;
+            this.dgvUsuarios_502ag.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
             // 
-            // buttonAltaUsuario
+            // ColumnaUsuario
             // 
-            this.buttonAltaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAltaUsuario.Location = new System.Drawing.Point(12, 282);
-            this.buttonAltaUsuario.Name = "buttonAltaUsuario";
-            this.buttonAltaUsuario.Size = new System.Drawing.Size(132, 47);
-            this.buttonAltaUsuario.TabIndex = 4;
-            this.buttonAltaUsuario.Text = "Alta Usuario";
-            this.buttonAltaUsuario.UseVisualStyleBackColor = true;
-            this.buttonAltaUsuario.Click += new System.EventHandler(this.buttonAltaUsuario_Click);
+            this.ColumnaUsuario.HeaderText = "Usuario_T";
+            this.ColumnaUsuario.Name = "ColumnaUsuario";
+            this.ColumnaUsuario.ReadOnly = true;
             // 
-            // buttonBajaUsuario
+            // ColumnaRol
             // 
-            this.buttonBajaUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBajaUsuario.Location = new System.Drawing.Point(12, 345);
-            this.buttonBajaUsuario.Name = "buttonBajaUsuario";
-            this.buttonBajaUsuario.Size = new System.Drawing.Size(132, 47);
-            this.buttonBajaUsuario.TabIndex = 5;
-            this.buttonBajaUsuario.Text = "Baja Usuario";
-            this.buttonBajaUsuario.UseVisualStyleBackColor = true;
-            this.buttonBajaUsuario.Click += new System.EventHandler(this.buttonBajaUsuario_Click);
+            this.ColumnaRol.HeaderText = "Rol_T";
+            this.ColumnaRol.Name = "ColumnaRol";
+            this.ColumnaRol.ReadOnly = true;
             // 
-            // buttonModificarUsuario
+            // ColumnaNombre
             // 
-            this.buttonModificarUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonModificarUsuario.Location = new System.Drawing.Point(12, 405);
-            this.buttonModificarUsuario.Name = "buttonModificarUsuario";
-            this.buttonModificarUsuario.Size = new System.Drawing.Size(132, 47);
-            this.buttonModificarUsuario.TabIndex = 6;
-            this.buttonModificarUsuario.Text = "Modificar Usuario";
-            this.buttonModificarUsuario.UseVisualStyleBackColor = true;
-            this.buttonModificarUsuario.Click += new System.EventHandler(this.buttonModificarUsuario_Click);
+            this.ColumnaNombre.HeaderText = "Nombre_T";
+            this.ColumnaNombre.Name = "ColumnaNombre";
+            this.ColumnaNombre.ReadOnly = true;
             // 
-            // tBNombreUsuario
+            // ColumnaApellido
             // 
-            this.tBNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBNombreUsuario.Location = new System.Drawing.Point(342, 282);
-            this.tBNombreUsuario.Name = "tBNombreUsuario";
-            this.tBNombreUsuario.Size = new System.Drawing.Size(175, 23);
-            this.tBNombreUsuario.TabIndex = 9;
-            this.tBNombreUsuario.TextChanged += new System.EventHandler(this.tBNombreUsuario_TextChanged);
+            this.ColumnaApellido.HeaderText = "Apellido_T";
+            this.ColumnaApellido.Name = "ColumnaApellido";
+            this.ColumnaApellido.ReadOnly = true;
             // 
-            // tBNombre
+            // ColumnaDNI
             // 
-            this.tBNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBNombre.Location = new System.Drawing.Point(342, 340);
-            this.tBNombre.Name = "tBNombre";
-            this.tBNombre.Size = new System.Drawing.Size(175, 23);
-            this.tBNombre.TabIndex = 11;
-            this.tBNombre.TextChanged += new System.EventHandler(this.tBNombre_TextChanged);
+            this.ColumnaDNI.HeaderText = "DNI_T";
+            this.ColumnaDNI.Name = "ColumnaDNI";
+            this.ColumnaDNI.ReadOnly = true;
             // 
-            // tBApellido
+            // ColumnaEmail
             // 
-            this.tBApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBApellido.Location = new System.Drawing.Point(342, 369);
-            this.tBApellido.Name = "tBApellido";
-            this.tBApellido.Size = new System.Drawing.Size(175, 23);
-            this.tBApellido.TabIndex = 12;
-            this.tBApellido.TextChanged += new System.EventHandler(this.tBApellido_TextChanged);
-            // 
-            // tBDNI
-            // 
-            this.tBDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBDNI.Location = new System.Drawing.Point(342, 400);
-            this.tBDNI.Name = "tBDNI";
-            this.tBDNI.Size = new System.Drawing.Size(175, 23);
-            this.tBDNI.TabIndex = 13;
-            this.tBDNI.TextChanged += new System.EventHandler(this.tBDNI_TextChanged);
-            // 
-            // tBEmail
-            // 
-            this.tBEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBEmail.Location = new System.Drawing.Point(342, 429);
-            this.tBEmail.Name = "tBEmail";
-            this.tBEmail.Size = new System.Drawing.Size(175, 23);
-            this.tBEmail.TabIndex = 15;
-            this.tBEmail.TextChanged += new System.EventHandler(this.tBEmail_TextChanged);
-            // 
-            // labelNombreUsuario
-            // 
-            this.labelNombreUsuario.AutoSize = true;
-            this.labelNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelNombreUsuario.Location = new System.Drawing.Point(263, 285);
-            this.labelNombreUsuario.Name = "labelNombreUsuario";
-            this.labelNombreUsuario.Size = new System.Drawing.Size(74, 17);
-            this.labelNombreUsuario.TabIndex = 16;
-            this.labelNombreUsuario.Text = "Usuario_T";
-            // 
-            // labelRol
-            // 
-            this.labelRol.AutoSize = true;
-            this.labelRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelRol.Location = new System.Drawing.Point(263, 314);
-            this.labelRol.Name = "labelRol";
-            this.labelRol.Size = new System.Drawing.Size(46, 17);
-            this.labelRol.TabIndex = 17;
-            this.labelRol.Text = "Rol_T";
-            // 
-            // labelNombre
-            // 
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelNombre.Location = new System.Drawing.Point(263, 343);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(75, 17);
-            this.labelNombre.TabIndex = 18;
-            this.labelNombre.Text = "Nombre_T";
-            // 
-            // labelApellido
-            // 
-            this.labelApellido.AutoSize = true;
-            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelApellido.Location = new System.Drawing.Point(263, 372);
-            this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(75, 17);
-            this.labelApellido.TabIndex = 19;
-            this.labelApellido.Text = "Apellido_T";
-            // 
-            // labelDNI
-            // 
-            this.labelDNI.AutoSize = true;
-            this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelDNI.Location = new System.Drawing.Point(263, 403);
-            this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(48, 17);
-            this.labelDNI.TabIndex = 20;
-            this.labelDNI.Text = "DNI_T";
-            // 
-            // labelEmail
-            // 
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelEmail.Location = new System.Drawing.Point(263, 432);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(59, 17);
-            this.labelEmail.TabIndex = 21;
-            this.labelEmail.Text = "Email_T";
-            // 
-            // buttonBloquear
-            // 
-            this.buttonBloquear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBloquear.Location = new System.Drawing.Point(640, 282);
-            this.buttonBloquear.Name = "buttonBloquear";
-            this.buttonBloquear.Size = new System.Drawing.Size(132, 47);
-            this.buttonBloquear.TabIndex = 23;
-            this.buttonBloquear.Text = "Bloquear Usuario";
-            this.buttonBloquear.UseVisualStyleBackColor = true;
-            this.buttonBloquear.Click += new System.EventHandler(this.buttonBloquear_Click);
-            // 
-            // buttonDesbloquear
-            // 
-            this.buttonDesbloquear.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonDesbloquear.Location = new System.Drawing.Point(640, 342);
-            this.buttonDesbloquear.Name = "buttonDesbloquear";
-            this.buttonDesbloquear.Size = new System.Drawing.Size(132, 47);
-            this.buttonDesbloquear.TabIndex = 24;
-            this.buttonDesbloquear.Text = "Desbloquear Usuario";
-            this.buttonDesbloquear.UseVisualStyleBackColor = true;
-            this.buttonDesbloquear.Click += new System.EventHandler(this.buttonDesbloquear_Click);
-            // 
-            // cBRol
-            // 
-            this.cBRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cBRol.FormattingEnabled = true;
-            this.cBRol.Items.AddRange(new object[] {
-            "normal",
-            "admin"});
-            this.cBRol.Location = new System.Drawing.Point(342, 311);
-            this.cBRol.Name = "cBRol";
-            this.cBRol.Size = new System.Drawing.Size(175, 24);
-            this.cBRol.TabIndex = 25;
-            this.cBRol.SelectedIndexChanged += new System.EventHandler(this.cBRol_SelectedIndexChanged);
-            // 
-            // ColumnaIntentos
-            // 
-            this.ColumnaIntentos.HeaderText = "Intentos_T";
-            this.ColumnaIntentos.Name = "ColumnaIntentos";
-            this.ColumnaIntentos.ReadOnly = true;
+            this.ColumnaEmail.HeaderText = "Email_T";
+            this.ColumnaEmail.Name = "ColumnaEmail";
+            this.ColumnaEmail.ReadOnly = true;
+            this.ColumnaEmail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // ColumnaBloqueado
             // 
@@ -282,77 +143,271 @@
             this.ColumnaBloqueado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnaBloqueado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // ColumnaEmail
+            // ColumnaActivo
             // 
-            this.ColumnaEmail.HeaderText = "Email_T";
-            this.ColumnaEmail.Name = "ColumnaEmail";
-            this.ColumnaEmail.ReadOnly = true;
-            this.ColumnaEmail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnaActivo.HeaderText = "isActivo_T";
+            this.ColumnaActivo.Name = "ColumnaActivo";
+            this.ColumnaActivo.ReadOnly = true;
+            this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // ColumnaDNI
+            // buttonAltaUsuario_502ag
             // 
-            this.ColumnaDNI.HeaderText = "DNI_T";
-            this.ColumnaDNI.Name = "ColumnaDNI";
-            this.ColumnaDNI.ReadOnly = true;
+            this.buttonAltaUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAltaUsuario_502ag.Location = new System.Drawing.Point(12, 282);
+            this.buttonAltaUsuario_502ag.Name = "buttonAltaUsuario_502ag";
+            this.buttonAltaUsuario_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonAltaUsuario_502ag.TabIndex = 4;
+            this.buttonAltaUsuario_502ag.Text = "Alta Usuario";
+            this.buttonAltaUsuario_502ag.UseVisualStyleBackColor = true;
+            this.buttonAltaUsuario_502ag.Click += new System.EventHandler(this.buttonAltaUsuario_502ag_Click);
             // 
-            // ColumnaApellido
+            // buttonModificarUsuario_502ag
             // 
-            this.ColumnaApellido.HeaderText = "Apellido_T";
-            this.ColumnaApellido.Name = "ColumnaApellido";
-            this.ColumnaApellido.ReadOnly = true;
+            this.buttonModificarUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonModificarUsuario_502ag.Location = new System.Drawing.Point(161, 282);
+            this.buttonModificarUsuario_502ag.Name = "buttonModificarUsuario_502ag";
+            this.buttonModificarUsuario_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonModificarUsuario_502ag.TabIndex = 6;
+            this.buttonModificarUsuario_502ag.Text = "Modificar Usuario";
+            this.buttonModificarUsuario_502ag.UseVisualStyleBackColor = true;
+            this.buttonModificarUsuario_502ag.Click += new System.EventHandler(this.buttonModificarUsuario_502ag_Click);
             // 
-            // ColumnaNombre
+            // tBNombreUsuario_502ag
             // 
-            this.ColumnaNombre.HeaderText = "Nombre_T";
-            this.ColumnaNombre.Name = "ColumnaNombre";
-            this.ColumnaNombre.ReadOnly = true;
+            this.tBNombreUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tBNombreUsuario_502ag.Location = new System.Drawing.Point(444, 282);
+            this.tBNombreUsuario_502ag.Name = "tBNombreUsuario_502ag";
+            this.tBNombreUsuario_502ag.Size = new System.Drawing.Size(175, 23);
+            this.tBNombreUsuario_502ag.TabIndex = 9;
             // 
-            // ColumnaRol
+            // tBNombre_502ag
             // 
-            this.ColumnaRol.HeaderText = "Rol_T";
-            this.ColumnaRol.Name = "ColumnaRol";
-            this.ColumnaRol.ReadOnly = true;
+            this.tBNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tBNombre_502ag.Location = new System.Drawing.Point(444, 372);
+            this.tBNombre_502ag.Name = "tBNombre_502ag";
+            this.tBNombre_502ag.Size = new System.Drawing.Size(175, 23);
+            this.tBNombre_502ag.TabIndex = 11;
             // 
-            // ColumnaContraseña
+            // tBApellido_502ag
             // 
-            this.ColumnaContraseña.HeaderText = "Contraseña_T";
-            this.ColumnaContraseña.Name = "ColumnaContraseña";
-            this.ColumnaContraseña.ReadOnly = true;
+            this.tBApellido_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tBApellido_502ag.Location = new System.Drawing.Point(444, 401);
+            this.tBApellido_502ag.Name = "tBApellido_502ag";
+            this.tBApellido_502ag.Size = new System.Drawing.Size(175, 23);
+            this.tBApellido_502ag.TabIndex = 12;
             // 
-            // ColumnaUsuario
+            // tBDNI_502ag
             // 
-            this.ColumnaUsuario.HeaderText = "Usuario_T";
-            this.ColumnaUsuario.Name = "ColumnaUsuario";
-            this.ColumnaUsuario.ReadOnly = true;
+            this.tBDNI_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tBDNI_502ag.Location = new System.Drawing.Point(444, 314);
+            this.tBDNI_502ag.Name = "tBDNI_502ag";
+            this.tBDNI_502ag.Size = new System.Drawing.Size(175, 23);
+            this.tBDNI_502ag.TabIndex = 13;
             // 
-            // FormABM
+            // tBEmail_502ag
+            // 
+            this.tBEmail_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tBEmail_502ag.Location = new System.Drawing.Point(444, 429);
+            this.tBEmail_502ag.Name = "tBEmail_502ag";
+            this.tBEmail_502ag.Size = new System.Drawing.Size(175, 23);
+            this.tBEmail_502ag.TabIndex = 15;
+            // 
+            // labelNombreUsuario
+            // 
+            this.labelNombreUsuario.AutoSize = true;
+            this.labelNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelNombreUsuario.Location = new System.Drawing.Point(365, 285);
+            this.labelNombreUsuario.Name = "labelNombreUsuario";
+            this.labelNombreUsuario.Size = new System.Drawing.Size(74, 17);
+            this.labelNombreUsuario.TabIndex = 16;
+            this.labelNombreUsuario.Text = "Usuario_T";
+            // 
+            // labelRol
+            // 
+            this.labelRol.AutoSize = true;
+            this.labelRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelRol.Location = new System.Drawing.Point(365, 346);
+            this.labelRol.Name = "labelRol";
+            this.labelRol.Size = new System.Drawing.Size(46, 17);
+            this.labelRol.TabIndex = 17;
+            this.labelRol.Text = "Rol_T";
+            // 
+            // labelNombre
+            // 
+            this.labelNombre.AutoSize = true;
+            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelNombre.Location = new System.Drawing.Point(365, 375);
+            this.labelNombre.Name = "labelNombre";
+            this.labelNombre.Size = new System.Drawing.Size(75, 17);
+            this.labelNombre.TabIndex = 18;
+            this.labelNombre.Text = "Nombre_T";
+            // 
+            // labelApellido
+            // 
+            this.labelApellido.AutoSize = true;
+            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelApellido.Location = new System.Drawing.Point(365, 404);
+            this.labelApellido.Name = "labelApellido";
+            this.labelApellido.Size = new System.Drawing.Size(75, 17);
+            this.labelApellido.TabIndex = 19;
+            this.labelApellido.Text = "Apellido_T";
+            // 
+            // labelDNI
+            // 
+            this.labelDNI.AutoSize = true;
+            this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelDNI.Location = new System.Drawing.Point(365, 317);
+            this.labelDNI.Name = "labelDNI";
+            this.labelDNI.Size = new System.Drawing.Size(48, 17);
+            this.labelDNI.TabIndex = 20;
+            this.labelDNI.Text = "DNI_T";
+            // 
+            // labelEmail
+            // 
+            this.labelEmail.AutoSize = true;
+            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelEmail.Location = new System.Drawing.Point(365, 432);
+            this.labelEmail.Name = "labelEmail";
+            this.labelEmail.Size = new System.Drawing.Size(59, 17);
+            this.labelEmail.TabIndex = 21;
+            this.labelEmail.Text = "Email_T";
+            // 
+            // buttonBloquear_502ag
+            // 
+            this.buttonBloquear_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonBloquear_502ag.Location = new System.Drawing.Point(12, 403);
+            this.buttonBloquear_502ag.Name = "buttonBloquear_502ag";
+            this.buttonBloquear_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonBloquear_502ag.TabIndex = 23;
+            this.buttonBloquear_502ag.Text = "Bloquear Usuario";
+            this.buttonBloquear_502ag.UseVisualStyleBackColor = true;
+            this.buttonBloquear_502ag.Click += new System.EventHandler(this.buttonBloquear_502ag_Click);
+            // 
+            // buttonDesbloquear_502ag
+            // 
+            this.buttonDesbloquear_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonDesbloquear_502ag.Location = new System.Drawing.Point(161, 343);
+            this.buttonDesbloquear_502ag.Name = "buttonDesbloquear_502ag";
+            this.buttonDesbloquear_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonDesbloquear_502ag.TabIndex = 24;
+            this.buttonDesbloquear_502ag.Text = "Desbloquear Usuario";
+            this.buttonDesbloquear_502ag.UseVisualStyleBackColor = true;
+            this.buttonDesbloquear_502ag.Click += new System.EventHandler(this.buttonDesbloquear_502ag_Click);
+            // 
+            // cBRol_502ag
+            // 
+            this.cBRol_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cBRol_502ag.FormattingEnabled = true;
+            this.cBRol_502ag.Items.AddRange(new object[] {
+            "normal",
+            "admin"});
+            this.cBRol_502ag.Location = new System.Drawing.Point(444, 343);
+            this.cBRol_502ag.Name = "cBRol_502ag";
+            this.cBRol_502ag.Size = new System.Drawing.Size(175, 24);
+            this.cBRol_502ag.TabIndex = 25;
+            // 
+            // buttonAplicar_502ag
+            // 
+            this.buttonAplicar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAplicar_502ag.Location = new System.Drawing.Point(640, 282);
+            this.buttonAplicar_502ag.Name = "buttonAplicar_502ag";
+            this.buttonAplicar_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonAplicar_502ag.TabIndex = 26;
+            this.buttonAplicar_502ag.Text = "Aceptar";
+            this.buttonAplicar_502ag.UseVisualStyleBackColor = true;
+            this.buttonAplicar_502ag.Click += new System.EventHandler(this.buttonAplicar_502ag_Click);
+            // 
+            // buttonCancelar_502ag
+            // 
+            this.buttonCancelar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCancelar_502ag.Location = new System.Drawing.Point(640, 343);
+            this.buttonCancelar_502ag.Name = "buttonCancelar_502ag";
+            this.buttonCancelar_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonCancelar_502ag.TabIndex = 27;
+            this.buttonCancelar_502ag.Text = "Cancelar";
+            this.buttonCancelar_502ag.UseVisualStyleBackColor = true;
+            this.buttonCancelar_502ag.Click += new System.EventHandler(this.buttonCancelar_502ag_Click);
+            // 
+            // buttonActivarDesactivar_502ag
+            // 
+            this.buttonActivarDesactivar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonActivarDesactivar_502ag.Location = new System.Drawing.Point(12, 343);
+            this.buttonActivarDesactivar_502ag.Name = "buttonActivarDesactivar_502ag";
+            this.buttonActivarDesactivar_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonActivarDesactivar_502ag.TabIndex = 28;
+            this.buttonActivarDesactivar_502ag.Text = "Activar / Desactivar";
+            this.buttonActivarDesactivar_502ag.UseVisualStyleBackColor = true;
+            this.buttonActivarDesactivar_502ag.Click += new System.EventHandler(this.buttonActivarDesactivar_502ag_Click);
+            // 
+            // rBActivos_502ag
+            // 
+            this.rBActivos_502ag.AutoSize = true;
+            this.rBActivos_502ag.Checked = true;
+            this.rBActivos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rBActivos_502ag.Location = new System.Drawing.Point(492, 3);
+            this.rBActivos_502ag.Name = "rBActivos_502ag";
+            this.rBActivos_502ag.Size = new System.Drawing.Size(88, 21);
+            this.rBActivos_502ag.TabIndex = 29;
+            this.rBActivos_502ag.TabStop = true;
+            this.rBActivos_502ag.Text = "Activos_T";
+            this.rBActivos_502ag.UseVisualStyleBackColor = true;
+            // 
+            // rBTodos_502ag
+            // 
+            this.rBTodos_502ag.AutoSize = true;
+            this.rBTodos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rBTodos_502ag.Location = new System.Drawing.Point(492, 26);
+            this.rBTodos_502ag.Name = "rBTodos_502ag";
+            this.rBTodos_502ag.Size = new System.Drawing.Size(83, 21);
+            this.rBTodos_502ag.TabIndex = 30;
+            this.rBTodos_502ag.Text = "Todos_T";
+            this.rBTodos_502ag.UseVisualStyleBackColor = true;
+            this.rBTodos_502ag.CheckedChanged += new System.EventHandler(this.rBTodos_502ag_CheckedChanged);
+            // 
+            // tBModoActual_502ag
+            // 
+            this.tBModoActual_502ag.Enabled = false;
+            this.tBModoActual_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tBModoActual_502ag.Location = new System.Drawing.Point(12, 12);
+            this.tBModoActual_502ag.Name = "tBModoActual_502ag";
+            this.tBModoActual_502ag.Size = new System.Drawing.Size(159, 26);
+            this.tBModoActual_502ag.TabIndex = 31;
+            this.tBModoActual_502ag.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // FormABMUsuario_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(788, 461);
-            this.Controls.Add(this.cBRol);
-            this.Controls.Add(this.buttonDesbloquear);
-            this.Controls.Add(this.buttonBloquear);
+            this.Controls.Add(this.tBModoActual_502ag);
+            this.Controls.Add(this.rBTodos_502ag);
+            this.Controls.Add(this.rBActivos_502ag);
+            this.Controls.Add(this.buttonActivarDesactivar_502ag);
+            this.Controls.Add(this.buttonCancelar_502ag);
+            this.Controls.Add(this.buttonAplicar_502ag);
+            this.Controls.Add(this.cBRol_502ag);
+            this.Controls.Add(this.buttonDesbloquear_502ag);
+            this.Controls.Add(this.buttonBloquear_502ag);
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelDNI);
             this.Controls.Add(this.labelApellido);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.labelRol);
             this.Controls.Add(this.labelNombreUsuario);
-            this.Controls.Add(this.tBEmail);
-            this.Controls.Add(this.tBDNI);
-            this.Controls.Add(this.tBApellido);
-            this.Controls.Add(this.tBNombre);
-            this.Controls.Add(this.tBNombreUsuario);
-            this.Controls.Add(this.buttonModificarUsuario);
-            this.Controls.Add(this.buttonBajaUsuario);
-            this.Controls.Add(this.buttonAltaUsuario);
-            this.Controls.Add(this.dgvUsuarios);
-            this.Controls.Add(this.buttonVolverAlMenu);
-            this.Name = "FormABM";
+            this.Controls.Add(this.tBEmail_502ag);
+            this.Controls.Add(this.tBDNI_502ag);
+            this.Controls.Add(this.tBApellido_502ag);
+            this.Controls.Add(this.tBNombre_502ag);
+            this.Controls.Add(this.tBNombreUsuario_502ag);
+            this.Controls.Add(this.buttonModificarUsuario_502ag);
+            this.Controls.Add(this.buttonAltaUsuario_502ag);
+            this.Controls.Add(this.dgvUsuarios_502ag);
+            this.Controls.Add(this.buttonVolverAlMenu_502ag);
+            this.Name = "FormABMUsuario_502ag";
             this.Text = "FormABM";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormABM_FormClosed);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios_502ag)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,33 +415,37 @@
 
         #endregion
 
-        private System.Windows.Forms.Button buttonVolverAlMenu;
-        private System.Windows.Forms.DataGridView dgvUsuarios;
-        private System.Windows.Forms.Button buttonAltaUsuario;
-        private System.Windows.Forms.Button buttonBajaUsuario;
-        private System.Windows.Forms.Button buttonModificarUsuario;
-        private System.Windows.Forms.TextBox tBNombreUsuario;
-        private System.Windows.Forms.TextBox tBNombre;
-        private System.Windows.Forms.TextBox tBApellido;
-        private System.Windows.Forms.TextBox tBDNI;
-        private System.Windows.Forms.TextBox tBEmail;
+        private System.Windows.Forms.Button buttonVolverAlMenu_502ag;
+        private System.Windows.Forms.DataGridView dgvUsuarios_502ag;
+        private System.Windows.Forms.Button buttonAltaUsuario_502ag;
+        private System.Windows.Forms.Button buttonModificarUsuario_502ag;
+        private System.Windows.Forms.TextBox tBNombreUsuario_502ag;
+        private System.Windows.Forms.TextBox tBNombre_502ag;
+        private System.Windows.Forms.TextBox tBApellido_502ag;
+        private System.Windows.Forms.TextBox tBDNI_502ag;
+        private System.Windows.Forms.TextBox tBEmail_502ag;
         private System.Windows.Forms.Label labelNombreUsuario;
         private System.Windows.Forms.Label labelRol;
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label labelApellido;
         private System.Windows.Forms.Label labelDNI;
         private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.Button buttonBloquear;
-        private System.Windows.Forms.Button buttonDesbloquear;
-        private System.Windows.Forms.ComboBox cBRol;
+        private System.Windows.Forms.Button buttonBloquear_502ag;
+        private System.Windows.Forms.Button buttonDesbloquear_502ag;
+        private System.Windows.Forms.ComboBox cBRol_502ag;
+        private System.Windows.Forms.Button buttonAplicar_502ag;
+        private System.Windows.Forms.Button buttonCancelar_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaUsuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaContraseña;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaApellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEmail;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaBloqueado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaIntentos;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaActivo;
+        private System.Windows.Forms.Button buttonActivarDesactivar_502ag;
+        private System.Windows.Forms.RadioButton rBActivos_502ag;
+        private System.Windows.Forms.RadioButton rBTodos_502ag;
+        private System.Windows.Forms.TextBox tBModoActual_502ag;
     }
 }
