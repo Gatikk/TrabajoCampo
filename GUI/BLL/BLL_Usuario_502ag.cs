@@ -19,7 +19,7 @@ namespace BLL
         {
             ORM_Usuario_502ag ormUsuario_502ag = new ORM_Usuario_502ag();
             usuario_502ag.Intentos_502ag = 0;
-            SessionManager_502ag.GestorSessionManager_502ag.IniciarSesion_502ag(usuario_502ag);
+            SessionManager_502ag.GestorSessionManager_502ag.IniciarSesion_502ag(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Idioma_502ag, usuario_502ag.Rol_502ag, usuario_502ag.DNI_502ag);
             ormUsuario_502ag.ActualizarBloqueo_502ag(usuario_502ag);
         }
         public void SesionFallida_502ag(BE_Usuario_502ag entidad)
@@ -141,9 +141,10 @@ namespace BLL
         #endregion
         public void CambiarIdioma_502ag(string nuevoIdioma)
         {
-            SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.Idioma_502ag = nuevoIdioma;
+            SessionManager_502ag.GestorSessionManager_502ag.idioma_502ag= nuevoIdioma;
             ORM_Usuario_502ag ormUsuario = new ORM_Usuario_502ag();
-            ormUsuario.ActualizarIdioma_502ag(SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag);
+            BE_Usuario_502ag usuario_502ag = ormUsuario.DevolverListaUsuarios_502ag().Find(x => x.NombreUsuario_502ag == SessionManager_502ag.GestorSessionManager_502ag.nombreUsuario_502ag);
+            ormUsuario.ActualizarIdioma_502ag(usuario_502ag);
             SessionManager_502ag.GestorSessionManager_502ag.CambiarIdioma();
         }
         #region ActivarDesactivar

@@ -70,7 +70,7 @@ namespace GUI
         {
             foreach(string idioma in Traductor_502ag.GestorTraductor.DevolverListaIdiomas())
             {
-                if(!(cBLenguajes.Items.Contains(idioma)) && SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.Idioma_502ag != idioma)
+                if(!(cBLenguajes.Items.Contains(idioma)) && SessionManager_502ag.GestorSessionManager_502ag.idioma_502ag != idioma)
                 {
                     cBLenguajes.Items.Add(idioma);
                 }

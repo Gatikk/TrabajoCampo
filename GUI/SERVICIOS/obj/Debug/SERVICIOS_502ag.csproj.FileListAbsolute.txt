@@ -1,8 +1,6 @@
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SERVICIOS.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SERVICIOS.pdb
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\BE.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\Newtonsoft.Json.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\BE.pdb
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\Newtonsoft.Json.xml
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS_502ag.csproj.AssemblyReference.cache
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS_502ag.csproj.CoreCompileInputs.cache

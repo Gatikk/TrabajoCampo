@@ -314,7 +314,7 @@
             this.buttonAplicar_502ag.Name = "buttonAplicar_502ag";
             this.buttonAplicar_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonAplicar_502ag.TabIndex = 26;
-            this.buttonAplicar_502ag.Text = "Aceptar";
+            this.buttonAplicar_502ag.Text = "Aplicar";
             this.buttonAplicar_502ag.UseVisualStyleBackColor = true;
             this.buttonAplicar_502ag.Click += new System.EventHandler(this.buttonAplicar_502ag_Click);
             // 

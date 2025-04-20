@@ -295,7 +295,8 @@ namespace GUI
             try
             {
                 BLL_Usuario_502ag bllUsuario_502ag = new BLL_Usuario_502ag();
-                BE_Usuario_502ag usuario_502ag = bllUsuario_502ag.DevolverUsuario_502ag(dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString());
+                string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
+                BE_Usuario_502ag usuario_502ag = bllUsuario_502ag.DevolverUsuario_502ag(dni_502ag);
                 if (!bllUsuario_502ag.VerificarRol_502ag(usuario_502ag))
                 {
                     bllUsuario_502ag.ActivarDesactivar_502ag(usuario_502ag);
@@ -305,9 +306,8 @@ namespace GUI
                 }
                 else
                 {
-                    throw new Exception($"El usuario que queres desactivar es {$"{dgvUsuarios_502ag.SelectedRows[0].Cells[1].Value.ToString()}"}");
+                    throw new Exception($"El usuario que queres modificar es {$"{dgvUsuarios_502ag.SelectedRows[0].Cells[1].Value.ToString()}"}");
                 }
-
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }

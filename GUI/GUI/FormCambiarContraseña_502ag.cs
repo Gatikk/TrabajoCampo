@@ -67,7 +67,7 @@ namespace GUI
                 string confirmarContraseña_502ag = textBoxContraseñaConfirmar_502ag.Text;
                 if(bllUsuario_502ag.VerificarCoincidencia_502ag(contraseña_502ag, confirmarContraseña_502ag))
                 {
-                    string dni_502ag = SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.DNI_502ag;
+                    string dni_502ag = SessionManager_502ag.GestorSessionManager_502ag.dni_502ag;
                     BE_Usuario_502ag usuario_502ag = bllUsuario_502ag.DevolverUsuario_502ag(dni_502ag);
                     if(!bllUsuario_502ag.VerificarContraseñaActual_502ag(contraseña_502ag, usuario_502ag))
                     {

@@ -43,7 +43,7 @@ namespace GUI
 
                 if(c.Name == labelBienvenida.Name)
                 {
-                    c.Text = c.Text.Replace("{SessionManager.GestorSessionManager.sesion.NombreUsuario}", $"{SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.NombreUsuario_502ag}");
+                    c.Text = c.Text.Replace("{SessionManager.GestorSessionManager.sesion.NombreUsuario}", $"{SessionManager_502ag.GestorSessionManager_502ag.nombreUsuario_502ag}");
                 }
 
                 if (c.HasChildren)
