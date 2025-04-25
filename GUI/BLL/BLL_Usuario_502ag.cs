@@ -215,11 +215,6 @@ namespace BLL
         }
         #endregion
         
-        public void Baja(BE_Usuario_502ag usuario_502ag)
-        {
-            ORM_Usuario_502ag ormUsuario_502ag = new ORM_Usuario_502ag();
-            ormUsuario_502ag.Baja(usuario_502ag);
-        }
         #region Modificar
         public void ModificarUsuario_502ag(BE_Usuario_502ag usuario_502ag)
         {

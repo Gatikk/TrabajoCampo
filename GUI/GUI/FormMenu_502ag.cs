@@ -28,6 +28,10 @@ namespace GUI
             Actualizar_502ag(Traductor_502ag.GestorTraductor);
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500,200);
+            panelSubMenuAdmin_502ag.Visible = false;
+            panelSubMenuUsuario_502ag.Visible=false;
+            
+            
         }
 
         public void Actualizar_502ag(Traductor_502ag traductor)
@@ -72,13 +76,6 @@ namespace GUI
             loginForm.Show();
         }
 
-        private void buttonCerrarAplicacion_Click(object sender, EventArgs e)
-        {
-            BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
-            bllBitacora.AltaBitacora_502ag("FormMenu", "Cierre de sesión", 1);
-            Environment.Exit(0);
-        }
-
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
@@ -110,5 +107,39 @@ namespace GUI
             traductorForm.Show();
         }
 
+        private void esconderSubMenu_502ag()
+        {
+            if(panelSubMenuAdmin_502ag.Visible == true)
+            {
+                panelSubMenuAdmin_502ag.Visible = false;
+            }
+            if(panelSubMenuUsuario_502ag.Visible == true)
+            {
+                panelSubMenuUsuario_502ag.Visible=false;
+            }
+        }
+
+        private void mostrarSubMenu_502ag(Panel subMenu_502ag)
+        {
+            if(subMenu_502ag.Visible == false)
+            {
+                esconderSubMenu_502ag();
+                subMenu_502ag.Visible = true;
+            }
+            else
+            {
+                subMenu_502ag.Visible = false;
+            }
+        }
+
+        private void buttonAdmin_502ag_Click(object sender, EventArgs e)
+        {
+            mostrarSubMenu_502ag(panelSubMenuAdmin_502ag);
+        }
+
+        private void buttonUsuario_502ag_Click(object sender, EventArgs e)
+        {
+            mostrarSubMenu_502ag(panelSubMenuUsuario_502ag);
+        }
     }
 }

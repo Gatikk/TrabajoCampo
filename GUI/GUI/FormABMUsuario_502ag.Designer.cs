@@ -92,7 +92,6 @@
             this.dgvUsuarios_502ag.Location = new System.Drawing.Point(12, 53);
             this.dgvUsuarios_502ag.MultiSelect = false;
             this.dgvUsuarios_502ag.Name = "dgvUsuarios_502ag";
-            this.dgvUsuarios_502ag.ReadOnly = true;
             this.dgvUsuarios_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios_502ag.Size = new System.Drawing.Size(760, 210);
             this.dgvUsuarios_502ag.TabIndex = 3;
@@ -102,44 +101,37 @@
             // 
             this.ColumnaUsuario.HeaderText = "Usuario_T";
             this.ColumnaUsuario.Name = "ColumnaUsuario";
-            this.ColumnaUsuario.ReadOnly = true;
             // 
             // ColumnaRol
             // 
             this.ColumnaRol.HeaderText = "Rol_T";
             this.ColumnaRol.Name = "ColumnaRol";
-            this.ColumnaRol.ReadOnly = true;
             // 
             // ColumnaNombre
             // 
             this.ColumnaNombre.HeaderText = "Nombre_T";
             this.ColumnaNombre.Name = "ColumnaNombre";
-            this.ColumnaNombre.ReadOnly = true;
             // 
             // ColumnaApellido
             // 
             this.ColumnaApellido.HeaderText = "Apellido_T";
             this.ColumnaApellido.Name = "ColumnaApellido";
-            this.ColumnaApellido.ReadOnly = true;
             // 
             // ColumnaDNI
             // 
             this.ColumnaDNI.HeaderText = "DNI_T";
             this.ColumnaDNI.Name = "ColumnaDNI";
-            this.ColumnaDNI.ReadOnly = true;
             // 
             // ColumnaEmail
             // 
             this.ColumnaEmail.HeaderText = "Email_T";
             this.ColumnaEmail.Name = "ColumnaEmail";
-            this.ColumnaEmail.ReadOnly = true;
             this.ColumnaEmail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // ColumnaBloqueado
             // 
             this.ColumnaBloqueado.HeaderText = "isBloqueado_T";
             this.ColumnaBloqueado.Name = "ColumnaBloqueado";
-            this.ColumnaBloqueado.ReadOnly = true;
             this.ColumnaBloqueado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnaBloqueado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -147,7 +139,6 @@
             // 
             this.ColumnaActivo.HeaderText = "isActivo_T";
             this.ColumnaActivo.Name = "ColumnaActivo";
-            this.ColumnaActivo.ReadOnly = true;
             this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -215,6 +206,9 @@
             // 
             // labelNombreUsuario
             // 
+            this.labelNombreUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNombreUsuario.AutoSize = true;
             this.labelNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelNombreUsuario.Location = new System.Drawing.Point(365, 285);
@@ -225,6 +219,9 @@
             // 
             // labelRol
             // 
+            this.labelRol.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelRol.AutoSize = true;
             this.labelRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelRol.Location = new System.Drawing.Point(365, 346);
@@ -235,6 +232,9 @@
             // 
             // labelNombre
             // 
+            this.labelNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelNombre.Location = new System.Drawing.Point(365, 375);
@@ -245,6 +245,9 @@
             // 
             // labelApellido
             // 
+            this.labelApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelApellido.AutoSize = true;
             this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelApellido.Location = new System.Drawing.Point(365, 404);
@@ -255,6 +258,9 @@
             // 
             // labelDNI
             // 
+            this.labelDNI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDNI.AutoSize = true;
             this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelDNI.Location = new System.Drawing.Point(365, 317);
@@ -265,6 +271,9 @@
             // 
             // labelEmail
             // 
+            this.labelEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelEmail.Location = new System.Drawing.Point(365, 432);

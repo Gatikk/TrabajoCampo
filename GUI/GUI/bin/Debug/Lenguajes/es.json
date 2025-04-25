@@ -26,7 +26,7 @@
 "buttonCambiarContraseña":"Cambiar Contaraseña",
 "buttonCerrarSesion":"Cerrar Sesión",
 "labelBienvenida":"Bienvenido @{SessionManager.GestorSessionManager.sesion.NombreUsuario}",
-"buttonABM":"ABM",
+"buttonABM":"Gestión de Usuarios",
 "buttonBitacora": "Bitácora",
 "buttonAceptarCambioIdioma": "Aceptar",
 "buttonCambiarIdioma": "Cambiar Idioma",
@@ -35,5 +35,7 @@
 "buttonCancelar_502ag": "Cancelar",
 "rBActivos_502ag":"Activos",
 "rBTodos_502ag":"Todos",
-"buttonActivarDesactivar_502ag":"Activar / Desactivar"
+"buttonActivarDesactivar_502ag":"Activar / Desactivar",
+"buttonAdmin_502ag":"Admin",
+"buttonUsuario_502ag":"Usuario"
 }
