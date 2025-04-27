@@ -1,5 +1,5 @@
-﻿using BE;
-using BLL;
+﻿using BE_502ag;
+using BLL_502ag;
 using SERVICIOS;
 using System;
 using System.Collections.Generic;

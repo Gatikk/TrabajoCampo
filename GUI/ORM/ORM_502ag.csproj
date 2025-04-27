@@ -50,10 +50,6 @@
       <Project>{a1f49354-b160-4edf-a9a3-cf0f261050e4}</Project>
       <Name>BE_502ag</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DAO\DAO_502ag.csproj">
-      <Project>{2e495de8-96da-431d-9b69-7b8ba9363ecd}</Project>
-      <Name>DAO_502ag</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

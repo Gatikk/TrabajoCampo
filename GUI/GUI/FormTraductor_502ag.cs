@@ -1,5 +1,5 @@
-﻿using BE;
-using BLL;
+﻿using BE_502ag;
+using BLL_502ag;
 using SERVICIOS;
 using System;
 using System.Collections.Generic;
@@ -70,7 +70,7 @@ namespace GUI
         {
             foreach(string idioma in Traductor_502ag.GestorTraductor.DevolverListaIdiomas())
             {
-                if(!(cBLenguajes.Items.Contains(idioma)) && SessionManager_502ag.GestorSessionManager_502ag.idioma_502ag != idioma)
+                if(!(cBLenguajes.Items.Contains(idioma)) && SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.Idioma_502ag != idioma)
                 {
                     cBLenguajes.Items.Add(idioma);
                 }
@@ -92,8 +92,8 @@ namespace GUI
 
         private void FormTraductor_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
-            bllBitacora.AltaBitacora_502ag("FormABM", "Cierre de sesión", 1);
+            BLL_Bitacora_502ag bllBitacora_502ag = new BLL_Bitacora_502ag();
+            bllBitacora_502ag.AltaBitacora_502ag("FormTraductor", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 

@@ -1,5 +1,5 @@
-﻿using BE;
-using BLL;
+﻿using BE_502ag;
+using BLL_502ag;
 using SERVICIOS;
 using System;
 using System.Collections.Generic;
@@ -67,8 +67,7 @@ namespace GUI
                 string confirmarContraseña_502ag = textBoxContraseñaConfirmar_502ag.Text;
                 if(bllUsuario_502ag.VerificarCoincidencia_502ag(contraseña_502ag, confirmarContraseña_502ag))
                 {
-                    string dni_502ag = SessionManager_502ag.GestorSessionManager_502ag.dni_502ag;
-                    BE_Usuario_502ag usuario_502ag = bllUsuario_502ag.DevolverUsuario_502ag(dni_502ag);
+                    SER_Usuario_502ag usuario_502ag = SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag;
                     if(!bllUsuario_502ag.VerificarContraseñaActual_502ag(contraseña_502ag, usuario_502ag))
                     {
                         bllUsuario_502ag.CambiarContraseña_502ag(contraseña_502ag, usuario_502ag);
@@ -97,7 +96,7 @@ namespace GUI
         public void VerificarCambiarContraseña()
         {
             buttonCambiarContraseña_502ag.Enabled = !string.IsNullOrWhiteSpace(textBoxContraseña_502ag.Text) &&
-                                              !string.IsNullOrWhiteSpace(textBoxContraseñaConfirmar_502ag.Text);
+                                                    !string.IsNullOrWhiteSpace(textBoxContraseñaConfirmar_502ag.Text);
         }
 
         private void textBoxContraseña_TextChanged(object sender, EventArgs e)

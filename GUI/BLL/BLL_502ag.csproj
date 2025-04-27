@@ -50,9 +50,9 @@
       <Project>{a1f49354-b160-4edf-a9a3-cf0f261050e4}</Project>
       <Name>BE_502ag</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ORM\ORM_502ag.csproj">
-      <Project>{e259bcdd-d48b-4d99-8243-602c1170d5d2}</Project>
-      <Name>ORM_502ag</Name>
+    <ProjectReference Include="..\DAL_502ag\DAL_502ag.csproj">
+      <Project>{37b342dc-44c8-4f52-8c46-3a5897334505}</Project>
+      <Name>DAL_502ag</Name>
     </ProjectReference>
     <ProjectReference Include="..\SERVICIOS\SERVICIOS_502ag.csproj">
       <Project>{97c3da2e-2bc5-47bc-846c-ed911c08a729}</Project>

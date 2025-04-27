@@ -42,21 +42,40 @@ namespace GUI
             this.panelSubMenuAdmin_502ag = new System.Windows.Forms.Panel();
             this.buttonUsuario_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuUsuario_502ag = new System.Windows.Forms.Panel();
+            this.buttonIniciarSesion_502ag = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonAyuda_502ag = new System.Windows.Forms.Button();
+            this.buttonReportes_502ag = new System.Windows.Forms.Button();
+            this.buttonVentas_502ag = new System.Windows.Forms.Button();
+            this.buttonMaestros_502ag = new System.Windows.Forms.Button();
+            this.panelSubMenuMaestros_502ag = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.panelSubMenuVentas_502ag = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.panelSubMenuReportes_502ag = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.panelMenuLateral_502ag.SuspendLayout();
             this.panelSubMenuAdmin_502ag.SuspendLayout();
             this.panelSubMenuUsuario_502ag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelSubMenuMaestros_502ag.SuspendLayout();
+            this.panelSubMenuVentas_502ag.SuspendLayout();
+            this.panelSubMenuReportes_502ag.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonCerrarSesion
             // 
-            this.buttonCerrarSesion.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.buttonCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonCerrarSesion.FlatAppearance.BorderSize = 0;
             this.buttonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCerrarSesion.Location = new System.Drawing.Point(3, 365);
+            this.buttonCerrarSesion.Location = new System.Drawing.Point(0, 41);
             this.buttonCerrarSesion.Name = "buttonCerrarSesion";
+            this.buttonCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCerrarSesion.Size = new System.Drawing.Size(222, 41);
             this.buttonCerrarSesion.TabIndex = 1;
             this.buttonCerrarSesion.Text = "Cerrar Sesión";
@@ -68,14 +87,14 @@ namespace GUI
             // 
             this.labelBienvenida.AutoSize = true;
             this.labelBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.labelBienvenida.Location = new System.Drawing.Point(235, 173);
+            this.labelBienvenida.Location = new System.Drawing.Point(253, 173);
             this.labelBienvenida.Name = "labelBienvenida";
             this.labelBienvenida.Size = new System.Drawing.Size(129, 24);
             this.labelBienvenida.TabIndex = 3;
             this.labelBienvenida.Text = "Bienvenido @";
             this.labelBienvenida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // buttonABM
+            // buttonABM_502ag
             // 
             this.buttonABM_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.buttonABM_502ag.Dock = System.Windows.Forms.DockStyle.Top;
@@ -83,7 +102,7 @@ namespace GUI
             this.buttonABM_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonABM_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonABM_502ag.Location = new System.Drawing.Point(0, 41);
-            this.buttonABM_502ag.Name = "buttonABM";
+            this.buttonABM_502ag.Name = "buttonABM_502ag";
             this.buttonABM_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonABM_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonABM_502ag.TabIndex = 4;
@@ -98,7 +117,7 @@ namespace GUI
             this.buttonCambiarContraseña.FlatAppearance.BorderSize = 0;
             this.buttonCambiarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCambiarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCambiarContraseña.Location = new System.Drawing.Point(0, 41);
+            this.buttonCambiarContraseña.Location = new System.Drawing.Point(0, 123);
             this.buttonCambiarContraseña.Name = "buttonCambiarContraseña";
             this.buttonCambiarContraseña.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCambiarContraseña.Size = new System.Drawing.Size(222, 41);
@@ -150,11 +169,17 @@ namespace GUI
             this.panelMenuLateral_502ag.Controls.Add(this.panelSubMenuAdmin_502ag);
             this.panelMenuLateral_502ag.Controls.Add(this.buttonUsuario_502ag);
             this.panelMenuLateral_502ag.Controls.Add(this.panelSubMenuUsuario_502ag);
-            this.panelMenuLateral_502ag.Controls.Add(this.buttonCerrarSesion);
+            this.panelMenuLateral_502ag.Controls.Add(this.buttonMaestros_502ag);
+            this.panelMenuLateral_502ag.Controls.Add(this.panelSubMenuMaestros_502ag);
+            this.panelMenuLateral_502ag.Controls.Add(this.buttonVentas_502ag);
+            this.panelMenuLateral_502ag.Controls.Add(this.panelSubMenuVentas_502ag);
+            this.panelMenuLateral_502ag.Controls.Add(this.buttonReportes_502ag);
+            this.panelMenuLateral_502ag.Controls.Add(this.panelSubMenuReportes_502ag);
+            this.panelMenuLateral_502ag.Controls.Add(this.buttonAyuda_502ag);
             this.panelMenuLateral_502ag.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenuLateral_502ag.Location = new System.Drawing.Point(0, 0);
             this.panelMenuLateral_502ag.Name = "panelMenuLateral_502ag";
-            this.panelMenuLateral_502ag.Size = new System.Drawing.Size(229, 461);
+            this.panelMenuLateral_502ag.Size = new System.Drawing.Size(245, 461);
             this.panelMenuLateral_502ag.TabIndex = 8;
             // 
             // panelEncabezado_502ag
@@ -163,7 +188,7 @@ namespace GUI
             this.panelEncabezado_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEncabezado_502ag.Location = new System.Drawing.Point(3, 3);
             this.panelEncabezado_502ag.Name = "panelEncabezado_502ag";
-            this.panelEncabezado_502ag.Size = new System.Drawing.Size(222, 64);
+            this.panelEncabezado_502ag.Size = new System.Drawing.Size(222, 51);
             this.panelEncabezado_502ag.TabIndex = 9;
             // 
             // buttonAdmin_502ag
@@ -173,7 +198,7 @@ namespace GUI
             this.buttonAdmin_502ag.FlatAppearance.BorderSize = 0;
             this.buttonAdmin_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdmin_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAdmin_502ag.Location = new System.Drawing.Point(3, 73);
+            this.buttonAdmin_502ag.Location = new System.Drawing.Point(3, 60);
             this.buttonAdmin_502ag.Name = "buttonAdmin_502ag";
             this.buttonAdmin_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonAdmin_502ag.TabIndex = 9;
@@ -187,7 +212,7 @@ namespace GUI
             this.panelSubMenuAdmin_502ag.Controls.Add(this.buttonABM_502ag);
             this.panelSubMenuAdmin_502ag.Controls.Add(this.buttonBitacora);
             this.panelSubMenuAdmin_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuAdmin_502ag.Location = new System.Drawing.Point(3, 126);
+            this.panelSubMenuAdmin_502ag.Location = new System.Drawing.Point(3, 113);
             this.panelSubMenuAdmin_502ag.Name = "panelSubMenuAdmin_502ag";
             this.panelSubMenuAdmin_502ag.Size = new System.Drawing.Size(222, 87);
             this.panelSubMenuAdmin_502ag.TabIndex = 9;
@@ -199,7 +224,7 @@ namespace GUI
             this.buttonUsuario_502ag.FlatAppearance.BorderSize = 0;
             this.buttonUsuario_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonUsuario_502ag.Location = new System.Drawing.Point(3, 219);
+            this.buttonUsuario_502ag.Location = new System.Drawing.Point(3, 206);
             this.buttonUsuario_502ag.Name = "buttonUsuario_502ag";
             this.buttonUsuario_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonUsuario_502ag.TabIndex = 10;
@@ -211,12 +236,30 @@ namespace GUI
             // panelSubMenuUsuario_502ag
             // 
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarContraseña);
+            this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonIniciarSesion_502ag);
+            this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCerrarSesion);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarIdioma);
             this.panelSubMenuUsuario_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuUsuario_502ag.Location = new System.Drawing.Point(3, 272);
+            this.panelSubMenuUsuario_502ag.Location = new System.Drawing.Point(3, 259);
             this.panelSubMenuUsuario_502ag.Name = "panelSubMenuUsuario_502ag";
-            this.panelSubMenuUsuario_502ag.Size = new System.Drawing.Size(222, 87);
+            this.panelSubMenuUsuario_502ag.Size = new System.Drawing.Size(222, 166);
             this.panelSubMenuUsuario_502ag.TabIndex = 11;
+            // 
+            // buttonIniciarSesion_502ag
+            // 
+            this.buttonIniciarSesion_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonIniciarSesion_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonIniciarSesion_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIniciarSesion_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonIniciarSesion_502ag.Location = new System.Drawing.Point(0, 82);
+            this.buttonIniciarSesion_502ag.Name = "buttonIniciarSesion_502ag";
+            this.buttonIniciarSesion_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonIniciarSesion_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonIniciarSesion_502ag.TabIndex = 10;
+            this.buttonIniciarSesion_502ag.Text = "Iniciar Sesión";
+            this.buttonIniciarSesion_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonIniciarSesion_502ag.UseVisualStyleBackColor = true;
+            this.buttonIniciarSesion_502ag.Click += new System.EventHandler(this.buttonIniciarSesion_502ag_Click);
             // 
             // pictureBox1
             // 
@@ -227,6 +270,204 @@ namespace GUI
             this.pictureBox1.Size = new System.Drawing.Size(267, 149);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // buttonAyuda_502ag
+            // 
+            this.buttonAyuda_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonAyuda_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 916);
+            this.buttonAyuda_502ag.Name = "buttonAyuda_502ag";
+            this.buttonAyuda_502ag.Size = new System.Drawing.Size(222, 47);
+            this.buttonAyuda_502ag.TabIndex = 12;
+            this.buttonAyuda_502ag.Text = "Ayuda";
+            this.buttonAyuda_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonAyuda_502ag.UseVisualStyleBackColor = false;
+            // 
+            // buttonReportes_502ag
+            // 
+            this.buttonReportes_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonReportes_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonReportes_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonReportes_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReportes_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 724);
+            this.buttonReportes_502ag.Name = "buttonReportes_502ag";
+            this.buttonReportes_502ag.Size = new System.Drawing.Size(222, 47);
+            this.buttonReportes_502ag.TabIndex = 13;
+            this.buttonReportes_502ag.Text = "Reportes";
+            this.buttonReportes_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonReportes_502ag.UseVisualStyleBackColor = false;
+            this.buttonReportes_502ag.Click += new System.EventHandler(this.buttonReportes_502ag_Click);
+            // 
+            // buttonVentas_502ag
+            // 
+            this.buttonVentas_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonVentas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonVentas_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonVentas_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVentas_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVentas_502ag.Location = new System.Drawing.Point(3, 581);
+            this.buttonVentas_502ag.Name = "buttonVentas_502ag";
+            this.buttonVentas_502ag.Size = new System.Drawing.Size(222, 47);
+            this.buttonVentas_502ag.TabIndex = 15;
+            this.buttonVentas_502ag.Text = "Ventas";
+            this.buttonVentas_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonVentas_502ag.UseVisualStyleBackColor = false;
+            this.buttonVentas_502ag.Click += new System.EventHandler(this.buttonVentas_502ag_Click);
+            // 
+            // buttonMaestros_502ag
+            // 
+            this.buttonMaestros_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonMaestros_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMaestros_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonMaestros_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaestros_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonMaestros_502ag.Location = new System.Drawing.Point(3, 431);
+            this.buttonMaestros_502ag.Name = "buttonMaestros_502ag";
+            this.buttonMaestros_502ag.Size = new System.Drawing.Size(222, 47);
+            this.buttonMaestros_502ag.TabIndex = 16;
+            this.buttonMaestros_502ag.Text = "Maestros";
+            this.buttonMaestros_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMaestros_502ag.UseVisualStyleBackColor = false;
+            this.buttonMaestros_502ag.Click += new System.EventHandler(this.buttonMaestros_502ag_Click);
+            // 
+            // panelSubMenuMaestros_502ag
+            // 
+            this.panelSubMenuMaestros_502ag.Controls.Add(this.button4);
+            this.panelSubMenuMaestros_502ag.Controls.Add(this.button5);
+            this.panelSubMenuMaestros_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuMaestros_502ag.Location = new System.Drawing.Point(3, 484);
+            this.panelSubMenuMaestros_502ag.Name = "panelSubMenuMaestros_502ag";
+            this.panelSubMenuMaestros_502ag.Size = new System.Drawing.Size(222, 91);
+            this.panelSubMenuMaestros_502ag.TabIndex = 12;
+            // 
+            // button4
+            // 
+            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button4.Location = new System.Drawing.Point(0, 41);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(222, 41);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "?";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button5.Location = new System.Drawing.Point(0, 0);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button5.Size = new System.Drawing.Size(222, 41);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "?";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // panelSubMenuVentas_502ag
+            // 
+            this.panelSubMenuVentas_502ag.Controls.Add(this.button1);
+            this.panelSubMenuVentas_502ag.Controls.Add(this.button2);
+            this.panelSubMenuVentas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 634);
+            this.panelSubMenuVentas_502ag.Name = "panelSubMenuVentas_502ag";
+            this.panelSubMenuVentas_502ag.Size = new System.Drawing.Size(222, 84);
+            this.panelSubMenuVentas_502ag.TabIndex = 13;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button1.Location = new System.Drawing.Point(0, 41);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(222, 41);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "?";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button2.Location = new System.Drawing.Point(0, 0);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(222, 41);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "?";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // panelSubMenuReportes_502ag
+            // 
+            this.panelSubMenuReportes_502ag.Controls.Add(this.button7);
+            this.panelSubMenuReportes_502ag.Controls.Add(this.button3);
+            this.panelSubMenuReportes_502ag.Controls.Add(this.button6);
+            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 777);
+            this.panelSubMenuReportes_502ag.Name = "panelSubMenuReportes_502ag";
+            this.panelSubMenuReportes_502ag.Size = new System.Drawing.Size(222, 133);
+            this.panelSubMenuReportes_502ag.TabIndex = 13;
+            // 
+            // button3
+            // 
+            this.button3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button3.Location = new System.Drawing.Point(0, 41);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button3.Size = new System.Drawing.Size(222, 41);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "?";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button6.Location = new System.Drawing.Point(0, 0);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(222, 41);
+            this.button6.TabIndex = 7;
+            this.button6.Text = "?";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button7.FlatAppearance.BorderSize = 0;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.button7.Location = new System.Drawing.Point(0, 82);
+            this.button7.Name = "button7";
+            this.button7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.button7.Size = new System.Drawing.Size(222, 41);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "?";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // FormMenu_502ag
             // 
@@ -243,6 +484,9 @@ namespace GUI
             this.panelSubMenuAdmin_502ag.ResumeLayout(false);
             this.panelSubMenuUsuario_502ag.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelSubMenuMaestros_502ag.ResumeLayout(false);
+            this.panelSubMenuVentas_502ag.ResumeLayout(false);
+            this.panelSubMenuReportes_502ag.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -265,5 +509,20 @@ namespace GUI
         private System.Windows.Forms.Button buttonUsuario_502ag;
         private System.Windows.Forms.Panel panelSubMenuUsuario_502ag;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonIniciarSesion_502ag;
+        private System.Windows.Forms.Button buttonAyuda_502ag;
+        private System.Windows.Forms.Button buttonReportes_502ag;
+        private System.Windows.Forms.Button buttonVentas_502ag;
+        private System.Windows.Forms.Button buttonMaestros_502ag;
+        private System.Windows.Forms.Panel panelSubMenuMaestros_502ag;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panelSubMenuVentas_502ag;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Panel panelSubMenuReportes_502ag;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button6;
     }
 }

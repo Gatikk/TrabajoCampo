@@ -48,6 +48,7 @@
     <Compile Include="IObserver_502ag.cs" />
     <Compile Include="ISubject_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SER_Usuario_502ag.cs" />
     <Compile Include="SessionManager_502ag.cs" />
     <Compile Include="Traductor_502ag.cs" />
   </ItemGroup>

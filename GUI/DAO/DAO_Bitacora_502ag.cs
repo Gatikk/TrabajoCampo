@@ -12,7 +12,7 @@ namespace DAO
     {
         SqlDataAdapter ad;
         DataTable dtBitacora;
-
+        /*
         public DAO_Bitacora_502ag()
         {
             DAO_Conexion_502ag conexion = DAO_Conexion_502ag.DevolverInstancia_502ag();
@@ -29,7 +29,7 @@ namespace DAO
             dtBitacora.Columns["NumeroBitacora_502ag"].AutoIncrementSeed = dtBitacora.Rows.Count + 1;
             dtBitacora.Columns["NumeroBitacora_502ag"].AutoIncrementStep = 1;
         }
-
+        */
         public DataTable DevolverDT()
         {
             return dtBitacora;

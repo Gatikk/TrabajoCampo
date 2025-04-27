@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAO;
-using BE;
+using BE_502ag;
 
-namespace ORM
+namespace ORM_502ag
 {
     public class ORM_Usuario_502ag
     {

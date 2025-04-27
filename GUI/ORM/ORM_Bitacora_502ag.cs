@@ -1,4 +1,4 @@
-﻿using BE;
+﻿using BE_502ag;
 using DAO;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ORM
+namespace ORM_502ag
 {
     public class ORM_Bitacora_502ag
     {
@@ -15,16 +15,16 @@ namespace ORM
         public void Alta(BE_Bitacora_502ag entidad)
         {
             DataRow drBitacora = daoBitacora.DevolverDT().NewRow();
-            drBitacora["NombreUsuario_502ag"] = entidad.NombreUsuario;
-            drBitacora["Fecha_502ag"] = entidad.Fecha;
-            drBitacora["Hora_502ag"] = entidad.Hora;
-            drBitacora["Modulo_502ag"] = entidad.Modulo;
-            drBitacora["Descripcion_502ag"] = entidad.Descripcion;
-            drBitacora["Criticidad_502ag"] = entidad.Criticidad;
+            drBitacora["NombreUsuario_502ag"] = entidad.NombreUsuario_502ag;
+            drBitacora["Fecha_502ag"] = entidad.Fecha_502ag;
+            drBitacora["Hora_502ag"] = entidad.Hora_502ag;
+            drBitacora["Modulo_502ag"] = entidad.Modulo_502ag;
+            drBitacora["Descripcion_502ag"] = entidad.Descripcion_502ag;
+            drBitacora["Criticidad_502ag"] = entidad.Criticidad_502ag;
             daoBitacora.DevolverDT().Rows.Add(drBitacora);
             daoBitacora.Actualizar();
         }
-
+        /*
         public List<BE_Bitacora_502ag> DevolverListaBitacora()
         {
             List<BE_Bitacora_502ag> listaBitacora = new List<BE_Bitacora_502ag>();
@@ -40,6 +40,6 @@ namespace ORM
 
             return listaBitacora;
         }
-
+        */
     }
 }

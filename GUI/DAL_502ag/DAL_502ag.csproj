@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_Bitacora_502ag.cs" />
     <Compile Include="DAL_Conexion_502ag.cs" />
     <Compile Include="DAL_Usuario_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -49,6 +50,10 @@
     <ProjectReference Include="..\BE\BE_502ag.csproj">
       <Project>{a1f49354-b160-4edf-a9a3-cf0f261050e4}</Project>
       <Name>BE_502ag</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SERVICIOS\SERVICIOS_502ag.csproj">
+      <Project>{97c3da2e-2bc5-47bc-846c-ed911c08a729}</Project>
+      <Name>SERVICIOS_502ag</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

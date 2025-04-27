@@ -9,10 +9,7 @@ namespace SERVICIOS
     public class SessionManager_502ag
     {
         private static SessionManager_502ag instanciaSessionManager_502ag;
-        public string idioma_502ag;
-        public string rol_502ag;
-        public string nombreUsuario_502ag;
-        public string dni_502ag;
+        public SER_Usuario_502ag sesion_502ag = null;
         public static SessionManager_502ag GestorSessionManager_502ag
         {
             get { 
@@ -23,19 +20,27 @@ namespace SERVICIOS
                 return instanciaSessionManager_502ag;
             }
         }
-        public void IniciarSesion_502ag(string pNombreUsuario_502ag, string pIdioma_502ag, string pRol_502ag, string pDNI_502ag)
+        public void IniciarSesion_502ag(SER_Usuario_502ag usuario_502ag)
         {
-            nombreUsuario_502ag = pNombreUsuario_502ag;
-            idioma_502ag = pIdioma_502ag;
-            rol_502ag = pRol_502ag; 
-            dni_502ag = pDNI_502ag;
+            
+            sesion_502ag = usuario_502ag;
+            
         }
         public void CerrarSesion()
         {
-            nombreUsuario_502ag = null;
-            idioma_502ag = null;
-            rol_502ag = null;
+            sesion_502ag = null;
         }
+
+        public bool estaLogeado_502ag()
+        {
+            bool estaLogeado_502ag = false;
+            if(sesion_502ag == null)
+            {
+                estaLogeado_502ag =  true;
+            }
+            return estaLogeado_502ag;
+        }
+
         public void CambiarIdioma()
         {
             Traductor_502ag.GestorTraductor.CambiarIdioma();

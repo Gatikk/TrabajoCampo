@@ -1,5 +1,5 @@
-﻿using BE;
-using BLL;
+﻿using BE_502ag;
+using BLL_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,9 +43,9 @@ namespace GUI
             dgv.Columns[5].HeaderText = "Descripción";
             dgv.Columns[6].HeaderText = "Criticidad";
 
-            foreach (BE_Bitacora_502ag bitacora in bllBitacora.DevolverListaBitacora())
+            foreach (BE_Bitacora_502ag bitacora in bllBitacora.ObtenerBitacora_502ag())
             {
-                dgv.Rows.Add(bitacora.ID_Bitacora, bitacora.NombreUsuario, bitacora.Fecha.ToShortDateString(), bitacora.Hora, bitacora.Modulo, bitacora.Descripcion, bitacora.Criticidad);
+                dgv.Rows.Add(bitacora.CodBitacora_502ag, bitacora.NombreUsuario_502ag, bitacora.Fecha_502ag.ToShortDateString(), bitacora.Hora_502ag, bitacora.Modulo_502ag, bitacora.Descripcion_502ag, bitacora.Criticidad_502ag);
             }
         }
 

@@ -45,7 +45,7 @@ namespace SERVICIOS
         }
         public void CargarIdioma()
         {
-            string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{SessionManager_502ag.GestorSessionManager_502ag.idioma_502ag}.json");
+            string rutaArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.Idioma_502ag}.json");
             if (File.Exists(rutaArchivo))
             {
                 string json = File.ReadAllText(rutaArchivo);
