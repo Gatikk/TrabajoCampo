@@ -1,6 +1,4 @@
-﻿using BE_502ag;
-using BLL_502ag;
-using SERVICIOS;
+﻿using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,7 +36,7 @@ namespace GUI
             {
                 if(!(c is System.Windows.Forms.ComboBox))
                 {
-                    c.Text = traductor.Traducir(c.Name);
+                    c.Text = traductor.Traducir_502ag(c.Name);
                 }
                 if (c.HasChildren)
                 {
@@ -55,22 +53,22 @@ namespace GUI
 
         private void buttonAceptarCambioIdioma_Click(object sender, EventArgs e)
         {
-            BLL_Usuario_502ag usuarioBLL = new BLL_Usuario_502ag();
-            usuarioBLL.CambiarIdioma_502ag(cBLenguajes.SelectedItem.ToString());
+            SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
+            serGestionUsuario_502ag.CambiarIdioma_502ag(cBLenguajes.SelectedItem.ToString());
             cBLenguajes.Items.Clear();
             LlenarComboBoxIdiomas();
             VerificarComboBox();
-            Actualizar_502ag(Traductor_502ag.GestorTraductor);
-            Traductor_502ag.GestorTraductor.CambiarIdioma();
-            BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
+            Actualizar_502ag(Traductor_502ag.GestorTraductor_502ag);
+            Traductor_502ag.GestorTraductor_502ag.CambiarIdioma_502ag();
+            SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
             bllBitacora.AltaBitacora_502ag("FormTraductor", "Cambio Idioma", 1);
         }
 
         public void LlenarComboBoxIdiomas()
         {
-            foreach(string idioma in Traductor_502ag.GestorTraductor.DevolverListaIdiomas())
+            foreach(string idioma in Traductor_502ag.GestorTraductor_502ag.DevolverListaIdiomas_502ag())
             {
-                if(!(cBLenguajes.Items.Contains(idioma)) && SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.Idioma_502ag != idioma)
+                if(!(cBLenguajes.Items.Contains(idioma)) && SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.Idioma_502ag != idioma)
                 {
                     cBLenguajes.Items.Add(idioma);
                 }
@@ -92,7 +90,7 @@ namespace GUI
 
         private void FormTraductor_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BLL_Bitacora_502ag bllBitacora_502ag = new BLL_Bitacora_502ag();
+            SER_GestorBitacora_502ag bllBitacora_502ag = new SER_GestorBitacora_502ag();
             bllBitacora_502ag.AltaBitacora_502ag("FormTraductor", "Cierre de sesión", 1);
             Environment.Exit(0);
         }

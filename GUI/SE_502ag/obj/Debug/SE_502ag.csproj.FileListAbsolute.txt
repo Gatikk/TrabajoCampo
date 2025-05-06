@@ -1,0 +1,6 @@
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\bin\Debug\SE_502ag.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\bin\Debug\SE_502ag.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.csproj.AssemblyReference.cache
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.csproj.CoreCompileInputs.cache
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.pdb

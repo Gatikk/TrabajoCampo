@@ -47,13 +47,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BE\BE_502ag.csproj">
-      <Project>{a1f49354-b160-4edf-a9a3-cf0f261050e4}</Project>
+    <ProjectReference Include="..\BE_502ag\BE_502ag.csproj">
+      <Project>{d95ecadc-5be4-42fd-b73d-da10806f04f7}</Project>
       <Name>BE_502ag</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SERVICIOS\SERVICIOS_502ag.csproj">
-      <Project>{97c3da2e-2bc5-47bc-846c-ed911c08a729}</Project>
-      <Name>SERVICIOS_502ag</Name>
+    <ProjectReference Include="..\SE_502ag\SE_502ag.csproj">
+      <Project>{c72c3586-5675-4b78-9254-21457de096a1}</Project>
+      <Name>SE_502ag</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

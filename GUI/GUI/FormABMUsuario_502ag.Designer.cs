@@ -65,13 +65,16 @@
             // 
             // buttonVolverAlMenu_502ag
             // 
+            this.buttonVolverAlMenu_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonVolverAlMenu_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonVolverAlMenu_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVolverAlMenu_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonVolverAlMenu_502ag.Location = new System.Drawing.Point(640, 405);
             this.buttonVolverAlMenu_502ag.Name = "buttonVolverAlMenu_502ag";
             this.buttonVolverAlMenu_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonVolverAlMenu_502ag.TabIndex = 2;
             this.buttonVolverAlMenu_502ag.Text = "Volver al Menú";
-            this.buttonVolverAlMenu_502ag.UseVisualStyleBackColor = true;
+            this.buttonVolverAlMenu_502ag.UseVisualStyleBackColor = false;
             this.buttonVolverAlMenu_502ag.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
             // 
             // dgvUsuarios_502ag
@@ -144,24 +147,30 @@
             // 
             // buttonAltaUsuario_502ag
             // 
+            this.buttonAltaUsuario_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAltaUsuario_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAltaUsuario_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAltaUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonAltaUsuario_502ag.Location = new System.Drawing.Point(12, 282);
             this.buttonAltaUsuario_502ag.Name = "buttonAltaUsuario_502ag";
             this.buttonAltaUsuario_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonAltaUsuario_502ag.TabIndex = 4;
             this.buttonAltaUsuario_502ag.Text = "Alta Usuario";
-            this.buttonAltaUsuario_502ag.UseVisualStyleBackColor = true;
+            this.buttonAltaUsuario_502ag.UseVisualStyleBackColor = false;
             this.buttonAltaUsuario_502ag.Click += new System.EventHandler(this.buttonAltaUsuario_502ag_Click);
             // 
             // buttonModificarUsuario_502ag
             // 
+            this.buttonModificarUsuario_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonModificarUsuario_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonModificarUsuario_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonModificarUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonModificarUsuario_502ag.Location = new System.Drawing.Point(161, 282);
             this.buttonModificarUsuario_502ag.Name = "buttonModificarUsuario_502ag";
             this.buttonModificarUsuario_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonModificarUsuario_502ag.TabIndex = 6;
             this.buttonModificarUsuario_502ag.Text = "Modificar Usuario";
-            this.buttonModificarUsuario_502ag.UseVisualStyleBackColor = true;
+            this.buttonModificarUsuario_502ag.UseVisualStyleBackColor = false;
             this.buttonModificarUsuario_502ag.Click += new System.EventHandler(this.buttonModificarUsuario_502ag_Click);
             // 
             // tBNombreUsuario_502ag
@@ -284,24 +293,30 @@
             // 
             // buttonBloquear_502ag
             // 
+            this.buttonBloquear_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonBloquear_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonBloquear_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBloquear_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonBloquear_502ag.Location = new System.Drawing.Point(12, 403);
             this.buttonBloquear_502ag.Name = "buttonBloquear_502ag";
             this.buttonBloquear_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonBloquear_502ag.TabIndex = 23;
             this.buttonBloquear_502ag.Text = "Bloquear Usuario";
-            this.buttonBloquear_502ag.UseVisualStyleBackColor = true;
+            this.buttonBloquear_502ag.UseVisualStyleBackColor = false;
             this.buttonBloquear_502ag.Click += new System.EventHandler(this.buttonBloquear_502ag_Click);
             // 
             // buttonDesbloquear_502ag
             // 
+            this.buttonDesbloquear_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonDesbloquear_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonDesbloquear_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDesbloquear_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonDesbloquear_502ag.Location = new System.Drawing.Point(161, 343);
             this.buttonDesbloquear_502ag.Name = "buttonDesbloquear_502ag";
             this.buttonDesbloquear_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonDesbloquear_502ag.TabIndex = 24;
             this.buttonDesbloquear_502ag.Text = "Desbloquear Usuario";
-            this.buttonDesbloquear_502ag.UseVisualStyleBackColor = true;
+            this.buttonDesbloquear_502ag.UseVisualStyleBackColor = false;
             this.buttonDesbloquear_502ag.Click += new System.EventHandler(this.buttonDesbloquear_502ag_Click);
             // 
             // cBRol_502ag
@@ -318,35 +333,44 @@
             // 
             // buttonAplicar_502ag
             // 
+            this.buttonAplicar_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAplicar_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAplicar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAplicar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonAplicar_502ag.Location = new System.Drawing.Point(640, 282);
             this.buttonAplicar_502ag.Name = "buttonAplicar_502ag";
             this.buttonAplicar_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonAplicar_502ag.TabIndex = 26;
             this.buttonAplicar_502ag.Text = "Aplicar";
-            this.buttonAplicar_502ag.UseVisualStyleBackColor = true;
+            this.buttonAplicar_502ag.UseVisualStyleBackColor = false;
             this.buttonAplicar_502ag.Click += new System.EventHandler(this.buttonAplicar_502ag_Click);
             // 
             // buttonCancelar_502ag
             // 
+            this.buttonCancelar_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonCancelar_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonCancelar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonCancelar_502ag.Location = new System.Drawing.Point(640, 343);
             this.buttonCancelar_502ag.Name = "buttonCancelar_502ag";
             this.buttonCancelar_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonCancelar_502ag.TabIndex = 27;
             this.buttonCancelar_502ag.Text = "Cancelar";
-            this.buttonCancelar_502ag.UseVisualStyleBackColor = true;
+            this.buttonCancelar_502ag.UseVisualStyleBackColor = false;
             this.buttonCancelar_502ag.Click += new System.EventHandler(this.buttonCancelar_502ag_Click);
             // 
             // buttonActivarDesactivar_502ag
             // 
+            this.buttonActivarDesactivar_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonActivarDesactivar_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonActivarDesactivar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonActivarDesactivar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonActivarDesactivar_502ag.Location = new System.Drawing.Point(12, 343);
             this.buttonActivarDesactivar_502ag.Name = "buttonActivarDesactivar_502ag";
             this.buttonActivarDesactivar_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonActivarDesactivar_502ag.TabIndex = 28;
             this.buttonActivarDesactivar_502ag.Text = "Activar / Desactivar";
-            this.buttonActivarDesactivar_502ag.UseVisualStyleBackColor = true;
+            this.buttonActivarDesactivar_502ag.UseVisualStyleBackColor = false;
             this.buttonActivarDesactivar_502ag.Click += new System.EventHandler(this.buttonActivarDesactivar_502ag_Click);
             // 
             // rBActivos_502ag
@@ -376,8 +400,9 @@
             // 
             // tBModoActual_502ag
             // 
+            this.tBModoActual_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.tBModoActual_502ag.Enabled = false;
-            this.tBModoActual_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.tBModoActual_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.tBModoActual_502ag.Location = new System.Drawing.Point(12, 12);
             this.tBModoActual_502ag.Name = "tBModoActual_502ag";
             this.tBModoActual_502ag.Size = new System.Drawing.Size(159, 26);

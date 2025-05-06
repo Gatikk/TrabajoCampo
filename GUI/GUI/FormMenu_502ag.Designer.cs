@@ -33,7 +33,7 @@ namespace GUI
             this.buttonCerrarSesion = new System.Windows.Forms.Button();
             this.labelBienvenida = new System.Windows.Forms.Label();
             this.buttonABM_502ag = new System.Windows.Forms.Button();
-            this.buttonCambiarContraseña = new System.Windows.Forms.Button();
+            this.buttonCambiarContraseña_502ag = new System.Windows.Forms.Button();
             this.buttonBitacora = new System.Windows.Forms.Button();
             this.buttonCambiarIdioma = new System.Windows.Forms.Button();
             this.panelMenuLateral_502ag = new System.Windows.Forms.FlowLayoutPanel();
@@ -113,19 +113,19 @@ namespace GUI
             // 
             // buttonCambiarContraseña
             // 
-            this.buttonCambiarContraseña.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCambiarContraseña.FlatAppearance.BorderSize = 0;
-            this.buttonCambiarContraseña.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCambiarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCambiarContraseña.Location = new System.Drawing.Point(0, 123);
-            this.buttonCambiarContraseña.Name = "buttonCambiarContraseña";
-            this.buttonCambiarContraseña.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCambiarContraseña.Size = new System.Drawing.Size(222, 41);
-            this.buttonCambiarContraseña.TabIndex = 5;
-            this.buttonCambiarContraseña.Text = "Cambiar Contraseña";
-            this.buttonCambiarContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCambiarContraseña.UseVisualStyleBackColor = true;
-            this.buttonCambiarContraseña.Click += new System.EventHandler(this.buttonCambiarContraseña_Click);
+            this.buttonCambiarContraseña_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCambiarContraseña_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonCambiarContraseña_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCambiarContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCambiarContraseña_502ag.Location = new System.Drawing.Point(0, 123);
+            this.buttonCambiarContraseña_502ag.Name = "buttonCambiarContraseña";
+            this.buttonCambiarContraseña_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCambiarContraseña_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonCambiarContraseña_502ag.TabIndex = 5;
+            this.buttonCambiarContraseña_502ag.Text = "Cambiar Contraseña";
+            this.buttonCambiarContraseña_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCambiarContraseña_502ag.UseVisualStyleBackColor = true;
+            this.buttonCambiarContraseña_502ag.Click += new System.EventHandler(this.buttonCambiarContraseña_Click);
             // 
             // buttonBitacora
             // 
@@ -235,7 +235,7 @@ namespace GUI
             // 
             // panelSubMenuUsuario_502ag
             // 
-            this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarContraseña);
+            this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarContraseña_502ag);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonIniciarSesion_502ag);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCerrarSesion);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarIdioma);
@@ -499,7 +499,7 @@ namespace GUI
         private System.Windows.Forms.Button buttonCerrarSesion;
         private System.Windows.Forms.Label labelBienvenida;
         private System.Windows.Forms.Button buttonABM_502ag;
-        private System.Windows.Forms.Button buttonCambiarContraseña;
+        private System.Windows.Forms.Button buttonCambiarContraseña_502ag;
         private System.Windows.Forms.Button buttonBitacora;
         private System.Windows.Forms.Button buttonCambiarIdioma;
         private System.Windows.Forms.FlowLayoutPanel panelMenuLateral_502ag;

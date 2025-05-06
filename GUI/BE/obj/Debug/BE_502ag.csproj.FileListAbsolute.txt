@@ -1,6 +1,0 @@
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BE\bin\Debug\BE.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BE\bin\Debug\BE.pdb
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BE\obj\Debug\BE_502ag.csproj.AssemblyReference.cache
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BE\obj\Debug\BE_502ag.csproj.CoreCompileInputs.cache
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BE\obj\Debug\BE.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BE\obj\Debug\BE.pdb

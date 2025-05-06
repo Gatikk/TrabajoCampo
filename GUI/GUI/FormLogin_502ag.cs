@@ -1,4 +1,4 @@
-﻿using BE_502ag;
+﻿using SE_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,9 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL_502ag;
-using SERVICIOS;
+using SERVICIOS_502ag;
 using Microsoft.VisualBasic;
+using System.Runtime.CompilerServices;
+
 
 namespace GUI
 {
@@ -21,31 +22,30 @@ namespace GUI
             InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
-
+            MostrarContraseña_502ag();
         }
         private void buttonIniciarSesion_Click(object sender, EventArgs e)
         {
             try
             {
-                BLL_Usuario_502ag bllUsuario_502ag = new BLL_Usuario_502ag();
+                SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
                 string nombreUsuario_502ag = textBoxNombreUsuario.Text;
                 string contraseña_502ag = textBoxContraseña.Text;
 
-                SER_Usuario_502ag usuarioALogear_502ag = bllUsuario_502ag.DevolverUsuarioALogear_502ag(nombreUsuario_502ag);
+                SE_Usuario_502ag usuarioALogear_502ag = serGestionUsuario_502ag.ObtenerUsuarioALogear_502ag(nombreUsuario_502ag);
 
-                if (!SessionManager_502ag.GestorSessionManager_502ag.estaLogeado_502ag()) throw new Exception("Ya estas logeado");
-                if (!bllUsuario_502ag.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag))  throw new Exception("Usuario o contraseñas incorrectos");
-                if (!bllUsuario_502ag.VerificarUsuarioBloqueado_502ag(usuarioALogear_502ag)) throw new Exception("Usuario bloqueado");
-                if (!bllUsuario_502ag.VerificarUsuarioActivo_502ag(usuarioALogear_502ag)) throw new Exception("El usuario no se encuentra como activo");
-                if (!bllUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag)) 
+                if (!SER_GestorSesion_502ag.GestorSesion_502ag.EstaLogeado_502ag()) throw new Exception("Ya estas logeado");
+                if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag))  throw new Exception("Usuario o contraseñas incorrectos");
+                if (!serGestionUsuario_502ag.VerificarUsuarioBloqueado_502ag(usuarioALogear_502ag)) throw new Exception("Usuario bloqueado");
+                if (!serGestionUsuario_502ag.VerificarUsuarioActivo_502ag(usuarioALogear_502ag)) throw new Exception("El usuario no se encuentra como activo");
+                if (!serGestionUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag)) 
                 {
-                    bllUsuario_502ag.SesionFallida_502ag(usuarioALogear_502ag);
+                    serGestionUsuario_502ag.SesionFallida_502ag(usuarioALogear_502ag);
                     throw new Exception("Usuario o contraseña incorrectos");
                 }
-                bllUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
-                MessageBox.Show("Inicio de sesión exitoso", "Éxito");
+                serGestionUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
 
-                BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
+                SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
                 bllBitacora.AltaBitacora_502ag("FormLogin", "Inicio de sesión", 1);
                 FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
                 this.Hide();
@@ -54,6 +54,19 @@ namespace GUI
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}", "Error"); }
         }
+
+        private void MostrarContraseña_502ag()
+        {
+            if (cBMostrarContraseña_502ag.Checked)
+            {
+                textBoxContraseña.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBoxContraseña.UseSystemPasswordChar = true;
+            }
+        }
+
         private void buttonCerrarAplicacion_Click(object sender, EventArgs e)
         {     
             Environment.Exit(0);
@@ -61,6 +74,11 @@ namespace GUI
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void cBMostrarContraseña_502ag_CheckedChanged(object sender, EventArgs e)
+        {
+            MostrarContraseña_502ag();
         }
     }
 }

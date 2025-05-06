@@ -7,3 +7,7 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\D
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIO.89A6EFEB.Up2Date
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\DAL_502ag.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SE_502ag.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\DAL_502ag.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SE_502ag.pdb

@@ -34,78 +34,112 @@
             this.textBoxContraseña_502ag = new System.Windows.Forms.TextBox();
             this.buttonCambiarContraseña_502ag = new System.Windows.Forms.Button();
             this.buttonVolverAlMenu = new System.Windows.Forms.Button();
+            this.cBMostrarContraseña_502ag = new System.Windows.Forms.CheckBox();
+            this.cBMostrarConfirmarContraseña_502ag = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // labelConfirmarContraseña
             // 
             this.labelConfirmarContraseña.AutoSize = true;
-            this.labelConfirmarContraseña.Location = new System.Drawing.Point(273, 179);
+            this.labelConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.labelConfirmarContraseña.Location = new System.Drawing.Point(273, 184);
             this.labelConfirmarContraseña.Name = "labelConfirmarContraseña";
-            this.labelConfirmarContraseña.Size = new System.Drawing.Size(121, 13);
+            this.labelConfirmarContraseña.Size = new System.Drawing.Size(228, 25);
             this.labelConfirmarContraseña.TabIndex = 8;
             this.labelConfirmarContraseña.Text = "Confirmar Contraseña_T";
             // 
             // labelContraseña
             // 
             this.labelContraseña.AutoSize = true;
+            this.labelContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.labelContraseña.Location = new System.Drawing.Point(273, 119);
             this.labelContraseña.Name = "labelContraseña";
-            this.labelContraseña.Size = new System.Drawing.Size(74, 13);
+            this.labelContraseña.Size = new System.Drawing.Size(138, 25);
             this.labelContraseña.TabIndex = 7;
             this.labelContraseña.Text = "Contraseña_T";
             // 
-            // textBoxContraseñaConfirmar
+            // textBoxContraseñaConfirmar_502ag
             // 
-            this.textBoxContraseñaConfirmar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxContraseñaConfirmar_502ag.Location = new System.Drawing.Point(273, 199);
-            this.textBoxContraseñaConfirmar_502ag.Name = "textBoxContraseñaConfirmar";
-            this.textBoxContraseñaConfirmar_502ag.Size = new System.Drawing.Size(225, 29);
+            this.textBoxContraseñaConfirmar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxContraseñaConfirmar_502ag.Location = new System.Drawing.Point(278, 212);
+            this.textBoxContraseñaConfirmar_502ag.Name = "textBoxContraseñaConfirmar_502ag";
+            this.textBoxContraseñaConfirmar_502ag.Size = new System.Drawing.Size(225, 23);
             this.textBoxContraseñaConfirmar_502ag.TabIndex = 6;
             this.textBoxContraseñaConfirmar_502ag.TextChanged += new System.EventHandler(this.textBoxContraseñaConfirmar_TextChanged);
             // 
-            // textBoxContraseña
+            // textBoxContraseña_502ag
             // 
-            this.textBoxContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.textBoxContraseña_502ag.Location = new System.Drawing.Point(273, 139);
-            this.textBoxContraseña_502ag.Name = "textBoxContraseña";
-            this.textBoxContraseña_502ag.Size = new System.Drawing.Size(225, 29);
+            this.textBoxContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.textBoxContraseña_502ag.Location = new System.Drawing.Point(278, 147);
+            this.textBoxContraseña_502ag.Name = "textBoxContraseña_502ag";
+            this.textBoxContraseña_502ag.Size = new System.Drawing.Size(225, 23);
             this.textBoxContraseña_502ag.TabIndex = 5;
             this.textBoxContraseña_502ag.TextChanged += new System.EventHandler(this.textBoxContraseña_TextChanged);
             // 
-            // buttonCambiarContraseña
+            // buttonCambiarContraseña_502ag
             // 
+            this.buttonCambiarContraseña_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonCambiarContraseña_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonCambiarContraseña_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCambiarContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCambiarContraseña_502ag.Location = new System.Drawing.Point(273, 234);
-            this.buttonCambiarContraseña_502ag.Name = "buttonCambiarContraseña";
-            this.buttonCambiarContraseña_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonCambiarContraseña_502ag.Location = new System.Drawing.Point(278, 251);
+            this.buttonCambiarContraseña_502ag.Name = "buttonCambiarContraseña_502ag";
+            this.buttonCambiarContraseña_502ag.Size = new System.Drawing.Size(225, 47);
             this.buttonCambiarContraseña_502ag.TabIndex = 24;
             this.buttonCambiarContraseña_502ag.Text = "Cambiar Contraseña";
-            this.buttonCambiarContraseña_502ag.UseVisualStyleBackColor = true;
+            this.buttonCambiarContraseña_502ag.UseVisualStyleBackColor = false;
             this.buttonCambiarContraseña_502ag.Click += new System.EventHandler(this.buttonCambiarContraseña_Click);
             // 
             // buttonVolverAlMenu
             // 
+            this.buttonVolverAlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonVolverAlMenu.FlatAppearance.BorderSize = 0;
+            this.buttonVolverAlMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVolverAlMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVolverAlMenu.Location = new System.Drawing.Point(640, 402);
+            this.buttonVolverAlMenu.Location = new System.Drawing.Point(278, 304);
             this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
-            this.buttonVolverAlMenu.Size = new System.Drawing.Size(132, 47);
+            this.buttonVolverAlMenu.Size = new System.Drawing.Size(225, 47);
             this.buttonVolverAlMenu.TabIndex = 25;
             this.buttonVolverAlMenu.Text = "Volver al Menú";
-            this.buttonVolverAlMenu.UseVisualStyleBackColor = true;
+            this.buttonVolverAlMenu.UseVisualStyleBackColor = false;
             this.buttonVolverAlMenu.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
             // 
-            // FormCambiarContraseña
+            // cBMostrarContraseña_502ag
+            // 
+            this.cBMostrarContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cBMostrarContraseña_502ag.Location = new System.Drawing.Point(509, 144);
+            this.cBMostrarContraseña_502ag.Name = "cBMostrarContraseña_502ag";
+            this.cBMostrarContraseña_502ag.Size = new System.Drawing.Size(117, 30);
+            this.cBMostrarContraseña_502ag.TabIndex = 29;
+            this.cBMostrarContraseña_502ag.Text = "Mostrar";
+            this.cBMostrarContraseña_502ag.UseVisualStyleBackColor = true;
+            this.cBMostrarContraseña_502ag.CheckedChanged += new System.EventHandler(this.cBMostrarContraseña_502ag_CheckedChanged);
+            // 
+            // cBMostrarConfirmarContraseña
+            // 
+            this.cBMostrarConfirmarContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cBMostrarConfirmarContraseña_502ag.Location = new System.Drawing.Point(509, 209);
+            this.cBMostrarConfirmarContraseña_502ag.Name = "cBMostrarConfirmarContraseña";
+            this.cBMostrarConfirmarContraseña_502ag.Size = new System.Drawing.Size(117, 30);
+            this.cBMostrarConfirmarContraseña_502ag.TabIndex = 30;
+            this.cBMostrarConfirmarContraseña_502ag.Text = "Mostrar";
+            this.cBMostrarConfirmarContraseña_502ag.UseVisualStyleBackColor = true;
+            this.cBMostrarConfirmarContraseña_502ag.CheckedChanged += new System.EventHandler(this.cBMostrarConfirmarContraseña_CheckedChanged);
+            // 
+            // FormCambiarContraseña_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.cBMostrarConfirmarContraseña_502ag);
+            this.Controls.Add(this.cBMostrarContraseña_502ag);
             this.Controls.Add(this.buttonVolverAlMenu);
             this.Controls.Add(this.buttonCambiarContraseña_502ag);
             this.Controls.Add(this.labelConfirmarContraseña);
             this.Controls.Add(this.labelContraseña);
             this.Controls.Add(this.textBoxContraseñaConfirmar_502ag);
             this.Controls.Add(this.textBoxContraseña_502ag);
-            this.Name = "FormCambiarContraseña";
+            this.Name = "FormCambiarContraseña_502ag";
             this.Text = "FormCambiarContraseña";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCambiarContraseña_FormClosed);
             this.ResumeLayout(false);
@@ -121,5 +155,7 @@
         private System.Windows.Forms.TextBox textBoxContraseña_502ag;
         private System.Windows.Forms.Button buttonCambiarContraseña_502ag;
         private System.Windows.Forms.Button buttonVolverAlMenu;
+        private System.Windows.Forms.CheckBox cBMostrarContraseña_502ag;
+        private System.Windows.Forms.CheckBox cBMostrarConfirmarContraseña_502ag;
     }
 }

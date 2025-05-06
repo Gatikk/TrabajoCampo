@@ -1,5 +1,5 @@
-﻿using BE_502ag;
-using BLL_502ag;
+﻿using SE_502ag;
+using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,14 +26,14 @@ namespace GUI
 
         private void FormBitacora_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
+            SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
             bllBitacora.AltaBitacora_502ag("FormBitacora", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 
         public void Mostrar(DataGridView dgv)
         {
-            BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
+            SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
             dgv.Rows.Clear();
             dgv.Columns[0].HeaderText = "ID";
             dgv.Columns[1].HeaderText = "NombreUsuario";
@@ -43,7 +43,7 @@ namespace GUI
             dgv.Columns[5].HeaderText = "Descripción";
             dgv.Columns[6].HeaderText = "Criticidad";
 
-            foreach (BE_Bitacora_502ag bitacora in bllBitacora.ObtenerBitacora_502ag())
+            foreach (SE_Bitacora_502ag bitacora in bllBitacora.ObtenerBitacora_502ag())
             {
                 dgv.Rows.Add(bitacora.CodBitacora_502ag, bitacora.NombreUsuario_502ag, bitacora.Fecha_502ag.ToShortDateString(), bitacora.Hora_502ag, bitacora.Modulo_502ag, bitacora.Descripcion_502ag, bitacora.Criticidad_502ag);
             }

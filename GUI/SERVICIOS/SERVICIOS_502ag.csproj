@@ -44,16 +44,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cifrador_502ag.cs" />
+    <Compile Include="Encryptador_502ag.cs" />
     <Compile Include="IObserver_502ag.cs" />
     <Compile Include="ISubject_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SER_Usuario_502ag.cs" />
-    <Compile Include="SessionManager_502ag.cs" />
+    <Compile Include="SER_GestorBitacora_502ag.cs" />
+    <Compile Include="Usuario_502ag\SER_GestorUsuario_502ag.cs" />
+    <Compile Include="Usuario_502ag\SER_GestorSesion_502ag.cs" />
     <Compile Include="Traductor_502ag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL_502ag\DAL_502ag.csproj">
+      <Project>{37b342dc-44c8-4f52-8c46-3a5897334505}</Project>
+      <Name>DAL_502ag</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SE_502ag\SE_502ag.csproj">
+      <Project>{c72c3586-5675-4b78-9254-21457de096a1}</Project>
+      <Name>SE_502ag</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

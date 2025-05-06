@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SERVICIOS
+namespace SERVICIOS_502ag
 {
     public interface IObserver_502ag
     {

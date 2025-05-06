@@ -1,12 +1,8 @@
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\GUI.exe.config
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\GUI.exe
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\GUI.pdb
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BE.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BLL.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\SERVICIOS.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\Newtonsoft.Json.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BE.pdb
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BLL.pdb
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\SERVICIOS.pdb
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\Newtonsoft.Json.xml
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI_502ag.csproj.AssemblyReference.cache
@@ -24,3 +20,7 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\G
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormABMUsuario_502ag.resources
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\DAL_502ag.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\DAL_502ag.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\SE_502ag.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\SE_502ag.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BE_502ag.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BE_502ag.pdb

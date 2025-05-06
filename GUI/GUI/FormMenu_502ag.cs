@@ -1,5 +1,4 @@
-﻿using BE_502ag;
-using SERVICIOS;
+﻿using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,9 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BLL_502ag;
 using System.Deployment.Internal;
 using Microsoft.VisualBasic;
+using SE_502ag;
+
 
 namespace GUI
 {
@@ -23,16 +23,16 @@ namespace GUI
         public FormMenu_502ag()
         {
             InitializeComponent();
-            SuscribirFormularios(Traductor_502ag.GestorTraductor);
-            Traductor_502ag.GestorTraductor.CargarIdioma();
-            Actualizar_502ag(Traductor_502ag.GestorTraductor);
+            SuscribirFormularios(Traductor_502ag.GestorTraductor_502ag);
+            Traductor_502ag.GestorTraductor_502ag.CargarIdioma_502ag();
+            Actualizar_502ag(Traductor_502ag.GestorTraductor_502ag);
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500,200);
             panelSubMenuAdmin_502ag.Visible = false;
             panelSubMenuUsuario_502ag.Visible=false;
             panelSubMenuMaestros_502ag.Visible=false;
             panelSubMenuVentas_502ag.Visible=false;
-            panelSubMenuReportes_502ag.Visible=false;        
+            panelSubMenuReportes_502ag.Visible=false;     
         }
 
         public void Actualizar_502ag(Traductor_502ag traductor)
@@ -44,11 +44,11 @@ namespace GUI
         {
             foreach (Control c in control.Controls) 
             {
-                c.Text = traductor.Traducir(c.Name);
+                c.Text = traductor.Traducir_502ag(c.Name);
 
                 if(c.Name == labelBienvenida.Name)
                 {
-                    c.Text = c.Text.Replace("{SessionManager.GestorSessionManager.sesion.NombreUsuario}", $"{SessionManager_502ag.GestorSessionManager_502ag.sesion_502ag.NombreUsuario_502ag}");
+                    c.Text = c.Text.Replace("{SessionManager.GestorSessionManager.sesion.NombreUsuario}", $"{SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag}");
                 }
 
                 if (c.HasChildren)
@@ -62,24 +62,24 @@ namespace GUI
             abmForm = new FormABMUsuario_502ag(this);
             cambiarContraseñaForm = new FormCambiarContraseña_502ag(this);
             traductorForm = new FormTraductor_502ag(this);
-            traductor.Suscribir(this);
-            traductor.Suscribir(abmForm);
-            traductor.Suscribir(cambiarContraseñaForm);
-            traductor.Suscribir(traductorForm);
+            traductor.Suscribir_502ag(this);
+            traductor.Suscribir_502ag(abmForm);
+            traductor.Suscribir_502ag(cambiarContraseñaForm);
+            traductor.Suscribir_502ag(traductorForm);
         }
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
         {
             FormLogin_502ag loginForm = new FormLogin_502ag();
-            BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
+            SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
             bllBitacora.AltaBitacora_502ag("FormMenu", "Cierre de sesión", 1);
-            SessionManager_502ag.GestorSessionManager_502ag.CerrarSesion();
+            SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion();
             this.Hide();
             loginForm.Show();
         }
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            BLL_Bitacora_502ag bllBitacora_502ag = new BLL_Bitacora_502ag();
+            SER_GestorBitacora_502ag bllBitacora_502ag = new SER_GestorBitacora_502ag();
             bllBitacora_502ag.AltaBitacora_502ag("FormMenu", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
@@ -174,25 +174,25 @@ namespace GUI
         {
             try
             {
-                BLL_Usuario_502ag bllUsuario = new BLL_Usuario_502ag();
+                SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
                 string nombreUsuario_502ag = Interaction.InputBox("Nombre: ");
                 string contraseña_502ag = Interaction.InputBox("Contraseña: ");
 
-                SER_Usuario_502ag usuarioALogear_502ag = bllUsuario.DevolverUsuarioALogear_502ag(nombreUsuario_502ag);
+                SE_Usuario_502ag usuarioALogear_502ag = serGestionUsuario_502ag.ObtenerUsuarioALogear_502ag(nombreUsuario_502ag);
 
-                if (!SessionManager_502ag.GestorSessionManager_502ag.estaLogeado_502ag()) throw new Exception("Ya estas logeado");
-                if (!bllUsuario.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag)) throw new Exception("Usuario o contraseñas incorrectos");
-                if (!bllUsuario.VerificarUsuarioBloqueado_502ag(usuarioALogear_502ag)) throw new Exception("Usuario bloqueado");
-                if (!bllUsuario.VerificarUsuarioActivo_502ag(usuarioALogear_502ag)) throw new Exception("El usuario no se encuentra como activo");
-                if (!bllUsuario.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag))
+                if (!SER_GestorSesion_502ag.GestorSesion_502ag.EstaLogeado_502ag()) throw new Exception("Ya estas logeado");
+                if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag)) throw new Exception("Usuario o contraseñas incorrectos");
+                if (!serGestionUsuario_502ag.VerificarUsuarioBloqueado_502ag(usuarioALogear_502ag)) throw new Exception("Usuario bloqueado");
+                if (!serGestionUsuario_502ag.VerificarUsuarioActivo_502ag(usuarioALogear_502ag)) throw new Exception("El usuario no se encuentra como activo");
+                if (!serGestionUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag))
                 {
-                    bllUsuario.SesionFallida_502ag(usuarioALogear_502ag);
+                    serGestionUsuario_502ag.SesionFallida_502ag(usuarioALogear_502ag);
                     throw new Exception("Usuario o contraseña incorrectos");
                 }
-                bllUsuario.IniciarSesion_502ag(usuarioALogear_502ag);
+                serGestionUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
                 MessageBox.Show("Inicio de sesión exitoso", "Éxito");
 
-                BLL_Bitacora_502ag bllBitacora = new BLL_Bitacora_502ag();
+                SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
                 bllBitacora.AltaBitacora_502ag("FormLogin", "Inicio de sesión", 1);
                 FormMenu_502ag menuForm = new FormMenu_502ag();
                 this.Hide();
