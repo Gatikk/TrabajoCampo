@@ -45,8 +45,6 @@ namespace GUI
                 }
                 serGestionUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
 
-                SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
-                bllBitacora.AltaBitacora_502ag("FormLogin", "Inicio de sesión", 1);
                 FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
                 this.Hide();
                 menuForm_502ag.Show();

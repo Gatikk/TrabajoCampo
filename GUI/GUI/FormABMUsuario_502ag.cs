@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormABMUsuario_502ag : Form, IObserver_502ag
+    public partial class FormABMUsuario_502ag : Form
     {
         FormMenu_502ag menu_502ag;
         public string opcion_502ag = "Consulta";
@@ -37,37 +37,10 @@ namespace GUI
             tBEmail_502ag.Enabled = false;
             cBRol_502ag.Enabled =false;
 
-            menu_502ag = menuOriginal_502ag;
-            Actualizar_502ag(Traductor_502ag.GestorTraductor_502ag);
-            
-        }
-        public void Actualizar_502ag(Traductor_502ag traductor)
-        {
-            RecorrerControles(this, traductor);
+            menu_502ag = menuOriginal_502ag;      
         }
 
-        public void RecorrerControles(Control control, Traductor_502ag traductor)
-        {
-            foreach (Control c in control.Controls)
-            {
-                if(!(c is ComboBox) && !(c is TextBox))
-                {
-                    c.Text = traductor.Traducir_502ag(c.Name);
-                }
-                if(c is DataGridView)
-                {
-                    DataGridView cDGV = c as DataGridView;
-                    foreach (DataGridViewColumn columna in cDGV.Columns) 
-                    {
-                        columna.HeaderText = traductor.Traducir_502ag(columna.Name);
-                    }
-                }
-                if (c.HasChildren)
-                {
-                    RecorrerControles(c, traductor);
-                }
-            }
-        }
+
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
@@ -77,8 +50,6 @@ namespace GUI
 
         private void FormABM_FormClosed(object sender, FormClosedEventArgs e)
         {
-            SER_GestorBitacora_502ag bllBitacora_502ag = new SER_GestorBitacora_502ag();
-            bllBitacora_502ag.AltaBitacora_502ag("FormABM", "Cierre de sesión", 1);
             Environment.Exit(0);
         }
 
@@ -197,8 +168,6 @@ namespace GUI
                     if (!serGestionUsuario_502ag.VerificarAltaUsuario_502ag(tBNombreUsuario_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
                     if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(tBNombreUsuario_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Nombre de usuario o DNI o Email ya existen");
                     serGestionUsuario_502ag.AltaUsuario_502ag(tBNombreUsuario_502ag.Text, cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text);
-                    SER_GestorBitacora_502ag bllBitacora_502ag = new SER_GestorBitacora_502ag();
-                    bllBitacora_502ag.AltaBitacora_502ag("FormABM", "Alta Usuario", 4);
                     Mostrar_502ag(dgvUsuarios_502ag);
                     tBNombreUsuario_502ag.Clear();
                     tBApellido_502ag.Clear();
@@ -210,16 +179,10 @@ namespace GUI
                 {
                     string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
                     SE_Usuario_502ag usuario_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
-                    usuario_502ag.Rol_502ag = cBRol_502ag.Text;
-                    usuario_502ag.Nombre_502ag = tBNombre_502ag.Text;
-                    usuario_502ag.Apellido_502ag = tBApellido_502ag.Text;
-                    usuario_502ag.DNI_502ag = tBDNI_502ag.Text;
-                    usuario_502ag.Email_502ag = tBEmail_502ag.Text;
-                    if (!serGestionUsuario_502ag.VerificarModificarUsuario_502ag(usuario_502ag)) throw new Exception("Dato/s ingresados incorrectos");
+                    if (!serGestionUsuario_502ag.VerificarModificarUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
                     DialogResult dResult_502ag = MessageBox.Show($"¿Modificar a @{usuario_502ag.NombreUsuario_502ag}?", "Confirmar Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dResult_502ag == DialogResult.Yes) serGestionUsuario_502ag.ModificarUsuario_502ag(usuario_502ag);
-                    SER_GestorBitacora_502ag bllBitacora_502ag = new SER_GestorBitacora_502ag();
-                    bllBitacora_502ag.AltaBitacora_502ag("FormABM", "Modificación Usuario", 4);
+                    if (dResult_502ag == DialogResult.Yes) serGestionUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBEmail_502ag.Text);
+
                     Mostrar_502ag(dgvUsuarios_502ag);
                     tBNombreUsuario_502ag.Clear();
                     tBApellido_502ag.Clear();
@@ -233,17 +196,14 @@ namespace GUI
                     string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
                     SE_Usuario_502ag usuarioADesbloquear_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
                     serGestionUsuario_502ag.Desbloquear_502ag(usuarioADesbloquear_502ag);
-                    SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
-                    bllBitacora.AltaBitacora_502ag("FormABM", "Desbloqueo de usuario", 4);
+
                     Mostrar_502ag(dgvUsuarios_502ag);
                 }
                 if(opcion_502ag == "Bloquear")
                 {
                     if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception();
-                    SE_Usuario_502ag usuarioABloquear = serGestionUsuario_502ag.ObtenerListaUsuarios_502ag().Find(x => x.NombreUsuario_502ag == dgvUsuarios_502ag.SelectedRows[0].Cells[0].Value.ToString());
+                    SE_Usuario_502ag usuarioABloquear = serGestionUsuario_502ag.ObtenerUsuario_502ag(dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString());
                     serGestionUsuario_502ag.BloquearUsuario_502ag(usuarioABloquear);
-                    SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
-                    bllBitacora.AltaBitacora_502ag("FormABM", "Bloqueo de usuario", 4);
                     Mostrar_502ag(dgvUsuarios_502ag);
                 }
                 opcion_502ag = "Consulta";
@@ -305,8 +265,7 @@ namespace GUI
                 if (!serGestionUsuario_502ag.VerificarRol_502ag(usuario_502ag))
                 {
                     serGestionUsuario_502ag.ActivarDesactivar_502ag(usuario_502ag);
-                    SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
-                    bllBitacora.AltaBitacora_502ag("FormABM", "Activar/Desactivar Usuario", 4);
+
                     Mostrar_502ag(dgvUsuarios_502ag);
                 }
                 else

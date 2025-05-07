@@ -15,63 +15,31 @@ using SE_502ag;
 
 namespace GUI
 {
-    public partial class FormMenu_502ag : Form, IObserver_502ag
+    public partial class FormMenu_502ag : Form
     {
         FormABMUsuario_502ag abmForm;
         FormCambiarContraseña_502ag cambiarContraseñaForm;
-        FormTraductor_502ag traductorForm;
         public FormMenu_502ag()
         {
             InitializeComponent();
-            SuscribirFormularios(Traductor_502ag.GestorTraductor_502ag);
-            Traductor_502ag.GestorTraductor_502ag.CargarIdioma_502ag();
-            Actualizar_502ag(Traductor_502ag.GestorTraductor_502ag);
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500,200);
             panelSubMenuAdmin_502ag.Visible = false;
             panelSubMenuUsuario_502ag.Visible=false;
             panelSubMenuMaestros_502ag.Visible=false;
             panelSubMenuVentas_502ag.Visible=false;
-            panelSubMenuReportes_502ag.Visible=false;     
-        }
-
-        public void Actualizar_502ag(Traductor_502ag traductor)
-        {
-            RecorrerControles(this, traductor);
-        }
-
-        public void RecorrerControles(Control control, Traductor_502ag traductor)
-        {
-            foreach (Control c in control.Controls) 
-            {
-                c.Text = traductor.Traducir_502ag(c.Name);
-
-                if(c.Name == labelBienvenida.Name)
-                {
-                    c.Text = c.Text.Replace("{SessionManager.GestorSessionManager.sesion.NombreUsuario}", $"{SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag}");
-                }
-
-                if (c.HasChildren)
-                {
-                    RecorrerControles(c, traductor);
-                }
-            }
-        }
-        public void SuscribirFormularios(Traductor_502ag traductor)
-        {
+            panelSubMenuReportes_502ag.Visible=false;
+            labelBienvenida.Text = $"Bienvenido @{SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag}";
             abmForm = new FormABMUsuario_502ag(this);
             cambiarContraseñaForm = new FormCambiarContraseña_502ag(this);
-            traductorForm = new FormTraductor_502ag(this);
-            traductor.Suscribir_502ag(this);
-            traductor.Suscribir_502ag(abmForm);
-            traductor.Suscribir_502ag(cambiarContraseñaForm);
-            traductor.Suscribir_502ag(traductorForm);
         }
+
+
+
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
         {
             FormLogin_502ag loginForm = new FormLogin_502ag();
-            SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
-            bllBitacora.AltaBitacora_502ag("FormMenu", "Cierre de sesión", 1);
+
             SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion();
             this.Hide();
             loginForm.Show();
@@ -79,8 +47,7 @@ namespace GUI
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            SER_GestorBitacora_502ag bllBitacora_502ag = new SER_GestorBitacora_502ag();
-            bllBitacora_502ag.AltaBitacora_502ag("FormMenu", "Cierre de sesión", 1);
+
             Environment.Exit(0);
         }
 
@@ -97,15 +64,11 @@ namespace GUI
         }
         private void buttonBitacora_Click(object sender, EventArgs e)
         {
-            FormBitacora_502ag bitacoraForm = new FormBitacora_502ag(this);
-            this.Hide();
-            bitacoraForm.Show();
+            
         }
 
         private void buttonCambiarIdioma_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            traductorForm.Show();
         }
 
         private void esconderSubMenu_502ag()
@@ -192,8 +155,6 @@ namespace GUI
                 serGestionUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
                 MessageBox.Show("Inicio de sesión exitoso", "Éxito");
 
-                SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
-                bllBitacora.AltaBitacora_502ag("FormLogin", "Inicio de sesión", 1);
                 FormMenu_502ag menuForm = new FormMenu_502ag();
                 this.Hide();
                 menuForm.Show();

@@ -44,9 +44,9 @@
             this.labelConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.labelConfirmarContraseña.Location = new System.Drawing.Point(273, 184);
             this.labelConfirmarContraseña.Name = "labelConfirmarContraseña";
-            this.labelConfirmarContraseña.Size = new System.Drawing.Size(228, 25);
+            this.labelConfirmarContraseña.Size = new System.Drawing.Size(204, 25);
             this.labelConfirmarContraseña.TabIndex = 8;
-            this.labelConfirmarContraseña.Text = "Confirmar Contraseña_T";
+            this.labelConfirmarContraseña.Text = "Confirmar Contraseña";
             // 
             // labelContraseña
             // 
@@ -54,9 +54,9 @@
             this.labelContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.labelContraseña.Location = new System.Drawing.Point(273, 119);
             this.labelContraseña.Name = "labelContraseña";
-            this.labelContraseña.Size = new System.Drawing.Size(138, 25);
+            this.labelContraseña.Size = new System.Drawing.Size(114, 25);
             this.labelContraseña.TabIndex = 7;
-            this.labelContraseña.Text = "Contraseña_T";
+            this.labelContraseña.Text = "Contraseña";
             // 
             // textBoxContraseñaConfirmar_502ag
             // 
@@ -115,11 +115,11 @@
             this.cBMostrarContraseña_502ag.UseVisualStyleBackColor = true;
             this.cBMostrarContraseña_502ag.CheckedChanged += new System.EventHandler(this.cBMostrarContraseña_502ag_CheckedChanged);
             // 
-            // cBMostrarConfirmarContraseña
+            // cBMostrarConfirmarContraseña_502ag
             // 
             this.cBMostrarConfirmarContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBMostrarConfirmarContraseña_502ag.Location = new System.Drawing.Point(509, 209);
-            this.cBMostrarConfirmarContraseña_502ag.Name = "cBMostrarConfirmarContraseña";
+            this.cBMostrarConfirmarContraseña_502ag.Name = "cBMostrarConfirmarContraseña_502ag";
             this.cBMostrarConfirmarContraseña_502ag.Size = new System.Drawing.Size(117, 30);
             this.cBMostrarConfirmarContraseña_502ag.TabIndex = 30;
             this.cBMostrarConfirmarContraseña_502ag.Text = "Mostrar";

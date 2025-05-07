@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL_Bitacora_502ag.cs" />
     <Compile Include="DAL_Conexion_502ag.cs" />
     <Compile Include="DAL_Usuario_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

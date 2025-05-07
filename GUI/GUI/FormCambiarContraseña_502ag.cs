@@ -12,7 +12,7 @@ using SE_502ag;
 
 namespace GUI
 {
-    public partial class FormCambiarContraseña_502ag : Form, IObserver_502ag
+    public partial class FormCambiarContraseña_502ag : Form
     {
         SER_GestorUsuario_502ag serGestionUsuario_502ag;
         Encryptador_502ag cifrador_502ag;
@@ -26,27 +26,10 @@ namespace GUI
             cifrador_502ag = new Encryptador_502ag();
             buttonCambiarContraseña_502ag.Enabled = false;
             menu_502ag = menuOriginal_502ag;
-            Actualizar_502ag(Traductor_502ag.GestorTraductor_502ag);
             MostrarContraseña_502ag();
             MostrarConfirmarContraseña_502ag();
         }
-        public void Actualizar_502ag(Traductor_502ag traductor)
-        {
-            RecorrerControles(this, traductor);
-        }
 
-        public void RecorrerControles(Control control, Traductor_502ag traductor)
-        {
-            foreach (Control c in control.Controls)
-            {
-                if(!(c is TextBox))
-                c.Text = traductor.Traducir_502ag(c.Name);
-                if (c.HasChildren)
-                {
-                    RecorrerControles(c, traductor);
-                }
-            }
-        }
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -55,8 +38,7 @@ namespace GUI
 
         private void FormCambiarContraseña_FormClosed(object sender, FormClosedEventArgs e)
         {
-            SER_GestorBitacora_502ag bllBitacora_502ag = new SER_GestorBitacora_502ag();
-            bllBitacora_502ag.AltaBitacora_502ag("FormCambiarContraseña", "Cierre de sesión", 1);
+
             Environment.Exit(0);
         }
 
@@ -72,8 +54,7 @@ namespace GUI
                     if(!serGestionUsuario_502ag.VerificarContraseñaActual_502ag(contraseña_502ag, usuario_502ag))
                     {
                         serGestionUsuario_502ag.CambiarContraseña_502ag(contraseña_502ag, usuario_502ag);
-                        SER_GestorBitacora_502ag bllBitacora = new SER_GestorBitacora_502ag();
-                        bllBitacora.AltaBitacora_502ag("FormCambiarContraseña", "Cambio de contraseña", 3);
+
                         textBoxContraseña_502ag.Clear();
                         textBoxContraseñaConfirmar_502ag.Clear();
                     }

@@ -45,13 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encryptador_502ag.cs" />
-    <Compile Include="IObserver_502ag.cs" />
-    <Compile Include="ISubject_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SER_GestorBitacora_502ag.cs" />
     <Compile Include="Usuario_502ag\SER_GestorUsuario_502ag.cs" />
     <Compile Include="Usuario_502ag\SER_GestorSesion_502ag.cs" />
-    <Compile Include="Traductor_502ag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

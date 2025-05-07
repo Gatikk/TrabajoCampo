@@ -199,21 +199,7 @@ namespace DAL_502ag
                 }
             }
         }
-        public void ActualizarIdioma_502ag(SE_Usuario_502ag usuario_502ag)
-        {
-            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
-            {
-                cx_502ag.Open();
-                string updateQuery_502ag = "UPDATE Usuario_502ag SET Idioma_502ag = @Idioma_502ag WHERE DNI_502ag = @DNI_502ag";
-                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Usuario_502ag", cx_502ag))
-                {
-                    cmd_502ag.CommandText = updateQuery_502ag;
-                    cmd_502ag.Parameters.AddWithValue("@DNI_502ag", usuario_502ag.DNI_502ag);
-                    cmd_502ag.Parameters.AddWithValue("Idioma_502ag", usuario_502ag.Idioma_502ag);
-                    cmd_502ag.ExecuteNonQuery();
-                }
-            }
-        }
+        
         #region ActivarDesactivar
         public void ActualizarActivo_502ag(SE_Usuario_502ag usuario_502ag)
         {

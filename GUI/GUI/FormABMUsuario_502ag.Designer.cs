@@ -30,14 +30,6 @@
         {
             this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
             this.dgvUsuarios_502ag = new System.Windows.Forms.DataGridView();
-            this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaBloqueado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.buttonAltaUsuario_502ag = new System.Windows.Forms.Button();
             this.buttonModificarUsuario_502ag = new System.Windows.Forms.Button();
             this.tBNombreUsuario_502ag = new System.Windows.Forms.TextBox();
@@ -60,6 +52,14 @@
             this.rBActivos_502ag = new System.Windows.Forms.RadioButton();
             this.rBTodos_502ag = new System.Windows.Forms.RadioButton();
             this.tBModoActual_502ag = new System.Windows.Forms.TextBox();
+            this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaBloqueado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,51 +99,6 @@
             this.dgvUsuarios_502ag.Size = new System.Drawing.Size(760, 210);
             this.dgvUsuarios_502ag.TabIndex = 3;
             this.dgvUsuarios_502ag.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
-            // 
-            // ColumnaUsuario
-            // 
-            this.ColumnaUsuario.HeaderText = "Usuario_T";
-            this.ColumnaUsuario.Name = "ColumnaUsuario";
-            // 
-            // ColumnaRol
-            // 
-            this.ColumnaRol.HeaderText = "Rol_T";
-            this.ColumnaRol.Name = "ColumnaRol";
-            // 
-            // ColumnaNombre
-            // 
-            this.ColumnaNombre.HeaderText = "Nombre_T";
-            this.ColumnaNombre.Name = "ColumnaNombre";
-            // 
-            // ColumnaApellido
-            // 
-            this.ColumnaApellido.HeaderText = "Apellido_T";
-            this.ColumnaApellido.Name = "ColumnaApellido";
-            // 
-            // ColumnaDNI
-            // 
-            this.ColumnaDNI.HeaderText = "DNI_T";
-            this.ColumnaDNI.Name = "ColumnaDNI";
-            // 
-            // ColumnaEmail
-            // 
-            this.ColumnaEmail.HeaderText = "Email_T";
-            this.ColumnaEmail.Name = "ColumnaEmail";
-            this.ColumnaEmail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnaBloqueado
-            // 
-            this.ColumnaBloqueado.HeaderText = "isBloqueado_T";
-            this.ColumnaBloqueado.Name = "ColumnaBloqueado";
-            this.ColumnaBloqueado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnaBloqueado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnaActivo
-            // 
-            this.ColumnaActivo.HeaderText = "isActivo_T";
-            this.ColumnaActivo.Name = "ColumnaActivo";
-            this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // buttonAltaUsuario_502ag
             // 
@@ -222,9 +177,9 @@
             this.labelNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelNombreUsuario.Location = new System.Drawing.Point(365, 285);
             this.labelNombreUsuario.Name = "labelNombreUsuario";
-            this.labelNombreUsuario.Size = new System.Drawing.Size(74, 17);
+            this.labelNombreUsuario.Size = new System.Drawing.Size(57, 17);
             this.labelNombreUsuario.TabIndex = 16;
-            this.labelNombreUsuario.Text = "Usuario_T";
+            this.labelNombreUsuario.Text = "Usuario";
             // 
             // labelRol
             // 
@@ -235,9 +190,9 @@
             this.labelRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelRol.Location = new System.Drawing.Point(365, 346);
             this.labelRol.Name = "labelRol";
-            this.labelRol.Size = new System.Drawing.Size(46, 17);
+            this.labelRol.Size = new System.Drawing.Size(29, 17);
             this.labelRol.TabIndex = 17;
-            this.labelRol.Text = "Rol_T";
+            this.labelRol.Text = "Rol";
             // 
             // labelNombre
             // 
@@ -248,9 +203,9 @@
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelNombre.Location = new System.Drawing.Point(365, 375);
             this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(75, 17);
+            this.labelNombre.Size = new System.Drawing.Size(58, 17);
             this.labelNombre.TabIndex = 18;
-            this.labelNombre.Text = "Nombre_T";
+            this.labelNombre.Text = "Nombre";
             // 
             // labelApellido
             // 
@@ -261,9 +216,9 @@
             this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelApellido.Location = new System.Drawing.Point(365, 404);
             this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(75, 17);
+            this.labelApellido.Size = new System.Drawing.Size(58, 17);
             this.labelApellido.TabIndex = 19;
-            this.labelApellido.Text = "Apellido_T";
+            this.labelApellido.Text = "Apellido";
             // 
             // labelDNI
             // 
@@ -274,9 +229,9 @@
             this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelDNI.Location = new System.Drawing.Point(365, 317);
             this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(48, 17);
+            this.labelDNI.Size = new System.Drawing.Size(31, 17);
             this.labelDNI.TabIndex = 20;
-            this.labelDNI.Text = "DNI_T";
+            this.labelDNI.Text = "DNI";
             // 
             // labelEmail
             // 
@@ -287,9 +242,9 @@
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelEmail.Location = new System.Drawing.Point(365, 432);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(59, 17);
+            this.labelEmail.Size = new System.Drawing.Size(42, 17);
             this.labelEmail.TabIndex = 21;
-            this.labelEmail.Text = "Email_T";
+            this.labelEmail.Text = "Email";
             // 
             // buttonBloquear_502ag
             // 
@@ -380,10 +335,10 @@
             this.rBActivos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rBActivos_502ag.Location = new System.Drawing.Point(492, 3);
             this.rBActivos_502ag.Name = "rBActivos_502ag";
-            this.rBActivos_502ag.Size = new System.Drawing.Size(88, 21);
+            this.rBActivos_502ag.Size = new System.Drawing.Size(71, 21);
             this.rBActivos_502ag.TabIndex = 29;
             this.rBActivos_502ag.TabStop = true;
-            this.rBActivos_502ag.Text = "Activos_T";
+            this.rBActivos_502ag.Text = "Activos";
             this.rBActivos_502ag.UseVisualStyleBackColor = true;
             // 
             // rBTodos_502ag
@@ -392,9 +347,9 @@
             this.rBTodos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rBTodos_502ag.Location = new System.Drawing.Point(492, 26);
             this.rBTodos_502ag.Name = "rBTodos_502ag";
-            this.rBTodos_502ag.Size = new System.Drawing.Size(83, 21);
+            this.rBTodos_502ag.Size = new System.Drawing.Size(66, 21);
             this.rBTodos_502ag.TabIndex = 30;
-            this.rBTodos_502ag.Text = "Todos_T";
+            this.rBTodos_502ag.Text = "Todos";
             this.rBTodos_502ag.UseVisualStyleBackColor = true;
             this.rBTodos_502ag.CheckedChanged += new System.EventHandler(this.rBTodos_502ag_CheckedChanged);
             // 
@@ -408,6 +363,51 @@
             this.tBModoActual_502ag.Size = new System.Drawing.Size(159, 26);
             this.tBModoActual_502ag.TabIndex = 31;
             this.tBModoActual_502ag.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // ColumnaUsuario
+            // 
+            this.ColumnaUsuario.HeaderText = "Usuario";
+            this.ColumnaUsuario.Name = "ColumnaUsuario";
+            // 
+            // ColumnaRol
+            // 
+            this.ColumnaRol.HeaderText = "Rol";
+            this.ColumnaRol.Name = "ColumnaRol";
+            // 
+            // ColumnaNombre
+            // 
+            this.ColumnaNombre.HeaderText = "Nombre";
+            this.ColumnaNombre.Name = "ColumnaNombre";
+            // 
+            // ColumnaApellido
+            // 
+            this.ColumnaApellido.HeaderText = "Apellido";
+            this.ColumnaApellido.Name = "ColumnaApellido";
+            // 
+            // ColumnaDNI
+            // 
+            this.ColumnaDNI.HeaderText = "DNI";
+            this.ColumnaDNI.Name = "ColumnaDNI";
+            // 
+            // ColumnaEmail
+            // 
+            this.ColumnaEmail.HeaderText = "Email";
+            this.ColumnaEmail.Name = "ColumnaEmail";
+            this.ColumnaEmail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColumnaBloqueado
+            // 
+            this.ColumnaBloqueado.HeaderText = "isBloqueado";
+            this.ColumnaBloqueado.Name = "ColumnaBloqueado";
+            this.ColumnaBloqueado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnaBloqueado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnaActivo
+            // 
+            this.ColumnaActivo.HeaderText = "isActivo";
+            this.ColumnaActivo.Name = "ColumnaActivo";
+            this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FormABMUsuario_502ag
             // 
@@ -469,6 +469,10 @@
         private System.Windows.Forms.ComboBox cBRol_502ag;
         private System.Windows.Forms.Button buttonAplicar_502ag;
         private System.Windows.Forms.Button buttonCancelar_502ag;
+        private System.Windows.Forms.Button buttonActivarDesactivar_502ag;
+        private System.Windows.Forms.RadioButton rBActivos_502ag;
+        private System.Windows.Forms.RadioButton rBTodos_502ag;
+        private System.Windows.Forms.TextBox tBModoActual_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaRol;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombre;
@@ -477,9 +481,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEmail;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaBloqueado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaActivo;
-        private System.Windows.Forms.Button buttonActivarDesactivar_502ag;
-        private System.Windows.Forms.RadioButton rBActivos_502ag;
-        private System.Windows.Forms.RadioButton rBTodos_502ag;
-        private System.Windows.Forms.TextBox tBModoActual_502ag;
     }
 }
