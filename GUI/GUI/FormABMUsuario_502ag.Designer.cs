@@ -30,6 +30,14 @@
         {
             this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
             this.dgvUsuarios_502ag = new System.Windows.Forms.DataGridView();
+            this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaBloqueado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.buttonAltaUsuario_502ag = new System.Windows.Forms.Button();
             this.buttonModificarUsuario_502ag = new System.Windows.Forms.Button();
             this.tBNombreUsuario_502ag = new System.Windows.Forms.TextBox();
@@ -52,14 +60,6 @@
             this.rBActivos_502ag = new System.Windows.Forms.RadioButton();
             this.rBTodos_502ag = new System.Windows.Forms.RadioButton();
             this.tBModoActual_502ag = new System.Windows.Forms.TextBox();
-            this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaBloqueado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,10 +95,64 @@
             this.dgvUsuarios_502ag.Location = new System.Drawing.Point(12, 53);
             this.dgvUsuarios_502ag.MultiSelect = false;
             this.dgvUsuarios_502ag.Name = "dgvUsuarios_502ag";
+            this.dgvUsuarios_502ag.ReadOnly = true;
             this.dgvUsuarios_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios_502ag.Size = new System.Drawing.Size(760, 210);
             this.dgvUsuarios_502ag.TabIndex = 3;
             this.dgvUsuarios_502ag.SelectionChanged += new System.EventHandler(this.dgvUsuarios_SelectionChanged);
+            // 
+            // ColumnaUsuario
+            // 
+            this.ColumnaUsuario.HeaderText = "Usuario";
+            this.ColumnaUsuario.Name = "ColumnaUsuario";
+            this.ColumnaUsuario.ReadOnly = true;
+            // 
+            // ColumnaRol
+            // 
+            this.ColumnaRol.HeaderText = "Rol";
+            this.ColumnaRol.Name = "ColumnaRol";
+            this.ColumnaRol.ReadOnly = true;
+            // 
+            // ColumnaNombre
+            // 
+            this.ColumnaNombre.HeaderText = "Nombre";
+            this.ColumnaNombre.Name = "ColumnaNombre";
+            this.ColumnaNombre.ReadOnly = true;
+            // 
+            // ColumnaApellido
+            // 
+            this.ColumnaApellido.HeaderText = "Apellido";
+            this.ColumnaApellido.Name = "ColumnaApellido";
+            this.ColumnaApellido.ReadOnly = true;
+            // 
+            // ColumnaDNI
+            // 
+            this.ColumnaDNI.HeaderText = "DNI";
+            this.ColumnaDNI.Name = "ColumnaDNI";
+            this.ColumnaDNI.ReadOnly = true;
+            // 
+            // ColumnaEmail
+            // 
+            this.ColumnaEmail.HeaderText = "Email";
+            this.ColumnaEmail.Name = "ColumnaEmail";
+            this.ColumnaEmail.ReadOnly = true;
+            this.ColumnaEmail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColumnaBloqueado
+            // 
+            this.ColumnaBloqueado.HeaderText = "isBloqueado";
+            this.ColumnaBloqueado.Name = "ColumnaBloqueado";
+            this.ColumnaBloqueado.ReadOnly = true;
+            this.ColumnaBloqueado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnaBloqueado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnaActivo
+            // 
+            this.ColumnaActivo.HeaderText = "isActivo";
+            this.ColumnaActivo.Name = "ColumnaActivo";
+            this.ColumnaActivo.ReadOnly = true;
+            this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // buttonAltaUsuario_502ag
             // 
@@ -363,51 +417,6 @@
             this.tBModoActual_502ag.Size = new System.Drawing.Size(159, 26);
             this.tBModoActual_502ag.TabIndex = 31;
             this.tBModoActual_502ag.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // ColumnaUsuario
-            // 
-            this.ColumnaUsuario.HeaderText = "Usuario";
-            this.ColumnaUsuario.Name = "ColumnaUsuario";
-            // 
-            // ColumnaRol
-            // 
-            this.ColumnaRol.HeaderText = "Rol";
-            this.ColumnaRol.Name = "ColumnaRol";
-            // 
-            // ColumnaNombre
-            // 
-            this.ColumnaNombre.HeaderText = "Nombre";
-            this.ColumnaNombre.Name = "ColumnaNombre";
-            // 
-            // ColumnaApellido
-            // 
-            this.ColumnaApellido.HeaderText = "Apellido";
-            this.ColumnaApellido.Name = "ColumnaApellido";
-            // 
-            // ColumnaDNI
-            // 
-            this.ColumnaDNI.HeaderText = "DNI";
-            this.ColumnaDNI.Name = "ColumnaDNI";
-            // 
-            // ColumnaEmail
-            // 
-            this.ColumnaEmail.HeaderText = "Email";
-            this.ColumnaEmail.Name = "ColumnaEmail";
-            this.ColumnaEmail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnaBloqueado
-            // 
-            this.ColumnaBloqueado.HeaderText = "isBloqueado";
-            this.ColumnaBloqueado.Name = "ColumnaBloqueado";
-            this.ColumnaBloqueado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnaBloqueado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // ColumnaActivo
-            // 
-            this.ColumnaActivo.HeaderText = "isActivo";
-            this.ColumnaActivo.Name = "ColumnaActivo";
-            this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FormABMUsuario_502ag
             // 

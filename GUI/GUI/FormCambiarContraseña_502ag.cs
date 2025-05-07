@@ -28,6 +28,7 @@ namespace GUI
             menu_502ag = menuOriginal_502ag;
             MostrarContraseña_502ag();
             MostrarConfirmarContraseña_502ag();
+            MostrarContraseñaActual_502ag();
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
@@ -46,30 +47,41 @@ namespace GUI
         {
             try
             {
+                string contraseñaActual_502ag = textBoxContraseñaActual_502ag.Text;
                 string contraseña_502ag = textBoxContraseña_502ag.Text;
                 string confirmarContraseña_502ag = textBoxContraseñaConfirmar_502ag.Text;
                 if(serGestionUsuario_502ag.VerificarCoincidencia_502ag(contraseña_502ag, confirmarContraseña_502ag))
                 {
                     SE_Usuario_502ag usuario_502ag = SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag;
+
+                    if (!serGestionUsuario_502ag.CompararContraseñaActualTextBox_502ag(contraseñaActual_502ag, usuario_502ag))
+                    {
+                        textBoxContraseña_502ag.Clear();
+                        textBoxContraseñaConfirmar_502ag.Clear();
+                        textBoxContraseñaActual_502ag.Clear();
+                        throw new Exception("No es tu contraseña actual");
+                    }
                     if(!serGestionUsuario_502ag.VerificarContraseñaActual_502ag(contraseña_502ag, usuario_502ag))
                     {
                         serGestionUsuario_502ag.CambiarContraseña_502ag(contraseña_502ag, usuario_502ag);
-
+                        textBoxContraseñaActual_502ag.Clear();
                         textBoxContraseña_502ag.Clear();
                         textBoxContraseñaConfirmar_502ag.Clear();
                     }
                     else
                     {
-                        MessageBox.Show("Esta es su contraseña actual");
                         textBoxContraseña_502ag.Clear();
                         textBoxContraseñaConfirmar_502ag.Clear();
+                        textBoxContraseñaActual_502ag.Clear();
+                        throw new Exception("Esta es su contraseña actual");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Contraseñas no coinciden");
                     textBoxContraseña_502ag.Clear();
                     textBoxContraseñaConfirmar_502ag.Clear();
+                    textBoxContraseñaActual_502ag.Clear();
+                    throw new Exception("Contraseñas no coinciden");
                 }
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
@@ -98,11 +110,24 @@ namespace GUI
             }
         }
 
+        private void MostrarContraseñaActual_502ag()
+        {
+            if (cBContraseñaActual_502ag.Checked)
+            {
+                textBoxContraseñaActual_502ag.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBoxContraseñaActual_502ag.UseSystemPasswordChar = true;
+            }
+        }
+
 
         public void VerificarCambiarContraseña()
         {
             buttonCambiarContraseña_502ag.Enabled = !string.IsNullOrWhiteSpace(textBoxContraseña_502ag.Text) &&
-                                                    !string.IsNullOrWhiteSpace(textBoxContraseñaConfirmar_502ag.Text);
+                                                    !string.IsNullOrWhiteSpace(textBoxContraseñaConfirmar_502ag.Text)&&
+                                                    !string.IsNullOrWhiteSpace(textBoxContraseñaActual_502ag.Text);
         }
 
         private void textBoxContraseña_TextChanged(object sender, EventArgs e)
@@ -111,6 +136,10 @@ namespace GUI
         }
 
         private void textBoxContraseñaConfirmar_TextChanged(object sender, EventArgs e)
+        {
+            VerificarCambiarContraseña();
+        }
+        private void textBoxContraseñaActual_502ag_TextChanged(object sender, EventArgs e)
         {
             VerificarCambiarContraseña();
         }
@@ -123,6 +152,11 @@ namespace GUI
         private void cBMostrarConfirmarContraseña_CheckedChanged(object sender, EventArgs e)
         {
             MostrarConfirmarContraseña_502ag();
+        }
+
+        private void cBContraseñaActual_502ag_CheckedChanged(object sender, EventArgs e)
+        {
+            MostrarContraseñaActual_502ag();
         }
     }
 }

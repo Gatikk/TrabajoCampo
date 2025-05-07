@@ -66,12 +66,30 @@ namespace GUI
         }
 
         private void buttonCerrarAplicacion_Click(object sender, EventArgs e)
-        {     
-            Environment.Exit(0);
+        {
+            if (SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag == null)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
+                this.Hide();
+                menuForm_502ag.Show();
+            }
         }
         private void FormLogin_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Environment.Exit(0);
+            if(SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag == null)
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
+                this.Hide();
+                menuForm_502ag.Show();
+            }
         }
 
         private void cBMostrarContraseña_502ag_CheckedChanged(object sender, EventArgs e)

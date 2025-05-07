@@ -35,10 +35,8 @@
             this.labelContraseña = new System.Windows.Forms.Label();
             this.buttonCerrarAplicacion = new System.Windows.Forms.Button();
             this.panelLateralIzquierdo_502ag = new System.Windows.Forms.Panel();
-            this.panelArribaIzq = new System.Windows.Forms.Panel();
             this.labelBienvenida_502ag = new System.Windows.Forms.Label();
             this.cBMostrarContraseña_502ag = new System.Windows.Forms.CheckBox();
-            this.panelLateralIzquierdo_502ag.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonIniciarSesion
@@ -50,7 +48,7 @@
             this.buttonIniciarSesion.Location = new System.Drawing.Point(391, 243);
             this.buttonIniciarSesion.Name = "buttonIniciarSesion";
             this.buttonIniciarSesion.Size = new System.Drawing.Size(225, 50);
-            this.buttonIniciarSesion.TabIndex = 0;
+            this.buttonIniciarSesion.TabIndex = 4;
             this.buttonIniciarSesion.Text = "Iniciar Sesión";
             this.buttonIniciarSesion.UseVisualStyleBackColor = false;
             this.buttonIniciarSesion.Click += new System.EventHandler(this.buttonIniciarSesion_Click);
@@ -108,20 +106,11 @@
             // panelLateralIzquierdo_502ag
             // 
             this.panelLateralIzquierdo_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panelLateralIzquierdo_502ag.Controls.Add(this.panelArribaIzq);
             this.panelLateralIzquierdo_502ag.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelLateralIzquierdo_502ag.Location = new System.Drawing.Point(0, 0);
             this.panelLateralIzquierdo_502ag.Name = "panelLateralIzquierdo_502ag";
             this.panelLateralIzquierdo_502ag.Size = new System.Drawing.Size(245, 461);
             this.panelLateralIzquierdo_502ag.TabIndex = 27;
-            // 
-            // panelArribaIzq
-            // 
-            this.panelArribaIzq.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelArribaIzq.Location = new System.Drawing.Point(0, 0);
-            this.panelArribaIzq.Name = "panelArribaIzq";
-            this.panelArribaIzq.Size = new System.Drawing.Size(245, 100);
-            this.panelArribaIzq.TabIndex = 1;
             // 
             // labelBienvenida_502ag
             // 
@@ -139,7 +128,7 @@
             this.cBMostrarContraseña_502ag.Location = new System.Drawing.Point(622, 198);
             this.cBMostrarContraseña_502ag.Name = "cBMostrarContraseña_502ag";
             this.cBMostrarContraseña_502ag.Size = new System.Drawing.Size(117, 30);
-            this.cBMostrarContraseña_502ag.TabIndex = 28;
+            this.cBMostrarContraseña_502ag.TabIndex = 3;
             this.cBMostrarContraseña_502ag.Text = "Mostrar";
             this.cBMostrarContraseña_502ag.UseVisualStyleBackColor = true;
             this.cBMostrarContraseña_502ag.CheckedChanged += new System.EventHandler(this.cBMostrarContraseña_502ag_CheckedChanged);
@@ -161,7 +150,6 @@
             this.Name = "FormLogin_502ag";
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormLogin_FormClosed);
-            this.panelLateralIzquierdo_502ag.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -176,7 +164,6 @@
         private System.Windows.Forms.Label labelContraseña;
         private System.Windows.Forms.Button buttonCerrarAplicacion;
         private System.Windows.Forms.Panel panelLateralIzquierdo_502ag;
-        private System.Windows.Forms.Panel panelArribaIzq;
         private System.Windows.Forms.Label labelBienvenida_502ag;
         private System.Windows.Forms.CheckBox cBMostrarContraseña_502ag;
     }

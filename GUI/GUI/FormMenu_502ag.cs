@@ -137,27 +137,9 @@ namespace GUI
         {
             try
             {
-                SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
-                string nombreUsuario_502ag = Interaction.InputBox("Nombre: ");
-                string contraseña_502ag = Interaction.InputBox("Contraseña: ");
-
-                SE_Usuario_502ag usuarioALogear_502ag = serGestionUsuario_502ag.ObtenerUsuarioALogear_502ag(nombreUsuario_502ag);
-
-                if (!SER_GestorSesion_502ag.GestorSesion_502ag.EstaLogeado_502ag()) throw new Exception("Ya estas logeado");
-                if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag)) throw new Exception("Usuario o contraseñas incorrectos");
-                if (!serGestionUsuario_502ag.VerificarUsuarioBloqueado_502ag(usuarioALogear_502ag)) throw new Exception("Usuario bloqueado");
-                if (!serGestionUsuario_502ag.VerificarUsuarioActivo_502ag(usuarioALogear_502ag)) throw new Exception("El usuario no se encuentra como activo");
-                if (!serGestionUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag))
-                {
-                    serGestionUsuario_502ag.SesionFallida_502ag(usuarioALogear_502ag);
-                    throw new Exception("Usuario o contraseña incorrectos");
-                }
-                serGestionUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
-                MessageBox.Show("Inicio de sesión exitoso", "Éxito");
-
-                FormMenu_502ag menuForm = new FormMenu_502ag();
+                FormLogin_502ag frmLogin_502ag = new FormLogin_502ag();
                 this.Hide();
-                menuForm.Show();
+                frmLogin_502ag.Show();
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }

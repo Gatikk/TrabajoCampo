@@ -135,6 +135,14 @@ namespace SERVICIOS_502ag
             return contraseñaEsIgual;
         }
 
+        public bool CompararContraseñaActualTextBox_502ag(string contraseñaActual_502ag, SE_Usuario_502ag usuario_502ag)
+        {
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+            bool contraseñaEsIgual = (usuario_502ag.Contraseña_502ag == cifrador_502ag.EncryptadorIrreversible_502ag(contraseñaActual_502ag));
+            return contraseñaEsIgual;
+        }
+
+
         #endregion
 
 
