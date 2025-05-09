@@ -30,7 +30,6 @@ namespace GUI
             tBModoActual_502ag.Text = "Modo Consulta";
             buttonAplicar_502ag.Enabled = false;
             buttonCancelar_502ag.Enabled = false;
-            tBNombreUsuario_502ag.Enabled = false;
             tBNombre_502ag.Enabled = false;
             tBApellido_502ag.Enabled = false;
             tBDNI_502ag.Enabled = false;
@@ -90,7 +89,6 @@ namespace GUI
                 buttonBloquear_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonActivarDesactivar_502ag.Enabled = false;
-                tBNombreUsuario_502ag.Enabled = true;
                 tBNombre_502ag.Enabled = true;
                 tBApellido_502ag.Enabled = true;
                 tBDNI_502ag.Enabled = true;
@@ -113,8 +111,8 @@ namespace GUI
                 buttonBloquear_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonActivarDesactivar_502ag.Enabled = false;
-                tBNombre_502ag.Enabled = true;
-                tBApellido_502ag.Enabled = true;
+                //tBNombre_502ag.Enabled = true;
+                //tBApellido_502ag.Enabled = true;
                 tBEmail_502ag.Enabled = true;
                 cBRol_502ag.Enabled = true;
 
@@ -165,11 +163,10 @@ namespace GUI
                 SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
                 if(opcion_502ag == "Alta")
                 {
-                    if (!serGestionUsuario_502ag.VerificarAltaUsuario_502ag(tBNombreUsuario_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
-                    if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(tBNombreUsuario_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Nombre de usuario o DNI o Email ya existen");
-                    serGestionUsuario_502ag.AltaUsuario_502ag(tBNombreUsuario_502ag.Text, cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text);
+                    if (!serGestionUsuario_502ag.VerificarAltaUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
+                    if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("DNI o Email ya existen");
+                    serGestionUsuario_502ag.AltaUsuario_502ag(cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text);
                     Mostrar_502ag(dgvUsuarios_502ag);
-                    tBNombreUsuario_502ag.Clear();
                     tBApellido_502ag.Clear();
                     tBNombre_502ag.Clear();
                     tBDNI_502ag.Clear();
@@ -179,12 +176,11 @@ namespace GUI
                 {
                     string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
                     SE_Usuario_502ag usuario_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
-                    if (!serGestionUsuario_502ag.VerificarModificarUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
+                    if (!serGestionUsuario_502ag.VerificarModificarUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
                     DialogResult dResult_502ag = MessageBox.Show($"¿Modificar a @{usuario_502ag.NombreUsuario_502ag}?", "Confirmar Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dResult_502ag == DialogResult.Yes) serGestionUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBEmail_502ag.Text);
+                    if (dResult_502ag == DialogResult.Yes) serGestionUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, cBRol_502ag.Text, tBEmail_502ag.Text);
 
                     Mostrar_502ag(dgvUsuarios_502ag);
-                    tBNombreUsuario_502ag.Clear();
                     tBApellido_502ag.Clear();
                     tBNombre_502ag.Clear();
                     tBDNI_502ag.Clear();
@@ -216,7 +212,6 @@ namespace GUI
                 buttonDesbloquear_502ag.Enabled = true;
                 buttonVolverAlMenu_502ag.Enabled = true;
                 buttonActivarDesactivar_502ag.Enabled = true;
-                tBNombreUsuario_502ag.Enabled = false;
                 tBNombre_502ag.Enabled = false;
                 tBApellido_502ag.Enabled = false;
                 tBDNI_502ag.Enabled = false;
@@ -240,13 +235,11 @@ namespace GUI
                 buttonDesbloquear_502ag.Enabled = true;
                 buttonVolverAlMenu_502ag.Enabled = true;
                 buttonActivarDesactivar_502ag.Enabled = true;
-                tBNombreUsuario_502ag.Enabled = false;
                 tBNombre_502ag.Enabled = false;
                 tBApellido_502ag.Enabled = false;
                 tBDNI_502ag.Enabled = false;
                 tBEmail_502ag.Enabled = false;
                 cBRol_502ag.Enabled = false;
-                tBNombreUsuario_502ag.Clear();
                 tBApellido_502ag.Clear();
                 tBNombre_502ag.Clear();
                 tBDNI_502ag.Clear();
@@ -296,7 +289,6 @@ namespace GUI
                     {
                         if (dgvUsuarios_502ag.SelectedRows.Count > 0 && dgvUsuarios_502ag.Rows.Count > 0)
                         {
-                            tBNombreUsuario_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[0].Value.ToString();
                             cBRol_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[1].Value.ToString();
                             tBNombre_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[2].Value.ToString();
                             tBApellido_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[3].Value.ToString();

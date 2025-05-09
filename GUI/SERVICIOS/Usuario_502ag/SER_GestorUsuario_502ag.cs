@@ -171,10 +171,11 @@ namespace SERVICIOS_502ag
 
         #region ABM
         #region AltaUsuario
-        public void AltaUsuario_502ag(string nombreUsuario_502ag, string rol_502ag, string nombre_502ag, string apellido_502ag, string DNI_502ag, string email_502ag)
+        public void AltaUsuario_502ag(string rol_502ag, string nombre_502ag, string apellido_502ag, string DNI_502ag, string email_502ag)
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
             string contraseña = FormatearContraseña_502ag(apellido_502ag, DNI_502ag);
+            string nombreUsuario_502ag = DNI_502ag+nombre_502ag.ToLower();
             SE_Usuario_502ag usuario_502ag = new SE_Usuario_502ag(DNI_502ag, nombreUsuario_502ag, rol_502ag, nombre_502ag, apellido_502ag, email_502ag);
             usuario_502ag.isBloqueado_502ag = false;
             usuario_502ag.Intentos_502ag = 0;
@@ -183,24 +184,22 @@ namespace SERVICIOS_502ag
             usuario_502ag.isActivo_502ag = true;
             dalUsuario_502ag.AltaUsuario_502ag(usuario_502ag);
         }
-        public bool VerificarExistenciaUsuario_502ag(string nombreUsuario_502ag, string DNI_502ag, string email_502ag)
+        public bool VerificarExistenciaUsuario_502ag(string DNI_502ag, string email_502ag)
         {
             bool usuarioValido_502ag = true;
             foreach (SE_Usuario_502ag usuarioEnLista_502ag in ObtenerListaUsuarios_502ag())
             {
-                if (usuarioEnLista_502ag.NombreUsuario_502ag == nombreUsuario_502ag || usuarioEnLista_502ag.DNI_502ag == DNI_502ag || usuarioEnLista_502ag.Email_502ag == email_502ag ) usuarioValido_502ag = false;
+                if (usuarioEnLista_502ag.DNI_502ag == DNI_502ag || usuarioEnLista_502ag.Email_502ag == email_502ag ) usuarioValido_502ag = false;
             }
             return usuarioValido_502ag;
         }
-        public bool VerificarAltaUsuario_502ag(string nombreUsuario_502ag, string nombre_502ag, string apellido_502ag, string DNI_502ag, string email_502ag)
+        public bool VerificarAltaUsuario_502ag(string nombre_502ag, string apellido_502ag, string DNI_502ag, string email_502ag)
         {
             bool usuarioValido_502ag = true;
             Regex reDNI_502ag = new Regex(@"^\d{8}$");
-            Regex reUsuario_502ag = new Regex(@"^[a-zA-Z0-9]{3,20}$");
-            Regex reEmail_502ag = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
+            Regex reEmail_502ag = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,40}$");
             Regex reNombreApellido_502ag = new Regex(@"^[A-Z][a-zÁÉÍÓÚáéíóúÑñ]{3,40}$");
             if (!reDNI_502ag.IsMatch(DNI_502ag)) usuarioValido_502ag = false;
-            if (!reUsuario_502ag.IsMatch(nombreUsuario_502ag)) usuarioValido_502ag = false;
             if (!reNombreApellido_502ag.IsMatch(nombre_502ag)) usuarioValido_502ag = false;
             if (!reNombreApellido_502ag.IsMatch(apellido_502ag)) usuarioValido_502ag = false;
             if (!reEmail_502ag.IsMatch(email_502ag)) usuarioValido_502ag = false;
@@ -209,22 +208,17 @@ namespace SERVICIOS_502ag
         #endregion
 
         #region Modificar
-        public void ModificarUsuario_502ag(SE_Usuario_502ag usuario_502ag,string rol_502ag,string nombre_502ag,string apellido_502ag,string email_502ag)
+        public void ModificarUsuario_502ag(SE_Usuario_502ag usuario_502ag,string rol_502ag, string email_502ag)
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
             usuario_502ag.Rol_502ag = rol_502ag;
-            usuario_502ag.Nombre_502ag = nombre_502ag;
-            usuario_502ag.Apellido_502ag = apellido_502ag;
             usuario_502ag.Email_502ag = email_502ag;
             dalUsuario_502ag.ModificarUsuario_502ag(usuario_502ag);
         }
-        public bool VerificarModificarUsuario_502ag(string nombre_502ag, string apellido_502ag, string email_502ag)
+        public bool VerificarModificarUsuario_502ag(string email_502ag)
         {
             bool usuarioValido_502ag = true;
             Regex reEmail_502ag = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$");
-            Regex reNombreApellido_502ag = new Regex(@"^[A-Z][a-zÁÉÍÓÚáéíóúÑñ]{3,40}$");
-            if (!reNombreApellido_502ag.IsMatch(nombre_502ag)) usuarioValido_502ag = false;
-            if (!reNombreApellido_502ag.IsMatch(apellido_502ag)) usuarioValido_502ag = false;
             if (!reEmail_502ag.IsMatch(email_502ag)) usuarioValido_502ag = false;
             return usuarioValido_502ag;
         }

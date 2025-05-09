@@ -40,12 +40,10 @@
             this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.buttonAltaUsuario_502ag = new System.Windows.Forms.Button();
             this.buttonModificarUsuario_502ag = new System.Windows.Forms.Button();
-            this.tBNombreUsuario_502ag = new System.Windows.Forms.TextBox();
             this.tBNombre_502ag = new System.Windows.Forms.TextBox();
             this.tBApellido_502ag = new System.Windows.Forms.TextBox();
             this.tBDNI_502ag = new System.Windows.Forms.TextBox();
             this.tBEmail_502ag = new System.Windows.Forms.TextBox();
-            this.labelNombreUsuario = new System.Windows.Forms.Label();
             this.labelRol = new System.Windows.Forms.Label();
             this.labelNombre = new System.Windows.Forms.Label();
             this.labelApellido = new System.Windows.Forms.Label();
@@ -182,18 +180,10 @@
             this.buttonModificarUsuario_502ag.UseVisualStyleBackColor = false;
             this.buttonModificarUsuario_502ag.Click += new System.EventHandler(this.buttonModificarUsuario_502ag_Click);
             // 
-            // tBNombreUsuario_502ag
-            // 
-            this.tBNombreUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBNombreUsuario_502ag.Location = new System.Drawing.Point(444, 282);
-            this.tBNombreUsuario_502ag.Name = "tBNombreUsuario_502ag";
-            this.tBNombreUsuario_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBNombreUsuario_502ag.TabIndex = 9;
-            // 
             // tBNombre_502ag
             // 
             this.tBNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBNombre_502ag.Location = new System.Drawing.Point(444, 372);
+            this.tBNombre_502ag.Location = new System.Drawing.Point(444, 352);
             this.tBNombre_502ag.Name = "tBNombre_502ag";
             this.tBNombre_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBNombre_502ag.TabIndex = 11;
@@ -201,7 +191,7 @@
             // tBApellido_502ag
             // 
             this.tBApellido_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBApellido_502ag.Location = new System.Drawing.Point(444, 401);
+            this.tBApellido_502ag.Location = new System.Drawing.Point(444, 381);
             this.tBApellido_502ag.Name = "tBApellido_502ag";
             this.tBApellido_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBApellido_502ag.TabIndex = 12;
@@ -209,7 +199,7 @@
             // tBDNI_502ag
             // 
             this.tBDNI_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBDNI_502ag.Location = new System.Drawing.Point(444, 314);
+            this.tBDNI_502ag.Location = new System.Drawing.Point(444, 294);
             this.tBDNI_502ag.Name = "tBDNI_502ag";
             this.tBDNI_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBDNI_502ag.TabIndex = 13;
@@ -217,23 +207,10 @@
             // tBEmail_502ag
             // 
             this.tBEmail_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBEmail_502ag.Location = new System.Drawing.Point(444, 429);
+            this.tBEmail_502ag.Location = new System.Drawing.Point(444, 409);
             this.tBEmail_502ag.Name = "tBEmail_502ag";
             this.tBEmail_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBEmail_502ag.TabIndex = 15;
-            // 
-            // labelNombreUsuario
-            // 
-            this.labelNombreUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelNombreUsuario.AutoSize = true;
-            this.labelNombreUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelNombreUsuario.Location = new System.Drawing.Point(365, 285);
-            this.labelNombreUsuario.Name = "labelNombreUsuario";
-            this.labelNombreUsuario.Size = new System.Drawing.Size(57, 17);
-            this.labelNombreUsuario.TabIndex = 16;
-            this.labelNombreUsuario.Text = "Usuario";
             // 
             // labelRol
             // 
@@ -242,7 +219,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelRol.AutoSize = true;
             this.labelRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelRol.Location = new System.Drawing.Point(365, 346);
+            this.labelRol.Location = new System.Drawing.Point(365, 326);
             this.labelRol.Name = "labelRol";
             this.labelRol.Size = new System.Drawing.Size(29, 17);
             this.labelRol.TabIndex = 17;
@@ -255,7 +232,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNombre.AutoSize = true;
             this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelNombre.Location = new System.Drawing.Point(365, 375);
+            this.labelNombre.Location = new System.Drawing.Point(365, 355);
             this.labelNombre.Name = "labelNombre";
             this.labelNombre.Size = new System.Drawing.Size(58, 17);
             this.labelNombre.TabIndex = 18;
@@ -268,7 +245,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelApellido.AutoSize = true;
             this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelApellido.Location = new System.Drawing.Point(365, 404);
+            this.labelApellido.Location = new System.Drawing.Point(365, 384);
             this.labelApellido.Name = "labelApellido";
             this.labelApellido.Size = new System.Drawing.Size(58, 17);
             this.labelApellido.TabIndex = 19;
@@ -281,7 +258,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDNI.AutoSize = true;
             this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelDNI.Location = new System.Drawing.Point(365, 317);
+            this.labelDNI.Location = new System.Drawing.Point(365, 297);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(31, 17);
             this.labelDNI.TabIndex = 20;
@@ -294,7 +271,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelEmail.Location = new System.Drawing.Point(365, 432);
+            this.labelEmail.Location = new System.Drawing.Point(365, 412);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(42, 17);
             this.labelEmail.TabIndex = 21;
@@ -335,7 +312,7 @@
             this.cBRol_502ag.Items.AddRange(new object[] {
             "normal",
             "admin"});
-            this.cBRol_502ag.Location = new System.Drawing.Point(444, 343);
+            this.cBRol_502ag.Location = new System.Drawing.Point(444, 323);
             this.cBRol_502ag.Name = "cBRol_502ag";
             this.cBRol_502ag.Size = new System.Drawing.Size(175, 24);
             this.cBRol_502ag.TabIndex = 25;
@@ -437,12 +414,10 @@
             this.Controls.Add(this.labelApellido);
             this.Controls.Add(this.labelNombre);
             this.Controls.Add(this.labelRol);
-            this.Controls.Add(this.labelNombreUsuario);
             this.Controls.Add(this.tBEmail_502ag);
             this.Controls.Add(this.tBDNI_502ag);
             this.Controls.Add(this.tBApellido_502ag);
             this.Controls.Add(this.tBNombre_502ag);
-            this.Controls.Add(this.tBNombreUsuario_502ag);
             this.Controls.Add(this.buttonModificarUsuario_502ag);
             this.Controls.Add(this.buttonAltaUsuario_502ag);
             this.Controls.Add(this.dgvUsuarios_502ag);
@@ -462,12 +437,10 @@
         private System.Windows.Forms.DataGridView dgvUsuarios_502ag;
         private System.Windows.Forms.Button buttonAltaUsuario_502ag;
         private System.Windows.Forms.Button buttonModificarUsuario_502ag;
-        private System.Windows.Forms.TextBox tBNombreUsuario_502ag;
         private System.Windows.Forms.TextBox tBNombre_502ag;
         private System.Windows.Forms.TextBox tBApellido_502ag;
         private System.Windows.Forms.TextBox tBDNI_502ag;
         private System.Windows.Forms.TextBox tBEmail_502ag;
-        private System.Windows.Forms.Label labelNombreUsuario;
         private System.Windows.Forms.Label labelRol;
         private System.Windows.Forms.Label labelNombre;
         private System.Windows.Forms.Label labelApellido;
