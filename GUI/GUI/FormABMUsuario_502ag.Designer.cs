@@ -186,7 +186,7 @@
             this.tBNombre_502ag.Location = new System.Drawing.Point(444, 352);
             this.tBNombre_502ag.Name = "tBNombre_502ag";
             this.tBNombre_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBNombre_502ag.TabIndex = 11;
+            this.tBNombre_502ag.TabIndex = 3;
             // 
             // tBApellido_502ag
             // 
@@ -194,7 +194,7 @@
             this.tBApellido_502ag.Location = new System.Drawing.Point(444, 381);
             this.tBApellido_502ag.Name = "tBApellido_502ag";
             this.tBApellido_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBApellido_502ag.TabIndex = 12;
+            this.tBApellido_502ag.TabIndex = 4;
             // 
             // tBDNI_502ag
             // 
@@ -202,7 +202,7 @@
             this.tBDNI_502ag.Location = new System.Drawing.Point(444, 294);
             this.tBDNI_502ag.Name = "tBDNI_502ag";
             this.tBDNI_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBDNI_502ag.TabIndex = 13;
+            this.tBDNI_502ag.TabIndex = 1;
             // 
             // tBEmail_502ag
             // 
@@ -210,7 +210,7 @@
             this.tBEmail_502ag.Location = new System.Drawing.Point(444, 409);
             this.tBEmail_502ag.Name = "tBEmail_502ag";
             this.tBEmail_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBEmail_502ag.TabIndex = 15;
+            this.tBEmail_502ag.TabIndex = 5;
             // 
             // labelRol
             // 
@@ -315,7 +315,7 @@
             this.cBRol_502ag.Location = new System.Drawing.Point(444, 323);
             this.cBRol_502ag.Name = "cBRol_502ag";
             this.cBRol_502ag.Size = new System.Drawing.Size(175, 24);
-            this.cBRol_502ag.TabIndex = 25;
+            this.cBRol_502ag.TabIndex = 2;
             // 
             // buttonAplicar_502ag
             // 

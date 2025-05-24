@@ -27,7 +27,7 @@ namespace SERVICIOS_502ag
             GestorSesion_502ag.sesion_502ag = usuario_502ag;
             
         }
-        public void CerrarSesion()
+        public void CerrarSesion_502ag()
         {
             GestorSesion_502ag.sesion_502ag = null;
         }

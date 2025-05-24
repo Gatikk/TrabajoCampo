@@ -33,14 +33,13 @@ namespace GUI
             abmForm = new FormABMUsuario_502ag(this);
             cambiarContraseñaForm = new FormCambiarContraseña_502ag(this);
         }
-
-
-
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
         {
             FormLogin_502ag loginForm = new FormLogin_502ag();
 
-            SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion();
+            DialogResult dResult_502ag = MessageBox.Show($"¿Seguro que desea cerrar sesión?", "Cerrar Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(dResult_502ag == DialogResult.Yes) { SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion_502ag(); }
+            
             this.Hide();
             loginForm.Show();
         }

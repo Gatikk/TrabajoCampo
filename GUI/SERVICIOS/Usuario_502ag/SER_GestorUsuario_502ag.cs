@@ -18,20 +18,21 @@ namespace SERVICIOS_502ag
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
             usuario_502ag.Intentos_502ag = 0;
+            usuario_502ag.UltimoLogin_502ag = DateTime.Now;
             SER_GestorSesion_502ag.GestorSesion_502ag.IniciarSesion_502ag(usuario_502ag);
             dalUsuario_502ag.ActualizarBloqueoLogin_502ag(usuario_502ag);
         }
         public void SesionFallida_502ag(SE_Usuario_502ag usuario_502ag)
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
-            if (usuario_502ag.Rol_502ag != "admin")
+            usuario_502ag.UltimoLogin_502ag = DateTime.Now;
+            usuario_502ag.Intentos_502ag++;
+            if (usuario_502ag.Intentos_502ag == 3)
             {
-                usuario_502ag.Intentos_502ag++;
-                if (usuario_502ag.Intentos_502ag == 3)
-                {
-                    usuario_502ag.isBloqueado_502ag = true;
-                }
+                usuario_502ag.isBloqueado_502ag = true;
+                usuario_502ag.ContraseñaCambiada_502ag = false;
             }
+            
             dalUsuario_502ag.ActualizarBloqueoLogin_502ag(usuario_502ag);
         }
         public bool VerificarExistenciaUsuario_502ag(SE_Usuario_502ag usuario_502ag)
@@ -62,6 +63,32 @@ namespace SERVICIOS_502ag
             }
             return esValido_502ag;
         }
+        public bool VerificarContraseñaCambiada_502ag(SE_Usuario_502ag usuario_502ag)
+        {
+            bool fueCambiada_502ag = false;
+            if(usuario_502ag.ContraseñaCambiada_502ag == true)
+            {
+                fueCambiada_502ag = true;
+            }
+            return fueCambiada_502ag;
+        }
+        public bool VerificarUltimoLogin_502ag(SE_Usuario_502ag usuario_502ag)
+        {
+            bool pasaron3Horas_502ag = false;
+            TimeSpan diferencia = DateTime.Now - usuario_502ag.UltimoLogin_502ag;
+            if(usuario_502ag.Intentos_502ag == 1 || usuario_502ag.Intentos_502ag == 2)
+            {
+                if(diferencia.TotalHours > 3)
+                {
+                    pasaron3Horas_502ag = true;
+                }
+            }
+            return pasaron3Horas_502ag;
+        }
+        public void ReiniciarIntentos_502ag(SE_Usuario_502ag usuario_502ag)
+        {
+            usuario_502ag.Intentos_502ag = 0;
+        }
         #endregion
 
         #region Consulta
@@ -84,14 +111,11 @@ namespace SERVICIOS_502ag
         public void BloquearUsuario_502ag(SE_Usuario_502ag usuario_502ag)
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
-            if (usuario_502ag.Rol_502ag != "admin")
+            if (usuario_502ag.isBloqueado_502ag != true)
             {
-                if (usuario_502ag.isBloqueado_502ag != true)
-                {
-                    usuario_502ag.isBloqueado_502ag = true;
-                    usuario_502ag.Intentos_502ag = 3;
-                    dalUsuario_502ag.ActualizarBloqueo_502ag(usuario_502ag);
-                }
+            usuario_502ag.isBloqueado_502ag = true;
+            usuario_502ag.Intentos_502ag = 3;
+            dalUsuario_502ag.ActualizarBloqueo_502ag(usuario_502ag);
             }
         }
         #region Desbloquear
@@ -102,6 +126,7 @@ namespace SERVICIOS_502ag
             {
                 usuario_502ag.isBloqueado_502ag = false;
                 usuario_502ag.Intentos_502ag = 0;
+                usuario_502ag.ContraseñaCambiada_502ag = false;
                 usuario_502ag.Contraseña_502ag = FormatearContraseña_502ag(usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag);
                 dalUsuario_502ag.ActualizarBloqueo_502ag(usuario_502ag);
             }
@@ -113,6 +138,7 @@ namespace SERVICIOS_502ag
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
             Encryptador_502ag cifrador = new Encryptador_502ag();
             usuario_502ag.Contraseña_502ag = cifrador.EncryptadorIrreversible_502ag(nuevaContraseña_502ag);
+            usuario_502ag.ContraseñaCambiada_502ag = true;
             dalUsuario_502ag.ActualizarContraseña_502ag(usuario_502ag);
         }
         public string FormatearContraseña_502ag(string apellido_502ag, string DNI_502ag)
@@ -147,13 +173,6 @@ namespace SERVICIOS_502ag
 
 
         #region ActivarDesactivar
-        public bool VerificarRol_502ag(SE_Usuario_502ag usuario_502ag)
-        {
-            bool esAdmin = false;
-            if (usuario_502ag.Rol_502ag == "admin") esAdmin = true;
-            return esAdmin;
-
-        }
         public void ActivarDesactivar_502ag(SE_Usuario_502ag usuario_502ag)
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
@@ -180,19 +199,31 @@ namespace SERVICIOS_502ag
             usuario_502ag.isBloqueado_502ag = false;
             usuario_502ag.Intentos_502ag = 0;
             usuario_502ag.Contraseña_502ag = contraseña;
-            usuario_502ag.Idioma_502ag = "es";
             usuario_502ag.isActivo_502ag = true;
+            usuario_502ag.ContraseñaCambiada_502ag = false;
+            usuario_502ag.UltimoLogin_502ag = DateTime.Now;
             dalUsuario_502ag.AltaUsuario_502ag(usuario_502ag);
         }
-        public bool VerificarExistenciaUsuario_502ag(string DNI_502ag, string email_502ag)
+        public bool VerificarExistenciaDNIUsuario_502ag(string DNI_502ag)
         {
             bool usuarioValido_502ag = true;
             foreach (SE_Usuario_502ag usuarioEnLista_502ag in ObtenerListaUsuarios_502ag())
             {
-                if (usuarioEnLista_502ag.DNI_502ag == DNI_502ag || usuarioEnLista_502ag.Email_502ag == email_502ag ) usuarioValido_502ag = false;
+                if (usuarioEnLista_502ag.DNI_502ag == DNI_502ag) usuarioValido_502ag = false;
             }
             return usuarioValido_502ag;
         }
+
+        public bool VerificarExistenciaEmailUsuario_502ag(string email_502ag)
+        {
+            bool usuarioValido_502ag = true;
+            foreach(SE_Usuario_502ag usuarioEnLista_502ag in ObtenerListaUsuarios_502ag())
+            {
+                if(usuarioEnLista_502ag.Email_502ag == email_502ag) usuarioValido_502ag =false;
+            }
+            return usuarioValido_502ag;
+        }
+
         public bool VerificarAltaUsuario_502ag(string nombre_502ag, string apellido_502ag, string DNI_502ag, string email_502ag)
         {
             bool usuarioValido_502ag = true;

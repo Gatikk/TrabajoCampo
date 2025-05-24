@@ -35,23 +35,17 @@ namespace GUI
             tBDNI_502ag.Enabled = false;
             tBEmail_502ag.Enabled = false;
             cBRol_502ag.Enabled =false;
-
             menu_502ag = menuOriginal_502ag;      
         }
-
-
-
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
             this.Hide();
             menu_502ag.Show();
         }
-
         private void FormABM_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
         }
-
         public void Mostrar_502ag(DataGridView dgv_502ag)
         {
             SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
@@ -61,19 +55,23 @@ namespace GUI
             {
                 foreach(SE_Usuario_502ag usuario_502ag in serGestionUsuario_502ag.ObtenerListaUsuarios_502ag().Where(x => x.isActivo_502ag == true))
                 {
-                    dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
+                    if(usuario_502ag.NombreUsuario_502ag != "#123456789@")
+                    {
+                        dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
+                    }
                 }
             }
             if (rBTodos_502ag.Checked)
             {
                 foreach (SE_Usuario_502ag usuario_502ag in serGestionUsuario_502ag.ObtenerListaUsuarios_502ag())
                 {
-                    dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
+                    if(usuario_502ag.NombreUsuario_502ag != "#123456789@")
+                    {
+                        dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
+                    }
                 }
             }
         }
-
-
         #region ABM
         private void buttonAltaUsuario_502ag_Click(object sender, EventArgs e)
         {
@@ -111,11 +109,8 @@ namespace GUI
                 buttonBloquear_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonActivarDesactivar_502ag.Enabled = false;
-                //tBNombre_502ag.Enabled = true;
-                //tBApellido_502ag.Enabled = true;
                 tBEmail_502ag.Enabled = true;
                 cBRol_502ag.Enabled = true;
-
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}");}
         }
@@ -164,12 +159,13 @@ namespace GUI
                 if(opcion_502ag == "Alta")
                 {
                     if (!serGestionUsuario_502ag.VerificarAltaUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
-                    if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("DNI o Email ya existen");
+                    if (!serGestionUsuario_502ag.VerificarExistenciaDNIUsuario_502ag(tBDNI_502ag.Text)) throw new Exception("DNI ya existe");
+                    if (!serGestionUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Email ya existe");
                     serGestionUsuario_502ag.AltaUsuario_502ag(cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text);
                     Mostrar_502ag(dgvUsuarios_502ag);
+                    tBDNI_502ag.Clear();
                     tBApellido_502ag.Clear();
                     tBNombre_502ag.Clear();
-                    tBDNI_502ag.Clear();
                     tBEmail_502ag.Clear();
                 }
                 if(opcion_502ag == "Modificar")
@@ -179,7 +175,6 @@ namespace GUI
                     if (!serGestionUsuario_502ag.VerificarModificarUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
                     DialogResult dResult_502ag = MessageBox.Show($"¿Modificar a @{usuario_502ag.NombreUsuario_502ag}?", "Confirmar Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dResult_502ag == DialogResult.Yes) serGestionUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, cBRol_502ag.Text, tBEmail_502ag.Text);
-
                     Mostrar_502ag(dgvUsuarios_502ag);
                     tBApellido_502ag.Clear();
                     tBNombre_502ag.Clear();
@@ -220,7 +215,6 @@ namespace GUI
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
-
         private void buttonCancelar_502ag_Click(object sender, EventArgs e)
         {
             try
@@ -243,8 +237,7 @@ namespace GUI
                 tBApellido_502ag.Clear();
                 tBNombre_502ag.Clear();
                 tBDNI_502ag.Clear();
-                tBEmail_502ag.Clear();
-                
+                tBEmail_502ag.Clear();        
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
@@ -254,17 +247,9 @@ namespace GUI
             {
                 SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
                 string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
-                SE_Usuario_502ag usuario_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
-                if (!serGestionUsuario_502ag.VerificarRol_502ag(usuario_502ag))
-                {
-                    serGestionUsuario_502ag.ActivarDesactivar_502ag(usuario_502ag);
-
-                    Mostrar_502ag(dgvUsuarios_502ag);
-                }
-                else
-                {
-                    throw new Exception($"El usuario que queres modificar es {$"{dgvUsuarios_502ag.SelectedRows[0].Cells[1].Value.ToString()}"}");
-                }
+                SE_Usuario_502ag usuario_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);    
+                serGestionUsuario_502ag.ActivarDesactivar_502ag(usuario_502ag);
+                Mostrar_502ag(dgvUsuarios_502ag);          
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }

@@ -33,8 +33,9 @@ namespace DAL_502ag
                                 dr_502ag["Email_502ag"].ToString(),
                                 bool.Parse(dr_502ag["IsBloqueado_502ag"].ToString()),
                                 int.Parse(dr_502ag["Intentos_502ag"].ToString()),
-                                dr_502ag["Idioma_502ag"].ToString(),
-                                bool.Parse(dr_502ag["IsActivo_502ag"].ToString()));
+                                bool.Parse(dr_502ag["IsActivo_502ag"].ToString()),
+                                bool.Parse(dr_502ag["ContraseñaCambiada_502ag"].ToString()),
+                                DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()));
                             listaUsuarios_502ag.Add(usuario_502ag);
                         }
                     }
@@ -64,8 +65,10 @@ namespace DAL_502ag
                                dr_502ag["Email_502ag"].ToString(),
                                bool.Parse(dr_502ag["IsBloqueado_502ag"].ToString()),
                                int.Parse(dr_502ag["Intentos_502ag"].ToString()),
-                               dr_502ag["Idioma_502ag"].ToString(),
-                               bool.Parse(dr_502ag["IsActivo_502ag"].ToString()));
+                               bool.Parse(dr_502ag["IsActivo_502ag"].ToString()),
+                               bool.Parse(dr_502ag["ContraseñaCambiada_502ag"].ToString()),
+                               DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString())
+                               );
                         }
                     }
                 }
@@ -94,8 +97,9 @@ namespace DAL_502ag
                                dr_502ag["Email_502ag"].ToString(),
                                bool.Parse(dr_502ag["IsBloqueado_502ag"].ToString()),
                                int.Parse(dr_502ag["Intentos_502ag"].ToString()),
-                               dr_502ag["Idioma_502ag"].ToString(),
-                               bool.Parse(dr_502ag["IsActivo_502ag"].ToString()));
+                               bool.Parse(dr_502ag["IsActivo_502ag"].ToString()),
+                               bool.Parse(dr_502ag["ContraseñaCambiada_502ag"].ToString()),
+                               DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()));
                         }
                     }
                 }
@@ -109,9 +113,9 @@ namespace DAL_502ag
             {
                 cx_502ag.Open();
                 string insertQuery_502ag = "INSERT INTO Usuario_502ag (DNI_502ag, NombreUsuario_502ag, Contraseña_502ag, Rol_502ag, Nombre_502ag, Apellido_502ag, Email_502ag," +
-                    "IsBloqueado_502ag, Intentos_502ag, Idioma_502ag, IsActivo_502ag) " +
+                    "IsBloqueado_502ag, Intentos_502ag, IsActivo_502ag, ContraseñaCambiada_502ag, UltimoLogin_502ag) " +
                     "VALUES (@DNI_502ag, @NombreUsuario_502ag, @Contraseña_502ag, @Rol_502ag, @Nombre_502ag, @Apellido_502ag, @Email_502ag," +
-                    "@IsBloqueado_502ag, @Intentos_502ag, @Idioma_502ag, @IsActivo_502ag)";
+                    "@IsBloqueado_502ag, @Intentos_502ag, @IsActivo_502ag, @ContraseñaCambiada_502ag, @UltimoLogin_502ag)";
                 using (SqlCommand cmd_502ag = new SqlCommand(insertQuery_502ag, cx_502ag)) 
                 {
                     cmd_502ag.Parameters.AddWithValue("@DNI_502ag", usuario_502ag.DNI_502ag);
@@ -123,8 +127,9 @@ namespace DAL_502ag
                     cmd_502ag.Parameters.AddWithValue("@Email_502ag", usuario_502ag.Email_502ag);
                     cmd_502ag.Parameters.AddWithValue("@IsBloqueado_502ag", usuario_502ag.isBloqueado_502ag);
                     cmd_502ag.Parameters.AddWithValue("@Intentos_502ag", usuario_502ag.Intentos_502ag);
-                    cmd_502ag.Parameters.AddWithValue("@Idioma_502ag", usuario_502ag.Idioma_502ag);
                     cmd_502ag.Parameters.AddWithValue("@IsActivo_502ag", usuario_502ag.isActivo_502ag);
+                    cmd_502ag.Parameters.AddWithValue("@ContraseñaCambiada_502ag", usuario_502ag.ContraseñaCambiada_502ag);
+                    cmd_502ag.Parameters.AddWithValue("@UltimoLogin_502ag", usuario_502ag.UltimoLogin_502ag);
                     cmd_502ag.ExecuteNonQuery();
                 }
             }
@@ -154,7 +159,8 @@ namespace DAL_502ag
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                string updateQuery_502ag = "UPDATE Usuario_502ag SET IsBloqueado_502ag = @IsBloqueado_502ag, Intentos_502ag = @Intentos_502ag, Contraseña_502ag = @Contraseña_502ag WHERE DNI_502ag = @DNI_502ag";
+                string updateQuery_502ag = "UPDATE Usuario_502ag SET IsBloqueado_502ag = @IsBloqueado_502ag, Intentos_502ag = @Intentos_502ag, Contraseña_502ag = @Contraseña_502ag, " +
+                    "ContraseñaCambiada_502ag = @ContraseñaCambiada_502ag WHERE DNI_502ag = @DNI_502ag";
                 using(SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Usuario_502ag", cx_502ag))
                 {
                     cmd_502ag.CommandText = updateQuery_502ag;
@@ -162,6 +168,7 @@ namespace DAL_502ag
                     cmd_502ag.Parameters.AddWithValue("@IsBloqueado_502ag", usuario_502ag.isBloqueado_502ag);
                     cmd_502ag.Parameters.AddWithValue("@Intentos_502ag", usuario_502ag.Intentos_502ag);
                     cmd_502ag.Parameters.AddWithValue("@Contraseña_502ag", usuario_502ag.Contraseña_502ag);
+                    cmd_502ag.Parameters.AddWithValue("@ContraseñaCambiada_502ag", usuario_502ag.ContraseñaCambiada_502ag);
                     cmd_502ag.ExecuteNonQuery();
                 }
             }
@@ -171,13 +178,15 @@ namespace DAL_502ag
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                string updateQuery_502ag = "UPDATE Usuario_502ag SET IsBloqueado_502ag = @IsBloqueado_502ag, Intentos_502ag = @Intentos_502ag WHERE DNI_502ag = @DNI_502ag";
+                string updateQuery_502ag = "UPDATE Usuario_502ag SET IsBloqueado_502ag = @IsBloqueado_502ag, Intentos_502ag = @Intentos_502ag, UltimoLogin_502ag = @UltimoLogin_502ag, ContraseñaCambiada_502ag = @ContraseñaCambiada_502ag WHERE DNI_502ag = @DNI_502ag";
                 using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Usuario_502ag", cx_502ag))
                 {
                     cmd_502ag.CommandText = updateQuery_502ag;
                     cmd_502ag.Parameters.AddWithValue("@DNI_502ag", usuario_502ag.DNI_502ag);
                     cmd_502ag.Parameters.AddWithValue("@IsBloqueado_502ag", usuario_502ag.isBloqueado_502ag);
                     cmd_502ag.Parameters.AddWithValue("@Intentos_502ag", usuario_502ag.Intentos_502ag);
+                    cmd_502ag.Parameters.AddWithValue("@UltimoLogin_502ag", usuario_502ag.UltimoLogin_502ag);
+                    cmd_502ag.Parameters.AddWithValue("@ContraseñaCambiada_502ag", usuario_502ag.ContraseñaCambiada_502ag);
                     cmd_502ag.ExecuteNonQuery();
                 }
             }
@@ -187,12 +196,13 @@ namespace DAL_502ag
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                string updateQuery_502ag = "UPDATE Usuario_502ag SET Contraseña_502ag = @Contraseña_502ag WHERE DNI_502ag = @DNI_502ag";
+                string updateQuery_502ag = "UPDATE Usuario_502ag SET Contraseña_502ag = @Contraseña_502ag, ContraseñaCambiada_502ag = @ContraseñaCambiada_502ag WHERE DNI_502ag = @DNI_502ag";
                 using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Usuario_502ag", cx_502ag))
                 {
                     cmd_502ag.CommandText = updateQuery_502ag;
                     cmd_502ag.Parameters.AddWithValue("@DNI_502ag", usuario_502ag.DNI_502ag);
                     cmd_502ag.Parameters.AddWithValue("Contraseña_502ag", usuario_502ag.Contraseña_502ag);
+                    cmd_502ag.Parameters.AddWithValue("ContraseñaCambiada_502ag", usuario_502ag.ContraseñaCambiada_502ag);
                     cmd_502ag.ExecuteNonQuery();
                 }
             }

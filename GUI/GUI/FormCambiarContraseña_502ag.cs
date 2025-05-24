@@ -26,9 +26,22 @@ namespace GUI
             cifrador_502ag = new Encryptador_502ag();
             buttonCambiarContraseña_502ag.Enabled = false;
             menu_502ag = menuOriginal_502ag;
+            VerificarUsuarioContraseñaCambiada_502ag();
             MostrarContraseña_502ag();
             MostrarConfirmarContraseña_502ag();
             MostrarContraseñaActual_502ag();
+        }
+
+        public void VerificarUsuarioContraseñaCambiada_502ag()
+        {
+            if(SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.ContraseñaCambiada_502ag == true)
+            {
+                buttonVolverAlMenu.Enabled = true;
+            }
+            else
+            {
+                buttonVolverAlMenu.Enabled = false;
+            }
         }
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
@@ -63,10 +76,13 @@ namespace GUI
                     }
                     if(!serGestionUsuario_502ag.VerificarContraseñaActual_502ag(contraseña_502ag, usuario_502ag))
                     {
+
                         serGestionUsuario_502ag.CambiarContraseña_502ag(contraseña_502ag, usuario_502ag);
-                        textBoxContraseñaActual_502ag.Clear();
-                        textBoxContraseña_502ag.Clear();
-                        textBoxContraseñaConfirmar_502ag.Clear();
+                        SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion_502ag();
+                        MessageBox.Show("Contraseña cambiada con éxito, se cerrará la sesión");
+                        FormLogin_502ag loginForm_502ag = new FormLogin_502ag();
+                        this.Hide();
+                        loginForm_502ag.Show();
                     }
                     else
                     {
