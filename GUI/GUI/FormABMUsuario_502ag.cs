@@ -54,20 +54,15 @@ namespace GUI
             {
                 foreach(SE_Usuario_502ag usuario_502ag in serGestionUsuario_502ag.ObtenerListaUsuarios_502ag().Where(x => x.isActivo_502ag == true))
                 {
-                    if(usuario_502ag.NombreUsuario_502ag != "#123456789@")
-                    {
-                        dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
-                    }
+                    dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
+                    
                 }
             }
             if (rBTodos_502ag.Checked)
             {
                 foreach (SE_Usuario_502ag usuario_502ag in serGestionUsuario_502ag.ObtenerListaUsuarios_502ag())
                 {
-                    if(usuario_502ag.NombreUsuario_502ag != "#123456789@")
-                    {
-                        dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
-                    }
+                    dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
                 }
             }
         }
