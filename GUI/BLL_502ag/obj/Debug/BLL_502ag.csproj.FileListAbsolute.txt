@@ -1,17 +1,6 @@
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\BLL_502ag.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\BLL_502ag.pdb
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\BE_502ag.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\DAL_502ag.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\SERVICIOS.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\SE_502ag.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\Newtonsoft.Json.dll
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\BE_502ag.pdb
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\DAL_502ag.pdb
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\SERVICIOS.pdb
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\SE_502ag.pdb
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\Newtonsoft.Json.xml
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.csproj.AssemblyReference.cache
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.csproj.CoreCompileInputs.cache
-C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.csproj.Up2Date
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.pdb

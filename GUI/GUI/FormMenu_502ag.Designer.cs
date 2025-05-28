@@ -34,8 +34,6 @@ namespace GUI
             this.labelBienvenida = new System.Windows.Forms.Label();
             this.buttonABM_502ag = new System.Windows.Forms.Button();
             this.buttonCambiarContraseña_502ag = new System.Windows.Forms.Button();
-            this.buttonBitacora = new System.Windows.Forms.Button();
-            this.buttonCambiarIdioma = new System.Windows.Forms.Button();
             this.panelMenuLateral_502ag = new System.Windows.Forms.FlowLayoutPanel();
             this.panelEncabezado_502ag = new System.Windows.Forms.Panel();
             this.buttonAdmin_502ag = new System.Windows.Forms.Button();
@@ -73,7 +71,7 @@ namespace GUI
             this.buttonCerrarSesion.FlatAppearance.BorderSize = 0;
             this.buttonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCerrarSesion.Location = new System.Drawing.Point(0, 41);
+            this.buttonCerrarSesion.Location = new System.Drawing.Point(0, 0);
             this.buttonCerrarSesion.Name = "buttonCerrarSesion";
             this.buttonCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCerrarSesion.Size = new System.Drawing.Size(222, 41);
@@ -101,7 +99,7 @@ namespace GUI
             this.buttonABM_502ag.FlatAppearance.BorderSize = 0;
             this.buttonABM_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonABM_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonABM_502ag.Location = new System.Drawing.Point(0, 41);
+            this.buttonABM_502ag.Location = new System.Drawing.Point(0, 0);
             this.buttonABM_502ag.Name = "buttonABM_502ag";
             this.buttonABM_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonABM_502ag.Size = new System.Drawing.Size(222, 41);
@@ -117,7 +115,7 @@ namespace GUI
             this.buttonCambiarContraseña_502ag.FlatAppearance.BorderSize = 0;
             this.buttonCambiarContraseña_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCambiarContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCambiarContraseña_502ag.Location = new System.Drawing.Point(0, 123);
+            this.buttonCambiarContraseña_502ag.Location = new System.Drawing.Point(0, 82);
             this.buttonCambiarContraseña_502ag.Name = "buttonCambiarContraseña_502ag";
             this.buttonCambiarContraseña_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCambiarContraseña_502ag.Size = new System.Drawing.Size(222, 41);
@@ -126,39 +124,6 @@ namespace GUI
             this.buttonCambiarContraseña_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCambiarContraseña_502ag.UseVisualStyleBackColor = true;
             this.buttonCambiarContraseña_502ag.Click += new System.EventHandler(this.buttonCambiarContraseña_Click);
-            // 
-            // buttonBitacora
-            // 
-            this.buttonBitacora.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonBitacora.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonBitacora.FlatAppearance.BorderSize = 0;
-            this.buttonBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBitacora.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBitacora.Location = new System.Drawing.Point(0, 0);
-            this.buttonBitacora.Name = "buttonBitacora";
-            this.buttonBitacora.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonBitacora.Size = new System.Drawing.Size(222, 41);
-            this.buttonBitacora.TabIndex = 2;
-            this.buttonBitacora.Text = "Bitácora";
-            this.buttonBitacora.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonBitacora.UseVisualStyleBackColor = false;
-            this.buttonBitacora.Click += new System.EventHandler(this.buttonBitacora_Click);
-            // 
-            // buttonCambiarIdioma
-            // 
-            this.buttonCambiarIdioma.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCambiarIdioma.FlatAppearance.BorderSize = 0;
-            this.buttonCambiarIdioma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCambiarIdioma.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCambiarIdioma.Location = new System.Drawing.Point(0, 0);
-            this.buttonCambiarIdioma.Name = "buttonCambiarIdioma";
-            this.buttonCambiarIdioma.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCambiarIdioma.Size = new System.Drawing.Size(222, 41);
-            this.buttonCambiarIdioma.TabIndex = 5;
-            this.buttonCambiarIdioma.Text = "Cambiar Idioma";
-            this.buttonCambiarIdioma.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCambiarIdioma.UseVisualStyleBackColor = true;
-            this.buttonCambiarIdioma.Click += new System.EventHandler(this.buttonCambiarIdioma_Click);
             // 
             // panelMenuLateral_502ag
             // 
@@ -210,11 +175,10 @@ namespace GUI
             // panelSubMenuAdmin_502ag
             // 
             this.panelSubMenuAdmin_502ag.Controls.Add(this.buttonABM_502ag);
-            this.panelSubMenuAdmin_502ag.Controls.Add(this.buttonBitacora);
             this.panelSubMenuAdmin_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuAdmin_502ag.Location = new System.Drawing.Point(3, 113);
             this.panelSubMenuAdmin_502ag.Name = "panelSubMenuAdmin_502ag";
-            this.panelSubMenuAdmin_502ag.Size = new System.Drawing.Size(222, 87);
+            this.panelSubMenuAdmin_502ag.Size = new System.Drawing.Size(222, 55);
             this.panelSubMenuAdmin_502ag.TabIndex = 9;
             // 
             // buttonUsuario_502ag
@@ -224,7 +188,7 @@ namespace GUI
             this.buttonUsuario_502ag.FlatAppearance.BorderSize = 0;
             this.buttonUsuario_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonUsuario_502ag.Location = new System.Drawing.Point(3, 206);
+            this.buttonUsuario_502ag.Location = new System.Drawing.Point(3, 174);
             this.buttonUsuario_502ag.Name = "buttonUsuario_502ag";
             this.buttonUsuario_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonUsuario_502ag.TabIndex = 4;
@@ -238,11 +202,10 @@ namespace GUI
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarContraseña_502ag);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonIniciarSesion_502ag);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCerrarSesion);
-            this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarIdioma);
             this.panelSubMenuUsuario_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuUsuario_502ag.Location = new System.Drawing.Point(3, 259);
+            this.panelSubMenuUsuario_502ag.Location = new System.Drawing.Point(3, 227);
             this.panelSubMenuUsuario_502ag.Name = "panelSubMenuUsuario_502ag";
-            this.panelSubMenuUsuario_502ag.Size = new System.Drawing.Size(222, 166);
+            this.panelSubMenuUsuario_502ag.Size = new System.Drawing.Size(222, 140);
             this.panelSubMenuUsuario_502ag.TabIndex = 11;
             // 
             // buttonIniciarSesion_502ag
@@ -251,7 +214,7 @@ namespace GUI
             this.buttonIniciarSesion_502ag.FlatAppearance.BorderSize = 0;
             this.buttonIniciarSesion_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIniciarSesion_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonIniciarSesion_502ag.Location = new System.Drawing.Point(0, 82);
+            this.buttonIniciarSesion_502ag.Location = new System.Drawing.Point(0, 41);
             this.buttonIniciarSesion_502ag.Name = "buttonIniciarSesion_502ag";
             this.buttonIniciarSesion_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonIniciarSesion_502ag.Size = new System.Drawing.Size(222, 41);
@@ -268,7 +231,7 @@ namespace GUI
             this.buttonMaestros_502ag.FlatAppearance.BorderSize = 0;
             this.buttonMaestros_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMaestros_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonMaestros_502ag.Location = new System.Drawing.Point(3, 431);
+            this.buttonMaestros_502ag.Location = new System.Drawing.Point(3, 373);
             this.buttonMaestros_502ag.Name = "buttonMaestros_502ag";
             this.buttonMaestros_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonMaestros_502ag.TabIndex = 9;
@@ -282,7 +245,7 @@ namespace GUI
             this.panelSubMenuMaestros_502ag.Controls.Add(this.button4);
             this.panelSubMenuMaestros_502ag.Controls.Add(this.button5);
             this.panelSubMenuMaestros_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuMaestros_502ag.Location = new System.Drawing.Point(3, 484);
+            this.panelSubMenuMaestros_502ag.Location = new System.Drawing.Point(3, 426);
             this.panelSubMenuMaestros_502ag.Name = "panelSubMenuMaestros_502ag";
             this.panelSubMenuMaestros_502ag.Size = new System.Drawing.Size(222, 91);
             this.panelSubMenuMaestros_502ag.TabIndex = 12;
@@ -324,7 +287,7 @@ namespace GUI
             this.buttonVentas_502ag.FlatAppearance.BorderSize = 0;
             this.buttonVentas_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVentas_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVentas_502ag.Location = new System.Drawing.Point(3, 581);
+            this.buttonVentas_502ag.Location = new System.Drawing.Point(3, 523);
             this.buttonVentas_502ag.Name = "buttonVentas_502ag";
             this.buttonVentas_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonVentas_502ag.TabIndex = 12;
@@ -338,7 +301,7 @@ namespace GUI
             this.panelSubMenuVentas_502ag.Controls.Add(this.button1);
             this.panelSubMenuVentas_502ag.Controls.Add(this.button2);
             this.panelSubMenuVentas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 634);
+            this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 576);
             this.panelSubMenuVentas_502ag.Name = "panelSubMenuVentas_502ag";
             this.panelSubMenuVentas_502ag.Size = new System.Drawing.Size(222, 84);
             this.panelSubMenuVentas_502ag.TabIndex = 13;
@@ -380,7 +343,7 @@ namespace GUI
             this.buttonReportes_502ag.FlatAppearance.BorderSize = 0;
             this.buttonReportes_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReportes_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 724);
+            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 666);
             this.buttonReportes_502ag.Name = "buttonReportes_502ag";
             this.buttonReportes_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonReportes_502ag.TabIndex = 15;
@@ -394,7 +357,7 @@ namespace GUI
             this.panelSubMenuReportes_502ag.Controls.Add(this.button7);
             this.panelSubMenuReportes_502ag.Controls.Add(this.button3);
             this.panelSubMenuReportes_502ag.Controls.Add(this.button6);
-            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 777);
+            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 719);
             this.panelSubMenuReportes_502ag.Name = "panelSubMenuReportes_502ag";
             this.panelSubMenuReportes_502ag.Size = new System.Drawing.Size(222, 133);
             this.panelSubMenuReportes_502ag.TabIndex = 13;
@@ -451,7 +414,7 @@ namespace GUI
             this.buttonAyuda_502ag.FlatAppearance.BorderSize = 0;
             this.buttonAyuda_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAyuda_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 916);
+            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 858);
             this.buttonAyuda_502ag.Name = "buttonAyuda_502ag";
             this.buttonAyuda_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonAyuda_502ag.TabIndex = 19;
@@ -500,8 +463,6 @@ namespace GUI
         private System.Windows.Forms.Label labelBienvenida;
         private System.Windows.Forms.Button buttonABM_502ag;
         private System.Windows.Forms.Button buttonCambiarContraseña_502ag;
-        private System.Windows.Forms.Button buttonBitacora;
-        private System.Windows.Forms.Button buttonCambiarIdioma;
         private System.Windows.Forms.FlowLayoutPanel panelMenuLateral_502ag;
         private System.Windows.Forms.Panel panelEncabezado_502ag;
         private System.Windows.Forms.Button buttonAdmin_502ag;

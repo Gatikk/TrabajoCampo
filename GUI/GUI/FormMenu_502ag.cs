@@ -32,16 +32,19 @@ namespace GUI
             labelBienvenida.Text = $"Bienvenido @{SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag}";
             abmForm = new FormABMUsuario_502ag(this);
             cambiarContraseñaForm = new FormCambiarContraseña_502ag(this);
+            VerificarAdminSupremo();
         }
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
         {
             FormLogin_502ag loginForm = new FormLogin_502ag();
 
             DialogResult dResult_502ag = MessageBox.Show($"¿Seguro que desea cerrar sesión?", "Cerrar Sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(dResult_502ag == DialogResult.Yes) { SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion_502ag(); }
-            
-            this.Hide();
-            loginForm.Show();
+            if(dResult_502ag == DialogResult.Yes) 
+            { 
+                SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion_502ag(); 
+                this.Hide();
+                loginForm.Show();       
+            }          
         }
 
         private void FormMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -56,20 +59,19 @@ namespace GUI
             abmForm.Show(); 
         }
 
+        private void VerificarAdminSupremo()
+        {
+            if(SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag == "#admin@")
+            {
+                buttonCambiarContraseña_502ag.Enabled = false;
+            }
+        }
+
         private void buttonCambiarContraseña_Click(object sender, EventArgs e)
         {
             this.Hide();
             cambiarContraseñaForm.Show();
         }
-        private void buttonBitacora_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void buttonCambiarIdioma_Click(object sender, EventArgs e)
-        {
-        }
-
         private void esconderSubMenu_502ag()
         {
             if(panelSubMenuAdmin_502ag.Visible == true)

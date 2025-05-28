@@ -194,7 +194,7 @@ namespace SERVICIOS_502ag
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
             string contraseña = FormatearContraseña_502ag(apellido_502ag, DNI_502ag);
-            string nombreUsuario_502ag = DNI_502ag+nombre_502ag.ToLower();
+            string nombreUsuario_502ag = CrearNombreUsuario_502ag(nombre_502ag, DNI_502ag);
             SE_Usuario_502ag usuario_502ag = new SE_Usuario_502ag(DNI_502ag, nombreUsuario_502ag, rol_502ag, nombre_502ag, apellido_502ag, email_502ag);
             usuario_502ag.isBloqueado_502ag = false;
             usuario_502ag.Intentos_502ag = 0;
@@ -203,6 +203,13 @@ namespace SERVICIOS_502ag
             usuario_502ag.ContraseñaCambiada_502ag = false;
             usuario_502ag.UltimoLogin_502ag = DateTime.Now;
             dalUsuario_502ag.AltaUsuario_502ag(usuario_502ag);
+        }
+
+        public string CrearNombreUsuario_502ag(string nombre_502ag, string DNI_502ag)
+        {
+            string[] nombres_502ag = nombre_502ag.Split(' ');
+            string nombreUsuario_502ag = DNI_502ag + nombres_502ag[0].ToLower().Trim();
+            return nombreUsuario_502ag;
         }
         public bool VerificarExistenciaDNIUsuario_502ag(string DNI_502ag)
         {
@@ -229,7 +236,7 @@ namespace SERVICIOS_502ag
             bool usuarioValido_502ag = true;
             Regex reDNI_502ag = new Regex(@"^\d{8}$");
             Regex reEmail_502ag = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,40}$");
-            Regex reNombreApellido_502ag = new Regex(@"^[A-Z][a-zÁÉÍÓÚáéíóúÑñ]{3,40}$");
+            Regex reNombreApellido_502ag = new Regex(@"^[A-Z][a-zÁÉÍÓÚáéíóúÑñ]{2,18}(\s[A-Z][a-zÁÉÍÓÚáéíóúÑñ]{2,18})?$");
             if (!reDNI_502ag.IsMatch(DNI_502ag)) usuarioValido_502ag = false;
             if (!reNombreApellido_502ag.IsMatch(nombre_502ag)) usuarioValido_502ag = false;
             if (!reNombreApellido_502ag.IsMatch(apellido_502ag)) usuarioValido_502ag = false;

@@ -12,7 +12,7 @@ using SERVICIOS_502ag;
 using Microsoft.VisualBasic;
 using System.Runtime.CompilerServices;
 
-//usuario hardcodeado: nombre: #123456789@ contraseña: 123456787654321
+//usuario hardcodeado: nombre: #admin@ contraseña: 123456787654321
 
 namespace GUI
 {
@@ -35,7 +35,8 @@ namespace GUI
 
                 SE_Usuario_502ag usuarioALogear_502ag = serGestionUsuario_502ag.ObtenerUsuarioALogear_502ag(nombreUsuario_502ag);
                 if (!SER_GestorSesion_502ag.GestorSesion_502ag.EstaLogeado_502ag()) throw new Exception("Ya hay una sesión iniciada");
-                if (usuarioALogear_502ag.NombreUsuario_502ag == "#123456789@")
+                if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag)) throw new Exception("Usuario o contraseña incorrectos");
+                if (usuarioALogear_502ag.NombreUsuario_502ag == "#admin@")
                 {
                     if (serGestionUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag))
                     {
@@ -50,8 +51,7 @@ namespace GUI
                     }
                 }
                 else
-                {
-                    if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag))  throw new Exception("Usuario o contraseña incorrectos");
+                {         
                     if (!serGestionUsuario_502ag.VerificarUsuarioBloqueado_502ag(usuarioALogear_502ag)) throw new Exception("El usuario se encuentra bloqueado");
                     if (!serGestionUsuario_502ag.VerificarUsuarioActivo_502ag(usuarioALogear_502ag)) throw new Exception("El usuario no se encuentra como activo");
                     if (!serGestionUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag)) 
