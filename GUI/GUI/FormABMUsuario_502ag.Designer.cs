@@ -79,6 +79,8 @@
             // 
             this.dgvUsuarios_502ag.AllowUserToAddRows = false;
             this.dgvUsuarios_502ag.AllowUserToDeleteRows = false;
+            this.dgvUsuarios_502ag.AllowUserToResizeColumns = false;
+            this.dgvUsuarios_502ag.AllowUserToResizeRows = false;
             this.dgvUsuarios_502ag.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios_502ag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios_502ag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -94,6 +96,7 @@
             this.dgvUsuarios_502ag.MultiSelect = false;
             this.dgvUsuarios_502ag.Name = "dgvUsuarios_502ag";
             this.dgvUsuarios_502ag.ReadOnly = true;
+            this.dgvUsuarios_502ag.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvUsuarios_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios_502ag.Size = new System.Drawing.Size(760, 210);
             this.dgvUsuarios_502ag.TabIndex = 3;

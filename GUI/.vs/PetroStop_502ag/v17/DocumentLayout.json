@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formabmusuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formabmusuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formabmusuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\dal_502ag\\dal_usuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|solutionrelative:dal_502ag\\dal_usuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,11 +19,7 @@
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\dal_502ag\\dal_usuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|solutionrelative:dal_502ag\\dal_usuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formabmusuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formabmusuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formabmusuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -71,20 +71,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "FormLogin_502ag.cs",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormLogin_502ag.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
               "RelativeToolTip": "GUI\\FormLogin_502ag.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAcwCcAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAcwA4AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T18:19:24.068Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "FormLogin_502ag.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormLogin_502ag.cs",
@@ -96,13 +96,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "DAL_Usuario_502ag.cs",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_Usuario_502ag.cs",
               "RelativeDocumentMoniker": "DAL_502ag\\DAL_Usuario_502ag.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_Usuario_502ag.cs",
               "RelativeToolTip": "DAL_502ag\\DAL_Usuario_502ag.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAkwGwAAACIAAAAAAAAAA==",
+              "ViewState": "AgIAAE0AAAAAAAAAAAA3wHUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-28T18:10:06.035Z",
               "EditorCaption": ""
