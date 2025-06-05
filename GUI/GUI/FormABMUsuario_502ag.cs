@@ -48,7 +48,7 @@ namespace GUI
         }
         public void Mostrar_502ag(DataGridView dgv_502ag)
         {
-            SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
+            SER_Usuario_502ag serGestionUsuario_502ag = new SER_Usuario_502ag();
             dgv_502ag.Rows.Clear();
             if (rBActivos_502ag.Checked)
             {
@@ -105,14 +105,21 @@ namespace GUI
                 buttonActivarDesactivar_502ag.Enabled = false;
                 tBEmail_502ag.Enabled = true;
                 cBRol_502ag.Enabled = true;
-                cBRol_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[1].Value.ToString();
-                tBNombre_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[2].Value.ToString();
-                tBApellido_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[3].Value.ToString();
-                tBDNI_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
-                tBEmail_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[5].Value.ToString();
-                if (dgvUsuarios_502ag.SelectedRows[0].Cells[0].Value.ToString() == SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag)
+                if (dgvUsuarios_502ag.Rows.Count > 0) 
                 {
-                    buttonAplicar_502ag.Enabled = false;
+                    cBRol_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[1].Value.ToString();
+                    tBNombre_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[2].Value.ToString();
+                    tBApellido_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[3].Value.ToString();
+                    tBDNI_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
+                    tBEmail_502ag.Text = dgvUsuarios_502ag.SelectedRows[0].Cells[5].Value.ToString();
+                    if (dgvUsuarios_502ag.SelectedRows[0].Cells[0].Value.ToString() == SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag)
+                    {
+                        buttonAplicar_502ag.Enabled = false;
+                    }
+                }
+                else
+                {
+                    throw new Exception("No hay nada que modificar");
                 }
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}");}
@@ -158,7 +165,7 @@ namespace GUI
         {
             try
             {
-                SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
+                SER_Usuario_502ag serGestionUsuario_502ag = new SER_Usuario_502ag();
                 if(opcion_502ag == "Alta")
                 {
                     if (!serGestionUsuario_502ag.VerificarAltaUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
@@ -190,7 +197,7 @@ namespace GUI
                 }
                 if(opcion_502ag == "Desbloquear")
                 {
-                    if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception();
+                    if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception("No hay nada para desbloquear");
                     string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
                     SE_Usuario_502ag usuarioADesbloquear_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
                     serGestionUsuario_502ag.Desbloquear_502ag(usuarioADesbloquear_502ag);
@@ -199,7 +206,7 @@ namespace GUI
                 }
                 if(opcion_502ag == "Bloquear")
                 {
-                    if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception();
+                    if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception("No hay nada para bloquear");
                     SE_Usuario_502ag usuarioABloquear = serGestionUsuario_502ag.ObtenerUsuario_502ag(dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString());
                     serGestionUsuario_502ag.BloquearUsuario_502ag(usuarioABloquear);
                     Mostrar_502ag(dgvUsuarios_502ag);
@@ -257,7 +264,7 @@ namespace GUI
         {
             try
             {
-                SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
+                SER_Usuario_502ag serGestionUsuario_502ag = new SER_Usuario_502ag();
                 string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
                 SE_Usuario_502ag usuario_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);    
                 serGestionUsuario_502ag.ActivarDesactivar_502ag(usuario_502ag);

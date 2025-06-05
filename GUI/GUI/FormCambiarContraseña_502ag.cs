@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class FormCambiarContraseña_502ag : Form
     {
-        SER_GestorUsuario_502ag serGestionUsuario_502ag;
+        SER_Usuario_502ag serGestionUsuario_502ag;
         Encryptador_502ag cifrador_502ag;
         FormMenu_502ag menu_502ag;
         public FormCambiarContraseña_502ag(FormMenu_502ag menuOriginal_502ag)
@@ -22,7 +22,7 @@ namespace GUI
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
             InitializeComponent();
-            serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
+            serGestionUsuario_502ag = new SER_Usuario_502ag();
             cifrador_502ag = new Encryptador_502ag();
             buttonCambiarContraseña_502ag.Enabled = false;
             menu_502ag = menuOriginal_502ag;

@@ -11,3 +11,5 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\D
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SE_502ag.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\DAL_502ag.pdb
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SE_502ag.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\BE_502ag.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\SERVICIOS\bin\Debug\BE_502ag.pdb

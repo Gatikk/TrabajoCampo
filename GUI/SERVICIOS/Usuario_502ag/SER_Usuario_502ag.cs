@@ -10,7 +10,7 @@ using SERVICIOS_502ag;
 
 namespace SERVICIOS_502ag
 {
-    public class SER_GestorUsuario_502ag
+    public class SER_Usuario_502ag
     {
 
         #region Login

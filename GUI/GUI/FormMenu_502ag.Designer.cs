@@ -44,7 +44,7 @@ namespace GUI
             this.buttonMaestros_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuMaestros_502ag = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonMaestrosClientes_502ag = new System.Windows.Forms.Button();
             this.buttonVentas_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuVentas_502ag = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -243,7 +243,7 @@ namespace GUI
             // panelSubMenuMaestros_502ag
             // 
             this.panelSubMenuMaestros_502ag.Controls.Add(this.button4);
-            this.panelSubMenuMaestros_502ag.Controls.Add(this.button5);
+            this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosClientes_502ag);
             this.panelSubMenuMaestros_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuMaestros_502ag.Location = new System.Drawing.Point(3, 426);
             this.panelSubMenuMaestros_502ag.Name = "panelSubMenuMaestros_502ag";
@@ -265,20 +265,21 @@ namespace GUI
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // buttonMaestrosClientes_502ag
             // 
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button5.Location = new System.Drawing.Point(0, 0);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(222, 41);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "?";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonMaestrosClientes_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMaestrosClientes_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonMaestrosClientes_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaestrosClientes_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonMaestrosClientes_502ag.Location = new System.Drawing.Point(0, 0);
+            this.buttonMaestrosClientes_502ag.Name = "buttonMaestrosClientes_502ag";
+            this.buttonMaestrosClientes_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonMaestrosClientes_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonMaestrosClientes_502ag.TabIndex = 10;
+            this.buttonMaestrosClientes_502ag.Text = "Clientes";
+            this.buttonMaestrosClientes_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMaestrosClientes_502ag.UseVisualStyleBackColor = true;
+            this.buttonMaestrosClientes_502ag.Click += new System.EventHandler(this.buttonMaestrosClientes_502ag_Click);
             // 
             // buttonVentas_502ag
             // 
@@ -477,7 +478,7 @@ namespace GUI
         private System.Windows.Forms.Button buttonMaestros_502ag;
         private System.Windows.Forms.Panel panelSubMenuMaestros_502ag;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonMaestrosClientes_502ag;
         private System.Windows.Forms.Panel panelSubMenuVentas_502ag;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

@@ -21,3 +21,6 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\S
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BE_502ag.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BE_502ag.pdb
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.exe.config
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormMaestrosClientes_502ag.resources
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BLL_502ag.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BLL_502ag.pdb

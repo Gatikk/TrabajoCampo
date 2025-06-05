@@ -29,7 +29,7 @@ namespace GUI
         {
             try
             {
-                SER_GestorUsuario_502ag serGestionUsuario_502ag = new SER_GestorUsuario_502ag();
+                SER_Usuario_502ag serGestionUsuario_502ag = new SER_Usuario_502ag();
                 string nombreUsuario_502ag = textBoxNombreUsuario.Text;
                 string contraseña_502ag = textBoxContraseña.Text;
 

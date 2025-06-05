@@ -65,6 +65,12 @@
     <Compile Include="FormLogin_502ag.Designer.cs">
       <DependentUpon>FormLogin_502ag.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMaestrosClientes_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaestrosClientes_502ag.Designer.cs">
+      <DependentUpon>FormMaestrosClientes_502ag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu_502ag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin_502ag.resx">
       <DependentUpon>FormLogin_502ag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaestrosClientes_502ag.resx">
+      <DependentUpon>FormMaestrosClientes_502ag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu_502ag.resx">
       <DependentUpon>FormMenu_502ag.cs</DependentUpon>
@@ -112,6 +121,10 @@
     <ProjectReference Include="..\BE_502ag\BE_502ag.csproj">
       <Project>{d95ecadc-5be4-42fd-b73d-da10806f04f7}</Project>
       <Name>BE_502ag</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL_502ag\BLL_502ag.csproj">
+      <Project>{1a5d797f-1385-4a9e-936e-067a902e76fa}</Project>
+      <Name>BLL_502ag</Name>
     </ProjectReference>
     <ProjectReference Include="..\SERVICIOS\SERVICIOS_502ag.csproj">
       <Project>{97c3da2e-2bc5-47bc-846c-ed911c08a729}</Project>

@@ -19,6 +19,7 @@ namespace GUI
     {
         FormABMUsuario_502ag abmForm;
         FormCambiarContraseña_502ag cambiarContraseñaForm;
+        FormMaestrosClientes_502ag maestrosClientesForm_502ag;
         public FormMenu_502ag()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace GUI
             labelBienvenida.Text = $"Bienvenido @{SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag}";
             abmForm = new FormABMUsuario_502ag(this);
             cambiarContraseñaForm = new FormCambiarContraseña_502ag(this);
+            maestrosClientesForm_502ag = new FormMaestrosClientes_502ag(this);
             VerificarAdminSupremo();
         }
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
@@ -71,6 +73,12 @@ namespace GUI
         {
             this.Hide();
             cambiarContraseñaForm.Show();
+        }
+
+        private void buttonMaestrosClientes_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            maestrosClientesForm_502ag.Show();
         }
         private void esconderSubMenu_502ag()
         {
@@ -159,5 +167,7 @@ namespace GUI
         {
             mostrarSubMenu_502ag(panelSubMenuReportes_502ag);
         }
+
+        
     }
 }
