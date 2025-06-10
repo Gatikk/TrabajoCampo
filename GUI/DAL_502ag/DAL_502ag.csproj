@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_Cliente_502ag.cs" />
+    <Compile Include="DAL_Combustible_502ag.cs" />
     <Compile Include="DAL_Conexion_502ag.cs" />
     <Compile Include="DAL_Usuario_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

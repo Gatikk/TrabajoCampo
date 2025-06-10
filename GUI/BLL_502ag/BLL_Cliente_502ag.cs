@@ -19,7 +19,7 @@ namespace BLL_502ag
             return dalCliente_502ag.ObtenerCliente_502ag(dni_502ag);
         }
 
-        public List<BE_Cliente_502ag> ObtenerListaClientes()
+        public List<BE_Cliente_502ag> ObtenerListaClientes_502ag()
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
             return dalCliente_502ag.ObtenerListaClientes_502ag();
@@ -69,6 +69,19 @@ namespace BLL_502ag
             cliente_502ag.Telefono_502ag = telefono_502ag;
             dalCliente_502ag.ModificarCliente_502ag(cliente_502ag);
         }
+
+        public bool VerificarDatosAModificar_502ag(string email_502ag,string direccion_502ag,string telefono_502ag)
+        {
+            bool modificadoValido_502ag = true;
+            Regex reEmail_502ag = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,40}$");
+            Regex reDireccion_502ag = new Regex(@"^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+ \d+[A-Za-z]?$ ");
+            Regex reTelefono_502ag = new Regex(@"^\d{2} \d{4}-\d{4}$");
+            if (!reEmail_502ag.IsMatch(email_502ag)) modificadoValido_502ag = false;
+            if (!reDireccion_502ag.IsMatch(direccion_502ag)) modificadoValido_502ag = false;
+            if (!reTelefono_502ag.IsMatch(telefono_502ag)) modificadoValido_502ag = false;
+            return modificadoValido_502ag;
+        }
+
         #endregion
 
 

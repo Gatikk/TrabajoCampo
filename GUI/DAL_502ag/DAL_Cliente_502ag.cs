@@ -105,6 +105,7 @@ namespace DAL_502ag
                     cmd_502ag.Parameters.AddWithValue("@Email_502ag", cliente_502ag.Email_502ag);
                     cmd_502ag.Parameters.AddWithValue("@Direccion_502ag", cliente_502ag.Direccion_502ag);
                     cmd_502ag.Parameters.AddWithValue("@Telefono_502ag", cliente_502ag.Telefono_502ag);
+                    cmd_502ag.ExecuteNonQuery();
                 }
             }
         }
@@ -117,11 +118,12 @@ namespace DAL_502ag
             {
                 cx_502ag.Open();
                 string updateQuery_502ag = "UPDATE Cliente_502ag SET IsActivo_502ag = @IsActivo_502ag WHERE DNI_502ag = @DNI_502ag";
-                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Cliente_502ag"))
+                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Cliente_502ag", cx_502ag))
                 {
                     cmd_502ag.CommandText = updateQuery_502ag;
                     cmd_502ag.Parameters.AddWithValue("@DNI_502ag", cliente_502ag.DNI_502ag);
                     cmd_502ag.Parameters.AddWithValue("@IsActivo_502ag", cliente_502ag.IsActivo_502ag);
+                    cmd_502ag.ExecuteNonQuery();
                 }
             }
         }

@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.dgvClientes_502ag = new System.Windows.Forms.DataGridView();
+            this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.buttonModificarCliente_502ag = new System.Windows.Forms.Button();
             this.buttonAltaCliente_502ag = new System.Windows.Forms.Button();
             this.buttonBajaCliente_502ag = new System.Windows.Forms.Button();
@@ -47,13 +54,6 @@
             this.tBDireccion_502ag = new System.Windows.Forms.TextBox();
             this.labelTelefono_502ag = new System.Windows.Forms.Label();
             this.labelDireccion_502ag = new System.Windows.Forms.Label();
-            this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +80,52 @@
             this.dgvClientes_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClientes_502ag.Size = new System.Drawing.Size(760, 210);
             this.dgvClientes_502ag.TabIndex = 0;
+            this.dgvClientes_502ag.SelectionChanged += new System.EventHandler(this.dgvClientes_502ag_SelectionChanged);
+            // 
+            // ColumnaDNI
+            // 
+            this.ColumnaDNI.HeaderText = "DNI";
+            this.ColumnaDNI.Name = "ColumnaDNI";
+            this.ColumnaDNI.ReadOnly = true;
+            // 
+            // ColumnaNombre
+            // 
+            this.ColumnaNombre.HeaderText = "Nombre";
+            this.ColumnaNombre.Name = "ColumnaNombre";
+            this.ColumnaNombre.ReadOnly = true;
+            // 
+            // ColumnaApellido
+            // 
+            this.ColumnaApellido.HeaderText = "Apellido";
+            this.ColumnaApellido.Name = "ColumnaApellido";
+            this.ColumnaApellido.ReadOnly = true;
+            // 
+            // ColumnaEmail
+            // 
+            this.ColumnaEmail.HeaderText = "Email";
+            this.ColumnaEmail.Name = "ColumnaEmail";
+            this.ColumnaEmail.ReadOnly = true;
+            // 
+            // ColumnaDireccion
+            // 
+            this.ColumnaDireccion.HeaderText = "Dirección";
+            this.ColumnaDireccion.Name = "ColumnaDireccion";
+            this.ColumnaDireccion.ReadOnly = true;
+            // 
+            // ColumnaTelefono
+            // 
+            this.ColumnaTelefono.HeaderText = "Telefono";
+            this.ColumnaTelefono.Name = "ColumnaTelefono";
+            this.ColumnaTelefono.ReadOnly = true;
+            this.ColumnaTelefono.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColumnaActivo
+            // 
+            this.ColumnaActivo.HeaderText = "Activo";
+            this.ColumnaActivo.Name = "ColumnaActivo";
+            this.ColumnaActivo.ReadOnly = true;
+            this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // buttonModificarCliente_502ag
             // 
@@ -87,10 +133,10 @@
             this.buttonModificarCliente_502ag.FlatAppearance.BorderSize = 0;
             this.buttonModificarCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonModificarCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonModificarCliente_502ag.Location = new System.Drawing.Point(12, 318);
+            this.buttonModificarCliente_502ag.Location = new System.Drawing.Point(12, 317);
             this.buttonModificarCliente_502ag.Name = "buttonModificarCliente_502ag";
             this.buttonModificarCliente_502ag.Size = new System.Drawing.Size(132, 47);
-            this.buttonModificarCliente_502ag.TabIndex = 8;
+            this.buttonModificarCliente_502ag.TabIndex = 2;
             this.buttonModificarCliente_502ag.Text = "Modificar Cliente";
             this.buttonModificarCliente_502ag.UseVisualStyleBackColor = false;
             this.buttonModificarCliente_502ag.Click += new System.EventHandler(this.buttonModificarCliente_502ag_Click);
@@ -104,7 +150,7 @@
             this.buttonAltaCliente_502ag.Location = new System.Drawing.Point(12, 256);
             this.buttonAltaCliente_502ag.Name = "buttonAltaCliente_502ag";
             this.buttonAltaCliente_502ag.Size = new System.Drawing.Size(132, 47);
-            this.buttonAltaCliente_502ag.TabIndex = 7;
+            this.buttonAltaCliente_502ag.TabIndex = 1;
             this.buttonAltaCliente_502ag.Text = "Añadir Cliente";
             this.buttonAltaCliente_502ag.UseVisualStyleBackColor = false;
             this.buttonAltaCliente_502ag.Click += new System.EventHandler(this.buttonAltaCliente_502ag_Click);
@@ -118,7 +164,7 @@
             this.buttonBajaCliente_502ag.Location = new System.Drawing.Point(12, 381);
             this.buttonBajaCliente_502ag.Name = "buttonBajaCliente_502ag";
             this.buttonBajaCliente_502ag.Size = new System.Drawing.Size(132, 47);
-            this.buttonBajaCliente_502ag.TabIndex = 9;
+            this.buttonBajaCliente_502ag.TabIndex = 3;
             this.buttonBajaCliente_502ag.Text = "Eliminar Cliente";
             this.buttonBajaCliente_502ag.UseVisualStyleBackColor = false;
             this.buttonBajaCliente_502ag.Click += new System.EventHandler(this.buttonEliminarCliente_502ag_Click);
@@ -223,7 +269,7 @@
             this.tBEmail_502ag.Location = new System.Drawing.Point(342, 343);
             this.tBEmail_502ag.Name = "tBEmail_502ag";
             this.tBEmail_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBEmail_502ag.TabIndex = 26;
+            this.tBEmail_502ag.TabIndex = 7;
             // 
             // tBDNI_502ag
             // 
@@ -231,7 +277,7 @@
             this.tBDNI_502ag.Location = new System.Drawing.Point(342, 256);
             this.tBDNI_502ag.Name = "tBDNI_502ag";
             this.tBDNI_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBDNI_502ag.TabIndex = 22;
+            this.tBDNI_502ag.TabIndex = 4;
             // 
             // tBApellido_502ag
             // 
@@ -239,7 +285,7 @@
             this.tBApellido_502ag.Location = new System.Drawing.Point(342, 314);
             this.tBApellido_502ag.Name = "tBApellido_502ag";
             this.tBApellido_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBApellido_502ag.TabIndex = 25;
+            this.tBApellido_502ag.TabIndex = 6;
             // 
             // tBNombre_502ag
             // 
@@ -247,7 +293,7 @@
             this.tBNombre_502ag.Location = new System.Drawing.Point(342, 285);
             this.tBNombre_502ag.Name = "tBNombre_502ag";
             this.tBNombre_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBNombre_502ag.TabIndex = 24;
+            this.tBNombre_502ag.TabIndex = 5;
             // 
             // tBTelefono_502ag
             // 
@@ -255,7 +301,7 @@
             this.tBTelefono_502ag.Location = new System.Drawing.Point(342, 401);
             this.tBTelefono_502ag.Name = "tBTelefono_502ag";
             this.tBTelefono_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBTelefono_502ag.TabIndex = 33;
+            this.tBTelefono_502ag.TabIndex = 9;
             // 
             // tBDireccion_502ag
             // 
@@ -263,7 +309,7 @@
             this.tBDireccion_502ag.Location = new System.Drawing.Point(342, 372);
             this.tBDireccion_502ag.Name = "tBDireccion_502ag";
             this.tBDireccion_502ag.Size = new System.Drawing.Size(175, 23);
-            this.tBDireccion_502ag.TabIndex = 32;
+            this.tBDireccion_502ag.TabIndex = 8;
             // 
             // labelTelefono_502ag
             // 
@@ -290,51 +336,6 @@
             this.labelDireccion_502ag.Size = new System.Drawing.Size(67, 17);
             this.labelDireccion_502ag.TabIndex = 34;
             this.labelDireccion_502ag.Text = "Dirección";
-            // 
-            // ColumnaDNI
-            // 
-            this.ColumnaDNI.HeaderText = "DNI";
-            this.ColumnaDNI.Name = "ColumnaDNI";
-            this.ColumnaDNI.ReadOnly = true;
-            // 
-            // ColumnaNombre
-            // 
-            this.ColumnaNombre.HeaderText = "Nombre";
-            this.ColumnaNombre.Name = "ColumnaNombre";
-            this.ColumnaNombre.ReadOnly = true;
-            // 
-            // ColumnaApellido
-            // 
-            this.ColumnaApellido.HeaderText = "Apellido";
-            this.ColumnaApellido.Name = "ColumnaApellido";
-            this.ColumnaApellido.ReadOnly = true;
-            // 
-            // ColumnaEmail
-            // 
-            this.ColumnaEmail.HeaderText = "Email";
-            this.ColumnaEmail.Name = "ColumnaEmail";
-            this.ColumnaEmail.ReadOnly = true;
-            // 
-            // ColumnaDireccion
-            // 
-            this.ColumnaDireccion.HeaderText = "Dirección";
-            this.ColumnaDireccion.Name = "ColumnaDireccion";
-            this.ColumnaDireccion.ReadOnly = true;
-            // 
-            // ColumnaTelefono
-            // 
-            this.ColumnaTelefono.HeaderText = "Telefono";
-            this.ColumnaTelefono.Name = "ColumnaTelefono";
-            this.ColumnaTelefono.ReadOnly = true;
-            this.ColumnaTelefono.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnaActivo
-            // 
-            this.ColumnaActivo.HeaderText = "Activo";
-            this.ColumnaActivo.Name = "ColumnaActivo";
-            this.ColumnaActivo.ReadOnly = true;
-            this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FormMaestrosClientes_502ag
             // 

@@ -93,6 +93,7 @@ namespace GUI
         {
             try
             {
+                if (dgvUsuarios_502ag.Rows.Count <= 0){ throw new Exception("No hay nada que modificar"); }
                 opcion_502ag = "Modificar";
                 tBModoActual_502ag.Text = "Modo Modificar";
                 buttonAplicar_502ag.Enabled = true;
@@ -129,6 +130,7 @@ namespace GUI
         {
             try
             {
+                if (dgvUsuarios_502ag.Rows.Count <= 0) { throw new Exception("No hay nada que bloquear"); }
                 opcion_502ag = "Bloquear";
                 tBModoActual_502ag.Text = "Modo Bloquear";
                 buttonAplicar_502ag.Enabled = true;
@@ -146,6 +148,7 @@ namespace GUI
         {
             try
             {
+                if (dgvUsuarios_502ag.Rows.Count <= 0) { throw new Exception("No hay nada que desbloquear"); }
                 opcion_502ag = "Desbloquear";
                 tBModoActual_502ag.Text = "Modo Desbloquear";
                 buttonAplicar_502ag.Enabled = false;
