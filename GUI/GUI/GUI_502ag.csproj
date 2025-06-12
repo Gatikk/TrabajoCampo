@@ -71,6 +71,12 @@
     <Compile Include="FormMaestrosClientes_502ag.Designer.cs">
       <DependentUpon>FormMaestrosClientes_502ag.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMaestrosCombustible_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaestrosCombustible_502ag.Designer.cs">
+      <DependentUpon>FormMaestrosCombustible_502ag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu_502ag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMaestrosClientes_502ag.resx">
       <DependentUpon>FormMaestrosClientes_502ag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMaestrosCombustible_502ag.resx">
+      <DependentUpon>FormMaestrosCombustible_502ag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMenu_502ag.resx">
       <DependentUpon>FormMenu_502ag.cs</DependentUpon>

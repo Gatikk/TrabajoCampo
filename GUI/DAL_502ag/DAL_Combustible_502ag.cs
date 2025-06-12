@@ -28,6 +28,7 @@ namespace DAL_502ag
                                 decimal.Parse(dr_502ag["CantDisponible_502ag"].ToString()),
                                 decimal.Parse(dr_502ag["PrecioPorLitro_502ag"].ToString())                                
                                 );
+                            listaCombustibles_502ag.Add(combustible_502ag);
                         }
                     }
                 }
@@ -39,8 +40,9 @@ namespace DAL_502ag
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
-                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Combustible WHERE CodCombustible_502ag = @CodCombustible_502ag"))
+                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Combustible_502ag WHERE CodCombustible_502ag = @CodCombustible_502ag", cx_502ag))
                 {
+                    cx_502ag.Open();
                     cmd_502ag.Parameters.AddWithValue("@CodCombustible_502ag", codCombustible_502ag);
                     using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
                     {
@@ -87,9 +89,8 @@ namespace DAL_502ag
                 cx_502ag.Open();
                 string updateQuery_502ag = "UPDATE Combustible_502ag SET Nombre_502ag = @Nombre_502ag, CantDisponible_502ag = @CantDisponible_502ag, " +
                     "PrecioPorLitro_502ag = @PrecioPorLitro_502ag WHERE CodCombustible_502ag = @CodCombustible_502ag";
-                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Combustible_502ag", cx_502ag))
+                using (SqlCommand cmd_502ag = new SqlCommand(updateQuery_502ag, cx_502ag))
                 {
-                    cmd_502ag.CommandText = updateQuery_502ag;
                     cmd_502ag.Parameters.AddWithValue("@CodCombustible_502ag", combustible_502ag.CodCombustible_502ag);
                     cmd_502ag.Parameters.AddWithValue("@Nombre_502ag", combustible_502ag.Nombre_502ag);
                     cmd_502ag.Parameters.AddWithValue("@CantDisponible_502ag", combustible_502ag.CantDisponible_502ag);
@@ -106,10 +107,9 @@ namespace DAL_502ag
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                string deleteQuery_502ag = "DELETE FROM Combustible_502ag WHERE CodCombustible = @CodCombustible_502ag";
-                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Combustible_502ag", cx_502ag))
+                string deleteQuery_502ag = "DELETE FROM Combustible_502ag WHERE CodCombustible_502ag = @CodCombustible_502ag";
+                using (SqlCommand cmd_502ag = new SqlCommand(deleteQuery_502ag, cx_502ag))
                 {
-                    cmd_502ag.CommandText = deleteQuery_502ag;
                     cmd_502ag.Parameters.AddWithValue("@CodCombustible_502ag", combustible_502ag.CodCombustible_502ag);
                     cmd_502ag.ExecuteNonQuery();
                 }

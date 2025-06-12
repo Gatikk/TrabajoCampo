@@ -20,6 +20,7 @@ namespace GUI
         FormABMUsuario_502ag abmForm;
         FormCambiarContraseña_502ag cambiarContraseñaForm;
         FormMaestrosClientes_502ag maestrosClientesForm_502ag;
+        FormMaestrosCombustible_502ag maestrosCombustiblesForm_502ag;
         public FormMenu_502ag()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace GUI
             abmForm = new FormABMUsuario_502ag(this);
             cambiarContraseñaForm = new FormCambiarContraseña_502ag(this);
             maestrosClientesForm_502ag = new FormMaestrosClientes_502ag(this);
+            maestrosCombustiblesForm_502ag = new FormMaestrosCombustible_502ag(this);
             VerificarAdminSupremo();
         }
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
@@ -80,6 +82,11 @@ namespace GUI
             this.Hide();
             maestrosClientesForm_502ag.Show();
         }
+        private void buttonMaestrosCombustibles_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            maestrosCombustiblesForm_502ag.Show();
+        }
         private void esconderSubMenu_502ag()
         {
             if(panelSubMenuAdmin_502ag.Visible == true)
@@ -88,6 +95,7 @@ namespace GUI
                 panelSubMenuMaestros_502ag.Visible=false;
                 panelSubMenuVentas_502ag.Visible = false;
                 panelSubMenuReportes_502ag.Visible = false;
+                panelSubMenuUsuario_502ag.Visible = false;
             }
             if(panelSubMenuUsuario_502ag.Visible == true)
             {
@@ -95,6 +103,7 @@ namespace GUI
                 panelSubMenuMaestros_502ag.Visible = false;
                 panelSubMenuVentas_502ag.Visible = false;
                 panelSubMenuReportes_502ag.Visible = false;
+                panelSubMenuAdmin_502ag.Visible = false;
             }
             if(panelSubMenuMaestros_502ag.Visible == true)
             {
@@ -102,6 +111,7 @@ namespace GUI
                 panelSubMenuUsuario_502ag.Visible = false;
                 panelSubMenuVentas_502ag.Visible = false;
                 panelSubMenuReportes_502ag.Visible = false;
+                panelSubMenuMaestros_502ag.Visible = false;
             }
             if(panelSubMenuVentas_502ag.Visible == true)
             {
@@ -109,6 +119,7 @@ namespace GUI
                 panelSubMenuUsuario_502ag.Visible = false;
                 panelSubMenuMaestros_502ag.Visible = false;
                 panelSubMenuReportes_502ag.Visible = false;
+                panelSubMenuVentas_502ag.Visible = false;
             }
             if(panelSubMenuReportes_502ag.Visible == true)
             {
@@ -116,6 +127,7 @@ namespace GUI
                 panelSubMenuUsuario_502ag.Visible = false;
                 panelSubMenuMaestros_502ag.Visible = false;
                 panelSubMenuVentas_502ag.Visible = false;
+                panelSubMenuReportes_502ag.Visible = false;
             }
         }
 
@@ -152,22 +164,17 @@ namespace GUI
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
-
         private void buttonMaestros_502ag_Click(object sender, EventArgs e)
         {
             mostrarSubMenu_502ag(panelSubMenuMaestros_502ag);
         }
-
         private void buttonVentas_502ag_Click(object sender, EventArgs e)
         {
             mostrarSubMenu_502ag(panelSubMenuVentas_502ag);
         }
-
         private void buttonReportes_502ag_Click(object sender, EventArgs e)
         {
             mostrarSubMenu_502ag(panelSubMenuReportes_502ag);
         }
-
-        
     }
 }

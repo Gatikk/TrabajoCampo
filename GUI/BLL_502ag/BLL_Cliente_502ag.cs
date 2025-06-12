@@ -12,7 +12,6 @@ namespace BLL_502ag
 {
     public class BLL_Cliente_502ag
     {
-        
         public BE_Cliente_502ag ObtenerCliente_502ag(string dni_502ag)
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();

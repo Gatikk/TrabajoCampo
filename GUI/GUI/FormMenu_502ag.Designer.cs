@@ -43,7 +43,7 @@ namespace GUI
             this.buttonIniciarSesion_502ag = new System.Windows.Forms.Button();
             this.buttonMaestros_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuMaestros_502ag = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonMaestrosCombustibles_502ag = new System.Windows.Forms.Button();
             this.buttonMaestrosClientes_502ag = new System.Windows.Forms.Button();
             this.buttonVentas_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuVentas_502ag = new System.Windows.Forms.Panel();
@@ -242,7 +242,7 @@ namespace GUI
             // 
             // panelSubMenuMaestros_502ag
             // 
-            this.panelSubMenuMaestros_502ag.Controls.Add(this.button4);
+            this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosCombustibles_502ag);
             this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosClientes_502ag);
             this.panelSubMenuMaestros_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuMaestros_502ag.Location = new System.Drawing.Point(3, 426);
@@ -250,20 +250,21 @@ namespace GUI
             this.panelSubMenuMaestros_502ag.Size = new System.Drawing.Size(222, 91);
             this.panelSubMenuMaestros_502ag.TabIndex = 12;
             // 
-            // button4
+            // buttonMaestrosCombustibles_502ag
             // 
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button4.Location = new System.Drawing.Point(0, 41);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(222, 41);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "?";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonMaestrosCombustibles_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMaestrosCombustibles_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonMaestrosCombustibles_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaestrosCombustibles_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonMaestrosCombustibles_502ag.Location = new System.Drawing.Point(0, 41);
+            this.buttonMaestrosCombustibles_502ag.Name = "buttonMaestrosCombustibles_502ag";
+            this.buttonMaestrosCombustibles_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonMaestrosCombustibles_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonMaestrosCombustibles_502ag.TabIndex = 11;
+            this.buttonMaestrosCombustibles_502ag.Text = "Combustibles";
+            this.buttonMaestrosCombustibles_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMaestrosCombustibles_502ag.UseVisualStyleBackColor = true;
+            this.buttonMaestrosCombustibles_502ag.Click += new System.EventHandler(this.buttonMaestrosCombustibles_502ag_Click);
             // 
             // buttonMaestrosClientes_502ag
             // 
@@ -477,7 +478,7 @@ namespace GUI
         private System.Windows.Forms.Button buttonVentas_502ag;
         private System.Windows.Forms.Button buttonMaestros_502ag;
         private System.Windows.Forms.Panel panelSubMenuMaestros_502ag;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonMaestrosCombustibles_502ag;
         private System.Windows.Forms.Button buttonMaestrosClientes_502ag;
         private System.Windows.Forms.Panel panelSubMenuVentas_502ag;
         private System.Windows.Forms.Button button1;
