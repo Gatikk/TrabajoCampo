@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="BE_Cliente_502ag.cs" />
     <Compile Include="BE_Combustible_502ag.cs" />
+    <Compile Include="BE_Factura_502ag.cs" />
+    <Compile Include="BE_Vehiculo_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

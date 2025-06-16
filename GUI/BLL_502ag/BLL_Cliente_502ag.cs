@@ -25,13 +25,56 @@ namespace BLL_502ag
         }
 
         #region AltaCliente
+        public bool VerificarDNIYaRegistrado_502ag(string dni_502ag)
+        {
+            DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
+            bool estaRegistrado_502ag = true;
+            foreach (BE_Cliente_502ag cliente_502ag in dalCliente_502ag.ObtenerListaClientes_502ag())
+            {
+                if (cliente_502ag.DNI_502ag == dni_502ag && cliente_502ag.IsActivo_502ag)
+                {
+                    estaRegistrado_502ag = false;
+                    break;
+                }
+            }
+            return estaRegistrado_502ag;
+        }
+        public bool VerificarEmailYaRegistrado_502ag(string email_502ag)
+        {
+            DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
+            bool estaRegistrado_502ag = true;
+            foreach(BE_Cliente_502ag cliente_502ag in dalCliente_502ag.ObtenerListaClientes_502ag())
+            {
+                if (cliente_502ag.Email_502ag == email_502ag)
+                {
+                    estaRegistrado_502ag = false;
+                    break;
+                }
+            }
+            return estaRegistrado_502ag;
+        }
+        public bool VerificarTelefonoYaRegistrado_502ag(string telefono_502ag)
+        {
+            DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
+            bool estaRegistrado_502ag = true;
+            foreach (BE_Cliente_502ag cliente_502ag in dalCliente_502ag.ObtenerListaClientes_502ag())
+            {
+                if (cliente_502ag.Telefono_502ag == telefono_502ag)
+                {
+                    estaRegistrado_502ag = false;
+                    break;
+                }
+            }
+            return estaRegistrado_502ag;
+        }
+
         public bool VerificarDatosIngresados_502ag(string dni_502ag, string nombre_502ag, string apellido_502ag, string email_502ag, string direccion_502ag, string telefono_502ag)
         {
             bool clienteValido_502ag = true;
             Regex reDNI_502ag = new Regex(@"^\d{8}$");
             Regex reEmail_502ag = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,40}$");
             Regex reNombreApellido_502ag = new Regex(@"^[A-Z][a-zÁÉÍÓÚáéíóúÑñ]{2,18}(\s[A-Z][a-zÁÉÍÓÚáéíóúÑñ]{2,18})?$");
-            Regex reDireccion_502ag = new Regex(@"^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ\s]+ \d+[A-Za-z]?$ ");
+            Regex reDireccion_502ag = new Regex(@"^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9\s]+ \d{1,5}$");
             Regex reTelefono_502ag = new Regex(@"^\d{2} \d{4}-\d{4}$");
             if (!reDNI_502ag.IsMatch(dni_502ag)) clienteValido_502ag = false;
             if (!reNombreApellido_502ag.IsMatch(nombre_502ag)) clienteValido_502ag = false;

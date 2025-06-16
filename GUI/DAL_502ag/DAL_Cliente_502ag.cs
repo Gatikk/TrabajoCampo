@@ -43,10 +43,10 @@ namespace DAL_502ag
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
+                cx_502ag.Open();
                 using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Cliente_502ag WHERE DNI_502ag = @DNI_502ag ", cx_502ag))
                 {
                     cmd_502ag.Parameters.AddWithValue("@DNI_502ag", dni_502ag);
-                    cx_502ag.Open();
                     using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
                     {
                         if (dr_502ag.Read())

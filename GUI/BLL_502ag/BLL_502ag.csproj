@@ -44,6 +44,9 @@
   <ItemGroup>
     <Compile Include="BLL_Cliente_502ag.cs" />
     <Compile Include="BLL_Combustible_502ag.cs" />
+    <Compile Include="BLL_Factura_502ag.cs" />
+    <Compile Include="BLL_Pago_502ag.cs" />
+    <Compile Include="BLL_Vehiculo_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

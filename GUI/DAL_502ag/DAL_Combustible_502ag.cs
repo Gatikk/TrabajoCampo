@@ -117,5 +117,22 @@ namespace DAL_502ag
         }
         #endregion
 
+        #region ActualizarExistenciaCombustible
+        public void ActualizarExistenciaCombustible_502ag(BE_Combustible_502ag combustible_502ag)
+        {
+            using(SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                string updateQuery_502ag = "UPDATE Combustible_502ag SET CantDisponible_502ag = @CantDisponible_502ag WHERE CodCombustible_502ag = @CodCombustible_502ag";
+                using(SqlCommand cmd_502ag = new SqlCommand(updateQuery_502ag, cx_502ag))
+                {
+                    cmd_502ag.Parameters.AddWithValue("@CodCombustible_502ag", combustible_502ag.CodCombustible_502ag);
+                    cmd_502ag.Parameters.AddWithValue("@CantDisponible_502ag", combustible_502ag.CantDisponible_502ag);
+                    cmd_502ag.ExecuteNonQuery();
+                }
+            }
+        }
+        #endregion
+
     }
 }

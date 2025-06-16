@@ -48,7 +48,7 @@ namespace GUI
             this.buttonVentas_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuVentas_502ag = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonCargarCombustible_502ag = new System.Windows.Forms.Button();
             this.buttonReportes_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuReportes_502ag = new System.Windows.Forms.Panel();
             this.button7 = new System.Windows.Forms.Button();
@@ -301,7 +301,7 @@ namespace GUI
             // panelSubMenuVentas_502ag
             // 
             this.panelSubMenuVentas_502ag.Controls.Add(this.button1);
-            this.panelSubMenuVentas_502ag.Controls.Add(this.button2);
+            this.panelSubMenuVentas_502ag.Controls.Add(this.buttonCargarCombustible_502ag);
             this.panelSubMenuVentas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 576);
             this.panelSubMenuVentas_502ag.Name = "panelSubMenuVentas_502ag";
@@ -323,20 +323,21 @@ namespace GUI
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonCargarCombustible_502ag
             // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button2.Location = new System.Drawing.Point(0, 0);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(222, 41);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "?";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonCargarCombustible_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCargarCombustible_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonCargarCombustible_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCargarCombustible_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCargarCombustible_502ag.Location = new System.Drawing.Point(0, 0);
+            this.buttonCargarCombustible_502ag.Name = "buttonCargarCombustible_502ag";
+            this.buttonCargarCombustible_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCargarCombustible_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonCargarCombustible_502ag.TabIndex = 13;
+            this.buttonCargarCombustible_502ag.Text = "Cargar Combustible";
+            this.buttonCargarCombustible_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCargarCombustible_502ag.UseVisualStyleBackColor = true;
+            this.buttonCargarCombustible_502ag.Click += new System.EventHandler(this.buttonCargarCombustible_502ag_Click);
             // 
             // buttonReportes_502ag
             // 
@@ -482,7 +483,7 @@ namespace GUI
         private System.Windows.Forms.Button buttonMaestrosClientes_502ag;
         private System.Windows.Forms.Panel panelSubMenuVentas_502ag;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonCargarCombustible_502ag;
         private System.Windows.Forms.Panel panelSubMenuReportes_502ag;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button3;

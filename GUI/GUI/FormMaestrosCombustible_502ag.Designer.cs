@@ -56,10 +56,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelPrecioPorLitro_502ag.AutoSize = true;
-            this.labelPrecioPorLitro_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelPrecioPorLitro_502ag.Location = new System.Drawing.Point(261, 383);
+            this.labelPrecioPorLitro_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelPrecioPorLitro_502ag.Location = new System.Drawing.Point(261, 379);
             this.labelPrecioPorLitro_502ag.Name = "labelPrecioPorLitro_502ag";
-            this.labelPrecioPorLitro_502ag.Size = new System.Drawing.Size(48, 17);
+            this.labelPrecioPorLitro_502ag.Size = new System.Drawing.Size(61, 22);
             this.labelPrecioPorLitro_502ag.TabIndex = 52;
             this.labelPrecioPorLitro_502ag.Text = "Precio";
             // 
@@ -69,10 +69,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCodigo_502ag.AutoSize = true;
-            this.labelCodigo_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelCodigo_502ag.Location = new System.Drawing.Point(261, 296);
+            this.labelCodigo_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelCodigo_502ag.Location = new System.Drawing.Point(261, 280);
             this.labelCodigo_502ag.Name = "labelCodigo_502ag";
-            this.labelCodigo_502ag.Size = new System.Drawing.Size(52, 17);
+            this.labelCodigo_502ag.Size = new System.Drawing.Size(67, 22);
             this.labelCodigo_502ag.TabIndex = 51;
             this.labelCodigo_502ag.Text = "Código";
             // 
@@ -82,10 +82,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelCantidad_502ag.AutoSize = true;
-            this.labelCantidad_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelCantidad_502ag.Location = new System.Drawing.Point(261, 354);
+            this.labelCantidad_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelCantidad_502ag.Location = new System.Drawing.Point(261, 346);
             this.labelCantidad_502ag.Name = "labelCantidad_502ag";
-            this.labelCantidad_502ag.Size = new System.Drawing.Size(64, 17);
+            this.labelCantidad_502ag.Size = new System.Drawing.Size(82, 22);
             this.labelCantidad_502ag.TabIndex = 50;
             this.labelCantidad_502ag.Text = "Cantidad";
             // 
@@ -95,43 +95,43 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNombre_502ag.AutoSize = true;
-            this.labelNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelNombre_502ag.Location = new System.Drawing.Point(261, 325);
+            this.labelNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelNombre_502ag.Location = new System.Drawing.Point(261, 313);
             this.labelNombre_502ag.Name = "labelNombre_502ag";
-            this.labelNombre_502ag.Size = new System.Drawing.Size(58, 17);
+            this.labelNombre_502ag.Size = new System.Drawing.Size(73, 22);
             this.labelNombre_502ag.TabIndex = 49;
             this.labelNombre_502ag.Text = "Nombre";
             // 
             // tBPrecio_502ag
             // 
-            this.tBPrecio_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBPrecio_502ag.Location = new System.Drawing.Point(340, 380);
+            this.tBPrecio_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.tBPrecio_502ag.Location = new System.Drawing.Point(367, 376);
             this.tBPrecio_502ag.Name = "tBPrecio_502ag";
-            this.tBPrecio_502ag.Size = new System.Drawing.Size(175, 23);
+            this.tBPrecio_502ag.Size = new System.Drawing.Size(175, 27);
             this.tBPrecio_502ag.TabIndex = 43;
             // 
             // tBCodigo_502ag
             // 
-            this.tBCodigo_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBCodigo_502ag.Location = new System.Drawing.Point(340, 293);
+            this.tBCodigo_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.tBCodigo_502ag.Location = new System.Drawing.Point(367, 277);
             this.tBCodigo_502ag.Name = "tBCodigo_502ag";
-            this.tBCodigo_502ag.Size = new System.Drawing.Size(175, 23);
+            this.tBCodigo_502ag.Size = new System.Drawing.Size(175, 27);
             this.tBCodigo_502ag.TabIndex = 40;
             // 
             // tBCantidad_502ag
             // 
-            this.tBCantidad_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBCantidad_502ag.Location = new System.Drawing.Point(340, 351);
+            this.tBCantidad_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.tBCantidad_502ag.Location = new System.Drawing.Point(367, 343);
             this.tBCantidad_502ag.Name = "tBCantidad_502ag";
-            this.tBCantidad_502ag.Size = new System.Drawing.Size(175, 23);
+            this.tBCantidad_502ag.Size = new System.Drawing.Size(175, 27);
             this.tBCantidad_502ag.TabIndex = 42;
             // 
             // tBNombre_502ag
             // 
-            this.tBNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBNombre_502ag.Location = new System.Drawing.Point(340, 322);
+            this.tBNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.tBNombre_502ag.Location = new System.Drawing.Point(367, 310);
             this.tBNombre_502ag.Name = "tBNombre_502ag";
-            this.tBNombre_502ag.Size = new System.Drawing.Size(175, 23);
+            this.tBNombre_502ag.Size = new System.Drawing.Size(175, 27);
             this.tBNombre_502ag.TabIndex = 41;
             // 
             // buttonVolverAlMenu_502ag

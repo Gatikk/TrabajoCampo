@@ -116,7 +116,10 @@ namespace GUI
                     string email_502ag = tBEmail_502ag.Text;
                     string direccion_502ag = tBDireccion_502ag.Text;
                     string telefono_502ag = tBTelefono_502ag.Text;
-                    if (bllCliente_502ag.VerificarDatosIngresados_502ag(dni_502ag, nombre_502ag, apellido_502ag, email_502ag, direccion_502ag, telefono_502ag)) throw new Exception("Datos ingresados incorrectos");
+                    if (!bllCliente_502ag.VerificarDatosIngresados_502ag(dni_502ag, nombre_502ag, apellido_502ag, email_502ag, direccion_502ag, telefono_502ag)) throw new Exception("Datos ingresados incorrectos");
+                    if (!bllCliente_502ag.VerificarDNIYaRegistrado_502ag(dni_502ag)) throw new Exception("DNI ya utilizado");
+                    if (!bllCliente_502ag.VerificarEmailYaRegistrado_502ag(email_502ag)) throw new Exception("Email ya utilizado");
+                    if (!bllCliente_502ag.VerificarTelefonoYaRegistrado_502ag(telefono_502ag)) throw new Exception("Teléfono ya utilizado");
                     bllCliente_502ag.AltaCliente_502ag(dni_502ag, nombre_502ag, apellido_502ag, email_502ag, direccion_502ag, telefono_502ag);
                 }
                 if(opcion_502ag == "Modificar")

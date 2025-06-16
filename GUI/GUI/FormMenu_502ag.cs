@@ -21,6 +21,7 @@ namespace GUI
         FormCambiarContraseña_502ag cambiarContraseñaForm;
         FormMaestrosClientes_502ag maestrosClientesForm_502ag;
         FormMaestrosCombustible_502ag maestrosCombustiblesForm_502ag;
+        FormCargarCombustible_502ag cargarCombustibleForm_502ag;
         public FormMenu_502ag()
         {
             InitializeComponent();
@@ -36,6 +37,7 @@ namespace GUI
             cambiarContraseñaForm = new FormCambiarContraseña_502ag(this);
             maestrosClientesForm_502ag = new FormMaestrosClientes_502ag(this);
             maestrosCombustiblesForm_502ag = new FormMaestrosCombustible_502ag(this);
+            cargarCombustibleForm_502ag = new FormCargarCombustible_502ag(this);
             VerificarAdminSupremo();
         }
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
@@ -86,6 +88,11 @@ namespace GUI
         {
             this.Hide();
             maestrosCombustiblesForm_502ag.Show();
+        }
+        private void buttonCargarCombustible_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            cargarCombustibleForm_502ag.Show();
         }
         private void esconderSubMenu_502ag()
         {
@@ -176,5 +183,6 @@ namespace GUI
         {
             mostrarSubMenu_502ag(panelSubMenuReportes_502ag);
         }
+
     }
 }

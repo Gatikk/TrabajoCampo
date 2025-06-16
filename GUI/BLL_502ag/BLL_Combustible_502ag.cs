@@ -98,5 +98,11 @@ namespace BLL_502ag
         }
         #endregion
 
+        public void ActualizarExistenciaCombustible_502ag(BE_Combustible_502ag combustible_502ag)
+        {
+            DAL_Combustible_502ag dalCombustible_502ag = new DAL_Combustible_502ag();
+            dalCombustible_502ag.ActualizarExistenciaCombustible_502ag(combustible_502ag);
+        }
+
     }
 }

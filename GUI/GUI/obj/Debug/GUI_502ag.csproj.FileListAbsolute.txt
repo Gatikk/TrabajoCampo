@@ -25,3 +25,6 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\G
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BLL_502ag.dll
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BLL_502ag.pdb
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormMaestrosCombustible_502ag.resources
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormCargarCombustible_502ag.resources
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormRegistrarCliente_502ag.resources
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormCobrarCliente_502ag.resources
