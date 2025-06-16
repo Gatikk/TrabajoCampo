@@ -38,13 +38,13 @@ namespace GUI
                 string titular_502ag = tBTitular_502ag.Text;
 
                 if (!bllPago_502ag.VerificarDatosPago_502ag(numTarjeta_502ag, codSeguridad_502ag, fechaCad_502ag, titular_502ag)) { throw new Exception("Pago rechazado"); }
+                bllPago_502ag.ValidarPago_502ag();
                 facturaACobrar_502ag.EstadoFactura_502ag++;
                 facturaACobrar_502ag.MetodoPago_502ag = "Crédito/Débito";
                 facturaACobrar_502ag.IsFacturado_502ag = true;
                 facturaACobrar_502ag.Fecha_502ag = DateTime.Now.Date;
                 facturaACobrar_502ag.Hora_502ag = DateTime.Now.TimeOfDay;
                 bllFactura_502ag.ActualizarFacturaFinalizada_502ag(facturaACobrar_502ag);
-
                 this.Hide();
                 menu_502ag.Show();
             }

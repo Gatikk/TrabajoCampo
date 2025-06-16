@@ -226,6 +226,7 @@
             this.buttonDetenerCarga_502ag.TabIndex = 60;
             this.buttonDetenerCarga_502ag.Text = "Detener";
             this.buttonDetenerCarga_502ag.UseVisualStyleBackColor = false;
+            this.buttonDetenerCarga_502ag.Click += new System.EventHandler(this.buttonDetenerCarga_502ag_Click);
             // 
             // buttonReanudarCarga_502ag
             // 
@@ -239,6 +240,7 @@
             this.buttonReanudarCarga_502ag.TabIndex = 61;
             this.buttonReanudarCarga_502ag.Text = "Reanudar";
             this.buttonReanudarCarga_502ag.UseVisualStyleBackColor = false;
+            this.buttonReanudarCarga_502ag.Click += new System.EventHandler(this.buttonReanudarCarga_502ag_Click);
             // 
             // buttonFinalizarCarga_502ag
             // 
@@ -501,6 +503,7 @@
             this.Controls.Add(this.dgvCombustibles_502ag);
             this.Name = "FormCargarCombustible_502ag";
             this.Text = "FormCargarCombustible_502ag";
+            this.Activated += new System.EventHandler(this.FormCargarCombustible_502ag_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCargarCombustible_502ag_FormClosed);
             this.Load += new System.EventHandler(this.FormCargarCombustible_502ag_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombustibles_502ag)).EndInit();

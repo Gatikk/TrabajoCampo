@@ -22,5 +22,10 @@ namespace BLL_502ag
             if(!reTitular_502ag.IsMatch(titular_502ag)){ esValido_502ag = false;}
             return esValido_502ag;
         }
+
+        public bool ValidarPago_502ag()
+        {
+            return true;
+        }
     }
 }
