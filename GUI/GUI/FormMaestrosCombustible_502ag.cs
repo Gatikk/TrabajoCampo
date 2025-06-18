@@ -66,6 +66,8 @@ namespace GUI
             try
             {
                 if(dgvCombustibles_502ag.Rows.Count <= 0) { throw new Exception("No hay nada que modificar"); }
+                BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
+                BE_Combustible_502ag combustible_502ag = bllCombustible_502ag.ObtenerCombustible_502ag(dgvCombustibles_502ag.SelectedRows[0].Cells[0].Value.ToString());
                 opcion_502ag = "Modificar";
                 buttonAplicar_502ag.Enabled = true;
                 buttonCancelar_502ag.Enabled = true;
@@ -76,10 +78,10 @@ namespace GUI
                 tBNombre_502ag.Enabled = true;
                 tBCantidad_502ag.Enabled = true;
                 tBPrecio_502ag.Enabled = true;
-                tBCodigo_502ag.Text = dgvCombustibles_502ag.SelectedRows[0].Cells[0].Value.ToString();
-                tBNombre_502ag.Text = dgvCombustibles_502ag.SelectedRows[0].Cells[1].Value.ToString();
-                tBCantidad_502ag.Text = dgvCombustibles_502ag.SelectedRows[0].Cells[2].Value.ToString();
-                tBPrecio_502ag.Text = dgvCombustibles_502ag.SelectedRows[0].Cells[3].Value.ToString();
+                tBCodigo_502ag.Text = combustible_502ag.CodCombustible_502ag;
+                tBNombre_502ag.Text = combustible_502ag.Nombre_502ag;
+                tBCantidad_502ag.Text = combustible_502ag.CantDisponible_502ag.ToString();
+                tBPrecio_502ag.Text = combustible_502ag.PrecioPorLitro_502ag.ToString();
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
@@ -175,7 +177,7 @@ namespace GUI
             dgv_502ag.Rows.Clear();
             foreach (BE_Combustible_502ag combustible_502ag in bllCombustible_502ag.ObtenerListaCombustibles_502ag())
             {
-                dgv_502ag.Rows.Add(combustible_502ag.CodCombustible_502ag, combustible_502ag.Nombre_502ag, combustible_502ag.CantDisponible_502ag, combustible_502ag.PrecioPorLitro_502ag);
+                dgv_502ag.Rows.Add(combustible_502ag.CodCombustible_502ag, combustible_502ag.Nombre_502ag, combustible_502ag.CantDisponible_502ag+" litros", combustible_502ag.PrecioPorLitro_502ag+"$");
             }
         }
 
@@ -187,10 +189,12 @@ namespace GUI
                 {
                     if(opcion_502ag == "Modificar")
                     {
-                        tBCodigo_502ag.Text = dgvCombustibles_502ag.SelectedRows[0].Cells[0].Value.ToString();
-                        tBNombre_502ag.Text = dgvCombustibles_502ag.SelectedRows[0].Cells[1].Value.ToString();
-                        tBCantidad_502ag.Text = dgvCombustibles_502ag.SelectedRows[0].Cells[2].Value.ToString();
-                        tBPrecio_502ag.Text = dgvCombustibles_502ag.SelectedRows[0].Cells[3].Value.ToString();
+                        BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
+                        BE_Combustible_502ag combustible_502ag = bllCombustible_502ag.ObtenerCombustible_502ag(dgvCombustibles_502ag.SelectedRows[0].Cells[0].Value.ToString());
+                        tBCodigo_502ag.Text = combustible_502ag.CodCombustible_502ag;
+                        tBNombre_502ag.Text = combustible_502ag.Nombre_502ag;
+                        tBCantidad_502ag.Text = combustible_502ag.CantDisponible_502ag.ToString();
+                        tBPrecio_502ag.Text = combustible_502ag.PrecioPorLitro_502ag.ToString();
                     }
                 }
             }

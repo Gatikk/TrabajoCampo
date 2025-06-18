@@ -15,8 +15,8 @@ namespace GUI
     public partial class FormCargarCombustible_502ag : Form
     {
         private FormMenu_502ag menu_502ag;
-        BE_Combustible_502ag combustibleSeleccionado_502ag;
-        BE_Vehiculo_502ag vehiculoActual_502ag;
+        private BE_Combustible_502ag combustibleSeleccionado_502ag;
+        private BE_Vehiculo_502ag vehiculoActual_502ag;
         private Timer timerCarga_502ag = new Timer();
         private const decimal litrosPorCiclo_502ag = 2;
         private decimal litrosRestantes_502ag = 0;
@@ -50,7 +50,7 @@ namespace GUI
                     facturaActual_502ag.CantCargada_502ag = totalCargado_502ag;
                     facturaActual_502ag.Monto_502ag = totalCargado_502ag * combustibleSeleccionado_502ag.PrecioPorLitro_502ag;
                     facturaActual_502ag.EstadoFactura_502ag++;
-                    bllFactura_502ag.ActualizarFacturaRecienCargada_502ag(facturaActual_502ag);
+                    bllFactura_502ag.ActualizarFacturaCargaFinalizada_502ag(facturaActual_502ag);
                 }
 
                 Environment.Exit(0);
@@ -77,7 +77,7 @@ namespace GUI
                     rBMonto_502ag.Enabled = true;
                     tBCantidad_502ag.Enabled = true;
                     buttonSeleccionarFactura_502ag.Enabled = false;
-                    facturaActual_502ag = new BE_Factura_502ag(0,int.Parse(combustibleSeleccionado_502ag.CodCombustible_502ag));
+                    facturaActual_502ag = new BE_Factura_502ag(0,int.Parse(combustibleSeleccionado_502ag.CodCombustible_502ag), combustibleSeleccionado_502ag.Nombre_502ag);
                     bllFactura_502ag.AltaFactura_502ag(facturaActual_502ag);
                     MostrarFacturas_502ag(dgvFacturas_502ag);
                 }
@@ -91,7 +91,7 @@ namespace GUI
             dgv_502ag.Rows.Clear();
             foreach (BE_Combustible_502ag combustible_502ag in bllCombustible_502ag.ObtenerListaCombustibles_502ag())
             {
-                dgv_502ag.Rows.Add(combustible_502ag.CodCombustible_502ag, combustible_502ag.Nombre_502ag, combustible_502ag.CantDisponible_502ag, combustible_502ag.PrecioPorLitro_502ag);
+                dgv_502ag.Rows.Add(combustible_502ag.CodCombustible_502ag, combustible_502ag.Nombre_502ag, combustible_502ag.CantDisponible_502ag+" litros", combustible_502ag.PrecioPorLitro_502ag+"$");
             }
         }
 
@@ -101,7 +101,20 @@ namespace GUI
             dgv_502ag.Rows.Clear();
             foreach (BE_Factura_502ag factura_502ag in bllFactura_502ag.ObtenerListaFacturasNoFacturadas_502ag())
             {
-                dgv_502ag.Rows.Add(factura_502ag.CodFactura_502ag, factura_502ag.CodCombustible_502ag, factura_502ag.EstadoFactura_502ag);
+                string estadoFacturaString_502ag = ""; 
+                if(factura_502ag.EstadoFactura_502ag == 1)
+                {
+                    estadoFacturaString_502ag = "Pendiente de carga";
+                }
+                if (factura_502ag.EstadoFactura_502ag == 2)
+                {
+                    estadoFacturaString_502ag = "Carga Finalizada";
+                }
+                if (factura_502ag.EstadoFactura_502ag == 3)
+                {
+                    estadoFacturaString_502ag = "Cliente identificado";
+                }
+                dgv_502ag.Rows.Add(factura_502ag.CodFactura_502ag, factura_502ag.NombreCombustible_502ag, estadoFacturaString_502ag);
             }
         }
 
@@ -112,7 +125,9 @@ namespace GUI
                 BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
                 totalCargado_502ag = 0;
                 decimal cantidadACargar_502ag = 0;
-
+                buttonComenzarCarga_502ag.Enabled = false;
+                buttonDetenerCarga_502ag.Enabled = true;
+                rTBDetallesCarga_502ag.Enabled = true;
                 if (rBCantidad_502ag.Checked)
                 {
                     cantidadACargar_502ag = decimal.Parse(tBCantidad_502ag.Text);
@@ -124,13 +139,8 @@ namespace GUI
                 vehiculoActual_502ag = new BE_Vehiculo_502ag();
                 decimal espacioDisponible_502ag = vehiculoActual_502ag.CantidadMaxima_502ag - vehiculoActual_502ag.CantidadActual_502ag;
                 litrosRestantes_502ag = Math.Min(cantidadACargar_502ag, Math.Min(espacioDisponible_502ag, combustibleSeleccionado_502ag.CantDisponible_502ag));
-                buttonComenzarCarga_502ag.Enabled = false;
-                buttonDetenerCarga_502ag.Enabled = true;
-                rTBDetallesCarga_502ag.Enabled = true;
                 rTBDetallesCarga_502ag.AppendText("Iniciando carga...\n");
                 timerCarga_502ag.Start();
-
-
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
@@ -140,39 +150,29 @@ namespace GUI
             {
                 BLL_Vehiculo_502ag bllVehiculo_502ag = new BLL_Vehiculo_502ag();
                 BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
-                
-                if (vehiculoActual_502ag == null || litrosRestantes_502ag <= 0)
-                {
-                    timerCarga_502ag.Stop();
-                    buttonFinalizarCarga_502ag.Enabled = true;
-                    buttonDetenerCarga_502ag.Enabled = false;
-                    return;
-                }
                 bool finalizado = bllVehiculo_502ag.SimulacionCarga_502ag(vehiculoActual_502ag, litrosPorCiclo_502ag, litrosRestantes_502ag);
-                
-                decimal litrosACargar = Math.Min(litrosPorCiclo_502ag, Math.Min(litrosRestantes_502ag, vehiculoActual_502ag.CantidadMaxima_502ag - vehiculoActual_502ag.CantidadActual_502ag));
+                decimal litrosACargar_502ag = Math.Min(litrosPorCiclo_502ag, Math.Min(litrosRestantes_502ag, vehiculoActual_502ag.CantidadMaxima_502ag - vehiculoActual_502ag.CantidadActual_502ag));
 
                 estadoCargando_502ag = true;
-                litrosRestantes_502ag -= litrosACargar;
-                totalCargado_502ag += litrosACargar;
+                litrosRestantes_502ag -= litrosACargar_502ag;
+                totalCargado_502ag += litrosACargar_502ag;
 
-                //actualizar combustible en tiempo real
                 if(combustibleSeleccionado_502ag != null)
                 {
-                    combustibleSeleccionado_502ag.CantDisponible_502ag -= litrosACargar;
+                    combustibleSeleccionado_502ag.CantDisponible_502ag -= litrosACargar_502ag;
                     bllCombustible_502ag.ActualizarExistenciaCombustible_502ag(combustibleSeleccionado_502ag);
                 }
                 MostrarCombustibles_502ag(dgvCombustibles_502ag);
 
-
                 rTBDetallesCarga_502ag.Clear();
-                rTBDetallesCarga_502ag.AppendText($"Cantidad actual: {vehiculoActual_502ag.CantidadActual_502ag:F2} / {vehiculoActual_502ag.CantidadMaxima_502ag:F2} litros\n");
+                rTBDetallesCarga_502ag.AppendText($"Cantidad actual: {vehiculoActual_502ag.CantidadActual_502ag:F2} / {vehiculoActual_502ag.CantidadMaxima_502ag:F2} litros\n" +
+                    $"Cargado hasta el momento: {totalCargado_502ag} litros");
                 if (finalizado)
                 {
                     timerCarga_502ag.Stop();
                     buttonFinalizarCarga_502ag.Enabled = true;
                     buttonDetenerCarga_502ag.Enabled = false;
-                    rTBDetallesCarga_502ag.AppendText($"Carga finalizada. Total cargado: {totalCargado_502ag:F2} litros\n");
+                    rTBDetallesCarga_502ag.AppendText($"\nCarga finalizada.\nTotal cargado: {totalCargado_502ag:F2} litros\n");
                 }
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
@@ -198,7 +198,8 @@ namespace GUI
                     tBNombre_502ag.Clear();
                     tBApellido_502ag.Clear();
                     buttonCobrarCliente_502ag.Enabled = false;
-                    throw new Exception("Cliente no encontrado");}
+                    throw new Exception("Cliente no encontrado");
+                }
                 tBNombre_502ag.Enabled = true;
                 tBNombre_502ag.Text = cliente_502ag.Nombre_502ag;
                 tBApellido_502ag.Enabled = true;
@@ -238,13 +239,10 @@ namespace GUI
                 buttonDetenerCarga_502ag.Enabled = false;
                 buttonReanudarCarga_502ag.Enabled = false;
                 buttonFinalizarCarga_502ag.Enabled = false;
-                //despues poner en false
                 buttonIdentificarCliente_502ag.Enabled = false;
-                //despues poner en false
                 buttonRegistrarCliente_502ag.Enabled = false;
                 buttonCobrarCliente_502ag.Enabled = false;
                 tBCantidad_502ag.Enabled = false;
-                //despues poner en false
                 tBDNI_502ag.Enabled = false;
                 tBCodigo_502ag.ReadOnly = true;
                 tBCodigo_502ag.Enabled = false;
@@ -293,7 +291,6 @@ namespace GUI
                 this.Hide();
                 cobrarClienteForm_502ag.Show();
             }
-
         }
 
         private void buttonVolverAlMenu_502ag_Click(object sender, EventArgs e)
@@ -301,8 +298,7 @@ namespace GUI
             try
             {
                 this.Hide();
-                menu_502ag.Show();
-                
+                menu_502ag.Show();            
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
@@ -319,13 +315,6 @@ namespace GUI
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
-
-        private void FormCargarCombustible_502ag_Load(object sender, EventArgs e)
-        {
-            MostrarCombustibles_502ag(dgvCombustibles_502ag);
-            MostrarFacturas_502ag(dgvFacturas_502ag);
-        }
-
         private void buttonFinalizarCarga_502ag_Click(object sender, EventArgs e)
         {
             try
@@ -344,11 +333,11 @@ namespace GUI
                 buttonFinalizarCarga_502ag.Enabled = false;
                 buttonReanudarCarga_502ag.Enabled = false;
                 buttonDetenerCarga_502ag.Enabled = false;
-                bllFactura_502ag.ActualizarFacturaRecienCargada_502ag(facturaActual_502ag);
+                bllFactura_502ag.ActualizarFacturaCargaFinalizada_502ag(facturaActual_502ag);
                 tBDNI_502ag.Enabled = true;
                 buttonIdentificarCliente_502ag.Enabled = true;
                 buttonRegistrarCliente_502ag.Enabled = true;
-                rTBDetallesCarga_502ag.AppendText($"\nIdentifique al cliente");
+                rTBDetallesCarga_502ag.AppendText($"Identifique al cliente");
                 estadoCargando_502ag = false;
                 MostrarFacturas_502ag(dgvFacturas_502ag);
             }
@@ -366,7 +355,7 @@ namespace GUI
             try
             {
                 timerCarga_502ag.Stop();
-                rTBDetallesCarga_502ag.AppendText($"Carga detenida.\nCargado hasta el momento: {totalCargado_502ag} litros");
+                rTBDetallesCarga_502ag.AppendText($"Carga detenida.\nCargado hasta el momento: {totalCargado_502ag:F2} litros");
                 buttonReanudarCarga_502ag.Enabled = true;
                 buttonDetenerCarga_502ag.Enabled = false;
                 buttonFinalizarCarga_502ag.Enabled = true;

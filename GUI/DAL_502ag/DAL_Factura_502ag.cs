@@ -33,7 +33,8 @@ namespace DAL_502ag
                                     DateTime.Parse(dr_502ag["Fecha_502ag"].ToString()),
                                     TimeSpan.Parse(dr_502ag["Hora_502ag"].ToString()),
                                     0, //monto
-                                    0 //cantcargada
+                                    0, //cantcargada
+                                    dr_502ag["NombreCombustible_502ag"].ToString()
                                 );
                             }
                             if (int.Parse(dr_502ag["EstadoFactura_502ag"].ToString()) == 2)
@@ -46,7 +47,8 @@ namespace DAL_502ag
                                     DateTime.Parse(dr_502ag["Fecha_502ag"].ToString()),
                                     TimeSpan.Parse(dr_502ag["Hora_502ag"].ToString()),
                                     decimal.Parse(dr_502ag["Monto_502ag"].ToString()),
-                                    decimal.Parse(dr_502ag["CantCargada_502ag"].ToString())
+                                    decimal.Parse(dr_502ag["CantCargada_502ag"].ToString()),
+                                    dr_502ag["NombreCombustible_502ag"].ToString()
                                 );
                             }
                             if (int.Parse(dr_502ag["EstadoFactura_502ag"].ToString()) == 3)
@@ -62,12 +64,10 @@ namespace DAL_502ag
                                     decimal.Parse(dr_502ag["CantCargada_502ag"].ToString()),
                                     dr_502ag["DNICliente_502ag"].ToString(),
                                     dr_502ag["NombreCliente_502ag"].ToString(),
-                                    dr_502ag["ApellidoCliente_502ag"].ToString()
+                                    dr_502ag["ApellidoCliente_502ag"].ToString(),
+                                    dr_502ag["NombreCombustible_502ag"].ToString()
                                 );
                             }
-
-
-
                             return new BE_Factura_502ag(
                                 int.Parse(dr_502ag["CodFactura_502ag"].ToString()),
                                 dr_502ag["DNICliente_502ag"].ToString(),
@@ -110,10 +110,10 @@ namespace DAL_502ag
                                     bool.Parse(dr_502ag["IsFacturado_502ag"].ToString()),
                                     int.Parse(dr_502ag["EstadoFactura_502ag"].ToString()),
                                     DateTime.Parse(dr_502ag["Fecha_502ag"].ToString()),
-                                    TimeSpan.Parse(dr_502ag["Hora_502ag"].ToString())
+                                    TimeSpan.Parse(dr_502ag["Hora_502ag"].ToString()),
+                                    dr_502ag["NombreCombustible_502ag"].ToString()
                                 );
                                 listaFacturasNoFacturadas_502ag.Add(factura_502ag);
-
                             }
                             if (int.Parse(dr_502ag["EstadoFactura_502ag"].ToString()) == 2)
                             {
@@ -125,7 +125,8 @@ namespace DAL_502ag
                                     DateTime.Parse(dr_502ag["Fecha_502ag"].ToString()),
                                     TimeSpan.Parse(dr_502ag["Hora_502ag"].ToString()),
                                     decimal.Parse(dr_502ag["Monto_502ag"].ToString()),  
-                                    decimal.Parse(dr_502ag["CantCargada_502ag"].ToString())
+                                    decimal.Parse(dr_502ag["CantCargada_502ag"].ToString()),
+                                    dr_502ag["NombreCombustible_502ag"].ToString()
                                 );
                                 listaFacturasNoFacturadas_502ag.Add(factura_502ag);
                             }
@@ -142,7 +143,8 @@ namespace DAL_502ag
                                     decimal.Parse(dr_502ag["CantCargada_502ag"].ToString()),
                                     dr_502ag["DNICliente_502ag"].ToString(),
                                     dr_502ag["NombreCliente_502ag"].ToString(),
-                                    dr_502ag["ApellidoCliente_502ag"].ToString()
+                                    dr_502ag["ApellidoCliente_502ag"].ToString(),
+                                    dr_502ag["NombreCombustible_502ag"].ToString()
                                 );
                                 listaFacturasNoFacturadas_502ag.Add(factura_502ag);
                             }
@@ -173,6 +175,42 @@ namespace DAL_502ag
             return listaFacturasNoFacturadas_502ag;
         }
 
+        public List<BE_Factura_502ag> ObtenerListaFacturas_502ag()
+        {
+            List<BE_Factura_502ag> listaFacturas_502ag = new List<BE_Factura_502ag>();
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Factura_502ag WHERE IsFacturado_502ag = 1", cx_502ag))
+                {
+                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
+                    {
+                        while (dr_502ag.Read())
+                        {
+                            BE_Factura_502ag factura_502ag = new BE_Factura_502ag(
+                                
+                                int.Parse(dr_502ag["CodFactura_502ag"].ToString()),
+                                dr_502ag["DNICliente_502ag"].ToString(),
+                                DateTime.Parse(dr_502ag["Fecha_502ag"].ToString()),
+                                TimeSpan.Parse(dr_502ag["Hora_502ag"].ToString()),
+                                dr_502ag["MetodoPago_502ag"].ToString(),
+                                decimal.Parse(dr_502ag["Monto_502ag"].ToString()),
+                                dr_502ag["NombreCliente_502ag"].ToString(),
+                                dr_502ag["ApellidoCliente_502ag"].ToString(),
+                                int.Parse(dr_502ag["CodCombustible_502ag"].ToString()),
+                                decimal.Parse(dr_502ag["CantCargada_502ag"].ToString()),
+                                bool.Parse(dr_502ag["IsFacturado_502ag"].ToString()),
+                                int.Parse(dr_502ag["EstadoFactura_502ag"].ToString()),
+                                dr_502ag["NombreCombustible_502ag"].ToString()
+                            );
+                            listaFacturas_502ag.Add(factura_502ag);
+                        }
+                    }
+                }
+            }
+            return listaFacturas_502ag;
+        }
+
         #region AltaFactura
         public BE_Factura_502ag AltaFactura_502ag(BE_Factura_502ag factura_502ag)
         {
@@ -180,8 +218,8 @@ namespace DAL_502ag
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                string insertQuery_502ag = "INSERT INTO Factura_502ag (CodCombustible_502ag,IsFacturado_502ag, EstadoFactura_502ag, Fecha_502ag, Hora_502ag) " +
-                    "VALUES (@CodCombustible_502ag,@IsFacturado_502ag, @EstadoFactura_502ag, @Fecha_502ag, @Hora_502ag); SELECT SCOPE_IDENTITY();";
+                string insertQuery_502ag = "INSERT INTO Factura_502ag (CodCombustible_502ag,IsFacturado_502ag, EstadoFactura_502ag, Fecha_502ag, Hora_502ag, NombreCombustible_502ag) " +
+                    "VALUES (@CodCombustible_502ag,@IsFacturado_502ag, @EstadoFactura_502ag, @Fecha_502ag, @Hora_502ag, @NombreCombustible_502ag); SELECT SCOPE_IDENTITY();";
                 using (SqlCommand cmd_502ag = new SqlCommand(insertQuery_502ag, cx_502ag))
                 { 
                     cmd_502ag.Parameters.AddWithValue("@CodCombustible_502ag", factura_502ag.CodCombustible_502ag);
@@ -189,7 +227,7 @@ namespace DAL_502ag
                     cmd_502ag.Parameters.AddWithValue("@EstadoFactura_502ag", factura_502ag.EstadoFactura_502ag);
                     cmd_502ag.Parameters.AddWithValue("@Fecha_502ag", factura_502ag.Fecha_502ag);
                     cmd_502ag.Parameters.AddWithValue("@Hora_502ag", factura_502ag.Hora_502ag);
-                    
+                    cmd_502ag.Parameters.AddWithValue("@NombreCombustible_502ag", factura_502ag.NombreCombustible_502ag);
                     object obtenerCodigo_502ag = cmd_502ag.ExecuteScalar();
                     cod_502ag = int.Parse(obtenerCodigo_502ag.ToString());
                     factura_502ag.CodFactura_502ag = cod_502ag;

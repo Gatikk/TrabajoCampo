@@ -35,7 +35,6 @@ namespace DAL_502ag
             }
             return listaCombustibles_502ag;
         }
-
         public BE_Combustible_502ag ObtenerCombustible_502ag(string codCombustible_502ag)
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
@@ -60,7 +59,6 @@ namespace DAL_502ag
             }
             return null;
         }
-
         #region AltaCombustible
         public void AltaCombustible_502ag(BE_Combustible_502ag combustible_502ag)
         {
@@ -80,7 +78,6 @@ namespace DAL_502ag
             }
         }
         #endregion
-
         #region ModificarCombustible
         public void ModificarCombustible_502ag(BE_Combustible_502ag combustible_502ag)
         {
@@ -100,7 +97,6 @@ namespace DAL_502ag
             }
         } 
         #endregion
-
         #region BajaCombustible
         public void BajaCombustible_520ag (BE_Combustible_502ag combustible_502ag)
         {
@@ -116,7 +112,6 @@ namespace DAL_502ag
             }
         }
         #endregion
-
         #region ActualizarExistenciaCombustible
         public void ActualizarExistenciaCombustible_502ag(BE_Combustible_502ag combustible_502ag)
         {
@@ -133,6 +128,5 @@ namespace DAL_502ag
             }
         }
         #endregion
-
     }
 }

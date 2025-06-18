@@ -58,11 +58,12 @@
             this.labelApellido_502ag = new System.Windows.Forms.Label();
             this.buttonCobrarCliente_502ag = new System.Windows.Forms.Button();
             this.dgvFacturas_502ag = new System.Windows.Forms.DataGridView();
+            this.buttonSeleccionarFactura_502ag = new System.Windows.Forms.Button();
+            this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
+            this.labelFacturaIncompleta_502ag = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonSeleccionarFactura_502ag = new System.Windows.Forms.Button();
-            this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombustibles_502ag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas_502ag)).BeginInit();
             this.SuspendLayout();
@@ -259,7 +260,7 @@
             // tBDNI_502ag
             // 
             this.tBDNI_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBDNI_502ag.Location = new System.Drawing.Point(538, 33);
+            this.tBDNI_502ag.Location = new System.Drawing.Point(466, 39);
             this.tBDNI_502ag.Name = "tBDNI_502ag";
             this.tBDNI_502ag.Size = new System.Drawing.Size(174, 23);
             this.tBDNI_502ag.TabIndex = 63;
@@ -271,7 +272,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDNI.AutoSize = true;
             this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelDNI.Location = new System.Drawing.Point(498, 36);
+            this.labelDNI.Location = new System.Drawing.Point(428, 45);
             this.labelDNI.Name = "labelDNI";
             this.labelDNI.Size = new System.Drawing.Size(31, 17);
             this.labelDNI.TabIndex = 64;
@@ -283,7 +284,7 @@
             this.buttonIdentificarCliente_502ag.FlatAppearance.BorderSize = 0;
             this.buttonIdentificarCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonIdentificarCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonIdentificarCliente_502ag.Location = new System.Drawing.Point(503, 62);
+            this.buttonIdentificarCliente_502ag.Location = new System.Drawing.Point(431, 68);
             this.buttonIdentificarCliente_502ag.Name = "buttonIdentificarCliente_502ag";
             this.buttonIdentificarCliente_502ag.Size = new System.Drawing.Size(96, 38);
             this.buttonIdentificarCliente_502ag.TabIndex = 65;
@@ -297,7 +298,7 @@
             this.buttonRegistrarCliente_502ag.FlatAppearance.BorderSize = 0;
             this.buttonRegistrarCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegistrarCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonRegistrarCliente_502ag.Location = new System.Drawing.Point(616, 62);
+            this.buttonRegistrarCliente_502ag.Location = new System.Drawing.Point(544, 68);
             this.buttonRegistrarCliente_502ag.Name = "buttonRegistrarCliente_502ag";
             this.buttonRegistrarCliente_502ag.Size = new System.Drawing.Size(96, 38);
             this.buttonRegistrarCliente_502ag.TabIndex = 66;
@@ -338,7 +339,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelIdentificarCliente_502ag.AutoSize = true;
             this.labelIdentificarCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelIdentificarCliente_502ag.Location = new System.Drawing.Point(498, 13);
+            this.labelIdentificarCliente_502ag.Location = new System.Drawing.Point(428, 19);
             this.labelIdentificarCliente_502ag.Name = "labelIdentificarCliente_502ag";
             this.labelIdentificarCliente_502ag.Size = new System.Drawing.Size(116, 17);
             this.labelIdentificarCliente_502ag.TabIndex = 69;
@@ -348,7 +349,7 @@
             // 
             this.tBNombre_502ag.Enabled = false;
             this.tBNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBNombre_502ag.Location = new System.Drawing.Point(566, 106);
+            this.tBNombre_502ag.Location = new System.Drawing.Point(494, 112);
             this.tBNombre_502ag.Name = "tBNombre_502ag";
             this.tBNombre_502ag.Size = new System.Drawing.Size(146, 23);
             this.tBNombre_502ag.TabIndex = 70;
@@ -357,7 +358,7 @@
             // 
             this.tBApellido_502ag.Enabled = false;
             this.tBApellido_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBApellido_502ag.Location = new System.Drawing.Point(566, 135);
+            this.tBApellido_502ag.Location = new System.Drawing.Point(494, 141);
             this.tBApellido_502ag.Name = "tBApellido_502ag";
             this.tBApellido_502ag.Size = new System.Drawing.Size(146, 23);
             this.tBApellido_502ag.TabIndex = 71;
@@ -369,7 +370,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNombre_502ag.AutoSize = true;
             this.labelNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelNombre_502ag.Location = new System.Drawing.Point(502, 109);
+            this.labelNombre_502ag.Location = new System.Drawing.Point(428, 115);
             this.labelNombre_502ag.Name = "labelNombre_502ag";
             this.labelNombre_502ag.Size = new System.Drawing.Size(58, 17);
             this.labelNombre_502ag.TabIndex = 72;
@@ -382,7 +383,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelApellido_502ag.AutoSize = true;
             this.labelApellido_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelApellido_502ag.Location = new System.Drawing.Point(502, 138);
+            this.labelApellido_502ag.Location = new System.Drawing.Point(429, 144);
             this.labelApellido_502ag.Name = "labelApellido_502ag";
             this.labelApellido_502ag.Size = new System.Drawing.Size(58, 17);
             this.labelApellido_502ag.TabIndex = 73;
@@ -394,7 +395,7 @@
             this.buttonCobrarCliente_502ag.FlatAppearance.BorderSize = 0;
             this.buttonCobrarCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCobrarCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCobrarCliente_502ag.Location = new System.Drawing.Point(503, 168);
+            this.buttonCobrarCliente_502ag.Location = new System.Drawing.Point(431, 170);
             this.buttonCobrarCliente_502ag.Name = "buttonCobrarCliente_502ag";
             this.buttonCobrarCliente_502ag.Size = new System.Drawing.Size(209, 40);
             this.buttonCobrarCliente_502ag.TabIndex = 74;
@@ -421,24 +422,6 @@
             this.dgvFacturas_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFacturas_502ag.Size = new System.Drawing.Size(341, 129);
             this.dgvFacturas_502ag.TabIndex = 75;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Combustible";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // buttonSeleccionarFactura_502ag
             // 
@@ -468,11 +451,44 @@
             this.buttonVolverAlMenu_502ag.UseVisualStyleBackColor = false;
             this.buttonVolverAlMenu_502ag.Click += new System.EventHandler(this.buttonVolverAlMenu_502ag_Click);
             // 
+            // labelFacturaIncompleta_502ag
+            // 
+            this.labelFacturaIncompleta_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelFacturaIncompleta_502ag.AutoSize = true;
+            this.labelFacturaIncompleta_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelFacturaIncompleta_502ag.Location = new System.Drawing.Point(428, 245);
+            this.labelFacturaIncompleta_502ag.Name = "labelFacturaIncompleta_502ag";
+            this.labelFacturaIncompleta_502ag.Size = new System.Drawing.Size(206, 17);
+            this.labelFacturaIncompleta_502ag.TabIndex = 78;
+            this.labelFacturaIncompleta_502ag.Text = "Seleccionar Factura Incompleta";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Combustible";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Estado";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
             // FormCargarCombustible_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.labelFacturaIncompleta_502ag);
             this.Controls.Add(this.buttonVolverAlMenu_502ag);
             this.Controls.Add(this.buttonSeleccionarFactura_502ag);
             this.Controls.Add(this.dgvFacturas_502ag);
@@ -505,7 +521,6 @@
             this.Text = "FormCargarCombustible_502ag";
             this.Activated += new System.EventHandler(this.FormCargarCombustible_502ag_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCargarCombustible_502ag_FormClosed);
-            this.Load += new System.EventHandler(this.FormCargarCombustible_502ag_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombustibles_502ag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas_502ag)).EndInit();
             this.ResumeLayout(false);
@@ -545,10 +560,11 @@
         private System.Windows.Forms.Label labelApellido_502ag;
         private System.Windows.Forms.Button buttonCobrarCliente_502ag;
         private System.Windows.Forms.DataGridView dgvFacturas_502ag;
+        private System.Windows.Forms.Button buttonSeleccionarFactura_502ag;
+        private System.Windows.Forms.Button buttonVolverAlMenu_502ag;
+        private System.Windows.Forms.Label labelFacturaIncompleta_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.Button buttonSeleccionarFactura_502ag;
-        private System.Windows.Forms.Button buttonVolverAlMenu_502ag;
     }
 }

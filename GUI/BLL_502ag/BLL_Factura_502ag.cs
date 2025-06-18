@@ -22,28 +22,24 @@ namespace BLL_502ag
             return dalFactura_502ag.AltaFactura_502ag(factura_502ag);
             
         }
-
         //CargaFinalizada
-        public void ActualizarFacturaRecienCargada_502ag(BE_Factura_502ag factura_502ag)
+        public void ActualizarFacturaCargaFinalizada_502ag(BE_Factura_502ag factura_502ag)
         {
             DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
             dalFactura_502ag.ActualizarFacturaRecienCargada_502ag(factura_502ag);
         }
-
         //ClienteIdentificado
         public void ActualizarFacturaClienteIdentificado_502ag(BE_Factura_502ag factura_502ag)
         {
             DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
             dalFactura_502ag.ActualizarFacturaClienteIdentificado_502ag(factura_502ag);
         }
-
         //FacturaFinalizada
         public void ActualizarFacturaFinalizada_502ag(BE_Factura_502ag factura_502ag)
         {
             DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
             dalFactura_502ag.ActualizarFacturaFinalizada_502ag(factura_502ag);
         }
-
         #endregion
         public List<BE_Factura_502ag> ObtenerListaFacturasNoFacturadas_502ag()
         {
@@ -54,6 +50,11 @@ namespace BLL_502ag
         {
             DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
             return dalFactura_502ag.ObtenerFactura_502ag(codFactura_502ag);
+        }
+        public List<BE_Factura_502ag> ObtenerListaFacturas_502ag()
+        {
+            DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
+            return dalFactura_502ag.ObtenerListaFacturas_502ag();
         }
     }
 }

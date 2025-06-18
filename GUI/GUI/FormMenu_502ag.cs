@@ -22,6 +22,7 @@ namespace GUI
         FormMaestrosClientes_502ag maestrosClientesForm_502ag;
         FormMaestrosCombustible_502ag maestrosCombustiblesForm_502ag;
         FormCargarCombustible_502ag cargarCombustibleForm_502ag;
+        FormVerFacturas_502ag verFacturasForm_502ag;
         public FormMenu_502ag()
         {
             InitializeComponent();
@@ -38,6 +39,7 @@ namespace GUI
             maestrosClientesForm_502ag = new FormMaestrosClientes_502ag(this);
             maestrosCombustiblesForm_502ag = new FormMaestrosCombustible_502ag(this);
             cargarCombustibleForm_502ag = new FormCargarCombustible_502ag(this);
+            verFacturasForm_502ag = new FormVerFacturas_502ag(this);    
             VerificarAdminSupremo();
         }
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
@@ -93,6 +95,11 @@ namespace GUI
         {
             this.Hide();
             cargarCombustibleForm_502ag.Show();
+        }
+        private void buttonVerFacturas_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            verFacturasForm_502ag.Show();
         }
         private void esconderSubMenu_502ag()
         {

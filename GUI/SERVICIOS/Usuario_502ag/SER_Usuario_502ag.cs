@@ -136,8 +136,8 @@ namespace SERVICIOS_502ag
         public void CambiarContraseña_502ag(string nuevaContraseña_502ag, SE_Usuario_502ag usuario_502ag)
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
-            Encryptador_502ag cifrador = new Encryptador_502ag();
-            usuario_502ag.Contraseña_502ag = cifrador.EncryptadorIrreversible_502ag(nuevaContraseña_502ag);
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+            usuario_502ag.Contraseña_502ag = cifrador_502ag.EncryptadorIrreversible_502ag(nuevaContraseña_502ag);
             usuario_502ag.ContraseñaCambiada_502ag = true;
             dalUsuario_502ag.ActualizarContraseña_502ag(usuario_502ag);
         }

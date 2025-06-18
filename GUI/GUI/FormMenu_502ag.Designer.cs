@@ -47,7 +47,7 @@ namespace GUI
             this.buttonMaestrosClientes_502ag = new System.Windows.Forms.Button();
             this.buttonVentas_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuVentas_502ag = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonVerFacturas_502ag = new System.Windows.Forms.Button();
             this.buttonCargarCombustible_502ag = new System.Windows.Forms.Button();
             this.buttonReportes_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuReportes_502ag = new System.Windows.Forms.Panel();
@@ -300,7 +300,7 @@ namespace GUI
             // 
             // panelSubMenuVentas_502ag
             // 
-            this.panelSubMenuVentas_502ag.Controls.Add(this.button1);
+            this.panelSubMenuVentas_502ag.Controls.Add(this.buttonVerFacturas_502ag);
             this.panelSubMenuVentas_502ag.Controls.Add(this.buttonCargarCombustible_502ag);
             this.panelSubMenuVentas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 576);
@@ -308,20 +308,21 @@ namespace GUI
             this.panelSubMenuVentas_502ag.Size = new System.Drawing.Size(222, 84);
             this.panelSubMenuVentas_502ag.TabIndex = 13;
             // 
-            // button1
+            // buttonVerFacturas_502ag
             // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.button1.Location = new System.Drawing.Point(0, 41);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(222, 41);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "?";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonVerFacturas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonVerFacturas_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonVerFacturas_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVerFacturas_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVerFacturas_502ag.Location = new System.Drawing.Point(0, 41);
+            this.buttonVerFacturas_502ag.Name = "buttonVerFacturas_502ag";
+            this.buttonVerFacturas_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonVerFacturas_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonVerFacturas_502ag.TabIndex = 14;
+            this.buttonVerFacturas_502ag.Text = "Ver Facturas";
+            this.buttonVerFacturas_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonVerFacturas_502ag.UseVisualStyleBackColor = true;
+            this.buttonVerFacturas_502ag.Click += new System.EventHandler(this.buttonVerFacturas_502ag_Click);
             // 
             // buttonCargarCombustible_502ag
             // 
@@ -482,7 +483,7 @@ namespace GUI
         private System.Windows.Forms.Button buttonMaestrosCombustibles_502ag;
         private System.Windows.Forms.Button buttonMaestrosClientes_502ag;
         private System.Windows.Forms.Panel panelSubMenuVentas_502ag;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonVerFacturas_502ag;
         private System.Windows.Forms.Button buttonCargarCombustible_502ag;
         private System.Windows.Forms.Panel panelSubMenuReportes_502ag;
         private System.Windows.Forms.Button button7;

@@ -1,5 +1,6 @@
 ﻿using BE_502ag;
 using DAL_502ag;
+using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,13 +16,26 @@ namespace BLL_502ag
         public BE_Cliente_502ag ObtenerCliente_502ag(string dni_502ag)
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
-            return dalCliente_502ag.ObtenerCliente_502ag(dni_502ag);
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+            BE_Cliente_502ag cliente_502ag = dalCliente_502ag.ObtenerCliente_502ag(dni_502ag);
+            cliente_502ag.Email_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Email_502ag);
+            cliente_502ag.Direccion_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Direccion_502ag);
+            cliente_502ag.Telefono_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Telefono_502ag);
+            return cliente_502ag;
         }
 
         public List<BE_Cliente_502ag> ObtenerListaClientes_502ag()
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
-            return dalCliente_502ag.ObtenerListaClientes_502ag();
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+            List<BE_Cliente_502ag> listaClientes_502ag = dalCliente_502ag.ObtenerListaClientes_502ag();
+            foreach (BE_Cliente_502ag cliente_502ag in listaClientes_502ag)
+            {
+                cliente_502ag.Email_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Email_502ag);
+                cliente_502ag.Direccion_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Direccion_502ag);
+                cliente_502ag.Telefono_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Telefono_502ag);
+            }
+            return listaClientes_502ag;
         }
 
         #region AltaCliente
@@ -87,7 +101,11 @@ namespace BLL_502ag
         public void AltaCliente_502ag(string dni_502ag, string nombre_502ag, string apellido_502ag, string email_502ag, string direccion_502ag, string telefono_502ag)
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
             BE_Cliente_502ag cliente_502ag = new BE_Cliente_502ag(dni_502ag, nombre_502ag, apellido_502ag, email_502ag, direccion_502ag, telefono_502ag);
+            cliente_502ag.Email_502ag = cifrador_502ag.EncryptadorReversible_502ag(cliente_502ag.Email_502ag);
+            cliente_502ag.Direccion_502ag = cifrador_502ag.EncryptadorReversible_502ag(cliente_502ag.Direccion_502ag);
+            cliente_502ag.Telefono_502ag = cifrador_502ag.EncryptadorReversible_502ag(cliente_502ag.Telefono_502ag);
             cliente_502ag.IsActivo_502ag = true;
             dalCliente_502ag.AltaCliente_502ag(cliente_502ag);
         }
@@ -106,9 +124,10 @@ namespace BLL_502ag
         public void ModificarCliente_502ag(BE_Cliente_502ag cliente_502ag, string email_502ag, string direccion_502ag, string telefono_502ag)
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
-            cliente_502ag.Email_502ag = email_502ag;
-            cliente_502ag.Direccion_502ag = direccion_502ag;
-            cliente_502ag.Telefono_502ag = telefono_502ag;
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+            cliente_502ag.Email_502ag = cifrador_502ag.EncryptadorReversible_502ag(email_502ag);
+            cliente_502ag.Direccion_502ag = cifrador_502ag.EncryptadorReversible_502ag(direccion_502ag);
+            cliente_502ag.Telefono_502ag = cifrador_502ag.EncryptadorReversible_502ag(telefono_502ag);
             dalCliente_502ag.ModificarCliente_502ag(cliente_502ag);
         }
 
