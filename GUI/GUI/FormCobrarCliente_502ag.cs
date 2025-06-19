@@ -56,6 +56,7 @@ namespace GUI
                 facturaACobrar_502ag.Hora_502ag = DateTime.Now.TimeOfDay;
                 facturaACobrar_502ag.MetodoPago_502ag = cifrador_502ag.DesencryptadorReversible_502ag(tarjeta_502ag.Tipo_502ag);
                 bllFactura_502ag.ActualizarFacturaFinalizada_502ag(facturaACobrar_502ag);
+                MessageBox.Show("Pago realizado exitosamente", "Pago Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 menu_502ag.Show();
             }

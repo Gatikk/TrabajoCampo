@@ -7,6 +7,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -64,7 +65,9 @@ namespace GUI
             {
                 BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
                 BLL_Factura_502ag bllFactura_502ag  = new BLL_Factura_502ag();
-                combustibleSeleccionado_502ag = bllCombustible_502ag.ObtenerCombustible_502ag(dgvCombustibles_502ag.SelectedRows[0].Cells[0].Value.ToString());
+                if (dgvCombustibles_502ag.Rows.Count <= 0) { throw new Exception("No hay combustibles para seleccionar"); }
+                string codCombustible_502ag = dgvCombustibles_502ag.SelectedRows[0].Cells[0].Value.ToString();
+                combustibleSeleccionado_502ag = bllCombustible_502ag.ObtenerCombustible_502ag(codCombustible_502ag);
                 if(combustibleSeleccionado_502ag.CantDisponible_502ag <= 0) { throw new Exception("No hay combustible disponible");}
                 DialogResult dResult_502ag = MessageBox.Show($"¿Seguro que desea seleccionar el combustible {combustibleSeleccionado_502ag.Nombre_502ag}?", "Seleccionar Combustible", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if(dResult_502ag == DialogResult.Yes)
@@ -77,8 +80,7 @@ namespace GUI
                     rBMonto_502ag.Enabled = true;
                     tBCantidad_502ag.Enabled = true;
                     buttonSeleccionarFactura_502ag.Enabled = false;
-                    facturaActual_502ag = new BE_Factura_502ag(0,int.Parse(combustibleSeleccionado_502ag.CodCombustible_502ag), combustibleSeleccionado_502ag.Nombre_502ag);
-                    bllFactura_502ag.AltaFactura_502ag(facturaActual_502ag);
+                    facturaActual_502ag = bllFactura_502ag.AltaFactura_502ag(combustibleSeleccionado_502ag.CodCombustible_502ag, combustibleSeleccionado_502ag.Nombre_502ag);
                     MostrarFacturas_502ag(dgvFacturas_502ag);
                 }
             }
@@ -122,7 +124,8 @@ namespace GUI
         {
             try
             {
-                BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
+                Regex reDecimal_502ag = new Regex(@"^\d+(\.\d{1,2})?$");
+                if(!reDecimal_502ag.IsMatch(tBCantidad_502ag.Text) || tBCantidad_502ag.Text == ""){throw new Exception("Ingrese una cantidad válida"); }
                 totalCargado_502ag = 0;
                 decimal cantidadACargar_502ag = 0;
                 buttonComenzarCarga_502ag.Enabled = false;
@@ -150,7 +153,7 @@ namespace GUI
             {
                 BLL_Vehiculo_502ag bllVehiculo_502ag = new BLL_Vehiculo_502ag();
                 BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
-                bool finalizado = bllVehiculo_502ag.SimulacionCarga_502ag(vehiculoActual_502ag, litrosPorCiclo_502ag, litrosRestantes_502ag);
+                bool finalizado_502ag = bllVehiculo_502ag.SimulacionCarga_502ag(vehiculoActual_502ag, litrosPorCiclo_502ag, litrosRestantes_502ag);
                 decimal litrosACargar_502ag = Math.Min(litrosPorCiclo_502ag, Math.Min(litrosRestantes_502ag, vehiculoActual_502ag.CantidadMaxima_502ag - vehiculoActual_502ag.CantidadActual_502ag));
 
                 estadoCargando_502ag = true;
@@ -167,7 +170,7 @@ namespace GUI
                 rTBDetallesCarga_502ag.Clear();
                 rTBDetallesCarga_502ag.AppendText($"Cantidad actual: {vehiculoActual_502ag.CantidadActual_502ag:F2} / {vehiculoActual_502ag.CantidadMaxima_502ag:F2} litros\n" +
                     $"Cargado hasta el momento: {totalCargado_502ag} litros");
-                if (finalizado)
+                if (finalizado_502ag)
                 {
                     timerCarga_502ag.Stop();
                     buttonFinalizarCarga_502ag.Enabled = true;

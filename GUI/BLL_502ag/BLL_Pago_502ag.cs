@@ -11,7 +11,7 @@ namespace BLL_502ag
 {
     public class BLL_Pago_502ag
     {
-        public bool VerificarDatosPago_502ag(BE_Tarjeta_502ag tarjeta_502ag)
+        private bool VerificarDatosPago_502ag(BE_Tarjeta_502ag tarjeta_502ag)
         {
             Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
             bool esValido_502ag = true;

@@ -110,7 +110,6 @@ namespace DAL_502ag
             }
         }
         #endregion
-
         #region BajaCliente
         public void BajaCliente_502ag(BE_Cliente_502ag cliente_502ag)
         {

@@ -56,6 +56,8 @@ namespace GUI
             this.button6 = new System.Windows.Forms.Button();
             this.buttonAyuda_502ag = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonCambiarIdioma_502ag = new System.Windows.Forms.Button();
+            this.buttonPerfiles_502ag = new System.Windows.Forms.Button();
             this.panelMenuLateral_502ag.SuspendLayout();
             this.panelSubMenuAdmin_502ag.SuspendLayout();
             this.panelSubMenuUsuario_502ag.SuspendLayout();
@@ -174,11 +176,12 @@ namespace GUI
             // 
             // panelSubMenuAdmin_502ag
             // 
+            this.panelSubMenuAdmin_502ag.Controls.Add(this.buttonPerfiles_502ag);
             this.panelSubMenuAdmin_502ag.Controls.Add(this.buttonABM_502ag);
             this.panelSubMenuAdmin_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuAdmin_502ag.Location = new System.Drawing.Point(3, 113);
             this.panelSubMenuAdmin_502ag.Name = "panelSubMenuAdmin_502ag";
-            this.panelSubMenuAdmin_502ag.Size = new System.Drawing.Size(222, 55);
+            this.panelSubMenuAdmin_502ag.Size = new System.Drawing.Size(222, 99);
             this.panelSubMenuAdmin_502ag.TabIndex = 9;
             // 
             // buttonUsuario_502ag
@@ -188,7 +191,7 @@ namespace GUI
             this.buttonUsuario_502ag.FlatAppearance.BorderSize = 0;
             this.buttonUsuario_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonUsuario_502ag.Location = new System.Drawing.Point(3, 174);
+            this.buttonUsuario_502ag.Location = new System.Drawing.Point(3, 218);
             this.buttonUsuario_502ag.Name = "buttonUsuario_502ag";
             this.buttonUsuario_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonUsuario_502ag.TabIndex = 4;
@@ -199,13 +202,14 @@ namespace GUI
             // 
             // panelSubMenuUsuario_502ag
             // 
+            this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarIdioma_502ag);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarContraseña_502ag);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonIniciarSesion_502ag);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCerrarSesion);
             this.panelSubMenuUsuario_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuUsuario_502ag.Location = new System.Drawing.Point(3, 227);
+            this.panelSubMenuUsuario_502ag.Location = new System.Drawing.Point(3, 271);
             this.panelSubMenuUsuario_502ag.Name = "panelSubMenuUsuario_502ag";
-            this.panelSubMenuUsuario_502ag.Size = new System.Drawing.Size(222, 140);
+            this.panelSubMenuUsuario_502ag.Size = new System.Drawing.Size(222, 175);
             this.panelSubMenuUsuario_502ag.TabIndex = 11;
             // 
             // buttonIniciarSesion_502ag
@@ -231,7 +235,7 @@ namespace GUI
             this.buttonMaestros_502ag.FlatAppearance.BorderSize = 0;
             this.buttonMaestros_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonMaestros_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonMaestros_502ag.Location = new System.Drawing.Point(3, 373);
+            this.buttonMaestros_502ag.Location = new System.Drawing.Point(3, 452);
             this.buttonMaestros_502ag.Name = "buttonMaestros_502ag";
             this.buttonMaestros_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonMaestros_502ag.TabIndex = 9;
@@ -245,7 +249,7 @@ namespace GUI
             this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosCombustibles_502ag);
             this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosClientes_502ag);
             this.panelSubMenuMaestros_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuMaestros_502ag.Location = new System.Drawing.Point(3, 426);
+            this.panelSubMenuMaestros_502ag.Location = new System.Drawing.Point(3, 505);
             this.panelSubMenuMaestros_502ag.Name = "panelSubMenuMaestros_502ag";
             this.panelSubMenuMaestros_502ag.Size = new System.Drawing.Size(222, 91);
             this.panelSubMenuMaestros_502ag.TabIndex = 12;
@@ -289,7 +293,7 @@ namespace GUI
             this.buttonVentas_502ag.FlatAppearance.BorderSize = 0;
             this.buttonVentas_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVentas_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVentas_502ag.Location = new System.Drawing.Point(3, 523);
+            this.buttonVentas_502ag.Location = new System.Drawing.Point(3, 602);
             this.buttonVentas_502ag.Name = "buttonVentas_502ag";
             this.buttonVentas_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonVentas_502ag.TabIndex = 12;
@@ -303,7 +307,7 @@ namespace GUI
             this.panelSubMenuVentas_502ag.Controls.Add(this.buttonVerFacturas_502ag);
             this.panelSubMenuVentas_502ag.Controls.Add(this.buttonCargarCombustible_502ag);
             this.panelSubMenuVentas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 576);
+            this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 655);
             this.panelSubMenuVentas_502ag.Name = "panelSubMenuVentas_502ag";
             this.panelSubMenuVentas_502ag.Size = new System.Drawing.Size(222, 84);
             this.panelSubMenuVentas_502ag.TabIndex = 13;
@@ -347,7 +351,7 @@ namespace GUI
             this.buttonReportes_502ag.FlatAppearance.BorderSize = 0;
             this.buttonReportes_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReportes_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 666);
+            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 745);
             this.buttonReportes_502ag.Name = "buttonReportes_502ag";
             this.buttonReportes_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonReportes_502ag.TabIndex = 15;
@@ -361,7 +365,7 @@ namespace GUI
             this.panelSubMenuReportes_502ag.Controls.Add(this.button7);
             this.panelSubMenuReportes_502ag.Controls.Add(this.button3);
             this.panelSubMenuReportes_502ag.Controls.Add(this.button6);
-            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 719);
+            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 798);
             this.panelSubMenuReportes_502ag.Name = "panelSubMenuReportes_502ag";
             this.panelSubMenuReportes_502ag.Size = new System.Drawing.Size(222, 133);
             this.panelSubMenuReportes_502ag.TabIndex = 13;
@@ -418,7 +422,7 @@ namespace GUI
             this.buttonAyuda_502ag.FlatAppearance.BorderSize = 0;
             this.buttonAyuda_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAyuda_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 858);
+            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 937);
             this.buttonAyuda_502ag.Name = "buttonAyuda_502ag";
             this.buttonAyuda_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonAyuda_502ag.TabIndex = 19;
@@ -435,6 +439,38 @@ namespace GUI
             this.pictureBox1.Size = new System.Drawing.Size(267, 149);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // buttonCambiarIdioma_502ag
+            // 
+            this.buttonCambiarIdioma_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonCambiarIdioma_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCambiarIdioma_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonCambiarIdioma_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCambiarIdioma_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCambiarIdioma_502ag.Location = new System.Drawing.Point(0, 123);
+            this.buttonCambiarIdioma_502ag.Name = "buttonCambiarIdioma_502ag";
+            this.buttonCambiarIdioma_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCambiarIdioma_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonCambiarIdioma_502ag.TabIndex = 4;
+            this.buttonCambiarIdioma_502ag.Text = "Cambiar Idioma";
+            this.buttonCambiarIdioma_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCambiarIdioma_502ag.UseVisualStyleBackColor = false;
+            // 
+            // buttonPerfiles_502ag
+            // 
+            this.buttonPerfiles_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonPerfiles_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonPerfiles_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonPerfiles_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPerfiles_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonPerfiles_502ag.Location = new System.Drawing.Point(0, 41);
+            this.buttonPerfiles_502ag.Name = "buttonPerfiles_502ag";
+            this.buttonPerfiles_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonPerfiles_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonPerfiles_502ag.TabIndex = 4;
+            this.buttonPerfiles_502ag.Text = "Perfiles";
+            this.buttonPerfiles_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonPerfiles_502ag.UseVisualStyleBackColor = false;
             // 
             // FormMenu_502ag
             // 
@@ -489,5 +525,7 @@ namespace GUI
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonCambiarIdioma_502ag;
+        private System.Windows.Forms.Button buttonPerfiles_502ag;
     }
 }
