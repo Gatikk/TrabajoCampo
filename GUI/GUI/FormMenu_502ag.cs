@@ -191,5 +191,11 @@ namespace GUI
             mostrarSubMenu_502ag(panelSubMenuReportes_502ag);
         }
 
+        private void buttonPerfiles_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormPerfiles_502ag perfilesForm_502ag = new FormPerfiles_502ag(this);
+            perfilesForm_502ag.Show();
+        }
     }
 }

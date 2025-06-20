@@ -45,6 +45,10 @@
     <Compile Include="DAL_Combustible_502ag.cs" />
     <Compile Include="DAL_Conexion_502ag.cs" />
     <Compile Include="DAL_Factura_502ag.cs" />
+    <Compile Include="DAL_FamiliaPatente_502ag.cs" />
+    <Compile Include="DAL_FamiliaFamilia_502ag.cs" />
+    <Compile Include="DAL_Familia_502ag.cs" />
+    <Compile Include="DAL_Patente_502ag.cs" />
     <Compile Include="DAL_Usuario_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

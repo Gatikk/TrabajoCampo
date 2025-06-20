@@ -42,6 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SE_Familia_502ag.cs" />
+    <Compile Include="SE_Patente_502ag.cs" />
+    <Compile Include="SE_Perfil_502ag.cs" />
     <Compile Include="SE_Usuario_502ag.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
