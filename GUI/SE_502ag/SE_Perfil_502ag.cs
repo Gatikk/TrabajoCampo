@@ -15,5 +15,6 @@ namespace SE_502ag
             Nombre_502ag = pNombre_502ag;
         }
         public virtual void Agregar_502ag(SE_Perfil_502ag perfil_502ag) { }
+        public virtual void Eliminar_502ag(string pNombreAEliminar_502ag) { }
     }
 }

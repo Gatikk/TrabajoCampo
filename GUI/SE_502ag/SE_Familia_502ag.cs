@@ -19,5 +19,12 @@ namespace SE_502ag
         {
             lista_502ag.Add(perfil_502ag);
         }
+
+        public override void Eliminar_502ag(string pNombreAEliminar_502ag)
+        {
+            var permiso = lista_502ag.Find(x => x.Nombre_502ag == pNombreAEliminar_502ag);
+            lista_502ag.Remove(permiso);
+        }
+
     }
 }

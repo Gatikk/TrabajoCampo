@@ -35,11 +35,18 @@
             this.rBPerfil_502ag = new System.Windows.Forms.RadioButton();
             this.buttonCrear_502ag = new System.Windows.Forms.Button();
             this.cBFamilia_502ag = new System.Windows.Forms.ComboBox();
+            this.buttonAsignar_502ag = new System.Windows.Forms.Button();
+            this.buttonDesasignar_502ag = new System.Windows.Forms.Button();
+            this.buttonAplicar_502ag = new System.Windows.Forms.Button();
+            this.buttonCancelar_502ag = new System.Windows.Forms.Button();
+            this.buttonBorrar_502ag = new System.Windows.Forms.Button();
+            this.cBPerfil_502ag = new System.Windows.Forms.ComboBox();
+            this.tVPerfiles_502ag = new System.Windows.Forms.TreeView();
             this.SuspendLayout();
             // 
             // tVFamilias_502ag
             // 
-            this.tVFamilias_502ag.Location = new System.Drawing.Point(321, 54);
+            this.tVFamilias_502ag.Location = new System.Drawing.Point(181, 35);
             this.tVFamilias_502ag.Name = "tVFamilias_502ag";
             this.tVFamilias_502ag.Size = new System.Drawing.Size(169, 289);
             this.tVFamilias_502ag.TabIndex = 0;
@@ -47,7 +54,7 @@
             // cLBPermisos_502ag
             // 
             this.cLBPermisos_502ag.FormattingEnabled = true;
-            this.cLBPermisos_502ag.Location = new System.Drawing.Point(146, 54);
+            this.cLBPermisos_502ag.Location = new System.Drawing.Point(6, 35);
             this.cLBPermisos_502ag.Name = "cLBPermisos_502ag";
             this.cLBPermisos_502ag.Size = new System.Drawing.Size(169, 289);
             this.cLBPermisos_502ag.TabIndex = 1;
@@ -55,7 +62,7 @@
             // tBNombre_502ag
             // 
             this.tBNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBNombre_502ag.Location = new System.Drawing.Point(7, 389);
+            this.tBNombre_502ag.Location = new System.Drawing.Point(634, 108);
             this.tBNombre_502ag.Name = "tBNombre_502ag";
             this.tBNombre_502ag.Size = new System.Drawing.Size(138, 23);
             this.tBNombre_502ag.TabIndex = 2;
@@ -65,7 +72,7 @@
             this.rBFamilia_502ag.AutoSize = true;
             this.rBFamilia_502ag.Checked = true;
             this.rBFamilia_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rBFamilia_502ag.Location = new System.Drawing.Point(7, 335);
+            this.rBFamilia_502ag.Location = new System.Drawing.Point(634, 54);
             this.rBFamilia_502ag.Name = "rBFamilia_502ag";
             this.rBFamilia_502ag.Size = new System.Drawing.Size(70, 21);
             this.rBFamilia_502ag.TabIndex = 3;
@@ -77,7 +84,7 @@
             // 
             this.rBPerfil_502ag.AutoSize = true;
             this.rBPerfil_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rBPerfil_502ag.Location = new System.Drawing.Point(7, 362);
+            this.rBPerfil_502ag.Location = new System.Drawing.Point(634, 81);
             this.rBPerfil_502ag.Name = "rBPerfil_502ag";
             this.rBPerfil_502ag.Size = new System.Drawing.Size(58, 21);
             this.rBPerfil_502ag.TabIndex = 4;
@@ -90,7 +97,7 @@
             this.buttonCrear_502ag.FlatAppearance.BorderSize = 0;
             this.buttonCrear_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCrear_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCrear_502ag.Location = new System.Drawing.Point(7, 414);
+            this.buttonCrear_502ag.Location = new System.Drawing.Point(634, 137);
             this.buttonCrear_502ag.Name = "buttonCrear_502ag";
             this.buttonCrear_502ag.Size = new System.Drawing.Size(138, 35);
             this.buttonCrear_502ag.TabIndex = 61;
@@ -101,17 +108,107 @@
             // cBFamilia_502ag
             // 
             this.cBFamilia_502ag.FormattingEnabled = true;
-            this.cBFamilia_502ag.Location = new System.Drawing.Point(321, 27);
+            this.cBFamilia_502ag.Location = new System.Drawing.Point(181, 8);
             this.cBFamilia_502ag.Name = "cBFamilia_502ag";
             this.cBFamilia_502ag.Size = new System.Drawing.Size(169, 21);
             this.cBFamilia_502ag.TabIndex = 62;
             this.cBFamilia_502ag.SelectedIndexChanged += new System.EventHandler(this.cBFamilia_502ag_SelectedIndexChanged);
+            // 
+            // buttonAsignar_502ag
+            // 
+            this.buttonAsignar_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAsignar_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAsignar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAsignar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAsignar_502ag.Location = new System.Drawing.Point(634, 219);
+            this.buttonAsignar_502ag.Name = "buttonAsignar_502ag";
+            this.buttonAsignar_502ag.Size = new System.Drawing.Size(138, 35);
+            this.buttonAsignar_502ag.TabIndex = 63;
+            this.buttonAsignar_502ag.Text = "Asignar";
+            this.buttonAsignar_502ag.UseVisualStyleBackColor = false;
+            this.buttonAsignar_502ag.Click += new System.EventHandler(this.buttonAsignar_502ag_Click);
+            // 
+            // buttonDesasignar_502ag
+            // 
+            this.buttonDesasignar_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonDesasignar_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonDesasignar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDesasignar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonDesasignar_502ag.Location = new System.Drawing.Point(634, 260);
+            this.buttonDesasignar_502ag.Name = "buttonDesasignar_502ag";
+            this.buttonDesasignar_502ag.Size = new System.Drawing.Size(138, 35);
+            this.buttonDesasignar_502ag.TabIndex = 64;
+            this.buttonDesasignar_502ag.Text = "Desasignar";
+            this.buttonDesasignar_502ag.UseVisualStyleBackColor = false;
+            this.buttonDesasignar_502ag.Click += new System.EventHandler(this.buttonDesasignar_502ag_Click);
+            // 
+            // buttonAplicar_502ag
+            // 
+            this.buttonAplicar_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAplicar_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAplicar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAplicar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAplicar_502ag.Location = new System.Drawing.Point(634, 301);
+            this.buttonAplicar_502ag.Name = "buttonAplicar_502ag";
+            this.buttonAplicar_502ag.Size = new System.Drawing.Size(138, 35);
+            this.buttonAplicar_502ag.TabIndex = 65;
+            this.buttonAplicar_502ag.Text = "Aplicar";
+            this.buttonAplicar_502ag.UseVisualStyleBackColor = false;
+            // 
+            // buttonCancelar_502ag
+            // 
+            this.buttonCancelar_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonCancelar_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonCancelar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCancelar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCancelar_502ag.Location = new System.Drawing.Point(634, 342);
+            this.buttonCancelar_502ag.Name = "buttonCancelar_502ag";
+            this.buttonCancelar_502ag.Size = new System.Drawing.Size(138, 35);
+            this.buttonCancelar_502ag.TabIndex = 66;
+            this.buttonCancelar_502ag.Text = "Cancelar";
+            this.buttonCancelar_502ag.UseVisualStyleBackColor = false;
+            // 
+            // buttonBorrar_502ag
+            // 
+            this.buttonBorrar_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonBorrar_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonBorrar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBorrar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonBorrar_502ag.Location = new System.Drawing.Point(634, 178);
+            this.buttonBorrar_502ag.Name = "buttonBorrar_502ag";
+            this.buttonBorrar_502ag.Size = new System.Drawing.Size(138, 35);
+            this.buttonBorrar_502ag.TabIndex = 67;
+            this.buttonBorrar_502ag.Text = "Borrar";
+            this.buttonBorrar_502ag.UseVisualStyleBackColor = false;
+            this.buttonBorrar_502ag.Click += new System.EventHandler(this.buttonBorrar_502ag_Click);
+            // 
+            // cBPerfil_502ag
+            // 
+            this.cBPerfil_502ag.FormattingEnabled = true;
+            this.cBPerfil_502ag.Location = new System.Drawing.Point(356, 8);
+            this.cBPerfil_502ag.Name = "cBPerfil_502ag";
+            this.cBPerfil_502ag.Size = new System.Drawing.Size(169, 21);
+            this.cBPerfil_502ag.TabIndex = 68;
+            // 
+            // tVPerfiles_502ag
+            // 
+            this.tVPerfiles_502ag.Location = new System.Drawing.Point(356, 35);
+            this.tVPerfiles_502ag.Name = "tVPerfiles_502ag";
+            this.tVPerfiles_502ag.Size = new System.Drawing.Size(169, 289);
+            this.tVPerfiles_502ag.TabIndex = 69;
             // 
             // FormPerfiles_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.tVPerfiles_502ag);
+            this.Controls.Add(this.cBPerfil_502ag);
+            this.Controls.Add(this.buttonBorrar_502ag);
+            this.Controls.Add(this.buttonCancelar_502ag);
+            this.Controls.Add(this.buttonAplicar_502ag);
+            this.Controls.Add(this.buttonDesasignar_502ag);
+            this.Controls.Add(this.buttonAsignar_502ag);
             this.Controls.Add(this.cBFamilia_502ag);
             this.Controls.Add(this.buttonCrear_502ag);
             this.Controls.Add(this.rBPerfil_502ag);
@@ -137,5 +234,12 @@
         private System.Windows.Forms.RadioButton rBPerfil_502ag;
         private System.Windows.Forms.Button buttonCrear_502ag;
         private System.Windows.Forms.ComboBox cBFamilia_502ag;
+        private System.Windows.Forms.Button buttonAsignar_502ag;
+        private System.Windows.Forms.Button buttonDesasignar_502ag;
+        private System.Windows.Forms.Button buttonAplicar_502ag;
+        private System.Windows.Forms.Button buttonCancelar_502ag;
+        private System.Windows.Forms.Button buttonBorrar_502ag;
+        private System.Windows.Forms.ComboBox cBPerfil_502ag;
+        private System.Windows.Forms.TreeView tVPerfiles_502ag;
     }
 }

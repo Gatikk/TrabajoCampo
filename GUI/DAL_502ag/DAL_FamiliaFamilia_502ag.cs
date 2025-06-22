@@ -31,27 +31,100 @@ namespace DAL_502ag
             }
         }
 
-        public SE_Familia_502ag ObtenerPermisosDeFamilia_502ag(SE_Familia_502ag familia_502ag)
+        public void AsignarFamiliaHijoAFamilia(SE_Familia_502ag familia_502ag) 
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                using (SqlCommand cmd_502ag = new SqlCommand($"SELECT * FROM FamiliaFamilia_502ag WHERE NombrePadre_502ag = @NombrePadre_502ag", cx_502ag))
+                foreach(SE_Perfil_502ag permiso_502ag in familia_502ag.lista_502ag)
+                {
+                    bool agregarPermiso = true;
+                    if(permiso_502ag is SE_Familia_502ag familiaHijo_502ag)
+                    {
+                        using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM FamiliaFamilia_502ag WHERE NombrePadre_502ag = @NombrePadre_502ag", cx_502ag))
+                        {
+                            cmd_502ag.Parameters.AddWithValue("@NombrePadre_502ag", familia_502ag.Nombre_502ag);
+                            using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader()) 
+                            {
+                                while (dr_502ag.Read())
+                                {
+                                    if (dr_502ag["NombreHijo_502ag"].ToString() == familiaHijo_502ag.Nombre_502ag) agregarPermiso = false;
+                                }
+                            }
+                            if (agregarPermiso)
+                            {
+                                cmd_502ag.CommandText = "INSERT INTO FamiliaFamilia_502ag (NombrePadre_502ag, NombreHijo_502ag) VALUES (@NombrePadre_502ag, @NombreHijo_502ag)";
+                                cmd_502ag.Parameters.AddWithValue("@NombreHijo_502ag", familiaHijo_502ag.Nombre_502ag);
+                                cmd_502ag.ExecuteNonQuery();
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        public void DesasignarFamiliaHijoDeFamilia(SE_Familia_502ag familia_502ag)
+        {
+            List<string> listaFamilias = new List<string>();
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+
+                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM FamiliaFamilia_502ag WHERE NombrePadre_502ag = @NombrePadre_502ag", cx_502ag))
+                {
+                    cmd_502ag.Parameters.AddWithValue("@NombrePadre_502ag", familia_502ag.Nombre_502ag);  
+                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
+                    {
+                        while (dr_502ag.Read())
+                        {
+                            listaFamilias.Add(dr_502ag["NombreHijo_502ag"].ToString());
+                        }
+                    }
+                }
+                foreach (string familiaEnLista in listaFamilias)
+                {
+                    using (SqlCommand cmd_502ag = new SqlCommand("DELETE FROM FamiliaFamilia_502ag WHERE NombrePadre_502ag = @NombrePadre_502ag AND NombreHijo_502ag = @NombreHijo_502ag", cx_502ag))
+                    {
+                        bool sigueAsignado = familia_502ag.lista_502ag.Any(x => x.Nombre_502ag == familiaEnLista);
+                        if (!sigueAsignado)
+                        {
+                            cmd_502ag.Parameters.AddWithValue("@NombrePadre_502ag", familia_502ag.Nombre_502ag);
+                            cmd_502ag.Parameters.AddWithValue("@NombreHijo_502ag", familiaEnLista);
+                            cmd_502ag.ExecuteNonQuery();
+                        }
+                    }
+                }
+            }                  
+        }
+       
+        public void BorrarRelacionFamiliaFamilia_502ag(SE_Familia_502ag familia_502ag)
+        {
+            List<string> listaFamilias = new List<string>();
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM FamiliaFamilia_502ag WHERE NombrePadre_502ag = @NombrePadre_502ag", cx_502ag))
                 {
                     cmd_502ag.Parameters.AddWithValue("@NombrePadre_502ag", familia_502ag.Nombre_502ag);
                     using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
                     {
                         while (dr_502ag.Read())
                         {
-                            SE_Perfil_502ag familiaHijo_502ag = new SE_Familia_502ag(dr_502ag["NombreHijo_502ag"].ToString());
-                            familia_502ag.Agregar_502ag(familiaHijo_502ag);
+                            listaFamilias.Add(dr_502ag["NombreHijo_502ag"].ToString());
                         }
                     }
                 }
-                return familia_502ag;
+                foreach (string familiaEnLista in listaFamilias)
+                {
+                    using (SqlCommand cmd_502ag = new SqlCommand("DELETE FROM FamiliaFamilia_502ag WHERE NombrePadre_502ag = @NombrePadre_502ag AND NombreHijo_502ag = @NombreHijo_502ag", cx_502ag))
+                    {
+                        cmd_502ag.Parameters.AddWithValue("@NombrePadre_502ag", familia_502ag.Nombre_502ag);
+                        cmd_502ag.Parameters.AddWithValue("@NombreHijo_502ag", familiaEnLista);
+                        cmd_502ag.ExecuteNonQuery();         
+                    }
+                }
             }
         }
-
 
         public bool FamiliaEsHijo_502ag(SE_Familia_502ag familiaHijo_502ag, SE_Familia_502ag familiaPadre_502ag)
         {
