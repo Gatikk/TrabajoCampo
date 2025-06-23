@@ -217,5 +217,48 @@ namespace SERVICIOS
             }
             return permisos;
         }
+        public bool PerteneceAFamilia_502ag(SE_Familia_502ag familiaAEditar_502ag)
+        {
+            bool seRepite_502ag = false;
+            SER_Familia_502ag serFamilia_502ag = new SER_Familia_502ag();
+            foreach (SE_Familia_502ag perfil in ObtenerListaPerfiles_502ag())
+            {
+                if (perfil.Nombre_502ag == familiaAEditar_502ag.Nombre_502ag)
+                    continue; // evitar autocomparación
+
+                if (RecorrerSubFamiliasRecursiva_502ag(perfil, familiaAEditar_502ag))
+                    seRepite_502ag = true; 
+            }
+            foreach (SE_Familia_502ag familia in serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag())
+            {
+                if (familia.Nombre_502ag == familiaAEditar_502ag.Nombre_502ag)
+                    continue;
+                if(RecorrerSubFamiliasRecursiva_502ag(familia, familiaAEditar_502ag))
+                {
+                    seRepite_502ag = true;
+                }
+            }
+            return seRepite_502ag;
+        }
+
+        private bool RecorrerSubFamiliasRecursiva_502ag(SE_Familia_502ag familiaARecorrer, SE_Familia_502ag familiaAEditar)
+        {
+            foreach (SE_Perfil_502ag permiso in familiaARecorrer.lista_502ag)
+            {
+                if (permiso is SE_Familia_502ag familia)
+                {
+                    if (familia.Nombre_502ag == familiaAEditar.Nombre_502ag)
+                    {
+                        return true;
+                    }
+
+                    if (RecorrerSubFamiliasRecursiva_502ag(familia, familiaAEditar))
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
     }
 }
