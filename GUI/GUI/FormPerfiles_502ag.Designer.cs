@@ -189,6 +189,7 @@
             this.cBPerfil_502ag.Name = "cBPerfil_502ag";
             this.cBPerfil_502ag.Size = new System.Drawing.Size(169, 21);
             this.cBPerfil_502ag.TabIndex = 68;
+            this.cBPerfil_502ag.SelectedIndexChanged += new System.EventHandler(this.cBPerfil_502ag_SelectedIndexChanged);
             // 
             // tVPerfiles_502ag
             // 

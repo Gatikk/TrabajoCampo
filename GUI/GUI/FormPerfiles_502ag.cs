@@ -69,7 +69,7 @@ namespace GUI
             else if(permiso_502ag is SE_Familia_502ag familia_502ag)
             {
                 nodo_502ag = new TreeNode(permiso_502ag.Nombre_502ag);
-                foreach (var hijo_502ag in familia_502ag.lista_502ag)
+                foreach (SE_Perfil_502ag hijo_502ag in familia_502ag.lista_502ag)
                 {
                     JerarquiaNodos_502ag(hijo_502ag, nodo_502ag.Nodes);
                 }
@@ -125,7 +125,7 @@ namespace GUI
 
                     List<SE_Perfil_502ag> listaPermisos_502ag = new List<SE_Perfil_502ag>();
                     listaPermisos_502ag.Clear();
-                    if (!serFamilia_502ag.PatenteOFamiliaRepetido(nuevaFamilia_502ag, listaPermisos_502ag)) { throw new Exception("No se puede dar de alta, hay patentes repetidas"); }
+                    if (!serFamilia_502ag.PatenteRepetida_502ag(nuevaFamilia_502ag, listaPermisos_502ag)) { throw new Exception("No se puede dar de alta, hay patentes repetidas"); }
 
                     //se da de alta la familia con sus patentes y familias correspondientes
                     serFamilia_502ag.AltaFamilia_502ag(nuevaFamilia_502ag);
@@ -156,7 +156,7 @@ namespace GUI
                     }
                     List<SE_Perfil_502ag> listaPermisos_502ag = new List<SE_Perfil_502ag>();
                     listaPermisos_502ag.Clear();
-                    if (!serFamilia_502ag.PatenteOFamiliaRepetido(nuevoPerfil_502ag, listaPermisos_502ag)) { throw new Exception("No se puede dar de alta, hay patentes repetidas"); }
+                    if (!serFamilia_502ag.PatenteRepetida_502ag(nuevoPerfil_502ag, listaPermisos_502ag)) { throw new Exception("No se puede dar de alta, hay patentes repetidas"); }
                     
                     serPerfil_502ag.AltaPerfil_502ag(nuevoPerfil_502ag);
                     MessageBox.Show("Perfil creado");
@@ -221,32 +221,33 @@ namespace GUI
                             if (!serFamilia_502ag.CompararFamiliaPadreEHijos(familiaSeleccionada, subFamilia)) throw new Exception("Tu familia seleccionada ya se encuentra en la jerarquía de otra familia que tenes marcada");
                         }
                     }
+                    List<SE_Perfil_502ag> listaPermisosAAgregar_502ag = new List<SE_Perfil_502ag>();
                     foreach (var itemcheck in cLBPermisos_502ag.CheckedItems)
                     {
                         if(!familiaSeleccionada.lista_502ag.Any(x=>x.Nombre_502ag == itemcheck.ToString()))
                         {
                             string nombre_502ag = itemcheck.ToString();
-                            //se corrobora si el item checkeado es patente 
                             if (serPatente_502ag.ObtenerListaPatentes_502ag().Find(x => x.Nombre_502ag == nombre_502ag) != null)
                             {
                                 SE_Perfil_502ag patente_502ag = new SE_Patente_502ag(nombre_502ag);
-                                //agrega patentes dentro de la familia
-                                familiaSeleccionada.Agregar_502ag(patente_502ag);
+                                listaPermisosAAgregar_502ag.Add(patente_502ag);
                             }
-                            //se corrobora si el item checkeado es familia
                             if (serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag) != null)
                             {
-                                SE_Familia_502ag familiaExistente = serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag);
-                                if (familiaExistente != null) { familiaSeleccionada.Agregar_502ag(familiaExistente); }
+                                SE_Familia_502ag familia_502ag = serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag);
+                                if (familia_502ag != null) { listaPermisosAAgregar_502ag.Add(familia_502ag); }
                             }
                         }
                     }
-                    //verificar que no hayan patentes repetidas en la lista
-                    List<SE_Perfil_502ag> listaPerfiles = new List<SE_Perfil_502ag>();
-                    listaPerfiles.Clear();
-                    if (!serFamilia_502ag.PatenteOFamiliaRepetido(familiaSeleccionada, listaPerfiles)) { throw new Exception("No se puede realizar la operación, hay patentes repetidas"); }
 
-                    serFamilia_502ag.AsignarPermisosAFamilia_502ag(familiaSeleccionada);
+                    //evitar que 2 familias que no tienen relacion entre sí pero ambas pertenecen a un perfil compartan patente
+                    if (serPerfil_502ag.EvitarPermisosRepetidosEntreFamiliasQueCompartenPerfil_502ag(familiaSeleccionada, listaPermisosAAgregar_502ag)) throw new Exception("La familia que estas editando ya tiene relación con una de las patentes que deseas agregar");
+
+
+                    //verificar que no hayan patentes repetidas en la lista
+                    List<SE_Perfil_502ag> listaPermisosAAgregarAux_502ag = new List<SE_Perfil_502ag>(listaPermisosAAgregar_502ag);
+                    if (!serFamilia_502ag.PatenteRepetida_502ag(familiaSeleccionada, listaPermisosAAgregarAux_502ag)) { throw new Exception("No se puede realizar la operación, hay patentes repetidas"); }
+                    serFamilia_502ag.AsignarPermisosAFamilia_502ag(familiaSeleccionada, listaPermisosAAgregar_502ag);
                     MessageBox.Show("Permisos asignados");
                 }
                 if (rBPerfil_502ag.Checked)
@@ -264,26 +265,29 @@ namespace GUI
                             if (!serFamilia_502ag.CompararFamiliaPadreEHijos(perfilSeleccionado_502ag, subFamilia)) throw new Exception("Se rompe la jerarquía");
                         }
                     }
-
+                    List<SE_Perfil_502ag> listaPermisosAAgregar_502ag = new List<SE_Perfil_502ag>();
                     foreach (var itemchecked_502ag in cLBPermisos_502ag.CheckedItems)
                     {
-                        string nombre_502ag = itemchecked_502ag.ToString();
-                        if(serPatente_502ag.ObtenerListaPatentes_502ag().Find(x=>x.Nombre_502ag == nombre_502ag) != null)
+                        if(!perfilSeleccionado_502ag.lista_502ag.Any(x=>x.Nombre_502ag == itemchecked_502ag.ToString()))
                         {
-                            SE_Perfil_502ag patente_502ag = new SE_Patente_502ag(nombre_502ag);
-                            perfilSeleccionado_502ag.Agregar_502ag(patente_502ag);
+                            string nombre_502ag = itemchecked_502ag.ToString();
+                            if(serPatente_502ag.ObtenerListaPatentes_502ag().Find(x=>x.Nombre_502ag == nombre_502ag) != null)
+                            {
+                                SE_Perfil_502ag patente_502ag = new SE_Patente_502ag(nombre_502ag);
+                                listaPermisosAAgregar_502ag.Add(patente_502ag);
+                            }
+                            if(serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x=>x.Nombre_502ag == nombre_502ag) != null)
+                            {
+                                SE_Familia_502ag familia_502ag = serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag);
+                                if (familia_502ag != null) { listaPermisosAAgregar_502ag.Add(familia_502ag); }
+                            }
                         }
-                        if(serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x=>x.Nombre_502ag == nombre_502ag) != null)
-                        {
-                            SE_Familia_502ag familia_502ag = serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag);
-                            if (familia_502ag != null) { perfilSeleccionado_502ag.Agregar_502ag(familia_502ag); }
-                        }
-
                     }
-                    List<SE_Perfil_502ag> listaPerfiles = new List<SE_Perfil_502ag>();
-                    listaPerfiles.Clear();
-                    if (!serFamilia_502ag.PatenteOFamiliaRepetido(perfilSeleccionado_502ag, listaPerfiles)) { throw new Exception("No se puede realizar la operación, hay patentes repetidas"); }
-                    serPerfil_502ag.AsignarPermisosAPerfil_502ag(perfilSeleccionado_502ag);
+
+                    //evitar familias repetidas
+                    List<SE_Perfil_502ag> listaPermisosAAgregarAux_502ag = new List<SE_Perfil_502ag>(listaPermisosAAgregar_502ag);
+                    if (!serPerfil_502ag.Verificacion(perfilSeleccionado_502ag, listaPermisosAAgregarAux_502ag)) throw new Exception("EL PEPE");
+                    serPerfil_502ag.AsignarPermisosAPerfil_502ag(perfilSeleccionado_502ag, listaPermisosAAgregar_502ag);
                     MessageBox.Show("Permisos asignados");
                 }
                 MostrarPermisos_502ag(cLBPermisos_502ag);
@@ -304,7 +308,19 @@ namespace GUI
             familiaComboBox_502ag = serFamilia_502ag.ObtenerListaProfundidadUno_502ag(familiaComboBox_502ag);
             RellenarCheckedListBox(familiaComboBox_502ag);
             
-        }    
+        }
+        private void cBPerfil_502ag_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < cLBPermisos_502ag.Items.Count; i++)
+            {
+                cLBPermisos_502ag.SetItemChecked(i, false);
+            }
+            SER_Perfil_502ag serPerfil_502ag = new SER_Perfil_502ag();
+            SE_Familia_502ag perfilComboBox_502ag = new SE_Familia_502ag(cBPerfil_502ag.Text);
+            perfilComboBox_502ag = serPerfil_502ag.ObtenerListaPerfilProfundidadUno_502ag(perfilComboBox_502ag);
+
+            RellenarCheckedListBox(perfilComboBox_502ag);
+        }
         private void RellenarCheckedListBox(SE_Familia_502ag familia_502ag)
         {
             foreach (SE_Perfil_502ag permiso_502ag in familia_502ag.lista_502ag)
@@ -424,5 +440,7 @@ namespace GUI
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
+
+        
     }
 }

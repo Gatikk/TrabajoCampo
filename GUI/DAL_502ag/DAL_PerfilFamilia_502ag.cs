@@ -143,5 +143,18 @@ namespace DAL_502ag
             }
             return perfil_502ag;
         }
+
+        public void BorrarFamiliaRecienBorradaDePerfil_502ag(SE_Familia_502ag familia_502ag)
+        {
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                using(SqlCommand cmd_502ag = new SqlCommand("DELETE FROM PerfilFamilia_502ag WHERE NombreFamilia_502ag = @NombreFamilia_502ag", cx_502ag))
+                {
+                    cmd_502ag.Parameters.AddWithValue("@NombreFamilia_502ag", familia_502ag.Nombre_502ag);
+                    cmd_502ag.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

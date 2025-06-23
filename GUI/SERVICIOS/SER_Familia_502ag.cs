@@ -27,21 +27,38 @@ namespace SERVICIOS
             DAL_Familia_502ag dalFamilia_502ag = new DAL_Familia_502ag();
             DAL_FamiliaPatente_502ag dalFamiliaPatente_502ag = new DAL_FamiliaPatente_502ag();
             DAL_FamiliaFamilia_502ag dalFamiliaFamilia_502ag = new DAL_FamiliaFamilia_502ag();
+            SER_Perfil_502ag serPerfil_502ag = new SER_Perfil_502ag();
             dalFamiliaPatente_502ag.BorrarRelacionFamiliaPatente_502ag(familia_502ag);
             dalFamiliaFamilia_502ag.BorrarRelacionFamiliaFamilia_502ag(familia_502ag);
             dalFamilia_502ag.BorrarFamilia_502ag(familia_502ag);
+            foreach(SE_Familia_502ag familiaRevisarVacia_502ag in ObtenerListaFamiliasCompleta_502ag())
+            {
+                if(familiaRevisarVacia_502ag.lista_502ag.Count == 0)
+                {
+                    BorrarFamilia_502ag(familiaRevisarVacia_502ag);
+                }
+            }
+            serPerfil_502ag.BorrarFamiliaRecienBorradaDePerfil_502ag(familia_502ag);
         }
 
-        public void AsignarPermisosAFamilia_502ag(SE_Familia_502ag familia_502ag)
+        public void AsignarPermisosAFamilia_502ag(SE_Familia_502ag familia_502ag, List<SE_Perfil_502ag> listaPermisos_502ag)
         {
             DAL_FamiliaFamilia_502ag dalFamiliaFamilia_502ag = new DAL_FamiliaFamilia_502ag();
             DAL_FamiliaPatente_502ag dalFamiliaPatente_502ag = new DAL_FamiliaPatente_502ag();
+            SER_Perfil_502ag serPerfil_502ag = new SER_Perfil_502ag();
             //elimino posibles redundancias
 
-            foreach (SE_Familia_502ag familia in ObtenerListaFamiliasCompleta_502ag())
+            //serPerfil_502ag.AsignarPermisosAPerfil_502ag(familia_502ag);
+            foreach (SE_Perfil_502ag permiso_502ag in listaPermisos_502ag)
+            {
+                familia_502ag.lista_502ag.Add(permiso_502ag);
+            }
+
+            foreach(SE_Familia_502ag familia in ObtenerListaFamiliasCompleta_502ag())
             {
                 EliminarRedundancia(familia_502ag, familia);
             }
+
 
             //asigno nuevos permisos 
             dalFamiliaFamilia_502ag.AsignarFamiliaHijoAFamilia(familia_502ag);
@@ -97,8 +114,8 @@ namespace SERVICIOS
             }
         }
 
-        public bool PatenteOFamiliaRepetido(SE_Familia_502ag familia, List<SE_Perfil_502ag> listaPermisos_502ag)
-        {
+        public bool PatenteRepetida_502ag(SE_Familia_502ag familia, List<SE_Perfil_502ag> listaPermisos_502ag)
+        {          
             foreach (SE_Perfil_502ag permiso_502ag in familia.lista_502ag)
             {
                 if (permiso_502ag is SE_Patente_502ag patente)
@@ -109,11 +126,13 @@ namespace SERVICIOS
                 else if (permiso_502ag is SE_Familia_502ag familiaARevisar)
                 {
 
-                    if(!PatenteOFamiliaRepetido(familiaARevisar, listaPermisos_502ag)) return false;
+                    if(!PatenteRepetida_502ag(familiaARevisar, listaPermisos_502ag)) return false;
                 }
             }
             return true;
         }
+
+
 
         public bool CompararFamiliaPadreEHijos(SE_Familia_502ag familiaPadreAAsignar, SE_Familia_502ag familiaHijoAAsignar)
         {
@@ -134,7 +153,8 @@ namespace SERVICIOS
         private void EliminarRedundancia(SE_Familia_502ag familiaEditada, SE_Familia_502ag familiaARevisar)
         {
             DAL_FamiliaPatente_502ag dalFamiliaPatente = new DAL_FamiliaPatente_502ag();
-            if(ContieneSubfamilia(familiaARevisar, familiaEditada))
+            SER_Perfil_502ag serPerfil_502ag = new SER_Perfil_502ag();
+            if (ContieneSubfamilia(familiaARevisar, familiaEditada))
             {
                 foreach (SE_Perfil_502ag permisoEditado in familiaEditada.lista_502ag)
                 {
@@ -145,6 +165,7 @@ namespace SERVICIOS
                         {
                             familiaARevisar.Eliminar_502ag(patenteRepetida.Nombre_502ag);
                             dalFamiliaPatente.EliminarPatenteDeFamilia_502ag(familiaARevisar, patenteEditado);
+
                         }
                     }
                 }

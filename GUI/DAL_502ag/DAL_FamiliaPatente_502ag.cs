@@ -81,27 +81,10 @@ namespace DAL_502ag
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                List<string> listaPatentes = new List<string>();
-                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM FamiliaPatente_502ag WHERE NombreFamilia_502ag = @NombreFamilia_502ag", cx_502ag))
+                using(SqlCommand cmd_502ag = new SqlCommand("DELETE FROM FamiliaPatente_502ag WHERE NombreFamilia_502ag = @NombreFamilia_502ag", cx_502ag))
                 {
                     cmd_502ag.Parameters.AddWithValue("@NombreFamilia_502ag", familia_502ag.Nombre_502ag);
-                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
-                    {
-                        while (dr_502ag.Read())
-                        {
-                            string nombre_502ag = dr_502ag["NombrePatente_502ag"].ToString();
-                            listaPatentes.Add(nombre_502ag);
-                        }
-                    }
-                }
-                foreach (string patenteEnLista in listaPatentes)
-                {
-                    using (SqlCommand cmd_502ag = new SqlCommand("DELETE FROM FamiliaPatente_502ag WHERE NombreFamilia_502ag = @NombreFamilia_502ag AND NombrePatente_502ag = @NombrePatente_502ag", cx_502ag))
-                    {
-                        cmd_502ag.Parameters.AddWithValue("@NombreFamilia_502ag", familia_502ag.Nombre_502ag);
-                        cmd_502ag.Parameters.AddWithValue("@NombrePatente_502ag", patenteEnLista);
-                        cmd_502ag.ExecuteNonQuery();
-                    }
+                    cmd_502ag.ExecuteNonQuery();
                 }
             }
         }

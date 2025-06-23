@@ -99,29 +99,15 @@ namespace DAL_502ag
        
         public void BorrarRelacionFamiliaFamilia_502ag(SE_Familia_502ag familia_502ag)
         {
-            List<string> listaFamilias = new List<string>();
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM FamiliaFamilia_502ag WHERE NombrePadre_502ag = @NombrePadre_502ag", cx_502ag))
+                using (SqlCommand cmd_502ag = new SqlCommand("DELETE FROM FamiliaFamilia_502ag WHERE NombrePadre_502ag = @NombrePadre_502ag OR NombreHijo_502ag = @NombreHijo_502ag", cx_502ag))
                 {
                     cmd_502ag.Parameters.AddWithValue("@NombrePadre_502ag", familia_502ag.Nombre_502ag);
-                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
-                    {
-                        while (dr_502ag.Read())
-                        {
-                            listaFamilias.Add(dr_502ag["NombreHijo_502ag"].ToString());
-                        }
-                    }
-                }
-                foreach (string familiaEnLista in listaFamilias)
-                {
-                    using (SqlCommand cmd_502ag = new SqlCommand("DELETE FROM FamiliaFamilia_502ag WHERE NombrePadre_502ag = @NombrePadre_502ag AND NombreHijo_502ag = @NombreHijo_502ag", cx_502ag))
-                    {
-                        cmd_502ag.Parameters.AddWithValue("@NombrePadre_502ag", familia_502ag.Nombre_502ag);
-                        cmd_502ag.Parameters.AddWithValue("@NombreHijo_502ag", familiaEnLista);
-                        cmd_502ag.ExecuteNonQuery();         
-                    }
+                    cmd_502ag.Parameters.AddWithValue("@NombreHijo_502ag", familia_502ag.Nombre_502ag);
+                    cmd_502ag.ExecuteNonQuery();
+
                 }
             }
         }
