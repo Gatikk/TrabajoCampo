@@ -38,7 +38,7 @@ namespace SERVICIOS
                     BorrarFamilia_502ag(familiaRevisarVacia_502ag);
                 }
             }
-            serPerfil_502ag.BorrarFamiliaRecienBorradaDePerfil_502ag(familia_502ag);
+            //serPerfil_502ag.BorrarFamiliaRecienBorradaDePerfil_502ag(familia_502ag);
         }
 
         public void AsignarPermisosAFamilia_502ag(SE_Familia_502ag familia_502ag, List<SE_Perfil_502ag> listaPermisos_502ag)
@@ -53,13 +53,10 @@ namespace SERVICIOS
             {
                 familia_502ag.lista_502ag.Add(permiso_502ag);
             }
-
             foreach(SE_Familia_502ag familia in ObtenerListaFamiliasCompleta_502ag())
             {
                 EliminarRedundancia(familia_502ag, familia);
             }
-
-
             //asigno nuevos permisos 
             dalFamiliaFamilia_502ag.AsignarFamiliaHijoAFamilia(familia_502ag);
             dalFamiliaPatente_502ag.AsignarPatenteAFamilia(familia_502ag);

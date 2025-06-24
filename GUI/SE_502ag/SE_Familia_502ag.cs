@@ -15,9 +15,9 @@ namespace SE_502ag
             Nombre_502ag = pNombre_502ag;
             lista_502ag = new List<SE_Perfil_502ag>();
         }
-        public override void Agregar_502ag(SE_Perfil_502ag perfil_502ag)
+        public override void Agregar_502ag(SE_Perfil_502ag permiso_502ag)
         {
-            lista_502ag.Add(perfil_502ag);
+            lista_502ag.Add(permiso_502ag);
         }
 
         public override void Eliminar_502ag(string pNombreAEliminar_502ag)

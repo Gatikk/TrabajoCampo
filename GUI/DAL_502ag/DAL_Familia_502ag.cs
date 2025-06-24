@@ -57,28 +57,5 @@ namespace DAL_502ag
             }
             return listaFamilias_502ag;
         }
-
-        public SE_Familia_502ag ObtenerFamiliaConcreta_502ag(SE_Familia_502ag familia_502ag)
-        {
-            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
-            {
-                cx_502ag.Open();
-                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Familia_502ag WHERE NombreFamilia_502ag = @NombreFamilia_502ag", cx_502ag))
-                {
-                    cmd_502ag.Parameters.AddWithValue("@NombreFamilia_502ag", familia_502ag.Nombre_502ag);
-                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
-                    {
-                        if (dr_502ag.Read())
-                        {
-                            string nombreFamilia_502ag = dr_502ag["NombreFamilia_502ag"].ToString();
-                            return new SE_Familia_502ag(nombreFamilia_502ag);
-                        }
-                    }
-                }
-            }
-            return null;
-        }
-
-
     }
 }
