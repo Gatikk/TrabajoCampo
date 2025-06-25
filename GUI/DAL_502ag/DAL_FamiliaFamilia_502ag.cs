@@ -31,7 +31,7 @@ namespace DAL_502ag
             }
         }
 
-        public void AsignarFamiliaHijoAFamilia(SE_Familia_502ag familia_502ag) 
+        public void AsignarFamiliaHijoAFamilia_502ag(SE_Familia_502ag familia_502ag) 
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {

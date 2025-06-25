@@ -11,6 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SERVICIOS;
 
 
 namespace GUI
@@ -25,7 +26,7 @@ namespace GUI
             Location = new Point(500, 200);
             InitializeComponent();
             Mostrar_502ag(dgvUsuarios_502ag);
-            cBRol_502ag.SelectedIndex = 0;
+            
             cBRol_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
             tBModoActual_502ag.Text = "Modo Consulta";
             buttonAplicar_502ag.Enabled = false;
@@ -174,6 +175,7 @@ namespace GUI
                     if (!serGestionUsuario_502ag.VerificarAltaUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
                     if (!serGestionUsuario_502ag.VerificarExistenciaDNIUsuario_502ag(tBDNI_502ag.Text)) throw new Exception("DNI ya existe");
                     if (!serGestionUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Email ya existe");
+                    if (cBRol_502ag.Text == "") { throw new Exception("Debes ingresar un rol"); }
                     serGestionUsuario_502ag.AltaUsuario_502ag(cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text);
                     Mostrar_502ag(dgvUsuarios_502ag);
                     tBDNI_502ag.Clear();
@@ -190,6 +192,7 @@ namespace GUI
                     {
                         if (!serGestionUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Email ya existe");
                     }
+                    if (cBRol_502ag.Text == "") { throw new Exception("Debes ingresar un rol"); }
                     DialogResult dResult_502ag = MessageBox.Show($"¿Modificar a @{usuario_502ag.NombreUsuario_502ag}?", "Confirmar Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dResult_502ag == DialogResult.Yes) serGestionUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, cBRol_502ag.Text, tBEmail_502ag.Text);
                     Mostrar_502ag(dgvUsuarios_502ag);
@@ -344,7 +347,26 @@ namespace GUI
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
+
+
         #endregion
 
+        private void FormABMUsuario_502ag_Activated(object sender, EventArgs e)
+        {
+            try
+            {
+                SER_Perfil_502ag serPerfil_502ag = new SER_Perfil_502ag();
+                cBRol_502ag.Items.Clear();
+                if(serPerfil_502ag.ObtenerListaPerfiles_502ag().Count > 0)
+                {
+                    foreach (SE_Familia_502ag familia_502ag in serPerfil_502ag.ObtenerListaPerfiles_502ag())
+                    {
+                        cBRol_502ag.Items.Add(familia_502ag.Nombre_502ag);
+                    }
+                    cBRol_502ag.SelectedIndex = 0;
+                }
+            }
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
     }
 }

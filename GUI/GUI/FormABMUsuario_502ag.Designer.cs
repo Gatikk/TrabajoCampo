@@ -312,9 +312,6 @@
             // 
             this.cBRol_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBRol_502ag.FormattingEnabled = true;
-            this.cBRol_502ag.Items.AddRange(new object[] {
-            "normal",
-            "admin"});
             this.cBRol_502ag.Location = new System.Drawing.Point(444, 323);
             this.cBRol_502ag.Name = "cBRol_502ag";
             this.cBRol_502ag.Size = new System.Drawing.Size(175, 24);
@@ -427,6 +424,7 @@
             this.Controls.Add(this.buttonVolverAlMenu_502ag);
             this.Name = "FormABMUsuario_502ag";
             this.Text = "FormABM";
+            this.Activated += new System.EventHandler(this.FormABMUsuario_502ag_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormABM_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios_502ag)).EndInit();
             this.ResumeLayout(false);

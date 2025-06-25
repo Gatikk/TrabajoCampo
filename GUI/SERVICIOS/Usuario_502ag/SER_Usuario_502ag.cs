@@ -167,11 +167,7 @@ namespace SERVICIOS_502ag
             bool contraseñaEsIgual = (usuario_502ag.Contraseña_502ag == cifrador_502ag.EncryptadorIrreversible_502ag(contraseñaActual_502ag));
             return contraseñaEsIgual;
         }
-
-
         #endregion
-
-
         #region ActivarDesactivar
         public void ActivarDesactivar_502ag(SE_Usuario_502ag usuario_502ag)
         {
@@ -187,7 +183,6 @@ namespace SERVICIOS_502ag
             dalUsuario_502ag.ActualizarActivo_502ag(usuario_502ag);
         }
         #endregion
-
         #region ABM
         #region AltaUsuario
         public void AltaUsuario_502ag(string rol_502ag, string nombre_502ag, string apellido_502ag, string DNI_502ag, string email_502ag)
@@ -262,5 +257,20 @@ namespace SERVICIOS_502ag
         }
         #endregion
         #endregion
+
+        public bool ObtenerUsuarioPorRol_502ag(string nombreRol_502ag)
+        {
+            DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
+            if (dalUsuario_502ag.ObtenerUsuariosPorRol_502ag(nombreRol_502ag).Count > 0) 
+            { 
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }

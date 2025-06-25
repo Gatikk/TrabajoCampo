@@ -228,5 +228,40 @@ namespace DAL_502ag
             }
         }
         #endregion
+
+        public List<SE_Usuario_502ag> ObtenerUsuariosPorRol_502ag(string nombreRol_502ag)
+        {
+            List<SE_Usuario_502ag> listaUsuarios_502ag = new List<SE_Usuario_502ag>();
+
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Usuario_502ag WHERE Rol_502ag = @Rol_502ag", cx_502ag))
+                {
+                    cmd_502ag.Parameters.AddWithValue("@Rol_502ag", nombreRol_502ag);
+                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader()) 
+                    {
+                        while (dr_502ag.Read())
+                        {
+                            SE_Usuario_502ag usuario_502ag = new SE_Usuario_502ag(
+                                dr_502ag["DNI_502ag"].ToString(),
+                                dr_502ag["NombreUsuario_502ag"].ToString(),
+                                dr_502ag["Contraseña_502ag"].ToString(),
+                                dr_502ag["Rol_502ag"].ToString(),
+                                dr_502ag["Nombre_502ag"].ToString(),
+                                dr_502ag["Apellido_502ag"].ToString(),
+                                dr_502ag["Email_502ag"].ToString(),
+                                bool.Parse(dr_502ag["IsBloqueado_502ag"].ToString()),
+                                int.Parse(dr_502ag["Intentos_502ag"].ToString()),
+                                bool.Parse(dr_502ag["IsActivo_502ag"].ToString()),
+                                bool.Parse(dr_502ag["ContraseñaCambiada_502ag"].ToString()),
+                                DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()));
+                            listaUsuarios_502ag.Add(usuario_502ag);
+                        }
+                    }
+                }
+            }
+            return listaUsuarios_502ag;
+        }
     }
 }

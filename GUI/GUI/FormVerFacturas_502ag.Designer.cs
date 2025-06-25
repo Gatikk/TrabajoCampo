@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.dgvFacturas_502ag = new System.Windows.Forms.DataGridView();
+            this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
+            this.rBASC_502ag = new System.Windows.Forms.RadioButton();
+            this.rBDESC_502ag = new System.Windows.Forms.RadioButton();
+            this.cBOrdenarPor_502ag = new System.Windows.Forms.ComboBox();
+            this.labelOrdenarPor_502ag = new System.Windows.Forms.Label();
+            this.cBFecha_502ag = new System.Windows.Forms.ComboBox();
+            this.labelFechas_502ag = new System.Windows.Forms.Label();
+            this.buttonImprimirFactura_502ag = new System.Windows.Forms.Button();
             this.columnaCodigo_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaDNI_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columaNombreCli_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,13 +46,6 @@
             this.columnaCombustible_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaMonto_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaCantCargada_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
-            this.rBASC_502ag = new System.Windows.Forms.RadioButton();
-            this.rBDESC_502ag = new System.Windows.Forms.RadioButton();
-            this.cBOrdenarPor_502ag = new System.Windows.Forms.ComboBox();
-            this.labelOrdenarPor_502ag = new System.Windows.Forms.Label();
-            this.cBFecha_502ag = new System.Windows.Forms.ComboBox();
-            this.labelFechas_502ag = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,69 +74,6 @@
             this.dgvFacturas_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFacturas_502ag.Size = new System.Drawing.Size(760, 237);
             this.dgvFacturas_502ag.TabIndex = 76;
-            // 
-            // columnaCodigo_502ag
-            // 
-            this.columnaCodigo_502ag.FillWeight = 50F;
-            this.columnaCodigo_502ag.HeaderText = "Codigo";
-            this.columnaCodigo_502ag.Name = "columnaCodigo_502ag";
-            this.columnaCodigo_502ag.ReadOnly = true;
-            // 
-            // columnaDNI_502ag
-            // 
-            this.columnaDNI_502ag.FillWeight = 79.94923F;
-            this.columnaDNI_502ag.HeaderText = "DNI";
-            this.columnaDNI_502ag.Name = "columnaDNI_502ag";
-            this.columnaDNI_502ag.ReadOnly = true;
-            // 
-            // columaNombreCli_502ag
-            // 
-            this.columaNombreCli_502ag.FillWeight = 90F;
-            this.columaNombreCli_502ag.HeaderText = "Nombre";
-            this.columaNombreCli_502ag.Name = "columaNombreCli_502ag";
-            this.columaNombreCli_502ag.ReadOnly = true;
-            // 
-            // columnaMetodoPago_502ag
-            // 
-            this.columnaMetodoPago_502ag.FillWeight = 79.94923F;
-            this.columnaMetodoPago_502ag.HeaderText = "Método Pago";
-            this.columnaMetodoPago_502ag.Name = "columnaMetodoPago_502ag";
-            this.columnaMetodoPago_502ag.ReadOnly = true;
-            // 
-            // columnaFecha_502ag
-            // 
-            this.columnaFecha_502ag.FillWeight = 60F;
-            this.columnaFecha_502ag.HeaderText = "Fecha";
-            this.columnaFecha_502ag.Name = "columnaFecha_502ag";
-            this.columnaFecha_502ag.ReadOnly = true;
-            // 
-            // columnaHora_502ag
-            // 
-            this.columnaHora_502ag.FillWeight = 50F;
-            this.columnaHora_502ag.HeaderText = "Hora";
-            this.columnaHora_502ag.Name = "columnaHora_502ag";
-            this.columnaHora_502ag.ReadOnly = true;
-            // 
-            // columnaCombustible_502ag
-            // 
-            this.columnaCombustible_502ag.FillWeight = 70F;
-            this.columnaCombustible_502ag.HeaderText = "Combustible";
-            this.columnaCombustible_502ag.Name = "columnaCombustible_502ag";
-            this.columnaCombustible_502ag.ReadOnly = true;
-            // 
-            // columnaMonto_502ag
-            // 
-            this.columnaMonto_502ag.FillWeight = 60F;
-            this.columnaMonto_502ag.HeaderText = "Monto";
-            this.columnaMonto_502ag.Name = "columnaMonto_502ag";
-            this.columnaMonto_502ag.ReadOnly = true;
-            // 
-            // columnaCantCargada_502ag
-            // 
-            this.columnaCantCargada_502ag.FillWeight = 70F;
-            this.columnaCantCargada_502ag.HeaderText = "Cargado";
-            this.columnaCantCargada_502ag.Name = "columnaCantCargada_502ag";
-            this.columnaCantCargada_502ag.ReadOnly = true;
             // 
             // buttonVolverAlMenu_502ag
             // 
@@ -226,11 +164,98 @@
             this.labelFechas_502ag.TabIndex = 83;
             this.labelFechas_502ag.Text = "Filtrar por";
             // 
+            // buttonImprimirFactura_502ag
+            // 
+            this.buttonImprimirFactura_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonImprimirFactura_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonImprimirFactura_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimirFactura_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonImprimirFactura_502ag.Location = new System.Drawing.Point(12, 402);
+            this.buttonImprimirFactura_502ag.Name = "buttonImprimirFactura_502ag";
+            this.buttonImprimirFactura_502ag.Size = new System.Drawing.Size(155, 47);
+            this.buttonImprimirFactura_502ag.TabIndex = 84;
+            this.buttonImprimirFactura_502ag.Text = "Imprimir Factura";
+            this.buttonImprimirFactura_502ag.UseVisualStyleBackColor = false;
+            this.buttonImprimirFactura_502ag.Click += new System.EventHandler(this.buttonImprimirFactura_502ag_Click);
+            // 
+            // columnaCodigo_502ag
+            // 
+            this.columnaCodigo_502ag.FillWeight = 50F;
+            this.columnaCodigo_502ag.HeaderText = "Codigo";
+            this.columnaCodigo_502ag.Name = "columnaCodigo_502ag";
+            this.columnaCodigo_502ag.ReadOnly = true;
+            this.columnaCodigo_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnaDNI_502ag
+            // 
+            this.columnaDNI_502ag.FillWeight = 79.94923F;
+            this.columnaDNI_502ag.HeaderText = "DNI";
+            this.columnaDNI_502ag.Name = "columnaDNI_502ag";
+            this.columnaDNI_502ag.ReadOnly = true;
+            this.columnaDNI_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columaNombreCli_502ag
+            // 
+            this.columaNombreCli_502ag.FillWeight = 90F;
+            this.columaNombreCli_502ag.HeaderText = "Nombre";
+            this.columaNombreCli_502ag.Name = "columaNombreCli_502ag";
+            this.columaNombreCli_502ag.ReadOnly = true;
+            this.columaNombreCli_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnaMetodoPago_502ag
+            // 
+            this.columnaMetodoPago_502ag.FillWeight = 79.94923F;
+            this.columnaMetodoPago_502ag.HeaderText = "Método Pago";
+            this.columnaMetodoPago_502ag.Name = "columnaMetodoPago_502ag";
+            this.columnaMetodoPago_502ag.ReadOnly = true;
+            this.columnaMetodoPago_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnaFecha_502ag
+            // 
+            this.columnaFecha_502ag.FillWeight = 60F;
+            this.columnaFecha_502ag.HeaderText = "Fecha";
+            this.columnaFecha_502ag.Name = "columnaFecha_502ag";
+            this.columnaFecha_502ag.ReadOnly = true;
+            this.columnaFecha_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnaHora_502ag
+            // 
+            this.columnaHora_502ag.FillWeight = 50F;
+            this.columnaHora_502ag.HeaderText = "Hora";
+            this.columnaHora_502ag.Name = "columnaHora_502ag";
+            this.columnaHora_502ag.ReadOnly = true;
+            this.columnaHora_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnaCombustible_502ag
+            // 
+            this.columnaCombustible_502ag.FillWeight = 70F;
+            this.columnaCombustible_502ag.HeaderText = "Combustible";
+            this.columnaCombustible_502ag.Name = "columnaCombustible_502ag";
+            this.columnaCombustible_502ag.ReadOnly = true;
+            this.columnaCombustible_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnaMonto_502ag
+            // 
+            this.columnaMonto_502ag.FillWeight = 60F;
+            this.columnaMonto_502ag.HeaderText = "Monto";
+            this.columnaMonto_502ag.Name = "columnaMonto_502ag";
+            this.columnaMonto_502ag.ReadOnly = true;
+            this.columnaMonto_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // columnaCantCargada_502ag
+            // 
+            this.columnaCantCargada_502ag.FillWeight = 70F;
+            this.columnaCantCargada_502ag.HeaderText = "Cargado";
+            this.columnaCantCargada_502ag.Name = "columnaCantCargada_502ag";
+            this.columnaCantCargada_502ag.ReadOnly = true;
+            this.columnaCantCargada_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // FormVerFacturas_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonImprimirFactura_502ag);
             this.Controls.Add(this.labelFechas_502ag);
             this.Controls.Add(this.cBFecha_502ag);
             this.Controls.Add(this.labelOrdenarPor_502ag);
@@ -257,6 +282,9 @@
         private System.Windows.Forms.RadioButton rBDESC_502ag;
         private System.Windows.Forms.ComboBox cBOrdenarPor_502ag;
         private System.Windows.Forms.Label labelOrdenarPor_502ag;
+        private System.Windows.Forms.ComboBox cBFecha_502ag;
+        private System.Windows.Forms.Label labelFechas_502ag;
+        private System.Windows.Forms.Button buttonImprimirFactura_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigo_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaDNI_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn columaNombreCli_502ag;
@@ -266,7 +294,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCombustible_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaMonto_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantCargada_502ag;
-        private System.Windows.Forms.ComboBox cBFecha_502ag;
-        private System.Windows.Forms.Label labelFechas_502ag;
     }
 }

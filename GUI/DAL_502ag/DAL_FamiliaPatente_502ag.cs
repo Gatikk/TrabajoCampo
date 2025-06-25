@@ -44,7 +44,7 @@ namespace DAL_502ag
             }
         }
 
-        public void AsignarPatenteAFamilia(SE_Familia_502ag familia_502ag)
+        public void AsignarPatenteAFamilia_502ag(SE_Familia_502ag familia_502ag)
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {

@@ -206,7 +206,7 @@ namespace GUI
             SER_Familia_502ag serFamilia_502ag = new SER_Familia_502ag();
             SE_Familia_502ag familiaComboBox_502ag = new SE_Familia_502ag(cBFamilia_502ag.Text);
             familiaComboBox_502ag = serFamilia_502ag.ObtenerListaProfundidadUno_502ag(familiaComboBox_502ag);
-            RellenarCheckedListBox(familiaComboBox_502ag);
+            RellenarCheckedListBox_502ag(familiaComboBox_502ag);
             
         }
         private void cBPerfil_502ag_SelectedIndexChanged(object sender, EventArgs e)
@@ -219,9 +219,9 @@ namespace GUI
             SE_Familia_502ag perfilComboBox_502ag = new SE_Familia_502ag(cBPerfil_502ag.Text);
             perfilComboBox_502ag = serPerfil_502ag.ObtenerListaPerfilProfundidadUno_502ag(perfilComboBox_502ag);
 
-            RellenarCheckedListBox(perfilComboBox_502ag);
+            RellenarCheckedListBox_502ag(perfilComboBox_502ag);
         }
-        private void RellenarCheckedListBox(SE_Familia_502ag familia_502ag)
+        private void RellenarCheckedListBox_502ag(SE_Familia_502ag familia_502ag)
         {
             try
             {
@@ -237,7 +237,7 @@ namespace GUI
                     }
                     if(permiso_502ag is SE_Familia_502ag familia)
                     {
-                        RellenarCheckedListBox(familia);
+                        RellenarCheckedListBox_502ag(familia);
                         int index = BuscarIndice(familia);
                         if (index != -1)
                         {
@@ -276,9 +276,9 @@ namespace GUI
                     SER_Familia_502ag serFamilia_502ag = new SER_Familia_502ag();
                     SER_Patente_502ag serPatente_502ag = new SER_Patente_502ag();
                     SER_Perfil_502ag serPerfil_502ag = new SER_Perfil_502ag();
-                    if (serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == tBNombre_502ag.Text) != null) throw new Exception("Ya existe una familia con ese nombre");
-                    if (serPatente_502ag.ObtenerListaPatentes_502ag().Find(x => x.Nombre_502ag == tBNombre_502ag.Text) != null) throw new Exception("Ya existe un permiso con ese nombre");
-                    if (serPerfil_502ag.ObtenerListaPerfiles_502ag().Find(x => x.Nombre_502ag == tBNombre_502ag.Text) != null) throw new Exception("Ya existe un perfil con ese nombre");
+                    if (!serFamilia_502ag.VerificarNombreCargado_502ag(tBNombre_502ag.Text)) throw new Exception("Ya existe una familia con ese nombre");
+                    if (!serPatente_502ag.VerificarNombreCargado_502ag(tBNombre_502ag.Text)) throw new Exception("Ya existe un permiso con ese nombre");
+                    if (!serPerfil_502ag.VerificarNombreCargado_502ag(tBNombre_502ag.Text)) throw new Exception("Ya existe un perfil con ese nombre");
                     if (rBFamilia_502ag.Checked)
                     {
                         if (string.IsNullOrWhiteSpace(tBNombre_502ag.Text)) { throw new Exception("El nombre de la familia no puede estar vacío"); }
@@ -299,7 +299,6 @@ namespace GUI
                             }
                         }
                         List<SE_Perfil_502ag> listaPermisos_502ag = new List<SE_Perfil_502ag>();
-                        listaPermisos_502ag.Clear();
                         if (!serFamilia_502ag.PatenteRepetida_502ag(nuevaFamilia_502ag, listaPermisos_502ag)) { throw new Exception("No se puede dar de alta, hay patentes repetidas"); }
                         serFamilia_502ag.AltaFamilia_502ag(nuevaFamilia_502ag);
                         MessageBox.Show("Familia creada");
@@ -325,7 +324,6 @@ namespace GUI
                             }
                         }
                         List<SE_Perfil_502ag> listaPermisos_502ag = new List<SE_Perfil_502ag>();
-                        listaPermisos_502ag.Clear();
                         if (!serFamilia_502ag.PatenteRepetida_502ag(nuevoPerfil_502ag, listaPermisos_502ag)) { throw new Exception("No se puede dar de alta, hay patentes repetidas"); }
 
                         serPerfil_502ag.AltaPerfil_502ag(nuevoPerfil_502ag);
@@ -351,8 +349,7 @@ namespace GUI
                     SER_Perfil_502ag serPerfil_502ag = new SER_Perfil_502ag();
                     SER_Familia_502ag serFamilia_502ag = new SER_Familia_502ag();
                     if (rBFamilia_502ag.Checked)
-                    {
-                        
+                    {                       
                         if (cBFamilia_502ag.SelectedItem == null) { throw new Exception("No hay nada seleccionado para borrar"); }
                         if (!serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Any(x => x.Nombre_502ag == cBFamilia_502ag.Text)) throw new Exception("Familia no encontrada");
                         SE_Familia_502ag familiaSeleccionada = serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == cBFamilia_502ag.SelectedItem.ToString());
@@ -366,10 +363,10 @@ namespace GUI
                     }
                     if (rBPerfil_502ag.Checked)
                     {
-                        
                         if (cBPerfil_502ag.SelectedItem == null) { throw new Exception("No hay nada seleccionado para borrar"); }
                         if (!serPerfil_502ag.ObtenerListaPerfiles_502ag().Any(x => x.Nombre_502ag == cBPerfil_502ag.Text)) throw new Exception("Perfil no encontrado");
                         SE_Familia_502ag perfilSeleccionado_502ag = serPerfil_502ag.ObtenerListaPerfiles_502ag().Find(x => x.Nombre_502ag == cBPerfil_502ag.SelectedItem.ToString());
+                        if (serPerfil_502ag.VerificarSiPerfilEsActivo_502ag(perfilSeleccionado_502ag)) throw new Exception("El perfil tiene usuarios activos, no se puede borrar");
                         serPerfil_502ag.BorrarPerfil_502ag(perfilSeleccionado_502ag);
                         cBPerfil_502ag.SelectedItem = null;
                         MessageBox.Show("Perfil borrado con éxito");
@@ -404,7 +401,7 @@ namespace GUI
                             if (serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag) != null)
                             {
                                 SE_Familia_502ag subFamilia = serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag);
-                                if (!serFamilia_502ag.CompararFamiliaPadreEHijos(familiaSeleccionada, subFamilia)) throw new Exception("Tu familia seleccionada ya se encuentra en la jerarquía de otra familia que tenes marcada");
+                                if (!serFamilia_502ag.CompararFamiliaPadreEHijos_502ag(familiaSeleccionada, subFamilia)) throw new Exception("Tu familia seleccionada ya se encuentra en la jerarquía de otra familia que tenes marcada");
                             }
                         }
                         List<SE_Perfil_502ag> listaPermisosAAgregar_502ag = new List<SE_Perfil_502ag>();
@@ -447,7 +444,7 @@ namespace GUI
                             if (serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag) != null)
                             {
                                 SE_Familia_502ag subFamilia = serFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag);
-                                if (!serFamilia_502ag.CompararFamiliaPadreEHijos(perfilSeleccionado_502ag, subFamilia)) throw new Exception("Se rompe la jerarquía");
+                                if (!serFamilia_502ag.CompararFamiliaPadreEHijos_502ag(perfilSeleccionado_502ag, subFamilia)) throw new Exception("Se rompe la jerarquía");
                             }
                         }
                         List<SE_Perfil_502ag> listaPermisosAAgregar_502ag = new List<SE_Perfil_502ag>();

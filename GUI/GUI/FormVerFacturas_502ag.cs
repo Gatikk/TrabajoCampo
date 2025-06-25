@@ -146,5 +146,14 @@ namespace GUI
                 }
             }
         }
+
+        private void buttonImprimirFactura_502ag_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show("Factura imprimida");
+            }
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
     }
 }
