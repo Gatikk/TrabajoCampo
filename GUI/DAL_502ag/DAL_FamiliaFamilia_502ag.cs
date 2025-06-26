@@ -30,7 +30,6 @@ namespace DAL_502ag
                 }
             }
         }
-
         public void AsignarFamiliaHijoAFamilia_502ag(SE_Familia_502ag familia_502ag) 
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
@@ -62,8 +61,7 @@ namespace DAL_502ag
                 }
             }
         }
-
-        public void DesasignarFamiliaHijoDeFamilia(SE_Familia_502ag familia_502ag)
+        public void DesasignarFamiliaHijoDeFamilia_502ag(SE_Familia_502ag familia_502ag)
         {
             List<string> listaFamilias = new List<string>();
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
@@ -95,8 +93,7 @@ namespace DAL_502ag
                     }
                 }
             }                  
-        }
-       
+        }  
         public void BorrarRelacionFamiliaFamilia_502ag(SE_Familia_502ag familia_502ag)
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
@@ -111,7 +108,6 @@ namespace DAL_502ag
                 }
             }
         }
-
         public bool FamiliaEsHijo_502ag(SE_Familia_502ag familiaHijo_502ag, SE_Familia_502ag familiaPadre_502ag)
         {
             bool noSePuedeDarDeAlta_502ag = false;
@@ -141,7 +137,6 @@ namespace DAL_502ag
             }
             return noSePuedeDarDeAlta_502ag;
         }
-
         public SE_Familia_502ag ObtenerFamiliasDeFamilia_502ag(SE_Familia_502ag familiaPadre_502ag)
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())

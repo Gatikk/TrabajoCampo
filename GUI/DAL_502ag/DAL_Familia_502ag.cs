@@ -22,7 +22,6 @@ namespace DAL_502ag
                 }
             }
         }
-
         public void BorrarFamilia_502ag(SE_Familia_502ag familia_502ag)
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
@@ -35,7 +34,6 @@ namespace DAL_502ag
                 }
             }
         }
-
         public List<SE_Familia_502ag> ObtenerListaFamiliasCompleta_502ag()
         {
             List<SE_Familia_502ag> listaFamilias_502ag = new List<SE_Familia_502ag>();

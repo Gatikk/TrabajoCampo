@@ -134,7 +134,7 @@ namespace SERVICIOS
             }
             return listaPatentes_502ag;
         }
-        public bool Verificacion(SE_Familia_502ag perfilSeleccionado_502ag, List<SE_Perfil_502ag> listaPermisos_502ag)
+        public bool EvitarFamiliasConPermisosRepetidos_502ag(SE_Familia_502ag perfilSeleccionado_502ag, List<SE_Perfil_502ag> listaPermisos_502ag)
         {
             List<SE_Perfil_502ag> patentesExistentes_502ag = ObtenerListaPatentesRecursiva_502ag(perfilSeleccionado_502ag);
             List<SE_Perfil_502ag> patentesNuevas_502ag = new List<SE_Perfil_502ag>();

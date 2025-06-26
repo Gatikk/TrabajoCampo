@@ -60,8 +60,8 @@ namespace SERVICIOS
         {
             DAL_FamiliaFamilia_502ag dalFamiliaFamilia_502ag = new DAL_FamiliaFamilia_502ag();
             DAL_FamiliaPatente_502ag dalFamiliaPatente_502ag = new DAL_FamiliaPatente_502ag();
-            dalFamiliaFamilia_502ag.DesasignarFamiliaHijoDeFamilia(familia_502ag);
-            dalFamiliaPatente_502ag.DesasignarPatenteDeFamilia(familia_502ag);
+            dalFamiliaFamilia_502ag.DesasignarFamiliaHijoDeFamilia_502ag(familia_502ag);
+            dalFamiliaPatente_502ag.DesasignarPatenteDeFamilia_502ag(familia_502ag);
         }
 
         public SE_Familia_502ag ObtenerListaProfundidadUno_502ag(SE_Familia_502ag familia_502ag)
