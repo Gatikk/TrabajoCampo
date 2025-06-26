@@ -122,6 +122,7 @@ namespace GUI
                     string nombre_502ag = tBNombre_502ag.Text;
                     string cantidad_502ag = tBCantidad_502ag.Text;
                     string precio_502ag = tBPrecio_502ag.Text;
+                    if(!bllCombustible_502ag.VerificarDatosIngresadosModificar_502ag(nombre_502ag, cantidad_502ag, precio_502ag)) { throw new Exception("Datos ingresados incorrectos"); }
                     bllCombustible_502ag.ModificarCombustible_502ag(combustible_502ag, nombre_502ag, decimal.Parse(cantidad_502ag), decimal.Parse(precio_502ag));
                 }
                 if(opcion_502ag == "Baja")

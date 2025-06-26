@@ -18,10 +18,21 @@ namespace BLL_502ag
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
             Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
             BE_Cliente_502ag cliente_502ag = dalCliente_502ag.ObtenerCliente_502ag(dni_502ag);
-            cliente_502ag.Email_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Email_502ag);
-            cliente_502ag.Direccion_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Direccion_502ag);
-            cliente_502ag.Telefono_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Telefono_502ag);
-            return cliente_502ag;
+            if(cliente_502ag != null)
+            {
+                cliente_502ag.Email_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Email_502ag);
+                cliente_502ag.Direccion_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Direccion_502ag);
+                cliente_502ag.Telefono_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Telefono_502ag);
+            }
+            if(cliente_502ag != null)
+            {
+                if (cliente_502ag.IsActivo_502ag == true)
+                {
+                    return cliente_502ag;
+                }
+            }
+            return null;
+            
         }
 
         public List<BE_Cliente_502ag> ObtenerListaClientes_502ag()
@@ -42,44 +53,25 @@ namespace BLL_502ag
         public bool VerificarDNIYaRegistrado_502ag(string dni_502ag)
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
-            bool estaRegistrado_502ag = true;
-            foreach (BE_Cliente_502ag cliente_502ag in dalCliente_502ag.ObtenerListaClientes_502ag())
-            {
-                if (cliente_502ag.DNI_502ag == dni_502ag && cliente_502ag.IsActivo_502ag)
-                {
-                    estaRegistrado_502ag = false;
-                    break;
-                }
-            }
-            return estaRegistrado_502ag;
+            List<BE_Cliente_502ag> listaClientes_502ag = dalCliente_502ag.ObtenerListaClientes_502ag();
+            if(listaClientes_502ag.Find(x=>x.DNI_502ag == dni_502ag) != null) { return false; }
+            return true;
         }
         public bool VerificarEmailYaRegistrado_502ag(string email_502ag)
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
-            bool estaRegistrado_502ag = true;
-            foreach(BE_Cliente_502ag cliente_502ag in dalCliente_502ag.ObtenerListaClientes_502ag())
-            {
-                if (cliente_502ag.Email_502ag == email_502ag)
-                {
-                    estaRegistrado_502ag = false;
-                    break;
-                }
-            }
-            return estaRegistrado_502ag;
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+            List<BE_Cliente_502ag> listaClientes_502ag = dalCliente_502ag.ObtenerListaClientes_502ag();
+            if (listaClientes_502ag.Find(x => x.Email_502ag == cifrador_502ag.EncryptadorReversible_502ag(email_502ag)) != null) { return false; }
+            return true;
         }
         public bool VerificarTelefonoYaRegistrado_502ag(string telefono_502ag)
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
-            bool estaRegistrado_502ag = true;
-            foreach (BE_Cliente_502ag cliente_502ag in dalCliente_502ag.ObtenerListaClientes_502ag())
-            {
-                if (cliente_502ag.Telefono_502ag == telefono_502ag)
-                {
-                    estaRegistrado_502ag = false;
-                    break;
-                }
-            }
-            return estaRegistrado_502ag;
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+            List<BE_Cliente_502ag> listaClientes_502ag = dalCliente_502ag.ObtenerListaClientes_502ag();
+            if (listaClientes_502ag.Find(x => x.Telefono_502ag == cifrador_502ag.EncryptadorReversible_502ag(telefono_502ag)) != null) { return false; }
+            return true;
         }
 
         public bool VerificarDatosIngresados_502ag(string dni_502ag, string nombre_502ag, string apellido_502ag, string email_502ag, string direccion_502ag, string telefono_502ag)

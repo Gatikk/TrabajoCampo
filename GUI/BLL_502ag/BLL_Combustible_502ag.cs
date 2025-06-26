@@ -2,6 +2,7 @@
 using DAL_502ag;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -35,8 +36,8 @@ namespace BLL_502ag
         {
             bool esValido_502ag = true;
             Regex reCodigo_502ag = new Regex(@"^\d{3}$");
-            Regex reDecimal_502ag = new Regex(@"^\d+(\.\d{1,2})?$");
-            if(!reCodigo_502ag.IsMatch(codCombustible_502ag)) esValido_502ag = false;
+            Regex reDecimal_502ag = new Regex(@"^\d+(?:[,]\d{1,2})?$");
+            if (!reCodigo_502ag.IsMatch(codCombustible_502ag)) esValido_502ag = false;
             if (!reDecimal_502ag.IsMatch(cantDisponible_502ag))
             {
                 esValido_502ag = false;
@@ -69,7 +70,7 @@ namespace BLL_502ag
         public bool VerificarDatosIngresadosModificar_502ag(string nombre_502ag, string cantDisponible_502ag, string precioPorLitro_502ag)
         {
             bool esValido_502ag = true;
-            Regex reDecimal_502ag = new Regex(@"^\d+(\.\d{1,2})?$");
+            Regex reDecimal_502ag = new Regex(@"^\d+(?:[,]\d{1,2})?$");
             if (!reDecimal_502ag.IsMatch(cantDisponible_502ag))
             {
                 esValido_502ag = false;
@@ -94,7 +95,9 @@ namespace BLL_502ag
         public void BajaCombustible_502ag(BE_Combustible_502ag combustible_502ag)
         {
             DAL_Combustible_502ag dalCombustible_502ag = new DAL_Combustible_502ag();
+            BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
             dalCombustible_502ag.BajaCombustible_520ag(combustible_502ag);
+            bllFactura_502ag.EliminarFacturasEstadoPendienteDeCarga_502ag(int.Parse(combustible_502ag.CodCombustible_502ag));
         }
         #endregion
 

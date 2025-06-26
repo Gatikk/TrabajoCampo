@@ -169,7 +169,7 @@ namespace GUI
 
                 rTBDetallesCarga_502ag.Clear();
                 rTBDetallesCarga_502ag.AppendText($"Cantidad actual: {vehiculoActual_502ag.CantidadActual_502ag:F2} / {vehiculoActual_502ag.CantidadMaxima_502ag:F2} litros\n" +
-                    $"Cargado hasta el momento: {totalCargado_502ag} litros");
+                    $"Cargado hasta el momento: {totalCargado_502ag:F2} litros");
                 if (finalizado_502ag)
                 {
                     timerCarga_502ag.Stop();
@@ -351,6 +351,18 @@ namespace GUI
         {
             MostrarCombustibles_502ag(dgvCombustibles_502ag);
             MostrarFacturas_502ag(dgvFacturas_502ag);
+            BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
+            if(combustibleSeleccionado_502ag != null)
+            {
+                if (bllCombustible_502ag.ObtenerCombustible_502ag(combustibleSeleccionado_502ag.CodCombustible_502ag) == null)
+                {
+                    combustibleSeleccionado_502ag = null;
+                    facturaActual_502ag = null;
+                    estadoActual_502ag = 0;
+                    EstadoActual_502ag();
+                    buttonSeleccionarFactura_502ag.Enabled = true;
+                }
+            }
         }
 
         private void buttonDetenerCarga_502ag_Click(object sender, EventArgs e)

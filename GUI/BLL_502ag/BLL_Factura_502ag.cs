@@ -57,5 +57,11 @@ namespace BLL_502ag
             DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
             return dalFactura_502ag.ObtenerListaFacturas_502ag();
         }
+        public void EliminarFacturasEstadoPendienteDeCarga_502ag(int codCombustible_502ag)
+        {
+            DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
+            dalFactura_502ag.EliminarFacturasEstadoPendienteDeCarga_502ag(codCombustible_502ag);
+        }
+
     }
 }

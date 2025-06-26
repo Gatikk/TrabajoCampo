@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BE_502ag;
+using BLL_502ag;
+using SE_502ag;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,8 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BE_502ag;
-using BLL_502ag;
 
 namespace GUI
 {
@@ -83,6 +84,14 @@ namespace GUI
                 tBEmail_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[3].Value.ToString();
                 tBDireccion_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[4].Value.ToString();
                 tBTelefono_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[5].Value.ToString();
+                if (bool.Parse(dgvClientes_502ag.SelectedRows[0].Cells[6].Value.ToString()) == false)
+                {
+                    buttonAplicar_502ag.Enabled = false;
+                }
+                else
+                {
+                    buttonAplicar_502ag.Enabled = true;
+                }
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
@@ -194,9 +203,20 @@ namespace GUI
         {
             BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();
             dgv_502ag.Rows.Clear();
-            foreach(BE_Cliente_502ag cliente_502ag in bllCliente_502ag.ObtenerListaClientes_502ag())
+            
+            if (rBActivos_502ag.Checked)
             {
-                dgv_502ag.Rows.Add(cliente_502ag.DNI_502ag, cliente_502ag.Nombre_502ag, cliente_502ag.Apellido_502ag, cliente_502ag.Email_502ag, cliente_502ag.Direccion_502ag, cliente_502ag.Telefono_502ag, cliente_502ag.IsActivo_502ag);
+                foreach (BE_Cliente_502ag cliente_502ag in bllCliente_502ag.ObtenerListaClientes_502ag().Where(x=>x.IsActivo_502ag == true))
+                {
+                    dgv_502ag.Rows.Add(cliente_502ag.DNI_502ag, cliente_502ag.Nombre_502ag, cliente_502ag.Apellido_502ag, cliente_502ag.Email_502ag, cliente_502ag.Direccion_502ag, cliente_502ag.Telefono_502ag, cliente_502ag.IsActivo_502ag);
+                }
+            }
+            if (rBTodos_502ag.Checked)
+            {
+                foreach (BE_Cliente_502ag cliente_502ag in bllCliente_502ag.ObtenerListaClientes_502ag())
+                {
+                    dgv_502ag.Rows.Add(cliente_502ag.DNI_502ag, cliente_502ag.Nombre_502ag, cliente_502ag.Apellido_502ag, cliente_502ag.Email_502ag, cliente_502ag.Direccion_502ag, cliente_502ag.Telefono_502ag, cliente_502ag.IsActivo_502ag);
+                }
             }
         }
 
@@ -207,17 +227,30 @@ namespace GUI
                 if (dgvClientes_502ag.SelectedRows.Count > 0 && dgvClientes_502ag.Rows.Count > 0)
                 { 
                     if (opcion_502ag == "Modificar")
-                        {
+                    {
                         tBDNI_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString();
                         tBNombre_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[1].Value.ToString();
                         tBApellido_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[2].Value.ToString();
                         tBEmail_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[3].Value.ToString();
                         tBDireccion_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[4].Value.ToString();
                         tBTelefono_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[5].Value.ToString();
+                        if (bool.Parse(dgvClientes_502ag.SelectedRows[0].Cells[6].Value.ToString()) == false)
+                        {
+                            buttonAplicar_502ag.Enabled = false;
+                        }
+                        else
+                        {
+                            buttonAplicar_502ag.Enabled = true;
+                        }
                     }
                 }
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        private void rBTodos_502ag_CheckedChanged(object sender, EventArgs e)
+        {
+            Mostrar_502ag(dgvClientes_502ag);
         }
     }
 }

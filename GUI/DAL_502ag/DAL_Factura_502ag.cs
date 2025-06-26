@@ -301,5 +301,18 @@ namespace DAL_502ag
             }
         }
         #endregion
+
+        public void EliminarFacturasEstadoPendienteDeCarga_502ag(int codCombustible_502ag)
+        {
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                using (SqlCommand cmd_502ag = new SqlCommand("DELETE FROM Factura_502ag WHERE CodCombustible_502ag = @CodCombustible_502ag AND EstadoFactura_502ag = 1", cx_502ag))
+                {
+                    cmd_502ag.Parameters.AddWithValue("@CodCombustible_502ag", codCombustible_502ag);
+                    cmd_502ag.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

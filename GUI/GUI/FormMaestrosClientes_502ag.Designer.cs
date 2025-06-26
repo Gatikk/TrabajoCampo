@@ -54,6 +54,8 @@
             this.tBDireccion_502ag = new System.Windows.Forms.TextBox();
             this.labelTelefono_502ag = new System.Windows.Forms.Label();
             this.labelDireccion_502ag = new System.Windows.Forms.Label();
+            this.rBTodos_502ag = new System.Windows.Forms.RadioButton();
+            this.rBActivos_502ag = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +75,7 @@
             this.ColumnaDireccion,
             this.ColumnaTelefono,
             this.ColumnaActivo});
-            this.dgvClientes_502ag.Location = new System.Drawing.Point(12, 12);
+            this.dgvClientes_502ag.Location = new System.Drawing.Point(12, 57);
             this.dgvClientes_502ag.MultiSelect = false;
             this.dgvClientes_502ag.Name = "dgvClientes_502ag";
             this.dgvClientes_502ag.ReadOnly = true;
@@ -133,7 +135,7 @@
             this.buttonModificarCliente_502ag.FlatAppearance.BorderSize = 0;
             this.buttonModificarCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonModificarCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonModificarCliente_502ag.Location = new System.Drawing.Point(12, 317);
+            this.buttonModificarCliente_502ag.Location = new System.Drawing.Point(12, 326);
             this.buttonModificarCliente_502ag.Name = "buttonModificarCliente_502ag";
             this.buttonModificarCliente_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonModificarCliente_502ag.TabIndex = 2;
@@ -147,7 +149,7 @@
             this.buttonAltaCliente_502ag.FlatAppearance.BorderSize = 0;
             this.buttonAltaCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAltaCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAltaCliente_502ag.Location = new System.Drawing.Point(12, 256);
+            this.buttonAltaCliente_502ag.Location = new System.Drawing.Point(12, 273);
             this.buttonAltaCliente_502ag.Name = "buttonAltaCliente_502ag";
             this.buttonAltaCliente_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonAltaCliente_502ag.TabIndex = 1;
@@ -161,7 +163,7 @@
             this.buttonBajaCliente_502ag.FlatAppearance.BorderSize = 0;
             this.buttonBajaCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBajaCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBajaCliente_502ag.Location = new System.Drawing.Point(12, 381);
+            this.buttonBajaCliente_502ag.Location = new System.Drawing.Point(12, 379);
             this.buttonBajaCliente_502ag.Name = "buttonBajaCliente_502ag";
             this.buttonBajaCliente_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonBajaCliente_502ag.TabIndex = 3;
@@ -175,7 +177,7 @@
             this.buttonCancelar_502ag.FlatAppearance.BorderSize = 0;
             this.buttonCancelar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCancelar_502ag.Location = new System.Drawing.Point(640, 318);
+            this.buttonCancelar_502ag.Location = new System.Drawing.Point(640, 326);
             this.buttonCancelar_502ag.Name = "buttonCancelar_502ag";
             this.buttonCancelar_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonCancelar_502ag.TabIndex = 11;
@@ -189,7 +191,7 @@
             this.buttonAplicar_502ag.FlatAppearance.BorderSize = 0;
             this.buttonAplicar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAplicar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAplicar_502ag.Location = new System.Drawing.Point(640, 256);
+            this.buttonAplicar_502ag.Location = new System.Drawing.Point(640, 273);
             this.buttonAplicar_502ag.Name = "buttonAplicar_502ag";
             this.buttonAplicar_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonAplicar_502ag.TabIndex = 10;
@@ -203,7 +205,7 @@
             this.buttonVolverAlMenu_502ag.FlatAppearance.BorderSize = 0;
             this.buttonVolverAlMenu_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVolverAlMenu_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVolverAlMenu_502ag.Location = new System.Drawing.Point(640, 381);
+            this.buttonVolverAlMenu_502ag.Location = new System.Drawing.Point(640, 379);
             this.buttonVolverAlMenu_502ag.Name = "buttonVolverAlMenu_502ag";
             this.buttonVolverAlMenu_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonVolverAlMenu_502ag.TabIndex = 12;
@@ -218,7 +220,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelEmail_502ag.AutoSize = true;
             this.labelEmail_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelEmail_502ag.Location = new System.Drawing.Point(263, 346);
+            this.labelEmail_502ag.Location = new System.Drawing.Point(264, 363);
             this.labelEmail_502ag.Name = "labelEmail_502ag";
             this.labelEmail_502ag.Size = new System.Drawing.Size(42, 17);
             this.labelEmail_502ag.TabIndex = 31;
@@ -231,7 +233,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDNI_502ag.AutoSize = true;
             this.labelDNI_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelDNI_502ag.Location = new System.Drawing.Point(263, 259);
+            this.labelDNI_502ag.Location = new System.Drawing.Point(264, 276);
             this.labelDNI_502ag.Name = "labelDNI_502ag";
             this.labelDNI_502ag.Size = new System.Drawing.Size(31, 17);
             this.labelDNI_502ag.TabIndex = 30;
@@ -244,7 +246,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelApellido_502ag.AutoSize = true;
             this.labelApellido_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelApellido_502ag.Location = new System.Drawing.Point(263, 317);
+            this.labelApellido_502ag.Location = new System.Drawing.Point(264, 334);
             this.labelApellido_502ag.Name = "labelApellido_502ag";
             this.labelApellido_502ag.Size = new System.Drawing.Size(58, 17);
             this.labelApellido_502ag.TabIndex = 29;
@@ -257,7 +259,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelNombre_502ag.AutoSize = true;
             this.labelNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelNombre_502ag.Location = new System.Drawing.Point(263, 288);
+            this.labelNombre_502ag.Location = new System.Drawing.Point(264, 305);
             this.labelNombre_502ag.Name = "labelNombre_502ag";
             this.labelNombre_502ag.Size = new System.Drawing.Size(58, 17);
             this.labelNombre_502ag.TabIndex = 28;
@@ -266,7 +268,7 @@
             // tBEmail_502ag
             // 
             this.tBEmail_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBEmail_502ag.Location = new System.Drawing.Point(342, 343);
+            this.tBEmail_502ag.Location = new System.Drawing.Point(343, 360);
             this.tBEmail_502ag.Name = "tBEmail_502ag";
             this.tBEmail_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBEmail_502ag.TabIndex = 7;
@@ -274,7 +276,7 @@
             // tBDNI_502ag
             // 
             this.tBDNI_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBDNI_502ag.Location = new System.Drawing.Point(342, 256);
+            this.tBDNI_502ag.Location = new System.Drawing.Point(343, 273);
             this.tBDNI_502ag.Name = "tBDNI_502ag";
             this.tBDNI_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBDNI_502ag.TabIndex = 4;
@@ -282,7 +284,7 @@
             // tBApellido_502ag
             // 
             this.tBApellido_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBApellido_502ag.Location = new System.Drawing.Point(342, 314);
+            this.tBApellido_502ag.Location = new System.Drawing.Point(343, 331);
             this.tBApellido_502ag.Name = "tBApellido_502ag";
             this.tBApellido_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBApellido_502ag.TabIndex = 6;
@@ -290,7 +292,7 @@
             // tBNombre_502ag
             // 
             this.tBNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBNombre_502ag.Location = new System.Drawing.Point(342, 285);
+            this.tBNombre_502ag.Location = new System.Drawing.Point(343, 302);
             this.tBNombre_502ag.Name = "tBNombre_502ag";
             this.tBNombre_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBNombre_502ag.TabIndex = 5;
@@ -298,7 +300,7 @@
             // tBTelefono_502ag
             // 
             this.tBTelefono_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBTelefono_502ag.Location = new System.Drawing.Point(342, 401);
+            this.tBTelefono_502ag.Location = new System.Drawing.Point(343, 418);
             this.tBTelefono_502ag.Name = "tBTelefono_502ag";
             this.tBTelefono_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBTelefono_502ag.TabIndex = 9;
@@ -306,7 +308,7 @@
             // tBDireccion_502ag
             // 
             this.tBDireccion_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBDireccion_502ag.Location = new System.Drawing.Point(342, 372);
+            this.tBDireccion_502ag.Location = new System.Drawing.Point(343, 389);
             this.tBDireccion_502ag.Name = "tBDireccion_502ag";
             this.tBDireccion_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBDireccion_502ag.TabIndex = 8;
@@ -318,7 +320,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTelefono_502ag.AutoSize = true;
             this.labelTelefono_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelTelefono_502ag.Location = new System.Drawing.Point(263, 404);
+            this.labelTelefono_502ag.Location = new System.Drawing.Point(264, 421);
             this.labelTelefono_502ag.Name = "labelTelefono_502ag";
             this.labelTelefono_502ag.Size = new System.Drawing.Size(64, 17);
             this.labelTelefono_502ag.TabIndex = 35;
@@ -331,17 +333,44 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDireccion_502ag.AutoSize = true;
             this.labelDireccion_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelDireccion_502ag.Location = new System.Drawing.Point(263, 375);
+            this.labelDireccion_502ag.Location = new System.Drawing.Point(264, 392);
             this.labelDireccion_502ag.Name = "labelDireccion_502ag";
             this.labelDireccion_502ag.Size = new System.Drawing.Size(67, 17);
             this.labelDireccion_502ag.TabIndex = 34;
             this.labelDireccion_502ag.Text = "Dirección";
+            // 
+            // rBTodos_502ag
+            // 
+            this.rBTodos_502ag.AutoSize = true;
+            this.rBTodos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rBTodos_502ag.Location = new System.Drawing.Point(12, 35);
+            this.rBTodos_502ag.Name = "rBTodos_502ag";
+            this.rBTodos_502ag.Size = new System.Drawing.Size(66, 21);
+            this.rBTodos_502ag.TabIndex = 37;
+            this.rBTodos_502ag.Text = "Todos";
+            this.rBTodos_502ag.UseVisualStyleBackColor = true;
+            this.rBTodos_502ag.CheckedChanged += new System.EventHandler(this.rBTodos_502ag_CheckedChanged);
+            // 
+            // rBActivos_502ag
+            // 
+            this.rBActivos_502ag.AutoSize = true;
+            this.rBActivos_502ag.Checked = true;
+            this.rBActivos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rBActivos_502ag.Location = new System.Drawing.Point(12, 12);
+            this.rBActivos_502ag.Name = "rBActivos_502ag";
+            this.rBActivos_502ag.Size = new System.Drawing.Size(71, 21);
+            this.rBActivos_502ag.TabIndex = 36;
+            this.rBActivos_502ag.TabStop = true;
+            this.rBActivos_502ag.Text = "Activos";
+            this.rBActivos_502ag.UseVisualStyleBackColor = true;
             // 
             // FormMaestrosClientes_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.rBTodos_502ag);
+            this.Controls.Add(this.rBActivos_502ag);
             this.Controls.Add(this.labelTelefono_502ag);
             this.Controls.Add(this.labelDireccion_502ag);
             this.Controls.Add(this.tBTelefono_502ag);
@@ -398,5 +427,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDireccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTelefono;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaActivo;
+        private System.Windows.Forms.RadioButton rBTodos_502ag;
+        private System.Windows.Forms.RadioButton rBActivos_502ag;
     }
 }
