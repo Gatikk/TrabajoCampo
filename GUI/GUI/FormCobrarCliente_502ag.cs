@@ -35,10 +35,18 @@ namespace GUI
                 BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
                 FormMenu_502ag menu_502ag = new FormMenu_502ag();
                 Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+
+
                 string numTarjeta_502ag = cifrador_502ag.EncryptadorReversible_502ag(tBNumero_502ag.Text);
                 string codSeguridad_502ag = cifrador_502ag.EncryptadorReversible_502ag(tBCodigoSeguridad_502ag.Text);
                 string fechaCad_502ag = cifrador_502ag.EncryptadorReversible_502ag(tBFechaCaducidad_502ag.Text);
                 string titular_502ag = cifrador_502ag.EncryptadorReversible_502ag(tBTitular_502ag.Text);
+
+                if (!bllPago_502ag.VerificarTitular_502ag(titular_502ag)) { throw new Exception("Nombre de titular incorrecto"); }
+                if (!bllPago_502ag.VerificarNumero_502ag(numTarjeta_502ag)) throw new Exception("Número de tarjeta inválido, formato correcto XXXX-XXXX-XXXX-XXXX");
+                if (!bllPago_502ag.VerificarCodigo_502ag(codSeguridad_502ag)) throw new Exception("Código de seguridad inválido");
+                if (!bllPago_502ag.VerificarFechaCaducidad_502ag(fechaCad_502ag)) throw new Exception("Fecha de caducidad inválida, formato correcto MM/YY");
+
                 string metodo_502ag = "";
                 if (rBCredito_502ag.Checked)
                 {

@@ -131,6 +131,10 @@ namespace GUI
                 buttonComenzarCarga_502ag.Enabled = false;
                 buttonDetenerCarga_502ag.Enabled = true;
                 rTBDetallesCarga_502ag.Enabled = true;
+                tBCodigo_502ag.Enabled = false;
+                rBMonto_502ag.Enabled = false;
+                rBCantidad_502ag.Enabled = false;
+                tBCodigo_502ag.Enabled = false;
                 if (rBCantidad_502ag.Checked)
                 {
                     cantidadACargar_502ag = decimal.Parse(tBCantidad_502ag.Text);

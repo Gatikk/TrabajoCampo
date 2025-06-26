@@ -113,7 +113,12 @@ namespace GUI
                     string nombre_502ag = tBNombre_502ag.Text;
                     string cantidad_502ag = tBCantidad_502ag.Text;
                     string precio_502ag = tBPrecio_502ag.Text;
-                    if(!bllCombustible_502ag.VerificarDatosIngresadosAlta_502ag(codigo_502ag, nombre_502ag, cantidad_502ag, precio_502ag)) { throw new Exception("Datos ingresados incorrectos"); }
+                    if(nombre_502ag == "") { throw new Exception("El nombre no puede estar en blanco"); }
+                    if (!bllCombustible_502ag.VerificarCodigo_502ag(codigo_502ag)) throw new Exception("Código no válido");
+                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(cantidad_502ag)) throw new Exception("Cantidad ingresada no válida");
+                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(precio_502ag)) throw new Exception("Precio ingresado no válido");
+                    if (!bllCombustible_502ag.VerificarCantidadCombustibleCorrecta_502ag(cantidad_502ag)) throw new Exception("Cantidad igresada incorrecta, recuerde que es entre 1 y 50000 litros"); 
+                    if (!bllCombustible_502ag.VerificarPrecioPorLitroCorrecto_502ag(precio_502ag)) throw new Exception("Precio igresado incorrecto, recuerde que tiene que ser mayor a 0"); 
                     bllCombustible_502ag.AltaCombustible_502ag(codigo_502ag, nombre_502ag, decimal.Parse(cantidad_502ag), decimal.Parse(precio_502ag));
                 }
                 if(opcion_502ag == "Modificar")
@@ -122,7 +127,11 @@ namespace GUI
                     string nombre_502ag = tBNombre_502ag.Text;
                     string cantidad_502ag = tBCantidad_502ag.Text;
                     string precio_502ag = tBPrecio_502ag.Text;
-                    if(!bllCombustible_502ag.VerificarDatosIngresadosModificar_502ag(nombre_502ag, cantidad_502ag, precio_502ag)) { throw new Exception("Datos ingresados incorrectos"); }
+                    if (nombre_502ag == "") { throw new Exception("El nombre no puede estar en blanco"); }
+                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(cantidad_502ag)) throw new Exception("Cantidad ingresada no válida");
+                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(precio_502ag)) throw new Exception("Precio ingresado no válido");
+                    if (!bllCombustible_502ag.VerificarCantidadCombustibleCorrecta_502ag(cantidad_502ag)) throw new Exception("Cantidad igresada incorrecta, recuerde que es entre 1 y 50000 litros");
+                    if (!bllCombustible_502ag.VerificarPrecioPorLitroCorrecto_502ag(precio_502ag)) throw new Exception("Precio igresado incorrecto, recuerde que tiene que ser mayor a 0");
                     bllCombustible_502ag.ModificarCombustible_502ag(combustible_502ag, nombre_502ag, decimal.Parse(cantidad_502ag), decimal.Parse(precio_502ag));
                 }
                 if(opcion_502ag == "Baja")

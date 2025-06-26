@@ -59,7 +59,8 @@ namespace GUI
             MostrarFacturas_502ag(dgvFacturas_502ag, listaFactura_502ag);
             cBOrdenarPor_502ag.SelectedIndex = 0;
             cBFecha_502ag.SelectedIndex = 0;
-            rBASC_502ag.Checked = true;
+            rBDESC_502ag.Checked = true;
+            ActualizarGrilla_502ag();
         }
 
         private void rBASC_502ag_CheckedChanged(object sender, EventArgs e)

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -57,6 +58,30 @@ namespace BLL_502ag
             return esValido_502ag;
         }
         #endregion
+
+        public bool VerificarCodigo_502ag (string codCombustible_502ag)
+        {
+            Regex reCodigo_502ag = new Regex(@"^\d{3}$");
+            if (!reCodigo_502ag.IsMatch(codCombustible_502ag)) return false;
+            return true;
+        }
+        public bool VerificarDecimalFormatoCorrecto_502ag(string decimal_502ag)
+        {
+            Regex reDecimal_502ag = new Regex(@"^\d+(?:[,]\d{1,2})?$");
+            if (!reDecimal_502ag.IsMatch(decimal_502ag)) return false;
+            return true;
+
+        }
+        public bool VerificarCantidadCombustibleCorrecta_502ag(string cantCombustible_502ag) 
+        {
+            if (decimal.Parse(cantCombustible_502ag) < 0 || decimal.Parse(cantCombustible_502ag) > 50000) return false;
+            return true;
+        }
+        public bool VerificarPrecioPorLitroCorrecto_502ag(string precioPorLitro_502ag)
+        {
+            if (decimal.Parse(precioPorLitro_502ag) < 0) return false;
+            return true;
+        }
 
         #region ModificarCombustible
         public void ModificarCombustible_502ag(BE_Combustible_502ag combustible_502ag, string nombre_502ag, decimal cantDisponible_502ag, decimal precioPorLitro_502ag)
