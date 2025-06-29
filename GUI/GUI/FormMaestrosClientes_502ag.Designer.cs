@@ -56,6 +56,7 @@
             this.labelDireccion_502ag = new System.Windows.Forms.Label();
             this.rBTodos_502ag = new System.Windows.Forms.RadioButton();
             this.rBActivos_502ag = new System.Windows.Forms.RadioButton();
+            this.buttonVerInformacion_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -364,11 +365,26 @@
             this.rBActivos_502ag.Text = "Activos";
             this.rBActivos_502ag.UseVisualStyleBackColor = true;
             // 
+            // buttonVerInformacion_502ag
+            // 
+            this.buttonVerInformacion_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonVerInformacion_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonVerInformacion_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVerInformacion_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVerInformacion_502ag.Location = new System.Drawing.Point(640, 12);
+            this.buttonVerInformacion_502ag.Name = "buttonVerInformacion_502ag";
+            this.buttonVerInformacion_502ag.Size = new System.Drawing.Size(132, 39);
+            this.buttonVerInformacion_502ag.TabIndex = 38;
+            this.buttonVerInformacion_502ag.Text = "Ver Información";
+            this.buttonVerInformacion_502ag.UseVisualStyleBackColor = false;
+            this.buttonVerInformacion_502ag.Click += new System.EventHandler(this.buttonVerInformacion_502ag_Click);
+            // 
             // FormMaestrosClientes_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonVerInformacion_502ag);
             this.Controls.Add(this.rBTodos_502ag);
             this.Controls.Add(this.rBActivos_502ag);
             this.Controls.Add(this.labelTelefono_502ag);
@@ -429,5 +445,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaActivo;
         private System.Windows.Forms.RadioButton rBTodos_502ag;
         private System.Windows.Forms.RadioButton rBActivos_502ag;
+        private System.Windows.Forms.Button buttonVerInformacion_502ag;
     }
 }

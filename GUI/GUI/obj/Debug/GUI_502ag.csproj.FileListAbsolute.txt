@@ -30,3 +30,9 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\G
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormCobrarCliente_502ag.resources
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormVerFacturas_502ag.resources
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormPerfiles_502ag.resources
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BLLS_502ag.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BLLS_502ag.pdb
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\itextsharp.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\itextsharp.xml
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BouncyCastle.Cryptography.xml

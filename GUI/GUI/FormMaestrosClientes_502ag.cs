@@ -138,7 +138,7 @@ namespace GUI
                 }
                 if(opcion_502ag == "Modificar")
                 {
-                    BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerCliente_502ag(dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString());
+                    BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString());
                     string email_502ag = tBEmail_502ag.Text;
                     string direccion_502ag = tBDireccion_502ag.Text;
                     string telefono_502ag = tBTelefono_502ag.Text;
@@ -157,7 +157,7 @@ namespace GUI
                 }
                 if(opcion_502ag == "Baja")
                 {
-                    BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerCliente_502ag(dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString());
+                    BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString());
                     bllCliente_502ag.BajaCliente_502ag(cliente_502ag);
                     MessageBox.Show("Usuario dado de baja con éxito");
                 }
@@ -266,6 +266,21 @@ namespace GUI
         private void rBTodos_502ag_CheckedChanged(object sender, EventArgs e)
         {
             Mostrar_502ag(dgvClientes_502ag);
+        }
+
+        private void buttonVerInformacion_502ag_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();
+                if (dgvClientes_502ag.Rows.Count <= 0) throw new Exception("No hay clientes para seleccionar");
+                string dni_502ag = dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString();
+                BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dni_502ag);
+                MessageBox.Show($"DNI: {cliente_502ag.DNI_502ag}\nNombre: {cliente_502ag.Nombre_502ag}\nApellido: {cliente_502ag.Apellido_502ag}\n" +
+                    $"Email: {cliente_502ag.Email_502ag}\nDirección: {cliente_502ag.Direccion_502ag}\nTeléfono: {cliente_502ag.Telefono_502ag}");
+
+            }
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
     }
 }

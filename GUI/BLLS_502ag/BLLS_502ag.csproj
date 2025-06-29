@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BLLS_502ag</RootNamespace>
     <AssemblyName>BLLS_502ag</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,9 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BLLS_Familia_502ag.cs" />
-    <Compile Include="BLLS_Patente_502ag.cs" />
-    <Compile Include="BLLS_Perfil_502ag.cs" />
+    <Compile Include="Permisos_502ag\BLLS_Familia_502ag.cs" />
+    <Compile Include="Permisos_502ag\BLLS_Patente_502ag.cs" />
+    <Compile Include="Permisos_502ag\BLLS_Perfil_502ag.cs" />
     <Compile Include="BLLS_Usuario_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

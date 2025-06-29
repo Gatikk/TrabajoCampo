@@ -1,16 +1,17 @@
-﻿using SE_502ag;
+﻿using BLLS_502ag;
+using Microsoft.VisualBasic;
+using SE_502ag;
+using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SERVICIOS_502ag;
-using Microsoft.VisualBasic;
-using System.Runtime.CompilerServices;
 
 //usuario hardcodeado: nombre: #admin@ contraseña: 123456787654321
 
@@ -29,18 +30,18 @@ namespace GUI
         {
             try
             {
-                SER_Usuario_502ag serGestionUsuario_502ag = new SER_Usuario_502ag();
+                BLLS_Usuario_502ag bllsUsuario_502ag = new BLLS_Usuario_502ag();
                 string nombreUsuario_502ag = textBoxNombreUsuario.Text;
                 string contraseña_502ag = textBoxContraseña.Text;
 
-                SE_Usuario_502ag usuarioALogear_502ag = serGestionUsuario_502ag.ObtenerUsuarioALogear_502ag(nombreUsuario_502ag);
+                SE_Usuario_502ag usuarioALogear_502ag = bllsUsuario_502ag.ObtenerUsuarioALogear_502ag(nombreUsuario_502ag);
                 if (!SER_GestorSesion_502ag.GestorSesion_502ag.EstaLogeado_502ag()) throw new Exception("Ya hay una sesión iniciada");
-                if (!serGestionUsuario_502ag.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag)) throw new Exception("Usuario o contraseña incorrectos");
+                if (!bllsUsuario_502ag.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag)) throw new Exception("Usuario o contraseña incorrectos");
                 if (usuarioALogear_502ag.NombreUsuario_502ag == "#admin@")
                 {
-                    if (serGestionUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag))
+                    if (bllsUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag))
                     {
-                        serGestionUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
+                        bllsUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
                         FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
                         this.Hide();
                         menuForm_502ag.Show();
@@ -52,27 +53,27 @@ namespace GUI
                 }
                 else
                 {         
-                    if (!serGestionUsuario_502ag.VerificarUsuarioBloqueado_502ag(usuarioALogear_502ag)) throw new Exception("El usuario se encuentra bloqueado");
-                    if (!serGestionUsuario_502ag.VerificarUsuarioActivo_502ag(usuarioALogear_502ag)) throw new Exception("El usuario no se encuentra como activo");
-                    if (!serGestionUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag)) 
+                    if (!bllsUsuario_502ag.VerificarUsuarioBloqueado_502ag(usuarioALogear_502ag)) throw new Exception("El usuario se encuentra bloqueado");
+                    if (!bllsUsuario_502ag.VerificarUsuarioActivo_502ag(usuarioALogear_502ag)) throw new Exception("El usuario no se encuentra como activo");
+                    if (!bllsUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag)) 
                     {
-                        if (serGestionUsuario_502ag.VerificarUltimoLogin_502ag(usuarioALogear_502ag))
+                        if (bllsUsuario_502ag.VerificarUltimoLogin_502ag(usuarioALogear_502ag))
                         {
-                            serGestionUsuario_502ag.ReiniciarIntentos_502ag(usuarioALogear_502ag);
+                            bllsUsuario_502ag.ReiniciarIntentos_502ag(usuarioALogear_502ag);
                         }
-                        serGestionUsuario_502ag.SesionFallida_502ag(usuarioALogear_502ag);
+                        bllsUsuario_502ag.SesionFallida_502ag(usuarioALogear_502ag);
                         throw new Exception("Usuario o contraseña incorrectos");
                     }
-                    if (serGestionUsuario_502ag.VerificarContraseñaCambiada_502ag(usuarioALogear_502ag))
+                    if (bllsUsuario_502ag.VerificarContraseñaCambiada_502ag(usuarioALogear_502ag))
                     {
-                        serGestionUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
+                        bllsUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
                         FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
                         this.Hide();
                         menuForm_502ag.Show();
                     }
                     else
                     {
-                        serGestionUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
+                        bllsUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
                         FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
                         FormCambiarContraseña_502ag cambiarContraseñaForm_502ag = new FormCambiarContraseña_502ag(menuForm_502ag);
                         this.Hide();

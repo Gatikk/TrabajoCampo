@@ -1,5 +1,6 @@
 ﻿using SERVICIOS_502ag;
 using SE_502ag;
+using BLLS_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +12,6 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using SERVICIOS;
 
 
 namespace GUI
@@ -49,11 +49,11 @@ namespace GUI
         }
         public void Mostrar_502ag(DataGridView dgv_502ag)
         {
-            SER_Usuario_502ag serGestionUsuario_502ag = new SER_Usuario_502ag();
+            BLLS_Usuario_502ag bllsUsuario_502ag = new BLLS_Usuario_502ag();
             dgv_502ag.Rows.Clear();
             if (rBActivos_502ag.Checked)
             {
-                foreach(SE_Usuario_502ag usuario_502ag in serGestionUsuario_502ag.ObtenerListaUsuarios_502ag().Where(x => x.isActivo_502ag == true))
+                foreach(SE_Usuario_502ag usuario_502ag in bllsUsuario_502ag.ObtenerListaUsuarios_502ag().Where(x => x.isActivo_502ag == true))
                 {
                     dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
                     
@@ -61,7 +61,7 @@ namespace GUI
             }
             if (rBTodos_502ag.Checked)
             {
-                foreach (SE_Usuario_502ag usuario_502ag in serGestionUsuario_502ag.ObtenerListaUsuarios_502ag())
+                foreach (SE_Usuario_502ag usuario_502ag in bllsUsuario_502ag.ObtenerListaUsuarios_502ag())
                 {
                     dgv_502ag.Rows.Add(usuario_502ag.NombreUsuario_502ag, usuario_502ag.Rol_502ag, usuario_502ag.Nombre_502ag, usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag, usuario_502ag.Email_502ag, usuario_502ag.isBloqueado_502ag, usuario_502ag.isActivo_502ag);
                 }
@@ -169,14 +169,14 @@ namespace GUI
         {
             try
             {
-                SER_Usuario_502ag serGestionUsuario_502ag = new SER_Usuario_502ag();
-                if(opcion_502ag == "Alta")
+                BLLS_Usuario_502ag bllsUsuario_502ag = new BLLS_Usuario_502ag();
+                if (opcion_502ag == "Alta")
                 {
-                    if (!serGestionUsuario_502ag.VerificarAltaUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
-                    if (!serGestionUsuario_502ag.VerificarExistenciaDNIUsuario_502ag(tBDNI_502ag.Text)) throw new Exception("DNI ya existe");
-                    if (!serGestionUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Email ya existe");
+                    if (!bllsUsuario_502ag.VerificarAltaUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
+                    if (!bllsUsuario_502ag.VerificarExistenciaDNIUsuario_502ag(tBDNI_502ag.Text)) throw new Exception("DNI ya existe");
+                    if (!bllsUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Email ya existe");
                     if (cBRol_502ag.Text == "") { throw new Exception("Debes ingresar un rol"); }
-                    serGestionUsuario_502ag.AltaUsuario_502ag(cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text);
+                    bllsUsuario_502ag.AltaUsuario_502ag(cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text);
                     Mostrar_502ag(dgvUsuarios_502ag);
                     tBDNI_502ag.Clear();
                     tBApellido_502ag.Clear();
@@ -186,15 +186,15 @@ namespace GUI
                 if(opcion_502ag == "Modificar")
                 {
                     string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
-                    SE_Usuario_502ag usuario_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
-                    if (!serGestionUsuario_502ag.VerificarModificarUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
+                    SE_Usuario_502ag usuario_502ag = bllsUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
+                    if (!bllsUsuario_502ag.VerificarModificarUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
                     if(tBEmail_502ag.Text != usuario_502ag.Email_502ag)
                     {
-                        if (!serGestionUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Email ya existe");
+                        if (!bllsUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Email ya existe");
                     }
                     if (cBRol_502ag.Text == "") { throw new Exception("Debes ingresar un rol"); }
                     DialogResult dResult_502ag = MessageBox.Show($"¿Modificar a @{usuario_502ag.NombreUsuario_502ag}?", "Confirmar Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dResult_502ag == DialogResult.Yes) serGestionUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, cBRol_502ag.Text, tBEmail_502ag.Text);
+                    if (dResult_502ag == DialogResult.Yes) bllsUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, cBRol_502ag.Text, tBEmail_502ag.Text);
                     Mostrar_502ag(dgvUsuarios_502ag);
                     tBApellido_502ag.Clear();
                     tBNombre_502ag.Clear();
@@ -205,16 +205,16 @@ namespace GUI
                 {
                     if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception("No hay nada para desbloquear");
                     string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
-                    SE_Usuario_502ag usuarioADesbloquear_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
-                    serGestionUsuario_502ag.Desbloquear_502ag(usuarioADesbloquear_502ag);
+                    SE_Usuario_502ag usuarioADesbloquear_502ag = bllsUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
+                    bllsUsuario_502ag.Desbloquear_502ag(usuarioADesbloquear_502ag);
 
                     Mostrar_502ag(dgvUsuarios_502ag);
                 }
                 if(opcion_502ag == "Bloquear")
                 {
                     if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception("No hay nada para bloquear");
-                    SE_Usuario_502ag usuarioABloquear = serGestionUsuario_502ag.ObtenerUsuario_502ag(dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString());
-                    serGestionUsuario_502ag.BloquearUsuario_502ag(usuarioABloquear);
+                    SE_Usuario_502ag usuarioABloquear = bllsUsuario_502ag.ObtenerUsuario_502ag(dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString());
+                    bllsUsuario_502ag.BloquearUsuario_502ag(usuarioABloquear);
                     Mostrar_502ag(dgvUsuarios_502ag);
                 }
                 opcion_502ag = "Consulta";
@@ -270,10 +270,10 @@ namespace GUI
         {
             try
             {
-                SER_Usuario_502ag serGestionUsuario_502ag = new SER_Usuario_502ag();
+                BLLS_Usuario_502ag bllsUsuario_502ag = new BLLS_Usuario_502ag();
                 string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
-                SE_Usuario_502ag usuario_502ag = serGestionUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);    
-                serGestionUsuario_502ag.ActivarDesactivar_502ag(usuario_502ag);
+                SE_Usuario_502ag usuario_502ag = bllsUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);    
+                bllsUsuario_502ag.ActivarDesactivar_502ag(usuario_502ag);
                 Mostrar_502ag(dgvUsuarios_502ag);          
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
@@ -355,11 +355,11 @@ namespace GUI
         {
             try
             {
-                SER_Perfil_502ag serPerfil_502ag = new SER_Perfil_502ag();
+                BLLS_Perfil_502ag bllsPerfil_502ag = new BLLS_Perfil_502ag();
                 cBRol_502ag.Items.Clear();
-                if(serPerfil_502ag.ObtenerListaPerfiles_502ag().Count > 0)
+                if(bllsPerfil_502ag.ObtenerListaPerfiles_502ag().Count > 0)
                 {
-                    foreach (SE_Familia_502ag familia_502ag in serPerfil_502ag.ObtenerListaPerfiles_502ag())
+                    foreach (SE_Familia_502ag familia_502ag in bllsPerfil_502ag.ObtenerListaPerfiles_502ag())
                     {
                         cBRol_502ag.Items.Add(familia_502ag.Nombre_502ag);
                     }

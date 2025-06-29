@@ -13,3 +13,7 @@ C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\D
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\SERVICIOS.pdb
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\SE_502ag.pdb
 C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.csproj.Up2Date
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\itextsharp.dll
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\agust\OneDrive\Escritorio\TrabajoCampo\TrabajoCampo\GUI\BLL_502ag\bin\Debug\itextsharp.xml

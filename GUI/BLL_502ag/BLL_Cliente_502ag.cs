@@ -34,18 +34,27 @@ namespace BLL_502ag
             return null;
             
         }
+        public BE_Cliente_502ag ObtenerClienteMaestros_502ag(string dni_502ag)
+        {
+            DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+            BE_Cliente_502ag cliente_502ag = dalCliente_502ag.ObtenerCliente_502ag(dni_502ag);
+            if (cliente_502ag != null)
+            {
+                cliente_502ag.Email_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Email_502ag);
+                cliente_502ag.Direccion_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Direccion_502ag);
+                cliente_502ag.Telefono_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Telefono_502ag);
+                return cliente_502ag;
+            }
+            return null;
+
+        }
 
         public List<BE_Cliente_502ag> ObtenerListaClientes_502ag()
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
             Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
             List<BE_Cliente_502ag> listaClientes_502ag = dalCliente_502ag.ObtenerListaClientes_502ag();
-            foreach (BE_Cliente_502ag cliente_502ag in listaClientes_502ag)
-            {
-                cliente_502ag.Email_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Email_502ag);
-                cliente_502ag.Direccion_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Direccion_502ag);
-                cliente_502ag.Telefono_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Telefono_502ag);
-            }
             return listaClientes_502ag;
         }
 

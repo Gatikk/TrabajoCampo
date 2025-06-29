@@ -9,21 +9,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SE_502ag;
+using BLLS_502ag;
 
 namespace GUI
 {
     public partial class FormCambiarContraseña_502ag : Form
     {
-        SER_Usuario_502ag serGestionUsuario_502ag;
-        Encryptador_502ag cifrador_502ag;
+        BLLS_Usuario_502ag bllsUsuario_502ag;
         FormMenu_502ag menu_502ag;
         public FormCambiarContraseña_502ag(FormMenu_502ag menuOriginal_502ag)
         {
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
             InitializeComponent();
-            serGestionUsuario_502ag = new SER_Usuario_502ag();
-            cifrador_502ag = new Encryptador_502ag();
+            bllsUsuario_502ag = new BLLS_Usuario_502ag();
             buttonCambiarContraseña_502ag.Enabled = false;
             menu_502ag = menuOriginal_502ag;
             VerificarUsuarioContraseñaCambiada_502ag();
@@ -63,21 +62,21 @@ namespace GUI
                 string contraseñaActual_502ag = textBoxContraseñaActual_502ag.Text;
                 string contraseña_502ag = textBoxContraseña_502ag.Text;
                 string confirmarContraseña_502ag = textBoxContraseñaConfirmar_502ag.Text;
-                if(serGestionUsuario_502ag.VerificarCoincidencia_502ag(contraseña_502ag, confirmarContraseña_502ag))
+                if(bllsUsuario_502ag.VerificarCoincidencia_502ag(contraseña_502ag, confirmarContraseña_502ag))
                 {
                     SE_Usuario_502ag usuario_502ag = SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag;
 
-                    if (!serGestionUsuario_502ag.CompararContraseñaActualTextBox_502ag(contraseñaActual_502ag, usuario_502ag))
+                    if (!bllsUsuario_502ag.CompararContraseñaActualTextBox_502ag(contraseñaActual_502ag, usuario_502ag))
                     {
                         textBoxContraseña_502ag.Clear();
                         textBoxContraseñaConfirmar_502ag.Clear();
                         textBoxContraseñaActual_502ag.Clear();
                         throw new Exception("No es tu contraseña actual");
                     }
-                    if(!serGestionUsuario_502ag.VerificarContraseñaActual_502ag(contraseña_502ag, usuario_502ag))
+                    if(!bllsUsuario_502ag.VerificarContraseñaActual_502ag(contraseña_502ag, usuario_502ag))
                     {
 
-                        serGestionUsuario_502ag.CambiarContraseña_502ag(contraseña_502ag, usuario_502ag);
+                        bllsUsuario_502ag.CambiarContraseña_502ag(contraseña_502ag, usuario_502ag);
                         SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion_502ag();
                         MessageBox.Show("Contraseña cambiada con éxito, se cerrará la sesión");
                         FormLogin_502ag loginForm_502ag = new FormLogin_502ag();

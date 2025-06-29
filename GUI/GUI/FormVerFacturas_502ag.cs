@@ -152,6 +152,10 @@ namespace GUI
         {
             try
             {
+                BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
+                if (dgvFacturas_502ag.Rows.Count <= 0) throw new Exception("No hay nada para imprimir");
+                BE_Factura_502ag factura_502ag = bllFactura_502ag.ObtenerFactura_502ag(int.Parse(dgvFacturas_502ag.SelectedRows[0].Cells[0].Value.ToString()));
+                bllFactura_502ag.GenerarFactura_502ag(factura_502ag);
                 MessageBox.Show("Factura imprimida");
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
