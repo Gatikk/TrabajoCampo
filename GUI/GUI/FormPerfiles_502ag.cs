@@ -9,18 +9,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SERVICIOS_502ag;
 
 namespace GUI
 {
-    public partial class FormPerfiles_502ag : Form
+    public partial class FormPerfiles_502ag : Form, IObserver_502ag
     {
         FormMenu_502ag menu_502ag;
         public string opcion_502ag = "Consulta";
         public FormPerfiles_502ag(FormMenu_502ag formMenu_502ag)
         {
-            InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
+            InitializeComponent();
+            //SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             MostrarPermisos_502ag(cLBPermisos_502ag);
             MostrarFamilias_502ag();
             MostrarPerfiles_502ag();
@@ -614,6 +616,11 @@ namespace GUI
         private void rBFamilia_502ag_CheckedChanged(object sender, EventArgs e)
         {
             ActualizarComboBoxSegunOpcion_502ag();
+        }
+
+        public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
+        {
+            throw new NotImplementedException();
         }
     }
 }

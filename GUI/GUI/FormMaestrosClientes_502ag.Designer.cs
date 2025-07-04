@@ -136,7 +136,7 @@
             this.buttonModificarCliente_502ag.FlatAppearance.BorderSize = 0;
             this.buttonModificarCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonModificarCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonModificarCliente_502ag.Location = new System.Drawing.Point(12, 326);
+            this.buttonModificarCliente_502ag.Location = new System.Drawing.Point(12, 338);
             this.buttonModificarCliente_502ag.Name = "buttonModificarCliente_502ag";
             this.buttonModificarCliente_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonModificarCliente_502ag.TabIndex = 2;
@@ -164,7 +164,7 @@
             this.buttonBajaCliente_502ag.FlatAppearance.BorderSize = 0;
             this.buttonBajaCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonBajaCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBajaCliente_502ag.Location = new System.Drawing.Point(12, 379);
+            this.buttonBajaCliente_502ag.Location = new System.Drawing.Point(12, 406);
             this.buttonBajaCliente_502ag.Name = "buttonBajaCliente_502ag";
             this.buttonBajaCliente_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonBajaCliente_502ag.TabIndex = 3;
@@ -178,7 +178,7 @@
             this.buttonCancelar_502ag.FlatAppearance.BorderSize = 0;
             this.buttonCancelar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancelar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCancelar_502ag.Location = new System.Drawing.Point(640, 326);
+            this.buttonCancelar_502ag.Location = new System.Drawing.Point(640, 338);
             this.buttonCancelar_502ag.Name = "buttonCancelar_502ag";
             this.buttonCancelar_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonCancelar_502ag.TabIndex = 11;
@@ -206,7 +206,7 @@
             this.buttonVolverAlMenu_502ag.FlatAppearance.BorderSize = 0;
             this.buttonVolverAlMenu_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVolverAlMenu_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVolverAlMenu_502ag.Location = new System.Drawing.Point(640, 379);
+            this.buttonVolverAlMenu_502ag.Location = new System.Drawing.Point(640, 406);
             this.buttonVolverAlMenu_502ag.Name = "buttonVolverAlMenu_502ag";
             this.buttonVolverAlMenu_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonVolverAlMenu_502ag.TabIndex = 12;
@@ -408,6 +408,7 @@
             this.Controls.Add(this.dgvClientes_502ag);
             this.Name = "FormMaestrosClientes_502ag";
             this.Text = "FormMaestrosClientes_502ag";
+            this.Activated += new System.EventHandler(this.FormMaestrosClientes_502ag_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMaestrosClientes_502ag_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes_502ag)).EndInit();
             this.ResumeLayout(false);

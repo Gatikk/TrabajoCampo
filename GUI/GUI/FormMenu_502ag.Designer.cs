@@ -30,8 +30,8 @@ namespace GUI
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCerrarSesion = new System.Windows.Forms.Button();
-            this.labelBienvenida = new System.Windows.Forms.Label();
+            this.buttonCerrarSesion_502ag = new System.Windows.Forms.Button();
+            this.labelBienvenida_502ag = new System.Windows.Forms.Label();
             this.buttonABM_502ag = new System.Windows.Forms.Button();
             this.buttonCambiarContraseña_502ag = new System.Windows.Forms.Button();
             this.panelMenuLateral_502ag = new System.Windows.Forms.FlowLayoutPanel();
@@ -67,32 +67,32 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonCerrarSesion
+            // buttonCerrarSesion_502ag
             // 
-            this.buttonCerrarSesion.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.buttonCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCerrarSesion.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonCerrarSesion.Location = new System.Drawing.Point(0, 0);
-            this.buttonCerrarSesion.Name = "buttonCerrarSesion";
-            this.buttonCerrarSesion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonCerrarSesion.Size = new System.Drawing.Size(222, 41);
-            this.buttonCerrarSesion.TabIndex = 6;
-            this.buttonCerrarSesion.Text = "Cerrar Sesión";
-            this.buttonCerrarSesion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCerrarSesion.UseVisualStyleBackColor = true;
-            this.buttonCerrarSesion.Click += new System.EventHandler(this.buttonCerrarSesion_Click);
+            this.buttonCerrarSesion_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCerrarSesion_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonCerrarSesion_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCerrarSesion_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCerrarSesion_502ag.Location = new System.Drawing.Point(0, 0);
+            this.buttonCerrarSesion_502ag.Name = "buttonCerrarSesion_502ag";
+            this.buttonCerrarSesion_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCerrarSesion_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonCerrarSesion_502ag.TabIndex = 6;
+            this.buttonCerrarSesion_502ag.Text = "Cerrar Sesión";
+            this.buttonCerrarSesion_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCerrarSesion_502ag.UseVisualStyleBackColor = true;
+            this.buttonCerrarSesion_502ag.Click += new System.EventHandler(this.buttonCerrarSesion_Click);
             // 
-            // labelBienvenida
+            // labelBienvenida_502ag
             // 
-            this.labelBienvenida.AutoSize = true;
-            this.labelBienvenida.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.labelBienvenida.Location = new System.Drawing.Point(253, 173);
-            this.labelBienvenida.Name = "labelBienvenida";
-            this.labelBienvenida.Size = new System.Drawing.Size(129, 24);
-            this.labelBienvenida.TabIndex = 3;
-            this.labelBienvenida.Text = "Bienvenido @";
-            this.labelBienvenida.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelBienvenida_502ag.AutoSize = true;
+            this.labelBienvenida_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.labelBienvenida_502ag.Location = new System.Drawing.Point(253, 173);
+            this.labelBienvenida_502ag.Name = "labelBienvenida_502ag";
+            this.labelBienvenida_502ag.Size = new System.Drawing.Size(129, 24);
+            this.labelBienvenida_502ag.TabIndex = 3;
+            this.labelBienvenida_502ag.Text = "Bienvenido @";
+            this.labelBienvenida_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonABM_502ag
             // 
@@ -169,7 +169,7 @@ namespace GUI
             this.buttonAdmin_502ag.Name = "buttonAdmin_502ag";
             this.buttonAdmin_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonAdmin_502ag.TabIndex = 1;
-            this.buttonAdmin_502ag.Text = "Admin";
+            this.buttonAdmin_502ag.Text = "Admin_T";
             this.buttonAdmin_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAdmin_502ag.UseVisualStyleBackColor = false;
             this.buttonAdmin_502ag.Click += new System.EventHandler(this.buttonAdmin_502ag_Click);
@@ -222,7 +222,7 @@ namespace GUI
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarIdioma_502ag);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCambiarContraseña_502ag);
             this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonIniciarSesion_502ag);
-            this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCerrarSesion);
+            this.panelSubMenuUsuario_502ag.Controls.Add(this.buttonCerrarSesion_502ag);
             this.panelSubMenuUsuario_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuUsuario_502ag.Location = new System.Drawing.Point(3, 271);
             this.panelSubMenuUsuario_502ag.Name = "panelSubMenuUsuario_502ag";
@@ -244,6 +244,7 @@ namespace GUI
             this.buttonCambiarIdioma_502ag.Text = "Cambiar Idioma";
             this.buttonCambiarIdioma_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCambiarIdioma_502ag.UseVisualStyleBackColor = false;
+            this.buttonCambiarIdioma_502ag.Click += new System.EventHandler(this.buttonCambiarIdioma_502ag_Click);
             // 
             // buttonIniciarSesion_502ag
             // 
@@ -479,10 +480,11 @@ namespace GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.labelBienvenida);
+            this.Controls.Add(this.labelBienvenida_502ag);
             this.Controls.Add(this.panelMenuLateral_502ag);
             this.Name = "FormMenu_502ag";
             this.Text = "FormMenu";
+            this.Activated += new System.EventHandler(this.FormMenu_502ag_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMenu_FormClosed);
             this.panelMenuLateral_502ag.ResumeLayout(false);
             this.panelSubMenuAdmin_502ag.ResumeLayout(false);
@@ -500,8 +502,8 @@ namespace GUI
 
         #endregion
 
-        private System.Windows.Forms.Button buttonCerrarSesion;
-        private System.Windows.Forms.Label labelBienvenida;
+        private System.Windows.Forms.Button buttonCerrarSesion_502ag;
+        private System.Windows.Forms.Label labelBienvenida_502ag;
         private System.Windows.Forms.Button buttonABM_502ag;
         private System.Windows.Forms.Button buttonCambiarContraseña_502ag;
         private System.Windows.Forms.FlowLayoutPanel panelMenuLateral_502ag;

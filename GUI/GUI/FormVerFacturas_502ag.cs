@@ -1,5 +1,6 @@
 ﻿using BE_502ag;
 using BLL_502ag;
+using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,27 +8,31 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormVerFacturas_502ag : Form
+    public partial class FormVerFacturas_502ag : Form, IObserver_502ag
     {
         FormMenu_502ag menu_502ag;
         List<BE_Factura_502ag> listaFactura_502ag;
+        private string msgNadaQueImprimir_502ag, msgFacturaImprimida_502ag;
+        private string msgCBCodigo_502ag, msgCBCombustible_502ag, msgCBMonto_502ag, msgCBCantidadCargada_502ag;
+        private string msgCBTodos_502ag, msgCBUltimaSemana_502ag, msgCBHoy_502ag;
+
         public FormVerFacturas_502ag(FormMenu_502ag formMenu_502ag)
         {
             BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
             InitializeComponent();
+            SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             menu_502ag = formMenu_502ag;
             listaFactura_502ag = bllFactura_502ag.ObtenerListaFacturas_502ag();
             MostrarFacturas_502ag(dgvFacturas_502ag, listaFactura_502ag);
-            cBOrdenarPor_502ag.SelectedIndex = 0;
             cBOrdenarPor_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
-            cBFecha_502ag.SelectedIndex = 0;
             cBFecha_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
@@ -52,13 +57,35 @@ namespace GUI
             }
         }
 
+        private void AgregarElementosACBOrdenarPor_502ag()
+        {
+            cBOrdenarPor_502ag.Items.Clear();
+            cBOrdenarPor_502ag.Items.Add(msgCBCodigo_502ag);
+            cBOrdenarPor_502ag.Items.Add(msgCBCombustible_502ag);
+            cBOrdenarPor_502ag.Items.Add(msgCBMonto_502ag);
+            cBOrdenarPor_502ag.Items.Add(msgCBCantidadCargada_502ag);
+        }
+
+        private void AgregarElementosACBFiltrarPor_502ag()
+        {
+            cBFecha_502ag.Items.Clear();
+            cBFecha_502ag.Items.Add(msgCBTodos_502ag);
+            cBFecha_502ag.Items.Add(msgCBUltimaSemana_502ag);
+            cBFecha_502ag.Items.Add(msgCBHoy_502ag);
+        }
         private void FormVerFacturas_502ag_Activated(object sender, EventArgs e)
         {
+
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag();
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
+            AgregarElementosACBOrdenarPor_502ag();
+            AgregarElementosACBFiltrarPor_502ag();
+            cBOrdenarPor_502ag.SelectedIndex = 0;
+            cBFecha_502ag.SelectedIndex = 0;
             BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
             listaFactura_502ag = bllFactura_502ag.ObtenerListaFacturas_502ag();
             MostrarFacturas_502ag(dgvFacturas_502ag, listaFactura_502ag);
-            cBOrdenarPor_502ag.SelectedIndex = 0;
-            cBFecha_502ag.SelectedIndex = 0;
+            
             rBDESC_502ag.Checked = true;
             ActualizarGrilla_502ag();
         }
@@ -153,12 +180,49 @@ namespace GUI
             try
             {
                 BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
-                if (dgvFacturas_502ag.Rows.Count <= 0) throw new Exception("No hay nada para imprimir");
+                if (dgvFacturas_502ag.Rows.Count <= 0) throw new Exception(msgNadaQueImprimir_502ag);
                 BE_Factura_502ag factura_502ag = bllFactura_502ag.ObtenerFactura_502ag(int.Parse(dgvFacturas_502ag.SelectedRows[0].Cells[0].Value.ToString()));
                 bllFactura_502ag.GenerarFactura_502ag(factura_502ag);
-                MessageBox.Show("Factura imprimida");
+                MessageBox.Show(msgFacturaImprimida_502ag);
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
+        {
+            TraducirControles_502ag(this, traductor_502ag);
+        }
+
+        private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
+        {
+            foreach (Control c_502ag in control_502ag.Controls)
+            {
+                c_502ag.Text = traductor_502ag.Traducir_502ag(c_502ag.Name);
+
+                if (control_502ag.HasChildren)
+                {
+                    TraducirControles_502ag(c_502ag, traductor_502ag);
+                }
+                if (c_502ag is DataGridView)
+                {
+                    DataGridView dgv_502ag = c_502ag as DataGridView;
+                    foreach (DataGridViewColumn col_502ag in dgv_502ag.Columns)
+                    {
+                        col_502ag.HeaderText = traductor_502ag.Traducir_502ag(col_502ag.Name);
+                    }
+                }
+            }
+            msgNadaQueImprimir_502ag = traductor_502ag.Traducir_502ag("msgNadaQueImprimir_502ag");
+            msgFacturaImprimida_502ag = traductor_502ag.Traducir_502ag("msgFacturaImprimida_502ag");
+            msgCBCodigo_502ag = traductor_502ag.Traducir_502ag("msgCBCodigo_502ag");
+            msgCBCombustible_502ag = traductor_502ag.Traducir_502ag("msgCBCombustible_502ag");
+            msgCBMonto_502ag = traductor_502ag.Traducir_502ag("msgCBMonto_502ag");
+            msgCBCantidadCargada_502ag = traductor_502ag.Traducir_502ag("msgCBCantidadCargada_502ag");
+            msgCBTodos_502ag = traductor_502ag.Traducir_502ag("msgCBTodos_502ag");
+            msgCBUltimaSemana_502ag = traductor_502ag.Traducir_502ag("msgCBUltimaSemana_502ag");
+            msgCBHoy_502ag = traductor_502ag.Traducir_502ag("msgCBHoy_502ag");
+
+
         }
     }
 }

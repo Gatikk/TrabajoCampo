@@ -52,9 +52,9 @@
             this.labelApellido_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.labelApellido_502ag.Location = new System.Drawing.Point(11, 73);
             this.labelApellido_502ag.Name = "labelApellido_502ag";
-            this.labelApellido_502ag.Size = new System.Drawing.Size(58, 17);
+            this.labelApellido_502ag.Size = new System.Drawing.Size(75, 17);
             this.labelApellido_502ag.TabIndex = 77;
-            this.labelApellido_502ag.Text = "Apellido";
+            this.labelApellido_502ag.Text = "Apellido_T";
             // 
             // labelNombre_502ag
             // 

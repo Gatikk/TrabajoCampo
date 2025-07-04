@@ -16,19 +16,23 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormABMUsuario_502ag : Form
+    public partial class FormABMUsuario_502ag : Form, IObserver_502ag
     {
         FormMenu_502ag menu_502ag;
         public string opcion_502ag = "Consulta";
+        //strings modos
+        private string modoConsulta_502ag, modoAlta_502ag, modoModificar_502ag, modoDesbloquear_502ag;
+        //strings excepciones
+        private string nadaQueModificar_502ag, nadaQueDesbloquear_502ag, datosIncorrectos_502ag, dniExiste_502ag, emailExiste_502ag, debeIngresarRol_502ag;
+        private string modificarA_502ag, confirmarModificacion_502ag;
         public FormABMUsuario_502ag(FormMenu_502ag menuOriginal_502ag)
         {
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
             InitializeComponent();
-            Mostrar_502ag(dgvUsuarios_502ag);
-            
+            SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
+            Mostrar_502ag(dgvUsuarios_502ag);    
             cBRol_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
-            tBModoActual_502ag.Text = "Modo Consulta";
             buttonAplicar_502ag.Enabled = false;
             buttonCancelar_502ag.Enabled = false;
             tBNombre_502ag.Enabled = false;
@@ -36,7 +40,9 @@ namespace GUI
             tBDNI_502ag.Enabled = false;
             tBEmail_502ag.Enabled = false;
             cBRol_502ag.Enabled =false;
-            menu_502ag = menuOriginal_502ag;      
+            menu_502ag = menuOriginal_502ag;
+            tBModoActual_502ag.Text = modoConsulta_502ag;
+            
         }
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
@@ -73,13 +79,12 @@ namespace GUI
             try
             {
                 opcion_502ag = "Alta";
-                tBModoActual_502ag.Text = "Modo Alta";
+                tBModoActual_502ag.Text = modoAlta_502ag;
                 buttonAplicar_502ag.Enabled = true;
                 buttonCancelar_502ag.Enabled = true;
                 buttonAltaUsuario_502ag.Enabled = false;
                 buttonModificarUsuario_502ag.Enabled = false;
-                buttonDesbloquear_502ag.Enabled = false;
-                buttonBloquear_502ag.Enabled = false;
+                buttonDesbloquearUsuario_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonActivarDesactivar_502ag.Enabled = false;
                 tBNombre_502ag.Enabled = true;
@@ -94,15 +99,14 @@ namespace GUI
         {
             try
             {
-                if (dgvUsuarios_502ag.Rows.Count <= 0){ throw new Exception("No hay nada que modificar"); }
+                if (dgvUsuarios_502ag.Rows.Count <= 0){ throw new Exception(nadaQueModificar_502ag); }
                 opcion_502ag = "Modificar";
-                tBModoActual_502ag.Text = "Modo Modificar";
+                tBModoActual_502ag.Text = modoModificar_502ag;
                 buttonAplicar_502ag.Enabled = true;
                 buttonCancelar_502ag.Enabled = true;
                 buttonAltaUsuario_502ag.Enabled = false;
                 buttonModificarUsuario_502ag.Enabled = false;
-                buttonDesbloquear_502ag.Enabled = false;
-                buttonBloquear_502ag.Enabled = false;
+                buttonDesbloquearUsuario_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonActivarDesactivar_502ag.Enabled = false;
                 tBEmail_502ag.Enabled = true;
@@ -121,43 +125,26 @@ namespace GUI
                 }
                 else
                 {
-                    throw new Exception("No hay nada que modificar");
+                    throw new Exception(nadaQueModificar_502ag);
                 }
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}");}
         }
         #endregion
-        private void buttonBloquear_502ag_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (dgvUsuarios_502ag.Rows.Count <= 0) { throw new Exception("No hay nada que bloquear"); }
-                opcion_502ag = "Bloquear";
-                tBModoActual_502ag.Text = "Modo Bloquear";
-                buttonAplicar_502ag.Enabled = true;
-                buttonCancelar_502ag.Enabled = true;
-                buttonAltaUsuario_502ag.Enabled = false;
-                buttonModificarUsuario_502ag.Enabled = false;
-                buttonDesbloquear_502ag.Enabled = false;
-                buttonBloquear_502ag.Enabled = false;
-                buttonVolverAlMenu_502ag.Enabled = false;
-                buttonActivarDesactivar_502ag.Enabled = false;
-            }
-            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
-        }
+        
         private void buttonDesbloquear_502ag_Click(object sender, EventArgs e)
         {
             try
             {
-                if (dgvUsuarios_502ag.Rows.Count <= 0) { throw new Exception("No hay nada que desbloquear"); }
+                if (dgvUsuarios_502ag.Rows.Count <= 0) { throw new Exception(nadaQueDesbloquear_502ag); }
                 opcion_502ag = "Desbloquear";
-                tBModoActual_502ag.Text = "Modo Desbloquear";
+                tBModoActual_502ag.Text = modoDesbloquear_502ag;
                 buttonAplicar_502ag.Enabled = false;
                 buttonCancelar_502ag.Enabled = true;
                 buttonAltaUsuario_502ag.Enabled = false;
                 buttonModificarUsuario_502ag.Enabled = false;
-                buttonDesbloquear_502ag.Enabled = false;
-                buttonBloquear_502ag.Enabled = false;
+                buttonDesbloquearUsuario_502ag.Enabled = false;
+                buttonDesbloquearUsuario_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonActivarDesactivar_502ag.Enabled = false;
                 if (Convert.ToBoolean(dgvUsuarios_502ag.SelectedRows[0].Cells[6].Value.ToString()) == true) { buttonAplicar_502ag.Enabled = true; }
@@ -172,10 +159,10 @@ namespace GUI
                 BLLS_Usuario_502ag bllsUsuario_502ag = new BLLS_Usuario_502ag();
                 if (opcion_502ag == "Alta")
                 {
-                    if (!bllsUsuario_502ag.VerificarAltaUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
-                    if (!bllsUsuario_502ag.VerificarExistenciaDNIUsuario_502ag(tBDNI_502ag.Text)) throw new Exception("DNI ya existe");
-                    if (!bllsUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Email ya existe");
-                    if (cBRol_502ag.Text == "") { throw new Exception("Debes ingresar un rol"); }
+                    if (!bllsUsuario_502ag.VerificarAltaUsuario_502ag(tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text)) throw new Exception(datosIncorrectos_502ag);
+                    if (!bllsUsuario_502ag.VerificarExistenciaDNIUsuario_502ag(tBDNI_502ag.Text)) throw new Exception(dniExiste_502ag);
+                    if (!bllsUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception(emailExiste_502ag);
+                    if (cBRol_502ag.Text == "") { throw new Exception(debeIngresarRol_502ag); }
                     bllsUsuario_502ag.AltaUsuario_502ag(cBRol_502ag.Text, tBNombre_502ag.Text, tBApellido_502ag.Text, tBDNI_502ag.Text, tBEmail_502ag.Text);
                     Mostrar_502ag(dgvUsuarios_502ag);
                     tBDNI_502ag.Clear();
@@ -187,13 +174,14 @@ namespace GUI
                 {
                     string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
                     SE_Usuario_502ag usuario_502ag = bllsUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
-                    if (!bllsUsuario_502ag.VerificarModificarUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Dato/s ingresados incorrectos");
+                    if (!bllsUsuario_502ag.VerificarModificarUsuario_502ag(tBEmail_502ag.Text)) throw new Exception(datosIncorrectos_502ag);
                     if(tBEmail_502ag.Text != usuario_502ag.Email_502ag)
                     {
-                        if (!bllsUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception("Email ya existe");
+                        if (!bllsUsuario_502ag.VerificarExistenciaEmailUsuario_502ag(tBEmail_502ag.Text)) throw new Exception(emailExiste_502ag);
                     }
-                    if (cBRol_502ag.Text == "") { throw new Exception("Debes ingresar un rol"); }
-                    DialogResult dResult_502ag = MessageBox.Show($"¿Modificar a @{usuario_502ag.NombreUsuario_502ag}?", "Confirmar Modificación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (cBRol_502ag.Text == "") { throw new Exception(debeIngresarRol_502ag); }
+                    modificarA_502ag = modificarA_502ag.Replace("{usuario_502ag.NombreUsuario_502ag}", $"{usuario_502ag.NombreUsuario_502ag}");
+                    DialogResult dResult_502ag = MessageBox.Show(modificarA_502ag, confirmarModificacion_502ag, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dResult_502ag == DialogResult.Yes) bllsUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, cBRol_502ag.Text, tBEmail_502ag.Text);
                     Mostrar_502ag(dgvUsuarios_502ag);
                     tBApellido_502ag.Clear();
@@ -203,28 +191,20 @@ namespace GUI
                 }
                 if(opcion_502ag == "Desbloquear")
                 {
-                    if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception("No hay nada para desbloquear");
+                    if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception(nadaQueDesbloquear_502ag);
                     string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
                     SE_Usuario_502ag usuarioADesbloquear_502ag = bllsUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
                     bllsUsuario_502ag.Desbloquear_502ag(usuarioADesbloquear_502ag);
 
                     Mostrar_502ag(dgvUsuarios_502ag);
                 }
-                if(opcion_502ag == "Bloquear")
-                {
-                    if (dgvUsuarios_502ag.Rows.Count <= 0) throw new Exception("No hay nada para bloquear");
-                    SE_Usuario_502ag usuarioABloquear = bllsUsuario_502ag.ObtenerUsuario_502ag(dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString());
-                    bllsUsuario_502ag.BloquearUsuario_502ag(usuarioABloquear);
-                    Mostrar_502ag(dgvUsuarios_502ag);
-                }
                 opcion_502ag = "Consulta";
-                tBModoActual_502ag.Text = "Modo Consulta";
+                tBModoActual_502ag.Text = modoConsulta_502ag;
                 buttonAplicar_502ag.Enabled = false;
                 buttonCancelar_502ag.Enabled = false;
                 buttonAltaUsuario_502ag.Enabled = true;
                 buttonModificarUsuario_502ag.Enabled = true;
-                buttonBloquear_502ag.Enabled = true;
-                buttonDesbloquear_502ag.Enabled = true;
+                buttonDesbloquearUsuario_502ag.Enabled = true;
                 buttonVolverAlMenu_502ag.Enabled = true;
                 buttonActivarDesactivar_502ag.Enabled = true;
                 tBNombre_502ag.Enabled = false;
@@ -240,13 +220,12 @@ namespace GUI
             try
             {
                 opcion_502ag = "Consulta";
-                tBModoActual_502ag.Text = "Modo Consulta";
+                tBModoActual_502ag.Text = modoConsulta_502ag;
                 buttonAplicar_502ag.Enabled = false;
                 buttonCancelar_502ag.Enabled = false;
                 buttonAltaUsuario_502ag.Enabled = true;
                 buttonModificarUsuario_502ag.Enabled = true;
-                buttonBloquear_502ag.Enabled = true;
-                buttonDesbloquear_502ag.Enabled = true;
+                buttonDesbloquearUsuario_502ag.Enabled = true;
                 buttonVolverAlMenu_502ag.Enabled = true;
                 buttonActivarDesactivar_502ag.Enabled = true;
                 tBNombre_502ag.Enabled = false;
@@ -261,7 +240,6 @@ namespace GUI
                 if (dgvUsuarios_502ag.SelectedRows[0].Cells[0].Value.ToString() == SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag)
                 {
                     buttonActivarDesactivar_502ag.Enabled = false;
-                    buttonBloquear_502ag.Enabled = false;
                 }
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
@@ -290,12 +268,10 @@ namespace GUI
                         if (dgvUsuarios_502ag.SelectedRows[0].Cells[0].Value.ToString() == SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.NombreUsuario_502ag)
                         {
                             buttonActivarDesactivar_502ag.Enabled = false;
-                            buttonBloquear_502ag.Enabled = false;
                         }
                         else
                         {
                             buttonActivarDesactivar_502ag.Enabled = true;
-                            buttonBloquear_502ag.Enabled = true;
                         }
                     }
                     if(opcion_502ag == "Desbloquear")
@@ -347,14 +323,16 @@ namespace GUI
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
-
-
         #endregion
 
         private void FormABMUsuario_502ag_Activated(object sender, EventArgs e)
         {
             try
             {
+                SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag();
+                Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
+
+
                 BLLS_Perfil_502ag bllsPerfil_502ag = new BLLS_Perfil_502ag();
                 cBRol_502ag.Items.Clear();
                 if(bllsPerfil_502ag.ObtenerListaPerfiles_502ag().Count > 0)
@@ -367,6 +345,62 @@ namespace GUI
                 }
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
+        {
+            TraducirControles_502ag(this, traductor_502ag);
+        }
+        private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
+        {
+            modoAlta_502ag = traductor_502ag.Traducir_502ag("modoAlta_502ag");
+            modoConsulta_502ag = traductor_502ag.Traducir_502ag("modoConsulta_502ag");
+            modoModificar_502ag = traductor_502ag.Traducir_502ag("modoModificar_502ag");
+            modoDesbloquear_502ag = traductor_502ag.Traducir_502ag("modoDesbloquear_502ag");
+            foreach (Control c_502ag in control_502ag.Controls)
+            {
+                if (c_502ag.Name == "tBModoActual_502ag")
+                { 
+                    c_502ag.Text = traductor_502ag.Traducir_502ag(DevolverModoActual_502ag());
+                }
+                else if (c_502ag is TextBox)
+                {
+
+                }
+                else
+                {
+                    c_502ag.Text = traductor_502ag.Traducir_502ag(c_502ag.Name);
+                }
+                if (control_502ag.HasChildren)
+                {
+                    TraducirControles_502ag(c_502ag, traductor_502ag);
+                }    
+                if(c_502ag is DataGridView)
+                {
+                    DataGridView dgv_502ag = c_502ag as DataGridView;
+                    foreach (DataGridViewColumn col_502ag in dgv_502ag.Columns)
+                    {
+                        col_502ag.HeaderText = traductor_502ag.Traducir_502ag(col_502ag.Name);
+                    }
+                }
+            }
+            nadaQueModificar_502ag = traductor_502ag.Traducir_502ag("nadaQueModificar_502ag");
+            nadaQueDesbloquear_502ag = traductor_502ag.Traducir_502ag("nadaQueDesbloquear_502ag");
+            datosIncorrectos_502ag = traductor_502ag.Traducir_502ag("datosIncorrectos_502ag");
+            dniExiste_502ag = traductor_502ag.Traducir_502ag("dniExiste_502ag");
+            emailExiste_502ag = traductor_502ag.Traducir_502ag("emailExiste_502ag");
+            debeIngresarRol_502ag = traductor_502ag.Traducir_502ag("debeIngresarRol_502ag");
+            modificarA_502ag = traductor_502ag.Traducir_502ag("modificarA_502ag");            
+            confirmarModificacion_502ag = traductor_502ag.Traducir_502ag("confirmarModificacion_502ag");
+        }
+
+        private string DevolverModoActual_502ag()
+        {
+            if (opcion_502ag == "Alta") return modoAlta_502ag;
+            if (opcion_502ag == "Consulta") return modoConsulta_502ag;
+            if (opcion_502ag == "Modificar") return modoModificar_502ag;
+            if (opcion_502ag == "Desbloquear") return modoDesbloquear_502ag;
+            return string.Empty;
         }
     }
 }

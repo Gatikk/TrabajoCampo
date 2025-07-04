@@ -104,7 +104,7 @@ namespace BLLS_502ag
         public SE_Usuario_502ag ObtenerUsuarioALogear_502ag(string nombreUsuario_502ag)
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
-            return dalUsuario_502ag.ObtenerUsuarioALogear(nombreUsuario_502ag);
+            return dalUsuario_502ag.ObtenerUsuarioALogear_502ag(nombreUsuario_502ag);
         }
         #endregion
         public void BloquearUsuario_502ag(SE_Usuario_502ag usuario_502ag)
@@ -265,5 +265,12 @@ namespace BLLS_502ag
                 return false;
             }
         }
+
+        public void ActualizarIdiomaCierreSesion_502ag()
+        {
+            DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
+            dalUsuario_502ag.ActualizarIdioma_502ag(SERVICIOS_502ag.SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag);
+        }
+        
     }
 }

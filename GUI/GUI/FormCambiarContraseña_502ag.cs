@@ -13,15 +13,18 @@ using BLLS_502ag;
 
 namespace GUI
 {
-    public partial class FormCambiarContraseña_502ag : Form
+    public partial class FormCambiarContraseña_502ag : Form, IObserver_502ag
     {
         BLLS_Usuario_502ag bllsUsuario_502ag;
         FormMenu_502ag menu_502ag;
+        //strings excepciones
+        private string noContraseñaActual_502ag, contraseñaCambiada_502ag, siContraseñaActual_502ag, contraseñaNoCoincide_502ag;
         public FormCambiarContraseña_502ag(FormMenu_502ag menuOriginal_502ag)
         {
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
             InitializeComponent();
+            SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             bllsUsuario_502ag = new BLLS_Usuario_502ag();
             buttonCambiarContraseña_502ag.Enabled = false;
             menu_502ag = menuOriginal_502ag;
@@ -35,11 +38,11 @@ namespace GUI
         {
             if(SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.ContraseñaCambiada_502ag == true)
             {
-                buttonVolverAlMenu.Enabled = true;
+                buttonVolverAlMenu_502ag.Enabled = true;
             }
             else
             {
-                buttonVolverAlMenu.Enabled = false;
+                buttonVolverAlMenu_502ag.Enabled = false;
             }
         }
 
@@ -71,14 +74,14 @@ namespace GUI
                         textBoxContraseña_502ag.Clear();
                         textBoxContraseñaConfirmar_502ag.Clear();
                         textBoxContraseñaActual_502ag.Clear();
-                        throw new Exception("No es tu contraseña actual");
+                        throw new Exception(noContraseñaActual_502ag);
                     }
                     if(!bllsUsuario_502ag.VerificarContraseñaActual_502ag(contraseña_502ag, usuario_502ag))
                     {
 
                         bllsUsuario_502ag.CambiarContraseña_502ag(contraseña_502ag, usuario_502ag);
                         SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion_502ag();
-                        MessageBox.Show("Contraseña cambiada con éxito, se cerrará la sesión");
+                        MessageBox.Show(contraseñaCambiada_502ag);
                         FormLogin_502ag loginForm_502ag = new FormLogin_502ag();
                         this.Hide();
                         loginForm_502ag.Show();
@@ -88,7 +91,7 @@ namespace GUI
                         textBoxContraseña_502ag.Clear();
                         textBoxContraseñaConfirmar_502ag.Clear();
                         textBoxContraseñaActual_502ag.Clear();
-                        throw new Exception("Esta es su contraseña actual");
+                        throw new Exception(siContraseñaActual_502ag);
                     }
                 }
                 else
@@ -96,7 +99,7 @@ namespace GUI
                     textBoxContraseña_502ag.Clear();
                     textBoxContraseñaConfirmar_502ag.Clear();
                     textBoxContraseñaActual_502ag.Clear();
-                    throw new Exception("Contraseñas no coinciden");
+                    throw new Exception(contraseñaNoCoincide_502ag);
                 }
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
@@ -172,6 +175,38 @@ namespace GUI
         private void cBContraseñaActual_502ag_CheckedChanged(object sender, EventArgs e)
         {
             MostrarContraseñaActual_502ag();
+        }
+
+        public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
+        {
+            TraducirControles_502ag(this, traductor_502ag);
+        }
+        private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
+        {
+            foreach (Control c_502ag in control_502ag.Controls)
+            {
+                if(c_502ag is TextBox)
+                {
+
+                }
+                else
+                {
+                    c_502ag.Text = traductor_502ag.Traducir_502ag(c_502ag.Name);
+                }
+                if (control_502ag.HasChildren)
+                {
+                    TraducirControles_502ag(c_502ag, traductor_502ag);
+                }
+            }
+            noContraseñaActual_502ag = traductor_502ag.Traducir_502ag("noContraseñaActual_502ag");
+            contraseñaCambiada_502ag = traductor_502ag.Traducir_502ag("contraseñaCambiada_502ag");
+            siContraseñaActual_502ag = traductor_502ag.Traducir_502ag("siContraseñaActual_502ag");
+            contraseñaNoCoincide_502ag = traductor_502ag.Traducir_502ag("contraseñaNoCoincide_502ag");
+        }
+        private void FormCambiarContraseña_502ag_Activated(object sender, EventArgs e)
+        {
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag();
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
     }
 }

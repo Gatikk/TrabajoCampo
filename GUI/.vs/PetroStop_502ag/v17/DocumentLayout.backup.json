@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\bll_502ag\\bll_factura_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|solutionrelative:bll_502ag\\bll_factura_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formcargarcombustible_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formcargarcombustible_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formcargarcombustible_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formcargarcombustible_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formverfacturas_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -25,26 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\gui\\formverfacturas_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formverfacturas_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|c:\\users\\agust\\onedrive\\escritorio\\trabajocampo\\trabajocampo\\gui\\dal_502ag\\dal_conexion_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|solutionrelative:dal_502ag\\dal_conexion_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS_502ag.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\servicios\\encryptador_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS_502ag.csproj|solutionrelative:servicios\\encryptador_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formmaestrosclientes_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formmaestrosclientes_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\bll_502ag\\bll_cliente_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|solutionrelative:bll_502ag\\bll_cliente_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\gui\\formmaestrosclientes_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formmaestrosclientes_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -54,146 +30,70 @@
       "DocumentGroups": [
         {
           "DockedWidth": 303,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormMenu_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormMenu_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
-              "RelativeToolTip": "GUI\\FormMenu_502ag.cs",
-              "ViewState": "AgIAALIAAAAAAAAAAAArwMcAAAAAAAAAAAAAAA==",
+              "Title": "FormCargarCombustible_502ag.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCargarCombustible_502ag.cs",
+              "RelativeDocumentMoniker": "GUI\\FormCargarCombustible_502ag.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCargarCombustible_502ag.cs",
+              "RelativeToolTip": "GUI\\FormCargarCombustible_502ag.cs",
+              "ViewState": "AgIAAGgBAAAAAAAAAIA5wIEBAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T21:56:36.908Z",
+              "WhenOpened": "2025-07-04T03:46:36.381Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormLogin_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormLogin_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\FormLogin_502ag.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "FormCargarCombustible_502ag.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCargarCombustible_502ag.cs",
+              "RelativeDocumentMoniker": "GUI\\FormCargarCombustible_502ag.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormCargarCombustible_502ag.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\FormCargarCombustible_502ag.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T21:54:25.108Z",
+              "WhenOpened": "2025-07-04T03:46:35.291Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormMenu_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormMenu_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\FormMenu_502ag.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T21:53:50.251Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "FormVerFacturas_502ag.cs",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormVerFacturas_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormVerFacturas_502ag.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormVerFacturas_502ag.cs",
               "RelativeToolTip": "GUI\\FormVerFacturas_502ag.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAtwDIAAAAZAQAAAAAAAA==",
+              "ViewState": "AgIAAL8AAAAAAAAAAAAuwNAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T21:18:18.268Z",
+              "WhenOpened": "2025-07-04T03:34:01.634Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "FormVerFacturas_502ag.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormVerFacturas_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormVerFacturas_502ag.cs",
               "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormVerFacturas_502ag.cs [Dise\u00F1o]",
               "RelativeToolTip": "GUI\\FormVerFacturas_502ag.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T21:18:17.121Z",
+              "WhenOpened": "2025-07-04T03:33:26.816Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BLL_Factura_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_Factura_502ag.cs",
-              "RelativeDocumentMoniker": "BLL_502ag\\BLL_Factura_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_Factura_502ag.cs",
-              "RelativeToolTip": "BLL_502ag\\BLL_Factura_502ag.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAuwEQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "FormMenu_502ag.cs",
+              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
+              "RelativeDocumentMoniker": "GUI\\FormMenu_502ag.cs",
+              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
+              "RelativeToolTip": "GUI\\FormMenu_502ag.cs",
+              "ViewState": "AgIAAL4AAAAAAAAAAAAAAB8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T20:54:08.662Z",
+              "WhenOpened": "2025-07-04T03:28:40.617Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DAL_Conexion_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_Conexion_502ag.cs",
-              "RelativeDocumentMoniker": "DAL_502ag\\DAL_Conexion_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_Conexion_502ag.cs",
-              "RelativeToolTip": "DAL_502ag\\DAL_Conexion_502ag.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T20:48:57.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Encryptador_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\Encryptador_502ag.cs",
-              "RelativeDocumentMoniker": "SERVICIOS\\Encryptador_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\SERVICIOS\\Encryptador_502ag.cs",
-              "RelativeToolTip": "SERVICIOS\\Encryptador_502ag.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAowEIAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-28T20:34:29.576Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "BLL_Cliente_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_Cliente_502ag.cs",
-              "RelativeDocumentMoniker": "BLL_502ag\\BLL_Cliente_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_Cliente_502ag.cs",
-              "RelativeToolTip": "BLL_502ag\\BLL_Cliente_502ag.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAWwCkAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T11:26:26.422Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "FormMaestrosClientes_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMaestrosClientes_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormMaestrosClientes_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMaestrosClientes_502ag.cs",
-              "RelativeToolTip": "GUI\\FormMaestrosClientes_502ag.cs",
-              "ViewState": "AgIAAIYAAAAAAAAAAAAUwIQAAAB7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T11:26:11.127Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "FormMaestrosClientes_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMaestrosClientes_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormMaestrosClientes_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\OneDrive\\Escritorio\\TrabajoCampo\\TrabajoCampo\\GUI\\GUI\\FormMaestrosClientes_502ag.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\FormMaestrosClientes_502ag.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-27T11:26:08.673Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

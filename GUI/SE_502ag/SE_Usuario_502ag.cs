@@ -20,8 +20,9 @@ namespace SE_502ag
         public bool isActivo_502ag { get; set; }
         public bool ContraseñaCambiada_502ag { get; set; }  
         public DateTime UltimoLogin_502ag { get; set; }
+        public string Idioma_502ag { get; set; }
 
-        public SE_Usuario_502ag(string pDNI_502ag, string pNombreUsuario_502ag, string pContraseña_502ag, string pRol_502ag, string pNombre_502ag, string pApellido_502ag, string pEmail_502ag, bool pIsBloqueado_502ag, int pIntentos_502ag, bool pIsActivo_502ag, bool pContraseñaCambiada_502ag, DateTime pUltimoLogin_502ag)
+        public SE_Usuario_502ag(string pDNI_502ag, string pNombreUsuario_502ag, string pContraseña_502ag, string pRol_502ag, string pNombre_502ag, string pApellido_502ag, string pEmail_502ag, bool pIsBloqueado_502ag, int pIntentos_502ag, bool pIsActivo_502ag, bool pContraseñaCambiada_502ag, DateTime pUltimoLogin_502ag, string pIdioma_502ag)
         {
             DNI_502ag = pDNI_502ag;
             NombreUsuario_502ag = pNombreUsuario_502ag;
@@ -35,6 +36,7 @@ namespace SE_502ag
             isActivo_502ag = pIsActivo_502ag;
             ContraseñaCambiada_502ag = pContraseñaCambiada_502ag;
             UltimoLogin_502ag = pUltimoLogin_502ag;
+            Idioma_502ag = pIdioma_502ag;
         }
         public SE_Usuario_502ag(string pDNI_502ag, string pNombreUsuario_502ag, string pRol_502ag, string pNombre_502ag, string pApellido_502ag, string pEmail_502ag)
         {

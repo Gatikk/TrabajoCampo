@@ -44,13 +44,12 @@
             this.tBApellido_502ag = new System.Windows.Forms.TextBox();
             this.tBDNI_502ag = new System.Windows.Forms.TextBox();
             this.tBEmail_502ag = new System.Windows.Forms.TextBox();
-            this.labelRol = new System.Windows.Forms.Label();
-            this.labelNombre = new System.Windows.Forms.Label();
-            this.labelApellido = new System.Windows.Forms.Label();
-            this.labelDNI = new System.Windows.Forms.Label();
-            this.labelEmail = new System.Windows.Forms.Label();
-            this.buttonBloquear_502ag = new System.Windows.Forms.Button();
-            this.buttonDesbloquear_502ag = new System.Windows.Forms.Button();
+            this.labelRol_502ag = new System.Windows.Forms.Label();
+            this.labelNombre_502ag = new System.Windows.Forms.Label();
+            this.labelApellido_502ag = new System.Windows.Forms.Label();
+            this.labelDNI_502ag = new System.Windows.Forms.Label();
+            this.labelEmail_502ag = new System.Windows.Forms.Label();
+            this.buttonDesbloquearUsuario_502ag = new System.Windows.Forms.Button();
             this.cBRol_502ag = new System.Windows.Forms.ComboBox();
             this.buttonAplicar_502ag = new System.Windows.Forms.Button();
             this.buttonCancelar_502ag = new System.Windows.Forms.Button();
@@ -215,98 +214,84 @@
             this.tBEmail_502ag.Size = new System.Drawing.Size(175, 23);
             this.tBEmail_502ag.TabIndex = 5;
             // 
-            // labelRol
+            // labelRol_502ag
             // 
-            this.labelRol.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelRol_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelRol.AutoSize = true;
-            this.labelRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelRol.Location = new System.Drawing.Point(365, 326);
-            this.labelRol.Name = "labelRol";
-            this.labelRol.Size = new System.Drawing.Size(29, 17);
-            this.labelRol.TabIndex = 17;
-            this.labelRol.Text = "Rol";
+            this.labelRol_502ag.AutoSize = true;
+            this.labelRol_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelRol_502ag.Location = new System.Drawing.Point(365, 326);
+            this.labelRol_502ag.Name = "labelRol_502ag";
+            this.labelRol_502ag.Size = new System.Drawing.Size(29, 17);
+            this.labelRol_502ag.TabIndex = 17;
+            this.labelRol_502ag.Text = "Rol";
             // 
-            // labelNombre
+            // labelNombre_502ag
             // 
-            this.labelNombre.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelNombre_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelNombre.AutoSize = true;
-            this.labelNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelNombre.Location = new System.Drawing.Point(365, 355);
-            this.labelNombre.Name = "labelNombre";
-            this.labelNombre.Size = new System.Drawing.Size(58, 17);
-            this.labelNombre.TabIndex = 18;
-            this.labelNombre.Text = "Nombre";
+            this.labelNombre_502ag.AutoSize = true;
+            this.labelNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelNombre_502ag.Location = new System.Drawing.Point(365, 355);
+            this.labelNombre_502ag.Name = "labelNombre_502ag";
+            this.labelNombre_502ag.Size = new System.Drawing.Size(58, 17);
+            this.labelNombre_502ag.TabIndex = 18;
+            this.labelNombre_502ag.Text = "Nombre";
             // 
-            // labelApellido
+            // labelApellido_502ag
             // 
-            this.labelApellido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelApellido_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelApellido.AutoSize = true;
-            this.labelApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelApellido.Location = new System.Drawing.Point(365, 384);
-            this.labelApellido.Name = "labelApellido";
-            this.labelApellido.Size = new System.Drawing.Size(58, 17);
-            this.labelApellido.TabIndex = 19;
-            this.labelApellido.Text = "Apellido";
+            this.labelApellido_502ag.AutoSize = true;
+            this.labelApellido_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelApellido_502ag.Location = new System.Drawing.Point(365, 384);
+            this.labelApellido_502ag.Name = "labelApellido_502ag";
+            this.labelApellido_502ag.Size = new System.Drawing.Size(58, 17);
+            this.labelApellido_502ag.TabIndex = 19;
+            this.labelApellido_502ag.Text = "Apellido";
             // 
-            // labelDNI
+            // labelDNI_502ag
             // 
-            this.labelDNI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelDNI_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelDNI.AutoSize = true;
-            this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelDNI.Location = new System.Drawing.Point(365, 297);
-            this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(31, 17);
-            this.labelDNI.TabIndex = 20;
-            this.labelDNI.Text = "DNI";
+            this.labelDNI_502ag.AutoSize = true;
+            this.labelDNI_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelDNI_502ag.Location = new System.Drawing.Point(365, 297);
+            this.labelDNI_502ag.Name = "labelDNI_502ag";
+            this.labelDNI_502ag.Size = new System.Drawing.Size(31, 17);
+            this.labelDNI_502ag.TabIndex = 20;
+            this.labelDNI_502ag.Text = "DNI";
             // 
-            // labelEmail
+            // labelEmail_502ag
             // 
-            this.labelEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelEmail_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelEmail.AutoSize = true;
-            this.labelEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelEmail.Location = new System.Drawing.Point(365, 412);
-            this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(42, 17);
-            this.labelEmail.TabIndex = 21;
-            this.labelEmail.Text = "Email";
+            this.labelEmail_502ag.AutoSize = true;
+            this.labelEmail_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelEmail_502ag.Location = new System.Drawing.Point(365, 412);
+            this.labelEmail_502ag.Name = "labelEmail_502ag";
+            this.labelEmail_502ag.Size = new System.Drawing.Size(42, 17);
+            this.labelEmail_502ag.TabIndex = 21;
+            this.labelEmail_502ag.Text = "Email";
             // 
-            // buttonBloquear_502ag
+            // buttonDesbloquearUsuario_502ag
             // 
-            this.buttonBloquear_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonBloquear_502ag.FlatAppearance.BorderSize = 0;
-            this.buttonBloquear_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonBloquear_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonBloquear_502ag.Location = new System.Drawing.Point(12, 403);
-            this.buttonBloquear_502ag.Name = "buttonBloquear_502ag";
-            this.buttonBloquear_502ag.Size = new System.Drawing.Size(132, 47);
-            this.buttonBloquear_502ag.TabIndex = 23;
-            this.buttonBloquear_502ag.Text = "Bloquear Usuario";
-            this.buttonBloquear_502ag.UseVisualStyleBackColor = false;
-            this.buttonBloquear_502ag.Click += new System.EventHandler(this.buttonBloquear_502ag_Click);
-            // 
-            // buttonDesbloquear_502ag
-            // 
-            this.buttonDesbloquear_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonDesbloquear_502ag.FlatAppearance.BorderSize = 0;
-            this.buttonDesbloquear_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDesbloquear_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonDesbloquear_502ag.Location = new System.Drawing.Point(161, 343);
-            this.buttonDesbloquear_502ag.Name = "buttonDesbloquear_502ag";
-            this.buttonDesbloquear_502ag.Size = new System.Drawing.Size(132, 47);
-            this.buttonDesbloquear_502ag.TabIndex = 24;
-            this.buttonDesbloquear_502ag.Text = "Desbloquear Usuario";
-            this.buttonDesbloquear_502ag.UseVisualStyleBackColor = false;
-            this.buttonDesbloquear_502ag.Click += new System.EventHandler(this.buttonDesbloquear_502ag_Click);
+            this.buttonDesbloquearUsuario_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonDesbloquearUsuario_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonDesbloquearUsuario_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDesbloquearUsuario_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonDesbloquearUsuario_502ag.Location = new System.Drawing.Point(161, 343);
+            this.buttonDesbloquearUsuario_502ag.Name = "buttonDesbloquearUsuario_502ag";
+            this.buttonDesbloquearUsuario_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonDesbloquearUsuario_502ag.TabIndex = 24;
+            this.buttonDesbloquearUsuario_502ag.Text = "Desbloquear Usuario";
+            this.buttonDesbloquearUsuario_502ag.UseVisualStyleBackColor = false;
+            this.buttonDesbloquearUsuario_502ag.Click += new System.EventHandler(this.buttonDesbloquear_502ag_Click);
             // 
             // cBRol_502ag
             // 
@@ -407,13 +392,12 @@
             this.Controls.Add(this.buttonCancelar_502ag);
             this.Controls.Add(this.buttonAplicar_502ag);
             this.Controls.Add(this.cBRol_502ag);
-            this.Controls.Add(this.buttonDesbloquear_502ag);
-            this.Controls.Add(this.buttonBloquear_502ag);
-            this.Controls.Add(this.labelEmail);
-            this.Controls.Add(this.labelDNI);
-            this.Controls.Add(this.labelApellido);
-            this.Controls.Add(this.labelNombre);
-            this.Controls.Add(this.labelRol);
+            this.Controls.Add(this.buttonDesbloquearUsuario_502ag);
+            this.Controls.Add(this.labelEmail_502ag);
+            this.Controls.Add(this.labelDNI_502ag);
+            this.Controls.Add(this.labelApellido_502ag);
+            this.Controls.Add(this.labelNombre_502ag);
+            this.Controls.Add(this.labelRol_502ag);
             this.Controls.Add(this.tBEmail_502ag);
             this.Controls.Add(this.tBDNI_502ag);
             this.Controls.Add(this.tBApellido_502ag);
@@ -442,13 +426,12 @@
         private System.Windows.Forms.TextBox tBApellido_502ag;
         private System.Windows.Forms.TextBox tBDNI_502ag;
         private System.Windows.Forms.TextBox tBEmail_502ag;
-        private System.Windows.Forms.Label labelRol;
-        private System.Windows.Forms.Label labelNombre;
-        private System.Windows.Forms.Label labelApellido;
-        private System.Windows.Forms.Label labelDNI;
-        private System.Windows.Forms.Label labelEmail;
-        private System.Windows.Forms.Button buttonBloquear_502ag;
-        private System.Windows.Forms.Button buttonDesbloquear_502ag;
+        private System.Windows.Forms.Label labelRol_502ag;
+        private System.Windows.Forms.Label labelNombre_502ag;
+        private System.Windows.Forms.Label labelApellido_502ag;
+        private System.Windows.Forms.Label labelDNI_502ag;
+        private System.Windows.Forms.Label labelEmail_502ag;
+        private System.Windows.Forms.Button buttonDesbloquearUsuario_502ag;
         private System.Windows.Forms.ComboBox cBRol_502ag;
         private System.Windows.Forms.Button buttonAplicar_502ag;
         private System.Windows.Forms.Button buttonCancelar_502ag;

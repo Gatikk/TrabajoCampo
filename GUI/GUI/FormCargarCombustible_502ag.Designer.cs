@@ -46,7 +46,7 @@
             this.buttonReanudarCarga_502ag = new System.Windows.Forms.Button();
             this.buttonFinalizarCarga_502ag = new System.Windows.Forms.Button();
             this.tBDNI_502ag = new System.Windows.Forms.TextBox();
-            this.labelDNI = new System.Windows.Forms.Label();
+            this.labelDNI_502ag = new System.Windows.Forms.Label();
             this.buttonIdentificarCliente_502ag = new System.Windows.Forms.Button();
             this.buttonRegistrarCliente_502ag = new System.Windows.Forms.Button();
             this.labelSeleccionarCombustible_502ag = new System.Windows.Forms.Label();
@@ -58,12 +58,12 @@
             this.labelApellido_502ag = new System.Windows.Forms.Label();
             this.buttonCobrarCliente_502ag = new System.Windows.Forms.Button();
             this.dgvFacturas_502ag = new System.Windows.Forms.DataGridView();
+            this.ColumnaCodigoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaEstado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonSeleccionarFactura_502ag = new System.Windows.Forms.Button();
             this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
             this.labelFacturaIncompleta_502ag = new System.Windows.Forms.Label();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombustibles_502ag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas_502ag)).BeginInit();
             this.SuspendLayout();
@@ -265,18 +265,18 @@
             this.tBDNI_502ag.Size = new System.Drawing.Size(174, 23);
             this.tBDNI_502ag.TabIndex = 63;
             // 
-            // labelDNI
+            // labelDNI_502ag
             // 
-            this.labelDNI.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelDNI_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelDNI.AutoSize = true;
-            this.labelDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelDNI.Location = new System.Drawing.Point(428, 45);
-            this.labelDNI.Name = "labelDNI";
-            this.labelDNI.Size = new System.Drawing.Size(31, 17);
-            this.labelDNI.TabIndex = 64;
-            this.labelDNI.Text = "DNI";
+            this.labelDNI_502ag.AutoSize = true;
+            this.labelDNI_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelDNI_502ag.Location = new System.Drawing.Point(428, 45);
+            this.labelDNI_502ag.Name = "labelDNI_502ag";
+            this.labelDNI_502ag.Size = new System.Drawing.Size(31, 17);
+            this.labelDNI_502ag.TabIndex = 64;
+            this.labelDNI_502ag.Text = "DNI";
             // 
             // buttonIdentificarCliente_502ag
             // 
@@ -349,18 +349,18 @@
             // 
             this.tBNombre_502ag.Enabled = false;
             this.tBNombre_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBNombre_502ag.Location = new System.Drawing.Point(494, 112);
+            this.tBNombre_502ag.Location = new System.Drawing.Point(514, 112);
             this.tBNombre_502ag.Name = "tBNombre_502ag";
-            this.tBNombre_502ag.Size = new System.Drawing.Size(146, 23);
+            this.tBNombre_502ag.Size = new System.Drawing.Size(126, 23);
             this.tBNombre_502ag.TabIndex = 70;
             // 
             // tBApellido_502ag
             // 
             this.tBApellido_502ag.Enabled = false;
             this.tBApellido_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tBApellido_502ag.Location = new System.Drawing.Point(494, 141);
+            this.tBApellido_502ag.Location = new System.Drawing.Point(514, 141);
             this.tBApellido_502ag.Name = "tBApellido_502ag";
-            this.tBApellido_502ag.Size = new System.Drawing.Size(146, 23);
+            this.tBApellido_502ag.Size = new System.Drawing.Size(126, 23);
             this.tBApellido_502ag.TabIndex = 71;
             // 
             // labelNombre_502ag
@@ -412,9 +412,9 @@
             this.dgvFacturas_502ag.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFacturas_502ag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacturas_502ag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3});
+            this.ColumnaCodigoFactura,
+            this.ColumnaCombustible,
+            this.ColumnaEstado});
             this.dgvFacturas_502ag.Location = new System.Drawing.Point(431, 267);
             this.dgvFacturas_502ag.MultiSelect = false;
             this.dgvFacturas_502ag.Name = "dgvFacturas_502ag";
@@ -422,6 +422,25 @@
             this.dgvFacturas_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvFacturas_502ag.Size = new System.Drawing.Size(341, 129);
             this.dgvFacturas_502ag.TabIndex = 75;
+            // 
+            // ColumnaCodigoFactura
+            // 
+            this.ColumnaCodigoFactura.FillWeight = 50F;
+            this.ColumnaCodigoFactura.HeaderText = "Codigo";
+            this.ColumnaCodigoFactura.Name = "ColumnaCodigoFactura";
+            this.ColumnaCodigoFactura.ReadOnly = true;
+            // 
+            // ColumnaCombustible
+            // 
+            this.ColumnaCombustible.HeaderText = "Combustible";
+            this.ColumnaCombustible.Name = "ColumnaCombustible";
+            this.ColumnaCombustible.ReadOnly = true;
+            // 
+            // ColumnaEstado
+            // 
+            this.ColumnaEstado.HeaderText = "Estado";
+            this.ColumnaEstado.Name = "ColumnaEstado";
+            this.ColumnaEstado.ReadOnly = true;
             // 
             // buttonSeleccionarFactura_502ag
             // 
@@ -464,25 +483,6 @@
             this.labelFacturaIncompleta_502ag.TabIndex = 78;
             this.labelFacturaIncompleta_502ag.Text = "Seleccionar Factura Incompleta";
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "Codigo";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Combustible";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Estado";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
             // FormCargarCombustible_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -502,7 +502,7 @@
             this.Controls.Add(this.labelSeleccionarCombustible_502ag);
             this.Controls.Add(this.buttonRegistrarCliente_502ag);
             this.Controls.Add(this.buttonIdentificarCliente_502ag);
-            this.Controls.Add(this.labelDNI);
+            this.Controls.Add(this.labelDNI_502ag);
             this.Controls.Add(this.tBDNI_502ag);
             this.Controls.Add(this.buttonFinalizarCarga_502ag);
             this.Controls.Add(this.buttonReanudarCarga_502ag);
@@ -548,7 +548,7 @@
         private System.Windows.Forms.Button buttonReanudarCarga_502ag;
         private System.Windows.Forms.Button buttonFinalizarCarga_502ag;
         private System.Windows.Forms.TextBox tBDNI_502ag;
-        private System.Windows.Forms.Label labelDNI;
+        private System.Windows.Forms.Label labelDNI_502ag;
         private System.Windows.Forms.Button buttonIdentificarCliente_502ag;
         private System.Windows.Forms.Button buttonRegistrarCliente_502ag;
         private System.Windows.Forms.Label labelSeleccionarCombustible_502ag;
@@ -563,8 +563,8 @@
         private System.Windows.Forms.Button buttonSeleccionarFactura_502ag;
         private System.Windows.Forms.Button buttonVolverAlMenu_502ag;
         private System.Windows.Forms.Label labelFacturaIncompleta_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigoFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCombustible;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstado;
     }
 }

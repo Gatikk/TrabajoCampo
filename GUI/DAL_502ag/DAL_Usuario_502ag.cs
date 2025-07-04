@@ -35,7 +35,8 @@ namespace DAL_502ag
                                 int.Parse(dr_502ag["Intentos_502ag"].ToString()),
                                 bool.Parse(dr_502ag["IsActivo_502ag"].ToString()),
                                 bool.Parse(dr_502ag["ContraseñaCambiada_502ag"].ToString()),
-                                DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()));
+                                DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()),
+                                dr_502ag["Idioma_502ag"].ToString());
                             listaUsuarios_502ag.Add(usuario_502ag);
                         }
                     }
@@ -67,15 +68,16 @@ namespace DAL_502ag
                                int.Parse(dr_502ag["Intentos_502ag"].ToString()),
                                bool.Parse(dr_502ag["IsActivo_502ag"].ToString()),
                                bool.Parse(dr_502ag["ContraseñaCambiada_502ag"].ToString()),
-                               DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString())
-                               );
+                               DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()),
+                               dr_502ag["Idioma_502ag"].ToString()
+                            );
                         }
                     }
                 }
             }
             return null;
         }
-        public SE_Usuario_502ag ObtenerUsuarioALogear(string nombreUsuario_502ag)
+        public SE_Usuario_502ag ObtenerUsuarioALogear_502ag(string nombreUsuario_502ag)
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
@@ -99,14 +101,16 @@ namespace DAL_502ag
                                int.Parse(dr_502ag["Intentos_502ag"].ToString()),
                                bool.Parse(dr_502ag["IsActivo_502ag"].ToString()),
                                bool.Parse(dr_502ag["ContraseñaCambiada_502ag"].ToString()),
-                               DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()));
+                               DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()),
+                               dr_502ag["Idioma_502ag"].ToString()  
+                               );
                         }
                     }
                 }
             }
             if(nombreUsuario_502ag == "#admin@")
             {
-                return new SE_Usuario_502ag("10101010",nombreUsuario_502ag, "3cc03f6b0c2f1bcd2231d554ee4307622a50f54f55fb60c340447668f8dbefd6", "adminS","admin","admin","admin@admin.com",false,0,false,true,DateTime.Now);
+                return new SE_Usuario_502ag("10101010",nombreUsuario_502ag, "3cc03f6b0c2f1bcd2231d554ee4307622a50f54f55fb60c340447668f8dbefd6", "adminS","admin","admin","admin@admin.com",false,0,false,true,DateTime.Now,"es");
             }
             return null;
         }
@@ -117,9 +121,9 @@ namespace DAL_502ag
             {
                 cx_502ag.Open();
                 string insertQuery_502ag = "INSERT INTO Usuario_502ag (DNI_502ag, NombreUsuario_502ag, Contraseña_502ag, Rol_502ag, Nombre_502ag, Apellido_502ag, Email_502ag," +
-                    "IsBloqueado_502ag, Intentos_502ag, IsActivo_502ag, ContraseñaCambiada_502ag, UltimoLogin_502ag) " +
+                    "IsBloqueado_502ag, Intentos_502ag, IsActivo_502ag, ContraseñaCambiada_502ag, UltimoLogin_502ag, Idioma_502ag) " +
                     "VALUES (@DNI_502ag, @NombreUsuario_502ag, @Contraseña_502ag, @Rol_502ag, @Nombre_502ag, @Apellido_502ag, @Email_502ag," +
-                    "@IsBloqueado_502ag, @Intentos_502ag, @IsActivo_502ag, @ContraseñaCambiada_502ag, @UltimoLogin_502ag)";
+                    "@IsBloqueado_502ag, @Intentos_502ag, @IsActivo_502ag, @ContraseñaCambiada_502ag, @UltimoLogin_502ag, @Idioma_502ag)";
                 using (SqlCommand cmd_502ag = new SqlCommand(insertQuery_502ag, cx_502ag)) 
                 {
                     cmd_502ag.Parameters.AddWithValue("@DNI_502ag", usuario_502ag.DNI_502ag);
@@ -134,6 +138,7 @@ namespace DAL_502ag
                     cmd_502ag.Parameters.AddWithValue("@IsActivo_502ag", usuario_502ag.isActivo_502ag);
                     cmd_502ag.Parameters.AddWithValue("@ContraseñaCambiada_502ag", usuario_502ag.ContraseñaCambiada_502ag);
                     cmd_502ag.Parameters.AddWithValue("@UltimoLogin_502ag", usuario_502ag.UltimoLogin_502ag);
+                    cmd_502ag.Parameters.AddWithValue("@Idioma_502ag", usuario_502ag.Idioma_502ag);
                     cmd_502ag.ExecuteNonQuery();
                 }
             }
@@ -255,13 +260,27 @@ namespace DAL_502ag
                                 int.Parse(dr_502ag["Intentos_502ag"].ToString()),
                                 bool.Parse(dr_502ag["IsActivo_502ag"].ToString()),
                                 bool.Parse(dr_502ag["ContraseñaCambiada_502ag"].ToString()),
-                                DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()));
+                                DateTime.Parse(dr_502ag["UltimoLogin_502ag"].ToString()),
+                                dr_502ag["Idioma_502ag"].ToString());
                             listaUsuarios_502ag.Add(usuario_502ag);
                         }
                     }
                 }
             }
             return listaUsuarios_502ag;
+        }
+        public void ActualizarIdioma_502ag(SE_Usuario_502ag usuario_502ag)
+        {
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                using (SqlCommand cmd_502ag = new SqlCommand("UPDATE Usuario_502ag SET Idioma_502ag = @Idioma_502ag WHERE DNI_502ag = @DNI_502ag", cx_502ag))
+                {
+                    cmd_502ag.Parameters.AddWithValue("@DNI_502ag", usuario_502ag.DNI_502ag);
+                    cmd_502ag.Parameters.AddWithValue("@Idioma_502ag", usuario_502ag.Idioma_502ag);
+                    cmd_502ag.ExecuteNonQuery();
+                }
+            }
         }
     }
 }

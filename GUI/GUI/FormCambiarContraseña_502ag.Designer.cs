@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelConfirmarContraseña = new System.Windows.Forms.Label();
-            this.labelContraseña = new System.Windows.Forms.Label();
+            this.labelConfirmarContraseña_502ag = new System.Windows.Forms.Label();
+            this.labelContraseña_502ag = new System.Windows.Forms.Label();
             this.textBoxContraseñaConfirmar_502ag = new System.Windows.Forms.TextBox();
             this.textBoxContraseña_502ag = new System.Windows.Forms.TextBox();
             this.buttonCambiarContraseña_502ag = new System.Windows.Forms.Button();
-            this.buttonVolverAlMenu = new System.Windows.Forms.Button();
+            this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
             this.cBMostrarContraseña_502ag = new System.Windows.Forms.CheckBox();
             this.cBMostrarConfirmarContraseña_502ag = new System.Windows.Forms.CheckBox();
             this.textBoxContraseñaActual_502ag = new System.Windows.Forms.TextBox();
@@ -41,25 +41,25 @@
             this.cBContraseñaActual_502ag = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // labelConfirmarContraseña
+            // labelConfirmarContraseña_502ag
             // 
-            this.labelConfirmarContraseña.AutoSize = true;
-            this.labelConfirmarContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.labelConfirmarContraseña.Location = new System.Drawing.Point(273, 216);
-            this.labelConfirmarContraseña.Name = "labelConfirmarContraseña";
-            this.labelConfirmarContraseña.Size = new System.Drawing.Size(204, 25);
-            this.labelConfirmarContraseña.TabIndex = 8;
-            this.labelConfirmarContraseña.Text = "Confirmar Contraseña";
+            this.labelConfirmarContraseña_502ag.AutoSize = true;
+            this.labelConfirmarContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.labelConfirmarContraseña_502ag.Location = new System.Drawing.Point(273, 216);
+            this.labelConfirmarContraseña_502ag.Name = "labelConfirmarContraseña_502ag";
+            this.labelConfirmarContraseña_502ag.Size = new System.Drawing.Size(204, 25);
+            this.labelConfirmarContraseña_502ag.TabIndex = 8;
+            this.labelConfirmarContraseña_502ag.Text = "Confirmar Contraseña";
             // 
-            // labelContraseña
+            // labelContraseña_502ag
             // 
-            this.labelContraseña.AutoSize = true;
-            this.labelContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.labelContraseña.Location = new System.Drawing.Point(273, 151);
-            this.labelContraseña.Name = "labelContraseña";
-            this.labelContraseña.Size = new System.Drawing.Size(114, 25);
-            this.labelContraseña.TabIndex = 7;
-            this.labelContraseña.Text = "Contraseña";
+            this.labelContraseña_502ag.AutoSize = true;
+            this.labelContraseña_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.labelContraseña_502ag.Location = new System.Drawing.Point(273, 151);
+            this.labelContraseña_502ag.Name = "labelContraseña_502ag";
+            this.labelContraseña_502ag.Size = new System.Drawing.Size(114, 25);
+            this.labelContraseña_502ag.TabIndex = 7;
+            this.labelContraseña_502ag.Text = "Contraseña";
             // 
             // textBoxContraseñaConfirmar_502ag
             // 
@@ -93,19 +93,19 @@
             this.buttonCambiarContraseña_502ag.UseVisualStyleBackColor = false;
             this.buttonCambiarContraseña_502ag.Click += new System.EventHandler(this.buttonCambiarContraseña_Click);
             // 
-            // buttonVolverAlMenu
+            // buttonVolverAlMenu_502ag
             // 
-            this.buttonVolverAlMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonVolverAlMenu.FlatAppearance.BorderSize = 0;
-            this.buttonVolverAlMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVolverAlMenu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVolverAlMenu.Location = new System.Drawing.Point(278, 336);
-            this.buttonVolverAlMenu.Name = "buttonVolverAlMenu";
-            this.buttonVolverAlMenu.Size = new System.Drawing.Size(225, 47);
-            this.buttonVolverAlMenu.TabIndex = 8;
-            this.buttonVolverAlMenu.Text = "Volver al Menú";
-            this.buttonVolverAlMenu.UseVisualStyleBackColor = false;
-            this.buttonVolverAlMenu.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
+            this.buttonVolverAlMenu_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonVolverAlMenu_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonVolverAlMenu_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVolverAlMenu_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVolverAlMenu_502ag.Location = new System.Drawing.Point(278, 336);
+            this.buttonVolverAlMenu_502ag.Name = "buttonVolverAlMenu_502ag";
+            this.buttonVolverAlMenu_502ag.Size = new System.Drawing.Size(225, 47);
+            this.buttonVolverAlMenu_502ag.TabIndex = 8;
+            this.buttonVolverAlMenu_502ag.Text = "Volver al Menú";
+            this.buttonVolverAlMenu_502ag.UseVisualStyleBackColor = false;
+            this.buttonVolverAlMenu_502ag.Click += new System.EventHandler(this.buttonVolverAlMenu_Click);
             // 
             // cBMostrarContraseña_502ag
             // 
@@ -169,14 +169,15 @@
             this.Controls.Add(this.textBoxContraseñaActual_502ag);
             this.Controls.Add(this.cBMostrarConfirmarContraseña_502ag);
             this.Controls.Add(this.cBMostrarContraseña_502ag);
-            this.Controls.Add(this.buttonVolverAlMenu);
+            this.Controls.Add(this.buttonVolverAlMenu_502ag);
             this.Controls.Add(this.buttonCambiarContraseña_502ag);
-            this.Controls.Add(this.labelConfirmarContraseña);
-            this.Controls.Add(this.labelContraseña);
+            this.Controls.Add(this.labelConfirmarContraseña_502ag);
+            this.Controls.Add(this.labelContraseña_502ag);
             this.Controls.Add(this.textBoxContraseñaConfirmar_502ag);
             this.Controls.Add(this.textBoxContraseña_502ag);
             this.Name = "FormCambiarContraseña_502ag";
             this.Text = "FormCambiarContraseña";
+            this.Activated += new System.EventHandler(this.FormCambiarContraseña_502ag_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCambiarContraseña_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -185,12 +186,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelConfirmarContraseña;
-        private System.Windows.Forms.Label labelContraseña;
+        private System.Windows.Forms.Label labelConfirmarContraseña_502ag;
+        private System.Windows.Forms.Label labelContraseña_502ag;
         private System.Windows.Forms.TextBox textBoxContraseñaConfirmar_502ag;
         private System.Windows.Forms.TextBox textBoxContraseña_502ag;
         private System.Windows.Forms.Button buttonCambiarContraseña_502ag;
-        private System.Windows.Forms.Button buttonVolverAlMenu;
+        private System.Windows.Forms.Button buttonVolverAlMenu_502ag;
         private System.Windows.Forms.CheckBox cBMostrarContraseña_502ag;
         private System.Windows.Forms.CheckBox cBMostrarConfirmarContraseña_502ag;
         private System.Windows.Forms.TextBox textBoxContraseñaActual_502ag;

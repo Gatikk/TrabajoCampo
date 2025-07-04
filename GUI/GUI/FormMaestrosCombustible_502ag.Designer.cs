@@ -59,9 +59,9 @@
             this.labelPrecioPorLitro_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.labelPrecioPorLitro_502ag.Location = new System.Drawing.Point(261, 379);
             this.labelPrecioPorLitro_502ag.Name = "labelPrecioPorLitro_502ag";
-            this.labelPrecioPorLitro_502ag.Size = new System.Drawing.Size(61, 22);
+            this.labelPrecioPorLitro_502ag.Size = new System.Drawing.Size(83, 22);
             this.labelPrecioPorLitro_502ag.TabIndex = 52;
-            this.labelPrecioPorLitro_502ag.Text = "Precio";
+            this.labelPrecioPorLitro_502ag.Text = "Precio_T";
             // 
             // labelCodigo_502ag
             // 
@@ -286,6 +286,7 @@
             this.Controls.Add(this.dgvCombustibles_502ag);
             this.Name = "FormMaestrosCombustible_502ag";
             this.Text = "FormMaestrosCombustible_502ag";
+            this.Activated += new System.EventHandler(this.FormMaestrosCombustible_502ag_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMaestrosCombustible_502ag_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombustibles_502ag)).EndInit();
             this.ResumeLayout(false);

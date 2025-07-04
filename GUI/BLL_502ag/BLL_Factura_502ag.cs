@@ -112,10 +112,7 @@ namespace BLL_502ag
                 doc_502ag.Add(new Paragraph(" "));
                 doc_502ag.Add(new Paragraph(" "));
                 doc_502ag.Add(new Paragraph("Gracias por confiar en PetroStop :P", FontFactory.GetFont(FontFactory.COURIER_BOLD, 8)));
-                
-
                 doc_502ag.Close();
-
             }
         }
     }

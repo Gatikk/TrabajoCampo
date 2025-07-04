@@ -1,6 +1,7 @@
 ﻿using BE_502ag;
 using BLL_502ag;
 using SE_502ag;
+using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,19 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormMaestrosClientes_502ag : Form
+    public partial class FormMaestrosClientes_502ag : Form, IObserver_502ag
     {
         FormMenu_502ag menu_502ag;
         public string opcion_502ag = "Consulta";
+        private string msgDNI_502ag, msgNombre_502ag, msgApellido_502ag, msgEmail_502ag, msgDireccion_502ag, msgTelefono_502ag;
+        private string msgNoHayClientes_502ag, nadaQueModificar_502ag, msgNadaQueBorrar_502ag;
+        private string msgDNIYaUtilizado_502ag, msgEmailYaUtilizado_502ag, msgTelefonoYaUtilizado_502ag, msgDNINoValido_502ag, msgNombreNoValido_502ag, msgApellidoNoValido_502ag, msgEmailNoValido_502ag, msgTelefonoNoValido_502ag, msgDireccionNoValida_502ag;
         public FormMaestrosClientes_502ag(FormMenu_502ag formMenu_502ag)
         {
-            InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
+            InitializeComponent();
+            SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             buttonAplicar_502ag.Enabled = false;
             buttonCancelar_502ag.Enabled = false;
             tBDNI_502ag.Enabled = false;
@@ -67,7 +72,7 @@ namespace GUI
         {
             try
             {
-                if (dgvClientes_502ag.Rows.Count <= 0) { throw new Exception("No hay nada que modificar"); }
+                if (dgvClientes_502ag.Rows.Count <= 0) { throw new Exception(nadaQueModificar_502ag); }
                 opcion_502ag = "Modificar";
                 buttonAplicar_502ag.Enabled = true;
                 buttonCancelar_502ag.Enabled = true;
@@ -100,7 +105,7 @@ namespace GUI
         {
             try
             {
-                if (dgvClientes_502ag.Rows.Count <= 0) { throw new Exception("No hay nada que borrar"); }
+                if (dgvClientes_502ag.Rows.Count <= 0) { throw new Exception(msgNadaQueBorrar_502ag); }
                 opcion_502ag = "Baja";
                 buttonAplicar_502ag.Enabled = true;
                 buttonCancelar_502ag.Enabled = true;
@@ -125,15 +130,15 @@ namespace GUI
                     string email_502ag = tBEmail_502ag.Text;
                     string direccion_502ag = tBDireccion_502ag.Text;
                     string telefono_502ag = tBTelefono_502ag.Text;
-                    if (!bllCliente_502ag.VerificarDNIYaRegistrado_502ag(dni_502ag)) throw new Exception("DNI ya utilizado");
-                    if (!bllCliente_502ag.VerificarEmailYaRegistrado_502ag(email_502ag)) throw new Exception("Email ya utilizado");
-                    if (!bllCliente_502ag.VerificarTelefonoYaRegistrado_502ag(telefono_502ag)) throw new Exception("Teléfono ya utilizado");
-                    if (!bllCliente_502ag.VerificarDNI_502ag(dni_502ag)) throw new Exception("DNI no válido");
-                    if (!bllCliente_502ag.VerificarNombre_502ag(nombre_502ag)) throw new Exception("Nombre no válido");
-                    if (!bllCliente_502ag.VerificarNombre_502ag(apellido_502ag)) throw new Exception("Apellido no válido");
-                    if (!bllCliente_502ag.VerificarEmail_502ag(email_502ag)) throw new Exception("Email no válido");
-                    if (!bllCliente_502ag.VerificarTelefono_502ag(telefono_502ag)) throw new Exception("Teléfono no válido, siga el formato XX XXXX-XXXX");
-                    if (!bllCliente_502ag.VerificarDireccion_502ag(direccion_502ag)) throw new Exception("Dirección no válida, siga el formato Calle XXXX");
+                    if (!bllCliente_502ag.VerificarDNIYaRegistrado_502ag(dni_502ag)) throw new Exception(msgDNIYaUtilizado_502ag);
+                    if (!bllCliente_502ag.VerificarEmailYaRegistrado_502ag(email_502ag)) throw new Exception(msgEmailYaUtilizado_502ag);
+                    if (!bllCliente_502ag.VerificarTelefonoYaRegistrado_502ag(telefono_502ag)) throw new Exception(msgTelefonoYaUtilizado_502ag);
+                    if (!bllCliente_502ag.VerificarDNI_502ag(dni_502ag)) throw new Exception(msgDNINoValido_502ag);
+                    if (!bllCliente_502ag.VerificarNombre_502ag(nombre_502ag)) throw new Exception(msgNombreNoValido_502ag);
+                    if (!bllCliente_502ag.VerificarNombre_502ag(apellido_502ag)) throw new Exception(msgApellidoNoValido_502ag);
+                    if (!bllCliente_502ag.VerificarEmail_502ag(email_502ag)) throw new Exception(msgEmailNoValido_502ag);
+                    if (!bllCliente_502ag.VerificarTelefono_502ag(telefono_502ag)) throw new Exception(msgTelefonoNoValido_502ag);
+                    if (!bllCliente_502ag.VerificarDireccion_502ag(direccion_502ag)) throw new Exception(msgDireccionNoValida_502ag);
                     bllCliente_502ag.AltaCliente_502ag(dni_502ag, nombre_502ag, apellido_502ag, email_502ag, direccion_502ag, telefono_502ag);
                 }
                 if(opcion_502ag == "Modificar")
@@ -273,14 +278,77 @@ namespace GUI
             try
             {
                 BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();
-                if (dgvClientes_502ag.Rows.Count <= 0) throw new Exception("No hay clientes para seleccionar");
+                if (dgvClientes_502ag.Rows.Count <= 0) throw new Exception(msgNoHayClientes_502ag);
                 string dni_502ag = dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString();
                 BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dni_502ag);
-                MessageBox.Show($"DNI: {cliente_502ag.DNI_502ag}\nNombre: {cliente_502ag.Nombre_502ag}\nApellido: {cliente_502ag.Apellido_502ag}\n" +
-                    $"Email: {cliente_502ag.Email_502ag}\nDirección: {cliente_502ag.Direccion_502ag}\nTeléfono: {cliente_502ag.Telefono_502ag}");
+                MessageBox.Show(
+                        msgDNI_502ag + cliente_502ag.DNI_502ag + "\n" +
+                        msgNombre_502ag + cliente_502ag.Nombre_502ag + "\n" +
+                        msgApellido_502ag + cliente_502ag.Apellido_502ag + "\n" +
+                        msgEmail_502ag + cliente_502ag.Email_502ag + "\n" +
+                        msgDireccion_502ag + cliente_502ag.Direccion_502ag + "\n" +
+                        msgTelefono_502ag + cliente_502ag.Telefono_502ag
+                    );
 
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
+        {
+            TraducirControles_502ag(this, traductor_502ag);
+        }
+
+        private void FormMaestrosClientes_502ag_Activated(object sender, EventArgs e)
+        {
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag();
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
+        }
+
+        private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
+        {
+            foreach (Control c_502ag in control_502ag.Controls)
+            {
+                if(c_502ag is TextBox)
+                {
+
+                }
+                else
+                {
+                    c_502ag.Text = traductor_502ag.Traducir_502ag(c_502ag.Name);
+                }
+                if (c_502ag is DataGridView)
+                {
+                    DataGridView dgv_502ag = c_502ag as DataGridView;
+                    foreach (DataGridViewColumn col_502ag in dgv_502ag.Columns)
+                    {
+                        col_502ag.HeaderText = traductor_502ag.Traducir_502ag(col_502ag.Name);
+                    }
+                }
+                if (control_502ag.HasChildren)
+                {
+                    TraducirControles_502ag(c_502ag, traductor_502ag);
+                }
+            }
+            msgDNI_502ag = traductor_502ag.Traducir_502ag("msgDNI_502ag");
+            msgNombre_502ag = traductor_502ag.Traducir_502ag("msgNombre_502ag");
+            msgApellido_502ag = traductor_502ag.Traducir_502ag("msgApellido_502ag");
+            msgEmail_502ag = traductor_502ag.Traducir_502ag("msgEmail_502ag");
+            msgDireccion_502ag = traductor_502ag.Traducir_502ag("msgDireccion_502ag");
+            msgTelefono_502ag = traductor_502ag.Traducir_502ag("msgTelefono_502ag");
+            msgNoHayClientes_502ag = traductor_502ag.Traducir_502ag("msgNoHayClientes_502ag");
+            nadaQueModificar_502ag = traductor_502ag.Traducir_502ag("nadaQueModificar_502ag");
+            msgNadaQueBorrar_502ag = traductor_502ag.Traducir_502ag("msgNadaQueBorrar_502ag");
+            msgDNIYaUtilizado_502ag = traductor_502ag.Traducir_502ag("msgDNIYaUtilizado_502ag");
+            msgEmailYaUtilizado_502ag = traductor_502ag.Traducir_502ag("msgEmailYaUtilizado_502ag");
+            msgTelefonoYaUtilizado_502ag = traductor_502ag.Traducir_502ag("msgTelefonoYaUtilizado_502ag");
+            msgDNINoValido_502ag = traductor_502ag.Traducir_502ag("msgDNINoValido_502ag");
+            msgNombreNoValido_502ag = traductor_502ag.Traducir_502ag("msgNombreNoValido_502ag");
+            msgApellidoNoValido_502ag = traductor_502ag.Traducir_502ag("msgApellidoNoValido_502ag");
+            msgEmailNoValido_502ag = traductor_502ag.Traducir_502ag("msgEmailNoValido_502ag");
+            msgTelefonoNoValido_502ag = traductor_502ag.Traducir_502ag("msgTelefonoNoValido_502ag");
+            msgDireccionNoValida_502ag = traductor_502ag.Traducir_502ag("msgDireccionNoValida_502ag");
+
         }
     }
 }

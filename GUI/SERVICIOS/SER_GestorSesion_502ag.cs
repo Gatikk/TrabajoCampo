@@ -22,10 +22,8 @@ namespace SERVICIOS_502ag
             }
         }
         public void IniciarSesion_502ag(SE_Usuario_502ag usuario_502ag)
-        {
-            
-            GestorSesion_502ag.sesion_502ag = usuario_502ag;
-            
+        {           
+            GestorSesion_502ag.sesion_502ag = usuario_502ag;          
         }
         public void CerrarSesion_502ag()
         {
@@ -39,6 +37,10 @@ namespace SERVICIOS_502ag
                 return true;
             }
             return false;
+        }
+        public void CambiarIdioma_502ag(string nuevoIdioma_502ag)
+        {
+            GestorSesion_502ag.sesion_502ag.Idioma_502ag = nuevoIdioma_502ag;
         }
     }
 }

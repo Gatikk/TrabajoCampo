@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.dgvFacturas_502ag = new System.Windows.Forms.DataGridView();
-            this.columnaCodigo_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaDNI_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columaNombreCli_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaMetodoPago_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaFecha_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaHora_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaCombustible_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaMonto_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaCantCargada_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaCodigoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaMetodoPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaMonto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaCantCargada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
             this.rBASC_502ag = new System.Windows.Forms.RadioButton();
             this.rBDESC_502ag = new System.Windows.Forms.RadioButton();
@@ -58,15 +58,15 @@
             this.dgvFacturas_502ag.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvFacturas_502ag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFacturas_502ag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.columnaCodigo_502ag,
-            this.columnaDNI_502ag,
-            this.columaNombreCli_502ag,
-            this.columnaMetodoPago_502ag,
-            this.columnaFecha_502ag,
-            this.columnaHora_502ag,
-            this.columnaCombustible_502ag,
-            this.columnaMonto_502ag,
-            this.columnaCantCargada_502ag});
+            this.columnaCodigoFactura,
+            this.columnaDNI,
+            this.columnaNombre,
+            this.columnaMetodoPago,
+            this.columnaFecha,
+            this.columnaHora,
+            this.columnaCombustible,
+            this.columnaMonto,
+            this.columnaCantCargada});
             this.dgvFacturas_502ag.Location = new System.Drawing.Point(12, 12);
             this.dgvFacturas_502ag.MultiSelect = false;
             this.dgvFacturas_502ag.Name = "dgvFacturas_502ag";
@@ -75,77 +75,77 @@
             this.dgvFacturas_502ag.Size = new System.Drawing.Size(760, 237);
             this.dgvFacturas_502ag.TabIndex = 76;
             // 
-            // columnaCodigo_502ag
+            // columnaCodigoFactura
             // 
-            this.columnaCodigo_502ag.FillWeight = 50F;
-            this.columnaCodigo_502ag.HeaderText = "Codigo";
-            this.columnaCodigo_502ag.Name = "columnaCodigo_502ag";
-            this.columnaCodigo_502ag.ReadOnly = true;
-            this.columnaCodigo_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnaCodigoFactura.FillWeight = 50F;
+            this.columnaCodigoFactura.HeaderText = "Codigo";
+            this.columnaCodigoFactura.Name = "columnaCodigoFactura";
+            this.columnaCodigoFactura.ReadOnly = true;
+            this.columnaCodigoFactura.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // columnaDNI_502ag
+            // columnaDNI
             // 
-            this.columnaDNI_502ag.FillWeight = 79.94923F;
-            this.columnaDNI_502ag.HeaderText = "DNI";
-            this.columnaDNI_502ag.Name = "columnaDNI_502ag";
-            this.columnaDNI_502ag.ReadOnly = true;
-            this.columnaDNI_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnaDNI.FillWeight = 79.94923F;
+            this.columnaDNI.HeaderText = "DNI";
+            this.columnaDNI.Name = "columnaDNI";
+            this.columnaDNI.ReadOnly = true;
+            this.columnaDNI.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // columaNombreCli_502ag
+            // columnaNombre
             // 
-            this.columaNombreCli_502ag.FillWeight = 90F;
-            this.columaNombreCli_502ag.HeaderText = "Nombre";
-            this.columaNombreCli_502ag.Name = "columaNombreCli_502ag";
-            this.columaNombreCli_502ag.ReadOnly = true;
-            this.columaNombreCli_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnaNombre.FillWeight = 90F;
+            this.columnaNombre.HeaderText = "Nombre";
+            this.columnaNombre.Name = "columnaNombre";
+            this.columnaNombre.ReadOnly = true;
+            this.columnaNombre.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // columnaMetodoPago_502ag
+            // columnaMetodoPago
             // 
-            this.columnaMetodoPago_502ag.FillWeight = 79.94923F;
-            this.columnaMetodoPago_502ag.HeaderText = "Método Pago";
-            this.columnaMetodoPago_502ag.Name = "columnaMetodoPago_502ag";
-            this.columnaMetodoPago_502ag.ReadOnly = true;
-            this.columnaMetodoPago_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnaMetodoPago.FillWeight = 79.94923F;
+            this.columnaMetodoPago.HeaderText = "Método Pago";
+            this.columnaMetodoPago.Name = "columnaMetodoPago";
+            this.columnaMetodoPago.ReadOnly = true;
+            this.columnaMetodoPago.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // columnaFecha_502ag
+            // columnaFecha
             // 
-            this.columnaFecha_502ag.FillWeight = 60F;
-            this.columnaFecha_502ag.HeaderText = "Fecha";
-            this.columnaFecha_502ag.Name = "columnaFecha_502ag";
-            this.columnaFecha_502ag.ReadOnly = true;
-            this.columnaFecha_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnaFecha.FillWeight = 60F;
+            this.columnaFecha.HeaderText = "Fecha";
+            this.columnaFecha.Name = "columnaFecha";
+            this.columnaFecha.ReadOnly = true;
+            this.columnaFecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // columnaHora_502ag
+            // columnaHora
             // 
-            this.columnaHora_502ag.FillWeight = 50F;
-            this.columnaHora_502ag.HeaderText = "Hora";
-            this.columnaHora_502ag.Name = "columnaHora_502ag";
-            this.columnaHora_502ag.ReadOnly = true;
-            this.columnaHora_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnaHora.FillWeight = 50F;
+            this.columnaHora.HeaderText = "Hora";
+            this.columnaHora.Name = "columnaHora";
+            this.columnaHora.ReadOnly = true;
+            this.columnaHora.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // columnaCombustible_502ag
+            // columnaCombustible
             // 
-            this.columnaCombustible_502ag.FillWeight = 70F;
-            this.columnaCombustible_502ag.HeaderText = "Combustible";
-            this.columnaCombustible_502ag.Name = "columnaCombustible_502ag";
-            this.columnaCombustible_502ag.ReadOnly = true;
-            this.columnaCombustible_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnaCombustible.FillWeight = 70F;
+            this.columnaCombustible.HeaderText = "Combustible";
+            this.columnaCombustible.Name = "columnaCombustible";
+            this.columnaCombustible.ReadOnly = true;
+            this.columnaCombustible.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // columnaMonto_502ag
+            // columnaMonto
             // 
-            this.columnaMonto_502ag.FillWeight = 60F;
-            this.columnaMonto_502ag.HeaderText = "Monto";
-            this.columnaMonto_502ag.Name = "columnaMonto_502ag";
-            this.columnaMonto_502ag.ReadOnly = true;
-            this.columnaMonto_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnaMonto.FillWeight = 60F;
+            this.columnaMonto.HeaderText = "Monto";
+            this.columnaMonto.Name = "columnaMonto";
+            this.columnaMonto.ReadOnly = true;
+            this.columnaMonto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // columnaCantCargada_502ag
+            // columnaCantCargada
             // 
-            this.columnaCantCargada_502ag.FillWeight = 70F;
-            this.columnaCantCargada_502ag.HeaderText = "Cargado";
-            this.columnaCantCargada_502ag.Name = "columnaCantCargada_502ag";
-            this.columnaCantCargada_502ag.ReadOnly = true;
-            this.columnaCantCargada_502ag.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.columnaCantCargada.FillWeight = 70F;
+            this.columnaCantCargada.HeaderText = "Cargado";
+            this.columnaCantCargada.Name = "columnaCantCargada";
+            this.columnaCantCargada.ReadOnly = true;
+            this.columnaCantCargada.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // buttonVolverAlMenu_502ag
             // 
@@ -191,11 +191,6 @@
             // 
             this.cBOrdenarPor_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBOrdenarPor_502ag.FormattingEnabled = true;
-            this.cBOrdenarPor_502ag.Items.AddRange(new object[] {
-            "Codigo",
-            "Combustible",
-            "Monto",
-            "Cantidad Cargada"});
             this.cBOrdenarPor_502ag.Location = new System.Drawing.Point(12, 272);
             this.cBOrdenarPor_502ag.Name = "cBOrdenarPor_502ag";
             this.cBOrdenarPor_502ag.Size = new System.Drawing.Size(155, 24);
@@ -216,10 +211,6 @@
             // 
             this.cBFecha_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBFecha_502ag.FormattingEnabled = true;
-            this.cBFecha_502ag.Items.AddRange(new object[] {
-            "Todos",
-            "Última Semana",
-            "Hoy"});
             this.cBFecha_502ag.Location = new System.Drawing.Point(12, 369);
             this.cBFecha_502ag.Name = "cBFecha_502ag";
             this.cBFecha_502ag.Size = new System.Drawing.Size(155, 24);
@@ -285,14 +276,14 @@
         private System.Windows.Forms.ComboBox cBFecha_502ag;
         private System.Windows.Forms.Label labelFechas_502ag;
         private System.Windows.Forms.Button buttonImprimirFactura_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigo_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDNI_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columaNombreCli_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaMetodoPago_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaFecha_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaHora_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCombustible_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaMonto_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantCargada_502ag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCodigoFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaDNI;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaMetodoPago;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaFecha;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaHora;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCombustible;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaMonto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn columnaCantCargada;
     }
 }

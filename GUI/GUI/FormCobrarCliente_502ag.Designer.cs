@@ -61,7 +61,7 @@
             // 
             this.tBFechaCaducidad_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tBFechaCaducidad_502ag.Location = new System.Drawing.Point(119, 152);
-            this.tBFechaCaducidad_502ag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBFechaCaducidad_502ag.Margin = new System.Windows.Forms.Padding(4);
             this.tBFechaCaducidad_502ag.Name = "tBFechaCaducidad_502ag";
             this.tBFechaCaducidad_502ag.Size = new System.Drawing.Size(268, 23);
             this.tBFechaCaducidad_502ag.TabIndex = 86;
@@ -84,7 +84,7 @@
             // 
             this.tBTitular_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tBTitular_502ag.Location = new System.Drawing.Point(119, 45);
-            this.tBTitular_502ag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBTitular_502ag.Margin = new System.Windows.Forms.Padding(4);
             this.tBTitular_502ag.Name = "tBTitular_502ag";
             this.tBTitular_502ag.Size = new System.Drawing.Size(268, 23);
             this.tBTitular_502ag.TabIndex = 83;
@@ -121,7 +121,7 @@
             // 
             this.tBCodigoSeguridad_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tBCodigoSeguridad_502ag.Location = new System.Drawing.Point(119, 117);
-            this.tBCodigoSeguridad_502ag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBCodigoSeguridad_502ag.Margin = new System.Windows.Forms.Padding(4);
             this.tBCodigoSeguridad_502ag.Name = "tBCodigoSeguridad_502ag";
             this.tBCodigoSeguridad_502ag.Size = new System.Drawing.Size(268, 23);
             this.tBCodigoSeguridad_502ag.TabIndex = 85;
@@ -130,7 +130,7 @@
             // 
             this.tBNumero_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tBNumero_502ag.Location = new System.Drawing.Point(119, 81);
-            this.tBNumero_502ag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tBNumero_502ag.Margin = new System.Windows.Forms.Padding(4);
             this.tBNumero_502ag.Name = "tBNumero_502ag";
             this.tBNumero_502ag.Size = new System.Drawing.Size(268, 23);
             this.tBNumero_502ag.TabIndex = 84;
@@ -142,7 +142,7 @@
             this.buttonRealizarPago_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRealizarPago_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.buttonRealizarPago_502ag.Location = new System.Drawing.Point(119, 188);
-            this.buttonRealizarPago_502ag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRealizarPago_502ag.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRealizarPago_502ag.Name = "buttonRealizarPago_502ag";
             this.buttonRealizarPago_502ag.Size = new System.Drawing.Size(269, 47);
             this.buttonRealizarPago_502ag.TabIndex = 91;
@@ -153,7 +153,7 @@
             // rTBFacturaDatos_502ag
             // 
             this.rTBFacturaDatos_502ag.Location = new System.Drawing.Point(395, 43);
-            this.rTBFacturaDatos_502ag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rTBFacturaDatos_502ag.Margin = new System.Windows.Forms.Padding(4);
             this.rTBFacturaDatos_502ag.Name = "rTBFacturaDatos_502ag";
             this.rTBFacturaDatos_502ag.Size = new System.Drawing.Size(268, 192);
             this.rTBFacturaDatos_502ag.TabIndex = 92;
@@ -163,7 +163,7 @@
             // 
             this.rBCredito_502ag.AutoSize = true;
             this.rBCredito_502ag.Location = new System.Drawing.Point(115, 14);
-            this.rBCredito_502ag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rBCredito_502ag.Margin = new System.Windows.Forms.Padding(4);
             this.rBCredito_502ag.Name = "rBCredito_502ag";
             this.rBCredito_502ag.Size = new System.Drawing.Size(71, 21);
             this.rBCredito_502ag.TabIndex = 93;
@@ -175,7 +175,7 @@
             // 
             this.rBDebito_502ag.AutoSize = true;
             this.rBDebito_502ag.Location = new System.Drawing.Point(194, 14);
-            this.rBDebito_502ag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rBDebito_502ag.Margin = new System.Windows.Forms.Padding(4);
             this.rBDebito_502ag.Name = "rBDebito_502ag";
             this.rBDebito_502ag.Size = new System.Drawing.Size(67, 21);
             this.rBDebito_502ag.TabIndex = 94;
@@ -216,9 +216,10 @@
             this.Controls.Add(this.tBCodigoSeguridad_502ag);
             this.Controls.Add(this.tBNumero_502ag);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCobrarCliente_502ag";
             this.Text = "FormCobrarCliente_502ag";
+            this.Activated += new System.EventHandler(this.FormCobrarCliente_502ag_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCobrarCliente_502ag_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();

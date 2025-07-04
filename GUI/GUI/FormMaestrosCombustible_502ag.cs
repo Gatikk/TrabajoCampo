@@ -1,5 +1,6 @@
 ﻿using BE_502ag;
 using BLL_502ag;
+using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,15 +13,18 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormMaestrosCombustible_502ag : Form
+    public partial class FormMaestrosCombustible_502ag : Form, IObserver_502ag
     {
         FormMenu_502ag menu_502ag;
         public string opcion_502ag = "Consulta";
+        private string nadaQueModificar_502ag, msgNadaQueEliminar_502ag, msgNombreEnBlanco_502ag, msgCodigoNoValido_502ag, msgCantidadNoValida_502ag;
+        private string msgPrecioNoValido_502ag, msgCantidadIncorrecta_502ag, msgPrecioIncorrecto_502ag, msgLitros_502ag;
         public FormMaestrosCombustible_502ag(FormMenu_502ag formMenu_502ag)
         {
-            InitializeComponent();
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
+            InitializeComponent();
+            SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             buttonAplicar_502ag.Enabled = false;
             buttonCancelar_502ag.Enabled = false;
             tBCodigo_502ag.Enabled = false;
@@ -65,7 +69,7 @@ namespace GUI
         {
             try
             {
-                if(dgvCombustibles_502ag.Rows.Count <= 0) { throw new Exception("No hay nada que modificar"); }
+                if(dgvCombustibles_502ag.Rows.Count <= 0) { throw new Exception(nadaQueModificar_502ag); }
                 BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
                 BE_Combustible_502ag combustible_502ag = bllCombustible_502ag.ObtenerCombustible_502ag(dgvCombustibles_502ag.SelectedRows[0].Cells[0].Value.ToString());
                 opcion_502ag = "Modificar";
@@ -90,7 +94,7 @@ namespace GUI
         {
             try
             {
-                if (dgvCombustibles_502ag.Rows.Count <= 0) { throw new Exception("No hay nada que eliminar"); }
+                if (dgvCombustibles_502ag.Rows.Count <= 0) { throw new Exception(msgNadaQueEliminar_502ag); }
                 opcion_502ag = "Baja";
                 buttonAplicar_502ag.Enabled = true;
                 buttonCancelar_502ag.Enabled = true;
@@ -113,12 +117,12 @@ namespace GUI
                     string nombre_502ag = tBNombre_502ag.Text;
                     string cantidad_502ag = tBCantidad_502ag.Text;
                     string precio_502ag = tBPrecio_502ag.Text;
-                    if(nombre_502ag == "") { throw new Exception("El nombre no puede estar en blanco"); }
-                    if (!bllCombustible_502ag.VerificarCodigo_502ag(codigo_502ag)) throw new Exception("Código no válido");
-                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(cantidad_502ag)) throw new Exception("Cantidad ingresada no válida");
-                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(precio_502ag)) throw new Exception("Precio ingresado no válido");
-                    if (!bllCombustible_502ag.VerificarCantidadCombustibleCorrecta_502ag(cantidad_502ag)) throw new Exception("Cantidad igresada incorrecta, recuerde que es entre 1 y 50000 litros"); 
-                    if (!bllCombustible_502ag.VerificarPrecioPorLitroCorrecto_502ag(precio_502ag)) throw new Exception("Precio igresado incorrecto, recuerde que tiene que ser mayor a 0"); 
+                    if(nombre_502ag == "") { throw new Exception(msgNombreEnBlanco_502ag); }
+                    if (!bllCombustible_502ag.VerificarCodigo_502ag(codigo_502ag)) throw new Exception(msgCodigoNoValido_502ag);
+                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(cantidad_502ag)) throw new Exception(msgCantidadNoValida_502ag);
+                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(precio_502ag)) throw new Exception(msgPrecioNoValido_502ag);
+                    if (!bllCombustible_502ag.VerificarCantidadCombustibleCorrecta_502ag(cantidad_502ag)) throw new Exception(msgCantidadIncorrecta_502ag); 
+                    if (!bllCombustible_502ag.VerificarPrecioPorLitroCorrecto_502ag(precio_502ag)) throw new Exception(msgPrecioIncorrecto_502ag); 
                     bllCombustible_502ag.AltaCombustible_502ag(codigo_502ag, nombre_502ag, decimal.Parse(cantidad_502ag), decimal.Parse(precio_502ag));
                 }
                 if(opcion_502ag == "Modificar")
@@ -127,11 +131,11 @@ namespace GUI
                     string nombre_502ag = tBNombre_502ag.Text;
                     string cantidad_502ag = tBCantidad_502ag.Text;
                     string precio_502ag = tBPrecio_502ag.Text;
-                    if (nombre_502ag == "") { throw new Exception("El nombre no puede estar en blanco"); }
-                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(cantidad_502ag)) throw new Exception("Cantidad ingresada no válida");
-                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(precio_502ag)) throw new Exception("Precio ingresado no válido");
-                    if (!bllCombustible_502ag.VerificarCantidadCombustibleCorrecta_502ag(cantidad_502ag)) throw new Exception("Cantidad igresada incorrecta, recuerde que es entre 1 y 50000 litros");
-                    if (!bllCombustible_502ag.VerificarPrecioPorLitroCorrecto_502ag(precio_502ag)) throw new Exception("Precio igresado incorrecto, recuerde que tiene que ser mayor a 0");
+                    if (nombre_502ag == "") { throw new Exception(msgNombreEnBlanco_502ag); }
+                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(cantidad_502ag)) throw new Exception(msgCantidadNoValida_502ag);
+                    if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(precio_502ag)) throw new Exception(msgPrecioNoValido_502ag);
+                    if (!bllCombustible_502ag.VerificarCantidadCombustibleCorrecta_502ag(cantidad_502ag)) throw new Exception(msgCantidadIncorrecta_502ag);
+                    if (!bllCombustible_502ag.VerificarPrecioPorLitroCorrecto_502ag(precio_502ag)) throw new Exception(msgPrecioIncorrecto_502ag);
                     bllCombustible_502ag.ModificarCombustible_502ag(combustible_502ag, nombre_502ag, decimal.Parse(cantidad_502ag), decimal.Parse(precio_502ag));
                 }
                 if(opcion_502ag == "Baja")
@@ -187,7 +191,7 @@ namespace GUI
             dgv_502ag.Rows.Clear();
             foreach (BE_Combustible_502ag combustible_502ag in bllCombustible_502ag.ObtenerListaCombustibles_502ag())
             {
-                dgv_502ag.Rows.Add(combustible_502ag.CodCombustible_502ag, combustible_502ag.Nombre_502ag, combustible_502ag.CantDisponible_502ag+" litros", combustible_502ag.PrecioPorLitro_502ag+"$");
+                dgv_502ag.Rows.Add(combustible_502ag.CodCombustible_502ag, combustible_502ag.Nombre_502ag, combustible_502ag.CantDisponible_502ag+ msgLitros_502ag, combustible_502ag.PrecioPorLitro_502ag+"$");
             }
         }
 
@@ -209,6 +213,52 @@ namespace GUI
                 }
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
+        {
+            TraducirControles_502ag(this, traductor_502ag);
+        }
+
+        private void FormMaestrosCombustible_502ag_Activated(object sender, EventArgs e)
+        {
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag();
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
+        }
+        private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
+        {
+            foreach (Control c_502ag in control_502ag.Controls)
+            {
+                if(c_502ag is TextBox)
+                {
+
+                }
+                else
+                {
+                    c_502ag.Text = traductor_502ag.Traducir_502ag(c_502ag.Name);
+                }
+                if (c_502ag is DataGridView)
+                {
+                    DataGridView dgv_502ag = c_502ag as DataGridView;
+                    foreach (DataGridViewColumn col_502ag in dgv_502ag.Columns)
+                    {
+                        col_502ag.HeaderText = traductor_502ag.Traducir_502ag(col_502ag.Name);
+                    }
+                }
+                if (control_502ag.HasChildren)
+                {
+                    TraducirControles_502ag(c_502ag, traductor_502ag);
+                }
+                nadaQueModificar_502ag = traductor_502ag.Traducir_502ag("nadaQueModificar_502ag");
+                msgNadaQueEliminar_502ag = traductor_502ag.Traducir_502ag("msgNadaQueEliminar_502ag");
+                msgNombreEnBlanco_502ag = traductor_502ag.Traducir_502ag("msgNombreEnBlanco_502ag");
+                msgCodigoNoValido_502ag = traductor_502ag.Traducir_502ag("msgCodigoNoValido_502ag");
+                msgCantidadNoValida_502ag = traductor_502ag.Traducir_502ag("msgCantidadNoValida_502ag");
+                msgPrecioNoValido_502ag = traductor_502ag.Traducir_502ag("msgPrecioNoValido_502ag");
+                msgCantidadIncorrecta_502ag = traductor_502ag.Traducir_502ag("msgCantidadIncorrecta_502ag");
+                msgPrecioIncorrecto_502ag = traductor_502ag.Traducir_502ag("msgPrecioIncorrecto_502ag");
+                msgLitros_502ag = traductor_502ag.Traducir_502ag("msgLitros_502ag");
+            }
         }
     }
 }
