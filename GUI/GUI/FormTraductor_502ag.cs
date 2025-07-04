@@ -39,6 +39,7 @@ namespace GUI
             {
                 if (cBIdiomas_502ag.SelectedItem == null) throw new Exception(msgNadaSeleccionado_502ag);
                 SERVICIOS_502ag.SER_GestorSesion_502ag.GestorSesion_502ag.CambiarIdioma_502ag(cBIdiomas_502ag.SelectedItem.ToString());
+                SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
                 Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
                 MessageBox.Show(msgIdiomaCambiado_502ag + $"{SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.Idioma_502ag}");
             }
@@ -60,7 +61,7 @@ namespace GUI
 
         private void FormTraductor_502ag_Activated(object sender, EventArgs e)
         {
-            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag();
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
             Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
             CargarIdiomasEnComboBox_502ag();
             cBIdiomas_502ag.SelectedIndex = 0;
@@ -69,6 +70,7 @@ namespace GUI
 
         public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
         {
+            
             TraducirControles_502ag(this, traductor_502ag);
         }
         private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)

@@ -24,8 +24,6 @@ namespace GUI
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
         }
 
-       
-
         private void buttonRegistrarCliente_502ag_Click(object sender, EventArgs e)
         {
             try

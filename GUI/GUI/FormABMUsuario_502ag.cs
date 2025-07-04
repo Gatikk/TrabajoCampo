@@ -329,7 +329,7 @@ namespace GUI
         {
             try
             {
-                SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag();
+                SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
                 Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
 
 

@@ -22,7 +22,7 @@ namespace GUI
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
             InitializeComponent();
-            //SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
+            SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             MostrarPermisos_502ag(cLBPermisos_502ag);
             MostrarFamilias_502ag();
             MostrarPerfiles_502ag();
@@ -118,7 +118,8 @@ namespace GUI
             cBPerfil_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         private void FormPerfiles_502ag_Activated(object sender, EventArgs e)
-        {        
+        {
+            
         }
         private void buttonCrear_502ag_Click(object sender, EventArgs e)
         {
@@ -423,6 +424,7 @@ namespace GUI
                         List<SE_Perfil_502ag> listaPermisosAAgregarAux_502ag = new List<SE_Perfil_502ag>(listaPermisosAAgregar_502ag);
                         if (!bllsPerfil_502ag.EvitarFamiliasConPermisosRepetidos_502ag(familiaSeleccionada, listaPermisosAAgregarAux_502ag)) throw new Exception("Imposible asignar, se repetirían permisos");
                         if (!bllsFamilia_502ag.PatenteRepetida_502ag(familiaSeleccionada, listaPermisosAAgregarAux_502ag)) { throw new Exception("No se puede realizar la operación, hay patentes repetidas"); }
+                        
                         bllsFamilia_502ag.AsignarPermisosAFamilia_502ag(familiaSeleccionada, listaPermisosAAgregar_502ag);
                         MessageBox.Show("Permisos asignados");
                     }
@@ -461,6 +463,7 @@ namespace GUI
                         }                     
                         List<SE_Perfil_502ag> listaPermisosAAgregarAux_502ag = new List<SE_Perfil_502ag>(listaPermisosAAgregar_502ag);
                         if (!bllsPerfil_502ag.EvitarFamiliasConPermisosRepetidos_502ag(perfilSeleccionado_502ag, listaPermisosAAgregarAux_502ag)) throw new Exception("Imposible asignar, se repetirían permisos");
+                        
                         bllsPerfil_502ag.AsignarPermisosAPerfil_502ag(perfilSeleccionado_502ag, listaPermisosAAgregar_502ag);
                         MessageBox.Show("Permisos asignados");
                     }

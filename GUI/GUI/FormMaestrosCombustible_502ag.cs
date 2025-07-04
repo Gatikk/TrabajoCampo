@@ -222,7 +222,7 @@ namespace GUI
 
         private void FormMaestrosCombustible_502ag_Activated(object sender, EventArgs e)
         {
-            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag();
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
             Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
         private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)

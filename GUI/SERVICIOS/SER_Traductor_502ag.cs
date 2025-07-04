@@ -46,7 +46,7 @@ namespace SERVICIOS_502ag
                 observers_502ag.Add(observer_502ag);
             }
         }
-
+         
         public string Traducir_502ag(string clave_502ag)
         {
             return traducciones_502ag.ContainsKey(clave_502ag) ? traducciones_502ag[clave_502ag] : clave_502ag;
@@ -60,22 +60,23 @@ namespace SERVICIOS_502ag
             return listaIdiomas_502ag;
         }
 
-        public void CargarTraducciones_502ag()
+        public void CargarTraducciones_502ag(IObserver_502ag observer_502ag)
         {
-            traducciones_502ag.Clear();
-            string rutaArchivo_502ag = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{SERVICIOS_502ag.SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.Idioma_502ag}.json");
-            if (File.Exists(rutaArchivo_502ag))
-            {
-                string json_502ag = File.ReadAllText(rutaArchivo_502ag);
-                traducciones_502ag = JsonConvert.DeserializeObject<Dictionary<string, string>>(json_502ag);
-            }
-            else
+            if(observers_502ag.Contains(observer_502ag))
             {
                 traducciones_502ag.Clear();
-            }
-            Notificar_502ag();
-            
+                string rutaArchivo_502ag = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Lenguajes", $"{SERVICIOS_502ag.SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.Idioma_502ag}.json");
+                if (File.Exists(rutaArchivo_502ag))
+                {
+                    string json_502ag = File.ReadAllText(rutaArchivo_502ag);
+                    traducciones_502ag = JsonConvert.DeserializeObject<Dictionary<string, string>>(json_502ag);
+                }
+                else
+                {
+                    traducciones_502ag.Clear();
+                }
+                Notificar_502ag();           
+            }         
         }
-
     }
 }
