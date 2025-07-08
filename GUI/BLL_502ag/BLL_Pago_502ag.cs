@@ -39,8 +39,6 @@ namespace BLL_502ag
             if (!reFechaCaducidad_502ag.IsMatch(cifrador_502ag.DesencryptadorReversible_502ag(fechaCaducidad_502ag))) return false;
             return true;
         }
-
-
         public bool ValidarPago_502ag(BE_Tarjeta_502ag tarjeta_502ag)
         {
             Encryptador_502ag cifrador_502ag = new Encryptador_502ag();

@@ -18,7 +18,6 @@ namespace BLL_502ag
             vehiculo_502ag.CantidadActual_502ag += litrosACargar_502ag;
             litrosRestantes_502ag -= litrosACargar_502ag;
 
-            // Retorna true si ya no queda nada por cargar o el tanque está lleno
             return litrosRestantes_502ag <= 0 || vehiculo_502ag.CantidadActual_502ag >= vehiculo_502ag.CantidadMaxima_502ag;
         }
     }

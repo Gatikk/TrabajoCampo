@@ -20,7 +20,6 @@ namespace BLLS_502ag
             dalFamiliaPatente_502ag.AltaFamiliaPatente_502ag(familia_502ag);
             dalFamiliaFamilia_502ag.AltaFamiliaFamilia_502ag(familia_502ag);
         }
-
         public void BorrarFamilia_502ag(SE_Familia_502ag familia_502ag)
         {
             DAL_Familia_502ag dalFamilia_502ag = new DAL_Familia_502ag();
@@ -54,7 +53,6 @@ namespace BLLS_502ag
             dalFamiliaFamilia_502ag.AsignarFamiliaHijoAFamilia_502ag(familiaAAsignar_502ag);
             dalFamiliaPatente_502ag.AsignarPatenteAFamilia_502ag(familiaAAsignar_502ag);
         }
-
         public void DesasignarPermisosAFamilia_502ag(SE_Familia_502ag familia_502ag)
         {
             DAL_FamiliaFamilia_502ag dalFamiliaFamilia_502ag = new DAL_FamiliaFamilia_502ag();
@@ -62,7 +60,6 @@ namespace BLLS_502ag
             dalFamiliaFamilia_502ag.DesasignarFamiliaHijoDeFamilia_502ag(familia_502ag);
             dalFamiliaPatente_502ag.DesasignarPatenteDeFamilia_502ag(familia_502ag);
         }
-
         public SE_Familia_502ag ObtenerListaProfundidadUno_502ag(SE_Familia_502ag familia_502ag)
         {
             DAL_FamiliaPatente_502ag dalFamiliaPatente_502ag = new DAL_FamiliaPatente_502ag();
@@ -72,7 +69,6 @@ namespace BLLS_502ag
             dalFamiliaFamilia_502ag.ObtenerFamiliasDeFamilia_502ag(familia_502ag);
             return familia_502ag;
         }
-
         public List<SE_Familia_502ag> ObtenerListaFamiliasCompleta_502ag()
         {
             DAL_Familia_502ag dalFamilia_502ag = new DAL_Familia_502ag();
@@ -83,7 +79,6 @@ namespace BLLS_502ag
             }
             return listaFamilias_502ag;
         }
-
         public void CargarPatentesYFamiliasRecursiva_502ag(SE_Familia_502ag familia_502ag)
         {
             DAL_FamiliaPatente_502ag dalFamiliaPatente_502ag = new DAL_FamiliaPatente_502ag();

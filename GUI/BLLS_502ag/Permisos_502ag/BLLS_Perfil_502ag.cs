@@ -235,8 +235,6 @@ namespace BLLS_502ag
             esActivo_502ag = bllsUsuario_502ag.ObtenerUsuarioPorRol_502ag(perfil_502ag.Nombre_502ag);
             return esActivo_502ag;
         }
-
-
         public List<SE_Patente_502ag> ObtenerPatentesDePerfil_502ag(string nombrePerfil_502ag)
         {
             List<SE_Patente_502ag> listaPatentes_502ag = new List<SE_Patente_502ag>();
