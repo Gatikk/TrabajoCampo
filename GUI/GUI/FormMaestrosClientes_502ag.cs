@@ -38,7 +38,8 @@ namespace GUI
             tBTelefono_502ag.Enabled = false;
             menu_502ag = formMenu_502ag;
             Mostrar_502ag(dgvClientes_502ag);
-            
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
         private void FormMaestrosClientes_502ag_FormClosed(object sender, FormClosedEventArgs e)
@@ -301,8 +302,6 @@ namespace GUI
 
         private void FormMaestrosClientes_502ag_Activated(object sender, EventArgs e)
         {
-            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
-            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
         private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)

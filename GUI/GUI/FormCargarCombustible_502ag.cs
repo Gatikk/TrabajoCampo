@@ -45,6 +45,8 @@ namespace GUI
             MostrarFacturas_502ag(dgvFacturas_502ag);
             timerCarga_502ag.Interval = 1000; 
             timerCarga_502ag.Tick += TimerCarga_502ag_Tick;
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
 
@@ -360,8 +362,6 @@ namespace GUI
         //activated = cabra = goat = lebron james
         private void FormCargarCombustible_502ag_Activated(object sender, EventArgs e)
         {
-            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
-            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
             MostrarCombustibles_502ag(dgvCombustibles_502ag);
             MostrarFacturas_502ag(dgvFacturas_502ag);
             BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();

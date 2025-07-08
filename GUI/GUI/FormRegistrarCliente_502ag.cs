@@ -22,6 +22,8 @@ namespace GUI
             Location = new Point(500, 200);
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
         private void buttonRegistrarCliente_502ag_Click(object sender, EventArgs e)

@@ -25,6 +25,8 @@ namespace GUI
             CargarIdiomasEnComboBox_502ag();
             cBIdiomas_502ag.SelectedIndex = 0; 
             cBIdiomas_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
         private void FormTraductor_502ag_FormClosed(object sender, FormClosedEventArgs e)
@@ -42,6 +44,8 @@ namespace GUI
                 SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
                 Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
                 MessageBox.Show(msgIdiomaCambiado_502ag + $"{SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.Idioma_502ag}");
+                this.Hide();
+                menu_502ag.Show();
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}");}
         }
@@ -61,8 +65,6 @@ namespace GUI
 
         private void FormTraductor_502ag_Activated(object sender, EventArgs e)
         {
-            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
-            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
             CargarIdiomasEnComboBox_502ag();
             cBIdiomas_502ag.SelectedIndex = 0;
             cBIdiomas_502ag.DropDownStyle = ComboBoxStyle.DropDownList;

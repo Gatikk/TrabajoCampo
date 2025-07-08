@@ -536,8 +536,9 @@ namespace GUI
                     buttonAsignar_502ag.Enabled = true;
                     buttonDesasignar_502ag.Enabled = true;
                     buttonVolverAlMenu_502ag.Enabled = true;
-
                 }
+                cBFamilia_502ag.SelectedItem = null;
+                cBPerfil_502ag.SelectedItem = null;
                 MostrarPermisos_502ag(cLBPermisos_502ag);
                 MostrarFamilias_502ag();
                 MostrarPerfiles_502ag();
@@ -567,6 +568,9 @@ namespace GUI
             buttonAsignar_502ag.Enabled = true;
             buttonDesasignar_502ag.Enabled = true;
             buttonVolverAlMenu_502ag.Enabled = true;
+            cBFamilia_502ag.SelectedItem = null;
+            cBPerfil_502ag.SelectedItem = null;
+
             for (int i = 0; i < cLBPermisos_502ag.Items.Count; i++)
             {
                 cLBPermisos_502ag.SetItemChecked(i, false);
@@ -623,7 +627,7 @@ namespace GUI
 
         public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
         {
-            throw new NotImplementedException();
+            //
         }
     }
 }

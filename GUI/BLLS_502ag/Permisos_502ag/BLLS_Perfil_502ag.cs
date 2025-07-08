@@ -132,34 +132,6 @@ namespace BLLS_502ag
             }
             return listaPatentes_502ag;
         }
-        /*
-        public bool EvitarFamiliasConPermisosRepetidos_502ag(SE_Familia_502ag perfilSeleccionado_502ag, List<SE_Perfil_502ag> listaPermisos_502ag)
-        {
-            List<SE_Perfil_502ag> patentesExistentes_502ag = ObtenerListaPatentesRecursiva_502ag(perfilSeleccionado_502ag);
-            List<SE_Perfil_502ag> patentesNuevas_502ag = new List<SE_Perfil_502ag>();
-            foreach (SE_Perfil_502ag permiso_502ag in listaPermisos_502ag)
-            {
-                if (permiso_502ag is SE_Patente_502ag patente_502ag)
-                {
-                    if(patentesNuevas_502ag.Exists(x => x.Nombre_502ag == permiso_502ag.Nombre_502ag)) { return false; }
-                    patentesNuevas_502ag.Add(patente_502ag);
-                }
-                if (permiso_502ag is SE_Familia_502ag familia_502ag)
-                {
-                    patentesNuevas_502ag.AddRange(ObtenerPermisosDeFamiliaConcreta_502ag(familia_502ag));
-                }
-            }
-            foreach (SE_Perfil_502ag permiso_502ag in patentesNuevas_502ag)
-            {
-                if (permiso_502ag is SE_Patente_502ag patente_502ag)
-                {
-                    if (patentesExistentes_502ag.Exists(x => x.Nombre_502ag == patente_502ag.Nombre_502ag)) { return false; }
-                }
-            }
-            return true;
-        }
-        */
-        
         public bool EvitarFamiliasConPermisosRepetidos_502ag(SE_Familia_502ag perfilSeleccionado_502ag, List<SE_Perfil_502ag> listaPermisos_502ag)
         {
             List<SE_Perfil_502ag> patentesExistentes_502ag = ObtenerListaPatentesRecursiva_502ag(perfilSeleccionado_502ag);
@@ -263,5 +235,26 @@ namespace BLLS_502ag
             esActivo_502ag = bllsUsuario_502ag.ObtenerUsuarioPorRol_502ag(perfil_502ag.Nombre_502ag);
             return esActivo_502ag;
         }
+
+
+        public List<SE_Patente_502ag> ObtenerPatentesDePerfil_502ag(string nombrePerfil_502ag)
+        {
+            List<SE_Patente_502ag> listaPatentes_502ag = new List<SE_Patente_502ag>();
+            SE_Familia_502ag perfil_502ag = ObtenerListaPerfiles_502ag().Find(x => x.Nombre_502ag == nombrePerfil_502ag);
+            foreach (SE_Perfil_502ag permiso_502ag in perfil_502ag.lista_502ag)
+            {
+                if (permiso_502ag is SE_Patente_502ag patente_502ag)
+                {
+                    listaPatentes_502ag.Add(patente_502ag);
+                }
+                if (permiso_502ag is SE_Familia_502ag subFamilia_502ag)
+                {
+                    BLLS_Familia_502ag bllsFamilia_502ag = new BLLS_Familia_502ag();
+                    listaPatentes_502ag.AddRange(bllsFamilia_502ag.ObtenerListaPatentesDeFamilia_502ag(subFamilia_502ag));
+                }
+            }
+            return listaPatentes_502ag;
+        }
+
     }
 }

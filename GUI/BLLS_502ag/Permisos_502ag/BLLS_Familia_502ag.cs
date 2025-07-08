@@ -172,5 +172,22 @@ namespace BLLS_502ag
             if (ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag) != null) noSeRepite_502ag = false;
             return noSeRepite_502ag;
         }
+
+        public List<SE_Patente_502ag> ObtenerListaPatentesDeFamilia_502ag(SE_Familia_502ag familia_502ag)
+        {
+            List<SE_Patente_502ag> listaPatentes_502ag = new List<SE_Patente_502ag>();
+            foreach (SE_Perfil_502ag permiso_502ag in familia_502ag.lista_502ag)
+            {
+                if (permiso_502ag is SE_Patente_502ag patente_502ag)
+                {
+                    listaPatentes_502ag.Add(patente_502ag);
+                }
+                if(permiso_502ag is SE_Familia_502ag subFamilia_502ag)
+                {
+                    listaPatentes_502ag.AddRange(ObtenerListaPatentesDeFamilia_502ag(subFamilia_502ag));
+                }
+            }
+            return listaPatentes_502ag;
+        }
     }
 }

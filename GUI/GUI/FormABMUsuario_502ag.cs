@@ -42,7 +42,9 @@ namespace GUI
             cBRol_502ag.Enabled =false;
             menu_502ag = menuOriginal_502ag;
             tBModoActual_502ag.Text = modoConsulta_502ag;
-            
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
+
         }
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
@@ -329,10 +331,6 @@ namespace GUI
         {
             try
             {
-                SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
-                Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
-
-
                 BLLS_Perfil_502ag bllsPerfil_502ag = new BLLS_Perfil_502ag();
                 cBRol_502ag.Items.Clear();
                 if(bllsPerfil_502ag.ObtenerListaPerfiles_502ag().Count > 0)

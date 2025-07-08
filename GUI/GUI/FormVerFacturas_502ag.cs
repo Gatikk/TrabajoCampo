@@ -34,6 +34,8 @@ namespace GUI
             MostrarFacturas_502ag(dgvFacturas_502ag, listaFactura_502ag);
             cBOrdenarPor_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
             cBFecha_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
         private void buttonVolverAlMenu_502ag_Click(object sender, EventArgs e)
@@ -75,9 +77,6 @@ namespace GUI
         }
         private void FormVerFacturas_502ag_Activated(object sender, EventArgs e)
         {
-
-            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
-            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
             AgregarElementosACBOrdenarPor_502ag();
             AgregarElementosACBFiltrarPor_502ag();
             cBOrdenarPor_502ag.SelectedIndex = 0;

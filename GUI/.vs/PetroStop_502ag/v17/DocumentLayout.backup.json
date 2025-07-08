@@ -1,38 +1,46 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\",
+  "WorkspaceRootPath": "D:\\GitHub\\TrabajoCampo\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6DAF10A-4A8E-4085-8E7B-1C060EF90A07}|BLLS_502ag\\BLLS_502ag.csproj|c:\\users\\agust\\documents\\github\\trabajocampo\\gui\\blls_502ag\\permisos_502ag\\blls_perfil_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6DAF10A-4A8E-4085-8E7B-1C060EF90A07}|BLLS_502ag\\BLLS_502ag.csproj|solutionrelative:blls_502ag\\permisos_502ag\\blls_perfil_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|d:\\github\\trabajocampo\\gui\\dal_502ag\\dal_usuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|solutionrelative:dal_502ag\\dal_usuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\documents\\github\\trabajocampo\\gui\\gui\\formperfiles_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formperfiles_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\documents\\github\\trabajocampo\\gui\\gui\\formperfiles_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formperfiles_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\documents\\github\\trabajocampo\\gui\\gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\documents\\github\\trabajocampo\\gui\\gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formmenu_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\documents\\github\\trabajocampo\\gui\\gui\\formtraductor_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formverfacturas_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formverfacturas_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS_502ag.csproj|d:\\github\\trabajocampo\\gui\\servicios\\encryptador_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS_502ag.csproj|solutionrelative:servicios\\encryptador_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|D:\\GitHub\\TrabajoCampo\\GUI\\gui\\formtraductor_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formtraductor_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|D:\\GitHub\\TrabajoCampo\\GUI\\gui\\formtraductor_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formtraductor_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\documents\\github\\trabajocampo\\gui\\gui\\formabmusuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formabmusuario_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|c:\\users\\agust\\documents\\github\\trabajocampo\\gui\\gui\\formtraductor_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formtraductor_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formverfacturas_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formverfacturas_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -47,87 +55,113 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BLLS_Perfil_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\BLLS_502ag\\Permisos_502ag\\BLLS_Perfil_502ag.cs",
-              "RelativeDocumentMoniker": "BLLS_502ag\\Permisos_502ag\\BLLS_Perfil_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\BLLS_502ag\\Permisos_502ag\\BLLS_Perfil_502ag.cs",
-              "RelativeToolTip": "BLLS_502ag\\Permisos_502ag\\BLLS_Perfil_502ag.cs",
-              "ViewState": "AgIAALcAAAAAAAAAAAAcwMIAAAAJAAAAAAAAAA==",
+              "Title": "DAL_Usuario_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_Usuario_502ag.cs",
+              "RelativeDocumentMoniker": "DAL_502ag\\DAL_Usuario_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_Usuario_502ag.cs",
+              "RelativeToolTip": "DAL_502ag\\DAL_Usuario_502ag.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAAwHAAAADjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T19:21:54.464Z",
+              "WhenOpened": "2025-07-08T00:03:53.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Encryptador_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\SERVICIOS\\Encryptador_502ag.cs",
+              "RelativeDocumentMoniker": "SERVICIOS\\Encryptador_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\SERVICIOS\\Encryptador_502ag.cs",
+              "RelativeToolTip": "SERVICIOS\\Encryptador_502ag.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvxoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-08T00:03:19.076Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "FormPerfiles_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormPerfiles_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormPerfiles_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormPerfiles_502ag.cs",
-              "RelativeToolTip": "GUI\\FormPerfiles_502ag.cs",
-              "ViewState": "AgIAAMMBAAAAAAAAAAAAANABAABWAAAAAAAAAA==",
+              "Title": "FormLogin_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
+              "RelativeDocumentMoniker": "GUI\\FormLogin_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
+              "RelativeToolTip": "GUI\\FormLogin_502ag.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwCsAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T19:09:54.795Z",
+              "WhenOpened": "2025-07-07T23:57:55.909Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "FormPerfiles_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormPerfiles_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormPerfiles_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormPerfiles_502ag.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\FormPerfiles_502ag.cs [Dise\u00F1o]",
+              "Title": "FormLogin_502ag.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
+              "RelativeDocumentMoniker": "GUI\\FormLogin_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\FormLogin_502ag.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T19:09:52.064Z",
+              "WhenOpened": "2025-07-07T23:57:54.84Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "FormMenu_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormMenu_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
               "RelativeToolTip": "GUI\\FormMenu_502ag.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABoAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAOwAAAAAAAAAAAAEwAQBAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T18:57:42.797Z",
+              "WhenOpened": "2025-07-07T23:55:44.502Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "FormMenu_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormMenu_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs [Dise\u00F1o]",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMenu_502ag.cs [Dise\u00F1o]",
               "RelativeToolTip": "GUI\\FormMenu_502ag.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T18:57:41.636Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "FormABMUsuario_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormABMUsuario_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormABMUsuario_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormABMUsuario_502ag.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\FormABMUsuario_502ag.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T18:57:38.048Z",
+              "WhenOpened": "2025-07-07T23:55:42.881Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "FormVerFacturas_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormVerFacturas_502ag.cs",
+              "RelativeDocumentMoniker": "GUI\\FormVerFacturas_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormVerFacturas_502ag.cs",
+              "RelativeToolTip": "GUI\\FormVerFacturas_502ag.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwCUAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T23:51:45.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FormVerFacturas_502ag.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormVerFacturas_502ag.cs",
+              "RelativeDocumentMoniker": "GUI\\FormVerFacturas_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormVerFacturas_502ag.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\FormVerFacturas_502ag.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T23:51:40.498Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "FormTraductor_502ag.cs",
-              "DocumentMoniker": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormTraductor_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormTraductor_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormTraductor_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormTraductor_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormTraductor_502ag.cs",
               "RelativeToolTip": "GUI\\FormTraductor_502ag.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAhwBYAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAAqwEIAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-04T18:56:42.201Z",
               "EditorCaption": ""
@@ -136,12 +170,12 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "FormTraductor_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormTraductor_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormTraductor_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormTraductor_502ag.cs",
-              "ToolTip": "C:\\Users\\agust\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormTraductor_502ag.cs [Dise\u00F1o]",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormTraductor_502ag.cs [Dise\u00F1o]",
               "RelativeToolTip": "GUI\\FormTraductor_502ag.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-04T18:56:29.581Z",
+              "WhenOpened": "2025-07-05T05:18:31.335Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

@@ -32,6 +32,8 @@ namespace GUI
             MostrarContraseña_502ag();
             MostrarConfirmarContraseña_502ag();
             MostrarContraseñaActual_502ag();
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
         public void VerificarUsuarioContraseñaCambiada_502ag()
@@ -205,8 +207,7 @@ namespace GUI
         }
         private void FormCambiarContraseña_502ag_Activated(object sender, EventArgs e)
         {
-            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
-            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
+           
         }
     }
 }

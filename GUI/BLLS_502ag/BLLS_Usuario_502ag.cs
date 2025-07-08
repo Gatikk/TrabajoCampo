@@ -196,6 +196,7 @@ namespace BLLS_502ag
             usuario_502ag.isActivo_502ag = true;
             usuario_502ag.ContraseñaCambiada_502ag = false;
             usuario_502ag.UltimoLogin_502ag = DateTime.Now;
+            usuario_502ag.Idioma_502ag = "español";
             dalUsuario_502ag.AltaUsuario_502ag(usuario_502ag);
         }
         public string CrearNombreUsuario_502ag(string nombre_502ag, string DNI_502ag)

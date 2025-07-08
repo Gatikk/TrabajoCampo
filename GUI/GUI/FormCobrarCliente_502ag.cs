@@ -27,8 +27,9 @@ namespace GUI
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             rTBFacturaDatos_502ag.ReadOnly = true;
             facturaACobrar_502ag = factura_502ag;
-            
             rBCredito_502ag.Checked = true;
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
         private void buttonRealizarPago_502ag_Click(object sender, EventArgs e)
         {
@@ -143,8 +144,6 @@ namespace GUI
 
         private void FormCobrarCliente_502ag_Activated(object sender, EventArgs e)
         {
-            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
-            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
             CompletarRTB_502ag();
         }
     }

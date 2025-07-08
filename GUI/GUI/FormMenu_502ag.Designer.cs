@@ -78,6 +78,7 @@ namespace GUI
             this.buttonCerrarSesion_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCerrarSesion_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonCerrarSesion_502ag.TabIndex = 6;
+            this.buttonCerrarSesion_502ag.Tag = "Cerrar Sesion";
             this.buttonCerrarSesion_502ag.Text = "Cerrar Sesión";
             this.buttonCerrarSesion_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCerrarSesion_502ag.UseVisualStyleBackColor = true;
@@ -106,6 +107,7 @@ namespace GUI
             this.buttonABM_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonABM_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonABM_502ag.TabIndex = 3;
+            this.buttonABM_502ag.Tag = "Gestion de Usuarios";
             this.buttonABM_502ag.Text = "Gestión de Usuarios";
             this.buttonABM_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonABM_502ag.UseVisualStyleBackColor = false;
@@ -122,6 +124,7 @@ namespace GUI
             this.buttonCambiarContraseña_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCambiarContraseña_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonCambiarContraseña_502ag.TabIndex = 8;
+            this.buttonCambiarContraseña_502ag.Tag = "Cambiar Contraseña";
             this.buttonCambiarContraseña_502ag.Text = "Cambiar Contraseña";
             this.buttonCambiarContraseña_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCambiarContraseña_502ag.UseVisualStyleBackColor = true;
@@ -196,6 +199,7 @@ namespace GUI
             this.buttonPerfiles_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonPerfiles_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonPerfiles_502ag.TabIndex = 4;
+            this.buttonPerfiles_502ag.Tag = "Gestion de Perfiles";
             this.buttonPerfiles_502ag.Text = "Gestion de Perfiles";
             this.buttonPerfiles_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonPerfiles_502ag.UseVisualStyleBackColor = false;
@@ -241,6 +245,7 @@ namespace GUI
             this.buttonCambiarIdioma_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCambiarIdioma_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonCambiarIdioma_502ag.TabIndex = 4;
+            this.buttonCambiarIdioma_502ag.Tag = "Cambiar Idioma";
             this.buttonCambiarIdioma_502ag.Text = "Cambiar Idioma";
             this.buttonCambiarIdioma_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCambiarIdioma_502ag.UseVisualStyleBackColor = false;
@@ -257,6 +262,7 @@ namespace GUI
             this.buttonIniciarSesion_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonIniciarSesion_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonIniciarSesion_502ag.TabIndex = 7;
+            this.buttonIniciarSesion_502ag.Tag = "Iniciar Sesion";
             this.buttonIniciarSesion_502ag.Text = "Iniciar Sesión";
             this.buttonIniciarSesion_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonIniciarSesion_502ag.UseVisualStyleBackColor = true;
@@ -299,6 +305,7 @@ namespace GUI
             this.buttonMaestrosCombustibles_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonMaestrosCombustibles_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonMaestrosCombustibles_502ag.TabIndex = 11;
+            this.buttonMaestrosCombustibles_502ag.Tag = "Gestion de Combustibles";
             this.buttonMaestrosCombustibles_502ag.Text = "Combustibles";
             this.buttonMaestrosCombustibles_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonMaestrosCombustibles_502ag.UseVisualStyleBackColor = true;
@@ -315,6 +322,7 @@ namespace GUI
             this.buttonMaestrosClientes_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonMaestrosClientes_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonMaestrosClientes_502ag.TabIndex = 10;
+            this.buttonMaestrosClientes_502ag.Tag = "Gestion de Clientes";
             this.buttonMaestrosClientes_502ag.Text = "Clientes";
             this.buttonMaestrosClientes_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonMaestrosClientes_502ag.UseVisualStyleBackColor = true;
@@ -357,6 +365,7 @@ namespace GUI
             this.buttonVerFacturas_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonVerFacturas_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonVerFacturas_502ag.TabIndex = 14;
+            this.buttonVerFacturas_502ag.Tag = "Ver Facturas";
             this.buttonVerFacturas_502ag.Text = "Ver Facturas";
             this.buttonVerFacturas_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonVerFacturas_502ag.UseVisualStyleBackColor = true;
@@ -373,6 +382,7 @@ namespace GUI
             this.buttonCargarCombustible_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.buttonCargarCombustible_502ag.Size = new System.Drawing.Size(222, 41);
             this.buttonCargarCombustible_502ag.TabIndex = 13;
+            this.buttonCargarCombustible_502ag.Tag = "Cargar Combustible";
             this.buttonCargarCombustible_502ag.Text = "Cargar Combustible";
             this.buttonCargarCombustible_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCargarCombustible_502ag.UseVisualStyleBackColor = true;
