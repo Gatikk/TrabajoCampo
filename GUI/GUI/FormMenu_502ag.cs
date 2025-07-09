@@ -216,6 +216,7 @@ namespace GUI
             SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
             Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
             ValidadPermisos_502ag(this);
+            ActivarBotonesSubMenu_502ag();
         }
 
         private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
@@ -295,6 +296,42 @@ namespace GUI
                 }
             }
             catch (Exception ex) { }
+        }
+
+        private void ActivarBotonesSubMenu_502ag()
+        {
+            if(buttonABM_502ag.Enabled || buttonPerfiles_502ag.Enabled)
+            {
+                buttonAdmin_502ag.Enabled = true;
+            }
+            else
+            {
+                buttonAdmin_502ag.Enabled = false;
+            }
+            if (buttonCerrarSesion_502ag.Enabled || buttonIniciarSesion_502ag.Enabled || buttonCambiarContraseña_502ag.Enabled || buttonCambiarIdioma_502ag.Enabled)
+            {
+                buttonUsuario_502ag.Enabled = true;
+            }
+            else
+            {
+                buttonUsuario_502ag.Enabled = false;
+            }
+            if (buttonMaestrosClientes_502ag.Enabled || buttonMaestrosCombustibles_502ag.Enabled)
+            {
+                buttonMaestros_502ag.Enabled = true;
+            }
+            else
+            {
+                buttonMaestros_502ag.Enabled = false;
+            }
+            if (buttonCargarCombustible_502ag.Enabled || buttonVerFacturas_502ag.Enabled)
+            {
+                buttonVentas_502ag.Enabled = true;
+            }
+            else
+            {
+                buttonVentas_502ag.Enabled = false;
+            }
         }
     }
 }

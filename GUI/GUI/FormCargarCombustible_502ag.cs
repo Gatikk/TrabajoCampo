@@ -216,11 +216,15 @@ namespace GUI
                     buttonCobrarCliente_502ag.Enabled = false;
                     throw new Exception(msgClienteNoEncontrado_502ag);
                 }
-                tBNombre_502ag.Enabled = true;
-                tBNombre_502ag.Text = cliente_502ag.Nombre_502ag;
-                tBApellido_502ag.Enabled = true;
-                tBApellido_502ag.Text = cliente_502ag.Apellido_502ag;
-                buttonCobrarCliente_502ag.Enabled = true;
+                else
+                {
+                    tBNombre_502ag.Enabled = true;
+                    tBNombre_502ag.Text = cliente_502ag.Nombre_502ag;
+                    tBApellido_502ag.Enabled = true;
+                    tBApellido_502ag.Text = cliente_502ag.Apellido_502ag;
+                    buttonCobrarCliente_502ag.Enabled = true;
+                    buttonRegistrarCliente_502ag.Enabled = false;
+                }
 
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
