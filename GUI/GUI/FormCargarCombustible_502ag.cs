@@ -240,6 +240,7 @@ namespace GUI
                 facturaActual_502ag.Hora_502ag = DateTime.Now.TimeOfDay;
                 bllFactura_502ag.ActualizarFacturaClienteIdentificado_502ag(facturaActual_502ag);
                 FormCobrarCliente_502ag cobrarClienteForm_502ag = new FormCobrarCliente_502ag(facturaActual_502ag);
+                SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
                 this.Hide();
                 cobrarClienteForm_502ag.Show();
             }
@@ -313,6 +314,7 @@ namespace GUI
         {
             try
             {
+                SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
                 this.Hide();
                 menu_502ag.Show();            
             }

@@ -17,6 +17,14 @@ namespace GUI
     {
         FormMenu_502ag menu_502ag;
         public string opcion_502ag = "Consulta";
+
+        private string msgExisteFamiliaConEseNombre_502ag, msgExistePatenteConEseNombre_502ag, msgExistePerfilConEseNombre_502ag;
+        private string msgNombreFamiliaVacio_502ag, msgNoAltaFamiliaSinPermisos_502ag, msgNoAltaPatentesRepetidas_502ag, msgNombrePerfilVacio_502ag, msgNoAltaPerfilSinPermisos_502ag;
+        private string msgFamiliaCreada_502ag, msgPerfilCreado_502ag;
+        private string msgNadaSeleccionadoParaBorrar_502ag, msgFamiliaNoEncontrada_502ag, msgNoBajaJerarquia_502ag, msgFamiliaBorrada_502ag;
+        private string msgPerfilNoEncontrado_502ag, msgNoBajaPerfilConUsuarios_502ag, msgPerfilBorrado_502ag, msgNadaSeleccionado_502ag;
+        private string msgMinUnPermiso_502ag, msgFamiliaEncontradaEnOtraJerarquia_502ag, msgFamiliaTieneRelacion_502ag, msgNoAsignarPermisosRepetidos_502ag;
+        private string msgPermisosAsignados_502ag, msgJerarquiaRota_502ag, msgNoDesasignarTodo_502ag, msgPermisosDesasignados_502ag;
         public FormPerfiles_502ag(FormMenu_502ag formMenu_502ag)
         {
             StartPosition = FormStartPosition.Manual;
@@ -36,6 +44,8 @@ namespace GUI
             rBFamilia_502ag.Enabled = false;
             rBPerfil_502ag.Enabled = false;
             tBNombre_502ag.Enabled = false;
+            SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
         private void MostrarPermisos_502ag(CheckedListBox clb_502ag)
@@ -304,6 +314,7 @@ namespace GUI
 
         private void buttonVolverAlMenu_502ag_Click(object sender, EventArgs e)
         {
+            SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
             this.Hide();
             menu_502ag.Show();
         }
@@ -317,13 +328,13 @@ namespace GUI
                     BLLS_Familia_502ag bllsFamilia_502ag = new BLLS_Familia_502ag();
                     BLLS_Patente_502ag bllsPatente_502ag = new BLLS_Patente_502ag();
                     BLLS_Perfil_502ag bllsPerfil_502ag = new BLLS_Perfil_502ag();
-                    if (!bllsFamilia_502ag.VerificarNombreCargado_502ag(tBNombre_502ag.Text)) throw new Exception("Ya existe una familia con ese nombre");
-                    if (!bllsPatente_502ag.VerificarNombreCargado_502ag(tBNombre_502ag.Text)) throw new Exception("Ya existe un permiso con ese nombre");
-                    if (!bllsPerfil_502ag.VerificarNombreCargado_502ag(tBNombre_502ag.Text)) throw new Exception("Ya existe un perfil con ese nombre");
+                    if (!bllsFamilia_502ag.VerificarNombreCargado_502ag(tBNombre_502ag.Text)) throw new Exception(msgExisteFamiliaConEseNombre_502ag);
+                    if (!bllsPatente_502ag.VerificarNombreCargado_502ag(tBNombre_502ag.Text)) throw new Exception(msgExistePatenteConEseNombre_502ag);
+                    if (!bllsPerfil_502ag.VerificarNombreCargado_502ag(tBNombre_502ag.Text)) throw new Exception(msgExistePerfilConEseNombre_502ag);
                     if (rBFamilia_502ag.Checked)
                     {
-                        if (string.IsNullOrWhiteSpace(tBNombre_502ag.Text)) { throw new Exception("El nombre de la familia no puede estar vacío"); }
-                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception("No se puede dar de alta una familia sin permisos asignados"); }
+                        if (string.IsNullOrWhiteSpace(tBNombre_502ag.Text)) { throw new Exception(msgNombreFamiliaVacio_502ag); }
+                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception(msgNoAltaFamiliaSinPermisos_502ag); }
                         SE_Familia_502ag nuevaFamilia_502ag = new SE_Familia_502ag(tBNombre_502ag.Text);
                         foreach (var item_502ag in cLBPermisos_502ag.CheckedItems)
                         {
@@ -340,14 +351,14 @@ namespace GUI
                             }
                         }
                         List<SE_Perfil_502ag> listaPermisos_502ag = new List<SE_Perfil_502ag>();
-                        if (!bllsFamilia_502ag.PatenteRepetida_502ag(nuevaFamilia_502ag, listaPermisos_502ag)) { throw new Exception("No se puede dar de alta, hay patentes repetidas"); }
+                        if (!bllsFamilia_502ag.PatenteRepetida_502ag(nuevaFamilia_502ag, listaPermisos_502ag)) { throw new Exception(msgNoAltaPatentesRepetidas_502ag); }
                         bllsFamilia_502ag.AltaFamilia_502ag(nuevaFamilia_502ag);
-                        MessageBox.Show("Familia creada");
+                        MessageBox.Show(msgFamiliaCreada_502ag);
                     }
                     if (rBPerfil_502ag.Checked)
                     {
-                        if (string.IsNullOrWhiteSpace(tBNombre_502ag.Text)) { throw new Exception("El nombre del perfil no puede estar vacío"); }
-                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception("No se puede dar de alta un perfil sin permisos asignados"); }
+                        if (string.IsNullOrWhiteSpace(tBNombre_502ag.Text)) { throw new Exception(msgNombrePerfilVacio_502ag); }
+                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception(msgNoAltaPerfilSinPermisos_502ag); }
 
                         SE_Familia_502ag nuevoPerfil_502ag = new SE_Familia_502ag(tBNombre_502ag.Text);
                         foreach (var item_502ag in cLBPermisos_502ag.CheckedItems)
@@ -365,10 +376,10 @@ namespace GUI
                             }
                         }
                         List<SE_Perfil_502ag> listaPermisos_502ag = new List<SE_Perfil_502ag>();
-                        if (!bllsFamilia_502ag.PatenteRepetida_502ag(nuevoPerfil_502ag, listaPermisos_502ag)) { throw new Exception("No se puede dar de alta, hay patentes repetidas"); }
+                        if (!bllsFamilia_502ag.PatenteRepetida_502ag(nuevoPerfil_502ag, listaPermisos_502ag)) { throw new Exception(msgNoAltaPatentesRepetidas_502ag); }
 
                         bllsPerfil_502ag.AltaPerfil_502ag(nuevoPerfil_502ag);
-                        MessageBox.Show("Perfil creado");
+                        MessageBox.Show(msgPerfilCreado_502ag);
 
                     }
                     opcion_502ag = "Consulta";
@@ -391,25 +402,25 @@ namespace GUI
                     BLLS_Familia_502ag bllsFamilia_502ag = new BLLS_Familia_502ag();
                     if (rBFamilia_502ag.Checked)
                     {
-                        if (cBFamilia_502ag.SelectedItem == null) { throw new Exception("No hay nada seleccionado para borrar"); }
-                        if (!bllsFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Any(x => x.Nombre_502ag == cBFamilia_502ag.Text)) throw new Exception("Familia no encontrada");
+                        if (cBFamilia_502ag.SelectedItem == null) { throw new Exception(msgNadaSeleccionadoParaBorrar_502ag); }
+                        if (!bllsFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Any(x => x.Nombre_502ag == cBFamilia_502ag.Text)) throw new Exception(msgFamiliaNoEncontrada_502ag);
                         SE_Familia_502ag familiaSeleccionada = bllsFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == cBFamilia_502ag.SelectedItem.ToString());
 
-                        if (bllsPerfil_502ag.VerificarSiPerteneceAFamilia_502ag(familiaSeleccionada)) { throw new Exception("No se puede borrar porque se encuentra dentro de una jerarquía"); }
+                        if (bllsPerfil_502ag.VerificarSiPerteneceAFamilia_502ag(familiaSeleccionada)) { throw new Exception(msgNoBajaJerarquia_502ag); }
 
                         bllsFamilia_502ag.BorrarFamilia_502ag(familiaSeleccionada);
                         cBFamilia_502ag.SelectedItem = null;
-                        MessageBox.Show("Familia borrada con éxito");
+                        MessageBox.Show(msgFamiliaBorrada_502ag);
                     }
                     if (rBPerfil_502ag.Checked)
                     {
-                        if (cBPerfil_502ag.SelectedItem == null) { throw new Exception("No hay nada seleccionado para borrar"); }
-                        if (!bllsPerfil_502ag.ObtenerListaPerfiles_502ag().Any(x => x.Nombre_502ag == cBPerfil_502ag.Text)) throw new Exception("Perfil no encontrado");
+                        if (cBPerfil_502ag.SelectedItem == null) { throw new Exception(msgNadaSeleccionadoParaBorrar_502ag); }
+                        if (!bllsPerfil_502ag.ObtenerListaPerfiles_502ag().Any(x => x.Nombre_502ag == cBPerfil_502ag.Text)) throw new Exception(msgPerfilNoEncontrado_502ag);
                         SE_Familia_502ag perfilSeleccionado_502ag = bllsPerfil_502ag.ObtenerListaPerfiles_502ag().Find(x => x.Nombre_502ag == cBPerfil_502ag.SelectedItem.ToString());
-                        if (bllsPerfil_502ag.VerificarSiPerfilEsActivo_502ag(perfilSeleccionado_502ag)) throw new Exception("El perfil tiene usuarios activos, no se puede borrar");
+                        if (bllsPerfil_502ag.VerificarSiPerfilEsActivo_502ag(perfilSeleccionado_502ag)) throw new Exception(msgNoBajaPerfilConUsuarios_502ag);
                         bllsPerfil_502ag.BorrarPerfil_502ag(perfilSeleccionado_502ag);
                         cBPerfil_502ag.SelectedItem = null;
-                        MessageBox.Show("Perfil borrado con éxito");
+                        MessageBox.Show(msgPerfilBorrado_502ag);
                     }
                     opcion_502ag = "Consulta";
                     rBFamilia_502ag.Enabled = false;
@@ -431,8 +442,8 @@ namespace GUI
                     BLLS_Perfil_502ag bllsPerfil_502ag = new BLLS_Perfil_502ag();
                     if (rBFamilia_502ag.Checked)
                     {
-                        if (cBFamilia_502ag.SelectedItem == null) { throw new Exception("No hay nada seleccionado"); }
-                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception("Sí o sí tiene que tener por lo menos un permiso"); }
+                        if (cBFamilia_502ag.SelectedItem == null) { throw new Exception(msgNadaSeleccionado_502ag); }
+                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception(msgMinUnPermiso_502ag); }
                         SE_Familia_502ag familiaSeleccionada = bllsFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == cBFamilia_502ag.SelectedItem.ToString());
                         foreach (var itemchecked_502ag in cLBPermisos_502ag.CheckedItems)
                         {
@@ -440,7 +451,7 @@ namespace GUI
                             if (bllsFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag) != null)
                             {
                                 SE_Familia_502ag subFamilia = bllsFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag);
-                                if (!bllsFamilia_502ag.CompararFamiliaPadreEHijos_502ag(familiaSeleccionada, subFamilia)) throw new Exception("Tu familia seleccionada ya se encuentra en la jerarquía de otra familia que tenes marcada");
+                                if (!bllsFamilia_502ag.CompararFamiliaPadreEHijos_502ag(familiaSeleccionada, subFamilia)) throw new Exception(msgFamiliaEncontradaEnOtraJerarquia_502ag);
                             }
                         }
                         List<SE_Perfil_502ag> listaPermisosAAgregar_502ag = new List<SE_Perfil_502ag>();
@@ -461,18 +472,18 @@ namespace GUI
                                 }
                             }
                         }
-                        if (bllsPerfil_502ag.EvitarPermisosRepetidosEntreFamiliasQueCompartenPerfil_502ag(familiaSeleccionada, listaPermisosAAgregar_502ag)) throw new Exception("La familia que estas editando ya tiene relación con una de las patentes que deseas agregar");
+                        if (bllsPerfil_502ag.EvitarPermisosRepetidosEntreFamiliasQueCompartenPerfil_502ag(familiaSeleccionada, listaPermisosAAgregar_502ag)) throw new Exception(msgFamiliaTieneRelacion_502ag);
                         List<SE_Perfil_502ag> listaPermisosAAgregarAux_502ag = new List<SE_Perfil_502ag>(listaPermisosAAgregar_502ag);
-                        if (!bllsPerfil_502ag.EvitarFamiliasConPermisosRepetidos_502ag(familiaSeleccionada, listaPermisosAAgregarAux_502ag)) throw new Exception("Imposible asignar, se repetirían permisos");
-                        if (!bllsFamilia_502ag.PatenteRepetida_502ag(familiaSeleccionada, listaPermisosAAgregarAux_502ag)) { throw new Exception("No se puede realizar la operación, hay patentes repetidas"); }
+                        if (!bllsPerfil_502ag.EvitarFamiliasConPermisosRepetidos_502ag(familiaSeleccionada, listaPermisosAAgregarAux_502ag)) throw new Exception(msgNoAsignarPermisosRepetidos_502ag);
+                        if (!bllsFamilia_502ag.PatenteRepetida_502ag(familiaSeleccionada, listaPermisosAAgregarAux_502ag)) { throw new Exception(msgNoAsignarPermisosRepetidos_502ag); }
 
                         bllsFamilia_502ag.AsignarPermisosAFamilia_502ag(familiaSeleccionada, listaPermisosAAgregar_502ag);
-                        MessageBox.Show("Permisos asignados");
+                        MessageBox.Show(msgPermisosAsignados_502ag);
                     }
                     if (rBPerfil_502ag.Checked)
                     {
-                        if (cBPerfil_502ag.SelectedItem == null) { throw new Exception("No hay nada seleccionado"); }
-                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception("Sí o sí tiene que tener por lo menos un permiso"); }
+                        if (cBPerfil_502ag.SelectedItem == null) { throw new Exception(msgNadaSeleccionado_502ag); }
+                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception(msgMinUnPermiso_502ag); }
                         SE_Familia_502ag perfilSeleccionado_502ag = bllsPerfil_502ag.ObtenerListaPerfiles_502ag().Find(x => x.Nombre_502ag == cBPerfil_502ag.SelectedItem.ToString());
 
                         foreach (var itemchecked_502ag in cLBPermisos_502ag.CheckedItems)
@@ -481,7 +492,7 @@ namespace GUI
                             if (bllsFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag) != null)
                             {
                                 SE_Familia_502ag subFamilia = bllsFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == nombre_502ag);
-                                if (!bllsFamilia_502ag.CompararFamiliaPadreEHijos_502ag(perfilSeleccionado_502ag, subFamilia)) throw new Exception("Se rompe la jerarquía");
+                                if (!bllsFamilia_502ag.CompararFamiliaPadreEHijos_502ag(perfilSeleccionado_502ag, subFamilia)) throw new Exception(msgJerarquiaRota_502ag);
                             }
                         }
                         List<SE_Perfil_502ag> listaPermisosAAgregar_502ag = new List<SE_Perfil_502ag>();
@@ -503,10 +514,10 @@ namespace GUI
                             }
                         }
                         List<SE_Perfil_502ag> listaPermisosAAgregarAux_502ag = new List<SE_Perfil_502ag>(listaPermisosAAgregar_502ag);
-                        if (!bllsPerfil_502ag.EvitarFamiliasConPermisosRepetidos_502ag(perfilSeleccionado_502ag, listaPermisosAAgregarAux_502ag)) throw new Exception("Imposible asignar, se repetirían permisos");
+                        if (!bllsPerfil_502ag.EvitarFamiliasConPermisosRepetidos_502ag(perfilSeleccionado_502ag, listaPermisosAAgregarAux_502ag)) throw new Exception(msgNoAsignarPermisosRepetidos_502ag);
 
                         bllsPerfil_502ag.AsignarPermisosAPerfil_502ag(perfilSeleccionado_502ag, listaPermisosAAgregar_502ag);
-                        MessageBox.Show("Permisos asignados");
+                        MessageBox.Show(msgPermisosAsignados_502ag);
                     }
                     opcion_502ag = "Consulta";
                     buttonAplicar_502ag.Enabled = false;
@@ -527,8 +538,8 @@ namespace GUI
                     if (rBFamilia_502ag.Checked)
                     {
                         BLLS_Familia_502ag bllsFamilia_502ag = new BLLS_Familia_502ag();
-                        if (cBFamilia_502ag.SelectedItem == null) { throw new Exception("No hay nada seleccionado"); }
-                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception("No se puede desasignar todo"); }
+                        if (cBFamilia_502ag.SelectedItem == null) { throw new Exception(msgNadaSeleccionado_502ag); }
+                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception(msgNoDesasignarTodo_502ag); }
                         SE_Familia_502ag familiaSeleccionada = bllsFamilia_502ag.ObtenerListaFamiliasCompleta_502ag().Find(x => x.Nombre_502ag == cBFamilia_502ag.SelectedItem.ToString());
                         for (int i = 0; i < cLBPermisos_502ag.Items.Count; i++)
                         {
@@ -542,13 +553,13 @@ namespace GUI
                             }
                         }
                         bllsFamilia_502ag.DesasignarPermisosAFamilia_502ag(familiaSeleccionada);
-                        MessageBox.Show("Permisos desasignados");
+                        MessageBox.Show(msgPermisosDesasignados_502ag);
                     }
                     if (rBPerfil_502ag.Checked)
                     {
                         BLLS_Perfil_502ag bllsPerfil_502ag = new BLLS_Perfil_502ag();
-                        if (cBPerfil_502ag.SelectedItem == null) { throw new Exception("No hay nada seleccionado"); }
-                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception("No se puede desasignar todo"); }
+                        if (cBPerfil_502ag.SelectedItem == null) { throw new Exception(msgNadaSeleccionado_502ag); }
+                        if (cLBPermisos_502ag.CheckedItems.Count <= 0) { throw new Exception(msgNoDesasignarTodo_502ag); }
                         SE_Familia_502ag perfilSeleccionado_502ag = bllsPerfil_502ag.ObtenerListaPerfiles_502ag().Find(x => x.Nombre_502ag == cBPerfil_502ag.SelectedItem.ToString());
                         for (int i = 0; i < cLBPermisos_502ag.Items.Count; i++)
                         {
@@ -562,7 +573,7 @@ namespace GUI
                             }
                         }
                         bllsPerfil_502ag.DesasignarPermisosAPerfil_502ag(perfilSeleccionado_502ag);
-                        MessageBox.Show("Permisos desasignados");
+                        MessageBox.Show(msgPermisosDesasignados_502ag);
                     }
                     opcion_502ag = "Consulta";
                     buttonAplicar_502ag.Enabled = false;
@@ -669,10 +680,52 @@ namespace GUI
 
         public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
         {
-            //
+            TraducirControles_502ag(this, traductor_502ag);
         }
 
+        private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
+        {
+            foreach (Control c_502ag in control_502ag.Controls)
+            {
+                if(c_502ag is TextBox)
+                {
 
-
+                }
+                else
+                {
+                    c_502ag.Text = traductor_502ag.Traducir_502ag(c_502ag.Name);
+                }
+                if (control_502ag.HasChildren)
+                {
+                    TraducirControles_502ag(c_502ag, traductor_502ag);
+                }
+            }
+            msgExisteFamiliaConEseNombre_502ag = traductor_502ag.Traducir_502ag("msgExisteFamiliaConEseNombre_502ag");
+            msgExistePatenteConEseNombre_502ag = traductor_502ag.Traducir_502ag("msgExistePatenteConEseNombre_502ag");
+            msgExistePerfilConEseNombre_502ag = traductor_502ag.Traducir_502ag("msgExistePerfilConEseNombre_502ag");
+            msgNombreFamiliaVacio_502ag = traductor_502ag.Traducir_502ag("msgNombreFamiliaVacio_502ag");
+            msgNoAltaFamiliaSinPermisos_502ag = traductor_502ag.Traducir_502ag("msgNoAltaFamiliaSinPermisos_502ag");
+            msgNoAltaPatentesRepetidas_502ag = traductor_502ag.Traducir_502ag("msgNoAltaPatentesRepetidas_502ag");
+            msgNombrePerfilVacio_502ag = traductor_502ag.Traducir_502ag("msgNombrePerfilVacio_502ag");
+            msgNoAltaPerfilSinPermisos_502ag = traductor_502ag.Traducir_502ag("msgNoAltaPerfilSinPermisos_502ag");
+            msgFamiliaCreada_502ag = traductor_502ag.Traducir_502ag("msgFamiliaCreada_502ag");
+            msgPerfilCreado_502ag = traductor_502ag.Traducir_502ag("msgPerfilCreado_502ag");
+            msgNadaSeleccionadoParaBorrar_502ag = traductor_502ag.Traducir_502ag("msgNadaSeleccionadoParaBorrar_502ag");
+            msgFamiliaNoEncontrada_502ag = traductor_502ag.Traducir_502ag("msgFamiliaNoEncontrada_502ag");
+            msgNoBajaJerarquia_502ag = traductor_502ag.Traducir_502ag("msgNoBajaJerarquia_502ag");
+            msgFamiliaBorrada_502ag = traductor_502ag.Traducir_502ag("msgFamiliaBorrada_502ag");
+            msgPerfilNoEncontrado_502ag = traductor_502ag.Traducir_502ag("msgPerfilNoEncontrado_502ag");
+            msgNoBajaPerfilConUsuarios_502ag = traductor_502ag.Traducir_502ag("msgNoBajaPerfilConUsuarios_502ag");
+            msgPerfilBorrado_502ag = traductor_502ag.Traducir_502ag("msgPerfilBorrado_502ag");
+            msgNadaSeleccionado_502ag = traductor_502ag.Traducir_502ag("msgNadaSeleccionado_502ag");
+            msgMinUnPermiso_502ag = traductor_502ag.Traducir_502ag("msgMinUnPermiso_502ag");
+            msgFamiliaEncontradaEnOtraJerarquia_502ag = traductor_502ag.Traducir_502ag("msgFamiliaEncontradaEnOtraJerarquia_502ag");
+            msgFamiliaTieneRelacion_502ag = traductor_502ag.Traducir_502ag("msgFamiliaTieneRelacion_502ag");
+            msgNoAsignarPermisosRepetidos_502ag = traductor_502ag.Traducir_502ag("msgNoAsignarPermisosRepetidos_502ag");
+            msgPermisosAsignados_502ag = traductor_502ag.Traducir_502ag("msgPermisosAsignados_502ag");
+            msgJerarquiaRota_502ag = traductor_502ag.Traducir_502ag("msgJerarquiaRota_502ag");
+            msgNoDesasignarTodo_502ag = traductor_502ag.Traducir_502ag("msgNoDesasignarTodo_502ag");
+            msgPermisosDesasignados_502ag = traductor_502ag.Traducir_502ag("msgPermisosDesasignados_502ag");
+        }
     }
 }

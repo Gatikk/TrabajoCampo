@@ -50,13 +50,14 @@ namespace GUI
 
         private void buttonVolverAlMenu_Click(object sender, EventArgs e)
         {
+
+            SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
             this.Hide();
             menu_502ag.Show();
         }
 
         private void FormCambiarContraseña_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             Environment.Exit(0);
         }
 
@@ -85,6 +86,7 @@ namespace GUI
                         SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion_502ag();
                         MessageBox.Show(contraseñaCambiada_502ag);
                         FormLogin_502ag loginForm_502ag = new FormLogin_502ag();
+                        SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
                         this.Hide();
                         loginForm_502ag.Show();
                     }

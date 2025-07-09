@@ -31,6 +31,7 @@ namespace GUI
 
         private void FormTraductor_502ag_FormClosed(object sender, FormClosedEventArgs e)
         {
+            SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
             this.Hide();
             menu_502ag.Show();
         }
@@ -44,6 +45,7 @@ namespace GUI
                 SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
                 Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
                 MessageBox.Show(msgIdiomaCambiado_502ag + $"{SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.Idioma_502ag}");
+                SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
                 this.Hide();
                 menu_502ag.Show();
             }

@@ -216,6 +216,7 @@ namespace GUI
 
         private void buttonVolverAlMenu_502ag_Click(object sender, EventArgs e)
         {
+            SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
             this.Hide();
             menu_502ag.Show();
         }

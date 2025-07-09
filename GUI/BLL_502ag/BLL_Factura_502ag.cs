@@ -107,7 +107,7 @@ namespace BLL_502ag
                 doc_502ag.Add(new Paragraph($"Total pagado: {factura_502ag.Monto_502ag:F2}$", FontFactory.GetFont(FontFactory.COURIER_BOLD, 12)));
                 doc_502ag.Add(new Paragraph(" "));
                 doc_502ag.Add(new Paragraph(" "));
-                doc_502ag.Add(new Paragraph("Gracias por confiar en PetroStop :P", FontFactory.GetFont(FontFactory.COURIER_BOLD, 8)));
+                doc_502ag.Add(new Paragraph("Gracias por confiar en PetroStop", FontFactory.GetFont(FontFactory.COURIER_BOLD, 8)));
                 doc_502ag.Close();
             }
         }

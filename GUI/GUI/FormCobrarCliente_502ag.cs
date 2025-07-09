@@ -70,6 +70,7 @@ namespace GUI
                 bllFactura_502ag.ActualizarFacturaFinalizada_502ag(facturaACobrar_502ag);
                 MessageBox.Show(msgPagoRealizado_502ag, capPagoExitoso_502ag, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 bllFactura_502ag.GenerarFactura_502ag(facturaACobrar_502ag);
+                SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
                 this.Hide();
                 menu_502ag.Show();
             }

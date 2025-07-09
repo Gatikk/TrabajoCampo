@@ -48,6 +48,7 @@ namespace GUI
                 if (!bllCliente_502ag.VerificarDireccion_502ag(direccion_502ag)) throw new Exception(msgDireccionNoValida_502ag);
                 bllCliente_502ag.AltaCliente_502ag(dni_502ag, nombre_502ag, apellido_502ag, email_502ag, direccion_502ag, telefono_502ag);
                 MessageBox.Show("Cliente registrado exitosamente", "Registro Exitoso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SER_Traductor_502ag.GestorTraductor_502ag.Desuscribir_502ag(this);
                 this.Hide();
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
