@@ -29,6 +29,7 @@ namespace GUI
             facturaACobrar_502ag = factura_502ag;
             rBCredito_502ag.Checked = true;
             SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
+            tBTitular_502ag.Text = $"{facturaACobrar_502ag.NombreCliente_502ag} {facturaACobrar_502ag.ApellidoCliente_502ag}";
             Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
         private void buttonRealizarPago_502ag_Click(object sender, EventArgs e)

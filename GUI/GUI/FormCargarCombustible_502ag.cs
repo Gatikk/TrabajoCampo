@@ -214,6 +214,7 @@ namespace GUI
                     tBNombre_502ag.Clear();
                     tBApellido_502ag.Clear();
                     buttonCobrarCliente_502ag.Enabled = false;
+                    buttonRegistrarCliente_502ag.Enabled = true;
                     throw new Exception(msgClienteNoEncontrado_502ag);
                 }
                 else
@@ -342,6 +343,7 @@ namespace GUI
             try
             {
                 BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
+                timerCarga_502ag.Stop();
                 rBCantidad_502ag.Enabled = false;
                 rBMonto_502ag.Enabled = false;
                 tBCodigo_502ag.Enabled = false;
