@@ -32,9 +32,9 @@ namespace GUI
             tBCantidad_502ag.Enabled = false;
             tBPrecio_502ag.Enabled = false;
             menu_502ag = formMenu_502ag;
-            Mostrar_502ag(dgvCombustibles_502ag);
             SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);
             Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
+            Mostrar_502ag(dgvCombustibles_502ag);
         }
 
         private void buttonVolverAlMenu_502ag_Click(object sender, EventArgs e)
@@ -121,6 +121,7 @@ namespace GUI
                     string cantidad_502ag = tBCantidad_502ag.Text;
                     string precio_502ag = tBPrecio_502ag.Text;
                     if(nombre_502ag == "") { throw new Exception(msgNombreEnBlanco_502ag); }
+                    if(bllCombustible_502ag.ObtenerCombustible_502ag(codigo_502ag) != null) throw new Exception(msgCodigoNoValido_502ag); //despues cambiar a codigo repetido
                     if (!bllCombustible_502ag.VerificarCodigo_502ag(codigo_502ag)) throw new Exception(msgCodigoNoValido_502ag);
                     if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(cantidad_502ag)) throw new Exception(msgCantidadNoValida_502ag);
                     if (!bllCombustible_502ag.VerificarDecimalFormatoCorrecto_502ag(precio_502ag)) throw new Exception(msgPrecioNoValido_502ag);
@@ -194,7 +195,7 @@ namespace GUI
             dgv_502ag.Rows.Clear();
             foreach (BE_Combustible_502ag combustible_502ag in bllCombustible_502ag.ObtenerListaCombustibles_502ag())
             {
-                dgv_502ag.Rows.Add(combustible_502ag.CodCombustible_502ag, combustible_502ag.Nombre_502ag, combustible_502ag.CantDisponible_502ag+ msgLitros_502ag, combustible_502ag.PrecioPorLitro_502ag+"$");
+                dgv_502ag.Rows.Add(combustible_502ag.CodCombustible_502ag, combustible_502ag.Nombre_502ag, combustible_502ag.CantDisponible_502ag + msgLitros_502ag, combustible_502ag.PrecioPorLitro_502ag+"$");
             }
         }
 

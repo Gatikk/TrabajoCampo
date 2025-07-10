@@ -324,13 +324,21 @@ namespace GUI
             {
                 buttonMaestros_502ag.Enabled = false;
             }
-            if (buttonCargarCombustible_502ag.Enabled || buttonVerFacturas_502ag.Enabled)
+            if (buttonCargarCombustible_502ag.Enabled)
             {
                 buttonVentas_502ag.Enabled = true;
             }
             else
             {
                 buttonVentas_502ag.Enabled = false;
+            }
+            if (buttonVerFacturas_502ag.Enabled)
+            {
+                buttonReportes_502ag.Enabled = true;
+            }
+            else
+            {
+                buttonReportes_502ag.Enabled = false;
             }
         }
     }

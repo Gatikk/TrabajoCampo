@@ -176,6 +176,7 @@ namespace GUI
                 if(opcion_502ag == "Modificar")
                 {
                     string dni_502ag = dgvUsuarios_502ag.SelectedRows[0].Cells[4].Value.ToString();
+                    string rol_502ag = cBRol_502ag.Text;
                     SE_Usuario_502ag usuario_502ag = bllsUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
                     if (!bllsUsuario_502ag.VerificarModificarUsuario_502ag(tBEmail_502ag.Text)) throw new Exception(datosIncorrectos_502ag);
                     if(tBEmail_502ag.Text != usuario_502ag.Email_502ag)
@@ -185,7 +186,7 @@ namespace GUI
                     if (cBRol_502ag.Text == "") { throw new Exception(debeIngresarRol_502ag); }
                     modificarA_502ag = modificarA_502ag.Replace("{usuario_502ag.NombreUsuario_502ag}", $"{usuario_502ag.NombreUsuario_502ag}");
                     DialogResult dResult_502ag = MessageBox.Show(modificarA_502ag, confirmarModificacion_502ag, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dResult_502ag == DialogResult.Yes) bllsUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, cBRol_502ag.Text, tBEmail_502ag.Text);
+                    if (dResult_502ag == DialogResult.Yes) bllsUsuario_502ag.ModificarUsuario_502ag(usuario_502ag, rol_502ag, tBEmail_502ag.Text);
                     Mostrar_502ag(dgvUsuarios_502ag);
                     tBApellido_502ag.Clear();
                     tBNombre_502ag.Clear();
