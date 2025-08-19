@@ -202,8 +202,16 @@ namespace GUI
         private void buttonCambiarIdioma_502ag_Click(object sender, EventArgs e)
         {
             this.Hide();
-            FormTraductor_502ag formTraductor_502Ag = new FormTraductor_502ag(this);
-            formTraductor_502Ag.Show();
+            FormTraductor_502ag traductorForm_502ag = new FormTraductor_502ag(this);
+            traductorForm_502ag.Show();
+        }
+
+        private void buttonBitacoraEventos_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormBitacoraEventos_502ag bitacoraEventosForm_502ag = new FormBitacoraEventos_502ag();
+            bitacoraEventosForm_502ag.Show();
+
         }
 
         public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
@@ -297,6 +305,8 @@ namespace GUI
             }
             catch (Exception ex) { }
         }
+
+       
 
         private void ActivarBotonesSubMenu_502ag()
         {

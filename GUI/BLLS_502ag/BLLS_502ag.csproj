@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLLS_Evento_502ag.cs" />
     <Compile Include="Permisos_502ag\BLLS_Familia_502ag.cs" />
     <Compile Include="Permisos_502ag\BLLS_Patente_502ag.cs" />
     <Compile Include="Permisos_502ag\BLLS_Perfil_502ag.cs" />

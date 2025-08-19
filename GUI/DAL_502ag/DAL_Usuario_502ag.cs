@@ -77,7 +77,7 @@ namespace DAL_502ag
             }
             return null;
         }
-        public SE_Usuario_502ag ObtenerUsuarioALogear_502ag(string nombreUsuario_502ag)
+        public SE_Usuario_502ag ObtenerUsuarioPorNombreUsuario_502ag(string nombreUsuario_502ag)
         {
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {

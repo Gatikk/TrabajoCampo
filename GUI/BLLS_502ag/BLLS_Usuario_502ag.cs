@@ -101,10 +101,10 @@ namespace BLLS_502ag
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
             return dalUsuario_502ag.ObtenerUsuario_502ag(dni_502ag);
         }
-        public SE_Usuario_502ag ObtenerUsuarioALogear_502ag(string nombreUsuario_502ag)
+        public SE_Usuario_502ag ObtenerUsuarioPorNombreUsuario_502ag(string nombreUsuario_502ag)
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
-            return dalUsuario_502ag.ObtenerUsuarioALogear_502ag(nombreUsuario_502ag);
+            return dalUsuario_502ag.ObtenerUsuarioPorNombreUsuario_502ag(nombreUsuario_502ag);
         }
         #endregion
         public void BloquearUsuario_502ag(SE_Usuario_502ag usuario_502ag)

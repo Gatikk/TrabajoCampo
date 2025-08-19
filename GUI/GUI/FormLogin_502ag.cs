@@ -34,7 +34,7 @@ namespace GUI
                 string nombreUsuario_502ag = textBoxNombreUsuario.Text;
                 string contraseña_502ag = textBoxContraseña.Text;
 
-                SE_Usuario_502ag usuarioALogear_502ag = bllsUsuario_502ag.ObtenerUsuarioALogear_502ag(nombreUsuario_502ag);
+                SE_Usuario_502ag usuarioALogear_502ag = bllsUsuario_502ag.ObtenerUsuarioPorNombreUsuario_502ag(nombreUsuario_502ag);
                 if (!SER_GestorSesion_502ag.GestorSesion_502ag.EstaLogeado_502ag()) throw new Exception("Ya hay una sesión iniciada");
                 if (!bllsUsuario_502ag.VerificarExistenciaUsuario_502ag(usuarioALogear_502ag)) throw new Exception("Usuario o contraseña incorrectos");
                 if (usuarioALogear_502ag.NombreUsuario_502ag == "#admin@")
@@ -42,6 +42,9 @@ namespace GUI
                     if (bllsUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag))
                     {
                         bllsUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
+
+                        
+
                         FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
                         this.Hide();
                         menuForm_502ag.Show();
@@ -67,6 +70,11 @@ namespace GUI
                     if (bllsUsuario_502ag.VerificarContraseñaCambiada_502ag(usuarioALogear_502ag))
                     {
                         bllsUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
+
+                        //prueba bitácora
+                        BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+                        bllsEvento_502ag.AltaEvento_502ag("Login", "Inicio de sesión exitoso", 1);
+
                         FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
                         this.Hide();
                         menuForm_502ag.Show();

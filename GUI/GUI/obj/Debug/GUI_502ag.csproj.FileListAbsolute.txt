@@ -121,3 +121,4 @@ D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI_502ag.csproj.CoreCompileInputs.cach
 D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI_502ag.csproj.Up2Date
 D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.exe
 D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.pdb
+D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormBitacoraEventos_502ag.resources
