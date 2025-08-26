@@ -1,4 +1,5 @@
 ﻿using BE_502ag;
+using BLLS_502ag;
 using DAL_502ag;
 using SERVICIOS_502ag;
 using System;
@@ -69,6 +70,8 @@ namespace BLL_502ag
             cliente_502ag.Telefono_502ag = cifrador_502ag.EncryptadorReversible_502ag(cliente_502ag.Telefono_502ag);
             cliente_502ag.IsActivo_502ag = true;
             dalCliente_502ag.AltaCliente_502ag(cliente_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Maestros", "Registrar Cliente", 2);
         }
         #endregion
 
@@ -78,6 +81,8 @@ namespace BLL_502ag
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
             cliente_502ag.IsActivo_502ag = false;
             dalCliente_502ag.BajaCliente_502ag(cliente_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Maestros", "Baja Cliente", 1);
         }
         #endregion
 
@@ -90,6 +95,8 @@ namespace BLL_502ag
             cliente_502ag.Direccion_502ag = cifrador_502ag.EncryptadorReversible_502ag(direccion_502ag);
             cliente_502ag.Telefono_502ag = cifrador_502ag.EncryptadorReversible_502ag(telefono_502ag);
             dalCliente_502ag.ModificarCliente_502ag(cliente_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Maestros", "Modificar Cliente", 2);
         }
         #endregion
         public bool VerificarDNIYaRegistrado_502ag(string dni_502ag)

@@ -1,4 +1,5 @@
 ﻿using BE_502ag;
+using BLLS_502ag;
 using DAL_502ag;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
@@ -23,6 +24,8 @@ namespace BLL_502ag
             factura_502ag.EstadoFactura_502ag = 1;
             factura_502ag.Fecha_502ag = DateTime.Now.Date;
             factura_502ag.Hora_502ag = DateTime.Now.TimeOfDay;
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Ventas", "Seleccionar Combustible para Carga", 3);
             return dalFactura_502ag.AltaFactura_502ag(factura_502ag);
             
         }
@@ -30,6 +33,8 @@ namespace BLL_502ag
         {
             DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
             dalFactura_502ag.ActualizarFacturaRecienCargada_502ag(factura_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Ventas", "Finalizar Carga", 2);
         }
         public void ActualizarFacturaClienteIdentificado_502ag(BE_Factura_502ag factura_502ag)
         {
@@ -40,6 +45,8 @@ namespace BLL_502ag
         {
             DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
             dalFactura_502ag.ActualizarFacturaFinalizada_502ag(factura_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Ventas", "Cobrar Cliente", 1);
         }
         #endregion
         public List<BE_Factura_502ag> ObtenerListaFacturasNoFacturadas_502ag()
@@ -110,6 +117,8 @@ namespace BLL_502ag
                 doc_502ag.Add(new Paragraph("Gracias por confiar en PetroStop", FontFactory.GetFont(FontFactory.COURIER_BOLD, 8)));
                 doc_502ag.Close();
             }
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Reporte", "Generar Factura", 4);
         }
     }
 }

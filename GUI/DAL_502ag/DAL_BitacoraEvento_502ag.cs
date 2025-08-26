@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -36,7 +37,7 @@ namespace DAL_502ag
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                string query_502ag = "SELECT * FROM BitacoraEvento_502ag";
+                string query_502ag = "SELECT * FROM BitacoraEvento_502ag WHERE Fecha_502ag >= DATEADD(DAY, -3, GETDATE()) ORDER BY Codigo_502ag DESC";
                 using(SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
                 {
                     using(SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
@@ -120,6 +121,8 @@ namespace DAL_502ag
                     cmd_502ag.Parameters.AddWithValue("@FechaHasta", fechaHasta_502ag);
                 }
 
+                query_502ag += " ORDER BY Codigo_502ag DESC";
+
                 cmd_502ag.CommandText = query_502ag;
 
                 using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
@@ -138,9 +141,7 @@ namespace DAL_502ag
                         eventosFiltrados_502ag.Add(evento_502ag);
                     }
                 }
-
                 return eventosFiltrados_502ag;
-
             }
         }
     }

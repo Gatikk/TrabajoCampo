@@ -80,8 +80,7 @@ namespace GUI
                         throw new Exception(noContraseñaActual_502ag);
                     }
                     if(!bllsUsuario_502ag.VerificarContraseñaActual_502ag(contraseña_502ag, usuario_502ag))
-                    {
-
+                    { 
                         bllsUsuario_502ag.CambiarContraseña_502ag(contraseña_502ag, usuario_502ag);
                         SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion_502ag();
                         MessageBox.Show(contraseñaCambiada_502ag);

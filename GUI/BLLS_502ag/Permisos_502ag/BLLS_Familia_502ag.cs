@@ -19,6 +19,10 @@ namespace BLLS_502ag
             dalFamilia_502ag.AltaFamilia_502ag(familia_502ag);
             dalFamiliaPatente_502ag.AltaFamiliaPatente_502ag(familia_502ag);
             dalFamiliaFamilia_502ag.AltaFamiliaFamilia_502ag(familia_502ag);
+
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Crear familia", 1);
+
         }
         public void BorrarFamilia_502ag(SE_Familia_502ag familia_502ag)
         {
@@ -36,6 +40,8 @@ namespace BLLS_502ag
                     BorrarFamilia_502ag(familiaRevisarVacia_502ag);
                 }
             }
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Borrar familia", 1);
         }
         public void AsignarPermisosAFamilia_502ag(SE_Familia_502ag familiaAAsignar_502ag, List<SE_Perfil_502ag> listaPermisos_502ag)
         {
@@ -52,6 +58,8 @@ namespace BLLS_502ag
             }
             dalFamiliaFamilia_502ag.AsignarFamiliaHijoAFamilia_502ag(familiaAAsignar_502ag);
             dalFamiliaPatente_502ag.AsignarPatenteAFamilia_502ag(familiaAAsignar_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Asignar a familia", 1);
         }
         public void DesasignarPermisosAFamilia_502ag(SE_Familia_502ag familia_502ag)
         {
@@ -59,6 +67,8 @@ namespace BLLS_502ag
             DAL_FamiliaPatente_502ag dalFamiliaPatente_502ag = new DAL_FamiliaPatente_502ag();
             dalFamiliaFamilia_502ag.DesasignarFamiliaHijoDeFamilia_502ag(familia_502ag);
             dalFamiliaPatente_502ag.DesasignarPatenteDeFamilia_502ag(familia_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Desasignar a familia", 1);
         }
         public SE_Familia_502ag ObtenerListaProfundidadUno_502ag(SE_Familia_502ag familia_502ag)
         {

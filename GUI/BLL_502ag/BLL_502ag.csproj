@@ -60,6 +60,10 @@
       <Project>{d95ecadc-5be4-42fd-b73d-da10806f04f7}</Project>
       <Name>BE_502ag</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BLLS_502ag\BLLS_502ag.csproj">
+      <Project>{f6daf10a-4a8e-4085-8e7b-1c060ef90a07}</Project>
+      <Name>BLLS_502ag</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL_502ag\DAL_502ag.csproj">
       <Project>{37b342dc-44c8-4f52-8c46-3a5897334505}</Project>
       <Name>DAL_502ag</Name>

@@ -61,3 +61,5 @@ D:\GitHub\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.csproj.CoreCompileInput
 D:\GitHub\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.csproj.Up2Date
 D:\GitHub\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.dll
 D:\GitHub\TrabajoCampo\GUI\BLL_502ag\obj\Debug\BLL_502ag.pdb
+D:\GitHub\TrabajoCampo\GUI\BLL_502ag\bin\Debug\BLLS_502ag.dll
+D:\GitHub\TrabajoCampo\GUI\BLL_502ag\bin\Debug\BLLS_502ag.pdb

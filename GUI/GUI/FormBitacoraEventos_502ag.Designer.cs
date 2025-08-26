@@ -141,7 +141,7 @@
             // 
             this.labelModulo_502ag.AutoSize = true;
             this.labelModulo_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelModulo_502ag.Location = new System.Drawing.Point(568, 332);
+            this.labelModulo_502ag.Location = new System.Drawing.Point(568, 333);
             this.labelModulo_502ag.Name = "labelModulo_502ag";
             this.labelModulo_502ag.Size = new System.Drawing.Size(54, 17);
             this.labelModulo_502ag.TabIndex = 5;
@@ -151,7 +151,7 @@
             // 
             this.cBModulo_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBModulo_502ag.FormattingEnabled = true;
-            this.cBModulo_502ag.Location = new System.Drawing.Point(571, 352);
+            this.cBModulo_502ag.Location = new System.Drawing.Point(571, 351);
             this.cBModulo_502ag.Name = "cBModulo_502ag";
             this.cBModulo_502ag.Size = new System.Drawing.Size(198, 24);
             this.cBModulo_502ag.TabIndex = 4;
@@ -160,7 +160,7 @@
             // 
             this.labelEvento_502ag.AutoSize = true;
             this.labelEvento_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelEvento_502ag.Location = new System.Drawing.Point(568, 283);
+            this.labelEvento_502ag.Location = new System.Drawing.Point(568, 287);
             this.labelEvento_502ag.Name = "labelEvento_502ag";
             this.labelEvento_502ag.Size = new System.Drawing.Size(52, 17);
             this.labelEvento_502ag.TabIndex = 7;
@@ -170,7 +170,7 @@
             // 
             this.cBEvento_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBEvento_502ag.FormattingEnabled = true;
-            this.cBEvento_502ag.Location = new System.Drawing.Point(571, 303);
+            this.cBEvento_502ag.Location = new System.Drawing.Point(571, 305);
             this.cBEvento_502ag.Name = "cBEvento_502ag";
             this.cBEvento_502ag.Size = new System.Drawing.Size(198, 24);
             this.cBEvento_502ag.TabIndex = 6;

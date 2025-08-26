@@ -20,6 +20,8 @@ namespace BLLS_502ag
             usuario_502ag.UltimoLogin_502ag = DateTime.Now;
             SER_GestorSesion_502ag.GestorSesion_502ag.IniciarSesion_502ag(usuario_502ag);
             dalUsuario_502ag.ActualizarBloqueoLogin_502ag(usuario_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Usuario", "Inicio Sesión", 1);
         }
         public void SesionFallida_502ag(SE_Usuario_502ag usuario_502ag)
         {
@@ -128,6 +130,8 @@ namespace BLLS_502ag
                 usuario_502ag.ContraseñaCambiada_502ag = false;
                 usuario_502ag.Contraseña_502ag = FormatearContraseña_502ag(usuario_502ag.Apellido_502ag, usuario_502ag.DNI_502ag);
                 dalUsuario_502ag.ActualizarBloqueo_502ag(usuario_502ag);
+                BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+                bllsEvento_502ag.AltaEvento_502ag("Admin", "Desbloquear Usuario", 1);
             }
         }
         #endregion
@@ -139,6 +143,8 @@ namespace BLLS_502ag
             usuario_502ag.Contraseña_502ag = cifrador_502ag.EncryptadorIrreversible_502ag(nuevaContraseña_502ag);
             usuario_502ag.ContraseñaCambiada_502ag = true;
             dalUsuario_502ag.ActualizarContraseña_502ag(usuario_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Usuario", "Cambiar Contraseña", 1);
         }
         public string FormatearContraseña_502ag(string apellido_502ag, string DNI_502ag)
         {
@@ -180,6 +186,8 @@ namespace BLLS_502ag
                 usuario_502ag.isActivo_502ag = true;
             }
             dalUsuario_502ag.ActualizarActivo_502ag(usuario_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Activar/Desactivar Usuario", 1);
         }
         #endregion
         #region ABM
@@ -198,6 +206,8 @@ namespace BLLS_502ag
             usuario_502ag.UltimoLogin_502ag = DateTime.Now;
             usuario_502ag.Idioma_502ag = "español";
             dalUsuario_502ag.AltaUsuario_502ag(usuario_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Alta Usuario", 1);
         }
         public string CrearNombreUsuario_502ag(string nombre_502ag, string DNI_502ag)
         {
@@ -244,6 +254,8 @@ namespace BLLS_502ag
             usuario_502ag.Rol_502ag = rol_502ag;
             usuario_502ag.Email_502ag = email_502ag;
             dalUsuario_502ag.ModificarUsuario_502ag(usuario_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Modificar Usuario", 1);
         }
         public bool VerificarModificarUsuario_502ag(string email_502ag)
         {
@@ -271,6 +283,8 @@ namespace BLLS_502ag
         {
             DAL_Usuario_502ag dalUsuario_502ag = new DAL_Usuario_502ag();
             dalUsuario_502ag.ActualizarIdioma_502ag(SERVICIOS_502ag.SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Usuario", "Cerrar Sesión", 1);
         }
         
     }

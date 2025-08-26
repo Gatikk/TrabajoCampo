@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,36 +15,25 @@ namespace GUI
 {
     public partial class FormBitacoraEventos_502ag : Form
     {
+        List<SE_Evento_502ag> listaEventos_502ag = new List<SE_Evento_502ag>();
         public FormBitacoraEventos_502ag()
         {
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
             InitializeComponent();
-            Mostrar_502ag(dgvBitacoraEventos_502ag);
-            CargarComboBoxs_502ag();
             dTPDesde_502ag.Enabled = false;
             dTPHasta_502ag.Enabled = false;
-        }
-
-
-        public void Mostrar_502ag(DataGridView dgv_502ag)
-        {
-            dgv_502ag.Rows.Clear();
+            cBCriticidad_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
+            cBEvento_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
+            cBModulo_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
+            cBUsuario_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
-            foreach (SE_Evento_502ag evento_502ag in bllsEvento_502ag.ObtenerEventos_502ag())
-            {
-                dgv_502ag.Rows.Add(
-                    evento_502ag.Usuario_502ag,
-                    evento_502ag.Fecha_502ag.ToString("dd/MM/yyyy"),
-                    evento_502ag.Hora_502ag.ToString(@"hh\:mm\:ss"),
-                    evento_502ag.Modulo_502ag,
-                    evento_502ag.Evento_502ag,
-                    evento_502ag.Criticidad_502ag
-                );
-            }
+            listaEventos_502ag = bllsEvento_502ag.ObtenerEventos_502ag();
+            Mostrar_502ag(dgvBitacoraEventos_502ag, listaEventos_502ag);
+            CargarComboBoxs_502ag();
         }
 
-        public void MostrarFiltrado_502ag(DataGridView dgv_502ag, List<SE_Evento_502ag> eventos_502ag)
+        public void Mostrar_502ag(DataGridView dgv_502ag, List<SE_Evento_502ag> eventos_502ag)
         {
             dgv_502ag.Rows.Clear();
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
@@ -59,19 +49,26 @@ namespace GUI
                 );
             }
         }
-
-
         private void buttonLimpiar_502ag_Click(object sender, EventArgs e)
         {
-            Mostrar_502ag(dgvBitacoraEventos_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            listaEventos_502ag = bllsEvento_502ag.ObtenerEventos_502ag();
+            Mostrar_502ag(dgvBitacoraEventos_502ag, listaEventos_502ag);
+            checkBoxFecha_502ag.Checked = false;
+            dTPDesde_502ag.Enabled = false;
+            dTPHasta_502ag.Enabled = false;
+            cBUsuario_502ag.SelectedIndex = 0;
+            cBCriticidad_502ag.SelectedIndex = 0;
+            cBEvento_502ag.SelectedIndex = 0;
+            cBModulo_502ag.SelectedIndex = 0;
         }
 
         private void dgvBitacoraEventos_502ag_SelectionChanged(object sender, EventArgs e)
         {
-            ActualizarTextBox_502ag();
+            ActualizarUsuarioActualTB_502ag();
         }
 
-        public void ActualizarTextBox_502ag()
+        public void ActualizarUsuarioActualTB_502ag()
         {
             try
             {
@@ -80,8 +77,8 @@ namespace GUI
                 {
                     if(dgvBitacoraEventos_502ag.SelectedRows.Count > 0)
                     {
-                        string nombreUsuario = dgvBitacoraEventos_502ag.SelectedRows[0].Cells[0].Value.ToString();
-                        SE_Usuario_502ag usuario_502ag = bllsUsuario_502ag.ObtenerUsuarioPorNombreUsuario_502ag(nombreUsuario);
+                        string nombreUsuario_502ag = dgvBitacoraEventos_502ag.SelectedRows[0].Cells[0].Value.ToString();
+                        SE_Usuario_502ag usuario_502ag = bllsUsuario_502ag.ObtenerUsuarioPorNombreUsuario_502ag(nombreUsuario_502ag);
                         tBNombre_502ag.Text = usuario_502ag.Nombre_502ag;
                         tBApellido_502ag.Text = usuario_502ag.Apellido_502ag;
                     }
@@ -201,10 +198,8 @@ namespace GUI
                 BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
                 DateTime fechaDesde_502ag = dTPDesde_502ag.Value.Date;
                 DateTime fechaHasta_502ag = dTPHasta_502ag.Value.Date;
-
-                if(fechaDesde_502ag > fechaHasta_502ag && checkBoxFecha_502ag.Checked) throw new Exception("La fecha desde no puede ser mayor a la fecha hasta");
-
-                List<SE_Evento_502ag> eventosFiltrados_502ag = bllsEvento_502ag.ObtenerEventosFiltrado_502ag(
+                if(fechaDesde_502ag > fechaHasta_502ag && checkBoxFecha_502ag.Checked) throw new Exception("La fecha DESDE no puede ser mayor a la fecha HASTA");
+                listaEventos_502ag = bllsEvento_502ag.ObtenerEventosFiltrado_502ag(
                     cBUsuario_502ag.Text,
                     fechaDesde_502ag,
                     fechaHasta_502ag,
@@ -213,8 +208,7 @@ namespace GUI
                     cBCriticidad_502ag.Text,
                     checkBoxFecha_502ag.Checked
                 );
-                MostrarFiltrado_502ag(dgvBitacoraEventos_502ag, eventosFiltrados_502ag);
-
+                Mostrar_502ag(dgvBitacoraEventos_502ag, listaEventos_502ag);
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
 

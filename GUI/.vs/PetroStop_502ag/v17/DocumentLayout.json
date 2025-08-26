@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\GitHub\\TrabajoCampo\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6DAF10A-4A8E-4085-8E7B-1C060EF90A07}|BLLS_502ag\\BLLS_502ag.csproj|d:\\github\\trabajocampo\\gui\\blls_502ag\\blls_evento_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6DAF10A-4A8E-4085-8E7B-1C060EF90A07}|BLLS_502ag\\BLLS_502ag.csproj|solutionrelative:blls_502ag\\blls_evento_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|d:\\github\\trabajocampo\\gui\\dal_502ag\\dal_bitacoraevento_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|solutionrelative:dal_502ag\\dal_bitacoraevento_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formbitacoraeventos_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|D:\\GitHub\\TrabajoCampo\\GUI\\gui\\formbitacoraeventos_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formbitacoraeventos_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|D:\\GitHub\\TrabajoCampo\\GUI\\gui\\formbitacoraeventos_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formbitacoraeventos_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formbitacoraeventos_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formbitacoraeventos_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{F6DAF10A-4A8E-4085-8E7B-1C060EF90A07}|BLLS_502ag\\BLLS_502ag.csproj|D:\\GitHub\\TrabajoCampo\\GUI\\blls_502ag\\blls_evento_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6DAF10A-4A8E-4085-8E7B-1C060EF90A07}|BLLS_502ag\\BLLS_502ag.csproj|solutionrelative:blls_502ag\\blls_evento_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C72C3586-5675-4B78-9254-21457DE096A1}|SE_502ag\\SE_502ag.csproj|D:\\GitHub\\TrabajoCampo\\GUI\\se_502ag\\se_evento_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C72C3586-5675-4B78-9254-21457DE096A1}|SE_502ag\\SE_502ag.csproj|solutionrelative:se_502ag\\se_evento_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,40 +35,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BLLS_Evento_502ag.cs",
-              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\BLLS_502ag\\BLLS_Evento_502ag.cs",
-              "RelativeDocumentMoniker": "BLLS_502ag\\BLLS_Evento_502ag.cs",
-              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\BLLS_502ag\\BLLS_Evento_502ag.cs",
-              "RelativeToolTip": "BLLS_502ag\\BLLS_Evento_502ag.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAABBAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T21:48:17.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "DAL_BitacoraEvento_502ag.cs",
               "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_BitacoraEvento_502ag.cs",
               "RelativeDocumentMoniker": "DAL_502ag\\DAL_BitacoraEvento_502ag.cs",
               "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_BitacoraEvento_502ag.cs",
               "RelativeToolTip": "DAL_502ag\\DAL_BitacoraEvento_502ag.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAiwD8AAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T21:19:38.499Z",
+              "WhenOpened": "2025-08-21T20:40:07.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SE_Evento_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\SE_502ag\\SE_Evento_502ag.cs",
+              "RelativeDocumentMoniker": "SE_502ag\\SE_Evento_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\SE_502ag\\SE_Evento_502ag.cs",
+              "RelativeToolTip": "SE_502ag\\SE_Evento_502ag.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T20:37:36.929Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FormBitacoraEventos_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormBitacoraEventos_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormBitacoraEventos_502ag.cs",
-              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormBitacoraEventos_502ag.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\FormBitacoraEventos_502ag.cs [Dise\u00F1o]",
+              "Title": "BLLS_Evento_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\BLLS_502ag\\BLLS_Evento_502ag.cs",
+              "RelativeDocumentMoniker": "BLLS_502ag\\BLLS_Evento_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\BLLS_502ag\\BLLS_Evento_502ag.cs",
+              "RelativeToolTip": "BLLS_502ag\\BLLS_Evento_502ag.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwDQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T20:08:12.224Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-08-21T18:10:49.823Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -74,10 +79,22 @@
               "RelativeDocumentMoniker": "GUI\\FormBitacoraEventos_502ag.cs",
               "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormBitacoraEventos_502ag.cs",
               "RelativeToolTip": "GUI\\FormBitacoraEventos_502ag.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAANoAAAAAAAAAAAAAwOwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T20:08:14.094Z",
+              "WhenOpened": "2025-08-21T17:44:33.987Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormBitacoraEventos_502ag.cs [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormBitacoraEventos_502ag.cs",
+              "RelativeDocumentMoniker": "GUI\\FormBitacoraEventos_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormBitacoraEventos_502ag.cs [Dise\u00F1o]",
+              "RelativeToolTip": "GUI\\FormBitacoraEventos_502ag.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T17:44:21.339Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

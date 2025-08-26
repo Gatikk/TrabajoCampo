@@ -20,6 +20,8 @@ namespace BLLS_502ag
             dalPerfil_502ag.AltaPerfil_502ag(perfil_502ag);
             dalPerfilFamilia_502ag.AltaPerfilFamilia_502ag(perfil_502ag);
             dalPerfilPatente_502ag.AltaPerfilPatente_502ag(perfil_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Crear perfil", 1);
         }
         public void BorrarPerfil_502ag(SE_Familia_502ag familia_502ag)
         {
@@ -29,6 +31,8 @@ namespace BLLS_502ag
             dalPerfilPatente_502ag.BorrarRelacionPerfilPatente_502ag(familia_502ag);
             dalPerfilFamilia_502ag.BorrarRelacionPerfilFamilia_502ag(familia_502ag);
             dalPerfil_502ag.BorrarPerfil_502ag(familia_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Borrar perfil", 1);
         }
         public List<SE_Familia_502ag> ObtenerListaPerfiles_502ag()
         {
@@ -74,6 +78,8 @@ namespace BLLS_502ag
             }
             dalPerfilFamilia_502ag.AsignarFamiliaAPerfil_502ag(perfil_502ag);
             dalPerfilPatente_502ag.AsignarPatenteAPerfil_502ag(perfil_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Asignar a perfil", 1);
         }
         public void DesasignarPermisosAPerfil_502ag(SE_Familia_502ag perfil_502ag)
         {
@@ -81,6 +87,8 @@ namespace BLLS_502ag
             DAL_PerfilPatente_502ag dalPerfilPatente_502ag = new DAL_PerfilPatente_502ag();
             dalPerfilFamilia_502ag.DesasignarFamiliaDePerfil_502ag(perfil_502ag);
             dalPerfilPatente_502ag.DesasignarPatenteDePerfil_502ag(perfil_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Admin", "Desasignar a perfil", 1);
         }
         public bool EvitarPermisosRepetidosEntreFamiliasQueCompartenPerfil_502ag(SE_Familia_502ag familiaQueSeModifica_502ag, List<SE_Perfil_502ag> listaPermisos_502ag)
         {

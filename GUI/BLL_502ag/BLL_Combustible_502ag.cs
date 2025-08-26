@@ -1,4 +1,5 @@
 ﻿using BE_502ag;
+using BLLS_502ag;
 using DAL_502ag;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,8 @@ namespace BLL_502ag
             DAL_Combustible_502ag dalCombustible_502ag = new DAL_Combustible_502ag();
             BE_Combustible_502ag combustible_502ag = new BE_Combustible_502ag(codCombustible_502ag, nombre_502ag, cantDisponible_502ag, precioPorLitro_502ag);
             dalCombustible_502ag.AltaCombustible_502ag(combustible_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Maestros", "Añadir Combustible", 2);
         }
         public bool VerificarDatosIngresadosAlta_502ag(string codCombustible_502ag, string nombre_502ag, string cantDisponible_502ag, string precioPorLitro_502ag)
         {
@@ -91,6 +94,8 @@ namespace BLL_502ag
             combustible_502ag.CantDisponible_502ag = cantDisponible_502ag;
             combustible_502ag.PrecioPorLitro_502ag = precioPorLitro_502ag;
             dalCombustible_502ag.ModificarCombustible_502ag(combustible_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Maestros", "Modificar Combustible", 2);
         }
         public bool VerificarDatosIngresadosModificar_502ag(string nombre_502ag, string cantDisponible_502ag, string precioPorLitro_502ag)
         {
@@ -123,6 +128,8 @@ namespace BLL_502ag
             BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
             dalCombustible_502ag.BajaCombustible_520ag(combustible_502ag);
             bllFactura_502ag.EliminarFacturasEstadoPendienteDeCarga_502ag(int.Parse(combustible_502ag.CodCombustible_502ag));
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Maestros", "Baja Combustible", 2);
         }
         #endregion
 

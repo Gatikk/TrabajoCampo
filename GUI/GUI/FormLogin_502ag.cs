@@ -70,11 +70,6 @@ namespace GUI
                     if (bllsUsuario_502ag.VerificarContraseñaCambiada_502ag(usuarioALogear_502ag))
                     {
                         bllsUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
-
-                        //prueba bitácora
-                        BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
-                        bllsEvento_502ag.AltaEvento_502ag("Login", "Inicio de sesión exitoso", 1);
-
                         FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
                         this.Hide();
                         menuForm_502ag.Show();
