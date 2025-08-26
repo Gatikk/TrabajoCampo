@@ -54,6 +54,12 @@
     <Compile Include="FormABMUsuario_502ag.Designer.cs">
       <DependentUpon>FormABMUsuario_502ag.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBackupRestore_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBackupRestore_502ag.Designer.cs">
+      <DependentUpon>FormBackupRestore_502ag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBitacoraEventos_502ag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormABMUsuario_502ag.resx">
       <DependentUpon>FormABMUsuario_502ag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBackupRestore_502ag.resx">
+      <DependentUpon>FormBackupRestore_502ag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBitacoraEventos_502ag.resx">
       <DependentUpon>FormBitacoraEventos_502ag.cs</DependentUpon>

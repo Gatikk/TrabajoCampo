@@ -31,3 +31,14 @@ D:\GitHub\TrabajoCampo\GUI\DAL_502ag\obj\Debug\DAL_502ag.csproj.CoreCompileInput
 D:\GitHub\TrabajoCampo\GUI\DAL_502ag\obj\Debug\DAL_502ag.csproj.Up2Date
 D:\GitHub\TrabajoCampo\GUI\DAL_502ag\obj\Debug\DAL_502ag.dll
 D:\GitHub\TrabajoCampo\GUI\DAL_502ag\obj\Debug\DAL_502ag.pdb
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\bin\Debug\DAL_502ag.dll
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\bin\Debug\DAL_502ag.pdb
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\bin\Debug\BE_502ag.dll
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\bin\Debug\SE_502ag.dll
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\bin\Debug\BE_502ag.pdb
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\bin\Debug\SE_502ag.pdb
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\obj\Debug\DAL_502ag.csproj.AssemblyReference.cache
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\obj\Debug\DAL_502ag.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\obj\Debug\DAL_502ag.csproj.Up2Date
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\obj\Debug\DAL_502ag.dll
+D:\Documents\GitHub\TrabajoCampo\GUI\DAL_502ag\obj\Debug\DAL_502ag.pdb

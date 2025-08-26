@@ -31,3 +31,14 @@ D:\GitHub\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS_502ag.csproj.CoreCompil
 D:\GitHub\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIO.89A6EFEB.Up2Date
 D:\GitHub\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.dll
 D:\GitHub\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.pdb
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SERVICIOS.dll
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SERVICIOS.pdb
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\bin\Debug\Newtonsoft.Json.dll
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SE_502ag.dll
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\bin\Debug\SE_502ag.pdb
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\bin\Debug\Newtonsoft.Json.xml
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS_502ag.csproj.AssemblyReference.cache
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS_502ag.csproj.CoreCompileInputs.cache
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIO.89A6EFEB.Up2Date
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.dll
+D:\Documents\GitHub\TrabajoCampo\GUI\SERVICIOS\obj\Debug\SERVICIOS.pdb

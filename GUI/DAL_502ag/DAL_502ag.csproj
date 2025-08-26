@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL_BackupRestore_502ag.cs" />
     <Compile Include="DAL_BitacoraEvento_502ag.cs" />
     <Compile Include="DAL_Cliente_502ag.cs" />
     <Compile Include="DAL_Combustible_502ag.cs" />
