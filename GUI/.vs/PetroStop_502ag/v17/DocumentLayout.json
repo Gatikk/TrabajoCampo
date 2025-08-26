@@ -1,121 +1,12 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|d:\\documents\\github\\trabajocampo\\gui\\dal_502ag\\dal_backuprestore_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{37B342DC-44C8-4F52-8C46-3A5897334505}|DAL_502ag\\DAL_502ag.csproj|solutionrelative:dal_502ag\\dal_backuprestore_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\documents\\github\\trabajocampo\\gui\\gui\\formbackuprestore_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formbackuprestore_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\documents\\github\\trabajocampo\\gui\\gui\\formbackuprestore_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formbackuprestore_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6DAF10A-4A8E-4085-8E7B-1C060EF90A07}|BLLS_502ag\\BLLS_502ag.csproj|d:\\documents\\github\\trabajocampo\\gui\\blls_502ag\\blls_backuprestore_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6DAF10A-4A8E-4085-8E7B-1C060EF90A07}|BLLS_502ag\\BLLS_502ag.csproj|solutionrelative:blls_502ag\\blls_backuprestore_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\documents\\github\\trabajocampo\\gui\\gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|d:\\documents\\github\\trabajocampo\\gui\\bll_502ag\\bll_factura_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|solutionrelative:bll_502ag\\bll_factura_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\GitHub\\TrabajoCampo\\GUI\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 303,
-          "SelectedChildIndex": 5,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BLL_Factura_502ag.cs",
-              "DocumentMoniker": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_Factura_502ag.cs",
-              "RelativeDocumentMoniker": "BLL_502ag\\BLL_Factura_502ag.cs",
-              "ToolTip": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_Factura_502ag.cs",
-              "RelativeToolTip": "BLL_502ag\\BLL_Factura_502ag.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAEoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T12:50:33.375Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\Program.cs",
-              "RelativeDocumentMoniker": "GUI\\Program.cs",
-              "ToolTip": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\Program.cs",
-              "RelativeToolTip": "GUI\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T12:29:50.44Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormBackupRestore_502ag.cs",
-              "DocumentMoniker": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormBackupRestore_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormBackupRestore_502ag.cs",
-              "ToolTip": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormBackupRestore_502ag.cs",
-              "RelativeToolTip": "GUI\\FormBackupRestore_502ag.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAiwCsAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T12:06:26.355Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FormBackupRestore_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormBackupRestore_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormBackupRestore_502ag.cs",
-              "ToolTip": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormBackupRestore_502ag.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\FormBackupRestore_502ag.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T12:06:04.703Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BLLS_BackupRestore_502ag.cs",
-              "DocumentMoniker": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\BLLS_502ag\\BLLS_BackupRestore_502ag.cs",
-              "RelativeDocumentMoniker": "BLLS_502ag\\BLLS_BackupRestore_502ag.cs",
-              "ToolTip": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\BLLS_502ag\\BLLS_BackupRestore_502ag.cs",
-              "RelativeToolTip": "BLLS_502ag\\BLLS_BackupRestore_502ag.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T11:57:09.896Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DAL_BackupRestore_502ag.cs",
-              "DocumentMoniker": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_BackupRestore_502ag.cs",
-              "RelativeDocumentMoniker": "DAL_502ag\\DAL_BackupRestore_502ag.cs",
-              "ToolTip": "D:\\Documents\\GitHub\\TrabajoCampo\\GUI\\DAL_502ag\\DAL_BackupRestore_502ag.cs",
-              "RelativeToolTip": "DAL_502ag\\DAL_BackupRestore_502ag.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAUwCgAAAB4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-26T11:56:44.74Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

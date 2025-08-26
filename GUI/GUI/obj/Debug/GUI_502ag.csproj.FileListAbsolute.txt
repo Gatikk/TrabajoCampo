@@ -164,3 +164,4 @@ D:\Documents\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI_502ag.csproj.Up2Date
 D:\Documents\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.exe
 D:\Documents\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.pdb
 D:\Documents\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormBackupRestore_502ag.resources
+D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormBackupRestore_502ag.resources

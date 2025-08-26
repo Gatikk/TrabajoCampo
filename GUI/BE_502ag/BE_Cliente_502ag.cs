@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE_502ag
 {
+    [Serializable]
     public class BE_Cliente_502ag
     {
         public string DNI_502ag {  get; set; }
@@ -33,6 +34,10 @@ namespace BE_502ag
             Direccion_502ag = pDireccion_502ag;
             Telefono_502ag = pTelefono_502ag;
             IsActivo_502ag = pIsActivo_502ag;
+        }
+
+        public BE_Cliente_502ag()
+        {
         }
     }
 }

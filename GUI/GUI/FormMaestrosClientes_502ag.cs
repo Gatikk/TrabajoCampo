@@ -1,5 +1,6 @@
 ﻿using BE_502ag;
 using BLL_502ag;
+using BLLS_502ag;
 using SE_502ag;
 using SERVICIOS_502ag;
 using System;
@@ -8,6 +9,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,9 @@ namespace GUI
         private string msgDNI_502ag, msgNombre_502ag, msgApellido_502ag, msgEmail_502ag, msgDireccion_502ag, msgTelefono_502ag;
         private string msgNoHayClientes_502ag, nadaQueModificar_502ag, msgNadaQueBorrar_502ag;
         private string msgDNIYaUtilizado_502ag, msgEmailYaUtilizado_502ag, msgTelefonoYaUtilizado_502ag, msgDNINoValido_502ag, msgNombreNoValido_502ag, msgApellidoNoValido_502ag, msgEmailNoValido_502ag, msgTelefonoNoValido_502ag, msgDireccionNoValida_502ag;
+        List<BE_Cliente_502ag> listaSerializar_502ag = new List<BE_Cliente_502ag>();
+
+
         public FormMaestrosClientes_502ag(FormMenu_502ag formMenu_502ag)
         {
             StartPosition = FormStartPosition.Manual;
@@ -42,9 +47,17 @@ namespace GUI
             Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
+        
+
         private void FormMaestrosClientes_502ag_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void buttonLimpiar_502ag_Click(object sender, EventArgs e)
+        {
+            rTBSerializar_502ag.Clear();
+            lBDeserializar_502ag.Items.Clear();
         }
 
         private void buttonAltaCliente_502ag_Click(object sender, EventArgs e)
@@ -58,6 +71,8 @@ namespace GUI
                 buttonModificarCliente_502ag.Enabled = false;
                 buttonBajaCliente_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
+                buttonSerializar_502ag.Enabled = false;
+                buttonDeserializar_502ag.Enabled = false;
                 tBDNI_502ag.Enabled = true;
                 tBNombre_502ag.Enabled = true;
                 tBApellido_502ag.Enabled = true;
@@ -73,6 +88,7 @@ namespace GUI
         {
             try
             {
+                if(dgvClientes_502ag.SelectedRows.Count <= 0) { throw new Exception("Seleccione un cliente para modificar"); }
                 if (dgvClientes_502ag.Rows.Count <= 0) { throw new Exception(nadaQueModificar_502ag); }
                 opcion_502ag = "Modificar";
                 buttonAplicar_502ag.Enabled = true;
@@ -111,8 +127,63 @@ namespace GUI
                 buttonModificarCliente_502ag.Enabled = false;
                 buttonBajaCliente_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
+                buttonSerializar_502ag.Enabled = false;
+                buttonDeserializar_502ag.Enabled = false;
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        private void buttonSerializar_502ag_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                opcion_502ag = "Serializar";
+                buttonAplicar_502ag.Enabled = true;
+                buttonCancelar_502ag.Enabled = true;
+                buttonAltaCliente_502ag.Enabled = false;
+                buttonModificarCliente_502ag.Enabled = false;
+                buttonBajaCliente_502ag.Enabled = false;
+                buttonVolverAlMenu_502ag.Enabled = false;
+                buttonSerializar_502ag.Enabled = false;
+                buttonDeserializar_502ag.Enabled = false;
+                dgvClientes_502ag.MultiSelect = true;
+            }
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }    
+        }
+
+        private void buttonDeserializar_502ag_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ArchivosSerializados_502ag");
+                if (!Directory.Exists(carpeta_502ag)) { carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)); }
+
+                using (OpenFileDialog oFD_502ag = new OpenFileDialog())
+                {
+                    oFD_502ag.Title = "Seleccionar archivo xml para deserializar";
+                    oFD_502ag.InitialDirectory = carpeta_502ag;
+                    oFD_502ag.Filter = "Archivo de XML (*.xml) |*.xml";
+                    oFD_502ag.FilterIndex = 0;
+                    oFD_502ag.RestoreDirectory = true;
+                    oFD_502ag.CheckFileExists = true;
+                    oFD_502ag.CheckPathExists = true;
+                    if (oFD_502ag.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {            
+                            BLL_Serializador_502ag bllSerializador_502ag = new BLL_Serializador_502ag();
+                            lBDeserializar_502ag.Items.Clear();
+                            foreach (BE_Cliente_502ag cliente_502ag in bllSerializador_502ag.DeserializarXML_502ag(oFD_502ag.FileName))
+                            {
+                                string linea_502ag = $"{cliente_502ag.DNI_502ag}, {cliente_502ag.Nombre_502ag} {cliente_502ag.Apellido_502ag}";
+                                lBDeserializar_502ag.Items.Add(linea_502ag);
+                            }
+                        }
+                        catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+                    }
+                }
+            }
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
 
         private void buttonAplicar_502ag_Click(object sender, EventArgs e)
@@ -141,6 +212,7 @@ namespace GUI
                 }
                 if(opcion_502ag == "Modificar")
                 {
+                    if (dgvClientes_502ag.SelectedRows.Count <= 0) { throw new Exception("Seleccione un cliente para modificar"); }
                     BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString());
                     string email_502ag = tBEmail_502ag.Text;
                     string direccion_502ag = tBDireccion_502ag.Text;
@@ -160,9 +232,28 @@ namespace GUI
                 }
                 if(opcion_502ag == "Baja")
                 {
+                    if (dgvClientes_502ag.SelectedRows.Count <= 0) { throw new Exception("Seleccione un cliente para eliminar"); }
                     BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString());
                     bllCliente_502ag.BajaCliente_502ag(cliente_502ag);
                     MessageBox.Show("Usuario dado de baja con éxito");
+                }
+                if(opcion_502ag == "Serializar")
+                {
+                    string carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ArchivosSerializados_502ag");
+                    if (!Directory.Exists(carpeta_502ag)) { Directory.CreateDirectory(carpeta_502ag); }
+                    BLL_Serializador_502ag bllSerializador_502ag = new BLL_Serializador_502ag();
+                    if(listaSerializar_502ag.Count <= 0) { throw new Exception("Debe haber al menos un cliente para serializar"); }
+                    using (SaveFileDialog sFD_502ag = new SaveFileDialog())
+                    {
+                        sFD_502ag.InitialDirectory = carpeta_502ag;
+                        sFD_502ag.Filter = "Archivo XML|*.xml";
+                        if(sFD_502ag.ShowDialog() == DialogResult.OK)
+                        {
+                            bllSerializador_502ag.SerializarXML_502ag(sFD_502ag.FileName, listaSerializar_502ag);
+                            MessageBox.Show("Archivo guardado con éxito");
+                            dgvClientes_502ag.MultiSelect = false;
+                        }
+                    }
                 }
                 Mostrar_502ag(dgvClientes_502ag);
                 opcion_502ag = "Consulta";
@@ -172,6 +263,8 @@ namespace GUI
                 buttonModificarCliente_502ag.Enabled = true;
                 buttonBajaCliente_502ag.Enabled = true;
                 buttonVolverAlMenu_502ag.Enabled = true;
+                buttonSerializar_502ag.Enabled = true;
+                buttonDeserializar_502ag.Enabled = true;
                 tBDNI_502ag.Enabled = false;
                 tBNombre_502ag.Enabled = false;
                 tBApellido_502ag.Enabled = false;
@@ -197,6 +290,9 @@ namespace GUI
             buttonModificarCliente_502ag.Enabled = true;
             buttonBajaCliente_502ag.Enabled = true;
             buttonVolverAlMenu_502ag.Enabled = true;
+            buttonSerializar_502ag.Enabled = true;
+            buttonDeserializar_502ag.Enabled = true;
+            dgvClientes_502ag.MultiSelect = false;
             tBDNI_502ag.Enabled = false;
             tBNombre_502ag.Enabled = false;
             tBApellido_502ag.Enabled = false;
@@ -250,9 +346,6 @@ namespace GUI
                         tBDNI_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString();
                         tBNombre_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[1].Value.ToString();
                         tBApellido_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[2].Value.ToString();
-                        tBEmail_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[3].Value.ToString();
-                        tBDireccion_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[4].Value.ToString();
-                        tBTelefono_502ag.Text = dgvClientes_502ag.SelectedRows[0].Cells[5].Value.ToString();
                         if (bool.Parse(dgvClientes_502ag.SelectedRows[0].Cells[6].Value.ToString()) == false)
                         {
                             buttonAplicar_502ag.Enabled = false;
@@ -262,6 +355,18 @@ namespace GUI
                             buttonAplicar_502ag.Enabled = true;
                         }
                     }
+                }
+                if(opcion_502ag == "Serializar")
+                {
+                    listaSerializar_502ag.Clear();
+                    BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();   
+                    foreach (DataGridViewRow row in dgvClientes_502ag.SelectedRows)
+                    {
+                        BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerCliente_502ag(row.Cells[0].Value.ToString());
+                        listaSerializar_502ag.Add(cliente_502ag);
+                    }
+                    BLL_Serializador_502ag bllSerializador_502ag = new BLL_Serializador_502ag();
+                    rTBSerializar_502ag.Text =  bllSerializador_502ag.SerializarEnMemoria_502ag(listaSerializar_502ag);
                 }
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
@@ -277,6 +382,7 @@ namespace GUI
             try
             {
                 BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();
+                if(dgvClientes_502ag.SelectedRows.Count <= 0) throw new Exception("Seleccione un cliente para ver su información");
                 if (dgvClientes_502ag.Rows.Count <= 0) throw new Exception(msgNoHayClientes_502ag);
                 string dni_502ag = dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString();
                 BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dni_502ag);
@@ -302,11 +408,20 @@ namespace GUI
         {
         }
 
+
+
+
+
+
+
+
+
+
         private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
         {
             foreach (Control c_502ag in control_502ag.Controls)
             {
-                if(c_502ag is TextBox)
+                if(c_502ag is TextBox || c_502ag is ListBox || c_502ag is RichTextBox)
                 {
 
                 }

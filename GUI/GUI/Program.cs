@@ -16,7 +16,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormBackupRestore_502ag());
+            Application.Run(new FormLogin_502ag());
         }
     }
 }

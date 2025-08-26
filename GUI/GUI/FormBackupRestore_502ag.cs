@@ -25,7 +25,8 @@ namespace GUI
         {
             try
             {
-                string carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Backup_502ag");
+                //string carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Backup_502ag");
+                string carpeta_502ag = @"C:\Backup_502ag";
                 if (!Directory.Exists(carpeta_502ag)) { Directory.CreateDirectory(carpeta_502ag); }
                 
                 BLLS_BackupRestore_502ag bllsBackupRestore_502ag = new BLLS_BackupRestore_502ag();
@@ -38,8 +39,8 @@ namespace GUI
 
         private void buttonRealizarRestore_502ag_Click(object sender, EventArgs e)
         {
-            string carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "Backup_502ag");
-            if (!Directory.Exists(carpeta_502ag)) { carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)); }
+            string carpeta_502ag = @"C:\Backup_502ag";
+            if (!Directory.Exists(carpeta_502ag)) { carpeta_502ag = @"C:"; }
             using (OpenFileDialog oFD_502ag = new OpenFileDialog())
             {
                 oFD_502ag.Title = "Seleccionar archivo de backup para restaurar";
@@ -66,6 +67,13 @@ namespace GUI
                     }catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
                 }
             }
+        }
+
+        private void buttonVolverAlMenu_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMenu_502ag formMenu_502ag = new FormMenu_502ag();
+            formMenu_502ag.Show();
         }
     }
 }

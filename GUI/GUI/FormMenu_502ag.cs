@@ -306,7 +306,12 @@ namespace GUI
             catch (Exception ex) { }
         }
 
-       
+        private void buttonRespaldos_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormBackupRestore_502ag formBackupRestore_502ag = new FormBackupRestore_502ag();
+            formBackupRestore_502ag.Show();
+        }
 
         private void ActivarBotonesSubMenu_502ag()
         {
