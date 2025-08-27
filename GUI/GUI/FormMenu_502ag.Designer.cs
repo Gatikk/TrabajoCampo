@@ -38,6 +38,7 @@ namespace GUI
             this.panelEncabezado_502ag = new System.Windows.Forms.Panel();
             this.buttonAdmin_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuAdmin_502ag = new System.Windows.Forms.Panel();
+            this.buttonRespaldos_502ag = new System.Windows.Forms.Button();
             this.buttonBitacoraEventos_502ag = new System.Windows.Forms.Button();
             this.buttonPerfiles_502ag = new System.Windows.Forms.Button();
             this.buttonUsuario_502ag = new System.Windows.Forms.Button();
@@ -51,17 +52,22 @@ namespace GUI
             this.buttonVentas_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuVentas_502ag = new System.Windows.Forms.Panel();
             this.buttonCargarCombustible_502ag = new System.Windows.Forms.Button();
+            this.buttonTaller_502ag = new System.Windows.Forms.Button();
+            this.panelSubMenuTaller_502ag = new System.Windows.Forms.Panel();
+            this.buttonCobrarCliente_502ag = new System.Windows.Forms.Button();
+            this.buttonGenerarDF_502ag = new System.Windows.Forms.Button();
+            this.buttonGenerarOT_502ag = new System.Windows.Forms.Button();
             this.buttonReportes_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuReportes_502ag = new System.Windows.Forms.Panel();
             this.buttonVerFacturas_502ag = new System.Windows.Forms.Button();
             this.buttonAyuda_502ag = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonRespaldos_502ag = new System.Windows.Forms.Button();
             this.panelMenuLateral_502ag.SuspendLayout();
             this.panelSubMenuAdmin_502ag.SuspendLayout();
             this.panelSubMenuUsuario_502ag.SuspendLayout();
             this.panelSubMenuMaestros_502ag.SuspendLayout();
             this.panelSubMenuVentas_502ag.SuspendLayout();
+            this.panelSubMenuTaller_502ag.SuspendLayout();
             this.panelSubMenuReportes_502ag.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -142,6 +148,8 @@ namespace GUI
             this.panelMenuLateral_502ag.Controls.Add(this.panelSubMenuMaestros_502ag);
             this.panelMenuLateral_502ag.Controls.Add(this.buttonVentas_502ag);
             this.panelMenuLateral_502ag.Controls.Add(this.panelSubMenuVentas_502ag);
+            this.panelMenuLateral_502ag.Controls.Add(this.buttonTaller_502ag);
+            this.panelMenuLateral_502ag.Controls.Add(this.panelSubMenuTaller_502ag);
             this.panelMenuLateral_502ag.Controls.Add(this.buttonReportes_502ag);
             this.panelMenuLateral_502ag.Controls.Add(this.panelSubMenuReportes_502ag);
             this.panelMenuLateral_502ag.Controls.Add(this.buttonAyuda_502ag);
@@ -187,6 +195,24 @@ namespace GUI
             this.panelSubMenuAdmin_502ag.Name = "panelSubMenuAdmin_502ag";
             this.panelSubMenuAdmin_502ag.Size = new System.Drawing.Size(222, 181);
             this.panelSubMenuAdmin_502ag.TabIndex = 9;
+            // 
+            // buttonRespaldos_502ag
+            // 
+            this.buttonRespaldos_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonRespaldos_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonRespaldos_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonRespaldos_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRespaldos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonRespaldos_502ag.Location = new System.Drawing.Point(0, 123);
+            this.buttonRespaldos_502ag.Name = "buttonRespaldos_502ag";
+            this.buttonRespaldos_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonRespaldos_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonRespaldos_502ag.TabIndex = 6;
+            this.buttonRespaldos_502ag.Tag = "Acceso a Respaldos";
+            this.buttonRespaldos_502ag.Text = "Respaldos";
+            this.buttonRespaldos_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonRespaldos_502ag.UseVisualStyleBackColor = false;
+            this.buttonRespaldos_502ag.Click += new System.EventHandler(this.buttonRespaldos_502ag_Click);
             // 
             // buttonBitacoraEventos_502ag
             // 
@@ -369,7 +395,7 @@ namespace GUI
             this.panelSubMenuVentas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 737);
             this.panelSubMenuVentas_502ag.Name = "panelSubMenuVentas_502ag";
-            this.panelSubMenuVentas_502ag.Size = new System.Drawing.Size(222, 57);
+            this.panelSubMenuVentas_502ag.Size = new System.Drawing.Size(222, 48);
             this.panelSubMenuVentas_502ag.TabIndex = 13;
             // 
             // buttonCargarCombustible_502ag
@@ -389,6 +415,81 @@ namespace GUI
             this.buttonCargarCombustible_502ag.UseVisualStyleBackColor = true;
             this.buttonCargarCombustible_502ag.Click += new System.EventHandler(this.buttonCargarCombustible_502ag_Click);
             // 
+            // buttonTaller_502ag
+            // 
+            this.buttonTaller_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonTaller_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTaller_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonTaller_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTaller_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonTaller_502ag.Location = new System.Drawing.Point(3, 791);
+            this.buttonTaller_502ag.Name = "buttonTaller_502ag";
+            this.buttonTaller_502ag.Size = new System.Drawing.Size(222, 47);
+            this.buttonTaller_502ag.TabIndex = 14;
+            this.buttonTaller_502ag.Text = "Taller";
+            this.buttonTaller_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonTaller_502ag.UseVisualStyleBackColor = false;
+            // 
+            // panelSubMenuTaller_502ag
+            // 
+            this.panelSubMenuTaller_502ag.Controls.Add(this.buttonCobrarCliente_502ag);
+            this.panelSubMenuTaller_502ag.Controls.Add(this.buttonGenerarDF_502ag);
+            this.panelSubMenuTaller_502ag.Controls.Add(this.buttonGenerarOT_502ag);
+            this.panelSubMenuTaller_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSubMenuTaller_502ag.Location = new System.Drawing.Point(3, 844);
+            this.panelSubMenuTaller_502ag.Name = "panelSubMenuTaller_502ag";
+            this.panelSubMenuTaller_502ag.Size = new System.Drawing.Size(222, 132);
+            this.panelSubMenuTaller_502ag.TabIndex = 20;
+            // 
+            // buttonCobrarCliente_502ag
+            // 
+            this.buttonCobrarCliente_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonCobrarCliente_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonCobrarCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonCobrarCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonCobrarCliente_502ag.Location = new System.Drawing.Point(0, 82);
+            this.buttonCobrarCliente_502ag.Name = "buttonCobrarCliente_502ag";
+            this.buttonCobrarCliente_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonCobrarCliente_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonCobrarCliente_502ag.TabIndex = 16;
+            this.buttonCobrarCliente_502ag.Tag = "Cobrar Cliente Recep";
+            this.buttonCobrarCliente_502ag.Text = "Cobrar Cliente";
+            this.buttonCobrarCliente_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonCobrarCliente_502ag.UseVisualStyleBackColor = true;
+            // 
+            // buttonGenerarDF_502ag
+            // 
+            this.buttonGenerarDF_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGenerarDF_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonGenerarDF_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGenerarDF_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonGenerarDF_502ag.Location = new System.Drawing.Point(0, 41);
+            this.buttonGenerarDF_502ag.Name = "buttonGenerarDF_502ag";
+            this.buttonGenerarDF_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonGenerarDF_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonGenerarDF_502ag.TabIndex = 15;
+            this.buttonGenerarDF_502ag.Tag = "Generar DF";
+            this.buttonGenerarDF_502ag.Text = "Generar Diagnóstico Final";
+            this.buttonGenerarDF_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGenerarDF_502ag.UseVisualStyleBackColor = true;
+            // 
+            // buttonGenerarOT_502ag
+            // 
+            this.buttonGenerarOT_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGenerarOT_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonGenerarOT_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonGenerarOT_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonGenerarOT_502ag.Location = new System.Drawing.Point(0, 0);
+            this.buttonGenerarOT_502ag.Name = "buttonGenerarOT_502ag";
+            this.buttonGenerarOT_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonGenerarOT_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonGenerarOT_502ag.TabIndex = 14;
+            this.buttonGenerarOT_502ag.Tag = "Generar OT";
+            this.buttonGenerarOT_502ag.Text = "Generar Orden de Trabajo";
+            this.buttonGenerarOT_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonGenerarOT_502ag.UseVisualStyleBackColor = true;
+            this.buttonGenerarOT_502ag.Click += new System.EventHandler(this.buttonGenerarOT_502ag_Click);
+            // 
             // buttonReportes_502ag
             // 
             this.buttonReportes_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -396,10 +497,10 @@ namespace GUI
             this.buttonReportes_502ag.FlatAppearance.BorderSize = 0;
             this.buttonReportes_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReportes_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 800);
+            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 982);
             this.buttonReportes_502ag.Name = "buttonReportes_502ag";
             this.buttonReportes_502ag.Size = new System.Drawing.Size(222, 47);
-            this.buttonReportes_502ag.TabIndex = 15;
+            this.buttonReportes_502ag.TabIndex = 21;
             this.buttonReportes_502ag.Text = "Reportes";
             this.buttonReportes_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonReportes_502ag.UseVisualStyleBackColor = false;
@@ -408,7 +509,7 @@ namespace GUI
             // panelSubMenuReportes_502ag
             // 
             this.panelSubMenuReportes_502ag.Controls.Add(this.buttonVerFacturas_502ag);
-            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 853);
+            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 1035);
             this.panelSubMenuReportes_502ag.Name = "panelSubMenuReportes_502ag";
             this.panelSubMenuReportes_502ag.Size = new System.Drawing.Size(222, 55);
             this.panelSubMenuReportes_502ag.TabIndex = 13;
@@ -437,10 +538,10 @@ namespace GUI
             this.buttonAyuda_502ag.FlatAppearance.BorderSize = 0;
             this.buttonAyuda_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAyuda_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 914);
+            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 1096);
             this.buttonAyuda_502ag.Name = "buttonAyuda_502ag";
             this.buttonAyuda_502ag.Size = new System.Drawing.Size(222, 47);
-            this.buttonAyuda_502ag.TabIndex = 19;
+            this.buttonAyuda_502ag.TabIndex = 22;
             this.buttonAyuda_502ag.Text = "Ayuda";
             this.buttonAyuda_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAyuda_502ag.UseVisualStyleBackColor = false;
@@ -454,24 +555,6 @@ namespace GUI
             this.pictureBox1.Size = new System.Drawing.Size(267, 149);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            // 
-            // buttonRespaldos_502ag
-            // 
-            this.buttonRespaldos_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonRespaldos_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonRespaldos_502ag.FlatAppearance.BorderSize = 0;
-            this.buttonRespaldos_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRespaldos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonRespaldos_502ag.Location = new System.Drawing.Point(0, 123);
-            this.buttonRespaldos_502ag.Name = "buttonRespaldos_502ag";
-            this.buttonRespaldos_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonRespaldos_502ag.Size = new System.Drawing.Size(222, 41);
-            this.buttonRespaldos_502ag.TabIndex = 6;
-            this.buttonRespaldos_502ag.Tag = "Acceso a Respaldos";
-            this.buttonRespaldos_502ag.Text = "Respaldos";
-            this.buttonRespaldos_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonRespaldos_502ag.UseVisualStyleBackColor = false;
-            this.buttonRespaldos_502ag.Click += new System.EventHandler(this.buttonRespaldos_502ag_Click);
             // 
             // FormMenu_502ag
             // 
@@ -490,6 +573,7 @@ namespace GUI
             this.panelSubMenuUsuario_502ag.ResumeLayout(false);
             this.panelSubMenuMaestros_502ag.ResumeLayout(false);
             this.panelSubMenuVentas_502ag.ResumeLayout(false);
+            this.panelSubMenuTaller_502ag.ResumeLayout(false);
             this.panelSubMenuReportes_502ag.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -513,20 +597,25 @@ namespace GUI
         private System.Windows.Forms.Panel panelSubMenuUsuario_502ag;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonIniciarSesion_502ag;
-        private System.Windows.Forms.Button buttonAyuda_502ag;
-        private System.Windows.Forms.Button buttonReportes_502ag;
         private System.Windows.Forms.Button buttonVentas_502ag;
         private System.Windows.Forms.Button buttonMaestros_502ag;
         private System.Windows.Forms.Panel panelSubMenuMaestros_502ag;
         private System.Windows.Forms.Button buttonMaestrosCombustibles_502ag;
         private System.Windows.Forms.Button buttonMaestrosClientes_502ag;
         private System.Windows.Forms.Panel panelSubMenuVentas_502ag;
-        private System.Windows.Forms.Button buttonVerFacturas_502ag;
         private System.Windows.Forms.Button buttonCargarCombustible_502ag;
-        private System.Windows.Forms.Panel panelSubMenuReportes_502ag;
         private System.Windows.Forms.Button buttonCambiarIdioma_502ag;
         private System.Windows.Forms.Button buttonPerfiles_502ag;
         private System.Windows.Forms.Button buttonBitacoraEventos_502ag;
         private System.Windows.Forms.Button buttonRespaldos_502ag;
+        private System.Windows.Forms.Panel panelSubMenuTaller_502ag;
+        private System.Windows.Forms.Button buttonGenerarOT_502ag;
+        private System.Windows.Forms.Button buttonCobrarCliente_502ag;
+        private System.Windows.Forms.Button buttonGenerarDF_502ag;
+        private System.Windows.Forms.Button buttonTaller_502ag;
+        private System.Windows.Forms.Button buttonReportes_502ag;
+        private System.Windows.Forms.Panel panelSubMenuReportes_502ag;
+        private System.Windows.Forms.Button buttonVerFacturas_502ag;
+        private System.Windows.Forms.Button buttonAyuda_502ag;
     }
 }

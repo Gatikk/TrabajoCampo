@@ -32,8 +32,7 @@ namespace BLL_502ag
                     return cliente_502ag;
                 }
             }
-            return null;
-            
+            return null;  
         }
         public BE_Cliente_502ag ObtenerClienteMaestros_502ag(string dni_502ag)
         {
@@ -48,9 +47,7 @@ namespace BLL_502ag
                 return cliente_502ag;
             }
             return null;
-
         }
-
         public List<BE_Cliente_502ag> ObtenerListaClientes_502ag()
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
@@ -58,7 +55,6 @@ namespace BLL_502ag
             List<BE_Cliente_502ag> listaClientes_502ag = dalCliente_502ag.ObtenerListaClientes_502ag();
             return listaClientes_502ag;
         }
-
         #region AltaCliente     
         public void AltaCliente_502ag(string dni_502ag, string nombre_502ag, string apellido_502ag, string email_502ag, string direccion_502ag, string telefono_502ag)
         {
@@ -74,7 +70,6 @@ namespace BLL_502ag
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Registrar Cliente", 2);
         }
         #endregion
-
         #region BajaCliente
         public void BajaCliente_502ag(BE_Cliente_502ag cliente_502ag)
         {
@@ -85,7 +80,6 @@ namespace BLL_502ag
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Baja Cliente", 1);
         }
         #endregion
-
         #region ModificarCliente
         public void ModificarCliente_502ag(BE_Cliente_502ag cliente_502ag, string email_502ag, string direccion_502ag, string telefono_502ag)
         {
@@ -103,7 +97,7 @@ namespace BLL_502ag
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
             List<BE_Cliente_502ag> listaClientes_502ag = dalCliente_502ag.ObtenerListaClientes_502ag();
-            if (listaClientes_502ag.Find(x => x.DNI_502ag == dni_502ag) != null) { return false; }
+            if (listaClientes_502ag.Find(x => x.DNI_502ag.Trim() == dni_502ag) != null) { return false; }
             return true;
         }
         public bool VerificarEmailYaRegistrado_502ag(string email_502ag)
@@ -134,14 +128,12 @@ namespace BLL_502ag
             if (!reEmail_502ag.IsMatch(email_502ag)) return false;
             return true;
         }
-
         public bool VerificarDireccion_502ag(string direccion_502ag)
         {
             Regex reDireccion_502ag = new Regex(@"^[A-Za-zÁÉÍÓÚáéíóúÑñ0-9\s]+ \d{1,5}$");
             if (!reDireccion_502ag.IsMatch(direccion_502ag)) return false;
             return true;
         }
-
         public bool VerificarTelefono_502ag(string telefono_502ag)
         {
             Regex reTelefono_502ag = new Regex(@"^\d{2} \d{4}-\d{4}$");

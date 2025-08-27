@@ -51,11 +51,13 @@
     <Compile Include="DAL_FamiliaPatente_502ag.cs" />
     <Compile Include="DAL_FamiliaFamilia_502ag.cs" />
     <Compile Include="DAL_Familia_502ag.cs" />
+    <Compile Include="DAL_OrdenTrabajo_502ag.cs" />
     <Compile Include="DAL_Patente_502ag.cs" />
     <Compile Include="DAL_PerfilFamilia_502ag.cs" />
     <Compile Include="DAL_PerfilPatente_502ag.cs" />
     <Compile Include="DAL_Perfil_502ag.cs" />
     <Compile Include="DAL_Usuario_502ag.cs" />
+    <Compile Include="DAL_Vehiculo_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

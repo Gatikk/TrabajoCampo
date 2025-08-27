@@ -303,7 +303,7 @@ namespace GUI
                     buttonVerFacturas_502ag.Enabled = true;
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
 
         private void buttonRespaldos_502ag_Click(object sender, EventArgs e)
@@ -311,6 +311,13 @@ namespace GUI
             this.Hide();
             FormBackupRestore_502ag formBackupRestore_502ag = new FormBackupRestore_502ag();
             formBackupRestore_502ag.Show();
+        }
+
+        private void buttonGenerarOT_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormGenerarOrdenTrabajo_502ag formGenerarOrdenTrabajo_502ag = new FormGenerarOrdenTrabajo_502ag();
+            formGenerarOrdenTrabajo_502ag.Show();
         }
 
         private void ActivarBotonesSubMenu_502ag()

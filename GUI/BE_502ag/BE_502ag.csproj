@@ -45,6 +45,7 @@
     <Compile Include="BE_Cliente_502ag.cs" />
     <Compile Include="BE_Combustible_502ag.cs" />
     <Compile Include="BE_Factura_502ag.cs" />
+    <Compile Include="BE_OrdenTrabajo_502ag.cs" />
     <Compile Include="BE_Tarjeta_502ag.cs" />
     <Compile Include="BE_Vehiculo_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

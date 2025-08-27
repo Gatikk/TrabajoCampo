@@ -1,14 +1,18 @@
 ﻿using BE_502ag;
+using BLLS_502ag;
+using DAL_502ag;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace BLL_502ag
 {
     public class BLL_Vehiculo_502ag
     {
+        //RFN1
         public bool SimulacionCarga_502ag(BE_Vehiculo_502ag vehiculo_502ag, decimal litrosPorCiclo_502ag, decimal litrosRestantes_502ag)
         {
             decimal litrosACargar_502ag = Math.Min(litrosPorCiclo_502ag, litrosRestantes_502ag);
@@ -20,5 +24,60 @@ namespace BLL_502ag
 
             return litrosRestantes_502ag <= 0 || vehiculo_502ag.CantidadActual_502ag >= vehiculo_502ag.CantidadMaxima_502ag;
         }
+
+
+        //RFN2
+        public void AltaVehiculo_502ag(string patente_502ag, string marca_502ag, string modelo_502ag, int anio_502ag)
+        {
+            DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();
+            BE_Vehiculo_502ag vehiculo_502ag  = new BE_Vehiculo_502ag(patente_502ag, marca_502ag, modelo_502ag, anio_502ag, true);
+            dalVehiculo_502ag.AltaVehiculo_502ag(vehiculo_502ag);
+
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Maestros", "Registrar Vehículo", 2);
+        }
+
+        public BE_Vehiculo_502ag ObtenerVehiculo_502ag(string patente_502ag)
+        {
+            DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();
+
+            BE_Vehiculo_502ag vehiculo_502ag = dalVehiculo_502ag.ObtenerVehiculo_502ag(patente_502ag);
+            if(vehiculo_502ag != null)
+            {
+                if (vehiculo_502ag.IsActivo_502ag == true)
+                {
+                    return vehiculo_502ag;
+                }
+            }
+            return null;
+        }
+        public bool VerificarPatenteYaRegistrada_502ag(string patente_502ag)
+        {
+            DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();
+            List<BE_Vehiculo_502ag> listaVehiculos_502ag = dalVehiculo_502ag.ObtenerVehiculos_502ag();
+            if (listaVehiculos_502ag.Find(x => x.Patente_502ag.Trim() == patente_502ag) != null) { return false; }
+            return true;
+        }
+
+        public bool VerificarPatente_502ag(string patente_502ag)
+        {
+            Regex rePatente_502ag = new Regex(@"^(?:[A-Z]{3}\d{3}|[A-Z]{2}\d{3}[A-Z]{2}|[A-Z]{1}\d{3}[A-Z]{3})$");
+            if (!rePatente_502ag.IsMatch(patente_502ag)) return false;
+            return true;
+        }
+
+        public bool VerificarMarcaModelo_502ag(string input_502ag)
+        {
+            Regex reInput_502ag = new Regex(@"^[A-Za-z0-9ÁÉÍÓÚÜÑäëïöüñ\- ]{2,30}$");
+            if (!reInput_502ag.IsMatch(input_502ag)) return false;
+            return true;
+        }
+
+        public bool VerificarAnio_502ag(int anio_502ag) 
+        {
+            if (anio_502ag >= 1995 && anio_502ag <= DateTime.Now.Year) return true; 
+            return false;
+        }
+
     }
 }

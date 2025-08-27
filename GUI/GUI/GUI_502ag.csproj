@@ -84,6 +84,12 @@
     <Compile Include="FormCobrarCliente_502ag.Designer.cs">
       <DependentUpon>FormCobrarCliente_502ag.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGenerarOrdenTrabajo_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerarOrdenTrabajo_502ag.Designer.cs">
+      <DependentUpon>FormGenerarOrdenTrabajo_502ag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin_502ag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     <Compile Include="FormRegistrarCliente_502ag.Designer.cs">
       <DependentUpon>FormRegistrarCliente_502ag.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormRegistrarVehiculo_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegistrarVehiculo_502ag.Designer.cs">
+      <DependentUpon>FormRegistrarVehiculo_502ag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTraductor_502ag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +164,9 @@
     <EmbeddedResource Include="FormCobrarCliente_502ag.resx">
       <DependentUpon>FormCobrarCliente_502ag.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerarOrdenTrabajo_502ag.resx">
+      <DependentUpon>FormGenerarOrdenTrabajo_502ag.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin_502ag.resx">
       <DependentUpon>FormLogin_502ag.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormRegistrarCliente_502ag.resx">
       <DependentUpon>FormRegistrarCliente_502ag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegistrarVehiculo_502ag.resx">
+      <DependentUpon>FormRegistrarVehiculo_502ag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTraductor_502ag.resx">
       <DependentUpon>FormTraductor_502ag.cs</DependentUpon>

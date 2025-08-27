@@ -223,6 +223,8 @@ namespace GUI
                     tBNombre_502ag.Text = cliente_502ag.Nombre_502ag;
                     tBApellido_502ag.Enabled = true;
                     tBApellido_502ag.Text = cliente_502ag.Apellido_502ag;
+                    tBDNI_502ag.ReadOnly = true;
+                    buttonIdentificarCliente_502ag.Enabled = false;
                     buttonCobrarCliente_502ag.Enabled = true;
                     buttonRegistrarCliente_502ag.Enabled = false;
                 }
