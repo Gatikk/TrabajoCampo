@@ -55,6 +55,7 @@
             this.labelNombre_502ag = new System.Windows.Forms.Label();
             this.labelApellido_502ag = new System.Windows.Forms.Label();
             this.checkBoxFecha_502ag = new System.Windows.Forms.CheckBox();
+            this.buttonImprimir_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacoraEventos_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,7 +74,7 @@
             this.Modulo_502ag,
             this.Evento_502,
             this.Criticidad_502ag});
-            this.dgvBitacoraEventos_502ag.Location = new System.Drawing.Point(12, 12);
+            this.dgvBitacoraEventos_502ag.Location = new System.Drawing.Point(9, 14);
             this.dgvBitacoraEventos_502ag.MultiSelect = false;
             this.dgvBitacoraEventos_502ag.Name = "dgvBitacoraEventos_502ag";
             this.dgvBitacoraEventos_502ag.ReadOnly = true;
@@ -321,11 +322,26 @@
             this.checkBoxFecha_502ag.UseVisualStyleBackColor = true;
             this.checkBoxFecha_502ag.CheckedChanged += new System.EventHandler(this.checkBoxFecha_502ag_CheckedChanged);
             // 
+            // buttonImprimir_502ag
+            // 
+            this.buttonImprimir_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonImprimir_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonImprimir_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonImprimir_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonImprimir_502ag.Location = new System.Drawing.Point(54, 409);
+            this.buttonImprimir_502ag.Name = "buttonImprimir_502ag";
+            this.buttonImprimir_502ag.Size = new System.Drawing.Size(110, 40);
+            this.buttonImprimir_502ag.TabIndex = 22;
+            this.buttonImprimir_502ag.Text = "Imprimir";
+            this.buttonImprimir_502ag.UseVisualStyleBackColor = false;
+            this.buttonImprimir_502ag.Click += new System.EventHandler(this.buttonImprimir_502ag_Click);
+            // 
             // FormBitacoraEventos_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonImprimir_502ag);
             this.Controls.Add(this.checkBoxFecha_502ag);
             this.Controls.Add(this.labelApellido_502ag);
             this.Controls.Add(this.labelNombre_502ag);
@@ -385,5 +401,6 @@
         private System.Windows.Forms.Label labelNombre_502ag;
         private System.Windows.Forms.Label labelApellido_502ag;
         private System.Windows.Forms.CheckBox checkBoxFecha_502ag;
+        private System.Windows.Forms.Button buttonImprimir_502ag;
     }
 }

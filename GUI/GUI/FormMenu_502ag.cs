@@ -320,6 +320,20 @@ namespace GUI
             formGenerarOrdenTrabajo_502ag.Show();
         }
 
+        private void buttonGenerarDF_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormGenerarDiagnosticoFinal_502ag formGenerarDiagnosticoFinal_502ag = new FormGenerarDiagnosticoFinal_502ag();
+            formGenerarDiagnosticoFinal_502ag.Show();
+        }
+
+        private void buttonCobrarCliente_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormCobrarClienteTaller_502ag formCobrarClienteTaller_502ag = new FormCobrarClienteTaller_502ag();
+            formCobrarClienteTaller_502ag.Show();
+        }
+
         private void ActivarBotonesSubMenu_502ag()
         {
             if(buttonABM_502ag.Enabled || buttonPerfiles_502ag.Enabled)

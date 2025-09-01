@@ -47,6 +47,8 @@
     <Compile Include="DAL_Cliente_502ag.cs" />
     <Compile Include="DAL_Combustible_502ag.cs" />
     <Compile Include="DAL_Conexion_502ag.cs" />
+    <Compile Include="DAL_DiagnosticoFinal_502ag.cs" />
+    <Compile Include="DAL_FacturaTaller_502ag.cs" />
     <Compile Include="DAL_Factura_502ag.cs" />
     <Compile Include="DAL_FamiliaPatente_502ag.cs" />
     <Compile Include="DAL_FamiliaFamilia_502ag.cs" />

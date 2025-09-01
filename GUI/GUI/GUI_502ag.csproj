@@ -78,11 +78,23 @@
     <Compile Include="FormCargarCombustible_502ag.Designer.cs">
       <DependentUpon>FormCargarCombustible_502ag.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormCobrarClienteTaller_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCobrarClienteTaller_502ag.Designer.cs">
+      <DependentUpon>FormCobrarClienteTaller_502ag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCobrarCliente_502ag.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormCobrarCliente_502ag.Designer.cs">
       <DependentUpon>FormCobrarCliente_502ag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGenerarDiagnosticoFinal_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGenerarDiagnosticoFinal_502ag.Designer.cs">
+      <DependentUpon>FormGenerarDiagnosticoFinal_502ag.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGenerarOrdenTrabajo_502ag.cs">
       <SubType>Form</SubType>
@@ -161,8 +173,14 @@
     <EmbeddedResource Include="FormCargarCombustible_502ag.resx">
       <DependentUpon>FormCargarCombustible_502ag.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormCobrarClienteTaller_502ag.resx">
+      <DependentUpon>FormCobrarClienteTaller_502ag.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCobrarCliente_502ag.resx">
       <DependentUpon>FormCobrarCliente_502ag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGenerarDiagnosticoFinal_502ag.resx">
+      <DependentUpon>FormGenerarDiagnosticoFinal_502ag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGenerarOrdenTrabajo_502ag.resx">
       <DependentUpon>FormGenerarOrdenTrabajo_502ag.cs</DependentUpon>

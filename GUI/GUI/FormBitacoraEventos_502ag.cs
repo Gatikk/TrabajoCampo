@@ -29,8 +29,15 @@ namespace GUI
             cBUsuario_502ag.DropDownStyle = ComboBoxStyle.DropDownList;
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             listaEventos_502ag = bllsEvento_502ag.ObtenerEventos_502ag();
-            Mostrar_502ag(dgvBitacoraEventos_502ag, listaEventos_502ag);
+            Mostrar_502ag(dgvBitacoraEventos_502ag, todosLosEventos_502ag());
             CargarComboBoxs_502ag();
+            Mostrar_502ag(dgvBitacoraEventos_502ag, listaEventos_502ag);
+        }
+
+        private List<SE_Evento_502ag> todosLosEventos_502ag()
+        {
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();   
+            return bllsEvento_502ag.ObtenerTodosLosEventos_502ag();
         }
 
         public void Mostrar_502ag(DataGridView dgv_502ag, List<SE_Evento_502ag> eventos_502ag)
@@ -237,6 +244,21 @@ namespace GUI
             {
                 dTPDesde_502ag.Enabled = false;
                 dTPHasta_502ag.Enabled = false;
+            }
+        }
+
+        private void buttonImprimir_502ag_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (listaEventos_502ag.Count <= 0) throw new Exception("No hay nada para imprimir.");
+                BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+                bllsEvento_502ag.ImprimirEventos_502ag(listaEventos_502ag);
+                MessageBox.Show("Impresión exitosa.", "Impresión Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
             }
         }
     }

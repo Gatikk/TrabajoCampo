@@ -66,3 +66,7 @@ D:\Documents\GitHub\TrabajoCampo\GUI\BLLS_502ag\obj\Debug\BLLS_502ag.csproj.Core
 D:\Documents\GitHub\TrabajoCampo\GUI\BLLS_502ag\obj\Debug\BLLS_502ag.csproj.Up2Date
 D:\Documents\GitHub\TrabajoCampo\GUI\BLLS_502ag\obj\Debug\BLLS_502ag.dll
 D:\Documents\GitHub\TrabajoCampo\GUI\BLLS_502ag\obj\Debug\BLLS_502ag.pdb
+D:\GitHub\TrabajoCampo\GUI\BLLS_502ag\bin\Debug\BouncyCastle.Cryptography.dll
+D:\GitHub\TrabajoCampo\GUI\BLLS_502ag\bin\Debug\itextsharp.dll
+D:\GitHub\TrabajoCampo\GUI\BLLS_502ag\bin\Debug\BouncyCastle.Cryptography.xml
+D:\GitHub\TrabajoCampo\GUI\BLLS_502ag\bin\Debug\itextsharp.xml

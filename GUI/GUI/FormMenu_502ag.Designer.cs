@@ -456,6 +456,7 @@ namespace GUI
             this.buttonCobrarCliente_502ag.Text = "Cobrar Cliente";
             this.buttonCobrarCliente_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCobrarCliente_502ag.UseVisualStyleBackColor = true;
+            this.buttonCobrarCliente_502ag.Click += new System.EventHandler(this.buttonCobrarCliente_502ag_Click);
             // 
             // buttonGenerarDF_502ag
             // 
@@ -472,6 +473,7 @@ namespace GUI
             this.buttonGenerarDF_502ag.Text = "Generar Diagnóstico Final";
             this.buttonGenerarDF_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonGenerarDF_502ag.UseVisualStyleBackColor = true;
+            this.buttonGenerarDF_502ag.Click += new System.EventHandler(this.buttonGenerarDF_502ag_Click);
             // 
             // buttonGenerarOT_502ag
             // 

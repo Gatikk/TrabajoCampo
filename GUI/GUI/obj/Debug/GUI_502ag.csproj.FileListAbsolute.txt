@@ -167,3 +167,5 @@ D:\Documents\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormBackupRestore_502ag.r
 D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormBackupRestore_502ag.resources
 D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormGenerarOrdenTrabajo_502ag.resources
 D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormRegistrarVehiculo_502ag.resources
+D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormGenerarDiagnosticoFinal_502ag.resources
+D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormCobrarClienteTaller_502ag.resources

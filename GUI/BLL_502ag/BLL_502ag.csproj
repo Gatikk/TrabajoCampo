@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="BLL_Cliente_502ag.cs" />
     <Compile Include="BLL_Combustible_502ag.cs" />
+    <Compile Include="BLL_DiagnosticoFinal_502ag.cs" />
     <Compile Include="BLL_Factura_502ag.cs" />
     <Compile Include="BLL_OrdenTrabajo_502ag.cs" />
     <Compile Include="BLL_Pago_502ag.cs" />

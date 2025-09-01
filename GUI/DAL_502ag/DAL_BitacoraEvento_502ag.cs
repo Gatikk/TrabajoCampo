@@ -37,10 +37,39 @@ namespace DAL_502ag
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                string query_502ag = "SELECT * FROM BitacoraEvento_502ag WHERE Fecha_502ag >= DATEADD(DAY, -3, GETDATE()) ORDER BY Codigo_502ag DESC";
+                string query_502ag = "SELECT * FROM BitacoraEvento_502ag WHERE Fecha_502ag >= DATEADD(DAY, -3, GETDATE()) ORDER BY Fecha_502ag DESC, Hora_502ag DESC";
                 using(SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
                 {
                     using(SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
+                    {
+                        List<SE_Evento_502ag> eventos_502ag = new List<SE_Evento_502ag>();
+                        while (dr_502ag.Read())
+                        {
+                            SE_Evento_502ag evento_502ag = new SE_Evento_502ag(
+                                dr_502ag["Codigo_502ag"].ToString(),
+                                dr_502ag["Usuario_502ag"].ToString(),
+                                DateTime.Parse(dr_502ag["Fecha_502ag"].ToString()),
+                                TimeSpan.Parse(dr_502ag["Hora_502ag"].ToString()),
+                                dr_502ag["Modulo_502ag"].ToString(),
+                                dr_502ag["Evento_502ag"].ToString(),
+                                Convert.ToInt32(dr_502ag["Criticidad_502ag"])
+                            );
+                            eventos_502ag.Add(evento_502ag);
+                        }
+                        return eventos_502ag;
+                    }
+                }
+            }
+        }
+        public List<SE_Evento_502ag> ObtenerTodosLosEventos_502ag()
+        {
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                string query_502ag = "SELECT * FROM BitacoraEvento_502ag ";
+                using (SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
+                {
+                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
                     {
                         List<SE_Evento_502ag> eventos_502ag = new List<SE_Evento_502ag>();
                         while (dr_502ag.Read())
@@ -121,7 +150,7 @@ namespace DAL_502ag
                     cmd_502ag.Parameters.AddWithValue("@FechaHasta", fechaHasta_502ag);
                 }
 
-                query_502ag += " ORDER BY Codigo_502ag DESC";
+                query_502ag += " ORDER BY Fecha_502ag DESC, Hora_502ag DESC";
 
                 cmd_502ag.CommandText = query_502ag;
 

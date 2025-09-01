@@ -28,5 +28,42 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Taller", "Generar OT", 3);
         }
+
+        public List<BE_OrdenTrabajo_502ag> ObtenerOrdenesDeTrabajoAbierta_502ag()
+        {
+            DAL_OrdenTrabajo_502ag dalOrdenTrabajo_502ag = new DAL_OrdenTrabajo_502ag();
+            return dalOrdenTrabajo_502ag.ObtenerOrdenesDeTrabajoAbierta_502ag();
+        }
+        public List<BE_OrdenTrabajo_502ag> ObtenerOrdenesDeTrabajoPendienteDePago_502ag()
+        {
+            DAL_OrdenTrabajo_502ag dalOrdenTrabajo_502ag = new DAL_OrdenTrabajo_502ag();
+            return dalOrdenTrabajo_502ag.ObtenerOrdenesDeTrabajoPendienteDePago_502ag();
+        }
+        public List<BE_OrdenTrabajo_502ag> ObtenerOrdenesDeTrabajoCerrada_502ag()
+        {
+            DAL_OrdenTrabajo_502ag dalOrdenTrabajo_502ag = new DAL_OrdenTrabajo_502ag();
+            return dalOrdenTrabajo_502ag.ObtenerOrdenesDeTrabajoCerrada_502ag();
+        }
+
+        public BE_OrdenTrabajo_502ag ObtenerOrdenDeTrabajo_502ag(string codigo_502ag)
+        {
+            DAL_OrdenTrabajo_502ag dalOrdenTrabajo_502ag = new DAL_OrdenTrabajo_502ag();
+            return dalOrdenTrabajo_502ag.ObtenerOrdenDeTrabajo_502ag(codigo_502ag);
+        }
+
+        public void ActualizarEstadoOrdenTrabajoAPendienteDePago_502ag(BE_OrdenTrabajo_502ag orden_502ag)
+        {
+            DAL_OrdenTrabajo_502ag dalOrdenTrabajo_502ag = new DAL_OrdenTrabajo_502ag();
+            orden_502ag.Estado_502ag = "Pendiente de Pago";
+            dalOrdenTrabajo_502ag.ActualizarEstadoOrdenTrabajo_502ag(orden_502ag);
+        }
+
+        public void ActualizarEstadoOrdenTrabajoACerrada_502ag(BE_OrdenTrabajo_502ag orden_502ag)
+        {
+            DAL_OrdenTrabajo_502ag dalOrdenTrabajo_502ag = new DAL_OrdenTrabajo_502ag();
+            orden_502ag.Estado_502ag = "Cerrada";
+            dalOrdenTrabajo_502ag.ActualizarEstadoOrdenTrabajo_502ag(orden_502ag);
+        }
+
     }
 }
