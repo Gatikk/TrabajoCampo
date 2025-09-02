@@ -17,12 +17,17 @@ namespace BLLS_502ag
             bllsEvento_502ag.AltaEvento_502ag("Admin", "Realizar Backup", 1);
         }
 
-        public void RealizarRestore_502ag(string restoreUbicacion_502ag) 
+        public bool RealizarRestore_502ag(string restoreUbicacion_502ag)
         {
+            bool resultado_502ag;
             DAL_BackupRestore_502ag dalBackupRestore_502ag = new DAL_BackupRestore_502ag();
-            dalBackupRestore_502ag.RealizarRestore_502ag(restoreUbicacion_502ag);
-            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
-            bllsEvento_502ag.AltaEvento_502ag("Admin", "Realizar Restore", 1);
+            resultado_502ag = dalBackupRestore_502ag.RealizarRestore_502ag(restoreUbicacion_502ag);
+            if (resultado_502ag)
+            {
+                BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+                bllsEvento_502ag.AltaEvento_502ag("Admin", "Realizar Restore", 1);
+            }
+            return resultado_502ag;
         }
     }
 }

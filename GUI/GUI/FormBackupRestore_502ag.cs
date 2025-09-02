@@ -60,8 +60,15 @@ namespace GUI
                         {
                             string ruta_502ag = oFD_502ag.FileName;
                             BLLS_BackupRestore_502ag bllsBackupRestore_502ag = new BLLS_BackupRestore_502ag();
-                            bllsBackupRestore_502ag.RealizarRestore_502ag(ruta_502ag);
-                            MessageBox.Show($"Restauración completada con éxito");
+                            if (bllsBackupRestore_502ag.RealizarRestore_502ag(ruta_502ag))
+                            {
+                                MessageBox.Show($"Restauración completada con éxito");
+                            }
+                            else
+                            {
+                                throw new Exception("El archivo seleccionado no es un backup válido de esta base de datos.");
+                            }
+                            
                         }
                     
                     }catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }

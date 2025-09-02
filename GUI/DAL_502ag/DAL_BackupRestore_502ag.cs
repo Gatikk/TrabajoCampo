@@ -14,41 +14,58 @@ namespace DAL_502ag
             string nombreArchivo_502ag = $"{DateTime.Now:ddMMyyHHmm}_PetroStop_502ag.bak";
             string ruta_502ag = System.IO.Path.Combine(backupUbicacion_502ag, nombreArchivo_502ag);
             string queryBackup_502ag = $"BACKUP DATABASE BD_502ag TO DISK ='{ruta_502ag}'";
-            
-            using(SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                using(SqlCommand cmd_502ag = new SqlCommand(queryBackup_502ag, cx_502ag))
+                using (SqlCommand cmd_502ag = new SqlCommand(queryBackup_502ag, cx_502ag))
                 {
                     cmd_502ag.ExecuteNonQuery();
                 }
-            }     
+            }
         }
 
-        public void RealizarRestore_502ag(string restoreUbicacion_502ag)
+        public bool RealizarRestore_502ag(string restoreUbicacion_502ag)
         {
-                using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                string queryCheck_502ag = $"RESTORE HEADERONLY FROM DISK = '{restoreUbicacion_502ag}'";
+                using (SqlCommand cmd_502ag = new SqlCommand(queryCheck_502ag, cx_502ag))
+                using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
                 {
-                    cx_502ag.Open();
-                    using (SqlCommand cmd_502ag = new SqlCommand("USE master", cx_502ag))
+                    if (dr_502ag.Read())
                     {
-                        cmd_502ag.ExecuteNonQuery();
+                        string nombreBDBackUp_502ag = dr_502ag["DatabaseName"].ToString();
+                        if (nombreBDBackUp_502ag != "BD_502ag")
+                        {
+                            return false;
+                        }
                     }
-                    using (SqlCommand cmd_502ag = new SqlCommand("ALTER DATABASE BD_502ag SET SINGLE_USER WITH ROLLBACK IMMEDIATE", cx_502ag))
+                    else
                     {
-                        cmd_502ag.ExecuteNonQuery();
-                    }
-                    string query_502ag = $"RESTORE DATABASE BD_502ag FROM DISK = '{restoreUbicacion_502ag}' WITH REPLACE";
-                    using (SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
-                    {
-                        cmd_502ag.ExecuteNonQuery();
-                    }
-                    using (SqlCommand cmd_502ag = new SqlCommand("ALTER DATABASE BD_502ag SET MULTI_USER;", cx_502ag))
-                    {
-                        cmd_502ag.ExecuteNonQuery();
+                        return false;
                     }
                 }
-            
+                using (SqlCommand cmd_502ag = new SqlCommand("USE master", cx_502ag))
+                {
+                    cmd_502ag.ExecuteNonQuery();
+                }
+                using (SqlCommand cmd_502ag = new SqlCommand("ALTER DATABASE BD_502ag SET SINGLE_USER WITH ROLLBACK IMMEDIATE", cx_502ag))
+                {
+                    cmd_502ag.ExecuteNonQuery();
+                }
+                string query_502ag = $"RESTORE DATABASE BD_502ag FROM DISK = '{restoreUbicacion_502ag}' WITH REPLACE";
+                using (SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
+                {
+                    cmd_502ag.ExecuteNonQuery();
+                }
+                using (SqlCommand cmd_502ag = new SqlCommand("ALTER DATABASE BD_502ag SET MULTI_USER;", cx_502ag))
+                {
+                    cmd_502ag.ExecuteNonQuery();
+                }
+                return true;
+            }
         }
     }
 }
