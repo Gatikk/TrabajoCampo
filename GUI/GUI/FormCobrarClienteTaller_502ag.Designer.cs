@@ -47,9 +47,9 @@
             this.tBCodigoSeguridad_502ag = new System.Windows.Forms.TextBox();
             this.tBNumero_502ag = new System.Windows.Forms.TextBox();
             this.buttonSeleccionarOrden_502ag = new System.Windows.Forms.Button();
-            this.buttonLimpiarOrden_502ag = new System.Windows.Forms.Button();
             this.rTBFacturaDatos_502ag = new System.Windows.Forms.RichTextBox();
             this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
+            this.buttonLimpiarSeleccion_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesTrabajo_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,21 +265,6 @@
             this.buttonSeleccionarOrden_502ag.UseVisualStyleBackColor = false;
             this.buttonSeleccionarOrden_502ag.Click += new System.EventHandler(this.buttonSeleccionarOrden_502ag_Click);
             // 
-            // buttonLimpiarOrden_502ag
-            // 
-            this.buttonLimpiarOrden_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonLimpiarOrden_502ag.FlatAppearance.BorderSize = 0;
-            this.buttonLimpiarOrden_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLimpiarOrden_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonLimpiarOrden_502ag.Location = new System.Drawing.Point(270, 142);
-            this.buttonLimpiarOrden_502ag.Margin = new System.Windows.Forms.Padding(4);
-            this.buttonLimpiarOrden_502ag.Name = "buttonLimpiarOrden_502ag";
-            this.buttonLimpiarOrden_502ag.Size = new System.Drawing.Size(148, 39);
-            this.buttonLimpiarOrden_502ag.TabIndex = 109;
-            this.buttonLimpiarOrden_502ag.Text = "Limpiar Orden";
-            this.buttonLimpiarOrden_502ag.UseVisualStyleBackColor = false;
-            this.buttonLimpiarOrden_502ag.Click += new System.EventHandler(this.buttonLimpiarOrden_502ag_Click);
-            // 
             // rTBFacturaDatos_502ag
             // 
             this.rTBFacturaDatos_502ag.Location = new System.Drawing.Point(425, 247);
@@ -304,14 +289,29 @@
             this.buttonVolverAlMenu_502ag.UseVisualStyleBackColor = false;
             this.buttonVolverAlMenu_502ag.Click += new System.EventHandler(this.buttonVolverAlMenu_502ag_Click);
             // 
+            // buttonLimpiarSeleccion_502ag
+            // 
+            this.buttonLimpiarSeleccion_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonLimpiarSeleccion_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonLimpiarSeleccion_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonLimpiarSeleccion_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonLimpiarSeleccion_502ag.Location = new System.Drawing.Point(270, 142);
+            this.buttonLimpiarSeleccion_502ag.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLimpiarSeleccion_502ag.Name = "buttonLimpiarSeleccion_502ag";
+            this.buttonLimpiarSeleccion_502ag.Size = new System.Drawing.Size(148, 39);
+            this.buttonLimpiarSeleccion_502ag.TabIndex = 112;
+            this.buttonLimpiarSeleccion_502ag.Text = "Limpiar Selección";
+            this.buttonLimpiarSeleccion_502ag.UseVisualStyleBackColor = false;
+            this.buttonLimpiarSeleccion_502ag.Click += new System.EventHandler(this.buttonLimpiarSeleccion_502ag_Click);
+            // 
             // FormCobrarClienteTaller_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 450);
+            this.Controls.Add(this.buttonLimpiarSeleccion_502ag);
             this.Controls.Add(this.buttonVolverAlMenu_502ag);
             this.Controls.Add(this.rTBFacturaDatos_502ag);
-            this.Controls.Add(this.buttonLimpiarOrden_502ag);
             this.Controls.Add(this.buttonSeleccionarOrden_502ag);
             this.Controls.Add(this.labelMetodo_502ag);
             this.Controls.Add(this.rBDebito_502ag);
@@ -355,8 +355,8 @@
         private System.Windows.Forms.TextBox tBCodigoSeguridad_502ag;
         private System.Windows.Forms.TextBox tBNumero_502ag;
         private System.Windows.Forms.Button buttonSeleccionarOrden_502ag;
-        private System.Windows.Forms.Button buttonLimpiarOrden_502ag;
         private System.Windows.Forms.RichTextBox rTBFacturaDatos_502ag;
         private System.Windows.Forms.Button buttonVolverAlMenu_502ag;
+        private System.Windows.Forms.Button buttonLimpiarSeleccion_502ag;
     }
 }

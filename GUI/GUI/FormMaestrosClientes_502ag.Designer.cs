@@ -61,7 +61,6 @@
             this.buttonSerializar_502ag = new System.Windows.Forms.Button();
             this.rTBSerializar_502ag = new System.Windows.Forms.RichTextBox();
             this.buttonLimpiar_502ag = new System.Windows.Forms.Button();
-            this.lBDeserializar_502ag = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -390,7 +389,7 @@
             this.buttonDeserializar_502ag.FlatAppearance.BorderSize = 0;
             this.buttonDeserializar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonDeserializar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonDeserializar_502ag.Location = new System.Drawing.Point(322, 517);
+            this.buttonDeserializar_502ag.Location = new System.Drawing.Point(491, 511);
             this.buttonDeserializar_502ag.Name = "buttonDeserializar_502ag";
             this.buttonDeserializar_502ag.Size = new System.Drawing.Size(132, 39);
             this.buttonDeserializar_502ag.TabIndex = 39;
@@ -404,7 +403,7 @@
             this.buttonSerializar_502ag.FlatAppearance.BorderSize = 0;
             this.buttonSerializar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSerializar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonSerializar_502ag.Location = new System.Drawing.Point(322, 472);
+            this.buttonSerializar_502ag.Location = new System.Drawing.Point(491, 464);
             this.buttonSerializar_502ag.Name = "buttonSerializar_502ag";
             this.buttonSerializar_502ag.Size = new System.Drawing.Size(132, 39);
             this.buttonSerializar_502ag.TabIndex = 40;
@@ -414,7 +413,7 @@
             // 
             // rTBSerializar_502ag
             // 
-            this.rTBSerializar_502ag.Location = new System.Drawing.Point(12, 470);
+            this.rTBSerializar_502ag.Location = new System.Drawing.Point(181, 464);
             this.rTBSerializar_502ag.Name = "rTBSerializar_502ag";
             this.rTBSerializar_502ag.ReadOnly = true;
             this.rTBSerializar_502ag.Size = new System.Drawing.Size(304, 173);
@@ -427,7 +426,7 @@
             this.buttonLimpiar_502ag.FlatAppearance.BorderSize = 0;
             this.buttonLimpiar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLimpiar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonLimpiar_502ag.Location = new System.Drawing.Point(322, 604);
+            this.buttonLimpiar_502ag.Location = new System.Drawing.Point(491, 598);
             this.buttonLimpiar_502ag.Name = "buttonLimpiar_502ag";
             this.buttonLimpiar_502ag.Size = new System.Drawing.Size(132, 39);
             this.buttonLimpiar_502ag.TabIndex = 42;
@@ -435,20 +434,11 @@
             this.buttonLimpiar_502ag.UseVisualStyleBackColor = false;
             this.buttonLimpiar_502ag.Click += new System.EventHandler(this.buttonLimpiar_502ag_Click);
             // 
-            // lBDeserializar_502ag
-            // 
-            this.lBDeserializar_502ag.FormattingEnabled = true;
-            this.lBDeserializar_502ag.Location = new System.Drawing.Point(460, 470);
-            this.lBDeserializar_502ag.Name = "lBDeserializar_502ag";
-            this.lBDeserializar_502ag.Size = new System.Drawing.Size(312, 173);
-            this.lBDeserializar_502ag.TabIndex = 43;
-            // 
             // FormMaestrosClientes_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 649);
-            this.Controls.Add(this.lBDeserializar_502ag);
             this.Controls.Add(this.buttonLimpiar_502ag);
             this.Controls.Add(this.rTBSerializar_502ag);
             this.Controls.Add(this.buttonSerializar_502ag);
@@ -520,6 +510,5 @@
         private System.Windows.Forms.Button buttonSerializar_502ag;
         private System.Windows.Forms.RichTextBox rTBSerializar_502ag;
         private System.Windows.Forms.Button buttonLimpiar_502ag;
-        private System.Windows.Forms.ListBox lBDeserializar_502ag;
     }
 }

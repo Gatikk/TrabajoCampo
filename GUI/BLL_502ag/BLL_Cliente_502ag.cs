@@ -48,6 +48,13 @@ namespace BLL_502ag
             }
             return null;
         }
+        public BE_Cliente_502ag ObtenerClienteMaestrosEncryptados_502ag(string dni_502ag)
+        {
+            DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
+            Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+            BE_Cliente_502ag cliente_502ag = dalCliente_502ag.ObtenerCliente_502ag(dni_502ag);
+            return cliente_502ag;
+        }
         public List<BE_Cliente_502ag> ObtenerListaClientes_502ag()
         {
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();

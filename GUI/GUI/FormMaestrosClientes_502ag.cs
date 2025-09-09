@@ -57,7 +57,16 @@ namespace GUI
         private void buttonLimpiar_502ag_Click(object sender, EventArgs e)
         {
             rTBSerializar_502ag.Clear();
-            lBDeserializar_502ag.Items.Clear();
+            buttonAltaCliente_502ag.Enabled = true;
+            buttonBajaCliente_502ag.Enabled = true;
+            buttonModificarCliente_502ag.Enabled = true;
+            buttonAplicar_502ag.Enabled = false;
+            buttonCancelar_502ag.Enabled = false;
+            buttonSerializar_502ag.Enabled = true;
+            buttonDeserializar_502ag.Enabled = true;
+            rBActivos_502ag.Enabled = true;
+            rBTodos_502ag.Enabled = true;
+            Mostrar_502ag(dgvClientes_502ag);
         }
 
         private void buttonAltaCliente_502ag_Click(object sender, EventArgs e)
@@ -73,6 +82,7 @@ namespace GUI
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonSerializar_502ag.Enabled = false;
                 buttonDeserializar_502ag.Enabled = false;
+                buttonLimpiar_502ag.Enabled = false;
                 tBDNI_502ag.Enabled = true;
                 tBNombre_502ag.Enabled = true;
                 tBApellido_502ag.Enabled = true;
@@ -97,6 +107,7 @@ namespace GUI
                 buttonModificarCliente_502ag.Enabled = false;
                 buttonBajaCliente_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
+                buttonLimpiar_502ag.Enabled = false;
                 tBEmail_502ag.Enabled = true;
                 tBDireccion_502ag.Enabled = true;
                 tBTelefono_502ag.Enabled = true;
@@ -129,6 +140,7 @@ namespace GUI
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonSerializar_502ag.Enabled = false;
                 buttonDeserializar_502ag.Enabled = false;
+                buttonLimpiar_502ag.Enabled = false;
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
@@ -146,6 +158,7 @@ namespace GUI
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonSerializar_502ag.Enabled = false;
                 buttonDeserializar_502ag.Enabled = false;
+                buttonLimpiar_502ag.Enabled = false;
                 dgvClientes_502ag.MultiSelect = true;
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }    
@@ -172,18 +185,32 @@ namespace GUI
                         try
                         {            
                             BLL_Serializador_502ag bllSerializador_502ag = new BLL_Serializador_502ag();
-                            lBDeserializar_502ag.Items.Clear();
-                            foreach (BE_Cliente_502ag cliente_502ag in bllSerializador_502ag.DeserializarXML_502ag(oFD_502ag.FileName))
-                            {
-                                string linea_502ag = $"{cliente_502ag.DNI_502ag}, {cliente_502ag.Nombre_502ag} {cliente_502ag.Apellido_502ag}";
-                                lBDeserializar_502ag.Items.Add(linea_502ag);
-                            }
+                            List<BE_Cliente_502ag> clientes_502ag = bllSerializador_502ag.DeserializarXML_502ag(oFD_502ag.FileName); 
+                            MostrarClientesXML_502ag(clientes_502ag);
+                            buttonAltaCliente_502ag.Enabled = false;
+                            buttonBajaCliente_502ag.Enabled = false;
+                            buttonModificarCliente_502ag.Enabled = false;
+                            buttonAplicar_502ag.Enabled = false;
+                            buttonCancelar_502ag.Enabled = false;
+                            buttonSerializar_502ag.Enabled = false;
+                            buttonDeserializar_502ag.Enabled = false;
+                            rBActivos_502ag.Enabled = false;
+                            rBTodos_502ag.Enabled = false;
+
                         }
                         catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
                     }
                 }
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+        private void MostrarClientesXML_502ag(List<BE_Cliente_502ag> clientes_502ag)
+        {
+            dgvClientes_502ag.Rows.Clear();
+            foreach(BE_Cliente_502ag cliente_502ag in clientes_502ag)
+            {
+                dgvClientes_502ag.Rows.Add(cliente_502ag.DNI_502ag, cliente_502ag.Nombre_502ag, cliente_502ag.Apellido_502ag, cliente_502ag.Email_502ag, cliente_502ag.Direccion_502ag, cliente_502ag.Telefono_502ag, cliente_502ag.IsActivo_502ag);
+            }
         }
 
         private void buttonAplicar_502ag_Click(object sender, EventArgs e)
@@ -265,6 +292,7 @@ namespace GUI
                 buttonVolverAlMenu_502ag.Enabled = true;
                 buttonSerializar_502ag.Enabled = true;
                 buttonDeserializar_502ag.Enabled = true;
+                buttonLimpiar_502ag.Enabled = true;
                 tBDNI_502ag.Enabled = false;
                 tBNombre_502ag.Enabled = false;
                 tBApellido_502ag.Enabled = false;
@@ -293,6 +321,7 @@ namespace GUI
             buttonSerializar_502ag.Enabled = true;
             buttonDeserializar_502ag.Enabled = true;
             dgvClientes_502ag.MultiSelect = false;
+            buttonLimpiar_502ag.Enabled = true;
             tBDNI_502ag.Enabled = false;
             tBNombre_502ag.Enabled = false;
             tBApellido_502ag.Enabled = false;
@@ -305,6 +334,7 @@ namespace GUI
             tBEmail_502ag.Clear();
             tBDireccion_502ag.Clear();
             tBTelefono_502ag.Clear();
+            rTBSerializar_502ag.Clear();
         }
 
         private void buttonVolverAlMenu_502ag_Click(object sender, EventArgs e)
@@ -362,7 +392,7 @@ namespace GUI
                     BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();   
                     foreach (DataGridViewRow row in dgvClientes_502ag.SelectedRows)
                     {
-                        BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerCliente_502ag(row.Cells[0].Value.ToString());
+                        BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestrosEncryptados_502ag(row.Cells[0].Value.ToString());
                         listaSerializar_502ag.Add(cliente_502ag);
                     }
                     BLL_Serializador_502ag bllSerializador_502ag = new BLL_Serializador_502ag();
@@ -385,7 +415,16 @@ namespace GUI
                 if(dgvClientes_502ag.SelectedRows.Count <= 0) throw new Exception("Seleccione un cliente para ver su información");
                 if (dgvClientes_502ag.Rows.Count <= 0) throw new Exception(msgNoHayClientes_502ag);
                 string dni_502ag = dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString();
-                BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dni_502ag);
+                string nombre_502ag = dgvClientes_502ag.SelectedRows[0].Cells[1].Value.ToString();
+                string apellido_502ag = dgvClientes_502ag.SelectedRows[0].Cells[2].Value.ToString();
+                string email_502ag = dgvClientes_502ag.SelectedRows[0].Cells[3].Value.ToString();
+                string direccion_502ag = dgvClientes_502ag.SelectedRows[0].Cells[4].Value.ToString();
+                string telefono_502ag = dgvClientes_502ag.SelectedRows[0].Cells[5].Value.ToString();
+                BE_Cliente_502ag cliente_502ag = new BE_Cliente_502ag(dni_502ag, nombre_502ag, apellido_502ag, email_502ag, direccion_502ag, telefono_502ag);
+                Encryptador_502ag cifrador_502ag = new Encryptador_502ag();
+                cliente_502ag.Email_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Email_502ag);
+                cliente_502ag.Direccion_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Direccion_502ag);
+                cliente_502ag.Telefono_502ag = cifrador_502ag.DesencryptadorReversible_502ag(cliente_502ag.Telefono_502ag);
                 MessageBox.Show(
                         msgDNI_502ag + cliente_502ag.DNI_502ag + "\n" +
                         msgNombre_502ag + cliente_502ag.Nombre_502ag + "\n" +
@@ -407,15 +446,6 @@ namespace GUI
         private void FormMaestrosClientes_502ag_Activated(object sender, EventArgs e)
         {
         }
-
-
-
-
-
-
-
-
-
 
         private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
         {

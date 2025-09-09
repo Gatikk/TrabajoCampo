@@ -38,6 +38,5 @@ namespace BLL_502ag
                 return writer_502ag.ToString();
             }
         }
-
     }
 }

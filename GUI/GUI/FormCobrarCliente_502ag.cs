@@ -55,11 +55,11 @@ namespace GUI
                 string metodo_502ag = "";
                 if (rBCredito_502ag.Checked)
                 {
-                    metodo_502ag = cifrador_502ag.EncryptadorReversible_502ag(msgCredito_502ag);
+                    metodo_502ag = cifrador_502ag.EncryptadorReversible_502ag("Crédito");
                 }
                 else
                 {
-                    metodo_502ag = cifrador_502ag.EncryptadorReversible_502ag(msgDebito_502ag);
+                    metodo_502ag = cifrador_502ag.EncryptadorReversible_502ag("Débito");
                 }
                 BE_Tarjeta_502ag tarjeta_502ag = new BE_Tarjeta_502ag(metodo_502ag, numTarjeta_502ag, codSeguridad_502ag, fechaCad_502ag, titular_502ag);
                 if (!bllPago_502ag.ValidarPago_502ag(tarjeta_502ag)) { throw new Exception(msgPagoRechazado_502ag);}
