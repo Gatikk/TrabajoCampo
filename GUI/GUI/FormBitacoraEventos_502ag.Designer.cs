@@ -49,7 +49,7 @@
             this.labelHasta_502ag = new System.Windows.Forms.Label();
             this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
             this.buttonAplicar_502ag = new System.Windows.Forms.Button();
-            this.buttonLimpiar_502ag = new System.Windows.Forms.Button();
+            this.buttonResetearGrilla_502ag = new System.Windows.Forms.Button();
             this.tBNombre_502ag = new System.Windows.Forms.TextBox();
             this.tBApellido_502ag = new System.Windows.Forms.TextBox();
             this.labelNombre_502ag = new System.Windows.Forms.Label();
@@ -156,6 +156,7 @@
             this.cBModulo_502ag.Name = "cBModulo_502ag";
             this.cBModulo_502ag.Size = new System.Drawing.Size(198, 24);
             this.cBModulo_502ag.TabIndex = 4;
+            this.cBModulo_502ag.SelectedIndexChanged += new System.EventHandler(this.cBModulo_502ag_SelectedIndexChanged);
             // 
             // labelEvento_502ag
             // 
@@ -259,19 +260,19 @@
             this.buttonAplicar_502ag.UseVisualStyleBackColor = false;
             this.buttonAplicar_502ag.Click += new System.EventHandler(this.buttonAplicar_502ag_Click);
             // 
-            // buttonLimpiar_502ag
+            // buttonResetearGrilla_502ag
             // 
-            this.buttonLimpiar_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.buttonLimpiar_502ag.FlatAppearance.BorderSize = 0;
-            this.buttonLimpiar_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLimpiar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonLimpiar_502ag.Location = new System.Drawing.Point(427, 409);
-            this.buttonLimpiar_502ag.Name = "buttonLimpiar_502ag";
-            this.buttonLimpiar_502ag.Size = new System.Drawing.Size(110, 40);
-            this.buttonLimpiar_502ag.TabIndex = 16;
-            this.buttonLimpiar_502ag.Text = "Limpiar";
-            this.buttonLimpiar_502ag.UseVisualStyleBackColor = false;
-            this.buttonLimpiar_502ag.Click += new System.EventHandler(this.buttonLimpiar_502ag_Click);
+            this.buttonResetearGrilla_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonResetearGrilla_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonResetearGrilla_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonResetearGrilla_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.buttonResetearGrilla_502ag.Location = new System.Drawing.Point(427, 409);
+            this.buttonResetearGrilla_502ag.Name = "buttonResetearGrilla_502ag";
+            this.buttonResetearGrilla_502ag.Size = new System.Drawing.Size(110, 40);
+            this.buttonResetearGrilla_502ag.TabIndex = 16;
+            this.buttonResetearGrilla_502ag.Text = "Resetear Grilla";
+            this.buttonResetearGrilla_502ag.UseVisualStyleBackColor = false;
+            this.buttonResetearGrilla_502ag.Click += new System.EventHandler(this.buttonResetearGrilla_502ag_Click);
             // 
             // tBNombre_502ag
             // 
@@ -347,7 +348,7 @@
             this.Controls.Add(this.labelNombre_502ag);
             this.Controls.Add(this.tBApellido_502ag);
             this.Controls.Add(this.tBNombre_502ag);
-            this.Controls.Add(this.buttonLimpiar_502ag);
+            this.Controls.Add(this.buttonResetearGrilla_502ag);
             this.Controls.Add(this.buttonVolverAlMenu_502ag);
             this.Controls.Add(this.buttonAplicar_502ag);
             this.Controls.Add(this.labelHasta_502ag);
@@ -395,7 +396,7 @@
         private System.Windows.Forms.Label labelHasta_502ag;
         private System.Windows.Forms.Button buttonVolverAlMenu_502ag;
         private System.Windows.Forms.Button buttonAplicar_502ag;
-        private System.Windows.Forms.Button buttonLimpiar_502ag;
+        private System.Windows.Forms.Button buttonResetearGrilla_502ag;
         private System.Windows.Forms.TextBox tBNombre_502ag;
         private System.Windows.Forms.TextBox tBApellido_502ag;
         private System.Windows.Forms.Label labelNombre_502ag;

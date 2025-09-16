@@ -110,5 +110,11 @@ namespace BLLS_502ag
                 doc_502ag.Close();
             }
         }
+
+        public List<string> EventosDelModulo_502ag(string modulo_502ag)
+        {
+            DAL_BitacoraEvento_502ag dalBitacoraEventos_502ag = new DAL_BitacoraEvento_502ag();
+            return dalBitacoraEventos_502ag.EventosDelModulo_502ag(modulo_502ag);
+        }
     }
 }

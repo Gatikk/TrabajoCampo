@@ -103,19 +103,26 @@ namespace GUI
                 buttonSeleccionarOrden_502ag.Enabled = false;
                 BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();
                 BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerCliente_502ag(ordenTrabajo_502ag.DNICliente_502ag);
-
-                tBTitular_502ag.Enabled = true;
-                tBNumero_502ag.Enabled = true;
-                tBCodigoSeguridad_502ag.Enabled = true;
-                tBFechaCaducidad_502ag.Enabled = true;
-                rBCredito_502ag.Enabled = true;
-                rBDebito_502ag.Enabled = true;
-                dgvOrdenesTrabajo_502ag.Enabled = false;
-                rTBFacturaDatos_502ag.Enabled = true;
-                buttonSeleccionarOrden_502ag.Enabled = false;
-                buttonRealizarPago_502ag.Enabled = true;
-                tBTitular_502ag.Text = $"{cliente_502ag.Nombre_502ag} {cliente_502ag.Apellido_502ag}";
-                CompletarRTB_502ag();
+                if(cliente_502ag != null)
+                {
+                    tBTitular_502ag.Enabled = true;
+                    tBNumero_502ag.Enabled = true;
+                    tBCodigoSeguridad_502ag.Enabled = true;
+                    tBFechaCaducidad_502ag.Enabled = true;
+                    rBCredito_502ag.Enabled = true;
+                    rBDebito_502ag.Enabled = true;
+                    dgvOrdenesTrabajo_502ag.Enabled = false;
+                    rTBFacturaDatos_502ag.Enabled = true;
+                    buttonSeleccionarOrden_502ag.Enabled = false;
+                    buttonRealizarPago_502ag.Enabled = true;
+                    tBTitular_502ag.Text = $"{cliente_502ag.Nombre_502ag} {cliente_502ag.Apellido_502ag}";
+                    CompletarRTB_502ag();
+                }
+                else
+                {
+                    Limpiar_502ag();
+                    throw new Exception("No se pudo obtener el cliente asociado a la orden de trabajo");
+                }
             }
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }

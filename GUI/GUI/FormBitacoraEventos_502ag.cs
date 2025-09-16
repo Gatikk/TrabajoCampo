@@ -56,19 +56,6 @@ namespace GUI
                 );
             }
         }
-        private void buttonLimpiar_502ag_Click(object sender, EventArgs e)
-        {
-            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
-            listaEventos_502ag = bllsEvento_502ag.ObtenerEventos_502ag();
-            Mostrar_502ag(dgvBitacoraEventos_502ag, listaEventos_502ag);
-            checkBoxFecha_502ag.Checked = false;
-            dTPDesde_502ag.Enabled = false;
-            dTPHasta_502ag.Enabled = false;
-            cBUsuario_502ag.SelectedIndex = 0;
-            cBCriticidad_502ag.SelectedIndex = 0;
-            cBEvento_502ag.SelectedIndex = 0;
-            cBModulo_502ag.SelectedIndex = 0;
-        }
 
         private void dgvBitacoraEventos_502ag_SelectionChanged(object sender, EventArgs e)
         {
@@ -205,7 +192,12 @@ namespace GUI
                 BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
                 DateTime fechaDesde_502ag = dTPDesde_502ag.Value.Date;
                 DateTime fechaHasta_502ag = dTPHasta_502ag.Value.Date;
-                if(fechaDesde_502ag > fechaHasta_502ag && checkBoxFecha_502ag.Checked) throw new Exception("La fecha DESDE no puede ser mayor a la fecha HASTA");
+                if (fechaDesde_502ag > fechaHasta_502ag && checkBoxFecha_502ag.Checked)
+                {
+                    dTPDesde_502ag.Value = DateTime.Now;
+                    dTPHasta_502ag.Value = DateTime.Now;
+                    throw new Exception("La fecha DESDE no puede ser mayor a la fecha HASTA");
+                }
                 listaEventos_502ag = bllsEvento_502ag.ObtenerEventosFiltrado_502ag(
                     cBUsuario_502ag.Text,
                     fechaDesde_502ag,
@@ -260,6 +252,52 @@ namespace GUI
             {
                 MessageBox.Show($"Error: {ex.Message}");
             }
+        }
+
+
+        private void cBModulo_502ag_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CargarComboBoxEventoFiltrado_502ag();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void CargarComboBoxEventoFiltrado_502ag()
+        {
+            try
+            {
+                cBEvento_502ag.Items.Clear();
+                cBEvento_502ag.Items.Add("");
+                cBEvento_502ag.SelectedIndex = 0;
+                BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+                List<string> listaEventosString_502ag = bllsEvento_502ag.EventosDelModulo_502ag(cBModulo_502ag.Text);
+                foreach(string evento_502ag in listaEventosString_502ag)
+                {
+                    cBEvento_502ag.Items.Add(evento_502ag);
+                }
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        private void buttonResetearGrilla_502ag_Click(object sender, EventArgs e)
+        {
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            listaEventos_502ag = bllsEvento_502ag.ObtenerEventos_502ag();
+            Mostrar_502ag(dgvBitacoraEventos_502ag, listaEventos_502ag);
+            checkBoxFecha_502ag.Checked = false;
+            dTPDesde_502ag.Enabled = false;
+            dTPHasta_502ag.Enabled = false;
+            dTPDesde_502ag.Value = DateTime.Now;
+            dTPHasta_502ag.Value = DateTime.Now;
+            cBUsuario_502ag.SelectedIndex = 0;
+            cBCriticidad_502ag.SelectedIndex = 0;
+            cBEvento_502ag.SelectedIndex = 0;
+            cBModulo_502ag.SelectedIndex = 0;
         }
     }
 }

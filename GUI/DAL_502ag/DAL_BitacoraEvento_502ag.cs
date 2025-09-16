@@ -173,5 +173,44 @@ namespace DAL_502ag
                 return eventosFiltrados_502ag;
             }
         }
+
+        public List<string> EventosDelModulo_502ag(string modulo_502ag)
+        {
+            List<string> eventos_502ag = new List<string>();
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                if(modulo_502ag != "")
+                {
+                    string query_502ag = "SELECT DISTINCT Evento_502ag FROM BitacoraEvento_502ag WHERE Modulo_502ag = @Modulo_502ag ORDER BY Evento_502ag";
+                    using(SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
+                    {
+                        cmd_502ag.Parameters.AddWithValue("@Modulo_502ag", modulo_502ag);
+                        using(SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
+                        {
+                            while (dr_502ag.Read())
+                            {
+                                eventos_502ag.Add(dr_502ag["Evento_502ag"].ToString());
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    string query_502ag = "SELECT DISTINCT Evento_502ag FROM BitacoraEvento_502ag ORDER BY Evento_502ag";
+                    using (SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
+                    {
+                        using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
+                        {
+                            while (dr_502ag.Read())
+                            {
+                                eventos_502ag.Add(dr_502ag["Evento_502ag"].ToString());
+                            }
+                        }
+                    }
+                }
+            }
+            return eventos_502ag;
+        }
     }
 }
