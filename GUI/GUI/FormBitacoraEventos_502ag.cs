@@ -1,5 +1,6 @@
 ﻿using BLLS_502ag;
 using SE_502ag;
+using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,10 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class FormBitacoraEventos_502ag : Form
+    public partial class FormBitacoraEventos_502ag : Form, IObserver_502ag
     {
         List<SE_Evento_502ag> listaEventos_502ag = new List<SE_Evento_502ag>();
+        private string msgFechaDesdeNoMayorHasta_502ag, msgNadaParaImprimir_502ag, msgImpresionExitosa_502ag;
         public FormBitacoraEventos_502ag()
         {
             StartPosition = FormStartPosition.Manual;
@@ -32,6 +34,7 @@ namespace GUI
             Mostrar_502ag(dgvBitacoraEventos_502ag, todosLosEventos_502ag());
             CargarComboBoxs_502ag();
             Mostrar_502ag(dgvBitacoraEventos_502ag, listaEventos_502ag);
+            Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }
 
         private List<SE_Evento_502ag> todosLosEventos_502ag()
@@ -196,7 +199,7 @@ namespace GUI
                 {
                     dTPDesde_502ag.Value = DateTime.Now;
                     dTPHasta_502ag.Value = DateTime.Now;
-                    throw new Exception("La fecha DESDE no puede ser mayor a la fecha HASTA");
+                    throw new Exception($"{msgFechaDesdeNoMayorHasta_502ag}");
                 }
                 listaEventos_502ag = bllsEvento_502ag.ObtenerEventosFiltrado_502ag(
                     cBUsuario_502ag.Text,
@@ -246,7 +249,7 @@ namespace GUI
                 if (listaEventos_502ag.Count <= 0) throw new Exception("No hay nada para imprimir.");
                 BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
                 bllsEvento_502ag.ImprimirEventos_502ag(listaEventos_502ag);
-                MessageBox.Show("Impresión exitosa.", "Impresión Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"{msgImpresionExitosa_502ag}", $"{msgImpresionExitosa_502ag}", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -298,6 +301,41 @@ namespace GUI
             cBCriticidad_502ag.SelectedIndex = 0;
             cBEvento_502ag.SelectedIndex = 0;
             cBModulo_502ag.SelectedIndex = 0;
+        }
+
+        public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
+        {
+            TraducirControles_502ag(this, traductor_502ag);
+        }
+
+        private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
+        {
+            foreach (Control c_502ag in control_502ag.Controls)
+            {
+                if (c_502ag is TextBox || c_502ag is ListBox || c_502ag is DateTimePicker || c_502ag is ComboBox)
+                {
+
+                }
+                else
+                {
+                    c_502ag.Text = traductor_502ag.Traducir_502ag(c_502ag.Name);
+                }
+                if (c_502ag is DataGridView)
+                {
+                    DataGridView dgv_502ag = c_502ag as DataGridView;
+                    foreach (DataGridViewColumn col_502ag in dgv_502ag.Columns)
+                    {
+                        col_502ag.HeaderText = traductor_502ag.Traducir_502ag(col_502ag.Name);
+                    }
+                }
+                if (control_502ag.HasChildren)
+                {
+                    TraducirControles_502ag(c_502ag, traductor_502ag);
+                }
+            }
+            msgFechaDesdeNoMayorHasta_502ag = traductor_502ag.Traducir_502ag("msgFechaDesdeNoMayorHasta_502ag");
+            msgNadaParaImprimir_502ag = traductor_502ag.Traducir_502ag("msgNadaParaImprimir_502ag");
+            msgImpresionExitosa_502ag = traductor_502ag.Traducir_502ag("msgImpresionExitosa_502ag");
         }
     }
 }

@@ -29,12 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvBitacoraEventos_502ag = new System.Windows.Forms.DataGridView();
-            this.Usuario_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modulo_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Evento_502 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Criticidad_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cBUsuario_502ag = new System.Windows.Forms.ComboBox();
             this.labelUsuario_502ag = new System.Windows.Forms.Label();
             this.labelModulo_502ag = new System.Windows.Forms.Label();
@@ -56,6 +50,12 @@
             this.labelApellido_502ag = new System.Windows.Forms.Label();
             this.checkBoxFecha_502ag = new System.Windows.Forms.CheckBox();
             this.buttonImprimir_502ag = new System.Windows.Forms.Button();
+            this.Usuario_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modulo_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Evento_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Criticidad_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacoraEventos_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,7 +72,7 @@
             this.Fecha_502ag,
             this.Hora_502ag,
             this.Modulo_502ag,
-            this.Evento_502,
+            this.Evento_502ag,
             this.Criticidad_502ag});
             this.dgvBitacoraEventos_502ag.Location = new System.Drawing.Point(9, 14);
             this.dgvBitacoraEventos_502ag.MultiSelect = false;
@@ -82,42 +82,6 @@
             this.dgvBitacoraEventos_502ag.Size = new System.Drawing.Size(760, 246);
             this.dgvBitacoraEventos_502ag.TabIndex = 1;
             this.dgvBitacoraEventos_502ag.SelectionChanged += new System.EventHandler(this.dgvBitacoraEventos_502ag_SelectionChanged);
-            // 
-            // Usuario_502ag
-            // 
-            this.Usuario_502ag.HeaderText = "Usuario";
-            this.Usuario_502ag.Name = "Usuario_502ag";
-            this.Usuario_502ag.ReadOnly = true;
-            // 
-            // Fecha_502ag
-            // 
-            this.Fecha_502ag.HeaderText = "Fecha";
-            this.Fecha_502ag.Name = "Fecha_502ag";
-            this.Fecha_502ag.ReadOnly = true;
-            // 
-            // Hora_502ag
-            // 
-            this.Hora_502ag.HeaderText = "Hora";
-            this.Hora_502ag.Name = "Hora_502ag";
-            this.Hora_502ag.ReadOnly = true;
-            // 
-            // Modulo_502ag
-            // 
-            this.Modulo_502ag.HeaderText = "Modulo";
-            this.Modulo_502ag.Name = "Modulo_502ag";
-            this.Modulo_502ag.ReadOnly = true;
-            // 
-            // Evento_502
-            // 
-            this.Evento_502.HeaderText = "Evento";
-            this.Evento_502.Name = "Evento_502";
-            this.Evento_502.ReadOnly = true;
-            // 
-            // Criticidad_502ag
-            // 
-            this.Criticidad_502ag.HeaderText = "Criticidad";
-            this.Criticidad_502ag.Name = "Criticidad_502ag";
-            this.Criticidad_502ag.ReadOnly = true;
             // 
             // cBUsuario_502ag
             // 
@@ -142,7 +106,7 @@
             // 
             this.labelModulo_502ag.AutoSize = true;
             this.labelModulo_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelModulo_502ag.Location = new System.Drawing.Point(568, 333);
+            this.labelModulo_502ag.Location = new System.Drawing.Point(563, 287);
             this.labelModulo_502ag.Name = "labelModulo_502ag";
             this.labelModulo_502ag.Size = new System.Drawing.Size(54, 17);
             this.labelModulo_502ag.TabIndex = 5;
@@ -152,7 +116,7 @@
             // 
             this.cBModulo_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBModulo_502ag.FormattingEnabled = true;
-            this.cBModulo_502ag.Location = new System.Drawing.Point(571, 351);
+            this.cBModulo_502ag.Location = new System.Drawing.Point(566, 305);
             this.cBModulo_502ag.Name = "cBModulo_502ag";
             this.cBModulo_502ag.Size = new System.Drawing.Size(198, 24);
             this.cBModulo_502ag.TabIndex = 4;
@@ -162,7 +126,7 @@
             // 
             this.labelEvento_502ag.AutoSize = true;
             this.labelEvento_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.labelEvento_502ag.Location = new System.Drawing.Point(568, 287);
+            this.labelEvento_502ag.Location = new System.Drawing.Point(563, 332);
             this.labelEvento_502ag.Name = "labelEvento_502ag";
             this.labelEvento_502ag.Size = new System.Drawing.Size(52, 17);
             this.labelEvento_502ag.TabIndex = 7;
@@ -172,7 +136,7 @@
             // 
             this.cBEvento_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBEvento_502ag.FormattingEnabled = true;
-            this.cBEvento_502ag.Location = new System.Drawing.Point(571, 305);
+            this.cBEvento_502ag.Location = new System.Drawing.Point(566, 350);
             this.cBEvento_502ag.Name = "cBEvento_502ag";
             this.cBEvento_502ag.Size = new System.Drawing.Size(198, 24);
             this.cBEvento_502ag.TabIndex = 6;
@@ -337,6 +301,42 @@
             this.buttonImprimir_502ag.UseVisualStyleBackColor = false;
             this.buttonImprimir_502ag.Click += new System.EventHandler(this.buttonImprimir_502ag_Click);
             // 
+            // Usuario_502ag
+            // 
+            this.Usuario_502ag.HeaderText = "Usuario";
+            this.Usuario_502ag.Name = "Usuario_502ag";
+            this.Usuario_502ag.ReadOnly = true;
+            // 
+            // Fecha_502ag
+            // 
+            this.Fecha_502ag.HeaderText = "Fecha";
+            this.Fecha_502ag.Name = "Fecha_502ag";
+            this.Fecha_502ag.ReadOnly = true;
+            // 
+            // Hora_502ag
+            // 
+            this.Hora_502ag.HeaderText = "Hora";
+            this.Hora_502ag.Name = "Hora_502ag";
+            this.Hora_502ag.ReadOnly = true;
+            // 
+            // Modulo_502ag
+            // 
+            this.Modulo_502ag.HeaderText = "Modulo";
+            this.Modulo_502ag.Name = "Modulo_502ag";
+            this.Modulo_502ag.ReadOnly = true;
+            // 
+            // Evento_502ag
+            // 
+            this.Evento_502ag.HeaderText = "Evento";
+            this.Evento_502ag.Name = "Evento_502ag";
+            this.Evento_502ag.ReadOnly = true;
+            // 
+            // Criticidad_502ag
+            // 
+            this.Criticidad_502ag.HeaderText = "Criticidad";
+            this.Criticidad_502ag.Name = "Criticidad_502ag";
+            this.Criticidad_502ag.ReadOnly = true;
+            // 
             // FormBitacoraEventos_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -376,12 +376,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvBitacoraEventos_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Hora_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Modulo_502ag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Evento_502;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Criticidad_502ag;
         private System.Windows.Forms.ComboBox cBUsuario_502ag;
         private System.Windows.Forms.Label labelUsuario_502ag;
         private System.Windows.Forms.Label labelModulo_502ag;
@@ -403,5 +397,11 @@
         private System.Windows.Forms.Label labelApellido_502ag;
         private System.Windows.Forms.CheckBox checkBoxFecha_502ag;
         private System.Windows.Forms.Button buttonImprimir_502ag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario_502ag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha_502ag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Hora_502ag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Modulo_502ag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Evento_502ag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Criticidad_502ag;
     }
 }

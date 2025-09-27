@@ -24,6 +24,7 @@ namespace GUI
         private string msgDNI_502ag, msgNombre_502ag, msgApellido_502ag, msgEmail_502ag, msgDireccion_502ag, msgTelefono_502ag;
         private string msgNoHayClientes_502ag, nadaQueModificar_502ag, msgNadaQueBorrar_502ag;
         private string msgDNIYaUtilizado_502ag, msgEmailYaUtilizado_502ag, msgTelefonoYaUtilizado_502ag, msgDNINoValido_502ag, msgNombreNoValido_502ag, msgApellidoNoValido_502ag, msgEmailNoValido_502ag, msgTelefonoNoValido_502ag, msgDireccionNoValida_502ag;
+        private string messageArchivoGuardadoExito_502ag, messageArchivoXMLParaDeserializar_502ag, messageArchivoXML_502ag, messageSeleccionarClienteVerInfo_502ag, messageDebeHaberUnClienteSerializar_502ag, msgSeleccioneClienteModi_502ag, msgSeleccioneClienteEli_502ag;
         List<BE_Cliente_502ag> listaSerializar_502ag = new List<BE_Cliente_502ag>();
 
 
@@ -170,12 +171,11 @@ namespace GUI
             {
                 string carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ArchivosSerializados_502ag");
                 if (!Directory.Exists(carpeta_502ag)) { carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)); }
-
                 using (OpenFileDialog oFD_502ag = new OpenFileDialog())
                 {
-                    oFD_502ag.Title = "Seleccionar archivo xml para deserializar";
+                    oFD_502ag.Title = $"{messageArchivoXMLParaDeserializar_502ag}";
                     oFD_502ag.InitialDirectory = carpeta_502ag;
-                    oFD_502ag.Filter = "Archivo de XML (*.xml) |*.xml";
+                    oFD_502ag.Filter = $"{messageArchivoXML_502ag} (*.xml) |*.xml";
                     oFD_502ag.FilterIndex = 0;
                     oFD_502ag.RestoreDirectory = true;
                     oFD_502ag.CheckFileExists = true;
@@ -239,27 +239,27 @@ namespace GUI
                 }
                 if(opcion_502ag == "Modificar")
                 {
-                    if (dgvClientes_502ag.SelectedRows.Count <= 0) { throw new Exception("Seleccione un cliente para modificar"); }
+                    if (dgvClientes_502ag.SelectedRows.Count <= 0) { throw new Exception($"{msgSeleccioneClienteModi_502ag}"); }
                     BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString());
                     string email_502ag = tBEmail_502ag.Text;
                     string direccion_502ag = tBDireccion_502ag.Text;
                     string telefono_502ag = tBTelefono_502ag.Text;
                     if (email_502ag != cliente_502ag.Email_502ag)
                     {
-                        if (!bllCliente_502ag.VerificarEmailYaRegistrado_502ag(email_502ag)) throw new Exception("Email ya registrado");
+                        if (!bllCliente_502ag.VerificarEmailYaRegistrado_502ag(email_502ag)) throw new Exception(msgEmailYaUtilizado_502ag);
                     }
                     if(telefono_502ag != cliente_502ag.Telefono_502ag)
                     {
-                        if (!bllCliente_502ag.VerificarTelefonoYaRegistrado_502ag(telefono_502ag)) throw new Exception("Teléfono ya registrado");
+                        if (!bllCliente_502ag.VerificarTelefonoYaRegistrado_502ag(telefono_502ag)) throw new Exception(msgTelefonoYaUtilizado_502ag);
                     }
-                    if (!bllCliente_502ag.VerificarEmail_502ag(email_502ag)) throw new Exception("Email no válido");
-                    if (!bllCliente_502ag.VerificarTelefono_502ag(telefono_502ag)) throw new Exception("Teléfono no válido, siga el formato XX XXXX-XXXX");
-                    if (!bllCliente_502ag.VerificarDireccion_502ag(direccion_502ag)) throw new Exception("Dirección no válida, siga el formato Calle XXXX");
+                    if (!bllCliente_502ag.VerificarEmail_502ag(email_502ag)) throw new Exception(msgEmailNoValido_502ag);
+                    if (!bllCliente_502ag.VerificarTelefono_502ag(telefono_502ag)) throw new Exception(msgTelefonoNoValido_502ag);
+                    if (!bllCliente_502ag.VerificarDireccion_502ag(direccion_502ag)) throw new Exception(msgDireccionNoValida_502ag);
                     bllCliente_502ag.ModificarCliente_502ag(cliente_502ag, email_502ag, direccion_502ag, telefono_502ag);
                 }
                 if(opcion_502ag == "Baja")
                 {
-                    if (dgvClientes_502ag.SelectedRows.Count <= 0) { throw new Exception("Seleccione un cliente para eliminar"); }
+                    if (dgvClientes_502ag.SelectedRows.Count <= 0) { throw new Exception(msgSeleccioneClienteEli_502ag); }
                     BE_Cliente_502ag cliente_502ag = bllCliente_502ag.ObtenerClienteMaestros_502ag(dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString());
                     bllCliente_502ag.BajaCliente_502ag(cliente_502ag);
                     MessageBox.Show("Usuario dado de baja con éxito");
@@ -269,15 +269,15 @@ namespace GUI
                     string carpeta_502ag = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ArchivosSerializados_502ag");
                     if (!Directory.Exists(carpeta_502ag)) { Directory.CreateDirectory(carpeta_502ag); }
                     BLL_Serializador_502ag bllSerializador_502ag = new BLL_Serializador_502ag();
-                    if(listaSerializar_502ag.Count <= 0) { throw new Exception("Debe haber al menos un cliente para serializar"); }
+                    if(listaSerializar_502ag.Count <= 0) { throw new Exception($"{messageDebeHaberUnClienteSerializar_502ag}"); }
                     using (SaveFileDialog sFD_502ag = new SaveFileDialog())
                     {
                         sFD_502ag.InitialDirectory = carpeta_502ag;
-                        sFD_502ag.Filter = "Archivo XML|*.xml";
+                        sFD_502ag.Filter = $"{messageArchivoXML_502ag}|*.xml";
                         if(sFD_502ag.ShowDialog() == DialogResult.OK)
                         {
                             bllSerializador_502ag.SerializarXML_502ag(sFD_502ag.FileName, listaSerializar_502ag);
-                            MessageBox.Show("Archivo guardado con éxito");
+                            MessageBox.Show($"{messageArchivoGuardadoExito_502ag}");
                             dgvClientes_502ag.MultiSelect = false;
                         }
                     }
@@ -412,7 +412,7 @@ namespace GUI
             try
             {
                 BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();
-                if(dgvClientes_502ag.SelectedRows.Count <= 0) throw new Exception("Seleccione un cliente para ver su información");
+                if(dgvClientes_502ag.SelectedRows.Count <= 0) throw new Exception($"{messageSeleccionarClienteVerInfo_502ag}");
                 if (dgvClientes_502ag.Rows.Count <= 0) throw new Exception(msgNoHayClientes_502ag);
                 string dni_502ag = dgvClientes_502ag.SelectedRows[0].Cells[0].Value.ToString();
                 string nombre_502ag = dgvClientes_502ag.SelectedRows[0].Cells[1].Value.ToString();
@@ -490,7 +490,12 @@ namespace GUI
             msgEmailNoValido_502ag = traductor_502ag.Traducir_502ag("msgEmailNoValido_502ag");
             msgTelefonoNoValido_502ag = traductor_502ag.Traducir_502ag("msgTelefonoNoValido_502ag");
             msgDireccionNoValida_502ag = traductor_502ag.Traducir_502ag("msgDireccionNoValida_502ag");
-
+            messageArchivoGuardadoExito_502ag = traductor_502ag.Traducir_502ag("messageArchivoGuardadoExito_502ag");
+            messageArchivoXMLParaDeserializar_502ag = traductor_502ag.Traducir_502ag("messageArchivoXMLParaDeserializar_502ag");
+            messageArchivoXML_502ag = traductor_502ag.Traducir_502ag("messageArchivoXML_502ag");
+            messageSeleccionarClienteVerInfo_502ag = traductor_502ag.Traducir_502ag("messageSeleccionarClienteVerInfo_502ag");
+            msgSeleccioneClienteEli_502ag = traductor_502ag.Traducir_502ag("msgSeleccioneClienteEli_502ag");
+            msgSeleccioneClienteModi_502ag = traductor_502ag.Traducir_502ag("msgSeleccioneClienteModi_502ag");
         }
     }
 }

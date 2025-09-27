@@ -31,7 +31,7 @@
             this.buttonRealizarRestore_502ag = new System.Windows.Forms.Button();
             this.buttonRealizarBackup_502ag = new System.Windows.Forms.Button();
             this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
-            this.labelBackupRestore = new System.Windows.Forms.Label();
+            this.labelBackupRestore_502ag = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonRealizarRestore_502ag
@@ -76,27 +76,28 @@
             this.buttonVolverAlMenu_502ag.UseVisualStyleBackColor = false;
             this.buttonVolverAlMenu_502ag.Click += new System.EventHandler(this.buttonVolverAlMenu_502ag_Click);
             // 
-            // labelBackupRestore
+            // labelBackupRestore_502ag
             // 
-            this.labelBackupRestore.AutoSize = true;
-            this.labelBackupRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
-            this.labelBackupRestore.Location = new System.Drawing.Point(80, 9);
-            this.labelBackupRestore.Name = "labelBackupRestore";
-            this.labelBackupRestore.Size = new System.Drawing.Size(157, 24);
-            this.labelBackupRestore.TabIndex = 32;
-            this.labelBackupRestore.Text = "Backup y Restore";
+            this.labelBackupRestore_502ag.AutoSize = true;
+            this.labelBackupRestore_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F);
+            this.labelBackupRestore_502ag.Location = new System.Drawing.Point(80, 9);
+            this.labelBackupRestore_502ag.Name = "labelBackupRestore_502ag";
+            this.labelBackupRestore_502ag.Size = new System.Drawing.Size(157, 24);
+            this.labelBackupRestore_502ag.TabIndex = 32;
+            this.labelBackupRestore_502ag.Text = "Backup y Restore";
             // 
             // FormBackupRestore_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(312, 241);
-            this.Controls.Add(this.labelBackupRestore);
+            this.Controls.Add(this.labelBackupRestore_502ag);
             this.Controls.Add(this.buttonVolverAlMenu_502ag);
             this.Controls.Add(this.buttonRealizarRestore_502ag);
             this.Controls.Add(this.buttonRealizarBackup_502ag);
             this.Name = "FormBackupRestore_502ag";
             this.Text = "FormBackupRestore_502ag";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBackupRestore_502ag_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,6 +108,6 @@
         private System.Windows.Forms.Button buttonRealizarRestore_502ag;
         private System.Windows.Forms.Button buttonRealizarBackup_502ag;
         private System.Windows.Forms.Button buttonVolverAlMenu_502ag;
-        private System.Windows.Forms.Label labelBackupRestore;
+        private System.Windows.Forms.Label labelBackupRestore_502ag;
     }
 }
