@@ -31,6 +31,7 @@ namespace GUI
             panelSubMenuMaestros_502ag.Visible = false;
             panelSubMenuVentas_502ag.Visible = false;
             panelSubMenuReportes_502ag.Visible = false;
+            panelSubMenuTaller_502ag.Visible = false;
             VerificarAdminSupremo();
             BloquearAccesos_502ag();
 
@@ -111,6 +112,7 @@ namespace GUI
                 panelSubMenuVentas_502ag.Visible = false;
                 panelSubMenuReportes_502ag.Visible = false;
                 panelSubMenuUsuario_502ag.Visible = false;
+                panelSubMenuTaller_502ag.Visible = false;
             }
             if (panelSubMenuUsuario_502ag.Visible == true)
             {
@@ -119,6 +121,7 @@ namespace GUI
                 panelSubMenuVentas_502ag.Visible = false;
                 panelSubMenuReportes_502ag.Visible = false;
                 panelSubMenuAdmin_502ag.Visible = false;
+                panelSubMenuTaller_502ag.Visible = false;
             }
             if (panelSubMenuMaestros_502ag.Visible == true)
             {
@@ -127,6 +130,7 @@ namespace GUI
                 panelSubMenuVentas_502ag.Visible = false;
                 panelSubMenuReportes_502ag.Visible = false;
                 panelSubMenuMaestros_502ag.Visible = false;
+                panelSubMenuTaller_502ag.Visible = false;
             }
             if (panelSubMenuVentas_502ag.Visible == true)
             {
@@ -135,6 +139,7 @@ namespace GUI
                 panelSubMenuMaestros_502ag.Visible = false;
                 panelSubMenuReportes_502ag.Visible = false;
                 panelSubMenuVentas_502ag.Visible = false;
+                panelSubMenuTaller_502ag.Visible = false;
             }
             if (panelSubMenuReportes_502ag.Visible == true)
             {
@@ -143,6 +148,16 @@ namespace GUI
                 panelSubMenuMaestros_502ag.Visible = false;
                 panelSubMenuVentas_502ag.Visible = false;
                 panelSubMenuReportes_502ag.Visible = false;
+                panelSubMenuTaller_502ag.Visible = false;
+            }
+            if (panelSubMenuTaller_502ag.Visible == true)
+            {
+                panelSubMenuAdmin_502ag.Visible = false;
+                panelSubMenuUsuario_502ag.Visible = false;
+                panelSubMenuMaestros_502ag.Visible = false;
+                panelSubMenuVentas_502ag.Visible = false;
+                panelSubMenuReportes_502ag.Visible = false;
+                panelSubMenuTaller_502ag.Visible = false;
             }
         }
 
@@ -334,6 +349,11 @@ namespace GUI
             formCobrarClienteTaller_502ag.Show();
         }
 
+        private void buttonTaller_502ag_Click(object sender, EventArgs e)
+        {
+            mostrarSubMenu_502ag(panelSubMenuTaller_502ag);
+        }
+
         private void ActivarBotonesSubMenu_502ag()
         {
             if(buttonABM_502ag.Enabled || buttonPerfiles_502ag.Enabled)
@@ -375,6 +395,14 @@ namespace GUI
             else
             {
                 buttonReportes_502ag.Enabled = false;
+            }
+            if(buttonGenerarOT_502ag.Enabled || buttonGenerarDF_502ag.Enabled || buttonCobrarCliente_502ag.Enabled)
+            {
+                buttonTaller_502ag.Enabled = true;
+            }
+            else
+            {
+                buttonTaller_502ag.Enabled = false;
             }
         }
     }

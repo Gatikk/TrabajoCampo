@@ -429,6 +429,7 @@ namespace GUI
             this.buttonTaller_502ag.Text = "Taller";
             this.buttonTaller_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonTaller_502ag.UseVisualStyleBackColor = false;
+            this.buttonTaller_502ag.Click += new System.EventHandler(this.buttonTaller_502ag_Click);
             // 
             // panelSubMenuTaller_502ag
             // 
