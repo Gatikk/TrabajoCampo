@@ -106,6 +106,8 @@ namespace GUI
                 buttonCancelar_502ag.Enabled = true;
                 buttonAltaCliente_502ag.Enabled = false;
                 buttonModificarCliente_502ag.Enabled = false;
+                buttonSerializar_502ag.Enabled = false;
+                buttonDeserializar_502ag.Enabled = false;
                 buttonBajaCliente_502ag.Enabled = false;
                 buttonVolverAlMenu_502ag.Enabled = false;
                 buttonLimpiar_502ag.Enabled = false;
@@ -274,8 +276,12 @@ namespace GUI
                     {
                         sFD_502ag.InitialDirectory = carpeta_502ag;
                         sFD_502ag.Filter = $"{messageArchivoXML_502ag}|*.xml";
-                        if(sFD_502ag.ShowDialog() == DialogResult.OK)
+                        if (sFD_502ag.ShowDialog() == DialogResult.OK)
                         {
+                            if (!sFD_502ag.FileName.EndsWith(".xml", StringComparison.OrdinalIgnoreCase))
+                            {
+                                sFD_502ag.FileName += ".xml";
+                            }
                             bllSerializador_502ag.SerializarXML_502ag(sFD_502ag.FileName, listaSerializar_502ag);
                             MessageBox.Show($"{messageArchivoGuardadoExito_502ag}");
                             dgvClientes_502ag.MultiSelect = false;
