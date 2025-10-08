@@ -169,3 +169,8 @@ D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormGenerarOrdenTrabajo_502ag.resou
 D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormRegistrarVehiculo_502ag.resources
 D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormGenerarDiagnosticoFinal_502ag.resources
 D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormCobrarClienteTaller_502ag.resources
+D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormBitacoraCambios_502ag.resources
+D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormDigitoVerificador_502ag.resources
+D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormSistemaNoDisponible_502ag.resources
+D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormMaestrosRepuestos_502ag.resources
+D:\GitHub\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormVerFacturasTaller_502ag.resources

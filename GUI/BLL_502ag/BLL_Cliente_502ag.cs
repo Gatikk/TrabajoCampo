@@ -75,6 +75,8 @@ namespace BLL_502ag
             dalCliente_502ag.AltaCliente_502ag(cliente_502ag);
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Registrar Cliente", 2);
+            BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag();
         }
         #endregion
         #region BajaCliente
@@ -85,6 +87,8 @@ namespace BLL_502ag
             dalCliente_502ag.BajaCliente_502ag(cliente_502ag);
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Baja Cliente", 1);
+            BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag();
         }
         #endregion
         #region ModificarCliente
@@ -98,6 +102,8 @@ namespace BLL_502ag
             dalCliente_502ag.ModificarCliente_502ag(cliente_502ag);
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Modificar Cliente", 2);
+            BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag();
         }
         #endregion
         public bool VerificarDNIYaRegistrado_502ag(string dni_502ag)
@@ -154,6 +160,55 @@ namespace BLL_502ag
             return true;
         }
 
+        public string CalcularDVH_502ag()
+        {
+            DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
+            List<BE_Cliente_502ag> clientes_502ag = dalCliente_502ag.ObtenerListaClientes_502ag();
+            List<string> horizontales_502ag = new List<string>();
+            Encryptador_502ag encryptador_502ag = new Encryptador_502ag();
+            foreach(BE_Cliente_502ag cliente_502ag in clientes_502ag)
+            {
+                string horizontal_502ag = "";
+                horizontal_502ag = cliente_502ag.DNI_502ag + cliente_502ag.Nombre_502ag + cliente_502ag.Apellido_502ag + cliente_502ag.Email_502ag + cliente_502ag.Direccion_502ag + cliente_502ag.Telefono_502ag + cliente_502ag.IsActivo_502ag;
+                horizontal_502ag = encryptador_502ag.EncryptadorIrreversible_502ag(horizontal_502ag);
+                horizontales_502ag.Add(horizontal_502ag);
+            }
+            string dvh_502ag = "";
+            foreach(string horizontal_502ag in horizontales_502ag)
+            {
+                dvh_502ag += horizontal_502ag;
+            }
+            return encryptador_502ag.EncryptadorIrreversible_502ag(dvh_502ag);
+        }
 
+        public string CalcularDVV_502ag()
+        {
+            DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
+            List<BE_Cliente_502ag> clientes_502ag = dalCliente_502ag.ObtenerListaClientes_502ag();
+            List<string> verticales_502ag = new List<string>();
+            Encryptador_502ag encryptador_502ag = new Encryptador_502ag();
+            string dnis_502ag = "";
+            string nombres_502ag = "";
+            string apellidos_502ag = "";
+            string emails_502ag = "";
+            string direcciones_502ag = "";
+            string telefonos_502ag = "";
+            string activos_502ag = "";
+
+            foreach (BE_Cliente_502ag cliente_502ag in clientes_502ag)
+            {
+                dnis_502ag += cliente_502ag.DNI_502ag;
+                nombres_502ag += cliente_502ag.Nombre_502ag;
+                apellidos_502ag += cliente_502ag.Apellido_502ag;
+                emails_502ag += cliente_502ag.Email_502ag;
+                direcciones_502ag += cliente_502ag.Direccion_502ag;
+                telefonos_502ag += cliente_502ag.Telefono_502ag;
+                activos_502ag += cliente_502ag.IsActivo_502ag;
+            }
+
+            string dvv_502ag = dnis_502ag + nombres_502ag + apellidos_502ag + emails_502ag + direcciones_502ag + telefonos_502ag + activos_502ag;
+
+            return encryptador_502ag.EncryptadorIrreversible_502ag(dvv_502ag);
+        }
     }
 }

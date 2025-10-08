@@ -47,6 +47,8 @@ namespace GUI
             this.buttonIniciarSesion_502ag = new System.Windows.Forms.Button();
             this.buttonMaestros_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuMaestros_502ag = new System.Windows.Forms.Panel();
+            this.buttonMaestrosRepuestos_502ag = new System.Windows.Forms.Button();
+            this.buttonBitacoraCambiosCliente_502ag = new System.Windows.Forms.Button();
             this.buttonMaestrosCombustibles_502ag = new System.Windows.Forms.Button();
             this.buttonMaestrosClientes_502ag = new System.Windows.Forms.Button();
             this.buttonVentas_502ag = new System.Windows.Forms.Button();
@@ -62,6 +64,7 @@ namespace GUI
             this.buttonVerFacturas_502ag = new System.Windows.Forms.Button();
             this.buttonAyuda_502ag = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonVerFacturasTaller_502ag = new System.Windows.Forms.Button();
             this.panelMenuLateral_502ag.SuspendLayout();
             this.panelSubMenuAdmin_502ag.SuspendLayout();
             this.panelSubMenuUsuario_502ag.SuspendLayout();
@@ -331,13 +334,49 @@ namespace GUI
             // 
             // panelSubMenuMaestros_502ag
             // 
+            this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosRepuestos_502ag);
+            this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonBitacoraCambiosCliente_502ag);
             this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosCombustibles_502ag);
             this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosClientes_502ag);
             this.panelSubMenuMaestros_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuMaestros_502ag.Location = new System.Drawing.Point(3, 587);
             this.panelSubMenuMaestros_502ag.Name = "panelSubMenuMaestros_502ag";
-            this.panelSubMenuMaestros_502ag.Size = new System.Drawing.Size(222, 91);
+            this.panelSubMenuMaestros_502ag.Size = new System.Drawing.Size(222, 177);
             this.panelSubMenuMaestros_502ag.TabIndex = 12;
+            // 
+            // buttonMaestrosRepuestos_502ag
+            // 
+            this.buttonMaestrosRepuestos_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMaestrosRepuestos_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonMaestrosRepuestos_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaestrosRepuestos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonMaestrosRepuestos_502ag.Location = new System.Drawing.Point(0, 123);
+            this.buttonMaestrosRepuestos_502ag.Name = "buttonMaestrosRepuestos_502ag";
+            this.buttonMaestrosRepuestos_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonMaestrosRepuestos_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonMaestrosRepuestos_502ag.TabIndex = 13;
+            this.buttonMaestrosRepuestos_502ag.Tag = "Gestion de Repuestos";
+            this.buttonMaestrosRepuestos_502ag.Text = "Repuestos";
+            this.buttonMaestrosRepuestos_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMaestrosRepuestos_502ag.UseVisualStyleBackColor = true;
+            this.buttonMaestrosRepuestos_502ag.Click += new System.EventHandler(this.buttonMaestrosRepuestos_502ag_Click);
+            // 
+            // buttonBitacoraCambiosCliente_502ag
+            // 
+            this.buttonBitacoraCambiosCliente_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonBitacoraCambiosCliente_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonBitacoraCambiosCliente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonBitacoraCambiosCliente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonBitacoraCambiosCliente_502ag.Location = new System.Drawing.Point(0, 82);
+            this.buttonBitacoraCambiosCliente_502ag.Name = "buttonBitacoraCambiosCliente_502ag";
+            this.buttonBitacoraCambiosCliente_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonBitacoraCambiosCliente_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonBitacoraCambiosCliente_502ag.TabIndex = 12;
+            this.buttonBitacoraCambiosCliente_502ag.Tag = "Cambios Cliente";
+            this.buttonBitacoraCambiosCliente_502ag.Text = "Clientes Cambios";
+            this.buttonBitacoraCambiosCliente_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonBitacoraCambiosCliente_502ag.UseVisualStyleBackColor = true;
+            this.buttonBitacoraCambiosCliente_502ag.Click += new System.EventHandler(this.buttonBitacoraCambiosCliente_502ag_Click);
             // 
             // buttonMaestrosCombustibles_502ag
             // 
@@ -380,7 +419,7 @@ namespace GUI
             this.buttonVentas_502ag.FlatAppearance.BorderSize = 0;
             this.buttonVentas_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVentas_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVentas_502ag.Location = new System.Drawing.Point(3, 684);
+            this.buttonVentas_502ag.Location = new System.Drawing.Point(3, 770);
             this.buttonVentas_502ag.Name = "buttonVentas_502ag";
             this.buttonVentas_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonVentas_502ag.TabIndex = 12;
@@ -393,7 +432,7 @@ namespace GUI
             // 
             this.panelSubMenuVentas_502ag.Controls.Add(this.buttonCargarCombustible_502ag);
             this.panelSubMenuVentas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 737);
+            this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 823);
             this.panelSubMenuVentas_502ag.Name = "panelSubMenuVentas_502ag";
             this.panelSubMenuVentas_502ag.Size = new System.Drawing.Size(222, 48);
             this.panelSubMenuVentas_502ag.TabIndex = 13;
@@ -422,7 +461,7 @@ namespace GUI
             this.buttonTaller_502ag.FlatAppearance.BorderSize = 0;
             this.buttonTaller_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTaller_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonTaller_502ag.Location = new System.Drawing.Point(3, 791);
+            this.buttonTaller_502ag.Location = new System.Drawing.Point(3, 877);
             this.buttonTaller_502ag.Name = "buttonTaller_502ag";
             this.buttonTaller_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonTaller_502ag.TabIndex = 14;
@@ -437,7 +476,7 @@ namespace GUI
             this.panelSubMenuTaller_502ag.Controls.Add(this.buttonGenerarDF_502ag);
             this.panelSubMenuTaller_502ag.Controls.Add(this.buttonGenerarOT_502ag);
             this.panelSubMenuTaller_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuTaller_502ag.Location = new System.Drawing.Point(3, 844);
+            this.panelSubMenuTaller_502ag.Location = new System.Drawing.Point(3, 930);
             this.panelSubMenuTaller_502ag.Name = "panelSubMenuTaller_502ag";
             this.panelSubMenuTaller_502ag.Size = new System.Drawing.Size(222, 132);
             this.panelSubMenuTaller_502ag.TabIndex = 20;
@@ -500,7 +539,7 @@ namespace GUI
             this.buttonReportes_502ag.FlatAppearance.BorderSize = 0;
             this.buttonReportes_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReportes_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 982);
+            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 1068);
             this.buttonReportes_502ag.Name = "buttonReportes_502ag";
             this.buttonReportes_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonReportes_502ag.TabIndex = 21;
@@ -511,10 +550,11 @@ namespace GUI
             // 
             // panelSubMenuReportes_502ag
             // 
+            this.panelSubMenuReportes_502ag.Controls.Add(this.buttonVerFacturasTaller_502ag);
             this.panelSubMenuReportes_502ag.Controls.Add(this.buttonVerFacturas_502ag);
-            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 1035);
+            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 1121);
             this.panelSubMenuReportes_502ag.Name = "panelSubMenuReportes_502ag";
-            this.panelSubMenuReportes_502ag.Size = new System.Drawing.Size(222, 55);
+            this.panelSubMenuReportes_502ag.Size = new System.Drawing.Size(222, 90);
             this.panelSubMenuReportes_502ag.TabIndex = 13;
             // 
             // buttonVerFacturas_502ag
@@ -541,7 +581,7 @@ namespace GUI
             this.buttonAyuda_502ag.FlatAppearance.BorderSize = 0;
             this.buttonAyuda_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAyuda_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 1096);
+            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 1217);
             this.buttonAyuda_502ag.Name = "buttonAyuda_502ag";
             this.buttonAyuda_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonAyuda_502ag.TabIndex = 22;
@@ -558,6 +598,23 @@ namespace GUI
             this.pictureBox1.Size = new System.Drawing.Size(267, 149);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
+            // 
+            // buttonVerFacturasTaller_502ag
+            // 
+            this.buttonVerFacturasTaller_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonVerFacturasTaller_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonVerFacturasTaller_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVerFacturasTaller_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVerFacturasTaller_502ag.Location = new System.Drawing.Point(0, 41);
+            this.buttonVerFacturasTaller_502ag.Name = "buttonVerFacturasTaller_502ag";
+            this.buttonVerFacturasTaller_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonVerFacturasTaller_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonVerFacturasTaller_502ag.TabIndex = 15;
+            this.buttonVerFacturasTaller_502ag.Tag = "Ver Facturas";
+            this.buttonVerFacturasTaller_502ag.Text = "Ver Facturas Taller";
+            this.buttonVerFacturasTaller_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonVerFacturasTaller_502ag.UseVisualStyleBackColor = true;
+            this.buttonVerFacturasTaller_502ag.Click += new System.EventHandler(this.buttonVerFacturasTaller_502ag_Click);
             // 
             // FormMenu_502ag
             // 
@@ -620,5 +677,8 @@ namespace GUI
         private System.Windows.Forms.Panel panelSubMenuReportes_502ag;
         private System.Windows.Forms.Button buttonVerFacturas_502ag;
         private System.Windows.Forms.Button buttonAyuda_502ag;
+        private System.Windows.Forms.Button buttonBitacoraCambiosCliente_502ag;
+        private System.Windows.Forms.Button buttonMaestrosRepuestos_502ag;
+        private System.Windows.Forms.Button buttonVerFacturasTaller_502ag;
     }
 }

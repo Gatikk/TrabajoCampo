@@ -1,6 +1,7 @@
 ﻿using BE_502ag;
 using BLLS_502ag;
 using DAL_502ag;
+using SERVICIOS_502ag;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -35,6 +36,9 @@ namespace BLL_502ag
 
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Registrar Vehículo", 2);
+         
+            BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoVehiculo_502ag();
         }
 
         public BE_Vehiculo_502ag ObtenerVehiculo_502ag(string patente_502ag)
@@ -78,6 +82,50 @@ namespace BLL_502ag
             if (anio_502ag >= 1995 && anio_502ag <= DateTime.Now.Year) return true; 
             return false;
         }
+        public string CalcularDVH_502ag()
+        {
+            DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();
+            List<BE_Vehiculo_502ag> vehiculos_502ag = dalVehiculo_502ag.ObtenerVehiculos_502ag();
+            List<string> horizontales_502ag = new List<string>();
+            Encryptador_502ag encryptador_502ag = new Encryptador_502ag();
+            foreach (BE_Vehiculo_502ag vehiculo_502ag in vehiculos_502ag)
+            {
+                string horizontal_502ag = "";
+                horizontal_502ag = vehiculo_502ag.Patente_502ag + vehiculo_502ag.Marca_502ag + vehiculo_502ag.Modelo_502ag + vehiculo_502ag.Anio_502ag+vehiculo_502ag.IsActivo_502ag;
+                horizontal_502ag = encryptador_502ag.EncryptadorIrreversible_502ag(horizontal_502ag);
+                horizontales_502ag.Add(horizontal_502ag);
+            }
+            string dvh_502ag = "";
+            foreach (string horizontal_502ag in horizontales_502ag)
+            {
+                dvh_502ag += horizontal_502ag;
+            }
+            return encryptador_502ag.EncryptadorIrreversible_502ag(dvh_502ag);
+        }
 
+        public string CalcularDVV_502ag()
+        {
+            DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();
+            List<BE_Vehiculo_502ag> vehiculos_502ag = dalVehiculo_502ag.ObtenerVehiculos_502ag();
+            List<string> horizontales_502ag = new List<string>();
+            Encryptador_502ag encryptador_502ag = new Encryptador_502ag();
+            string patentes_502ag = "";
+            string marcas_502ag = "";
+            string modelos_502ag = "";
+            string anios_502ag = "";
+            string activos_502ag = "";
+
+            foreach (BE_Vehiculo_502ag vehiculo_502ag in vehiculos_502ag)
+            {
+                patentes_502ag += vehiculo_502ag.Patente_502ag;
+                marcas_502ag += vehiculo_502ag.Marca_502ag;
+                modelos_502ag += vehiculo_502ag.Modelo_502ag;
+                anios_502ag += vehiculo_502ag.Anio_502ag;
+                activos_502ag += vehiculo_502ag.IsActivo_502ag;
+            }
+
+            string dvv_502ag = patentes_502ag + marcas_502ag+ modelos_502ag+ anios_502ag+activos_502ag;
+            return encryptador_502ag.EncryptadorIrreversible_502ag(dvv_502ag);
+        }
     }
 }

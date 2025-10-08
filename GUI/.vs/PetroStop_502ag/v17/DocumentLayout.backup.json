@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "D:\\GitHub\\TrabajoCampo\\GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formmaestrosclientes_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formmaestrosclientes_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|d:\\github\\trabajocampo\\gui\\bll_502ag\\bll_facturataller_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|solutionrelative:bll_502ag\\bll_facturataller_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formmaestrosclientes_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formmaestrosclientes_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|d:\\github\\trabajocampo\\gui\\bll_502ag\\bll_repuesto_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|solutionrelative:bll_502ag\\bll_repuesto_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|d:\\github\\trabajocampo\\gui\\bll_502ag\\bll_digitoverificador_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|solutionrelative:bll_502ag\\bll_digitoverificador_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|d:\\github\\trabajocampo\\gui\\bll_502ag\\bll_diagnosticofinal_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A5D797F-1385-4A9E-936E-067A902E76FA}|BLL_502ag\\BLL_502ag.csproj|solutionrelative:bll_502ag\\bll_diagnosticofinal_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS_502ag.csproj|d:\\github\\trabajocampo\\gui\\servicios\\encryptador_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{97C3DA2E-2BC5-47BC-846C-ED911C08A729}|SERVICIOS\\SERVICIOS_502ag.csproj|solutionrelative:servicios\\encryptador_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|d:\\github\\trabajocampo\\gui\\gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0FCF625C-838C-4C50-BB6F-281F33698252}|GUI\\GUI_502ag.csproj|solutionrelative:gui\\formlogin_502ag.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,64 +39,78 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FormMaestrosClientes_502ag.cs",
-              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMaestrosClientes_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormMaestrosClientes_502ag.cs",
-              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMaestrosClientes_502ag.cs",
-              "RelativeToolTip": "GUI\\FormMaestrosClientes_502ag.cs",
-              "ViewState": "AgIAAAUBAAAAAAAAAADwvx8BAAAZAAAAAAAAAA==",
+              "Title": "BLL_FacturaTaller_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_FacturaTaller_502ag.cs",
+              "RelativeDocumentMoniker": "BLL_502ag\\BLL_FacturaTaller_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_FacturaTaller_502ag.cs",
+              "RelativeToolTip": "BLL_502ag\\BLL_FacturaTaller_502ag.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAcwGYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T20:41:06.777Z",
+              "WhenOpened": "2025-10-08T19:01:39.3Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormMaestrosClientes_502ag.cs [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMaestrosClientes_502ag.cs",
-              "RelativeDocumentMoniker": "GUI\\FormMaestrosClientes_502ag.cs",
-              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormMaestrosClientes_502ag.cs [Dise\u00F1o]",
-              "RelativeToolTip": "GUI\\FormMaestrosClientes_502ag.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T20:41:05.473Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "FormLogin_502ag.cs",
               "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormLogin_502ag.cs",
               "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
               "RelativeToolTip": "GUI\\FormLogin_502ag.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAAwB4AAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAawBkAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T20:35:55.891Z",
+              "WhenOpened": "2025-10-08T17:49:40.985Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "FormLogin_502ag.cs [Dise\u00F1o]",
               "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs",
               "RelativeDocumentMoniker": "GUI\\FormLogin_502ag.cs",
               "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\GUI\\FormLogin_502ag.cs [Dise\u00F1o]",
               "RelativeToolTip": "GUI\\FormLogin_502ag.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-29T20:35:54.549Z",
+              "WhenOpened": "2025-10-08T17:49:39.326Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Encryptador_502ag.cs",
-              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\SERVICIOS\\Encryptador_502ag.cs",
-              "RelativeDocumentMoniker": "SERVICIOS\\Encryptador_502ag.cs",
-              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\SERVICIOS\\Encryptador_502ag.cs",
-              "RelativeToolTip": "SERVICIOS\\Encryptador_502ag.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "BLL_DiagnosticoFinal_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_DiagnosticoFinal_502ag.cs",
+              "RelativeDocumentMoniker": "BLL_502ag\\BLL_DiagnosticoFinal_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_DiagnosticoFinal_502ag.cs",
+              "RelativeToolTip": "BLL_502ag\\BLL_DiagnosticoFinal_502ag.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAwwCAAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-28T23:33:01.706Z",
+              "WhenOpened": "2025-10-08T17:48:39.586Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BLL_Repuesto_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_Repuesto_502ag.cs",
+              "RelativeDocumentMoniker": "BLL_502ag\\BLL_Repuesto_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_Repuesto_502ag.cs",
+              "RelativeToolTip": "BLL_502ag\\BLL_Repuesto_502ag.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAuwEcAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T17:47:08.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BLL_DigitoVerificador_502ag.cs",
+              "DocumentMoniker": "D:\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_DigitoVerificador_502ag.cs",
+              "RelativeDocumentMoniker": "BLL_502ag\\BLL_DigitoVerificador_502ag.cs",
+              "ToolTip": "D:\\GitHub\\TrabajoCampo\\GUI\\BLL_502ag\\BLL_DigitoVerificador_502ag.cs",
+              "RelativeToolTip": "BLL_502ag\\BLL_DigitoVerificador_502ag.cs",
+              "ViewState": "AgIAAPwAAAAAAAAAAAAAABEBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-08T16:32:45.126Z",
               "EditorCaption": ""
             }
           ]

@@ -43,11 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL_BackupRestore_502ag.cs" />
+    <Compile Include="DAL_BitacoraCambiosCliente_502ag.cs" />
     <Compile Include="DAL_BitacoraEvento_502ag.cs" />
     <Compile Include="DAL_Cliente_502ag.cs" />
     <Compile Include="DAL_Combustible_502ag.cs" />
     <Compile Include="DAL_Conexion_502ag.cs" />
     <Compile Include="DAL_DiagnosticoFinal_502ag.cs" />
+    <Compile Include="DAL_DigitoVerificador_502ag.cs" />
     <Compile Include="DAL_FacturaTaller_502ag.cs" />
     <Compile Include="DAL_Factura_502ag.cs" />
     <Compile Include="DAL_FamiliaPatente_502ag.cs" />
@@ -58,6 +60,8 @@
     <Compile Include="DAL_PerfilFamilia_502ag.cs" />
     <Compile Include="DAL_PerfilPatente_502ag.cs" />
     <Compile Include="DAL_Perfil_502ag.cs" />
+    <Compile Include="DAL_RepuestoOrdenTrabajo_502ag.cs" />
+    <Compile Include="DAL_Repuesto_502ag.cs" />
     <Compile Include="DAL_Usuario_502ag.cs" />
     <Compile Include="DAL_Vehiculo_502ag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

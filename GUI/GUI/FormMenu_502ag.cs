@@ -12,6 +12,7 @@ using System.Deployment.Internal;
 using Microsoft.VisualBasic;
 using SE_502ag;
 using BLLS_502ag;
+using BLL_502ag;
 
 
 namespace GUI
@@ -34,6 +35,9 @@ namespace GUI
             panelSubMenuTaller_502ag.Visible = false;
             VerificarAdminSupremo();
             BloquearAccesos_502ag();
+            //cargar digitos
+            //BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
+            //bllDigitoVerificador_502ag.ActualizarDigitos_502ag();
 
         }
         private void buttonCerrarSesion_Click(object sender, EventArgs e)
@@ -352,6 +356,27 @@ namespace GUI
         private void buttonTaller_502ag_Click(object sender, EventArgs e)
         {
             mostrarSubMenu_502ag(panelSubMenuTaller_502ag);
+        }
+
+        private void buttonBitacoraCambiosCliente_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormBitacoraCambios_502ag formBitacoraCambios_502ag = new FormBitacoraCambios_502ag();
+            formBitacoraCambios_502ag.Show();
+        }
+
+        private void buttonMaestrosRepuestos_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMaestrosRepuestos_502ag formMaestrosRepuestos_502ag = new FormMaestrosRepuestos_502ag();
+            formMaestrosRepuestos_502ag.Show();
+        }
+
+        private void buttonVerFacturasTaller_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormVerFacturasTaller_502ag formVerFacturasTaller_502ag = new FormVerFacturasTaller_502ag();
+            formVerFacturasTaller_502ag.Show();
         }
 
         private void ActivarBotonesSubMenu_502ag()

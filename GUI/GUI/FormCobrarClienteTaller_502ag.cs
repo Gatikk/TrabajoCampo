@@ -17,6 +17,8 @@ namespace GUI
     {
         public FormCobrarClienteTaller_502ag()
         {
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(500, 200);
             InitializeComponent();
             tBTitular_502ag.ReadOnly = true;
             rBCredito_502ag.Checked = true;

@@ -50,5 +50,31 @@ namespace DAL_502ag
                 return null;
             }
         }
+
+        public List<BE_DiagnosticoFinal_502ag> ObtenerDiagnosticosFinales_502ag()
+        {
+            List<BE_DiagnosticoFinal_502ag> listaDiagnosticos_502ag = new List<BE_DiagnosticoFinal_502ag>();
+            using(SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                string selectQuery_502ag = "SELECT * FROM DiagnosticoFinal_502ag";
+                using(SqlCommand cmd_502ag = new SqlCommand(selectQuery_502ag, cx_502ag))
+                {
+                    using(SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
+                    {
+                        while(dr_502ag.Read())
+                        {
+                            string codigo_502ag = dr_502ag["Codigo_502ag"].ToString();
+                            string descripcion_502ag = dr_502ag["DescripcionTecnica_502ag"].ToString();
+                            decimal costoRepuestos_502ag = decimal.Parse(dr_502ag["CostoRepuestos_502ag"].ToString());
+                            decimal manoObra_502ag = decimal.Parse(dr_502ag["ManoObra_502ag"].ToString());
+                            BE_DiagnosticoFinal_502ag diagnosticoFinal_502ag = new BE_DiagnosticoFinal_502ag(codigo_502ag, descripcion_502ag, manoObra_502ag, costoRepuestos_502ag);
+                            listaDiagnosticos_502ag.Add(diagnosticoFinal_502ag);
+                        }
+                    }
+                }
+            }
+            return listaDiagnosticos_502ag;
+        }
     }
 }

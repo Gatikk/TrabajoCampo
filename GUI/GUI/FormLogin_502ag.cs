@@ -1,4 +1,5 @@
-﻿using BLLS_502ag;
+﻿using BLL_502ag;
+using BLLS_502ag;
 using Microsoft.VisualBasic;
 using SE_502ag;
 using SERVICIOS_502ag;
@@ -30,6 +31,7 @@ namespace GUI
         {
             try
             {
+                BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
                 BLLS_Usuario_502ag bllsUsuario_502ag = new BLLS_Usuario_502ag();
                 string nombreUsuario_502ag = textBoxNombreUsuario.Text;
                 string contraseña_502ag = textBoxContraseña.Text;
@@ -42,12 +44,19 @@ namespace GUI
                     if (bllsUsuario_502ag.VerificarContraseña_502ag(usuarioALogear_502ag, contraseña_502ag))
                     {
                         bllsUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
+                        if (bllDigitoVerificador_502ag.CompararDigitos())
+                        {
+                            FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
+                            this.Hide();
+                            menuForm_502ag.Show();
 
-                        
-
-                        FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
-                        this.Hide();
-                        menuForm_502ag.Show();
+                        }
+                        else
+                        {
+                            FormDigitoVerificador_502ag digitoForm_502ag = new FormDigitoVerificador_502ag();
+                            this.Hide();
+                            digitoForm_502ag.Show();
+                        }
                     }
                     else
                     {
@@ -70,9 +79,33 @@ namespace GUI
                     if (bllsUsuario_502ag.VerificarContraseñaCambiada_502ag(usuarioALogear_502ag))
                     {
                         bllsUsuario_502ag.IniciarSesion_502ag(usuarioALogear_502ag);
-                        FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
-                        this.Hide();
-                        menuForm_502ag.Show();
+
+
+                        if (bllDigitoVerificador_502ag.CompararDigitos())
+                        {
+                            FormMenu_502ag menuForm_502ag = new FormMenu_502ag();
+                            this.Hide();
+                            menuForm_502ag.Show();
+
+                        }
+                        else
+                        {
+                            BLLS_Perfil_502ag bllsPerfil_502ag = new BLLS_Perfil_502ag();
+                            List<SE_Patente_502ag> listaPatentes_502ag = bllsPerfil_502ag.ObtenerPatentesDePerfil_502ag(SER_GestorSesion_502ag.GestorSesion_502ag.sesion_502ag.Rol_502ag);
+
+                            if (listaPatentes_502ag.Find(x => x.Nombre_502ag == "Recalcular Digito") != null)
+                            {
+                                FormDigitoVerificador_502ag digitoForm_502ag = new FormDigitoVerificador_502ag();
+                                this.Hide();
+                                digitoForm_502ag.Show();
+                            }
+                            else
+                            {
+                                FormSistemaNoDisponible_502ag sistemaNoDisponibleForm_502ag = new FormSistemaNoDisponible_502ag();
+                                this.Hide();
+                                sistemaNoDisponibleForm_502ag.Show();
+                            }
+                        }
                     }
                     else
                     {

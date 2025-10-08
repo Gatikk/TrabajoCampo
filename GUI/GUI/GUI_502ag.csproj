@@ -60,6 +60,12 @@
     <Compile Include="FormBackupRestore_502ag.Designer.cs">
       <DependentUpon>FormBackupRestore_502ag.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormBitacoraCambios_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBitacoraCambios_502ag.Designer.cs">
+      <DependentUpon>FormBitacoraCambios_502ag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormBitacoraEventos_502ag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <Compile Include="FormCobrarCliente_502ag.Designer.cs">
       <DependentUpon>FormCobrarCliente_502ag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDigitoVerificador_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDigitoVerificador_502ag.Designer.cs">
+      <DependentUpon>FormDigitoVerificador_502ag.cs</DependentUpon>
     </Compile>
     <Compile Include="FormGenerarDiagnosticoFinal_502ag.cs">
       <SubType>Form</SubType>
@@ -120,6 +132,12 @@
     <Compile Include="FormMaestrosCombustible_502ag.Designer.cs">
       <DependentUpon>FormMaestrosCombustible_502ag.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMaestrosRepuestos_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMaestrosRepuestos_502ag.Designer.cs">
+      <DependentUpon>FormMaestrosRepuestos_502ag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMenu_502ag.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,11 +162,23 @@
     <Compile Include="FormRegistrarVehiculo_502ag.Designer.cs">
       <DependentUpon>FormRegistrarVehiculo_502ag.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSistemaNoDisponible_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSistemaNoDisponible_502ag.Designer.cs">
+      <DependentUpon>FormSistemaNoDisponible_502ag.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTraductor_502ag.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormTraductor_502ag.Designer.cs">
       <DependentUpon>FormTraductor_502ag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormVerFacturasTaller_502ag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormVerFacturasTaller_502ag.Designer.cs">
+      <DependentUpon>FormVerFacturasTaller_502ag.cs</DependentUpon>
     </Compile>
     <Compile Include="FormVerFacturas_502ag.cs">
       <SubType>Form</SubType>
@@ -163,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBackupRestore_502ag.resx">
       <DependentUpon>FormBackupRestore_502ag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBitacoraCambios_502ag.resx">
+      <DependentUpon>FormBitacoraCambios_502ag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBitacoraEventos_502ag.resx">
       <DependentUpon>FormBitacoraEventos_502ag.cs</DependentUpon>
@@ -179,6 +212,9 @@
     <EmbeddedResource Include="FormCobrarCliente_502ag.resx">
       <DependentUpon>FormCobrarCliente_502ag.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDigitoVerificador_502ag.resx">
+      <DependentUpon>FormDigitoVerificador_502ag.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGenerarDiagnosticoFinal_502ag.resx">
       <DependentUpon>FormGenerarDiagnosticoFinal_502ag.cs</DependentUpon>
     </EmbeddedResource>
@@ -194,6 +230,9 @@
     <EmbeddedResource Include="FormMaestrosCombustible_502ag.resx">
       <DependentUpon>FormMaestrosCombustible_502ag.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMaestrosRepuestos_502ag.resx">
+      <DependentUpon>FormMaestrosRepuestos_502ag.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMenu_502ag.resx">
       <DependentUpon>FormMenu_502ag.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,8 +245,14 @@
     <EmbeddedResource Include="FormRegistrarVehiculo_502ag.resx">
       <DependentUpon>FormRegistrarVehiculo_502ag.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormSistemaNoDisponible_502ag.resx">
+      <DependentUpon>FormSistemaNoDisponible_502ag.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormTraductor_502ag.resx">
       <DependentUpon>FormTraductor_502ag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVerFacturasTaller_502ag.resx">
+      <DependentUpon>FormVerFacturasTaller_502ag.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVerFacturas_502ag.resx">
       <DependentUpon>FormVerFacturas_502ag.cs</DependentUpon>

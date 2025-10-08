@@ -105,6 +105,8 @@ namespace GUI
                 buttonAltaCombustible_502ag.Enabled = false;
                 buttonModificarCombustible_502ag.Enabled = false;
                 buttonBajaCombustible_502ag.Enabled = false;
+                tBCantidad_502ag.Enabled = false;
+
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
