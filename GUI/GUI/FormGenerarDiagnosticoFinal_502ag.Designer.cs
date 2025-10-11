@@ -55,7 +55,7 @@
             this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
             this.buttonLimpiarPantalla_502ag = new System.Windows.Forms.Button();
             this.buttonGenerarDiagnosticoFinal_502ag = new System.Windows.Forms.Button();
-            this.labelRepuestosAAgregar_502ag = new System.Windows.Forms.Label();
+            this.labelRepuestosAgregados_502ag = new System.Windows.Forms.Label();
             this.dgvRepuestos_502ag = new System.Windows.Forms.DataGridView();
             this.ColumnaCodigoR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaDescripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -361,15 +361,15 @@
             this.buttonGenerarDiagnosticoFinal_502ag.UseVisualStyleBackColor = false;
             this.buttonGenerarDiagnosticoFinal_502ag.Click += new System.EventHandler(this.buttonGenerarDiagnosticoFinal_502ag_Click);
             // 
-            // labelRepuestosAAgregar_502ag
+            // labelRepuestosAgregados_502ag
             // 
-            this.labelRepuestosAAgregar_502ag.AutoSize = true;
-            this.labelRepuestosAAgregar_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.labelRepuestosAAgregar_502ag.Location = new System.Drawing.Point(431, 233);
-            this.labelRepuestosAAgregar_502ag.Name = "labelRepuestosAAgregar_502ag";
-            this.labelRepuestosAAgregar_502ag.Size = new System.Drawing.Size(161, 20);
-            this.labelRepuestosAAgregar_502ag.TabIndex = 61;
-            this.labelRepuestosAAgregar_502ag.Text = "Repuestos a Agregar";
+            this.labelRepuestosAgregados_502ag.AutoSize = true;
+            this.labelRepuestosAgregados_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.labelRepuestosAgregados_502ag.Location = new System.Drawing.Point(431, 233);
+            this.labelRepuestosAgregados_502ag.Name = "labelRepuestosAgregados_502ag";
+            this.labelRepuestosAgregados_502ag.Size = new System.Drawing.Size(169, 20);
+            this.labelRepuestosAgregados_502ag.TabIndex = 61;
+            this.labelRepuestosAgregados_502ag.Text = "Repuestos Agregados";
             // 
             // dgvRepuestos_502ag
             // 
@@ -488,7 +488,7 @@
             this.Controls.Add(this.nUDRepuesto_502ag);
             this.Controls.Add(this.cBRepuesto_502ag);
             this.Controls.Add(this.dgvRepuestos_502ag);
-            this.Controls.Add(this.labelRepuestosAAgregar_502ag);
+            this.Controls.Add(this.labelRepuestosAgregados_502ag);
             this.Controls.Add(this.buttonGenerarDiagnosticoFinal_502ag);
             this.Controls.Add(this.buttonLimpiarPantalla_502ag);
             this.Controls.Add(this.buttonVolverAlMenu_502ag);
@@ -552,7 +552,7 @@
         private System.Windows.Forms.Button buttonVolverAlMenu_502ag;
         private System.Windows.Forms.Button buttonLimpiarPantalla_502ag;
         private System.Windows.Forms.Button buttonGenerarDiagnosticoFinal_502ag;
-        private System.Windows.Forms.Label labelRepuestosAAgregar_502ag;
+        private System.Windows.Forms.Label labelRepuestosAgregados_502ag;
         private System.Windows.Forms.DataGridView dgvRepuestos_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigoR;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDescripcion;

@@ -132,6 +132,9 @@ namespace GUI
             tBModelo_502ag.Clear();
             tBAnio_502ag.Clear();
             rTBDescripcionFinal_502ag.Clear();
+            dgvRepuestos_502ag.Rows.Clear();
+            nUDRepuesto_502ag.Value = 0;
+            nUDHoras_502ag.Value = 0;
         }
 
         private void buttonVolverAlMenu_502ag_Click(object sender, EventArgs e)

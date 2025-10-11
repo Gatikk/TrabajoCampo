@@ -86,7 +86,16 @@ namespace GUI
                 string metodoPago_502ag = cifrador_502ag.DesencryptadorReversible_502ag(metodo_502ag);
                 bllFacturaTaller_502ag.GenerarFacturaTaller_502ag(ordenTrabajo_502ag, metodoPago_502ag);
 
-                //se actualiza la interfaz
+                BE_FacturaTaller_502ag facturaGenerada_502ag = bllFacturaTaller_502ag.ObtenerFactura_502ag(ordenTrabajo_502ag.CodOrdenTrabajo_502ag);
+                if (facturaGenerada_502ag != null)
+                {
+                    bllFacturaTaller_502ag.GenerarFacturaTallerPDF_502ag(facturaGenerada_502ag.CodFactura_502ag);
+                }
+                else
+                {
+                    throw new Exception("Factura no generada");
+                }
+                    //se actualiza la interfaz
                 Limpiar_502ag();
                 Mostrar_502ag();
 

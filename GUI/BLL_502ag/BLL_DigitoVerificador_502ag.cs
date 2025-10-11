@@ -12,24 +12,31 @@ namespace BLL_502ag
     {
         public void ActualizarDigitos_502ag()
         {
-            ActualizarDigitoCliente_502ag();
-            ActualizarDigitoFactura_502ag();
-            ActualizarDigitoCombustible_502ag();
-            ActualizarDigitoOrdenTrabajo_502ag();
-            ActualizarDigitoVehiculo_502ag();
-            ActualizarDigitoRepuesto_502ag();
-            ActualizarDigitoFacturaTaller_502ag();
-            ActualizarDigitoRepuestoOrdenTrabajo_502ag();
-            ActualizarDigitoDiagnosticoFinal_502ag();
+            BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();
+            BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
+            BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
+            BLL_OrdenTrabajo_502ag bllOrdenTrabajo_502ag = new BLL_OrdenTrabajo_502ag();
+            BLL_Vehiculo_502ag bllVehiculo_502ag = new BLL_Vehiculo_502ag();
+            BLL_Repuesto_502ag bllRepuesto_502ag = new BLL_Repuesto_502ag();
+            BLL_FacturaTaller_502ag bllFacturaTaller_502ag = new BLL_FacturaTaller_502ag();
+            BLL_RepuestoOrdenTrabajo_502ag bllRepuestoOrdenTrabajo_502ag = new BLL_RepuestoOrdenTrabajo_502ag();
+            BLL_DiagnosticoFinal_502ag bllDiagnosticoFinal_502ag = new BLL_DiagnosticoFinal_502ag();
+            ActualizarDigitoCliente_502ag(bllCliente_502ag.CalcularDVH_502ag(), bllCliente_502ag.CalcularDVV_502ag());
+            ActualizarDigitoFactura_502ag(bllFactura_502ag.CalcularDVH_502ag(), bllFactura_502ag.CalcularDVV_502ag());
+            ActualizarDigitoCombustible_502ag(bllCombustible_502ag.CalcularDVH_502ag(), bllCombustible_502ag.CalcularDVV_502ag());
+            ActualizarDigitoOrdenTrabajo_502ag(bllOrdenTrabajo_502ag.CalcularDVH_502ag(), bllOrdenTrabajo_502ag.CalcularDVV_502ag());
+            ActualizarDigitoVehiculo_502ag(bllVehiculo_502ag.CalcularDVH_502ag(), bllVehiculo_502ag.CalcularDVV_502ag());
+            ActualizarDigitoRepuesto_502ag(bllRepuesto_502ag.CalcularDVH_502ag(), bllRepuesto_502ag.CalcularDVV_502ag());
+            ActualizarDigitoFacturaTaller_502ag(bllFacturaTaller_502ag.CalcularDVH_502ag(), bllFacturaTaller_502ag.CalcularDVV_502ag());
+            ActualizarDigitoRepuestoOrdenTrabajo_502ag(bllRepuestoOrdenTrabajo_502ag.CalcularDVH_502ag(), bllRepuestoOrdenTrabajo_502ag.CalcularDVV_502ag());
+            ActualizarDigitoDiagnosticoFinal_502ag(bllDiagnosticoFinal_502ag.CalcularDVH_502ag(), bllDiagnosticoFinal_502ag.CalcularDVV_502ag());
         }
 
 
-        public void ActualizarDigitoCliente_502ag()
+        public void ActualizarDigitoCliente_502ag(string dvh_502ag, string dvv_502ag)
         {
             DAL_DigitoVerificador_502ag dalDigitoVerificador_502ag = new DAL_DigitoVerificador_502ag();
             BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();
-            string dvh_502ag = bllCliente_502ag.CalcularDVH_502ag();
-            string dvv_502ag = bllCliente_502ag.CalcularDVV_502ag();
             dalDigitoVerificador_502ag.ActualizarDigitos_502ag("Cliente_502ag", dvh_502ag, dvv_502ag);
         }
 
@@ -51,12 +58,10 @@ namespace BLL_502ag
             }
         }
 
-        public void ActualizarDigitoFactura_502ag()
+        public void ActualizarDigitoFactura_502ag(string dvh_502ag, string dvv_502ag)
         {
             DAL_DigitoVerificador_502ag dalDigitoVerificador_502ag = new DAL_DigitoVerificador_502ag();
             BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
-            string dvh_502ag = bllFactura_502ag.CalcularDVH_502ag();
-            string dvv_502ag = bllFactura_502ag.CalcularDVV_502ag();
             dalDigitoVerificador_502ag.ActualizarDigitos_502ag("Factura_502ag", dvh_502ag, dvv_502ag);
         }
         public bool CompararDigitoFactura_502ag()
@@ -76,12 +81,10 @@ namespace BLL_502ag
                 return false;
             }
         }
-        public void ActualizarDigitoCombustible_502ag()
+        public void ActualizarDigitoCombustible_502ag(string dvh_502ag, string dvv_502ag)
         {
             DAL_DigitoVerificador_502ag dalDigitoVerificador_502ag = new DAL_DigitoVerificador_502ag();
             BLL_Combustible_502ag bllCombustible_502ag = new BLL_Combustible_502ag();
-            string dvh_502ag = bllCombustible_502ag.CalcularDVH_502ag();
-            string dvv_502ag = bllCombustible_502ag.CalcularDVV_502ag();
             dalDigitoVerificador_502ag.ActualizarDigitos_502ag("Combustible_502ag", dvh_502ag, dvv_502ag);
         }
 
@@ -103,13 +106,11 @@ namespace BLL_502ag
             }
         }
 
-        public void ActualizarDigitoFacturaTaller_502ag()
+        public void ActualizarDigitoFacturaTaller_502ag(string dvh_502ag, string dvv_502ag)
         {
             
             DAL_DigitoVerificador_502ag dalDigitoVerificador_502ag = new DAL_DigitoVerificador_502ag();
             BLL_FacturaTaller_502ag bllFacturaTaller_50ag = new BLL_FacturaTaller_502ag();
-            string dvh_502ag = bllFacturaTaller_50ag.CalcularDVH_502ag();
-            string dvv_502ag = bllFacturaTaller_50ag.CalcularDVV_502ag();
             dalDigitoVerificador_502ag.ActualizarDigitos_502ag("FacturaTaller_502ag", dvh_502ag, dvv_502ag);
         }
         public bool CompararDigitoFacturaTaller_502ag()
@@ -131,13 +132,11 @@ namespace BLL_502ag
         }
 
 
-        public void ActualizarDigitoOrdenTrabajo_502ag()
+        public void ActualizarDigitoOrdenTrabajo_502ag(string dvh_502ag, string dvv_502ag)
         {
 
             DAL_DigitoVerificador_502ag dalDigitoVerificador_502ag = new DAL_DigitoVerificador_502ag();
             BLL_OrdenTrabajo_502ag bllOrdenTrabajo_502ag = new BLL_OrdenTrabajo_502ag();
-            string dvh_502ag = bllOrdenTrabajo_502ag.CalcularDVH_502ag();
-            string dvv_502ag = bllOrdenTrabajo_502ag.CalcularDVV_502ag();
             dalDigitoVerificador_502ag.ActualizarDigitos_502ag("OrdenTrabajo_502ag", dvh_502ag, dvv_502ag);
         }
         public bool CompararDigitoOrdenTrabajo_502ag()
@@ -157,12 +156,10 @@ namespace BLL_502ag
                 return false;
             }
         }
-        public void ActualizarDigitoRepuesto_502ag()
+        public void ActualizarDigitoRepuesto_502ag(string dvh_502ag, string dvv_502ag)
         {
             DAL_DigitoVerificador_502ag dalDigitoVerificador_502ag = new DAL_DigitoVerificador_502ag();
             BLL_Repuesto_502ag bllRepuesto_502ag = new BLL_Repuesto_502ag();
-            string dvh_502ag = bllRepuesto_502ag.CalcularDVH_502ag();
-            string dvv_502ag = bllRepuesto_502ag.CalcularDVV_502ag();
             dalDigitoVerificador_502ag.ActualizarDigitos_502ag("Repuesto_502ag", dvh_502ag, dvv_502ag);
         }
         public bool CompararDigitoRepuesto_502ag()
@@ -182,12 +179,10 @@ namespace BLL_502ag
                 return false;
             }
         }
-        public void ActualizarDigitoRepuestoOrdenTrabajo_502ag()
+        public void ActualizarDigitoRepuestoOrdenTrabajo_502ag(string dvh_502ag, string dvv_502ag)
         {
             DAL_DigitoVerificador_502ag dalDigitoVerificador_502ag = new DAL_DigitoVerificador_502ag();
             BLL_RepuestoOrdenTrabajo_502ag bllRepuestoOrdenTrabajo_502ag = new BLL_RepuestoOrdenTrabajo_502ag();
-            string dvh_502ag = bllRepuestoOrdenTrabajo_502ag.CalcularDVH_502ag();
-            string dvv_502ag = bllRepuestoOrdenTrabajo_502ag.CalcularDVV_502ag();
             dalDigitoVerificador_502ag.ActualizarDigitos_502ag("RepuestoOrdenTrabajo_502ag", dvh_502ag, dvv_502ag);
         }
         public bool CompararDigitoRepuestoOrdenTrabajo_502ag()
@@ -207,12 +202,10 @@ namespace BLL_502ag
                 return false;
             }
         }
-        public void ActualizarDigitoVehiculo_502ag()
+        public void ActualizarDigitoVehiculo_502ag(string dvh_502ag, string dvv_502ag)
         {
             DAL_DigitoVerificador_502ag dalDigitoVerificador_502ag = new DAL_DigitoVerificador_502ag();
             BLL_Vehiculo_502ag bllVehiculo_502ag = new BLL_Vehiculo_502ag();
-            string dvh_502ag = bllVehiculo_502ag.CalcularDVH_502ag();
-            string dvv_502ag = bllVehiculo_502ag.CalcularDVV_502ag();
             dalDigitoVerificador_502ag.ActualizarDigitos_502ag("Vehiculo_502ag", dvh_502ag, dvv_502ag);
         }
         public bool CompararDigitoVehiculo_502ag()
@@ -232,12 +225,10 @@ namespace BLL_502ag
                 return false;
             }
         }
-        public void ActualizarDigitoDiagnosticoFinal_502ag()
+        public void ActualizarDigitoDiagnosticoFinal_502ag(string dvh_502ag, string dvv_502ag)
         {
             DAL_DigitoVerificador_502ag dalDigitoVerificador_502ag = new DAL_DigitoVerificador_502ag();
             BLL_DiagnosticoFinal_502ag bllDiagnosticoFinal_502ag = new BLL_DiagnosticoFinal_502ag();
-            string dvh_502ag = bllDiagnosticoFinal_502ag.CalcularDVH_502ag();
-            string dvv_502ag = bllDiagnosticoFinal_502ag.CalcularDVV_502ag();
             dalDigitoVerificador_502ag.ActualizarDigitos_502ag("DiagnosticoFinal_502ag", dvh_502ag, dvv_502ag);
         }
         public bool CompararDigitoDiagnosticoFinal_502ag()
@@ -258,7 +249,7 @@ namespace BLL_502ag
             }
         }
 
-        public bool CompararDigitos()
+        public bool CompararDigitos_502ag()
         {
             if (CompararDigitoCliente_502ag() && CompararDigitoCombustible_502ag() && CompararDigitoFactura_502ag()&& CompararDigitoOrdenTrabajo_502ag() && CompararDigitoVehiculo_502ag() && CompararDigitoRepuesto_502ag() && CompararDigitoFacturaTaller_502ag() && CompararDigitoRepuestoOrdenTrabajo_502ag() && CompararDigitoDiagnosticoFinal_502ag())
             {

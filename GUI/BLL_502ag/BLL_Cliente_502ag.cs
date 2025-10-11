@@ -76,7 +76,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Registrar Cliente", 2);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         #endregion
         #region BajaCliente
@@ -88,7 +88,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Baja Cliente", 1);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         #endregion
         #region ModificarCliente
@@ -103,7 +103,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Modificar Cliente", 2);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         #endregion
         public bool VerificarDNIYaRegistrado_502ag(string dni_502ag)

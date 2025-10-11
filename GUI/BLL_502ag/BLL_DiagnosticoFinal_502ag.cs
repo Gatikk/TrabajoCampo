@@ -24,7 +24,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Taller", "Generar Diagnóstico Final", 3);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoDiagnosticoFinal_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoDiagnosticoFinal_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
 
         }
 

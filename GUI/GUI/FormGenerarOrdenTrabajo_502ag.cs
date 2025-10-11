@@ -129,6 +129,9 @@ namespace GUI
             buttonRegistrarVehiculo_502ag.Enabled = true;
             tBPatente_502ag.ReadOnly = false;
             tBDNI_502ag.ReadOnly = false;
+            clienteOT_502ag = null;
+            vehiculoOT_502ag = null;
+            
         }
         private void buttonLimpiarPantalla_502ag_Click(object sender, EventArgs e)
         {

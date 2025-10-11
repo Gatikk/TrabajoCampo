@@ -37,7 +37,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Añadir Combustible", 2);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoCombustible_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCombustible_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         public bool VerificarDatosIngresadosAlta_502ag(string codCombustible_502ag, string nombre_502ag, string cantDisponible_502ag, string precioPorLitro_502ag)
         {
@@ -100,7 +100,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Modificar Combustible", 2);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoCombustible_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCombustible_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         public bool VerificarDatosIngresadosModificar_502ag(string nombre_502ag, string cantDisponible_502ag, string precioPorLitro_502ag)
         {
@@ -136,8 +136,8 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Baja Combustible", 2);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoCombustible_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCombustible_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
+            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag(bllFactura_502ag.CalcularDVH_502ag(), bllFactura_502ag.CalcularDVV_502ag());
         }
         #endregion
 
@@ -146,7 +146,7 @@ namespace BLL_502ag
             DAL_Combustible_502ag dalCombustible_502ag = new DAL_Combustible_502ag();
             dalCombustible_502ag.ActualizarExistenciaCombustible_502ag(combustible_502ag);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoCombustible_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCombustible_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         public string CalcularDVH_502ag()
         {

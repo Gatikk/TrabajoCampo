@@ -34,7 +34,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Taller", "Generar Factura", 3);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoFacturaTaller_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoFacturaTaller_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
 
         public List<BE_FacturaTaller_502ag> ObtenerFacturasTaller_502ag()

@@ -28,7 +28,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Ventas", "Seleccionar Combustible para Carga", 3);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
 
             return dalFactura_502ag.AltaFactura_502ag(factura_502ag);
             
@@ -40,14 +40,14 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Ventas", "Finalizar Carga", 2);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         public void ActualizarFacturaClienteIdentificado_502ag(BE_Factura_502ag factura_502ag)
         {
             DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
             dalFactura_502ag.ActualizarFacturaClienteIdentificado_502ag(factura_502ag);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         public void ActualizarFacturaFinalizada_502ag(BE_Factura_502ag factura_502ag)
         {
@@ -56,7 +56,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Ventas", "Cobrar Cliente", 1);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         #endregion
         public List<BE_Factura_502ag> ObtenerListaFacturasNoFacturadas_502ag()
@@ -79,7 +79,7 @@ namespace BLL_502ag
             DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
             dalFactura_502ag.EliminarFacturasEstadoPendienteDeCarga_502ag(codCombustible_502ag);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoFactura_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
 
         public void GenerarFactura_502ag(BE_Factura_502ag factura_502ag) 

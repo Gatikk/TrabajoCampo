@@ -16,6 +16,8 @@ namespace GUI
     {
         public FormVerFacturasTaller_502ag()
         {
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(500, 200);
             InitializeComponent();
             MostrarFacturas_502ag();
         }
@@ -52,6 +54,11 @@ namespace GUI
                 }
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        private void FormVerFacturasTaller_502ag_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

@@ -38,7 +38,7 @@ namespace BLL_502ag
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Registrar Vehículo", 2);
          
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoVehiculo_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoVehiculo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
 
         public BE_Vehiculo_502ag ObtenerVehiculo_502ag(string patente_502ag)

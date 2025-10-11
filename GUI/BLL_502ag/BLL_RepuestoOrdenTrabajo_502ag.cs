@@ -27,7 +27,7 @@ namespace BLL_502ag
             dalRepuestoOT_502ag.AltaIntermedia_502ag(codOT_502ag, codRepuesto_502ag, cantidad_502ag);
 
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoRepuestoOrdenTrabajo_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoRepuestoOrdenTrabajo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
 
         public void ModificarIntermedia_502ag(string codOT_502, int codRepuesto_502ag, int cantidadNueva_502ag, int cantidadActual_502ag)
@@ -42,7 +42,7 @@ namespace BLL_502ag
 
             dalRepuestoOT_502ag.ModificarIntermedia_502ag(codOT_502, codRepuesto_502ag, cantidadNueva_502ag + cantidadActual_502ag);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoRepuestoOrdenTrabajo_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoRepuestoOrdenTrabajo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
 
         }
         public void BajaIntermedia_502ag(string codOT_502ag, int codRepuesto_502ag, int cantidad_502ag)
@@ -54,7 +54,7 @@ namespace BLL_502ag
             bllRepuesto_502ag.ModificarRepuesto_502ag(repuestoModificar_502ag, repuestoModificar_502ag.Descripcion_502ag, repuestoModificar_502ag.Precio_502ag, repuestoModificar_502ag.CantidadDisponible_502ag);
             dalRepuestoOT_502ag.BajaIntermedia_502ag(codOT_502ag, codRepuesto_502ag);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoRepuestoOrdenTrabajo_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoRepuestoOrdenTrabajo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         public List<BE_RepuestoOrdenTrabajo_502ag> ObtenerDatosIntermedia_502ag(string codOT_502ag)
         {

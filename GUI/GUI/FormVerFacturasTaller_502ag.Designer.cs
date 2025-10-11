@@ -233,6 +233,7 @@
             this.Controls.Add(this.dgvFacturasTaller_502ag);
             this.Name = "FormVerFacturasTaller_502ag";
             this.Text = "FormVerFacturasTaller_502ag";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormVerFacturasTaller_502ag_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturasTaller_502ag)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

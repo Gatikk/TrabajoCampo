@@ -34,7 +34,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Añadir Repuesto", 3);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoRepuesto_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoRepuesto_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         #endregion
 
@@ -57,7 +57,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Modificar Repuesto", 3);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoRepuesto_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoRepuesto_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         #endregion
 
@@ -69,7 +69,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Maestros", "Baja Repuesto", 3);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoRepuesto_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoRepuesto_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
         #endregion
 

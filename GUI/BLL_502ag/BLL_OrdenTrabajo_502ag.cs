@@ -29,7 +29,7 @@ namespace BLL_502ag
             BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
             bllsEvento_502ag.AltaEvento_502ag("Taller", "Generar OT", 3);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoOrdenTrabajo_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoOrdenTrabajo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
 
         public List<BE_OrdenTrabajo_502ag> ObtenerOrdenesDeTrabajoAbierta_502ag()
@@ -60,7 +60,7 @@ namespace BLL_502ag
             orden_502ag.Estado_502ag = "Pendiente de Pago";
             dalOrdenTrabajo_502ag.ActualizarEstadoOrdenTrabajo_502ag(orden_502ag);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoOrdenTrabajo_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoOrdenTrabajo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
 
         public void ActualizarEstadoOrdenTrabajoACerrada_502ag(BE_OrdenTrabajo_502ag orden_502ag)
@@ -69,7 +69,7 @@ namespace BLL_502ag
             orden_502ag.Estado_502ag = "Cerrada";
             dalOrdenTrabajo_502ag.ActualizarEstadoOrdenTrabajo_502ag(orden_502ag);
             BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-            bllDigitoVerificador_502ag.ActualizarDigitoOrdenTrabajo_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoOrdenTrabajo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
 
         public string CalcularDVH_502ag()
