@@ -12,16 +12,17 @@ namespace DAL_502ag
     {
         public void ActivarCliente_502ag(BE_ClienteBitacora_502ag clienteBitacora_502ag)
         {
-            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            //DESACTIVAR TRIGGER
+            using(SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                string deleteQuery_502ag = $"DELETE FROM BitacoraCambiosCliente_502ag WHERE FechaHora_502ag = @FechaHora_502ag";
-                using (SqlCommand cmd_502ag = new SqlCommand(deleteQuery_502ag, cx_502ag))
+                string desactivarTrigger_502ag = "DISABLE TRIGGER Trigger_BitacoraCambiosCliente_502ag ON Cliente_502ag";
+                using(SqlCommand cmd_502ag = new SqlCommand(desactivarTrigger_502ag, cx_502ag))
                 {
-                    cmd_502ag.Parameters.AddWithValue("@FechaHora_502ag", clienteBitacora_502ag.FechaHora_502ag);
                     cmd_502ag.ExecuteNonQuery();
                 }
-            }
+            }   
+            //MODIFICAR CLIENTE
             DAL_Cliente_502ag dalCliente_502ag = new DAL_Cliente_502ag();
             BE_Cliente_502ag cliente_502ag = new BE_Cliente_502ag(
                 clienteBitacora_502ag.DNI_502ag,
@@ -33,6 +34,28 @@ namespace DAL_502ag
                 clienteBitacora_502ag.IsClienteActivo_502ag
             );
             dalCliente_502ag.ModificarCliente_502ag(cliente_502ag);
+            //MODIFICAR BITACORA
+            using(SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                string updateBitacora_502ag = "UPDATE BitacoraCambiosCliente_502ag SET Activo_502ag = CASE WHEN FechaHora_502ag = @FechaHora_502ag THEN 1 ELSE 0 END WHERE DNICliente_502ag = @DNI_502ag";
+                using(SqlCommand cmd_502ag = new SqlCommand(updateBitacora_502ag, cx_502ag))
+                {
+                    cmd_502ag.Parameters.AddWithValue("@FechaHora_502ag", clienteBitacora_502ag.FechaHora_502ag);
+                    cmd_502ag.Parameters.AddWithValue("@DNI_502ag", clienteBitacora_502ag.DNI_502ag);
+                    cmd_502ag.ExecuteNonQuery();
+                }
+            }
+            //ACTIVAR TRIGGER
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                string desactivarTrigger_502ag = "ENABLE TRIGGER Trigger_BitacoraCambiosCliente_502ag ON Cliente_502ag";
+                using (SqlCommand cmd_502ag = new SqlCommand(desactivarTrigger_502ag, cx_502ag))
+                {
+                    cmd_502ag.ExecuteNonQuery();
+                }
+            }
         }
         
         public List<BE_ClienteBitacora_502ag> ObtenerClientesBitacora_502ag()

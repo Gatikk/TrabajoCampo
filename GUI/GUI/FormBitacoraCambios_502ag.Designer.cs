@@ -39,6 +39,7 @@
             this.ColumnaTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaClienteActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColumnaFechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonVerInformacion_502ag = new System.Windows.Forms.Button();
             this.cBDNI_502ag = new System.Windows.Forms.ComboBox();
             this.cBNombre_502ag = new System.Windows.Forms.ComboBox();
@@ -52,7 +53,6 @@
             this.buttonAplicar_502ag = new System.Windows.Forms.Button();
             this.labelDNI_502ag = new System.Windows.Forms.Label();
             this.labelNombre_502ag = new System.Windows.Forms.Label();
-            this.ColumnaFechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacoraClientes_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,6 +148,13 @@
             this.ColumnaActivo.ReadOnly = true;
             this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // ColumnaFechaHora
+            // 
+            this.ColumnaFechaHora.HeaderText = "FechaHora";
+            this.ColumnaFechaHora.Name = "ColumnaFechaHora";
+            this.ColumnaFechaHora.ReadOnly = true;
+            this.ColumnaFechaHora.Visible = false;
             // 
             // buttonVerInformacion_502ag
             // 
@@ -291,13 +298,6 @@
             this.labelNombre_502ag.TabIndex = 51;
             this.labelNombre_502ag.Text = "Nombre";
             // 
-            // ColumnaFechaHora
-            // 
-            this.ColumnaFechaHora.HeaderText = "FechaHora";
-            this.ColumnaFechaHora.Name = "ColumnaFechaHora";
-            this.ColumnaFechaHora.ReadOnly = true;
-            this.ColumnaFechaHora.Visible = false;
-            // 
             // FormBitacoraCambios_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -319,6 +319,7 @@
             this.Controls.Add(this.dgvBitacoraClientes_502ag);
             this.Name = "FormBitacoraCambios_502ag";
             this.Text = "FormBitacoraCambios_502ag";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormBitacoraCambios_502ag_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacoraClientes_502ag)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
