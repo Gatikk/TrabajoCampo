@@ -14,6 +14,9 @@ namespace BLL_502ag
         {
             DAL_BitacoraCambiosCliente_502ag dalBitacoraCambiosCliente_502ag = new DAL_BitacoraCambiosCliente_502ag();
             dalBitacoraCambiosCliente_502ag.ActivarCliente_502ag(clienteBitacora_502ag);
+            BLL_Cliente_502ag bllCliente_502ag = new BLL_Cliente_502ag();
+            BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoCliente_502ag(bllCliente_502ag.CalcularDVH_502ag(), bllCliente_502ag.CalcularDVV_502ag());
         }
         public List<BE_ClienteBitacora_502ag> ObtenerClientesBitacora_502ag()
         {
