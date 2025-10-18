@@ -125,6 +125,7 @@ namespace DAL_502ag
             {
                 cx_502ag.Open();
                 string query_502ag = "SELECT * FROM BitacoraCambiosCliente_502ag WHERE 1=1";
+                DateTime fechaHastaConHora_502ag = fechaHasta_502ag.Date.AddDays(1).AddSeconds(-1);
                 SqlCommand cmd_502ag = new SqlCommand();
                 cmd_502ag.Connection = cx_502ag;
                 if (!string.IsNullOrEmpty(dni_502ag))
@@ -145,7 +146,7 @@ namespace DAL_502ag
                 query_502ag += " AND FechaHora_502ag >= @FechaDesde";
                 cmd_502ag.Parameters.AddWithValue("@FechaDesde", fechaDesde_502ag);
                 query_502ag += " AND FechaHora_502ag <= @FechaHasta";
-                cmd_502ag.Parameters.AddWithValue("@FechaHasta", fechaHasta_502ag);
+                cmd_502ag.Parameters.AddWithValue("@FechaHasta", fechaHastaConHora_502ag);
                 
                 query_502ag += " ORDER BY FechaHora_502ag DESC";
 

@@ -196,7 +196,6 @@ D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\itextsharp.xml
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\Newtonsoft.Json.xml
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\BouncyCastle.Cryptography.xml
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI_502ag.csproj.AssemblyReference.cache
-D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.exe.config
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormABMUsuario_502ag.resources
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormBackupRestore_502ag.resources
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormBitacoraCambios_502ag.resources
@@ -228,3 +227,4 @@ D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.exe
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.pdb
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormVerReporteInteligente_502ag.resources
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormMaestrosVehiculo_502ag.resources
+D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.exe.config

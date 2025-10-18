@@ -25,6 +25,7 @@ OutputDir=D:\InnoPrograma
 OutputBaseFilename=PetroStop_Setup_502ag
 SolidCompression=yes
 WizardStyle=modern
+SetupIconFile=D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\Resources\logo.ico
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -48,10 +49,11 @@ Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\scriptCrearSoloBD
 Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\scriptDropBD_502ag.sql"; DestDir: "{app}"; Flags: deleteafterinstall
 Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\MsSqlCmdLnUtils.msi"; DestDir: "{tmp}"; Flags: deleteafterinstall
 Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\msodbcsql.msi"; DestDir: "{tmp}"; Flags: deleteafterinstall
+Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\Resources\logo.ico"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
-Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
-Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\logo.ico"
+Name: "{autodesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon; IconFilename: "{app}\logo.ico"
 
 [Code]
 var
