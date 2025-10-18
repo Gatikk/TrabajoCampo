@@ -41,13 +41,13 @@
             this.buttonModificarVehiculo_502ag = new System.Windows.Forms.Button();
             this.buttonAltaVehiculo_502ag = new System.Windows.Forms.Button();
             this.dgvVehiculos_502ag = new System.Windows.Forms.DataGridView();
-            this.labelAnio_502ag = new System.Windows.Forms.Label();
-            this.tBAnio_502ag = new System.Windows.Forms.TextBox();
             this.ColumnaPatente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaModelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaAnio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.labelAnio_502ag = new System.Windows.Forms.Label();
+            this.tBAnio_502ag = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -219,27 +219,7 @@
             this.dgvVehiculos_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVehiculos_502ag.Size = new System.Drawing.Size(760, 210);
             this.dgvVehiculos_502ag.TabIndex = 68;
-            // 
-            // labelAnio_502ag
-            // 
-            this.labelAnio_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelAnio_502ag.AutoSize = true;
-            this.labelAnio_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.labelAnio_502ag.Location = new System.Drawing.Point(252, 384);
-            this.labelAnio_502ag.Name = "labelAnio_502ag";
-            this.labelAnio_502ag.Size = new System.Drawing.Size(42, 22);
-            this.labelAnio_502ag.TabIndex = 82;
-            this.labelAnio_502ag.Text = "Año";
-            // 
-            // tBAnio_502ag
-            // 
-            this.tBAnio_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.tBAnio_502ag.Location = new System.Drawing.Point(358, 381);
-            this.tBAnio_502ag.Name = "tBAnio_502ag";
-            this.tBAnio_502ag.Size = new System.Drawing.Size(175, 27);
-            this.tBAnio_502ag.TabIndex = 4;
+            this.dgvVehiculos_502ag.SelectionChanged += new System.EventHandler(this.dgvVehiculos_502ag_SelectionChanged);
             // 
             // ColumnaPatente
             // 
@@ -273,6 +253,27 @@
             this.ColumnaActivo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.ColumnaActivo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // labelAnio_502ag
+            // 
+            this.labelAnio_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelAnio_502ag.AutoSize = true;
+            this.labelAnio_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelAnio_502ag.Location = new System.Drawing.Point(252, 384);
+            this.labelAnio_502ag.Name = "labelAnio_502ag";
+            this.labelAnio_502ag.Size = new System.Drawing.Size(42, 22);
+            this.labelAnio_502ag.TabIndex = 82;
+            this.labelAnio_502ag.Text = "Año";
+            // 
+            // tBAnio_502ag
+            // 
+            this.tBAnio_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.tBAnio_502ag.Location = new System.Drawing.Point(358, 381);
+            this.tBAnio_502ag.Name = "tBAnio_502ag";
+            this.tBAnio_502ag.Size = new System.Drawing.Size(175, 27);
+            this.tBAnio_502ag.TabIndex = 4;
+            // 
             // FormMaestrosVehiculo_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +296,7 @@
             this.Controls.Add(this.dgvVehiculos_502ag);
             this.Name = "FormMaestrosVehiculo_502ag";
             this.Text = "FormMaestrosVehiculo_502ag";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMaestrosVehiculo_502ag_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos_502ag)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

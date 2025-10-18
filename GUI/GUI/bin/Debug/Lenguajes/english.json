@@ -272,5 +272,7 @@
   "msgImpresionExitosa_502ag":"Print successful",
   "buttonVerFacturasTaller_502ag": "View Workshop Invoices",
   "buttonBitacoraCambiosCliente_502ag": "Client Changes Log",
-  "buttonMaestrosRepuestos_502ag": "Spare Parts Masters"
+  "buttonMaestrosRepuestos_502ag": "Spare Parts Masters",
+  "buttonMaestrosVehiculos_502ag": "Vehicles",
+  "buttonVerReporteInteligente_502ag": "View Smart Report"
 }

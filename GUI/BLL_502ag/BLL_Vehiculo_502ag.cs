@@ -41,6 +41,30 @@ namespace BLL_502ag
             bllDigitoVerificador_502ag.ActualizarDigitoVehiculo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
         }
 
+        public void ModificarVehiculo_502ag(BE_Vehiculo_502ag vehiculo_502ag, string marca_502ag, string modelo_502ag, int anio_502ag)
+        {
+            DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();
+            vehiculo_502ag.Marca_502ag = marca_502ag;
+            vehiculo_502ag.Modelo_502ag = modelo_502ag;
+            vehiculo_502ag.Anio_502ag = anio_502ag;
+            dalVehiculo_502ag.ModificarVehiculo_502ag(vehiculo_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Maestros", "Modificar Vehículo", 2);
+            BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoVehiculo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
+        }
+
+        public void BajaVehiculo_502ag(BE_Vehiculo_502ag vehiculo_502ag)
+        {
+            DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();
+            vehiculo_502ag.IsActivo_502ag = false;
+            dalVehiculo_502ag.BajaVehiculo_502ag(vehiculo_502ag);
+            BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
+            bllsEvento_502ag.AltaEvento_502ag("Maestros", "Dar de Baja Vehículo", 2);
+            BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
+            bllDigitoVerificador_502ag.ActualizarDigitoVehiculo_502ag(CalcularDVH_502ag(), CalcularDVV_502ag());
+        }
+
         public BE_Vehiculo_502ag ObtenerVehiculo_502ag(string patente_502ag)
         {
             DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();
