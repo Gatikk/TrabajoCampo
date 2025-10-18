@@ -269,5 +269,8 @@
   "Criticidad_502ag":"Criticality",
   "msgFechaDesdeNoMayorHasta_502ag":"The FROM date cannot be greater than the TO date",
   "msgNadaParaImprimir_502ag":"Nothing to print",
-  "msgImpresionExitosa_502ag":"Print successful"
+  "msgImpresionExitosa_502ag":"Print successful",
+  "buttonVerFacturasTaller_502ag": "View Workshop Invoices",
+  "buttonBitacoraCambiosCliente_502ag": "Client Changes Log",
+  "buttonMaestrosRepuestos_502ag": "Spare Parts Masters"
 }

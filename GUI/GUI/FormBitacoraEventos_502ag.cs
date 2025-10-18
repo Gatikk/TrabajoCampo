@@ -195,6 +195,12 @@ namespace GUI
                 BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
                 DateTime fechaDesde_502ag = dTPDesde_502ag.Value.Date;
                 DateTime fechaHasta_502ag = dTPHasta_502ag.Value.Date;
+                if (fechaDesde_502ag > DateTime.Now)
+                {
+                    dTPDesde_502ag.Value = DateTime.Now;
+                    dTPHasta_502ag.Value = DateTime.Now;
+                    throw new Exception($"La fecha DESDE no puede ser mayor a la fecha de hoy");
+                }
                 if (fechaDesde_502ag > fechaHasta_502ag && checkBoxFecha_502ag.Checked)
                 {
                     dTPDesde_502ag.Value = DateTime.Now;
@@ -246,7 +252,7 @@ namespace GUI
         {
             try
             {
-                if (listaEventos_502ag.Count <= 0) throw new Exception("No hay nada para imprimir.");
+                if (listaEventos_502ag.Count <= 0) throw new Exception(msgNadaParaImprimir_502ag);
                 BLLS_Evento_502ag bllsEvento_502ag = new BLLS_Evento_502ag();
                 bllsEvento_502ag.ImprimirEventos_502ag(listaEventos_502ag);
                 MessageBox.Show($"{msgImpresionExitosa_502ag}", $"{msgImpresionExitosa_502ag}", MessageBoxButtons.OK, MessageBoxIcon.Information);

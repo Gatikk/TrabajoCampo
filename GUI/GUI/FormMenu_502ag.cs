@@ -379,6 +379,20 @@ namespace GUI
             formVerFacturasTaller_502ag.Show();
         }
 
+        private void buttonVerReporteInteligente_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormVerReporteInteligente_502ag formVerReporteInteligente_502ag = new FormVerReporteInteligente_502ag();
+            formVerReporteInteligente_502ag.Show();
+        }
+
+        private void buttonMaestrosVehiculos_502ag_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormMaestrosVehiculo_502ag formMaestrosVehiculo_502ag = new FormMaestrosVehiculo_502ag();
+            formMaestrosVehiculo_502ag.Show();
+        }
+
         private void ActivarBotonesSubMenu_502ag()
         {
             if(buttonABM_502ag.Enabled || buttonPerfiles_502ag.Enabled)

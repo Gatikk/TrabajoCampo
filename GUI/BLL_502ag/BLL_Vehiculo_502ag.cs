@@ -55,6 +55,11 @@ namespace BLL_502ag
             }
             return null;
         }
+        public List<BE_Vehiculo_502ag> ObtenerVehiculosActivos_502ag()
+        {
+            DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();
+            return dalVehiculo_502ag.ObtenerVehiculos_502ag().FindAll(x => x.IsActivo_502ag == true);
+        }
         public bool VerificarPatenteYaRegistrada_502ag(string patente_502ag)
         {
             DAL_Vehiculo_502ag dalVehiculo_502ag = new DAL_Vehiculo_502ag();

@@ -28,6 +28,16 @@ namespace BLL_502ag
             DAL_BitacoraCambiosCliente_502ag dalBitacoraCambiosCliente_502ag = new DAL_BitacoraCambiosCliente_502ag();
             return dalBitacoraCambiosCliente_502ag.ObtenerClienteBitacora_502ag(fecha_502ag);
         }
+        public List<BE_ClienteBitacora_502ag> ObtenerClientesBitacoraFiltrado_502ag(string dni_502ag, string nombre_502ag, string apellido_502ag, DateTime fechaDesde_502ag, DateTime fechaHasta_502ag)
+        {
+            DAL_BitacoraCambiosCliente_502ag dalBitacoraCambiosCliente_502ag = new DAL_BitacoraCambiosCliente_502ag();
+            return dalBitacoraCambiosCliente_502ag.ObtenerClientesBitacoraFiltrado_502ag(dni_502ag, nombre_502ag, apellido_502ag, fechaDesde_502ag, fechaHasta_502ag);
+        }
+        public List<string> NombresPorDNI_502ag(string dni_502ag)
+        {
+            DAL_BitacoraCambiosCliente_502ag dalBitacoraCambiosCliente_502ag = new DAL_BitacoraCambiosCliente_502ag();
+            return dalBitacoraCambiosCliente_502ag.NombresPorDNI_502ag(dni_502ag);
+        }
 
     }
 }

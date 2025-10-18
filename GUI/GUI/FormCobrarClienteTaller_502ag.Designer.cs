@@ -328,6 +328,7 @@
             this.Controls.Add(this.dgvOrdenesTrabajo_502ag);
             this.Name = "FormCobrarClienteTaller_502ag";
             this.Text = "FormCobrarClienteTaller_502ag";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCobrarClienteTaller_502ag_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenesTrabajo_502ag)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

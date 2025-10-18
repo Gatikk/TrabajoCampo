@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace DAL_502ag
 {
@@ -13,7 +14,7 @@ namespace DAL_502ag
 
         public BE_Factura_502ag ObtenerFactura_502ag(int codFactura_502ag)
         {
-            using(SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
                 using (SqlCommand cmd_502ag = new SqlCommand("SELECT * FROM Factura_502ag WHERE CodFactura_502ag = @CodFactura_502ag", cx_502ag))
@@ -23,7 +24,7 @@ namespace DAL_502ag
                     {
                         if (dr_502ag.Read())
                         {
-                            if (int.Parse(dr_502ag["EstadoFactura_502ag"].ToString())== 1)
+                            if (int.Parse(dr_502ag["EstadoFactura_502ag"].ToString()) == 1)
                             {
                                 return new BE_Factura_502ag(
                                     int.Parse(dr_502ag["CodFactura_502ag"].ToString()),
@@ -124,7 +125,7 @@ namespace DAL_502ag
                                     int.Parse(dr_502ag["EstadoFactura_502ag"].ToString()),
                                     DateTime.Parse(dr_502ag["Fecha_502ag"].ToString()),
                                     TimeSpan.Parse(dr_502ag["Hora_502ag"].ToString()),
-                                    decimal.Parse(dr_502ag["Monto_502ag"].ToString()),  
+                                    decimal.Parse(dr_502ag["Monto_502ag"].ToString()),
                                     decimal.Parse(dr_502ag["CantCargada_502ag"].ToString()),
                                     dr_502ag["NombreCombustible_502ag"].ToString()
                                 );
@@ -188,7 +189,7 @@ namespace DAL_502ag
                         while (dr_502ag.Read())
                         {
                             BE_Factura_502ag factura_502ag = new BE_Factura_502ag(
-                                
+
                                 int.Parse(dr_502ag["CodFactura_502ag"].ToString()),
                                 dr_502ag["DNICliente_502ag"].ToString(),
                                 DateTime.Parse(dr_502ag["Fecha_502ag"].ToString()),
@@ -221,7 +222,7 @@ namespace DAL_502ag
                 string insertQuery_502ag = "INSERT INTO Factura_502ag (CodCombustible_502ag,IsFacturado_502ag, EstadoFactura_502ag, Fecha_502ag, Hora_502ag, NombreCombustible_502ag) " +
                     "VALUES (@CodCombustible_502ag,@IsFacturado_502ag, @EstadoFactura_502ag, @Fecha_502ag, @Hora_502ag, @NombreCombustible_502ag); SELECT SCOPE_IDENTITY();";
                 using (SqlCommand cmd_502ag = new SqlCommand(insertQuery_502ag, cx_502ag))
-                { 
+                {
                     cmd_502ag.Parameters.AddWithValue("@CodCombustible_502ag", factura_502ag.CodCombustible_502ag);
                     cmd_502ag.Parameters.AddWithValue("@IsFacturado_502ag", factura_502ag.IsFacturado_502ag);
                     cmd_502ag.Parameters.AddWithValue("@EstadoFactura_502ag", factura_502ag.EstadoFactura_502ag);
@@ -257,7 +258,7 @@ namespace DAL_502ag
                     cmd_502ag.Parameters.AddWithValue("@EstadoFactura_502ag", factura_502ag.EstadoFactura_502ag);
                     cmd_502ag.ExecuteNonQuery();
                 }
-            } 
+            }
         }
 
         public void ActualizarFacturaClienteIdentificado_502ag(BE_Factura_502ag factura_502ag)
@@ -314,5 +315,92 @@ namespace DAL_502ag
                 }
             }
         }
+
+        public List<Tuple<string, decimal>> FacturacionPorMes_502ag()
+        {
+            List<Tuple<string, decimal>> resultados_502ag = new List<Tuple<string, decimal>>();
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                string query_502ag = @"SELECT FORMAT(Fecha_502ag, 'yyyy-MM') AS MesAnio_502ag, SUM(Monto_502ag) AS TotalMensual_502ag FROM Factura_502ag GROUP BY FORMAT(Fecha_502ag, 'yyyy-MM') ORDER BY MesAnio_502ag;";
+                using (SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
+                {
+
+                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
+                    {
+                        while (dr_502ag.Read())
+                        {
+                            string mesAnio_502ag = dr_502ag["MesAnio_502ag"].ToString();
+                            decimal totalMensual_502ag = decimal.Parse(dr_502ag["TotalMensual_502ag"].ToString());
+                            resultados_502ag.Add(new Tuple<string, decimal>(mesAnio_502ag, totalMensual_502ag));
+                        }
+                    }
+                }
+            }
+            return resultados_502ag;
+        }
+
+        public List<Tuple<string, decimal>> VentasPorCombustible_502ag()
+        {
+                       List<Tuple<string, decimal>> resultados_502ag = new List<Tuple<string, decimal>>();
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                string query_502ag = @"SELECT NombreCombustible_502ag, SUM(Monto_502ag) AS TotalVentas_502ag FROM Factura_502ag GROUP BY NombreCombustible_502ag ORDER BY TotalVentas_502ag DESC;";
+                using (SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
+                {
+                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
+                    {
+                        while (dr_502ag.Read())
+                        {
+                            string nombreCombustible_502ag = dr_502ag["NombreCombustible_502ag"].ToString();
+                            decimal totalVentas_502ag = decimal.Parse(dr_502ag["TotalVentas_502ag"].ToString());
+                            resultados_502ag.Add(new Tuple<string, decimal>(nombreCombustible_502ag, totalVentas_502ag));
+                        }
+                    }
+                }
+            }
+            return resultados_502ag;
+        }
+
+        public List<Tuple<string, decimal>> CargasPorHora_502ag()
+        {
+            List<Tuple<string, decimal>> resultados_502ag = new List<Tuple<string, decimal>>();
+            using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
+            {
+                cx_502ag.Open();
+                string query_502ag = @"SELECT CASE
+                        WHEN DATEPART(hour, Hora_502ag) BETWEEN 0 AND 5 THEN 'Madrugada (00-06)'
+                        WHEN DATEPART(hour, Hora_502ag) BETWEEN 6 AND 11 THEN 'Mañana (06-12)'
+                        WHEN DATEPART(hour, Hora_502ag) BETWEEN 12 AND 17 THEN 'Tarde (12-18)'
+                        ELSE 'Noche (18-24)'
+                    END AS RangoHorario_502ag,
+                    COUNT(*) AS CantidadCargas_502ag
+                FROM Factura_502ag
+                GROUP BY
+                    CASE
+                        WHEN DATEPART(hour, Hora_502ag) BETWEEN 0 AND 5 THEN 'Madrugada (00-06)'
+                        WHEN DATEPART(hour, Hora_502ag) BETWEEN 6 AND 11 THEN 'Mañana (06-12)'
+                        WHEN DATEPART(hour, Hora_502ag) BETWEEN 12 AND 17 THEN 'Tarde (12-18)'
+                        ELSE 'Noche (18-24)'
+                    END
+                ORDER BY
+                    MIN(DATEPART(hour, Hora_502ag));";
+                using (SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
+                {
+                    using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
+                    {
+                        while (dr_502ag.Read())
+                        {
+                            string horario_502ag = dr_502ag["RangoHorario_502ag"].ToString();
+                            decimal cantidadCargas_502ag = decimal.Parse(dr_502ag["CantidadCargas_502ag"].ToString());
+                            resultados_502ag.Add(new Tuple<string, decimal>(horario_502ag, cantidadCargas_502ag));
+                        }
+                    }
+                }
+            }
+            return resultados_502ag;
+        }
     }
 }
+

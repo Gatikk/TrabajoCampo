@@ -22,3 +22,9 @@ D:\Documents\GitHub\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.csproj.Assembly
 D:\Documents\GitHub\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.csproj.CoreCompileInputs.cache
 D:\Documents\GitHub\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.dll
 D:\Documents\GitHub\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.pdb
+D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\bin\Debug\SE_502ag.dll
+D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\bin\Debug\SE_502ag.pdb
+D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.csproj.AssemblyReference.cache
+D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.csproj.CoreCompileInputs.cache
+D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.dll
+D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\SE_502ag\obj\Debug\SE_502ag.pdb

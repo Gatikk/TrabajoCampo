@@ -189,5 +189,10 @@ namespace GUI
             tBFechaCaducidad_502ag.Clear();
             rTBFacturaDatos_502ag.Clear();
         }
+
+        private void FormCobrarClienteTaller_502ag_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

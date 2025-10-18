@@ -85,7 +85,6 @@ namespace GUI
             BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
             listaFactura_502ag = bllFactura_502ag.ObtenerListaFacturas_502ag();
             MostrarFacturas_502ag(dgvFacturas_502ag, listaFactura_502ag);
-            
             rBDESC_502ag.Checked = true;
             ActualizarGrilla_502ag();
         }

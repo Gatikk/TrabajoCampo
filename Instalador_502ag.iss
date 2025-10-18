@@ -4,6 +4,7 @@
 #define MyAppVersion "1.5"
 #define MyAppPublisher "Agustín Gatica"
 #define MyAppExeName "GUI.exe"
+#define SqlCmdPath "{commonpf64}\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn"
 
 [Setup]
 ; Identificación
@@ -33,7 +34,6 @@ Name: "spanish"; MessagesFile: "compiler:Languages\Spanish.isl"
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"; Flags: unchecked
 
 [Dirs]
-; Asegura que la carpeta para la base de datos se cree.
 Name: "{localappdata}\{#MyAppName}"
 
 [Files]
@@ -46,7 +46,8 @@ Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\VC_redist.x64.exe
 Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\scriptBD_502ag.sql"; DestDir: "{app}"; Flags: deleteafterinstall
 Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\scriptCrearSoloBD_502ag.sql"; DestDir: "{app}"; Flags: deleteafterinstall
 Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\scriptDropBD_502ag.sql"; DestDir: "{app}"; Flags: deleteafterinstall
-
+Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\MsSqlCmdLnUtils.msi"; DestDir: "{tmp}"; Flags: deleteafterinstall
+Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\msodbcsql.msi"; DestDir: "{tmp}"; Flags: deleteafterinstall
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
@@ -57,27 +58,23 @@ var
   CurrentWindowsUser: String;
   RestoreDatabase: Boolean;
   UserHasBeenAsked: Boolean;
-  PerformDbSetup: Boolean; // (NUEVO) Variable para guardar la decisión
+  PerformDbSetup: Boolean; 
 
-// Declaraciones Forward
 function IsDatabaseMissing(): Boolean; forward;
 function NeedsDatabaseRestore(): Boolean; forward;
 function GetCreateDbScriptPath(Param: String): String; forward;
 function ShouldPerformDbSetup(): Boolean; forward;
 
-// (NUEVO) Se ejecuta antes de la instalación para decidir el plan de acción
 procedure CurStepChanged(CurStep: TSetupStep);
 begin
   if CurStep = ssInstall then
   begin
-    // Decide UNA SOLA VEZ si se debe configurar la base de datos.
     if IsDatabaseMissing() then
     begin
       PerformDbSetup := True;
     end
     else
     begin
-      // Si la BD existe, pregunta al usuario y guarda la decisión.
       PerformDbSetup := NeedsDatabaseRestore();
     end;
   end;
@@ -90,7 +87,6 @@ begin
   PerformDbSetup := False;
 end;
 
-// Crea un script temporal para la creación de la BD, asegurando la ruta correcta.
 function GetCreateDbScriptPath(Param: String): String;
 var
   SqlScript, TempFile, FilePath: String;
@@ -127,7 +123,6 @@ function IsDatabaseFilePresent(): Boolean;
 var
   DBFilePath: String;
 begin
-  // Comprueba si el archivo .mdf existe en la ubicación personalizada.
   DBFilePath := ExpandConstant('{localappdata}\{#MyAppName}\BD_502ag.mdf');
   Result := FileExists(DBFilePath); 
 end;
@@ -166,36 +161,25 @@ begin
   Result := RestoreDatabase;
 end;
 
-// (NUEVO) Función simple que devuelve la decisión guardada
 function ShouldPerformDbSetup(): Boolean;
 begin
   Result := PerformDbSetup;
 end;
 
 [Run]
-; 1. INSTALACIÓN DE PRERREQUISITOS BÁSICOS
-Filename: "{tmp}\VC_redist.x64.exe"; Parameters: "/install /quiet /norestart"; StatusMsg: "Instalando componentes de Microsoft..."; Flags: runhidden; Check: IsVCRedistNeeded()
-Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\SqlLocalDB.msi"" /qn IACCEPTSQLLOCALDBLICENSETERMS=YES"; StatusMsg: "Instalando motor LocalDB..."; Flags: runhidden; Check: not IsLocalDBInstalled()
+Filename: "{tmp}\VC_redist.x64.exe"; Parameters: "/install /quiet /norestart"; StatusMsg: "Instalando componentes de Microsoft..."; Flags: runhidden waituntilterminated; Check: IsVCRedistNeeded()
+Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\SqlLocalDB.msi"" /qn IACCEPTSQLLOCALDBLICENSETERMS=YES"; StatusMsg: "Instalando motor LocalDB..."; Flags: runhidden waituntilterminated; Check: not IsLocalDBInstalled()
+Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\msodbcsql.msi"" /qn IACCEPTMSODBCSQLLICENSETERMS=YES"; StatusMsg: "Instalando controlador de conexión..."; Flags: runhidden waituntilterminated
+Filename: "msiexec.exe"; Parameters: "/i ""{tmp}\MsSqlCmdLnUtils.msi"" /qn IACCEPTMSSQLCMDLNUTILSLICENSETERMS=YES"; StatusMsg: "Instalando herramientas de base de datos..."; Flags: runhidden waituntilterminated
 
-; 2. INICIAR LA INSTANCIA DE LOCALDB
-Filename: "cmd.exe"; Parameters: "/C timeout /T 7 /nobreak > NUL"; Flags: runhidden;
-Filename: "{pf64}\Microsoft SQL Server\160\Tools\Binn\sqllocaldb.exe"; Parameters: "create MSSQLLocalDB"; Flags: runhidden;
-Filename: "{pf64}\Microsoft SQL Server\160\Tools\Binn\sqllocaldb.exe"; Parameters: "start MSSQLLocalDB"; Flags: runhidden;
+Filename: "{commonpf64}\Microsoft SQL Server\160\Tools\Binn\sqllocaldb.exe"; Parameters: "create MSSQLLocalDB"; Flags: runhidden waituntilterminated;
+Filename: "{commonpf64}\Microsoft SQL Server\160\Tools\Binn\sqllocaldb.exe"; Parameters: "start MSSQLLocalDB"; Flags: runhidden waituntilterminated;
 
-; 3. PAUSA BREVE PARA ASEGURAR QUE EL SERVICIO ESTÉ LISTO
+Filename: "cmd.exe"; Parameters: "/C timeout /T 10 /nobreak > NUL"; StatusMsg: "Iniciando servicios de base de datos..."; Flags: runhidden;
 
-; 4. PROCESAMIENTO DE LA BASE DE DATOS
-; A. Elimina la BD (comando directo y robusto)
-Filename: "cmd.exe"; Parameters: "/C timeout /T 25 /nobreak > NUL"; Flags: runhidden; Check: not IsLocalDBInstalled()
-Filename: "sqlcmd.exe"; Parameters: "-S (LocalDB)\MSSQLLocalDB -Q ""IF EXISTS (SELECT name FROM sys.databases WHERE name = 'BD_502ag') BEGIN ALTER DATABASE BD_502ag SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE BD_502ag; END"" -E"; StatusMsg: "Eliminando base de datos antigua..."; Flags: runhidden; Check: NeedsDatabaseRestore()
-; B. Crea la BD (MODO PRODUCCIÓN: Silencioso y automático)
-Filename: "sqlcmd.exe"; Parameters: "-S (LocalDB)\MSSQLLocalDB -i ""{code:GetCreateDbScriptPath}"" -E"; StatusMsg: "Creando la base de datos..."; Flags: runhidden; Check: ShouldPerformDbSetup()
-Filename: "cmd.exe"; Parameters: "/C timeout /T 7 /nobreak > NUL"; Flags: runhidden;
-; C. Carga la estructura de la BD
-Filename: "sqlcmd.exe"; Parameters: "-S (LocalDB)\MSSQLLocalDB -d BD_502ag -i ""{app}\scriptBD_502ag.sql"" -E"; StatusMsg: "Configurando estructura..."; Flags: runhidden; Check: ShouldPerformDbSetup()
-; D. Asigna permisos
-Filename: "sqlcmd.exe"; Parameters: "-S (LocalDB)\MSSQLLocalDB -d BD_502ag -Q ""IF NOT EXISTS (SELECT name FROM sys.database_principals WHERE name = N'{code:GetCurrentUser}') CREATE USER [{code:GetCurrentUser}] FOR LOGIN [{code:GetCurrentUser}]; EXEC sp_addrolemember 'db_owner', N'{code:GetCurrentUser}'"" -E"; StatusMsg: "Asignando permisos..."; Flags: runhidden; Check: ShouldPerformDbSetup()
+Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S (LocalDB)\MSSQLLocalDB -Q ""IF EXISTS (SELECT name FROM sys.databases WHERE name = 'BD_502ag') BEGIN ALTER DATABASE BD_502ag SET SINGLE_USER WITH ROLLBACK IMMEDIATE; DROP DATABASE BD_502ag; END"" -E"; StatusMsg: "Eliminando base de datos antigua..."; Flags: runhidden; Check: NeedsDatabaseRestore()
+Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S (LocalDB)\MSSQLLocalDB -i ""{code:GetCreateDbScriptPath}"" -E"; StatusMsg: "Creando la base de datos..."; Flags: runhidden; Check: ShouldPerformDbSetup()
+Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S (LocalDB)\MSSQLLocalDB -d BD_502ag -i ""{app}\scriptBD_502ag.sql"" -E"; StatusMsg: "Configurando estructura..."; Flags: runhidden; Check: ShouldPerformDbSetup()
+Filename: "{#SqlCmdPath}\sqlcmd.exe"; Parameters: "-S (LocalDB)\MSSQLLocalDB -d BD_502ag -Q ""IF NOT EXISTS (SELECT name FROM sys.database_principals WHERE name = N'{code:GetCurrentUser}') CREATE USER [{code:GetCurrentUser}] FOR LOGIN [{code:GetCurrentUser}]; EXEC sp_addrolemember 'db_owner', N'{code:GetCurrentUser}'"" -E"; StatusMsg: "Asignando permisos..."; Flags: runhidden; Check: ShouldPerformDbSetup()
 
-; 5. EJECUTAR APLICACIÓN
 Filename: "{app}\{#MyAppExeName}"; Description: "{cm:LaunchProgram,{#StringChange(MyAppName, '&', '&&')}}"; Flags: nowait postinstall skipifsilent
-

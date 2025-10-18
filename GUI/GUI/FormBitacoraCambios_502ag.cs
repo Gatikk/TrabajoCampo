@@ -1,4 +1,8 @@
-﻿using System;
+﻿using BE_502ag;
+using BLL_502ag;
+using BLLS_502ag;
+using SERVICIOS_502ag;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,22 +11,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BE_502ag;
-using BLL_502ag;
-using SERVICIOS_502ag;
 
 namespace GUI
 {
     public partial class FormBitacoraCambios_502ag : Form
     {
+        List<BE_ClienteBitacora_502ag> listaClientesBitacora_502ag = new List<BE_ClienteBitacora_502ag>();
         public FormBitacoraCambios_502ag()
         {
             StartPosition = FormStartPosition.Manual;
             Location = new Point(500, 200);
             InitializeComponent();
+            ObtenerClientesBitacora_502ag();
             Mostrar_502ag();
+            CargarComboBoxs_502ag();
+            
         }
-
+        private void ObtenerClientesBitacora_502ag()
+        {
+            BLL_ClienteBitacora_502ag bllClienteBitacora_502ag = new BLL_ClienteBitacora_502ag();
+            listaClientesBitacora_502ag = bllClienteBitacora_502ag.ObtenerClientesBitacora_502ag();
+        }
         private void buttonVerInformacion_502ag_Click(object sender, EventArgs e)
         {
             try
@@ -64,6 +73,7 @@ namespace GUI
                 DateTime fechaHora_502ag = DateTime.Parse(dgvBitacoraClientes_502ag.SelectedRows[0].Cells[10].Value.ToString());
                 BE_ClienteBitacora_502ag clienteSeleccionado_502ag = bllClienteBitacora_502ag.ObtenerClienteBitacora_502ag(fechaHora_502ag);
                 bllClienteBitacora_502ag.ActivarCliente_502ag(clienteSeleccionado_502ag);
+                listaClientesBitacora_502ag = bllClienteBitacora_502ag.ObtenerClientesBitacora_502ag();
                 Mostrar_502ag();
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
@@ -71,12 +81,59 @@ namespace GUI
 
         private void buttonAplicar_502ag_Click(object sender, EventArgs e)
         {
+            try
+            {
+                BLL_ClienteBitacora_502ag bllClienteBitacora_502ag = new BLL_ClienteBitacora_502ag();
+                DateTime fechaDesde_502ag = dTPDesde_502ag.Value.Date;
+                DateTime fechaHasta_502ag = dTPHasta_502ag.Value.Date;
+                string apellido_502ag = "";
+                string nombre_502ag = "";
 
+                if(fechaDesde_502ag > DateTime.Now)
+                {
+                    dTPDesde_502ag.Value = DateTime.Now;
+                    dTPHasta_502ag.Value = DateTime.Now;
+                    throw new Exception($"La fecha DESDE no puede ser mayor a la fecha de hoy");
+                }
+
+                if (fechaDesde_502ag > fechaHasta_502ag)
+                {
+                    dTPDesde_502ag.Value = DateTime.Now;
+                    dTPHasta_502ag.Value = DateTime.Now;
+                    throw new Exception($"La fecha DESDE no puede ser mayor que la fecha HASTA");
+                }
+                
+                if(cBNombre_502ag.Text != "")
+                {
+                    string[] nombre = cBNombre_502ag.Text.Split(',');
+                    apellido_502ag = nombre[0].Trim();
+                    nombre_502ag = nombre[1].Trim();
+                }
+
+                listaClientesBitacora_502ag = bllClienteBitacora_502ag.ObtenerClientesBitacoraFiltrado_502ag(
+                    cBDNI_502ag.Text,
+                    nombre_502ag,
+                    apellido_502ag,
+                    fechaDesde_502ag,
+                    fechaHasta_502ag
+                );
+                Mostrar_502ag();
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
 
         private void buttonLimpiar_502ag_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                BLL_ClienteBitacora_502ag bllClienteBitacora_502ag = new BLL_ClienteBitacora_502ag();
+                listaClientesBitacora_502ag = bllClienteBitacora_502ag.ObtenerClientesBitacora_502ag();
+                Mostrar_502ag();
+                dTPDesde_502ag.Value = DateTime.Now;
+                dTPHasta_502ag.Value = DateTime.Now;
+                cBDNI_502ag.SelectedIndex = 0;
+                cBNombre_502ag.SelectedIndex = 0;
+            } catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }   
         }
 
         private void buttonVolverAlMenu_502ag_Click(object sender, EventArgs e)
@@ -90,16 +147,97 @@ namespace GUI
             BLL_ClienteBitacora_502ag bllClienteBitacora_502ag = new BLL_ClienteBitacora_502ag();
             dgvBitacoraClientes_502ag.Rows.Clear();
 
-            foreach (BE_ClienteBitacora_502ag cliente_502ag in bllClienteBitacora_502ag.ObtenerClientesBitacora_502ag())
+            foreach (BE_ClienteBitacora_502ag cliente_502ag in listaClientesBitacora_502ag)
             {
                 dgvBitacoraClientes_502ag.Rows.Add(cliente_502ag.DNI_502ag,cliente_502ag.FechaHora_502ag.ToString("dd/MM/yyyy"), cliente_502ag.FechaHora_502ag.ToString(@"HH\:mm\:ss"),cliente_502ag.Nombre_502ag, cliente_502ag.Apellido_502ag, cliente_502ag.Email_502ag, cliente_502ag.Direccion_502ag, cliente_502ag.Telefono_502ag, cliente_502ag.IsClienteActivo_502ag, cliente_502ag.Activo_502ag, cliente_502ag.FechaHora_502ag);
             }
-
         }
 
+        private void CargarComboBoxDNICliente_502ag()
+        {
+            try
+            {
+                cBDNI_502ag.Items.Clear();
+                cBDNI_502ag.Items.Add("");
+                cBDNI_502ag.SelectedIndex = 0;
+                List<string> listaDNIStrings_502ag = new List<string>();
+                foreach (DataGridViewRow row_502ag in dgvBitacoraClientes_502ag.Rows)
+                {
+                    if (row_502ag.Cells[4].Value != null)
+                    {
+                        string dni_502ag = row_502ag.Cells[0].Value.ToString();
+                        if (!listaDNIStrings_502ag.Contains(dni_502ag))
+                        {
+                            listaDNIStrings_502ag.Add(dni_502ag);
+                            cBDNI_502ag.Items.Add(dni_502ag);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        private void CargarComboBoxNombre_502ag()
+        {
+            try
+            {
+                cBNombre_502ag.Items.Clear();
+                cBNombre_502ag.Items.Add("");
+                cBNombre_502ag.SelectedIndex = 0;
+                List<string> listaNombresStrings_502ag = new List<string>();
+                foreach (DataGridViewRow row_502ag in dgvBitacoraClientes_502ag.Rows)
+                {
+                    if (row_502ag.Cells[3].Value != null && row_502ag.Cells[4].Value != null)
+                    {
+                        string nombreCompleto_502ag = $"{row_502ag.Cells[4].Value.ToString()}, {row_502ag.Cells[3].Value.ToString()}";
+                        if (!listaNombresStrings_502ag.Contains(nombreCompleto_502ag))
+                        {
+                            listaNombresStrings_502ag.Add(nombreCompleto_502ag);
+                            cBNombre_502ag.Items.Add(nombreCompleto_502ag);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        private void CargarComboBoxNombreFiltrado_502ag()
+        {
+            try
+            {
+                cBNombre_502ag.Items.Clear();
+                cBNombre_502ag.Items.Add("");
+                cBNombre_502ag.SelectedIndex = 0;
+                BLL_ClienteBitacora_502ag bllClienteBitacora_502ag = new BLL_ClienteBitacora_502ag();
+                List<string> listaNombresStrings_502ag = bllClienteBitacora_502ag.NombresPorDNI_502ag(cBDNI_502ag.Text);
+                foreach (string nombre_502ag in listaNombresStrings_502ag)
+                {
+                    cBNombre_502ag.Items.Add(nombre_502ag);
+                }
+            }
+            catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        public void CargarComboBoxs_502ag()
+        {
+            CargarComboBoxDNICliente_502ag();
+            CargarComboBoxNombre_502ag();
+        }
         private void FormBitacoraCambios_502ag_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void cBDNI_502ag_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CargarComboBoxNombreFiltrado_502ag();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error: {ex.Message}");
+            }
         }
     }
 }

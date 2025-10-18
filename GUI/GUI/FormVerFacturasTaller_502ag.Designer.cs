@@ -73,12 +73,14 @@
             // 
             // cBFecha_502ag
             // 
+            this.cBFecha_502ag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBFecha_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBFecha_502ag.FormattingEnabled = true;
             this.cBFecha_502ag.Location = new System.Drawing.Point(14, 369);
             this.cBFecha_502ag.Name = "cBFecha_502ag";
             this.cBFecha_502ag.Size = new System.Drawing.Size(155, 24);
             this.cBFecha_502ag.TabIndex = 91;
+            this.cBFecha_502ag.SelectedIndexChanged += new System.EventHandler(this.cBFecha_502ag_SelectedIndexChanged);
             // 
             // labelOrdenarPor_502ag
             // 
@@ -92,12 +94,14 @@
             // 
             // cBOrdenarPor_502ag
             // 
+            this.cBOrdenarPor_502ag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBOrdenarPor_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cBOrdenarPor_502ag.FormattingEnabled = true;
             this.cBOrdenarPor_502ag.Location = new System.Drawing.Point(14, 272);
             this.cBOrdenarPor_502ag.Name = "cBOrdenarPor_502ag";
             this.cBOrdenarPor_502ag.Size = new System.Drawing.Size(155, 24);
             this.cBOrdenarPor_502ag.TabIndex = 89;
+            this.cBOrdenarPor_502ag.SelectedIndexChanged += new System.EventHandler(this.cBOrdenarPor_502ag_SelectedIndexChanged);
             // 
             // rBDESC_502ag
             // 
@@ -111,6 +115,7 @@
             this.rBDESC_502ag.TabStop = true;
             this.rBDESC_502ag.Text = "Descendente";
             this.rBDESC_502ag.UseVisualStyleBackColor = true;
+            this.rBDESC_502ag.CheckedChanged += new System.EventHandler(this.rBDESC_502ag_CheckedChanged);
             // 
             // rBASC_502ag
             // 
@@ -122,6 +127,7 @@
             this.rBASC_502ag.TabIndex = 87;
             this.rBASC_502ag.Text = "Ascendente";
             this.rBASC_502ag.UseVisualStyleBackColor = true;
+            this.rBASC_502ag.CheckedChanged += new System.EventHandler(this.rBASC_502ag_CheckedChanged);
             // 
             // buttonVolverAlMenu_502ag
             // 

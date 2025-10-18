@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelPrecioPorLitro_502ag = new System.Windows.Forms.Label();
+            this.labelPrecio_502ag = new System.Windows.Forms.Label();
             this.labelCantidad_502ag = new System.Windows.Forms.Label();
             this.labelNombre_502ag = new System.Windows.Forms.Label();
             this.tBPrecio_502ag = new System.Windows.Forms.TextBox();
@@ -42,24 +42,24 @@
             this.buttonAltaRepuesto_502ag = new System.Windows.Forms.Button();
             this.dgvRepuestos_502ag = new System.Windows.Forms.DataGridView();
             this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNombreCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaNombreRepuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepuestos_502ag)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelPrecioPorLitro_502ag
+            // labelPrecio_502ag
             // 
-            this.labelPrecioPorLitro_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.labelPrecio_502ag.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelPrecioPorLitro_502ag.AutoSize = true;
-            this.labelPrecioPorLitro_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.labelPrecioPorLitro_502ag.Location = new System.Drawing.Point(264, 333);
-            this.labelPrecioPorLitro_502ag.Name = "labelPrecioPorLitro_502ag";
-            this.labelPrecioPorLitro_502ag.Size = new System.Drawing.Size(83, 22);
-            this.labelPrecioPorLitro_502ag.TabIndex = 67;
-            this.labelPrecioPorLitro_502ag.Text = "Precio_T";
+            this.labelPrecio_502ag.AutoSize = true;
+            this.labelPrecio_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.labelPrecio_502ag.Location = new System.Drawing.Point(264, 333);
+            this.labelPrecio_502ag.Name = "labelPrecio_502ag";
+            this.labelPrecio_502ag.Size = new System.Drawing.Size(83, 22);
+            this.labelPrecio_502ag.TabIndex = 67;
+            this.labelPrecio_502ag.Text = "Precio_T";
             // 
             // labelCantidad_502ag
             // 
@@ -205,7 +205,7 @@
             this.dgvRepuestos_502ag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvRepuestos_502ag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaCodigo,
-            this.ColumnaNombreCombustible,
+            this.ColumnaNombreRepuesto,
             this.ColumnaPrecio,
             this.ColumnaCantidad});
             this.dgvRepuestos_502ag.Location = new System.Drawing.Point(20, 17);
@@ -223,11 +223,11 @@
             this.ColumnaCodigo.Name = "ColumnaCodigo";
             this.ColumnaCodigo.ReadOnly = true;
             // 
-            // ColumnaNombreCombustible
+            // ColumnaNombreRepuesto
             // 
-            this.ColumnaNombreCombustible.HeaderText = "Nombre";
-            this.ColumnaNombreCombustible.Name = "ColumnaNombreCombustible";
-            this.ColumnaNombreCombustible.ReadOnly = true;
+            this.ColumnaNombreRepuesto.HeaderText = "Nombre";
+            this.ColumnaNombreRepuesto.Name = "ColumnaNombreRepuesto";
+            this.ColumnaNombreRepuesto.ReadOnly = true;
             // 
             // ColumnaPrecio
             // 
@@ -246,7 +246,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelPrecioPorLitro_502ag);
+            this.Controls.Add(this.labelPrecio_502ag);
             this.Controls.Add(this.labelCantidad_502ag);
             this.Controls.Add(this.labelNombre_502ag);
             this.Controls.Add(this.tBPrecio_502ag);
@@ -270,7 +270,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelPrecioPorLitro_502ag;
+        private System.Windows.Forms.Label labelPrecio_502ag;
         private System.Windows.Forms.Label labelCantidad_502ag;
         private System.Windows.Forms.Label labelNombre_502ag;
         private System.Windows.Forms.TextBox tBPrecio_502ag;
@@ -284,7 +284,7 @@
         private System.Windows.Forms.Button buttonAltaRepuesto_502ag;
         private System.Windows.Forms.DataGridView dgvRepuestos_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombreCombustible;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombreRepuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
     }

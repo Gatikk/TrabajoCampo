@@ -10,6 +10,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms.DataVisualization.Charting;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace BLL_502ag
@@ -196,5 +197,23 @@ namespace BLL_502ag
             return encryptador_502ag.EncryptadorIrreversible_502ag(dvv_502ag);
         }
 
+        public List<Tuple<string, decimal>> FacturacionPorMes_502ag()
+        {
+            DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
+            return dalFactura_502ag.FacturacionPorMes_502ag();
+        }
+
+        public List<Tuple<string, decimal>> VentasPorCombustible_502ag()
+        {
+            DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
+            return dalFactura_502ag.VentasPorCombustible_502ag();
+        }
+        public List<Tuple<string, decimal>> CargasPorHora_502ag()
+        {
+            DAL_Factura_502ag dalFactura_502ag = new DAL_Factura_502ag();
+            return dalFactura_502ag.CargasPorHora_502ag();
+        }
+
+        
     }
 }

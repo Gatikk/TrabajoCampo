@@ -107,7 +107,7 @@ namespace DAL_502ag
             }
         }
 
-        public List<SE_Evento_502ag> ObtenerEventosFiltrado_502ag(string usuario_502ag, DateTime fechaDesde_502ag, DateTime fechaHasta_502ag, string modulo_502ag, string eventoDesc_502ag, string criticidad_502ag, bool filtrarPorFecha_502ag)
+        public List<SE_Evento_502ag>  ObtenerEventosFiltrado_502ag(string usuario_502ag, DateTime fechaDesde_502ag, DateTime fechaHasta_502ag, string modulo_502ag, string eventoDesc_502ag, string criticidad_502ag, bool filtrarPorFecha_502ag)
         {
             List<SE_Evento_502ag> eventosFiltrados_502ag = new List<SE_Evento_502ag>();
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())

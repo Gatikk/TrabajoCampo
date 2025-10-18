@@ -137,5 +137,10 @@ namespace GUI
         {
             LimpiarPantalla_502ag();
         }
+
+        private void FormGenerarOrdenTrabajo_502ag_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

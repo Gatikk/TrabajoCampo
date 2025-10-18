@@ -31,10 +31,10 @@ namespace GUI
             try
             {
                 BLL_OrdenTrabajo_502ag bllOrdenTrabajo_502ag = new BLL_OrdenTrabajo_502ag();
-                if (dgvCombustibles_502ag.SelectedRows.Count <= 0) throw new Exception("Debe seleccionar una orden de trabajo.");
-                ordenTrabajoActual_502ag = bllOrdenTrabajo_502ag.ObtenerOrdenDeTrabajo_502ag(dgvCombustibles_502ag.SelectedRows[0].Cells[0].Value.ToString());
+                if (dgvOrdenes_502ag.SelectedRows.Count <= 0) throw new Exception("Debe seleccionar una orden de trabajo.");
+                ordenTrabajoActual_502ag = bllOrdenTrabajo_502ag.ObtenerOrdenDeTrabajo_502ag(dgvOrdenes_502ag.SelectedRows[0].Cells[0].Value.ToString());
                 buttonSeleccionarOrden_502ag.Enabled = false;
-                dgvCombustibles_502ag.Enabled = false;
+                dgvOrdenes_502ag.Enabled = false;
                 BLL_Vehiculo_502ag bllVehiculo_502ag = new BLL_Vehiculo_502ag();
                 BE_Vehiculo_502ag vehiculoActual_502ag = bllVehiculo_502ag.ObtenerVehiculo_502ag(ordenTrabajoActual_502ag.PatenteVehiculo_502ag);
                 if (vehiculoActual_502ag != null)
@@ -53,7 +53,7 @@ namespace GUI
                 {
                     ordenTrabajoActual_502ag = null;
                     buttonSeleccionarOrden_502ag.Enabled = true;
-                    dgvCombustibles_502ag.Enabled = true;
+                    dgvOrdenes_502ag.Enabled = true;
                     throw new Exception("Vehículo no encontrado.");
                 }
 
@@ -63,16 +63,28 @@ namespace GUI
 
         private void buttonVerObservacion_502ag_Click(object sender, EventArgs e)
         {
-            if (ordenTrabajoActual_502ag != null)
+            try
             {
-                MessageBox.Show($"{ordenTrabajoActual_502ag.Observaciones_502ag}");
+                if (dgvOrdenes_502ag.SelectedRows.Count == 0)
+                {
+                    throw new Exception("Debe seleccionar una orden de trabajo.");
+                }
+                else
+                {
+                    if (ordenTrabajoActual_502ag != null)
+                    {
+                        MessageBox.Show($"{ordenTrabajoActual_502ag.Observaciones_502ag}");
+                    }
+                    else
+                    {
+                        BLL_OrdenTrabajo_502ag bllOrdenTrabajo_502ag = new BLL_OrdenTrabajo_502ag();
+                        BE_OrdenTrabajo_502ag ordenTrabajoSeleccionado_502ag = bllOrdenTrabajo_502ag.ObtenerOrdenDeTrabajo_502ag(dgvOrdenes_502ag.SelectedRows[0].Cells[0].Value.ToString());
+                        MessageBox.Show($"{ordenTrabajoSeleccionado_502ag.Observaciones_502ag}");
+                    }
+                }
+
             }
-            else
-            {
-                BLL_OrdenTrabajo_502ag bllOrdenTrabajo_502ag = new BLL_OrdenTrabajo_502ag();
-                BE_OrdenTrabajo_502ag ordenTrabajoSeleccionado_502ag = bllOrdenTrabajo_502ag.ObtenerOrdenDeTrabajo_502ag(dgvCombustibles_502ag.SelectedRows[0].Cells[0].Value.ToString());
-                MessageBox.Show($"{ordenTrabajoSeleccionado_502ag.Observaciones_502ag}");
-            }
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
 
         private void buttonGenerarDiagnosticoFinal_502ag_Click(object sender, EventArgs e)
@@ -104,11 +116,11 @@ namespace GUI
         private void MostrarOrdenes_502ag()
         {
             BLL_OrdenTrabajo_502ag bllOrdenTrabajo_502ag = new BLL_OrdenTrabajo_502ag();
-            dgvCombustibles_502ag.Rows.Clear();
+            dgvOrdenes_502ag.Rows.Clear();
             List<BE_OrdenTrabajo_502ag> listaOrdenesAbiertas_502ag = bllOrdenTrabajo_502ag.ObtenerOrdenesDeTrabajoAbierta_502ag();
             foreach (BE_OrdenTrabajo_502ag ordenTrabajo_502ag in listaOrdenesAbiertas_502ag)
             {
-                dgvCombustibles_502ag.Rows.Add(ordenTrabajo_502ag.CodOrdenTrabajo_502ag, ordenTrabajo_502ag.PatenteVehiculo_502ag, ordenTrabajo_502ag.Fecha_502ag.ToString("dd/MM/yyyy"), ordenTrabajo_502ag.Hora_502ag.ToString(@"hh\:mm"));
+                dgvOrdenes_502ag.Rows.Add(ordenTrabajo_502ag.CodOrdenTrabajo_502ag, ordenTrabajo_502ag.PatenteVehiculo_502ag, ordenTrabajo_502ag.Fecha_502ag.ToString("dd/MM/yyyy"), ordenTrabajo_502ag.Hora_502ag.ToString(@"hh\:mm"));
             }
         }
 
@@ -125,7 +137,7 @@ namespace GUI
         {
             MostrarOrdenes_502ag();
             ordenTrabajoActual_502ag = null;
-            dgvCombustibles_502ag.Enabled = true;
+            dgvOrdenes_502ag.Enabled = true;
             buttonSeleccionarOrden_502ag.Enabled = true;
             tBPatente_502ag.Clear();
             tBMarca_502ag.Clear();
@@ -150,6 +162,7 @@ namespace GUI
             {
                 if (ordenTrabajoActual_502ag == null) throw new Exception("Debe haber una orden de trabajo seleccionada");
                 if (nUDRepuesto_502ag.Value <= 0) throw new Exception("La cantidad de repuestos debe ser mayor a 0.");
+                if (cBRepuesto_502ag.SelectedItem == null || string.IsNullOrWhiteSpace(cBRepuesto_502ag.SelectedItem.ToString()))throw new Exception("Debe seleccionar un repuesto.");
                 int codRepuesto_502ag = int.Parse(cBRepuesto_502ag.SelectedItem.ToString().Split(',')[0]);
                 BLL_RepuestoOrdenTrabajo_502ag bllRepuestoOT_502ag = new BLL_RepuestoOrdenTrabajo_502ag();
                 List<BE_RepuestoOrdenTrabajo_502ag> repuestosOT_502ag = bllRepuestoOT_502ag.ObtenerDatosIntermedia_502ag(ordenTrabajoActual_502ag.CodOrdenTrabajo_502ag);
@@ -217,6 +230,11 @@ namespace GUI
                 MostrarRepuestos_502ag();
             }
             catch (Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
+
+        private void FormGenerarDiagnosticoFinal_502ag_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

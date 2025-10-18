@@ -436,6 +436,7 @@
             this.Controls.Add(this.labelGenerarOT_502ag);
             this.Name = "FormGenerarOrdenTrabajo_502ag";
             this.Text = "FormGenerarOrdenTrabajo_502ag";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGenerarOrdenTrabajo_502ag_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 

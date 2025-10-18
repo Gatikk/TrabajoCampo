@@ -226,3 +226,5 @@ D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI_502ag.csproj.CoreCompi
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI_502ag.csproj.Up2Date
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.exe
 D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.pdb
+D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormVerReporteInteligente_502ag.resources
+D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\obj\Debug\GUI.FormMaestrosVehiculo_502ag.resources

@@ -42,7 +42,6 @@
             this.ColumnaFechaHora = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.buttonVerInformacion_502ag = new System.Windows.Forms.Button();
             this.cBDNI_502ag = new System.Windows.Forms.ComboBox();
-            this.cBNombre_502ag = new System.Windows.Forms.ComboBox();
             this.labelHasta_502ag = new System.Windows.Forms.Label();
             this.labelDesde_502ag = new System.Windows.Forms.Label();
             this.dTPHasta_502ag = new System.Windows.Forms.DateTimePicker();
@@ -52,6 +51,7 @@
             this.buttonActivar_502ag = new System.Windows.Forms.Button();
             this.buttonAplicar_502ag = new System.Windows.Forms.Button();
             this.labelDNI_502ag = new System.Windows.Forms.Label();
+            this.cBNombre_502ag = new System.Windows.Forms.ComboBox();
             this.labelNombre_502ag = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacoraClientes_502ag)).BeginInit();
             this.SuspendLayout();
@@ -172,19 +172,13 @@
             // 
             // cBDNI_502ag
             // 
+            this.cBDNI_502ag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cBDNI_502ag.FormattingEnabled = true;
             this.cBDNI_502ag.Location = new System.Drawing.Point(61, 312);
             this.cBDNI_502ag.Name = "cBDNI_502ag";
             this.cBDNI_502ag.Size = new System.Drawing.Size(200, 21);
             this.cBDNI_502ag.TabIndex = 40;
-            // 
-            // cBNombre_502ag
-            // 
-            this.cBNombre_502ag.FormattingEnabled = true;
-            this.cBNombre_502ag.Location = new System.Drawing.Point(382, 312);
-            this.cBNombre_502ag.Name = "cBNombre_502ag";
-            this.cBNombre_502ag.Size = new System.Drawing.Size(200, 21);
-            this.cBNombre_502ag.TabIndex = 41;
+            this.cBDNI_502ag.SelectedIndexChanged += new System.EventHandler(this.cBDNI_502ag_SelectedIndexChanged);
             // 
             // labelHasta_502ag
             // 
@@ -288,6 +282,15 @@
             this.labelDNI_502ag.TabIndex = 50;
             this.labelDNI_502ag.Text = "DNI";
             // 
+            // cBNombre_502ag
+            // 
+            this.cBNombre_502ag.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cBNombre_502ag.FormattingEnabled = true;
+            this.cBNombre_502ag.Location = new System.Drawing.Point(382, 312);
+            this.cBNombre_502ag.Name = "cBNombre_502ag";
+            this.cBNombre_502ag.Size = new System.Drawing.Size(200, 21);
+            this.cBNombre_502ag.TabIndex = 41;
+            // 
             // labelNombre_502ag
             // 
             this.labelNombre_502ag.AutoSize = true;
@@ -341,7 +344,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaActivo;
         private System.Windows.Forms.Button buttonVerInformacion_502ag;
         private System.Windows.Forms.ComboBox cBDNI_502ag;
-        private System.Windows.Forms.ComboBox cBNombre_502ag;
         private System.Windows.Forms.Label labelHasta_502ag;
         private System.Windows.Forms.Label labelDesde_502ag;
         private System.Windows.Forms.DateTimePicker dTPHasta_502ag;
@@ -351,7 +353,8 @@
         private System.Windows.Forms.Button buttonActivar_502ag;
         private System.Windows.Forms.Button buttonAplicar_502ag;
         private System.Windows.Forms.Label labelDNI_502ag;
-        private System.Windows.Forms.Label labelNombre_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFechaHora;
+        private System.Windows.Forms.ComboBox cBNombre_502ag;
+        private System.Windows.Forms.Label labelNombre_502ag;
     }
 }

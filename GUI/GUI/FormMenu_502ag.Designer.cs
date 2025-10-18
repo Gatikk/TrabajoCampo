@@ -61,10 +61,12 @@ namespace GUI
             this.buttonGenerarOT_502ag = new System.Windows.Forms.Button();
             this.buttonReportes_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuReportes_502ag = new System.Windows.Forms.Panel();
+            this.buttonVerReporteInteligente_502ag = new System.Windows.Forms.Button();
+            this.buttonVerFacturasTaller_502ag = new System.Windows.Forms.Button();
             this.buttonVerFacturas_502ag = new System.Windows.Forms.Button();
             this.buttonAyuda_502ag = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonVerFacturasTaller_502ag = new System.Windows.Forms.Button();
+            this.buttonMaestrosVehiculos_502ag = new System.Windows.Forms.Button();
             this.panelMenuLateral_502ag.SuspendLayout();
             this.panelSubMenuAdmin_502ag.SuspendLayout();
             this.panelSubMenuUsuario_502ag.SuspendLayout();
@@ -334,6 +336,7 @@ namespace GUI
             // 
             // panelSubMenuMaestros_502ag
             // 
+            this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosVehiculos_502ag);
             this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosRepuestos_502ag);
             this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonBitacoraCambiosCliente_502ag);
             this.panelSubMenuMaestros_502ag.Controls.Add(this.buttonMaestrosCombustibles_502ag);
@@ -341,7 +344,7 @@ namespace GUI
             this.panelSubMenuMaestros_502ag.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSubMenuMaestros_502ag.Location = new System.Drawing.Point(3, 587);
             this.panelSubMenuMaestros_502ag.Name = "panelSubMenuMaestros_502ag";
-            this.panelSubMenuMaestros_502ag.Size = new System.Drawing.Size(222, 177);
+            this.panelSubMenuMaestros_502ag.Size = new System.Drawing.Size(222, 225);
             this.panelSubMenuMaestros_502ag.TabIndex = 12;
             // 
             // buttonMaestrosRepuestos_502ag
@@ -419,7 +422,7 @@ namespace GUI
             this.buttonVentas_502ag.FlatAppearance.BorderSize = 0;
             this.buttonVentas_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVentas_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVentas_502ag.Location = new System.Drawing.Point(3, 770);
+            this.buttonVentas_502ag.Location = new System.Drawing.Point(3, 818);
             this.buttonVentas_502ag.Name = "buttonVentas_502ag";
             this.buttonVentas_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonVentas_502ag.TabIndex = 12;
@@ -432,7 +435,7 @@ namespace GUI
             // 
             this.panelSubMenuVentas_502ag.Controls.Add(this.buttonCargarCombustible_502ag);
             this.panelSubMenuVentas_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 823);
+            this.panelSubMenuVentas_502ag.Location = new System.Drawing.Point(3, 871);
             this.panelSubMenuVentas_502ag.Name = "panelSubMenuVentas_502ag";
             this.panelSubMenuVentas_502ag.Size = new System.Drawing.Size(222, 48);
             this.panelSubMenuVentas_502ag.TabIndex = 13;
@@ -461,7 +464,7 @@ namespace GUI
             this.buttonTaller_502ag.FlatAppearance.BorderSize = 0;
             this.buttonTaller_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonTaller_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonTaller_502ag.Location = new System.Drawing.Point(3, 877);
+            this.buttonTaller_502ag.Location = new System.Drawing.Point(3, 925);
             this.buttonTaller_502ag.Name = "buttonTaller_502ag";
             this.buttonTaller_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonTaller_502ag.TabIndex = 14;
@@ -476,7 +479,7 @@ namespace GUI
             this.panelSubMenuTaller_502ag.Controls.Add(this.buttonGenerarDF_502ag);
             this.panelSubMenuTaller_502ag.Controls.Add(this.buttonGenerarOT_502ag);
             this.panelSubMenuTaller_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelSubMenuTaller_502ag.Location = new System.Drawing.Point(3, 930);
+            this.panelSubMenuTaller_502ag.Location = new System.Drawing.Point(3, 978);
             this.panelSubMenuTaller_502ag.Name = "panelSubMenuTaller_502ag";
             this.panelSubMenuTaller_502ag.Size = new System.Drawing.Size(222, 132);
             this.panelSubMenuTaller_502ag.TabIndex = 20;
@@ -539,7 +542,7 @@ namespace GUI
             this.buttonReportes_502ag.FlatAppearance.BorderSize = 0;
             this.buttonReportes_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReportes_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 1068);
+            this.buttonReportes_502ag.Location = new System.Drawing.Point(3, 1116);
             this.buttonReportes_502ag.Name = "buttonReportes_502ag";
             this.buttonReportes_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonReportes_502ag.TabIndex = 21;
@@ -550,12 +553,47 @@ namespace GUI
             // 
             // panelSubMenuReportes_502ag
             // 
+            this.panelSubMenuReportes_502ag.Controls.Add(this.buttonVerReporteInteligente_502ag);
             this.panelSubMenuReportes_502ag.Controls.Add(this.buttonVerFacturasTaller_502ag);
             this.panelSubMenuReportes_502ag.Controls.Add(this.buttonVerFacturas_502ag);
-            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 1121);
+            this.panelSubMenuReportes_502ag.Location = new System.Drawing.Point(3, 1169);
             this.panelSubMenuReportes_502ag.Name = "panelSubMenuReportes_502ag";
-            this.panelSubMenuReportes_502ag.Size = new System.Drawing.Size(222, 90);
+            this.panelSubMenuReportes_502ag.Size = new System.Drawing.Size(222, 134);
             this.panelSubMenuReportes_502ag.TabIndex = 13;
+            // 
+            // buttonVerReporteInteligente_502ag
+            // 
+            this.buttonVerReporteInteligente_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonVerReporteInteligente_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonVerReporteInteligente_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVerReporteInteligente_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVerReporteInteligente_502ag.Location = new System.Drawing.Point(0, 82);
+            this.buttonVerReporteInteligente_502ag.Name = "buttonVerReporteInteligente_502ag";
+            this.buttonVerReporteInteligente_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonVerReporteInteligente_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonVerReporteInteligente_502ag.TabIndex = 16;
+            this.buttonVerReporteInteligente_502ag.Tag = "Ver Reporte Inteligente";
+            this.buttonVerReporteInteligente_502ag.Text = "Ver Reporte Inteligente";
+            this.buttonVerReporteInteligente_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonVerReporteInteligente_502ag.UseVisualStyleBackColor = true;
+            this.buttonVerReporteInteligente_502ag.Click += new System.EventHandler(this.buttonVerReporteInteligente_502ag_Click);
+            // 
+            // buttonVerFacturasTaller_502ag
+            // 
+            this.buttonVerFacturasTaller_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonVerFacturasTaller_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonVerFacturasTaller_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVerFacturasTaller_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVerFacturasTaller_502ag.Location = new System.Drawing.Point(0, 41);
+            this.buttonVerFacturasTaller_502ag.Name = "buttonVerFacturasTaller_502ag";
+            this.buttonVerFacturasTaller_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonVerFacturasTaller_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonVerFacturasTaller_502ag.TabIndex = 15;
+            this.buttonVerFacturasTaller_502ag.Tag = "Ver Facturas";
+            this.buttonVerFacturasTaller_502ag.Text = "Ver Facturas Taller";
+            this.buttonVerFacturasTaller_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonVerFacturasTaller_502ag.UseVisualStyleBackColor = true;
+            this.buttonVerFacturasTaller_502ag.Click += new System.EventHandler(this.buttonVerFacturasTaller_502ag_Click);
             // 
             // buttonVerFacturas_502ag
             // 
@@ -581,7 +619,7 @@ namespace GUI
             this.buttonAyuda_502ag.FlatAppearance.BorderSize = 0;
             this.buttonAyuda_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAyuda_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 1217);
+            this.buttonAyuda_502ag.Location = new System.Drawing.Point(3, 1309);
             this.buttonAyuda_502ag.Name = "buttonAyuda_502ag";
             this.buttonAyuda_502ag.Size = new System.Drawing.Size(222, 47);
             this.buttonAyuda_502ag.TabIndex = 22;
@@ -599,22 +637,22 @@ namespace GUI
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
             // 
-            // buttonVerFacturasTaller_502ag
+            // buttonMaestrosVehiculos_502ag
             // 
-            this.buttonVerFacturasTaller_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonVerFacturasTaller_502ag.FlatAppearance.BorderSize = 0;
-            this.buttonVerFacturasTaller_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonVerFacturasTaller_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVerFacturasTaller_502ag.Location = new System.Drawing.Point(0, 41);
-            this.buttonVerFacturasTaller_502ag.Name = "buttonVerFacturasTaller_502ag";
-            this.buttonVerFacturasTaller_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonVerFacturasTaller_502ag.Size = new System.Drawing.Size(222, 41);
-            this.buttonVerFacturasTaller_502ag.TabIndex = 15;
-            this.buttonVerFacturasTaller_502ag.Tag = "Ver Facturas";
-            this.buttonVerFacturasTaller_502ag.Text = "Ver Facturas Taller";
-            this.buttonVerFacturasTaller_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonVerFacturasTaller_502ag.UseVisualStyleBackColor = true;
-            this.buttonVerFacturasTaller_502ag.Click += new System.EventHandler(this.buttonVerFacturasTaller_502ag_Click);
+            this.buttonMaestrosVehiculos_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMaestrosVehiculos_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonMaestrosVehiculos_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaestrosVehiculos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonMaestrosVehiculos_502ag.Location = new System.Drawing.Point(0, 164);
+            this.buttonMaestrosVehiculos_502ag.Name = "buttonMaestrosVehiculos_502ag";
+            this.buttonMaestrosVehiculos_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonMaestrosVehiculos_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonMaestrosVehiculos_502ag.TabIndex = 14;
+            this.buttonMaestrosVehiculos_502ag.Tag = "Gestion de Vehiculos";
+            this.buttonMaestrosVehiculos_502ag.Text = "Vehiculos";
+            this.buttonMaestrosVehiculos_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMaestrosVehiculos_502ag.UseVisualStyleBackColor = true;
+            this.buttonMaestrosVehiculos_502ag.Click += new System.EventHandler(this.buttonMaestrosVehiculos_502ag_Click);
             // 
             // FormMenu_502ag
             // 
@@ -680,5 +718,7 @@ namespace GUI
         private System.Windows.Forms.Button buttonBitacoraCambiosCliente_502ag;
         private System.Windows.Forms.Button buttonMaestrosRepuestos_502ag;
         private System.Windows.Forms.Button buttonVerFacturasTaller_502ag;
+        private System.Windows.Forms.Button buttonVerReporteInteligente_502ag;
+        private System.Windows.Forms.Button buttonMaestrosVehiculos_502ag;
     }
 }

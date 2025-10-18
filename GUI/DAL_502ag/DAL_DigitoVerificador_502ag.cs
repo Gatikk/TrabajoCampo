@@ -22,8 +22,7 @@ namespace DAL_502ag
                     cmd_502ag.Parameters.AddWithValue("@DVV_502ag", dvv_502ag);
                     cmd_502ag.Parameters.AddWithValue("@NombreTabla_502ag", nombreTabla_502ag);
                     cmd_502ag.ExecuteNonQuery();
-                }
-                
+                }  
             }
         }
 

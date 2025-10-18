@@ -30,7 +30,7 @@
         {
             this.labelGenerarDF_502ag = new System.Windows.Forms.Label();
             this.labelOrdenesAbiertas_502ag = new System.Windows.Forms.Label();
-            this.dgvCombustibles_502ag = new System.Windows.Forms.DataGridView();
+            this.dgvOrdenes_502ag = new System.Windows.Forms.DataGridView();
             this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaPatente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaFecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +66,7 @@
             this.labelAgregarRepuesto_502ag = new System.Windows.Forms.Label();
             this.buttonAgregar_502ag = new System.Windows.Forms.Button();
             this.buttonBajaRepuesto_502ag = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCombustibles_502ag)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes_502ag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDHoras_502ag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepuestos_502ag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDRepuesto_502ag)).BeginInit();
@@ -92,26 +92,26 @@
             this.labelOrdenesAbiertas_502ag.TabIndex = 1;
             this.labelOrdenesAbiertas_502ag.Text = "Órdenes Abiertas";
             // 
-            // dgvCombustibles_502ag
+            // dgvOrdenes_502ag
             // 
-            this.dgvCombustibles_502ag.AllowUserToAddRows = false;
-            this.dgvCombustibles_502ag.AllowUserToDeleteRows = false;
-            this.dgvCombustibles_502ag.AllowUserToResizeColumns = false;
-            this.dgvCombustibles_502ag.AllowUserToResizeRows = false;
-            this.dgvCombustibles_502ag.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCombustibles_502ag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCombustibles_502ag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvOrdenes_502ag.AllowUserToAddRows = false;
+            this.dgvOrdenes_502ag.AllowUserToDeleteRows = false;
+            this.dgvOrdenes_502ag.AllowUserToResizeColumns = false;
+            this.dgvOrdenes_502ag.AllowUserToResizeRows = false;
+            this.dgvOrdenes_502ag.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOrdenes_502ag.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrdenes_502ag.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaCodigo,
             this.ColumnaPatente,
             this.ColumnaFecha,
             this.ColumnaHora});
-            this.dgvCombustibles_502ag.Location = new System.Drawing.Point(16, 66);
-            this.dgvCombustibles_502ag.MultiSelect = false;
-            this.dgvCombustibles_502ag.Name = "dgvCombustibles_502ag";
-            this.dgvCombustibles_502ag.ReadOnly = true;
-            this.dgvCombustibles_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCombustibles_502ag.Size = new System.Drawing.Size(332, 123);
-            this.dgvCombustibles_502ag.TabIndex = 38;
+            this.dgvOrdenes_502ag.Location = new System.Drawing.Point(16, 66);
+            this.dgvOrdenes_502ag.MultiSelect = false;
+            this.dgvOrdenes_502ag.Name = "dgvOrdenes_502ag";
+            this.dgvOrdenes_502ag.ReadOnly = true;
+            this.dgvOrdenes_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvOrdenes_502ag.Size = new System.Drawing.Size(332, 123);
+            this.dgvOrdenes_502ag.TabIndex = 38;
             // 
             // ColumnaCodigo
             // 
@@ -509,12 +509,13 @@
             this.Controls.Add(this.labelDetallesVehiculo_502ag);
             this.Controls.Add(this.buttonVerObservacion_502ag);
             this.Controls.Add(this.buttonSeleccionarOrden_502ag);
-            this.Controls.Add(this.dgvCombustibles_502ag);
+            this.Controls.Add(this.dgvOrdenes_502ag);
             this.Controls.Add(this.labelOrdenesAbiertas_502ag);
             this.Controls.Add(this.labelGenerarDF_502ag);
             this.Name = "FormGenerarDiagnosticoFinal_502ag";
             this.Text = "FormGenerarDiagnosticoFinal_502ag";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCombustibles_502ag)).EndInit();
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGenerarDiagnosticoFinal_502ag_FormClosed);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrdenes_502ag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDHoras_502ag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepuestos_502ag)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nUDRepuesto_502ag)).EndInit();
@@ -527,7 +528,7 @@
 
         private System.Windows.Forms.Label labelGenerarDF_502ag;
         private System.Windows.Forms.Label labelOrdenesAbiertas_502ag;
-        private System.Windows.Forms.DataGridView dgvCombustibles_502ag;
+        private System.Windows.Forms.DataGridView dgvOrdenes_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPatente;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaFecha;
