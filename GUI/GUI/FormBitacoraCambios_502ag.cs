@@ -67,9 +67,10 @@ namespace GUI
         {
             try
             {
-                BLL_ClienteBitacora_502ag bllClienteBitacora_502ag = new BLL_ClienteBitacora_502ag();
                 if (dgvBitacoraClientes_502ag.SelectedRows.Count <= 0) throw new Exception($"No hay nada seleccionado");
                 if (dgvBitacoraClientes_502ag.Rows.Count <= 0) throw new Exception("No hay nada para seleccionar");
+                if (bool.Parse(dgvBitacoraClientes_502ag.SelectedRows[0].Cells[9].Value.ToString()) == true) { throw new Exception("El cliente ya se encuentra activo"); }
+                BLL_ClienteBitacora_502ag bllClienteBitacora_502ag = new BLL_ClienteBitacora_502ag();
                 DateTime fechaHora_502ag = DateTime.Parse(dgvBitacoraClientes_502ag.SelectedRows[0].Cells[10].Value.ToString());
                 BE_ClienteBitacora_502ag clienteSeleccionado_502ag = bllClienteBitacora_502ag.ObtenerClienteBitacora_502ag(fechaHora_502ag);
                 bllClienteBitacora_502ag.ActivarCliente_502ag(clienteSeleccionado_502ag);
@@ -237,6 +238,24 @@ namespace GUI
             catch (Exception ex)
             {
                 MessageBox.Show($"Error: {ex.Message}");
+            }
+        }
+
+        private void dTPHasta_502ag_ValueChanged(object sender, EventArgs e)
+        {
+            if (dTPHasta_502ag.Value.Date > DateTime.Now.Date)
+            {
+                dTPHasta_502ag.Value = DateTime.Now;
+                MessageBox.Show("La fecha HASTA no puede ser mayor a la fecha de hoy");
+            }
+        }
+
+        private void dTPDesde_502ag_ValueChanged(object sender, EventArgs e)
+        {
+            if (dTPDesde_502ag.Value.Date > DateTime.Now.Date)
+            {
+                dTPDesde_502ag.Value = DateTime.Now;
+                MessageBox.Show("La fecha DESDE no puede ser mayor a la fecha de hoy");
             }
         }
     }

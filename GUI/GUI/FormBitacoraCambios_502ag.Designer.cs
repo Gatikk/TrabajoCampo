@@ -207,6 +207,7 @@
             this.dTPHasta_502ag.Name = "dTPHasta_502ag";
             this.dTPHasta_502ag.Size = new System.Drawing.Size(200, 20);
             this.dTPHasta_502ag.TabIndex = 43;
+            this.dTPHasta_502ag.ValueChanged += new System.EventHandler(this.dTPHasta_502ag_ValueChanged);
             // 
             // dTPDesde_502ag
             // 
@@ -215,6 +216,7 @@
             this.dTPDesde_502ag.Name = "dTPDesde_502ag";
             this.dTPDesde_502ag.Size = new System.Drawing.Size(201, 20);
             this.dTPDesde_502ag.TabIndex = 42;
+            this.dTPDesde_502ag.ValueChanged += new System.EventHandler(this.dTPDesde_502ag_ValueChanged);
             // 
             // buttonLimpiar_502ag
             // 

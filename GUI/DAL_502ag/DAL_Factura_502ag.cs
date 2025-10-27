@@ -346,14 +346,14 @@ namespace DAL_502ag
             using (SqlConnection cx_502ag = DAL_Conexion_502ag.ObtenerConexion_502ag())
             {
                 cx_502ag.Open();
-                string query_502ag = @"SELECT NombreCombustible_502ag, SUM(Monto_502ag) AS TotalVentas_502ag FROM Factura_502ag GROUP BY NombreCombustible_502ag ORDER BY TotalVentas_502ag DESC;";
+                string query_502ag = @"SELECT c.Nombre_502ag, SUM(f.Monto_502ag) AS TotalVentas_502ag FROM Factura_502ag f INNER JOIN Combustible_502ag c ON  f.NombreCombustible_502ag = c.Nombre_502ag GROUP BY c.Nombre_502ag ORDER BY TotalVentas_502ag DESC;";
                 using (SqlCommand cmd_502ag = new SqlCommand(query_502ag, cx_502ag))
                 {
                     using (SqlDataReader dr_502ag = cmd_502ag.ExecuteReader())
                     {
                         while (dr_502ag.Read())
                         {
-                            string nombreCombustible_502ag = dr_502ag["NombreCombustible_502ag"].ToString();
+                            string nombreCombustible_502ag = dr_502ag["Nombre_502ag"].ToString();
                             decimal totalVentas_502ag = decimal.Parse(dr_502ag["TotalVentas_502ag"].ToString());
                             resultados_502ag.Add(new Tuple<string, decimal>(nombreCombustible_502ag, totalVentas_502ag));
                         }
