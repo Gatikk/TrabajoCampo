@@ -57,9 +57,9 @@
             this.labelPrecio_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
             this.labelPrecio_502ag.Location = new System.Drawing.Point(264, 333);
             this.labelPrecio_502ag.Name = "labelPrecio_502ag";
-            this.labelPrecio_502ag.Size = new System.Drawing.Size(83, 22);
+            this.labelPrecio_502ag.Size = new System.Drawing.Size(61, 22);
             this.labelPrecio_502ag.TabIndex = 67;
-            this.labelPrecio_502ag.Text = "Precio_T";
+            this.labelPrecio_502ag.Text = "Precio";
             // 
             // labelCantidad_502ag
             // 

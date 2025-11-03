@@ -32,6 +32,7 @@
             this.buttonRealizarRestore_502ag = new System.Windows.Forms.Button();
             this.buttonRecalcularDigito_502ag = new System.Windows.Forms.Button();
             this.labelInconsistencia_502ag = new System.Windows.Forms.Label();
+            this.buttonVerInconsistencias_502ag = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonSalir_502ag
@@ -40,7 +41,7 @@
             this.buttonSalir_502ag.FlatAppearance.BorderSize = 0;
             this.buttonSalir_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalir_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonSalir_502ag.Location = new System.Drawing.Point(78, 146);
+            this.buttonSalir_502ag.Location = new System.Drawing.Point(78, 199);
             this.buttonSalir_502ag.Name = "buttonSalir_502ag";
             this.buttonSalir_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonSalir_502ag.TabIndex = 34;
@@ -86,11 +87,26 @@
             this.labelInconsistencia_502ag.TabIndex = 35;
             this.labelInconsistencia_502ag.Text = "INCONSISTENCIA PRESENTE EN LA BD.";
             // 
+            // buttonVerInconsistencias_502ag
+            // 
+            this.buttonVerInconsistencias_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonVerInconsistencias_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonVerInconsistencias_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVerInconsistencias_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonVerInconsistencias_502ag.Location = new System.Drawing.Point(78, 146);
+            this.buttonVerInconsistencias_502ag.Name = "buttonVerInconsistencias_502ag";
+            this.buttonVerInconsistencias_502ag.Size = new System.Drawing.Size(132, 47);
+            this.buttonVerInconsistencias_502ag.TabIndex = 36;
+            this.buttonVerInconsistencias_502ag.Text = "Ver Inconsitencias";
+            this.buttonVerInconsistencias_502ag.UseVisualStyleBackColor = false;
+            this.buttonVerInconsistencias_502ag.Click += new System.EventHandler(this.buttonVerInconsistencias_502ag_Click);
+            // 
             // FormDigitoVerificador_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 216);
+            this.ClientSize = new System.Drawing.Size(313, 257);
+            this.Controls.Add(this.buttonVerInconsistencias_502ag);
             this.Controls.Add(this.labelInconsistencia_502ag);
             this.Controls.Add(this.buttonSalir_502ag);
             this.Controls.Add(this.buttonRealizarRestore_502ag);
@@ -108,5 +124,6 @@
         private System.Windows.Forms.Button buttonRealizarRestore_502ag;
         private System.Windows.Forms.Button buttonRecalcularDigito_502ag;
         private System.Windows.Forms.Label labelInconsistencia_502ag;
+        private System.Windows.Forms.Button buttonVerInconsistencias_502ag;
     }
 }

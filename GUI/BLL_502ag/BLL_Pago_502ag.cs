@@ -45,7 +45,7 @@ namespace BLL_502ag
             string fechaCad_502ag = cifrador_502ag.DesencryptadorReversible_502ag(tarjeta_502ag.FechaCaducidad_502ag);
             string[] fecha = fechaCad_502ag.Split('/');
             if (int.Parse(fecha[1]) <= 24) return false;
-            if (int.Parse(fecha[0]) <= 9 && int.Parse(fecha[1]) <= 25) return false;
+            if (int.Parse(fecha[0]) < 11 && int.Parse(fecha[1]) <= 25) return false;
             return true;
         }
     }

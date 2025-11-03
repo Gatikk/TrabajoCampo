@@ -85,5 +85,15 @@ namespace GUI
         {
             Environment.Exit(0);
         }
+
+        private void buttonVerInconsistencias_502ag_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
+                MessageBox.Show(bllDigitoVerificador_502ag.DetectarInconsistencias_502ag());
+            }
+            catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
+        }
     }
 }
