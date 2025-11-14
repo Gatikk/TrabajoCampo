@@ -15,8 +15,7 @@ namespace GUI
     {
         public FormRegistrarVehiculo_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 

@@ -47,6 +47,7 @@ namespace GUI
             this.buttonIniciarSesion_502ag = new System.Windows.Forms.Button();
             this.buttonMaestros_502ag = new System.Windows.Forms.Button();
             this.panelSubMenuMaestros_502ag = new System.Windows.Forms.Panel();
+            this.buttonMaestrosVehiculos_502ag = new System.Windows.Forms.Button();
             this.buttonMaestrosRepuestos_502ag = new System.Windows.Forms.Button();
             this.buttonBitacoraCambiosCliente_502ag = new System.Windows.Forms.Button();
             this.buttonMaestrosCombustibles_502ag = new System.Windows.Forms.Button();
@@ -66,7 +67,6 @@ namespace GUI
             this.buttonVerFacturas_502ag = new System.Windows.Forms.Button();
             this.buttonAyuda_502ag = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.buttonMaestrosVehiculos_502ag = new System.Windows.Forms.Button();
             this.panelMenuLateral_502ag.SuspendLayout();
             this.panelSubMenuAdmin_502ag.SuspendLayout();
             this.panelSubMenuUsuario_502ag.SuspendLayout();
@@ -347,6 +347,23 @@ namespace GUI
             this.panelSubMenuMaestros_502ag.Size = new System.Drawing.Size(222, 225);
             this.panelSubMenuMaestros_502ag.TabIndex = 12;
             // 
+            // buttonMaestrosVehiculos_502ag
+            // 
+            this.buttonMaestrosVehiculos_502ag.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonMaestrosVehiculos_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonMaestrosVehiculos_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMaestrosVehiculos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonMaestrosVehiculos_502ag.Location = new System.Drawing.Point(0, 164);
+            this.buttonMaestrosVehiculos_502ag.Name = "buttonMaestrosVehiculos_502ag";
+            this.buttonMaestrosVehiculos_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.buttonMaestrosVehiculos_502ag.Size = new System.Drawing.Size(222, 41);
+            this.buttonMaestrosVehiculos_502ag.TabIndex = 14;
+            this.buttonMaestrosVehiculos_502ag.Tag = "Gestion de Vehiculos";
+            this.buttonMaestrosVehiculos_502ag.Text = "Vehiculos";
+            this.buttonMaestrosVehiculos_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonMaestrosVehiculos_502ag.UseVisualStyleBackColor = true;
+            this.buttonMaestrosVehiculos_502ag.Click += new System.EventHandler(this.buttonMaestrosVehiculos_502ag_Click);
+            // 
             // buttonMaestrosRepuestos_502ag
             // 
             this.buttonMaestrosRepuestos_502ag.Dock = System.Windows.Forms.DockStyle.Top;
@@ -626,6 +643,7 @@ namespace GUI
             this.buttonAyuda_502ag.Text = "Ayuda";
             this.buttonAyuda_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAyuda_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda_502ag.Click += new System.EventHandler(this.buttonAyuda_502ag_Click);
             // 
             // pictureBox1
             // 
@@ -636,23 +654,6 @@ namespace GUI
             this.pictureBox1.Size = new System.Drawing.Size(267, 149);
             this.pictureBox1.TabIndex = 9;
             this.pictureBox1.TabStop = false;
-            // 
-            // buttonMaestrosVehiculos_502ag
-            // 
-            this.buttonMaestrosVehiculos_502ag.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonMaestrosVehiculos_502ag.FlatAppearance.BorderSize = 0;
-            this.buttonMaestrosVehiculos_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMaestrosVehiculos_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonMaestrosVehiculos_502ag.Location = new System.Drawing.Point(0, 164);
-            this.buttonMaestrosVehiculos_502ag.Name = "buttonMaestrosVehiculos_502ag";
-            this.buttonMaestrosVehiculos_502ag.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.buttonMaestrosVehiculos_502ag.Size = new System.Drawing.Size(222, 41);
-            this.buttonMaestrosVehiculos_502ag.TabIndex = 14;
-            this.buttonMaestrosVehiculos_502ag.Tag = "Gestion de Vehiculos";
-            this.buttonMaestrosVehiculos_502ag.Text = "Vehiculos";
-            this.buttonMaestrosVehiculos_502ag.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonMaestrosVehiculos_502ag.UseVisualStyleBackColor = true;
-            this.buttonMaestrosVehiculos_502ag.Click += new System.EventHandler(this.buttonMaestrosVehiculos_502ag_Click);
             // 
             // FormMenu_502ag
             // 

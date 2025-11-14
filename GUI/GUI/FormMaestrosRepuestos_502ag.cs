@@ -17,8 +17,7 @@ namespace GUI
         public string opcion_502ag = "Consulta";
         public FormMaestrosRepuestos_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             Mostrar_502ag();
             buttonAplicar_502ag.Enabled = false;

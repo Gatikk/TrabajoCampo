@@ -18,8 +18,7 @@ namespace GUI
         BE_OrdenTrabajo_502ag ordenTrabajoActual_502ag;
         public FormGenerarDiagnosticoFinal_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             MostrarOrdenes_502ag();
             MostrarEnComboBox_502ag();

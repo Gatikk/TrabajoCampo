@@ -21,8 +21,7 @@ namespace GUI
         private string msgApellido_502ag, msgNombre_502ag, msgCombustible_502ag, msgCantidadCargada_502ag, msgMonto_502ag, msgFecha_502ag, msgHora_502ag, msgLitros_502ag;
         public FormCobrarCliente_502ag(BE_Factura_502ag factura_502ag)
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             rTBFacturaDatos_502ag.ReadOnly = true;

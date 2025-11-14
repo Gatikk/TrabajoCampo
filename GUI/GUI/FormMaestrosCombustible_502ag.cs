@@ -21,8 +21,7 @@ namespace GUI
         private string msgPrecioNoValido_502ag, msgCantidadIncorrecta_502ag, msgPrecioIncorrecto_502ag, msgLitros_502ag;
         public FormMaestrosCombustible_502ag(FormMenu_502ag formMenu_502ag)
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             buttonAplicar_502ag.Enabled = false;

@@ -18,8 +18,7 @@ namespace GUI
         public FormMaestrosVehiculo_502ag()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             Mostrar_502ag();
             tBPatente_502ag.Enabled = false;
             tBMarca_502ag.Enabled = false;

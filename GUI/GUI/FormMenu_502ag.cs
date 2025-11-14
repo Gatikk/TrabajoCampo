@@ -23,8 +23,7 @@ namespace GUI
 
         public FormMenu_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             panelSubMenuAdmin_502ag.Visible = false;
@@ -391,6 +390,11 @@ namespace GUI
             this.Hide();
             FormMaestrosVehiculo_502ag formMaestrosVehiculo_502ag = new FormMaestrosVehiculo_502ag();
             formMaestrosVehiculo_502ag.Show();
+        }
+
+        private void buttonAyuda_502ag_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1rBZ6yDeokVvQbplN_HHjHqQji06Q8fvfTm7zgQCy49w/edit?usp=sharing");
         }
 
         private void ActivarBotonesSubMenu_502ag()

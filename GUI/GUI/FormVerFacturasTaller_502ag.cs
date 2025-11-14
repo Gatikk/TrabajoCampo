@@ -17,8 +17,7 @@ namespace GUI
         List<BE_FacturaTaller_502ag> listaFacturas_502ag = new List<BE_FacturaTaller_502ag>();
         public FormVerFacturasTaller_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             AgregarElementosACBOrdenarPor_502ag();
             AgregarElementosACBFiltrarPor_502ag();

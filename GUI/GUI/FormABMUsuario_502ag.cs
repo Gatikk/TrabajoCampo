@@ -27,8 +27,7 @@ namespace GUI
         private string modificarA_502ag, confirmarModificacion_502ag;
         public FormABMUsuario_502ag(FormMenu_502ag menuOriginal_502ag)
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             Mostrar_502ag(dgvUsuarios_502ag);    

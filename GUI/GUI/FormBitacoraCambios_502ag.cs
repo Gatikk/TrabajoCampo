@@ -19,8 +19,7 @@ namespace GUI
         List<BE_ClienteBitacora_502ag> listaClientesBitacora_502ag = new List<BE_ClienteBitacora_502ag>();
         public FormBitacoraCambios_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             ObtenerClientesBitacora_502ag();
             Mostrar_502ag();

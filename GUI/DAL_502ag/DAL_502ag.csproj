@@ -78,5 +78,8 @@
       <Name>SE_502ag</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="DAL.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

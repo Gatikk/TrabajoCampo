@@ -24,8 +24,7 @@ namespace GUI
 
         public FormBackupRestore_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             Actualizar_502ag(SER_Traductor_502ag.GestorTraductor_502ag);
         }

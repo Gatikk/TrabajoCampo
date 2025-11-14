@@ -25,8 +25,7 @@ namespace GUI
         public FormVerFacturas_502ag(FormMenu_502ag formMenu_502ag)
         {
             BLL_Factura_502ag bllFactura_502ag = new BLL_Factura_502ag();
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             menu_502ag = formMenu_502ag;

@@ -20,8 +20,7 @@ namespace GUI
         private string msgFechaDesdeNoMayorHasta_502ag, msgNadaParaImprimir_502ag, msgImpresionExitosa_502ag;
         public FormBitacoraEventos_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             dTPDesde_502ag.Enabled = false;
             dTPHasta_502ag.Enabled = false;

@@ -27,8 +27,7 @@ namespace GUI
         private string msgPermisosAsignados_502ag, msgJerarquiaRota_502ag, msgNoDesasignarTodo_502ag, msgPermisosDesasignados_502ag;
         public FormPerfiles_502ag(FormMenu_502ag formMenu_502ag)
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             MostrarPermisos_502ag(cLBPermisos_502ag);

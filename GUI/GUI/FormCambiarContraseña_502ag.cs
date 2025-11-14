@@ -21,8 +21,7 @@ namespace GUI
         private string noContraseñaActual_502ag, contraseñaCambiada_502ag, siContraseñaActual_502ag, contraseñaNoCoincide_502ag;
         public FormCambiarContraseña_502ag(FormMenu_502ag menuOriginal_502ag)
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             bllsUsuario_502ag = new BLLS_Usuario_502ag();

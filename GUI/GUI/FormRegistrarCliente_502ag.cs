@@ -18,8 +18,7 @@ namespace GUI
         private string msgClienteRegistrado_502ag, capRegistroExitoso_502ag;
         public FormRegistrarCliente_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);
             SER_Traductor_502ag.GestorTraductor_502ag.CargarTraducciones_502ag(this);

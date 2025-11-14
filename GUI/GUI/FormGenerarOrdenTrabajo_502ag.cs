@@ -18,8 +18,7 @@ namespace GUI
         BE_Cliente_502ag clienteOT_502ag;
         public FormGenerarOrdenTrabajo_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
         }
 

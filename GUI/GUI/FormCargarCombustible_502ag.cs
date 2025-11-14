@@ -35,8 +35,7 @@ namespace GUI
         BE_Factura_502ag facturaActual_502ag;
         public FormCargarCombustible_502ag(FormMenu_502ag formMenu_502ag)
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             menu_502ag = formMenu_502ag;
             InitializeComponent();
             SERVICIOS_502ag.SER_Traductor_502ag.GestorTraductor_502ag.Suscribir_502ag(this);

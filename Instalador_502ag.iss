@@ -50,6 +50,7 @@ Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\scriptDropBD_502a
 Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\MsSqlCmdLnUtils.msi"; DestDir: "{tmp}"; Flags: deleteafterinstall
 Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\msodbcsql.msi"; DestDir: "{tmp}"; Flags: deleteafterinstall
 Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\GUI\bin\Debug\Resources\logo.ico"; DestDir: "{app}"; Flags: ignoreversion
+Source: "D:\GitHub\TrabajoCampo\TrabajoCampo\GUI\DAL_502ag\DAL.config"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{autoprograms}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\logo.ico"
@@ -256,7 +257,7 @@ var
   I: Integer;
   CurrentLine: String;
 begin
-  ConfigPath := ExpandConstant('{app}\{#MyAppExeName}.config');
+  ConfigPath := ExpandConstant('{app}\DAL.config');
 
   if FileExists(ConfigPath) then
   begin

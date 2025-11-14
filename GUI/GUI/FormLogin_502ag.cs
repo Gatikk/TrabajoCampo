@@ -23,8 +23,7 @@ namespace GUI
         public FormLogin_502ag()
         {
             InitializeComponent();
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             MostrarContraseña_502ag();
         }
         private void buttonIniciarSesion_Click(object sender, EventArgs e)

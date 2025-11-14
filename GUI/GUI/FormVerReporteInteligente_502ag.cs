@@ -20,8 +20,7 @@ namespace GUI
     {
         public FormVerReporteInteligente_502ag()
         {
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(500, 200);
+            StartPosition = FormStartPosition.CenterScreen;
             InitializeComponent();
             rBFacturacionMensualPorCombustible_502ag.Checked = true;
             GraficoFactura_502ag();
