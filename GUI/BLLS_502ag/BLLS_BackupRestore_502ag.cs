@@ -29,5 +29,13 @@ namespace BLLS_502ag
             }
             return resultado_502ag;
         }
+
+        public bool RealizarRestoreCorreccionDV_502ag(string restoreUbicacion_502ag)
+        {
+            bool resultado_502ag;
+            DAL_BackupRestore_502ag dalBackupRestore_502ag = new DAL_BackupRestore_502ag();
+            resultado_502ag = dalBackupRestore_502ag.RealizarRestore_502ag(restoreUbicacion_502ag);
+            return resultado_502ag;
+        }
     }
 }

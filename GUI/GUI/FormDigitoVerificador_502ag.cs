@@ -61,7 +61,7 @@ namespace GUI
                         {
                             string ruta_502ag = oFD_502ag.FileName;
                             BLLS_BackupRestore_502ag bllsBackupRestore_502ag = new BLLS_BackupRestore_502ag();
-                            if (bllsBackupRestore_502ag.RealizarRestore_502ag(ruta_502ag))
+                            if (bllsBackupRestore_502ag.RealizarRestoreCorreccionDV_502ag(ruta_502ag))
                             {
                                 MessageBox.Show($"Restauración completada");
                                 SER_GestorSesion_502ag.GestorSesion_502ag.CerrarSesion_502ag();
