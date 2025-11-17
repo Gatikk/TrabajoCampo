@@ -19,6 +19,12 @@ namespace GUI
         public bool yaSePregunto_502ag = false;
         private string digitoVerificadorRecalculado_502ag, errorCalcularDigito_502ag, seleccionarArchivoBAK_502ag, archivoBak_502ag;
         private string seguroRestaurar_502ag, restauracionCompleta_502ag, bdNoCorresponde_502ag, buttonConfirmar_502ag, inconsistenciaDetectada_502ag;
+
+        private void FormDigitoVerificador_502ag_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
         public FormDigitoVerificador_502ag()
         {
             StartPosition = FormStartPosition.CenterScreen;

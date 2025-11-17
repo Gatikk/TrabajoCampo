@@ -113,6 +113,7 @@
             this.Controls.Add(this.buttonRecalcularDigito_502ag);
             this.Name = "FormDigitoVerificador_502ag";
             this.Text = "FormDigitoVerificador_502ag";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormDigitoVerificador_502ag_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
