@@ -41,7 +41,7 @@
             this.buttonSalir_502ag.FlatAppearance.BorderSize = 0;
             this.buttonSalir_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSalir_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonSalir_502ag.Location = new System.Drawing.Point(78, 199);
+            this.buttonSalir_502ag.Location = new System.Drawing.Point(89, 199);
             this.buttonSalir_502ag.Name = "buttonSalir_502ag";
             this.buttonSalir_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonSalir_502ag.TabIndex = 34;
@@ -55,7 +55,7 @@
             this.buttonRealizarRestore_502ag.FlatAppearance.BorderSize = 0;
             this.buttonRealizarRestore_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRealizarRestore_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonRealizarRestore_502ag.Location = new System.Drawing.Point(78, 93);
+            this.buttonRealizarRestore_502ag.Location = new System.Drawing.Point(89, 93);
             this.buttonRealizarRestore_502ag.Name = "buttonRealizarRestore_502ag";
             this.buttonRealizarRestore_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonRealizarRestore_502ag.TabIndex = 33;
@@ -69,7 +69,7 @@
             this.buttonRecalcularDigito_502ag.FlatAppearance.BorderSize = 0;
             this.buttonRecalcularDigito_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRecalcularDigito_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonRecalcularDigito_502ag.Location = new System.Drawing.Point(78, 40);
+            this.buttonRecalcularDigito_502ag.Location = new System.Drawing.Point(89, 40);
             this.buttonRecalcularDigito_502ag.Name = "buttonRecalcularDigito_502ag";
             this.buttonRecalcularDigito_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonRecalcularDigito_502ag.TabIndex = 32;
@@ -93,7 +93,7 @@
             this.buttonVerInconsistencias_502ag.FlatAppearance.BorderSize = 0;
             this.buttonVerInconsistencias_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonVerInconsistencias_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.buttonVerInconsistencias_502ag.Location = new System.Drawing.Point(78, 146);
+            this.buttonVerInconsistencias_502ag.Location = new System.Drawing.Point(89, 146);
             this.buttonVerInconsistencias_502ag.Name = "buttonVerInconsistencias_502ag";
             this.buttonVerInconsistencias_502ag.Size = new System.Drawing.Size(132, 47);
             this.buttonVerInconsistencias_502ag.TabIndex = 36;

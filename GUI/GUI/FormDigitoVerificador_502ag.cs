@@ -16,6 +16,7 @@ namespace GUI
 {
     public partial class FormDigitoVerificador_502ag : Form, IObserver_502ag
     {
+        public bool yaSePregunto_502ag = false;
         private string digitoVerificadorRecalculado_502ag, errorCalcularDigito_502ag, seleccionarArchivoBAK_502ag, archivoBak_502ag;
         private string seguroRestaurar_502ag, restauracionCompleta_502ag, bdNoCorresponde_502ag, buttonConfirmar_502ag, inconsistenciaDetectada_502ag;
         public FormDigitoVerificador_502ag()
@@ -97,8 +98,9 @@ namespace GUI
             try
             {
                 BLL_DigitoVerificador_502ag bllDigitoVerificador_502ag = new BLL_DigitoVerificador_502ag();
-                string mensajeInconsistencia = inconsistenciaDetectada_502ag + "\n";
-                inconsistenciaDetectada_502ag += bllDigitoVerificador_502ag.DetectarInconsistencias_502ag();
+                string mensajeInconsistencia = inconsistenciaDetectada_502ag;
+                inconsistenciaDetectada_502ag += bllDigitoVerificador_502ag.DetectarInconsistencias_502ag(yaSePregunto_502ag);
+                yaSePregunto_502ag = true;
                 MessageBox.Show(inconsistenciaDetectada_502ag);
 
             }

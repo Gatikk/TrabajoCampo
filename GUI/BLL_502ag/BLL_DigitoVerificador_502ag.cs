@@ -252,18 +252,22 @@ namespace BLL_502ag
             }
         }
 
-        public string DetectarInconsistencias_502ag()
+        public string DetectarInconsistencias_502ag(bool yaSeHizo)
         {
             string inconsitencia_502ag = "\n";
-            if (!CompararDigitoCliente_502ag()) { inconsitencia_502ag += "- Cliente_502ag\n"; }
-            if (!CompararDigitoCombustible_502ag()) { inconsitencia_502ag += "- Combustible_502ag\n"; }
-            if (!CompararDigitoFactura_502ag()) { inconsitencia_502ag += "- Factura_502ag\n"; }
-            if (!CompararDigitoOrdenTrabajo_502ag()) { inconsitencia_502ag += "- OrdenTrabajo_502ag\n"; }
-            if (!CompararDigitoVehiculo_502ag()) { inconsitencia_502ag += "- Vehiculo_502ag\n"; }
-            if (!CompararDigitoRepuesto_502ag()) { inconsitencia_502ag += "- Repuesto_502ag\n"; }
-            if (!CompararDigitoFacturaTaller_502ag()) { inconsitencia_502ag += "- FacturaTaller_502ag\n"; }
-            if (!CompararDigitoRepuestoOrdenTrabajo_502ag()) { inconsitencia_502ag += "- RepuestoOrdenTrabajo_502ag\n"; }
-            if (!CompararDigitoDiagnosticoFinal_502ag()) { inconsitencia_502ag += "- DiagnosticoFinal_502ag\n"; }
+            if(yaSeHizo == false)
+            {
+                if (!CompararDigitoCliente_502ag()) { inconsitencia_502ag += "- Cliente_502ag\n"; }
+                if (!CompararDigitoCombustible_502ag()) { inconsitencia_502ag += "- Combustible_502ag\n"; }
+                if (!CompararDigitoFactura_502ag()) { inconsitencia_502ag += "- Factura_502ag\n"; }
+                if (!CompararDigitoOrdenTrabajo_502ag()) { inconsitencia_502ag += "- OrdenTrabajo_502ag\n"; }
+                if (!CompararDigitoVehiculo_502ag()) { inconsitencia_502ag += "- Vehiculo_502ag\n"; }
+                if (!CompararDigitoRepuesto_502ag()) { inconsitencia_502ag += "- Repuesto_502ag\n"; }
+                if (!CompararDigitoFacturaTaller_502ag()) { inconsitencia_502ag += "- FacturaTaller_502ag\n"; }
+                if (!CompararDigitoRepuestoOrdenTrabajo_502ag()) { inconsitencia_502ag += "- RepuestoOrdenTrabajo_502ag\n"; }
+                if (!CompararDigitoDiagnosticoFinal_502ag()) { inconsitencia_502ag += "- DiagnosticoFinal_502ag\n"; }
+                yaSeHizo = true;
+            }
             return inconsitencia_502ag;
         }
     }
