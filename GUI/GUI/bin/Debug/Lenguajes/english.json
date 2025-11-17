@@ -274,5 +274,17 @@
   "buttonBitacoraCambiosCliente_502ag": "Client Changes Log",
   "buttonMaestrosRepuestos_502ag": "Spare Parts Masters",
   "buttonMaestrosVehiculos_502ag": "Vehicles",
-  "buttonVerReporteInteligente_502ag": "View Smart Report"
+  "buttonVerReporteInteligente_502ag": "View Smart Report",
+  "digitoVerificadorRecalculado_502ag": "Recalculated check digit",
+  "errorCalcularDigito_502ag": "Error recalculating the digit: ",
+  "seleccionarArchivoBAK_502ag": "Select .bak file",
+  "archivoBak_502ag": "Backup file (*.bak) |*.bak",
+  "seguroRestaurar_502ag": "Are you sure you want to restore",
+  "restauracionCompleta_502ag": "Restoration completed",
+  "bdNoCorresponde_502ag": "The DB does not match BD_502ag",
+  "labelInconsistencia_502ag": "INCONSISTENCY PRESENT IN THE DB.",
+  "buttonVerInconsistencias_502ag": "View Inconsistencies",
+  "buttonSalir_502ag": "Exit",
+  "buttonRecalcularDigito_502ag":"Recalculate Digit",
+  "inconsistenciaDetectada_502ag": "Inconsistency detected in the following tables"
 }

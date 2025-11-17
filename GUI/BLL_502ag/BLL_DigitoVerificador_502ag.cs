@@ -254,7 +254,7 @@ namespace BLL_502ag
 
         public string DetectarInconsistencias_502ag()
         {
-            string inconsitencia_502ag = "Inconsistencias detectadas en las siguientes tablas:\n";
+            string inconsitencia_502ag = "\n";
             if (!CompararDigitoCliente_502ag()) { inconsitencia_502ag += "- Cliente_502ag\n"; }
             if (!CompararDigitoCombustible_502ag()) { inconsitencia_502ag += "- Combustible_502ag\n"; }
             if (!CompararDigitoFactura_502ag()) { inconsitencia_502ag += "- Factura_502ag\n"; }

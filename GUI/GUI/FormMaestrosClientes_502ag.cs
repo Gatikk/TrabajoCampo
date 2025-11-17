@@ -443,14 +443,14 @@ namespace GUI
             catch(Exception ex) { MessageBox.Show($"Error: {ex.Message}"); }
         }
 
+        private void FormMaestrosClientes_502ag_Activated(object sender, EventArgs e)
+        {
+        }
         public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
         {
             TraducirControles_502ag(this, traductor_502ag);
         }
 
-        private void FormMaestrosClientes_502ag_Activated(object sender, EventArgs e)
-        {
-        }
 
         private void TraducirControles_502ag(Control control_502ag, SER_Traductor_502ag traductor_502ag)
         {
