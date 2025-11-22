@@ -28,7 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBitacoraEventos_502ag));
             this.dgvBitacoraEventos_502ag = new System.Windows.Forms.DataGridView();
+            this.Usuario_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fecha_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Hora_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Modulo_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Evento_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Criticidad_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cBUsuario_502ag = new System.Windows.Forms.ComboBox();
             this.labelUsuario_502ag = new System.Windows.Forms.Label();
             this.labelModulo_502ag = new System.Windows.Forms.Label();
@@ -50,12 +57,7 @@
             this.labelApellido_502ag = new System.Windows.Forms.Label();
             this.checkBoxFecha_502ag = new System.Windows.Forms.CheckBox();
             this.buttonImprimir_502ag = new System.Windows.Forms.Button();
-            this.Usuario_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Fecha_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Hora_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modulo_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Evento_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Criticidad_502ag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAyuda2_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBitacoraEventos_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +84,42 @@
             this.dgvBitacoraEventos_502ag.Size = new System.Drawing.Size(760, 246);
             this.dgvBitacoraEventos_502ag.TabIndex = 1;
             this.dgvBitacoraEventos_502ag.SelectionChanged += new System.EventHandler(this.dgvBitacoraEventos_502ag_SelectionChanged);
+            // 
+            // Usuario_502ag
+            // 
+            this.Usuario_502ag.HeaderText = "Usuario";
+            this.Usuario_502ag.Name = "Usuario_502ag";
+            this.Usuario_502ag.ReadOnly = true;
+            // 
+            // Fecha_502ag
+            // 
+            this.Fecha_502ag.HeaderText = "Fecha";
+            this.Fecha_502ag.Name = "Fecha_502ag";
+            this.Fecha_502ag.ReadOnly = true;
+            // 
+            // Hora_502ag
+            // 
+            this.Hora_502ag.HeaderText = "Hora";
+            this.Hora_502ag.Name = "Hora_502ag";
+            this.Hora_502ag.ReadOnly = true;
+            // 
+            // Modulo_502ag
+            // 
+            this.Modulo_502ag.HeaderText = "Modulo";
+            this.Modulo_502ag.Name = "Modulo_502ag";
+            this.Modulo_502ag.ReadOnly = true;
+            // 
+            // Evento_502ag
+            // 
+            this.Evento_502ag.HeaderText = "Evento";
+            this.Evento_502ag.Name = "Evento_502ag";
+            this.Evento_502ag.ReadOnly = true;
+            // 
+            // Criticidad_502ag
+            // 
+            this.Criticidad_502ag.HeaderText = "Criticidad";
+            this.Criticidad_502ag.Name = "Criticidad_502ag";
+            this.Criticidad_502ag.ReadOnly = true;
             // 
             // cBUsuario_502ag
             // 
@@ -301,47 +339,26 @@
             this.buttonImprimir_502ag.UseVisualStyleBackColor = false;
             this.buttonImprimir_502ag.Click += new System.EventHandler(this.buttonImprimir_502ag_Click);
             // 
-            // Usuario_502ag
+            // buttonAyuda2_502ag
             // 
-            this.Usuario_502ag.HeaderText = "Usuario";
-            this.Usuario_502ag.Name = "Usuario_502ag";
-            this.Usuario_502ag.ReadOnly = true;
-            // 
-            // Fecha_502ag
-            // 
-            this.Fecha_502ag.HeaderText = "Fecha";
-            this.Fecha_502ag.Name = "Fecha_502ag";
-            this.Fecha_502ag.ReadOnly = true;
-            // 
-            // Hora_502ag
-            // 
-            this.Hora_502ag.HeaderText = "Hora";
-            this.Hora_502ag.Name = "Hora_502ag";
-            this.Hora_502ag.ReadOnly = true;
-            // 
-            // Modulo_502ag
-            // 
-            this.Modulo_502ag.HeaderText = "Modulo";
-            this.Modulo_502ag.Name = "Modulo_502ag";
-            this.Modulo_502ag.ReadOnly = true;
-            // 
-            // Evento_502ag
-            // 
-            this.Evento_502ag.HeaderText = "Evento";
-            this.Evento_502ag.Name = "Evento_502ag";
-            this.Evento_502ag.ReadOnly = true;
-            // 
-            // Criticidad_502ag
-            // 
-            this.Criticidad_502ag.HeaderText = "Criticidad";
-            this.Criticidad_502ag.Name = "Criticidad_502ag";
-            this.Criticidad_502ag.ReadOnly = true;
+            this.buttonAyuda2_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda2_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda2_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda2_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda2_502ag.Image = ((System.Drawing.Image)(resources.GetObject("buttonAyuda2_502ag.Image")));
+            this.buttonAyuda2_502ag.Location = new System.Drawing.Point(3, 404);
+            this.buttonAyuda2_502ag.Name = "buttonAyuda2_502ag";
+            this.buttonAyuda2_502ag.Size = new System.Drawing.Size(45, 45);
+            this.buttonAyuda2_502ag.TabIndex = 53;
+            this.buttonAyuda2_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda2_502ag.Click += new System.EventHandler(this.buttonAyuda2_502ag_Click);
             // 
             // FormBitacoraEventos_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonAyuda2_502ag);
             this.Controls.Add(this.buttonImprimir_502ag);
             this.Controls.Add(this.checkBoxFecha_502ag);
             this.Controls.Add(this.labelApellido_502ag);
@@ -403,5 +420,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Modulo_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn Evento_502ag;
         private System.Windows.Forms.DataGridViewTextBoxColumn Criticidad_502ag;
+        private System.Windows.Forms.Button buttonAyuda2_502ag;
     }
 }

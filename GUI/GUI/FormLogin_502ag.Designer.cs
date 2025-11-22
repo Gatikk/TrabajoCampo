@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin_502ag));
             this.buttonIniciarSesion = new System.Windows.Forms.Button();
             this.textBoxNombreUsuario = new System.Windows.Forms.TextBox();
             this.textBoxContraseña = new System.Windows.Forms.TextBox();
@@ -37,6 +38,7 @@
             this.panelLateralIzquierdo_502ag = new System.Windows.Forms.Panel();
             this.labelBienvenida_502ag = new System.Windows.Forms.Label();
             this.cBMostrarContraseña_502ag = new System.Windows.Forms.CheckBox();
+            this.buttonAyuda2_502ag = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonIniciarSesion
@@ -133,11 +135,26 @@
             this.cBMostrarContraseña_502ag.UseVisualStyleBackColor = true;
             this.cBMostrarContraseña_502ag.CheckedChanged += new System.EventHandler(this.cBMostrarContraseña_502ag_CheckedChanged);
             // 
+            // buttonAyuda2_502ag
+            // 
+            this.buttonAyuda2_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda2_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda2_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda2_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda2_502ag.Image = ((System.Drawing.Image)(resources.GetObject("buttonAyuda2_502ag.Image")));
+            this.buttonAyuda2_502ag.Location = new System.Drawing.Point(727, 404);
+            this.buttonAyuda2_502ag.Name = "buttonAyuda2_502ag";
+            this.buttonAyuda2_502ag.Size = new System.Drawing.Size(45, 45);
+            this.buttonAyuda2_502ag.TabIndex = 33;
+            this.buttonAyuda2_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda2_502ag.Click += new System.EventHandler(this.buttonAyuda2_502ag_Click);
+            // 
             // FormLogin_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonAyuda2_502ag);
             this.Controls.Add(this.cBMostrarContraseña_502ag);
             this.Controls.Add(this.panelLateralIzquierdo_502ag);
             this.Controls.Add(this.labelBienvenida_502ag);
@@ -166,6 +183,7 @@
         private System.Windows.Forms.Panel panelLateralIzquierdo_502ag;
         private System.Windows.Forms.Label labelBienvenida_502ag;
         private System.Windows.Forms.CheckBox cBMostrarContraseña_502ag;
+        private System.Windows.Forms.Button buttonAyuda2_502ag;
     }
 }
 

@@ -286,5 +286,6 @@
   "buttonVerInconsistencias_502ag": "View Inconsistencies",
   "buttonSalir_502ag": "Exit",
   "buttonRecalcularDigito_502ag":"Recalculate Digit",
-  "inconsistenciaDetectada_502ag": "Inconsistency detected in the following tables"
+  "inconsistenciaDetectada_502ag": "Inconsistency detected in the following tables",
+  "buttonAyuda2_502ag": ""
 }

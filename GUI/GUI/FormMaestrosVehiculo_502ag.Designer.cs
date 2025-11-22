@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMaestrosVehiculo_502ag));
             this.labelMarca_502ag = new System.Windows.Forms.Label();
             this.labelModelo_502ag = new System.Windows.Forms.Label();
             this.labelPatente_502ag = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             this.ColumnaActivo = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.labelAnio_502ag = new System.Windows.Forms.Label();
             this.tBAnio_502ag = new System.Windows.Forms.TextBox();
+            this.buttonAyuda2_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVehiculos_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -212,12 +214,12 @@
             this.ColumnaModelo,
             this.ColumnaAnio,
             this.ColumnaActivo});
-            this.dgvVehiculos_502ag.Location = new System.Drawing.Point(12, 22);
+            this.dgvVehiculos_502ag.Location = new System.Drawing.Point(12, 63);
             this.dgvVehiculos_502ag.MultiSelect = false;
             this.dgvVehiculos_502ag.Name = "dgvVehiculos_502ag";
             this.dgvVehiculos_502ag.ReadOnly = true;
             this.dgvVehiculos_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVehiculos_502ag.Size = new System.Drawing.Size(760, 210);
+            this.dgvVehiculos_502ag.Size = new System.Drawing.Size(760, 197);
             this.dgvVehiculos_502ag.TabIndex = 68;
             this.dgvVehiculos_502ag.SelectionChanged += new System.EventHandler(this.dgvVehiculos_502ag_SelectionChanged);
             // 
@@ -274,11 +276,26 @@
             this.tBAnio_502ag.Size = new System.Drawing.Size(175, 27);
             this.tBAnio_502ag.TabIndex = 4;
             // 
+            // buttonAyuda2_502ag
+            // 
+            this.buttonAyuda2_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda2_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda2_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda2_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda2_502ag.Image = ((System.Drawing.Image)(resources.GetObject("buttonAyuda2_502ag.Image")));
+            this.buttonAyuda2_502ag.Location = new System.Drawing.Point(727, 12);
+            this.buttonAyuda2_502ag.Name = "buttonAyuda2_502ag";
+            this.buttonAyuda2_502ag.Size = new System.Drawing.Size(45, 45);
+            this.buttonAyuda2_502ag.TabIndex = 83;
+            this.buttonAyuda2_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda2_502ag.Click += new System.EventHandler(this.buttonAyuda2_502ag_Click);
+            // 
             // FormMaestrosVehiculo_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonAyuda2_502ag);
             this.Controls.Add(this.labelAnio_502ag);
             this.Controls.Add(this.tBAnio_502ag);
             this.Controls.Add(this.labelMarca_502ag);
@@ -325,5 +342,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaModelo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaAnio;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnaActivo;
+        private System.Windows.Forms.Button buttonAyuda2_502ag;
     }
 }

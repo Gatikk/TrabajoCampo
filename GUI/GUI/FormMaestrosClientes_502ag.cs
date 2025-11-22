@@ -25,6 +25,13 @@ namespace GUI
         private string msgNoHayClientes_502ag, nadaQueModificar_502ag, msgNadaQueBorrar_502ag;
         private string msgDNIYaUtilizado_502ag, msgEmailYaUtilizado_502ag, msgTelefonoYaUtilizado_502ag, msgDNINoValido_502ag, msgNombreNoValido_502ag, msgApellidoNoValido_502ag, msgEmailNoValido_502ag, msgTelefonoNoValido_502ag, msgDireccionNoValida_502ag;
         private string messageArchivoGuardadoExito_502ag, messageArchivoXMLParaDeserializar_502ag, messageArchivoXML_502ag, messageSeleccionarClienteVerInfo_502ag, messageDebeHaberUnClienteSerializar_502ag, msgSeleccioneClienteModi_502ag, msgSeleccioneClienteEli_502ag;
+
+        private void buttonAyuda2_502ag_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1rBZ6yDeokVvQbplN_HHjHqQji06Q8fvfTm7zgQCy49w/edit?tab=t.0#heading=h.8kaeaqugl8la");
+
+        }
+
         List<BE_Cliente_502ag> listaSerializar_502ag = new List<BE_Cliente_502ag>();
 
 

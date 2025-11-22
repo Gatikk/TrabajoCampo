@@ -19,6 +19,13 @@ namespace GUI
         private string msgTitularIncorrecto_502ag, msgTarjetaIncorrecta_502ag, msgCodigoIncorrecto_502ag, msgCaducidadIncorrecta_502ag;
         private string msgCredito_502ag, msgDebito_502ag, msgPagoRechazado_502ag, msgPagoRealizado_502ag, capPagoExitoso_502ag;
         private string msgApellido_502ag, msgNombre_502ag, msgCombustible_502ag, msgCantidadCargada_502ag, msgMonto_502ag, msgFecha_502ag, msgHora_502ag, msgLitros_502ag;
+
+        private void buttonAyuda2_502ag_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1rBZ6yDeokVvQbplN_HHjHqQji06Q8fvfTm7zgQCy49w/edit?tab=t.0#heading=h.vwulyk9uhh2j");
+
+        }
+
         public FormCobrarCliente_502ag(BE_Factura_502ag factura_502ag)
         {
             StartPosition = FormStartPosition.CenterScreen;

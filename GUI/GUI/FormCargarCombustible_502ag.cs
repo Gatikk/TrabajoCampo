@@ -129,6 +129,12 @@ namespace GUI
             }
         }
 
+        private void buttonAyuda2_502ag_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1rBZ6yDeokVvQbplN_HHjHqQji06Q8fvfTm7zgQCy49w/edit?tab=t.0#heading=h.5nhsigsf0u90");
+
+        }
+
         private void buttonComenzarCarga_502ag_Click(object sender, EventArgs e)
         {
             try

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCobrarCliente_502ag));
             this.labelFechaCaducidad_502ag = new System.Windows.Forms.Label();
             this.tBFechaCaducidad_502ag = new System.Windows.Forms.TextBox();
             this.labelTitular_502ag = new System.Windows.Forms.Label();
@@ -41,6 +42,7 @@
             this.rBCredito_502ag = new System.Windows.Forms.RadioButton();
             this.rBDebito_502ag = new System.Windows.Forms.RadioButton();
             this.labelMetodo_502ag = new System.Windows.Forms.Label();
+            this.buttonAyuda2_502ag = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelFechaCaducidad_502ag
@@ -197,11 +199,26 @@
             this.labelMetodo_502ag.TabIndex = 95;
             this.labelMetodo_502ag.Text = "Método";
             // 
+            // buttonAyuda2_502ag
+            // 
+            this.buttonAyuda2_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda2_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda2_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda2_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda2_502ag.Image = ((System.Drawing.Image)(resources.GetObject("buttonAyuda2_502ag.Image")));
+            this.buttonAyuda2_502ag.Location = new System.Drawing.Point(12, 197);
+            this.buttonAyuda2_502ag.Name = "buttonAyuda2_502ag";
+            this.buttonAyuda2_502ag.Size = new System.Drawing.Size(45, 45);
+            this.buttonAyuda2_502ag.TabIndex = 96;
+            this.buttonAyuda2_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda2_502ag.Click += new System.EventHandler(this.buttonAyuda2_502ag_Click);
+            // 
             // FormCobrarCliente_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(676, 254);
+            this.Controls.Add(this.buttonAyuda2_502ag);
             this.Controls.Add(this.labelMetodo_502ag);
             this.Controls.Add(this.rBDebito_502ag);
             this.Controls.Add(this.rBCredito_502ag);
@@ -241,5 +258,6 @@
         private System.Windows.Forms.RadioButton rBCredito_502ag;
         private System.Windows.Forms.RadioButton rBDebito_502ag;
         private System.Windows.Forms.Label labelMetodo_502ag;
+        private System.Windows.Forms.Button buttonAyuda2_502ag;
     }
 }

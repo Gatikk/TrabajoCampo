@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCambiarContraseña_502ag));
             this.labelConfirmarContraseña_502ag = new System.Windows.Forms.Label();
             this.labelContraseña_502ag = new System.Windows.Forms.Label();
             this.textBoxContraseñaConfirmar_502ag = new System.Windows.Forms.TextBox();
@@ -39,6 +40,7 @@
             this.textBoxContraseñaActual_502ag = new System.Windows.Forms.TextBox();
             this.labelContraseñaActual_502ag = new System.Windows.Forms.Label();
             this.cBContraseñaActual_502ag = new System.Windows.Forms.CheckBox();
+            this.buttonAyuda2_502ag = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelConfirmarContraseña_502ag
@@ -159,11 +161,26 @@
             this.cBContraseñaActual_502ag.UseVisualStyleBackColor = true;
             this.cBContraseñaActual_502ag.CheckedChanged += new System.EventHandler(this.cBContraseñaActual_502ag_CheckedChanged);
             // 
+            // buttonAyuda2_502ag
+            // 
+            this.buttonAyuda2_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda2_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda2_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda2_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda2_502ag.Image = ((System.Drawing.Image)(resources.GetObject("buttonAyuda2_502ag.Image")));
+            this.buttonAyuda2_502ag.Location = new System.Drawing.Point(727, 12);
+            this.buttonAyuda2_502ag.Name = "buttonAyuda2_502ag";
+            this.buttonAyuda2_502ag.Size = new System.Drawing.Size(45, 45);
+            this.buttonAyuda2_502ag.TabIndex = 53;
+            this.buttonAyuda2_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda2_502ag.Click += new System.EventHandler(this.buttonAyuda2_502ag_Click);
+            // 
             // FormCambiarContraseña_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonAyuda2_502ag);
             this.Controls.Add(this.cBContraseñaActual_502ag);
             this.Controls.Add(this.labelContraseñaActual_502ag);
             this.Controls.Add(this.textBoxContraseñaActual_502ag);
@@ -197,5 +214,6 @@
         private System.Windows.Forms.TextBox textBoxContraseñaActual_502ag;
         private System.Windows.Forms.Label labelContraseñaActual_502ag;
         private System.Windows.Forms.CheckBox cBContraseñaActual_502ag;
+        private System.Windows.Forms.Button buttonAyuda2_502ag;
     }
 }

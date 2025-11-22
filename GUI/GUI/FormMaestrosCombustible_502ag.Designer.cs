@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMaestrosCombustible_502ag));
             this.labelPrecioPorLitro_502ag = new System.Windows.Forms.Label();
             this.labelCodigo_502ag = new System.Windows.Forms.Label();
             this.labelCantidad_502ag = new System.Windows.Forms.Label();
@@ -47,6 +48,7 @@
             this.ColumnaNombreCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAyuda2_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombustibles_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -231,12 +233,12 @@
             this.ColumnaNombreCombustible,
             this.ColumnaCantidad,
             this.ColumnaPrecio});
-            this.dgvCombustibles_502ag.Location = new System.Drawing.Point(12, 22);
+            this.dgvCombustibles_502ag.Location = new System.Drawing.Point(12, 63);
             this.dgvCombustibles_502ag.MultiSelect = false;
             this.dgvCombustibles_502ag.Name = "dgvCombustibles_502ag";
             this.dgvCombustibles_502ag.ReadOnly = true;
             this.dgvCombustibles_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCombustibles_502ag.Size = new System.Drawing.Size(760, 210);
+            this.dgvCombustibles_502ag.Size = new System.Drawing.Size(760, 185);
             this.dgvCombustibles_502ag.TabIndex = 36;
             this.dgvCombustibles_502ag.SelectionChanged += new System.EventHandler(this.dgvCombustibles_502ag_SelectionChanged);
             // 
@@ -264,11 +266,26 @@
             this.ColumnaPrecio.Name = "ColumnaPrecio";
             this.ColumnaPrecio.ReadOnly = true;
             // 
+            // buttonAyuda2_502ag
+            // 
+            this.buttonAyuda2_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda2_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda2_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda2_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda2_502ag.Image = ((System.Drawing.Image)(resources.GetObject("buttonAyuda2_502ag.Image")));
+            this.buttonAyuda2_502ag.Location = new System.Drawing.Point(727, 12);
+            this.buttonAyuda2_502ag.Name = "buttonAyuda2_502ag";
+            this.buttonAyuda2_502ag.Size = new System.Drawing.Size(45, 45);
+            this.buttonAyuda2_502ag.TabIndex = 53;
+            this.buttonAyuda2_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda2_502ag.Click += new System.EventHandler(this.buttonAyuda2_502ag_Click);
+            // 
             // FormMaestrosCombustible_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.buttonAyuda2_502ag);
             this.Controls.Add(this.labelPrecioPorLitro_502ag);
             this.Controls.Add(this.labelCodigo_502ag);
             this.Controls.Add(this.labelCantidad_502ag);
@@ -315,5 +332,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombreCombustible;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
+        private System.Windows.Forms.Button buttonAyuda2_502ag;
     }
 }

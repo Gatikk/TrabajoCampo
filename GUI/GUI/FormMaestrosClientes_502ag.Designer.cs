@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMaestrosClientes_502ag));
             this.dgvClientes_502ag = new System.Windows.Forms.DataGridView();
             this.ColumnaDNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,6 +62,7 @@
             this.buttonSerializar_502ag = new System.Windows.Forms.Button();
             this.rTBSerializar_502ag = new System.Windows.Forms.RichTextBox();
             this.buttonLimpiar_502ag = new System.Windows.Forms.Button();
+            this.buttonAyuda2_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -434,11 +436,26 @@
             this.buttonLimpiar_502ag.UseVisualStyleBackColor = false;
             this.buttonLimpiar_502ag.Click += new System.EventHandler(this.buttonLimpiar_502ag_Click);
             // 
+            // buttonAyuda2_502ag
+            // 
+            this.buttonAyuda2_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda2_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda2_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda2_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda2_502ag.Image = ((System.Drawing.Image)(resources.GetObject("buttonAyuda2_502ag.Image")));
+            this.buttonAyuda2_502ag.Location = new System.Drawing.Point(12, 592);
+            this.buttonAyuda2_502ag.Name = "buttonAyuda2_502ag";
+            this.buttonAyuda2_502ag.Size = new System.Drawing.Size(45, 45);
+            this.buttonAyuda2_502ag.TabIndex = 53;
+            this.buttonAyuda2_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda2_502ag.Click += new System.EventHandler(this.buttonAyuda2_502ag_Click);
+            // 
             // FormMaestrosClientes_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 649);
+            this.Controls.Add(this.buttonAyuda2_502ag);
             this.Controls.Add(this.buttonLimpiar_502ag);
             this.Controls.Add(this.rTBSerializar_502ag);
             this.Controls.Add(this.buttonSerializar_502ag);
@@ -510,5 +527,6 @@
         private System.Windows.Forms.Button buttonSerializar_502ag;
         private System.Windows.Forms.RichTextBox rTBSerializar_502ag;
         private System.Windows.Forms.Button buttonLimpiar_502ag;
+        private System.Windows.Forms.Button buttonAyuda2_502ag;
     }
 }

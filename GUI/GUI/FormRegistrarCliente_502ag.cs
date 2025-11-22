@@ -15,6 +15,13 @@ namespace GUI
     public partial class FormRegistrarCliente_502ag : Form, IObserver_502ag
     {
         private string msgDNIYaUtilizado_502ag, msgEmailYaUtilizado_502ag, msgTelefonoYaUtilizado_502ag, msgDNINoValido_502ag, msgNombreNoValido_502ag, msgApellidoNoValido_502ag, msgEmailNoValido_502ag, msgTelefonoNoValido_502ag, msgDireccionNoValida_502ag;
+
+        private void buttonAyuda2_502ag_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1rBZ6yDeokVvQbplN_HHjHqQji06Q8fvfTm7zgQCy49w/edit?tab=t.0#heading=h.lv6oruz05m8p");
+
+        }
+
         private string msgClienteRegistrado_502ag, capRegistroExitoso_502ag;
         public FormRegistrarCliente_502ag()
         {

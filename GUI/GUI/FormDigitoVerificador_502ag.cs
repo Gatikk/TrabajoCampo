@@ -24,7 +24,6 @@ namespace GUI
         {
             Environment.Exit(0);
         }
-
         public FormDigitoVerificador_502ag()
         {
             StartPosition = FormStartPosition.CenterScreen;

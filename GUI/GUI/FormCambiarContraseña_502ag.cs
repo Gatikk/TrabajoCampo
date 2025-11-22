@@ -179,6 +179,12 @@ namespace GUI
             MostrarContraseñaActual_502ag();
         }
 
+        private void buttonAyuda2_502ag_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1rBZ6yDeokVvQbplN_HHjHqQji06Q8fvfTm7zgQCy49w/edit?tab=t.0#heading=h.6ish8wtiugsu");
+
+        }
+
         public void Actualizar_502ag(SER_Traductor_502ag traductor_502ag)
         {
             TraducirControles_502ag(this, traductor_502ag);

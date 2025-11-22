@@ -22,6 +22,11 @@ namespace GUI
             Environment.Exit(0);
         }
 
+        private void buttonAyuda2_502ag_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://docs.google.com/document/d/1rBZ6yDeokVvQbplN_HHjHqQji06Q8fvfTm7zgQCy49w/edit?tab=t.0#heading=h.i236d3na7bqi");
+        }
+
         public FormBackupRestore_502ag()
         {
             StartPosition = FormStartPosition.CenterScreen;

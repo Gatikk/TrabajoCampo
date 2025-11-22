@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMaestrosRepuestos_502ag));
             this.labelPrecio_502ag = new System.Windows.Forms.Label();
             this.labelCantidad_502ag = new System.Windows.Forms.Label();
             this.labelNombre_502ag = new System.Windows.Forms.Label();
@@ -45,6 +46,7 @@
             this.ColumnaNombreRepuesto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAyuda2_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRepuestos_502ag)).BeginInit();
             this.SuspendLayout();
             // 
@@ -208,12 +210,12 @@
             this.ColumnaNombreRepuesto,
             this.ColumnaPrecio,
             this.ColumnaCantidad});
-            this.dgvRepuestos_502ag.Location = new System.Drawing.Point(20, 17);
+            this.dgvRepuestos_502ag.Location = new System.Drawing.Point(20, 63);
             this.dgvRepuestos_502ag.MultiSelect = false;
             this.dgvRepuestos_502ag.Name = "dgvRepuestos_502ag";
             this.dgvRepuestos_502ag.ReadOnly = true;
             this.dgvRepuestos_502ag.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRepuestos_502ag.Size = new System.Drawing.Size(760, 210);
+            this.dgvRepuestos_502ag.Size = new System.Drawing.Size(760, 192);
             this.dgvRepuestos_502ag.TabIndex = 53;
             this.dgvRepuestos_502ag.SelectionChanged += new System.EventHandler(this.dgvRepuestos_502ag_SelectionChanged);
             // 
@@ -241,11 +243,26 @@
             this.ColumnaCantidad.Name = "ColumnaCantidad";
             this.ColumnaCantidad.ReadOnly = true;
             // 
+            // buttonAyuda2_502ag
+            // 
+            this.buttonAyuda2_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda2_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda2_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda2_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda2_502ag.Image = ((System.Drawing.Image)(resources.GetObject("buttonAyuda2_502ag.Image")));
+            this.buttonAyuda2_502ag.Location = new System.Drawing.Point(735, 12);
+            this.buttonAyuda2_502ag.Name = "buttonAyuda2_502ag";
+            this.buttonAyuda2_502ag.Size = new System.Drawing.Size(45, 45);
+            this.buttonAyuda2_502ag.TabIndex = 68;
+            this.buttonAyuda2_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda2_502ag.Click += new System.EventHandler(this.buttonAyuda2_502ag_Click);
+            // 
             // FormMaestrosRepuestos_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonAyuda2_502ag);
             this.Controls.Add(this.labelPrecio_502ag);
             this.Controls.Add(this.labelCantidad_502ag);
             this.Controls.Add(this.labelNombre_502ag);
@@ -287,5 +304,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombreRepuesto;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
+        private System.Windows.Forms.Button buttonAyuda2_502ag;
     }
 }

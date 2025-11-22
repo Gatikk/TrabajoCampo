@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCargarCombustible_502ag));
             this.dgvCombustibles_502ag = new System.Windows.Forms.DataGridView();
             this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaNombreCombustible = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +65,7 @@
             this.buttonSeleccionarFactura_502ag = new System.Windows.Forms.Button();
             this.buttonVolverAlMenu_502ag = new System.Windows.Forms.Button();
             this.labelFacturaIncompleta_502ag = new System.Windows.Forms.Label();
+            this.buttonAyuda2_502ag = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCombustibles_502ag)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFacturas_502ag)).BeginInit();
             this.SuspendLayout();
@@ -483,11 +485,26 @@
             this.labelFacturaIncompleta_502ag.TabIndex = 78;
             this.labelFacturaIncompleta_502ag.Text = "Seleccionar Factura Incompleta";
             // 
+            // buttonAyuda2_502ag
+            // 
+            this.buttonAyuda2_502ag.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.buttonAyuda2_502ag.FlatAppearance.BorderSize = 0;
+            this.buttonAyuda2_502ag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAyuda2_502ag.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.buttonAyuda2_502ag.Image = ((System.Drawing.Image)(resources.GetObject("buttonAyuda2_502ag.Image")));
+            this.buttonAyuda2_502ag.Location = new System.Drawing.Point(727, 12);
+            this.buttonAyuda2_502ag.Name = "buttonAyuda2_502ag";
+            this.buttonAyuda2_502ag.Size = new System.Drawing.Size(45, 45);
+            this.buttonAyuda2_502ag.TabIndex = 79;
+            this.buttonAyuda2_502ag.UseVisualStyleBackColor = false;
+            this.buttonAyuda2_502ag.Click += new System.EventHandler(this.buttonAyuda2_502ag_Click);
+            // 
             // FormCargarCombustible_502ag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 446);
+            this.Controls.Add(this.buttonAyuda2_502ag);
             this.Controls.Add(this.labelFacturaIncompleta_502ag);
             this.Controls.Add(this.buttonVolverAlMenu_502ag);
             this.Controls.Add(this.buttonSeleccionarFactura_502ag);
@@ -566,5 +583,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigoFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCombustible;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEstado;
+        private System.Windows.Forms.Button buttonAyuda2_502ag;
     }
 }
